@@ -58,22 +58,22 @@ disableKinds = ["RSS"]
 
   # activityDelay = 5 : deprecated
 
-  description = """
-  Welcome to North Shore Hackers!
+  # description = """
+  # Welcome to North Shore Hackers!
   
-  We have deep roots in the Hawaii hackerspace scene.
+  # We have deep roots in the Hawaii hackerspace scene.
 
-  We believe in ethical hacking, as well as hacking on both hardware and software projects.
-  If this resonates with you, please reach out.
+  # We believe in ethical hacking, as well as hacking on both hardware and software projects.
+  # If this resonates with you, please reach out.
 
-  Our hackerspace is located on the North Shore of Oahu, in the state of Hawaii.
+  # Our hackerspace is located on the North Shore of Oahu, in the state of Hawaii.
   
-  To join or attend, you may email us: {hello} {at} {this domain}.
+  # To join or attend, you may email us: hello {at} nshkr.com.
 
-  """
+  # """
 
   # Note: If you want to use a Markdown file, you can use the following
-  # description = "/description.md"
+  description = "/description.md"
   # Note: and put the description.md in /content/description.md
 
   [Params.Tree]
