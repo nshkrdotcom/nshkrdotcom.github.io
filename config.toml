@@ -1,4 +1,4 @@
-baseURL = "https://www.example.com/"
+baseURL = "https://nshkr.com/"
 languageCode = 'en-us'
 title = "North Shore Hackers"
 # author = "Yukuro"
@@ -14,7 +14,9 @@ ignoreErrors = ["error-remote-getjson"]
   # Note: You can choose between
   # Note: ["monokai", "powershell", "gruvbox_light", "gruvbox_dark", "solarized_light", "solarized_dark", "ubuntu", "retro"]
   # Note: If you want to use the Goph theme, set it to "goph" (See README.md)
-  schema = "monokai"
+  # schema = "monokai"
+  schema = "gruvbox_dark"
+
 
   # Note: in terminal
   # [userName]@[pcName]:~/$ cd [workDir]
@@ -57,7 +59,6 @@ ignoreErrors = ["error-remote-getjson"]
   Welcome to North Shore Hackers!
   We have deep roots in the Hawaii hackerspace scene.
   To join or attend, you may email us: {hello} {at} {this domain}.
-  
   """
 
   # Note: If you want to use a Markdown file, you can use the following
