@@ -6,6 +6,8 @@ title = "North Shore Hackers"
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
 ignoreErrors = ["error-remote-getjson"]
 
+disableKinds = ["RSS"]
+
 [Params]
   # Note: This is for the meta description, which is different from the "description" displayed in the terminal.
   description = "North Shore Hackers"
