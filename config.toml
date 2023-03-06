@@ -78,7 +78,7 @@ disableKinds = ["RSS"]
 
   [Params.Tree]
   use = true
-  folderName = "hackerspace_projects"
+  folderName = "technologies_pono"
   # Note: ["ACTIVITY", "URL or PATH TO YOUR MARKDOWN FILE"]
   files = [ 
     ["Swift", "https://developer.apple.com/swift"],
