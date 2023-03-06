@@ -60,7 +60,12 @@ disableKinds = ["RSS"]
 
   description = """
   Welcome to North Shore Hackers!
+  
   We have deep roots in the Hawaii hackerspace scene.
+
+  We believe in ethical hacking, as well as hacking on both hardware and software projects.
+  If this resonates with you, please reach out.
+  
   To join or attend, you may email us: {hello} {at} {this domain}.
   """
 
