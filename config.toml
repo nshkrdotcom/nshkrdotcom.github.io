@@ -1,6 +1,6 @@
 baseURL = "https://www.example.com/"
 languageCode = 'en-us'
-title = "Shell"
+title = "North Shore Hackers"
 # author = "Yukuro"
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
