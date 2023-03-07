@@ -7,8 +7,8 @@ If this resonates with you, please feel free to contact us.
 
 Our hackerspace is located on the North Shore of Oahu, in the state of Hawaii.
 
-Next meeting is on April 2, 2023, 1500-1800 HST, located at b64decode:
-
+Next meeting is on April 2, 2023, 1500-1800 HST, located at b64decode: <br />  
 ![Secret Meeting Spot](/nshkr-location-b64.png)
   
-To join or attend, please email us: **hello {at} nshkr.com**
+To join or attend, please email us: <br />  
+**hello {at} nshkr.com**
