@@ -7,7 +7,7 @@ If this resonates with you, please feel free to contact us.
 
 Our hackspace is located on the North Shore of Oahu, in the state of Hawaii.
 
-Next meeting is on April 2, 2023, 1500-1800 HST, located at b64decode: <br />  
+Next meeting is on (b64) QXByaWwgMiwgMjAyMywgMTUwMC0xODAwIEhTVAo=, located at (b64): <br />  
 ![Secret Meeting Spot](/nshkr-location-b64.png)
   
 To join or attend, please email us: <br />  
