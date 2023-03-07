@@ -1,11 +1,11 @@
 Welcome to North Shore Hackers!
   
-We have deep roots in the Hawaii hackerspace scene.
+We have deep roots in the Hawaii hackspace scene.
 
 We believe in ethical hacking, as well as hacking on both hardware and software projects.
 If this resonates with you, please feel free to contact us.
 
-Our hackerspace is located on the North Shore of Oahu, in the state of Hawaii.
+Our hackspace is located on the North Shore of Oahu, in the state of Hawaii.
 
 Next meeting is on April 2, 2023, 1500-1800 HST, located at b64decode: <br />  
 ![Secret Meeting Spot](/nshkr-location-b64.png)
