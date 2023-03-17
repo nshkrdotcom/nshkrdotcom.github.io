@@ -2,5 +2,5 @@
 	path = themes/hugo-theme-shell
 	url = https://github.com/Yukuro/hugo-theme-shell.git
 [submodule "themes/mainroad"]
-	path = themes/Mminroad
+	path = themes/mainroad
 	url = https://github.com/Vimux/Mainroad
