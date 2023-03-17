@@ -1,14 +1,11 @@
-REAEDME for NSHkr.com
-Hugo site with terminal theme
+# README for NSHkr.com
+# Hugo site with mainroad theme
 
-# HACKING THE MATRIX: **RUMOR CONTROL ROOM**
+## INSTALLATION
 
-# LANDLORD TENANT ISSUES - bad publicity for landlords
+## set up your ~/.ssh/config to support different ssh keys for multiple github accts
+ example:
 
-# INSTALLATION
-
-# set up your ~/.ssh/config to support different ssh keys for multiple github accts
-example:
 ```
 #main
 Host github.com
