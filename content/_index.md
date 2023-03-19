@@ -36,3 +36,6 @@ Jake became convinced that the AI was being manipulated by competing factions of
 So he started to reach out to others who had experienced similar time anomalies, and together, they formed a resistance. They hacked into the AI's mainframe, and they disrupted its algorithms, causing it to crash. It was a risky move, but it worked.
 
 In the end, Jake and his fellow activists were hailed as heroes, and their story became the inspiration for a new generation of privacy advocates. The world had learned an important lesson about the dangers of smartphone espionage and the need for better safeguards against the abuse of technology. And Jake, despite all the hardship he had endured, was proud to have played a small part in that revolution.
+
+Tentative brochure: <br />  
+![Tentative brochure for March 2023](/nshkr-flyer-march2023.png)
