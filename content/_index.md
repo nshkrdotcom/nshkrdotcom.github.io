@@ -11,6 +11,14 @@ Come and be a part of a vibrant community that celebrates diversity, fosters cre
 Next meeting is on (b64): <br />  
 QXByaWwgMiwgMjAyMywgMTUwMC0xODAwIEhTVAo=
 
+Aloha! Welcome to NSHkr.com, da place for all kine hackers in da North Shore of Oahu. We stay all about including everybody, no matta what culture, gender, or background you come from. We get Aloha spirit, and we all about respecting da space of others and not judging nobody.
+
+We love da entrepreneurial spirit, so bring your ideas and projects, and we go make um happen. We also get big love for da environment and da local culture, so we make sure we stay eco-friendly and no do anything that going mess up da land.
+
+Whetha you one pro hacker or just starting out, we get da tools and resources for you to make your dreams come true. Come join our ohana and feel da support from our awesome community.
+
+No wait, come check us out and see for yourself how we make hacking fun and safe for everybody. Mahalo for choosing NSHkr.com!
+
 Meeting location (b64): <br />  
 ![Secret Meeting Spot](/nshkr-location-b64.png)
   
