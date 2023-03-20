@@ -71,3 +71,17 @@ As she gained more confidence in her skills, Alyssa started to think about how s
 With the help of her newfound knowledge and resources at NSHkr.com, Alyssa started her business, which quickly took off. She was able to build a sustainable business that provided her with the financial freedom to pursue her passions full-time.
 
 Years later, Alyssa looked back on her journey with pride. She had come a long way from the timid young adult who had walked into NSHkr.com with nothing more than a dream. She was now a successful entrepreneur, and she knew that she had NSHkr.com and ChatGPT to thank for giving her the tools she needed to make her dreams a reality.
+
+___
+
+Judah was a retired electronics technician who had spent his entire career tinkering with gadgets and machines. He had always been passionate about making and hacking on projects, and even in retirement he couldn’t resist the urge to continue his work.
+
+One day, Judah discovered NSHkr.com, a new hackerspace in Haleiwa, Hawaii. Excited at the prospect of joining a community of like-minded individuals, he decided to attend one of their meetings.
+
+As soon as he arrived at the hackerspace, Judah was welcomed with open arms. The young adults there were eager to learn from his lifetime of experience and knowledge. Judah was more than happy to share his skills with them and help them develop useful and marketable life skills in electronics.
+
+Over time, Judah became a regular at the hackerspace. He would often bring in new projects for the group to work on together and would always be there to offer guidance and advice. The young adults at NSHkr.com were inspired by Judah’s passion for making and hacking on projects.
+
+Thanks to Judah’s influence, many of them went on to pursue careers in electronics or start their own businesses. They were grateful for the opportunity to learn from someone with so much experience and knowledge.
+
+In the end, Judah found that even in retirement he could still make a difference by sharing his passion for making and hacking on projects with others.
