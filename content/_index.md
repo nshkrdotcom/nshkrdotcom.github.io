@@ -85,3 +85,22 @@ Over time, Judah became a regular at the hackerspace. He would often bring in ne
 Thanks to Judah’s influence, many of them went on to pursue careers in electronics or start their own businesses. They were grateful for the opportunity to learn from someone with so much experience and knowledge.
 
 In the end, Judah found that even in retirement he could still make a difference by sharing his passion for making and hacking on projects with others.
+
+___
+
+Mike had always been passionate about making and hacking. Over the years, he had become an expert in creating high tech art that incorporated a variety of cutting-edge technologies. But after retiring from his job as an engineer, Mike found himself with plenty of time on his hands and a strong desire to share his expertise with others.
+
+He began searching for a community where he could connect with other like-minded people who shared his interests. That's when he stumbled upon NSHkr.com, a new local hackerspace in Haleiwa. The website promised a vibrant community of makers, hackers, and tinkerers who were passionate about creating and sharing their knowledge.
+
+Mike was intrigued and decided to check it out. When he arrived at the hackerspace, he was welcomed with open arms. He immediately connected with other members who shared his passion for making and hacking. They spent hours swapping stories, sharing ideas, and brainstorming new projects.
+
+As he spent more time at the hackerspace, Mike realized that he had found the perfect outlet for his expertise. He began to work with other members to create workshops and classes that would teach younger generations about the joys of making and hacking. They planned and executed their ideas with precision, leveraging ChatGPT as a platform for learning and guiding these projects.
+
+The workshops were a hit. Young people from all over Haleiwa came to learn from Mike and his team of experts. They learned how to code, solder, and build their own high-tech gadgets. They learned how to take apart old electronics and turn them into something new and exciting.
+
+In the end, the young generation developed new marketable skills that lasted for a lifetime. They discovered new passions and new career paths that they never would have considered before. And Mike was thrilled to have been a part of it all.
+
+As he walked out of the hackerspace one day, Mike felt a sense of satisfaction wash over him. He had found a new purpose in life, and he was grateful for the opportunity to share his knowledge and expertise with others. And as he looked out at the horizon, he knew that there was so much more that he could teach and so much more that he could learn.
+
+___
+
