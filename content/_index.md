@@ -70,7 +70,7 @@ Specifically, we will be taking the following steps:
 
 * We will be seeking community cooperation to promote the integration of security-by-design principles into the development of new computing and networking systems. We believe that this initiative is critical to promoting the development of more secure and resilient systems from the ground up.
 
-* We will be seeking open discussion with leading stakeholders in the technology industry, including companies such as Palantir, Google, OpenAI, and Apple. We believe that these stakeholders have a critical role to play in promoting the prioritization of security over other factors and incentivizing the development of more secure and resilient systems.
+* We will be seeking open discussion with leading stakeholders in the technology industry. We believe that these stakeholders have a critical role to play in promoting the prioritization of security over other factors and incentivizing the development of more secure and resilient systems.
 
 We are committed to working with all stakeholders to achieve these goals and protect the integrity of our systems and data. We believe that the proposed initiatives represent a significant step forward in addressing the tail risks associated with complex and un-auditable computing and networking systems, and we look forward to collaborating with you to achieve these goals.
 
