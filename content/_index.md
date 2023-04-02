@@ -19,7 +19,7 @@ Whetha you one pro hacker or just starting out, we get da tools and resources fo
 
 No wait, come check us out and see for yourself how we make hacking fun and safe for everybody. Mahalo for choosing NSHkr.com!
 
-Meeting location (b64): <br />  
+Meeting location (meme): <br />  
 ![Secret Meeting Spot](/6000_SUX.png)
   
 To join, please email us: <br />  
@@ -60,7 +60,7 @@ Dear Colleagues,
 
 Following up on our recent cybersecurity report, we are pleased to outline the steps we will be taking to achieve our proposed initiatives. We believe that these initiatives are critical to addressing the tail risks associated with complex and un-auditable computing and networking systems and protecting the integrity of our systems and data.
 
-To achieve these goals, we will be seeking support from public funding, federal assistance, community cooperation, and open discussion with leading stakeholders in the technology industry, including companies such as Palantir, Google, OpenAI, and Apple. We are committed to ensuring that our initiatives are grounded in empirical evidence and expert analysis, and that they prioritize security over other factors.
+To achieve these goals, we will be seeking support from public funding, federal assistance, community cooperation, and open discussion with leading stakeholders in the technology industry, including companies. We are committed to ensuring that our initiatives are grounded in empirical evidence and expert analysis, and that they prioritize security over other factors.
 
 Specifically, we will be taking the following steps:
 
