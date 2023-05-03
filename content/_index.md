@@ -25,6 +25,10 @@ Meeting location (meme): <br />
 To join, please email us: <br />  
 **hello {at} nshkr.com**
 
+May 3, 2023: <br />
+
+![Political statement](https://gist.githubusercontent.com/nshkrdotcom/e0a10520e6b3805f63eb4ea1dbf9a7ac/raw/c54552f71c7a72fde02761bb2e4b9a1f10dbef1b/gistfile1.txt)
+
 April 1, 2023 brochure: <br />  
 ![Tentative brochure for March 2023](/nshkr-flyer-apr-1-2023.png)
 
