@@ -7,7 +7,7 @@ Haleiwa, HI 96712
 
 First Hawaiian Bank
 Haleiwa Branch
-Routing / ABA #: 121301015
+Routing #: 121301015
 +1 (808) 637-5034
 See attached for addr && account #
 
