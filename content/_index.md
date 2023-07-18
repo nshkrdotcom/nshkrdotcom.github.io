@@ -20,7 +20,5 @@ paypal.me/paullowndes<br />
 C@shapp:<br />
 cash.app/$plowndes<br />
 
-
-
 <br />  
 ![Bank Info](/IMG_1889.jpeg)
