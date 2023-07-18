@@ -16,9 +16,10 @@ Alternatively, can you Apple Cash me:
 +1 (808) 232-7551
 
 Paypal:  
-paypal.me/paullowndes
+[Paypal](https://paypal.me/paullowndes
+"Paypal")
 
 Cashapp:  
-cash.app/$plowndes
+[Cashapp](https://cash.app/$plowndes "Cashapp")
 
 ![Bank Info](/IMG_1889.jpeg)
