@@ -29,7 +29,7 @@ October 22, 2023 update: <br />
 
 North Shore Hackers supports USA, Israel, and Ukraine.<br />
 ![United States Flag](/IMG_4322.png)
-![Israel Flag](/IMG_4320.webp)
+![Israel Flag](/IMG_4324.png)
 ![Ukraine Flag](/IMG_4323.png)
 
 May 3, 2023: <br />
