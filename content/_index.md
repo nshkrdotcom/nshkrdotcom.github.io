@@ -25,6 +25,10 @@ Meeting location (meme): <br />
 To join, please email us: <br />  
 **hello {at} nshkr.com**
 
+October 22, 2024 update: <br />
+NSHkr.com is pleased to announce SecureSphere. (synack: future/bro) <br />
+<br />
+
 October 22, 2023 update: <br />
 
 NSHkr.com supports USA, Israel, and Ukraine.<br />
