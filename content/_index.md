@@ -26,6 +26,7 @@ To join, please email us: <br />
 **hello {at} nshkr.com**
 
 October 22, 2024 update: <br />
+
 NSHkr.com is pleased to announce SecureSphere. (synack: future/bro) <br />
 <br />
 
