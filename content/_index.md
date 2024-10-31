@@ -25,6 +25,19 @@ Meeting location (meme): <br />
 To join, please email us: <br />  
 **hello {at} nshkr.com**
 
+October 31, 2024 update: <br />
+
+SecureSphere conceptual documents and patent brainstorming released:<br />
+
+[link](</1-SecureSphere Overview-1 20241031.pdf>) <br />
+[link](</2-SecureSphere Overview-2 20241031.pdf>) <br />
+[link](</3-SecureSphere Patents 1of3 20241031.pdf>) <br />
+[link](</4-SecureSphere Patents 2of3 20241031.pdf>) <br />
+[link](</5-SecureSphere Patents 1of3 20241031.pdf>) <br />
+[link](</6-SecureSphere Patents Brainstorm 20241031.pdf>) <br />
+[link](</7-SecureSphere ProsCons_VC_Letter_SCiON_Nebula 20241031.pdf>) <br />
+[link](</8-SecureSphere Scratchpad 20241031.pdf>) <br />
+
 October 22, 2024 update: <br />
 
 NSHkr.com is pleased to announce SecureSphere. (synack: future/bro) <br />
