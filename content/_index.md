@@ -27,6 +27,8 @@ To join, please email us: <br />
 
 October 31, 2024 update: <br />
 
+## SecureSphere Conceptual Documents and Patent Brainstorming
+
 SecureSphere conceptual documents and patent brainstorming released:<br />
 
 [1-SecureSphere Overview-1 20241031.pdf](</1-SecureSphere Overview-1 20241031.pdf>) <br />
