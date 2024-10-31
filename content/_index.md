@@ -30,13 +30,21 @@ October 31, 2024 update: <br />
 SecureSphere conceptual documents and patent brainstorming released:<br />
 
 [1-SecureSphere Overview-1 20241031.pdf](</1-SecureSphere Overview-1 20241031.pdf>) <br />
+
 [2-SecureSphere Overview-2 20241031.pdf](</2-SecureSphere Overview-2 20241031.pdf>) <br />
+
 [3-SecureSphere Patents 1of3 20241031.pdf](</3-SecureSphere Patents 1of3 20241031.pdf>) <br />
+
 [4-SecureSphere Patents 2of3 20241031.pdf](</4-SecureSphere Patents 2of3 20241031.pdf>) <br />
+
 [5-SecureSphere Patents 1of3 20241031.pdf](</5-SecureSphere Patents 1of3 20241031.pdf>) <br />
+
 [6-SecureSphere Patents Brainstorm 20241031.pdf](</6-SecureSphere Patents Brainstorm 20241031.pdf>) <br />
+
 [7-SecureSphere ProsCons_VC_Letter_SCiON_Nebula 20241031.pdf](</7-SecureSphere ProsCons_VC_Letter_SCiON_Nebula 20241031.pdf>) <br />
+
 [8-SecureSphere Scratchpad 20241031.pdf](</8-SecureSphere Scratchpad 20241031.pdf>) <br />
+
 
 October 22, 2024 update: <br />
 
