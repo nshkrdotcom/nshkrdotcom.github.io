@@ -39,7 +39,7 @@ SecureSphere conceptual documents and patent brainstorming released:<br />
 
 [4-SecureSphere Patents 2of3 20241031.pdf](</4-SecureSphere Patents 2of3 20241031.pdf>)
 
-[5-SecureSphere Patents 1of3 20241031.pdf](</5-SecureSphere Patents 1of3 20241031.pdf>)
+[5-SecureSphere Patents 1of3 20241031.pdf](</5-SecureSphere Patents 3of3 20241031.pdf>)
 
 [6-SecureSphere Patents Brainstorm 20241031.pdf](</6-SecureSphere Patents Brainstorm 20241031.pdf>)
 
