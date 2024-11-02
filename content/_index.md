@@ -31,7 +31,7 @@ To join, please email us: <br />
 
 SecureSphere conceptual documents and patent brainstorming released:<br />
 
-After discussing the topic of publicly releasing this early draft with SecureSphere's AI Engineering Assistant, I have decided to release the technical concept of SecureSphere. This step aims to enhance transparency in the security architecture, enabling wider participation in fortifying its security measures. The decision also reflects the importance of balancing civil liberties with governance needs.
+After discussing the topic of publicly releasing this early draft with SecureSphere's Engineering Assistant LLM, I have decided to release the technical concept of SecureSphere. This step aims to enhance transparency in the security architecture, enabling wider participation in fortifying its security measures. The decision also reflects the importance of balancing civil liberties with governance needs.
 
 [1-SecureSphere Overview-1 20241031](</1-SecureSphere Overview-1 20241031/1SecureSphereOverview120241031.html>)
 
