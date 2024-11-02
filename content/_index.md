@@ -25,7 +25,7 @@ Meeting location (meme): <br />
 To join, please email us: <br />  
 **hello {at} nshkr.com**
 
-October 31, 2024 update: <br />
+# October 31, 2024 update:
 
 ## SecureSphere Conceptual Documents and Patent Brainstorming
 
@@ -53,26 +53,26 @@ After extensive discussions with the AI Agent, who collaborated as my engineerin
 
 [10-SecureSphere 20241102](</10-SecureSphere 20241102/10SecureSphere20241102.html>)
 
-October 22, 2024 update: <br />
+# October 22, 2024 update:
 
 NSHkr.com is pleased to announce SecureSphere. (synack: future/bro) <br />
 <br />
 
-October 22, 2023 update: <br />
+# October 22, 2023 update:
 
 NSHkr.com supports USA, Israel, and Ukraine.<br />
 ![United States Flag](/IMG_4322.png)
 ![Israel Flag](/IMG_4324.png)
 ![Ukraine Flag](/IMG_4323.png)
 
-May 3, 2023: <br />
+# May 3, 2023: 
 
 [Political Statement](https://gist.githubusercontent.com/nshkrdotcom/e0a10520e6b3805f63eb4ea1dbf9a7ac/raw/c54552f71c7a72fde02761bb2e4b9a1f10dbef1b/gistfile1.txt "Political Statement")
 
-April 1, 2023 brochure: <br />  
+# April 1, 2023 brochure:
 ![Tentative brochure for March 2023](/nshkr-flyer-apr-1-2023.png)
 
-April 1, 2023:
+# April 1, 2023:
 
 Proposal for New Cybersecurity Initiatives
 
@@ -96,7 +96,7 @@ In conclusion, the proposed cybersecurity initiatives represent a significant st
 
 ___
 
-April 1, 2023
+# April 1, 2023
 
 NS Meeting Location
 
@@ -120,7 +120,7 @@ We are committed to working with all stakeholders to achieve these goals and pro
 
 ___
 
-March 2023:
+# March 2023:
 
 In the quaint town of Haleiwa, a group of passionate individuals gathered at a local hackerspace. They were deeply connected to the Hawaiian culture and wanted to find ways to preserve and promote it. They spent countless hours brainstorming and prototyping until they came up with an idea that would change the course of their community.
 
