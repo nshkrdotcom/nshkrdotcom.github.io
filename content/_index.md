@@ -31,7 +31,7 @@ To join, please email us: <br />
 
 [![SecureSphere Diagram 20241102](/SecureSphere-Overview-20241102-sm.png)](/SecureSphere-Overview-20241102.png)
 
-This document provides a comprehensive overview of the SecureSphere architecture, highlighting its key technologies and their interactions.  The system emphasizes modularity, robust security features, and dynamic adaptability.
+This diagram provides a comprehensive overview of the SecureSphere architecture, highlighting its key technologies and their interactions.  The system emphasizes modularity, robust security features, and dynamic adaptability.
 
 ## SecureSphere System
 
