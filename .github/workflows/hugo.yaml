@@ -30,7 +30,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.111.2
+      HUGO_VERSION: 0.138.0
+      DART_SASS_VERSION: 1.62.1
     steps:
       - name: Install Hugo CLI
         run: |
@@ -38,7 +39,7 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb          
       - name: Install Dart Sass
         run: |
-          wget -qO-  https://github.com/sass/dart-sass-embedded/releases/download/1.62.1/sass_embedded-1.62.1-linux-x64.tar.gz | tar xzvf -
+          wget -qO-  https://github.com/sass/dart-sass-embedded/releases/download/${DART_SASS_VERSION}/sass_embedded-${DART_SASS_VERSION}-linux-x64.tar.gz | tar xzvf -
           sudo mv sass_embedded/dart-sass-embedded /usr/local/bin/dart-sass
       - name: Checkout
         uses: actions/checkout@v3
