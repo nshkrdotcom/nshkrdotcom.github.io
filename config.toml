@@ -91,7 +91,7 @@ disableKinds = ["RSS"]
 [[Params.widgets.social.custom]]
   title = "Mastodon"
   url = "https://infosec.exchange/@NSHkr"
-  # icon = "mastodon.svg" # Optional. Path relative to "layouts/partials"
+  icon = "mastodon.svg" # Optional. Path relative to "layouts/partials"
   rel = "me" # Set to false to remove the rel attribute
   
   
