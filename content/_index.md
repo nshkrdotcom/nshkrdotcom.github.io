@@ -29,48 +29,48 @@ To join, please email us: <br />
 
 ## Secure Computing Architecture
 
-SecureSphere represents a departure from traditional computing architectures, offering a fundamentally new approach to building secure applications. At its core lies a multi-kernel design utilizing Modular Isolated Execution Stacks (IES), each providing complete hardware-enforced isolation for applications and processes. This hardware-level compartmentalization minimizes the impact of vulnerabilities, preventing lateral movement of attacks and effectively containing breaches within individual IES instances.  This robust isolation is further enhanced by a sophisticated capability-based access control system, dynamically managed by the Dynamic Trust Management System (DTMS), which continuously assesses and adjusts trust levels based on real-time system behavior, user actions, and threat intelligence, thereby tailoring access permissions to each application. This unique combination of hardware isolation and dynamic trust management drastically reduces the attack surface and ensures that only authorized components and processes can access sensitive data and resources.
+ASKA (Adaptive Secure Kernel Architecture) represents a departure from traditional computing architectures, offering a fundamentally new approach to building secure applications. At its core lies a multi-kernel design utilizing Modular Isolated Execution Stacks (IES), each providing complete hardware-enforced isolation for applications and processes. This hardware-level compartmentalization minimizes the impact of vulnerabilities, preventing lateral movement of attacks and effectively containing breaches within individual IES instances.  This robust isolation is further enhanced by a sophisticated capability-based access control system, dynamically managed by the Dynamic Trust Management System (DTMS), which continuously assesses and adjusts trust levels based on real-time system behavior, user actions, and threat intelligence, thereby tailoring access permissions to each application. This unique combination of hardware isolation and dynamic trust management drastically reduces the attack surface and ensures that only authorized components and processes can access sensitive data and resources.
 
-SecureSphere's innovative security posture is further fortified by a multi-layered networking architecture.  Two distinct networks operate independently: a Decentralized Mesh Network on Chip (DMNoC) for high-bandwidth, low-latency, peer-to-peer communication within and between SecureSphere instances, and a Multi-Channel Network (MCN) for mediating interaction with external networks, ranging from highly trusted, dedicated government networks to the potentially untrusted public internet.  The DMNoC, with its mesh topology and hardware attestation using 3D microstructures, provides resilience against node failures and attacks targeting individual components. The MCN, meanwhile, uses physically segregated channels with dedicated firewalls and quantum-resistant cryptography (where appropriate) to ensure secure and authenticated external communications, integrating Isomorphic Architecture Monitoring and Adaptation (IAMA) to proactively mitigate threats from legacy systems.  This multi-network approach provides unparalleled flexibility and security, allowing SecureSphere to handle both local and external communications with tailored security strategies for different contexts.
+ASKA's innovative security posture is further fortified by a multi-layered networking architecture.  Two distinct networks operate independently: a Decentralized Mesh Network on Chip (DMNoC) for high-bandwidth, low-latency, peer-to-peer communication within and between ASKA instances, and a Multi-Channel Network (MCN) for mediating interaction with external networks, ranging from highly trusted, dedicated government networks to the potentially untrusted public internet.  The DMNoC, with its mesh topology and hardware attestation using 3D microstructures, provides resilience against node failures and attacks targeting individual components. The MCN, meanwhile, uses physically segregated channels with dedicated firewalls and quantum-resistant cryptography (where appropriate) to ensure secure and authenticated external communications, integrating Isomorphic Architecture Monitoring and Adaptation (IAMA) to proactively mitigate threats from legacy systems.  This multi-network approach provides unparalleled flexibility and security, allowing ASKA to handle both local and external communications with tailored security strategies for different contexts.
 
-The foundation of SecureSphere’s adaptive security model rests on the powerful synergy between its multi-agent AI system and its dynamic networking capabilities. The AI Agent(s), deployed within isolated execution environments, passively monitor user interactions via the Secure UI and actively analyze system-wide data (from the DTMS, Security Meshes, and the Decentralized Ledger). This out-of-band monitoring capability provides early threat detection and supports highly-granular, real-time adjustments to security policies and resource allocation. The AI Agent swarms, using their collective intelligence to detect anomalies and coordinate automated responses (such as isolation, containment, and self-healing),  significantly enhancing SecureSphere's ability to react to threats in real-time. Moreover, the AI Agent’s security insights inform the Automated Evolutionary Software Development System (AESDS), which continuously generates, tests, and deploys secure software updates, creating a self-evolving and adaptive security system that constantly strengthens itself against evolving threats.  The integration of the AI Agent’s functions, both for user assistance and dynamic security management, enhances user trust and reduces the system’s operational overhead.
+The foundation of ASKA’s adaptive security model rests on the powerful synergy between its multi-agent AI system and its dynamic networking capabilities. The AI Agent(s), deployed within isolated execution environments, passively monitor user interactions via the Secure UI and actively analyze system-wide data (from the DTMS, Security Meshes, and the Decentralized Ledger). This out-of-band monitoring capability provides early threat detection and supports highly-granular, real-time adjustments to security policies and resource allocation. The AI Agent swarms, using their collective intelligence to detect anomalies and coordinate automated responses (such as isolation, containment, and self-healing),  significantly enhancing ASKA's ability to react to threats in real-time. Moreover, the AI Agent’s security insights inform the Automated Evolutionary Software Development System (AESDS), which continuously generates, tests, and deploys secure software updates, creating a self-evolving and adaptive security system that constantly strengthens itself against evolving threats.  The integration of the AI Agent’s functions, both for user assistance and dynamic security management, enhances user trust and reduces the system’s operational overhead.
 
-A purpose-built, integrated application development process completes SecureSphere's ecosystem.  The AI Agent acts as a secure, out-of-band guide for developers, assisting with code generation, security analysis, and deployment within the SecureSphere environment. It provides interactive tutorials and best practices, reducing development time and improving code quality, thereby fostering a secure development environment with continuous improvement.   Developers create applications within isolated IES instances, leveraging SecureSphere’s APIs and capabilities for communication and data access.  The AI Agent’s security insights, combined with the AESDS’s continuous monitoring and updating process, ensure that applications are built securely and remain protected against evolving threats, leveraging the flexibility of the mesh and multi-channel network for application-specific configurations while maintaining a high degree of security and trust.  This fully integrated secure application development process eliminates many of the vulnerabilities typically found in traditional software development workflows. The Multi-Dimensional Audit Trail System (MDATS), integrating digital logs on the Decentralized Ledger with physical 3D microstructures, ensures complete transparency and accountability.
+A purpose-built, integrated application development process completes ASKA's ecosystem.  The AI Agent acts as a secure, out-of-band guide for developers, assisting with code generation, security analysis, and deployment within the ASKA environment. It provides interactive tutorials and best practices, reducing development time and improving code quality, thereby fostering a secure development environment with continuous improvement.   Developers create applications within isolated IES instances, leveraging ASKA’s APIs and capabilities for communication and data access.  The AI Agent’s security insights, combined with the AESDS’s continuous monitoring and updating process, ensure that applications are built securely and remain protected against evolving threats, leveraging the flexibility of the mesh and multi-channel network for application-specific configurations while maintaining a high degree of security and trust.  This fully integrated secure application development process eliminates many of the vulnerabilities typically found in traditional software development workflows. The Multi-Dimensional Audit Trail System (MDATS), integrating digital logs on the Decentralized Ledger with physical 3D microstructures, ensures complete transparency and accountability.
 
-SecureSphere represents a paradigm shift in secure computing, addressing numerous vulnerabilities present in traditional architectures.  Through hardware-enforced isolation, dynamic trust management, multi-agent AI, secure networking, and a fully integrated development process, SecureSphere provides a high-assurance platform, adapting to evolving threats and technological advancements for secure and efficient application development and deployment across diverse and potentially hostile environments for decades to come.  Its uniquely designed and integrated multi-layered security architecture provides unprecedented levels of assurance, robustness, and adaptability not seen in any other existing system, enhancing its value greatly and making it a highly secure and versatile platform for various uses across multiple markets.
+ASKA represents a paradigm shift in secure computing, addressing numerous vulnerabilities present in traditional architectures.  Through hardware-enforced isolation, dynamic trust management, multi-agent AI, secure networking, and a fully integrated development process, ASKA provides a high-assurance platform, adapting to evolving threats and technological advancements for secure and efficient application development and deployment across diverse and potentially hostile environments for decades to come.  Its uniquely designed and integrated multi-layered security architecture provides unprecedented levels of assurance, robustness, and adaptability not seen in any other existing system, enhancing its value greatly and making it a highly secure and versatile platform for various uses across multiple markets.
 
-![SecureSphere 20241103](/SecureSphere-20241103.png)
+![ASKA 20241103](/ASKA-20241103.png)
 
 # Nov 2, 2024 update:
 
-# SecureSphere Architecture: A Comprehensive Overview
+# ASKA Architecture: A Comprehensive Overview
 
-[![SecureSphere Diagram 20241102](/SecureSphere-Overview-20241102-sm.png)](/SecureSphere-Overview-20241102.png)
+[![ASKA Diagram 20241102](/ASKA-Overview-20241102-sm.png)](/ASKA-Overview-20241102.png)
 
-This diagram provides a comprehensive overview of the SecureSphere architecture, highlighting its key technologies and their interactions.  The system emphasizes modularity, robust security features, and dynamic adaptability.
+This diagram provides a comprehensive overview of the ASKA architecture, highlighting its key technologies and their interactions.  The system emphasizes modularity, robust security features, and dynamic adaptability.
 
-## SecureSphere System
+## ASKA System
 
-This top-level view encapsulates all components of a SecureSphere instance and its connections to external entities.
+This top-level view encapsulates all components of a ASKA instance and its connections to external entities.
 
-### SecureSphere Instance (Local)
+### ASKA Instance (Local)
 
-This section details the core components within a single SecureSphere instance.
+This section details the core components within a single ASKA instance.
 
 #### IES Cluster (P1)
 
-The foundation of SecureSphere's hardware-enforced isolation. Multiple IES (Isolated Execution Stack) instances run different applications concurrently, each with dedicated hardware resources (CPU, memory, I/O, network). Key features include:
+The foundation of ASKA's hardware-enforced isolation. Multiple IES (Isolated Execution Stack) instances run different applications concurrently, each with dedicated hardware resources (CPU, memory, I/O, network). Key features include:
 
 * **Dynamic Partitioning:** IES instances can be dynamically divided into smaller, isolated child-IES instances to optimize resource utilization and further enhance security.
 * **Hierarchical Zones:**  Hierarchical zones within each IES, governed by mini-TRCs (Trust Root Configurations) stored on tamper-evident media (P13/P15), provide granular trust and policy management.
 * **Secure Resource Borrowing (SRBM - P9):** Enables efficient resource utilization while maintaining isolation.
 * **Secure Communication:** Inter-IES communication utilizes secure channels (P2, P3) and capability-aware forwarding (P26).  Local Security Meshes (LSMs - P2) monitor each IES instance and report to the Master Security Mesh (MSM - P2).
 * **Data at Rest Encryption:**  The Hardware-Enforced Secure Encrypted Enclave for Data at Rest (HESE-DAR - P24) provides hardware-level encryption for data at rest.
-* **Connections:** The IES Cluster connects to the DMNoC (Decentralized Mesh NoC), the MCN (Multi-Channel Network), the SecureSphere Hub, and the AI Agent.
+* **Connections:** The IES Cluster connects to the DMNoC (Decentralized Mesh NoC), the MCN (Multi-Channel Network), the ASKA Hub, and the AI Agent.
 
 #### DMNoC (Decentralized Mesh NoC)
 
-A secure, high-bandwidth mesh network for inter-IES communication and connections to trusted external SecureSphere instances. Key features include:
+A secure, high-bandwidth mesh network for inter-IES communication and connections to trusted external ASKA instances. Key features include:
 
 * **Decentralized Mesh Topology:** Provides redundancy and fault tolerance.
 * **Hardware Attestation (3D Microstructures - P14):** Ensures the integrity of DMNoC components.
@@ -87,20 +87,20 @@ Provides secure communication channels for connecting to external networks (Inte
 * **IAMA (P16):** Analyzes connected legacy systems to proactively identify and mitigate vulnerabilities.
 * **Integration:** The MCN integrates with the IES Cluster, DTMS, Policy Engine, AI Agent, and IAMA.
 
-#### SecureSphere Hub
+#### ASKA Hub
 
 The central management and control component for the local instance.  It orchestrates and manages all other components, enforcing policies, and managing resources.  It encompasses:
 
 * **Dynamic Trust Management System (DTMS - P4):**  Manages trust relationships and access control based on dynamic metrics.
 * **Policy Engine (P4):** Enforces security policies.
 * **AI Agent (P36):** Monitors, analyzes, and adapts security measures.
-* **Automated Evolutionary Software Development System (AESDS - P16):** Continuously updates and improves SecureSphere software.
+* **Automated Evolutionary Software Development System (AESDS - P16):** Continuously updates and improves ASKA software.
 * **Secure UI Kernel (P11):** Provides a secure user interface.
 * **Key Management:**  Manages cryptographic keys for secure communication.
 
 #### Dynamic Trust and Policy
 
-This subgraph represents the core of SecureSphere's dynamic security, encompassing:
+This subgraph represents the core of ASKA's dynamic security, encompassing:
 
 * **Bidirectional Communication:** DTMS, Policy Engine, and Capability Manager (P25) communicate bidirectionally, dynamically adjusting trust levels and capabilities.
 * **Policy Influence:** Dotted lines show how trust levels and policies influence the IES Cluster, DMNoC, and MCN.
@@ -120,9 +120,9 @@ A crucial component responsible for:
 
 The AI-driven system responsible for:
 
-* **Continuous Software Updates:** Continuously monitors, updates, and improves SecureSphere’s software.
+* **Continuous Software Updates:** Continuously monitors, updates, and improves ASKA’s software.
 * **Proactive Security Patching:** Proactively generates and deploys security patches and updates.
-* **Integration:**  Manages updates across all SecureSphere components.
+* **Integration:**  Manages updates across all ASKA components.
 
 
 #### Secure UI Kernel (P11)
@@ -135,7 +135,7 @@ Provides a secure and isolated user interface environment with:
 
 #### Hardware Root of Trust (HRoT)
 
-The foundation of SecureSphere's trust, providing:
+The foundation of ASKA's trust, providing:
 
 * **Attestation:** Verifies the integrity of system components.
 * **Key Generation:** Generates cryptographic keys.
@@ -146,16 +146,16 @@ The foundation of SecureSphere's trust, providing:
 
 #### External Mesh Network (Trusted)
 
-SecureSphere instances connect and exchange information securely, leveraging the DMNoC’s high-bandwidth capabilities.
+ASKA instances connect and exchange information securely, leveraging the DMNoC’s high-bandwidth capabilities.
 
 #### External Networks
 
-SecureSphere connects to various external networks (Internet, trusted networks) via the MCN, with IAMA (P16) monitoring and managing this interface.
+ASKA connects to various external networks (Internet, trusted networks) via the MCN, with IAMA (P16) monitoring and managing this interface.
 
 
 ## Key Features and Technologies
 
-This section summarizes the core technologies underpinning SecureSphere's security and functionality:
+This section summarizes the core technologies underpinning ASKA's security and functionality:
 
 * **Hardware-Rooted Trust (P1, P13, P33):**  Secure Boot, attestation, and 3D microstructures for tamper evidence.
 * **Isolated Execution Stacks (P1):** Hardware-enforced isolation with dynamic partitioning and hierarchical zones for granular security.
@@ -167,13 +167,13 @@ This section summarizes the core technologies underpinning SecureSphere's securi
 * **Auditing and Accountability (P13, P15, P17):** Decentralized ledger, MDATS, and 3D microstructures for comprehensive auditing.
 
 
-SecureSphere represents a paradigm shift in secure computing, offering a robust, adaptable, and trustworthy platform for high-assurance operations in diverse environments.  The modularity, dynamic adaptability, and multi-layered defense mechanisms address the limitations of traditional systems, creating a highly resilient and future-proof solution, especially in the context of evolving threats and the increasing importance of secure, decentralized computing.
+ASKA represents a paradigm shift in secure computing, offering a robust, adaptable, and trustworthy platform for high-assurance operations in diverse environments.  The modularity, dynamic adaptability, and multi-layered defense mechanisms address the limitations of traditional systems, creating a highly resilient and future-proof solution, especially in the context of evolving threats and the increasing importance of secure, decentralized computing.
 
-![SecureSphere AI Integration 20241102](/SecureSphere-AI_Integration-20241102.png)
+![ASKA AI Integration 20241102](/ASKA-AI_Integration-20241102.png)
 
 **Diagram Description:**
 
-The SecureSphere AI Agent (P36) is a central component, playing a dual role: providing secure, out-of-band assistance to users and enhancing SecureSphere's overall security posture.  The diagram illustrates these interwoven functions:
+The ASKA AI Agent (P36) is a central component, playing a dual role: providing secure, out-of-band assistance to users and enhancing ASKA's overall security posture.  The diagram illustrates these interwoven functions:
 
 **1. User Assistance and UI Monitoring:**
 
@@ -184,32 +184,32 @@ This section of the diagram details how the AI Agent assists users via the Secur
 * The LLM Engine processes this data and provides assistance to the user via User Interaction.
 * The User Interaction feeds back into the Secure UI, creating a closed loop for user assistance.
 
-A. **Unidirectional UI Monitoring:** User interactions with the Secure UI Kernel (P11) are passively observed by a UI Monitoring Module. This module employs a data diode (P2) to ensure unidirectional data flow from the UI to the AI Agent, preventing the AI Agent from directly manipulating the UI or introducing vulnerabilities via the user interface. This unidirectional data flow is crucial for protecting the integrity and security of the SecureSphere system from the UI.
+A. **Unidirectional UI Monitoring:** User interactions with the Secure UI Kernel (P11) are passively observed by a UI Monitoring Module. This module employs a data diode (P2) to ensure unidirectional data flow from the UI to the AI Agent, preventing the AI Agent from directly manipulating the UI or introducing vulnerabilities via the user interface. This unidirectional data flow is crucial for protecting the integrity and security of the ASKA system from the UI.
 
 B. **Data Sanitization and Filtering:** Before being processed by the AI Agent, the UI interaction data collected by the UI Monitoring Module is passed through a data sanitization and filtering module. This module removes potentially malicious or sensitive information, protecting both user privacy and system security from potentially compromised or malicious user input or actions.  This sanitization process removes potentially hazardous elements, ensuring that the AI Agent receives only safe and relevant data.  This process likely uses AI techniques to identify potentially malicious or problematic code or other elements and securely remove it from the UI data before delivering it to the AI Agent.
 
-C. **LLM Engine Processing:**  The sanitized UI interaction data is then processed by the AI Agent's local Large Language Model (LLM) Engine (residing within a secure, isolated IES - P1). The LLM Engine leverages its knowledge base (including SecureSphere-specific information, API documentation, security best practices, and contextual understanding from previous interactions) to analyze the data, identify relevant patterns, and generate insights, recommendations, or actions.  This ensures the AI Agent’s actions and responses are relevant, consistent, secure, and aligned with user intent.
+C. **LLM Engine Processing:**  The sanitized UI interaction data is then processed by the AI Agent's local Large Language Model (LLM) Engine (residing within a secure, isolated IES - P1). The LLM Engine leverages its knowledge base (including ASKA-specific information, API documentation, security best practices, and contextual understanding from previous interactions) to analyze the data, identify relevant patterns, and generate insights, recommendations, or actions.  This ensures the AI Agent’s actions and responses are relevant, consistent, secure, and aligned with user intent.
 
 D. **User Interaction:** The AI Agent's responses or recommendations are communicated back to the user via the Secure UI, enabling an interactive and collaborative experience. This feedback loop provides ongoing refinement and contextual awareness for the AI Agent. The design ensures that the user interaction remains secure and cannot be used as a point of compromise for the system.
 
-E. **Security Monitoring:** The UI Monitoring Module also feeds security-relevant information (such as keystrokes, mouse movements, and time spent on certain UI elements) to the AI Agent’s security subsystem which integrates into SecureSphere’s security mechanisms, creating a continuous monitoring and threat assessment pathway that leverages user context.
+E. **Security Monitoring:** The UI Monitoring Module also feeds security-relevant information (such as keystrokes, mouse movements, and time spent on certain UI elements) to the AI Agent’s security subsystem which integrates into ASKA’s security mechanisms, creating a continuous monitoring and threat assessment pathway that leverages user context.
 
-**2. SecureSphere Application Integration and Security:**
+**2. ASKA Application Integration and Security:**
 
-This section shows how the AI Agent enhances SecureSphere's security posture by providing support for SecureSphere applications:
+This section shows how the AI Agent enhances ASKA's security posture by providing support for ASKA applications:
 
-* The Agent API provides a programmatic interface for SecureSphere applications (App1, AppN) to interact with the AI Agent.
-* The AI Agent leverages its SecureSphere integrations (accessing data from DTMS, Policy Engine, AESDS, and the Decentralized Ledger) for contextualized security analysis.
+* The Agent API provides a programmatic interface for ASKA applications (App1, AppN) to interact with the AI Agent.
+* The AI Agent leverages its ASKA integrations (accessing data from DTMS, Policy Engine, AESDS, and the Decentralized Ledger) for contextualized security analysis.
 * The AI Agent provides recommendations or takes direct action through interactions with the local and Master Security Meshes (LSM, MSM - P2).
 
-A. **Agent API:** A secure Application Programming Interface (API) allows SecureSphere applications (App1, AppN) to request assistance or specialized functionalities from the AI Agent. This provides developers with a powerful tool to enhance their applications with AI-driven capabilities.  This secure API is implemented within the isolated IES of the AI Agent, enhancing its security and preventing unauthorized access to the AI Agent’s capabilities.
+A. **Agent API:** A secure Application Programming Interface (API) allows ASKA applications (App1, AppN) to request assistance or specialized functionalities from the AI Agent. This provides developers with a powerful tool to enhance their applications with AI-driven capabilities.  This secure API is implemented within the isolated IES of the AI Agent, enhancing its security and preventing unauthorized access to the AI Agent’s capabilities.
 
-B. **SecureSphere Integration Modules:** The AI Agent integrates with other SecureSphere components through several specialized modules:
+B. **ASKA Integration Modules:** The AI Agent integrates with other ASKA components through several specialized modules:
 
 * **DTMS Integration Module:** Receives trust information (P4) and policy updates from the DTMS.
 The agent adapts its behavior based on trust levels, dynamically adjusting its recommendations
 and actions based on the security context.  This continuous integration with DTMS ensures
-that the AI Agent's operations remain aligned with SecureSphere's overall security policies.
+that the AI Agent's operations remain aligned with ASKA's overall security policies.
 
 * **MSM Integration Module:** Receives security alerts (P2) and anomaly reports from the MSM
 (Master Security Mesh). The agent leverages this telemetry to improve its threat assessment.
@@ -224,7 +224,7 @@ Decentralized Ledger (P13, P15) for auditing and transparency. This creates a co
 tamper-evident audit trail of the AI Agent's actions, contributing to system accountability.
 
 C. **Security Recommendations and Actions:** Based on its analysis of UI events, application requests,
-and SecureSphere telemetry, the AI Agent provides security recommendations or takes direct actions:
+and ASKA telemetry, the AI Agent provides security recommendations or takes direct actions:
 
 * **Recommendations:**  The AI Agent may suggest security policy adjustments (to the Policy
 Engine), resource reallocations (to the Resource Manager), or software updates (to the AESDS).
@@ -232,21 +232,21 @@ Engine), resource reallocations (to the Resource Manager), or software updates (
 * **Direct Actions:** In some cases (based on defined parameters and thresholds), the AI Agent
 might directly trigger security actions, such as isolating a compromised component (via the
 Isolator - P7), initiating self-healing procedures (via the Self-Healer - P7), or triggering
-alerts (via the Alert System - P7). This dynamic capability enhances SecureSphere's ability to respond effectively to real-time threats.
+alerts (via the Alert System - P7). This dynamic capability enhances ASKA's ability to respond effectively to real-time threats.
 
 **3. Security Monitoring and Response:**
 
 * The MSM aggregates security events and alerts, which may trigger actions from the AI Agent.  This is shown implicitly.
 * The AI Agent's security recommendations influence DTMS (P4) trust levels, policy updates (P4), and resource allocation (P9, P10).
 
-The AI Agent significantly enhances SecureSphere's security posture in the following ways:
+The AI Agent significantly enhances ASKA's security posture in the following ways:
 
 A. **Proactive Threat Detection:**  The AI Agent's continuous monitoring of both user interactions and
 system events allows for the proactive identification of potential threats or anomalies. The agent
-leverages its LLM engine and its SecureSphere integrations to improve threat detection,
+leverages its LLM engine and its ASKA integrations to improve threat detection,
 providing early warnings of attacks or vulnerabilities, and enabling timely interventions.
 
-B. **Adaptive Security:** The AI Agent’s ability to dynamically adjust its recommendations and actions based on real-time context (from DTMS and MSM) enables adaptive security. This dynamic adaptability ensures SecureSphere’s protection against evolving threats and vulnerabilities.
+B. **Adaptive Security:** The AI Agent’s ability to dynamically adjust its recommendations and actions based on real-time context (from DTMS and MSM) enables adaptive security. This dynamic adaptability ensures ASKA’s protection against evolving threats and vulnerabilities.
 
 C. **Reduced Human Intervention:**  The AI Agent's automated threat detection and response
 mechanisms reduce the need for constant human intervention, allowing security teams to focus on
@@ -266,41 +266,41 @@ can enhance the tamper-evidence of critical AI Agent actions.
 
 # October 31, 2024 update:
 
-## SecureSphere Conceptual Documents and Patent Brainstorming
+## ASKA Conceptual Documents and Patent Brainstorming
 
-SecureSphere conceptual documents and patent brainstorming released:<br />
+ASKA conceptual documents and patent brainstorming released:<br />
 
-Following discussions with SecureSphere's Engineering Assistant LLM about the public release of this early draft, I have decided to share the technical concept of SecureSphere. This initiative seeks to improve transparency in the security architecture and invite broader participation in strengthening its defenses. The decision also underscores the need to balance civil liberties with governance considerations.
+Following discussions with ASKA's Engineering Assistant LLM about the public release of this early draft, I have decided to share the technical concept of ASKA. This initiative seeks to improve transparency in the security architecture and invite broader participation in strengthening its defenses. The decision also underscores the need to balance civil liberties with governance considerations.
 
-[1-SecureSphere Overview-1 20241031](</1-SecureSphere Overview-1 20241031/1SecureSphereOverview120241031.html>)
+[1-ASKA Overview-1 20241031](</ASKA-1-Overview-20241031/1ASKAOverview120241031.html>)
 
-[2-SecureSphere Overview-2 20241031](</2-SecureSphere Overview-2 20241031/2SecureSphereOverview220241031.html>)
+[2-ASKA Overview-2 20241031](</ASKA-2-Overview-20241031/2ASKAOverview220241031.html>)
 
-[3-SecureSphere Patents 1of3 20241031](</3-SecureSphere Patents 1of3 20241031/3SecureSpherePatents1of320241031.html>)
+[3-ASKA Patents 1of3 20241031](</ASKA-3-Patents-1of3-20241031/3ASKAPatents1of320241031.html>)
 
-[4-SecureSphere Patents 2of3 20241031](</4-SecureSphere Patents 2of3 20241031/4SecureSpherePatents2of320241031.html>)
+[4-ASKA Patents 2of3 20241031](</ASKA-4-Patents-2of3-20241031/4ASKAPatents2of320241031.html>)
 
-[5-SecureSphere Patents 3of3 20241031](</5-SecureSphere Patents 3of3 20241031/5SecureSpherePatents3of320241031.html>)
+[5-ASKA Patents 3of3 20241031](</ASKA-5-Patents-3of3-20241031/5ASKAPatents3of320241031.html>)
 
-[6-SecureSphere Patents Brainstorm 20241031](</6-SecureSphere Patents Brainstorm 20241031/6SecureSpherePatentsBrainstorm20241031.html>)
+[6-ASKA Patents Brainstorm 20241031](</ASKA-6-Patents-Brainstorm-20241031/6ASKAPatentsBrainstorm20241031.html>)
 
-[7-SecureSphere ProsCons_VC_Letter_SCiON_Nebula 20241031](</7-SecureSphere ProsCons_VC_Letter_SCiON_Nebula 20241031/7SecureSphereProsConsVC_LetterSCiONNebula2024.html>)
+[7-ASKA ProsCons_VC_Letter_SCiON_Nebula 20241031](</ASKA-7-ProsCons_VC_Letter_SCiON_Nebula-20241031/7ASKAProsConsVC_LetterSCiONNebula2024.html>)
 
-[8-SecureSphere Scratchpad 20241031](</8-SecureSphere Scratchpad 20241031/8SecureSphereScratchpad20241031.html>)
+[8-ASKA Scratchpad 20241031](</ASKA-8-Scratchpad-20241031/8ASKAScratchpad20241031.html>)
 
 ## Subsequent Documents
 
-[9-SecureSphere 20241101](</9-SecureSphere 20241101/9SecureSphere20241101.html>)
+[9-ASKA 20241101](</ASKA-9-20241101/9ASKA20241101.html>)
 
-[10-SecureSphere 20241102](</10-SecureSphere 20241102/10SecureSphere20241102.html>)
+[10-ASKA 20241102](</ASKA-10-20241102/10ASKA20241102.html>)
 
 
 
-[13-SecureSphere 20241106](</13-SecureSphere 20241106/13SecureSphere20241106.html>)
+[13-ASKA 20241106](</ASKA-13-20241106/13ASKA20241106.html>)
 
 # October 22, 2024 update:
 
-NSHkr.com is pleased to announce SecureSphere. (synack: future/bro) <br />
+NSHkr.com is pleased to announce ASKA. (synack: future/bro) <br />
 <br />
 
 # October 22, 2023 update:
