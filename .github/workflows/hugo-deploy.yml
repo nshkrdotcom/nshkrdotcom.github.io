@@ -49,10 +49,22 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
 
+      # Instead of using upload-pages-artifact action, we'll do this directly
+      - name: Create artifact directory
+        run: |
+          tar \
+            --dereference --hard-dereference \
+            --directory "${{ github.workspace }}/public" \
+            -cvf "${{ runner.temp }}/artifact.tar" \
+            --exclude=.git \
+            --exclude=.github \
+            .
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ./public
+        run: |
+          gh release upload artifact-${{ github.sha }} "${{ runner.temp }}/artifact.tar" --clobber
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     environment:
