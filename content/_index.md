@@ -1,3 +1,9 @@
+---
+title: "Welcome"
+date: 2023-01-01
+draft: false
+---
+
 Welcome to NSHkr.com, a hackerspace in the North Shore of Oahu that is dedicated to inclusivity, promoting Aloha and local values, and respecting the space and culture of others. We believe in creating a safe and supportive environment that welcomes people of all cultures, genders, and backgrounds.
 
 At NSHkr.com, we foster an independent entrepreneurial spirit and encourage everyone to bring their creative ideas and projects to our space. We believe in non-judgment and respect for others, and we strive to create a space where people feel comfortable and supported in their hacking endeavors.
@@ -24,6 +30,13 @@ Meeting location (meme): <br />
 
 To join, please email us: <br />  
 **hello {at} nshkr.com**
+
+# Feb 1, 2025 update:
+
+
+
+{{< include-section "sections/mermaid-demo.md" >}}
+
 
 # Jan 6, 2025 update:
 
