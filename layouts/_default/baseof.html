@@ -487,54 +487,79 @@
 
 
 
+    // SIDEBAR ANIMATION
+    // First, let's ensure our styling integrates properly with the existing UI
+    const style = document.createElement('style');
+    style.textContent = `
+        .message.system {
+            position: relative;
+            width: 85%;
+        }
+        
+        .ocean-wave-container {
+            position: absolute;
+            top: 0;
+            right: -17.65%;
+            width: 15%;
+            height: 100%;
+            min-height: 200px;
+            overflow: hidden;
+            border-radius: 12px;
+            opacity: 0.9;
+        }
+    `;
+    document.head.appendChild(style);
 
-        // First, let's ensure our styling integrates properly with the existing UI
-const style = document.createElement('style');
-style.textContent = `
-    .message.system {
-        position: relative;
-        width: 85%;
-    }
-    
-    .ocean-wave-container {
-        position: absolute;
-        top: 0;
-        right: -17.65%;
-        width: 15%;
-        height: 100%;
-        min-height: 200px;
-        overflow: hidden;
-        border-radius: 12px;
-        opacity: 0.9;
-    }
-`;
-document.head.appendChild(style);
 
-class OceanWave {
+
+
+
+
+
+
+
+
+
+    class OceanWave {
     constructor(container) {
-        // Initialize core Three.js components
         this.container = container;
+        this.initializeScene();
+        this.initializeMaterials();
+        this.createOceanMesh();
+        this.setupEventListeners();
+        
+        // Initialize ripple system with improved parameters
+        this.ripples = [];
+        this.isDragging = false;
+        this.lastMousePos = null;
+        this.lastRippleTime = 0;  // For controlling ripple frequency
+        this.rippleSpacing = 100; // Milliseconds between ripples
+
+        this.animate();
+    }
+
+    initializeScene() {
+        // Scene initialization remains the same
         this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+        this.camera = new THREE.PerspectiveCamera(75, this.container.clientWidth / this.container.clientHeight, 0.1, 1000);
         this.renderer = new THREE.WebGLRenderer({ 
             alpha: true,
             antialias: true,
             powerPreference: "high-performance"
         });
 
-        // Setup renderer
-        this.renderer.setSize(container.clientWidth, container.clientHeight);
+        this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
         this.renderer.setClearColor(0x000000, 0);
-        container.appendChild(this.renderer.domElement);
+        this.container.appendChild(this.renderer.domElement);
 
-        // Position camera
         this.camera.position.set(0, 2, 4);
         this.camera.lookAt(0, 0, 0);
+    }
 
-        // Create wave geometry with higher resolution for better fluid detail
+    initializeMaterials() {
         this.geometry = new THREE.PlaneGeometry(10, 10, 128, 128);
 
-        // Create shader material with corrected uniforms and shaders
+        // Enhanced shader material with improved ripple parameters
         this.material = new THREE.ShaderMaterial({
             uniforms: {
                 time: { value: 0 },
@@ -542,25 +567,37 @@ class OceanWave {
                 color2: { value: new THREE.Color(0x0F1520) },
                 color3: { value: new THREE.Color(0x1a2942) },
                 turbulenceValue: { value: 0.8 },
-                frequencyValue: { value: 0.6 }
+                frequencyValue: { value: 0.6 },
+                ripplePositions: { value: new Float32Array(60) },
+                rippleCount: { value: 0 }
             },
             vertexShader: `
                 uniform float time;
                 uniform float turbulenceValue;
                 uniform float frequencyValue;
+                uniform float ripplePositions[60];
+                uniform int rippleCount;
+                
                 varying vec2 vUv;
                 varying float vElevation;
                 varying float vWaveHeight;
+                varying vec3 vRippleColor;
+                varying float vRippleIntensity;
 
-                // Simplex noise helper functions
-                vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-                vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-                vec4 permute(vec4 x) { return mod289(((x * 34.0) + 1.0) * x); }
-                vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
 
-                float snoise(vec3 v) {
-                    const vec2 C = vec2(1.0/6.0, 1.0/3.0);
-                    const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
+
+
+
+
+                    // Simplex noise helper functions
+                    vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+                    vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+                    vec4 permute(vec4 x) { return mod289(((x * 34.0) + 1.0) * x); }
+                    vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
+
+                    float snoise(vec3 v) {
+                        const vec2 C = vec2(1.0/6.0, 1.0/3.0);
+                        const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
 
                     vec3 i  = floor(v + dot(v, C.yyy));
                     vec3 x0 = v - i + dot(i, C.xxx);
@@ -633,15 +670,62 @@ class OceanWave {
                     return noise * turbulenceValue;
                 }
 
+                float calculateRipples(vec2 pos, out vec3 rippleColor, out float rippleIntensity) {
+                    float rippleEffect = 0.0;
+                    vec3 totalColor = vec3(0.0);
+                    float totalWeight = 0.0;
+                    rippleIntensity = 0.0;
+                    
+                    for(int i = 0; i < 10; i++) {
+                        if(i >= rippleCount) break;
+                        
+                        vec2 ripplePos = vec2(ripplePositions[i * 6], ripplePositions[i * 6 + 1]);
+                        float age = ripplePositions[i * 6 + 2];
+                        vec3 color = vec3(
+                            ripplePositions[i * 6 + 3],
+                            ripplePositions[i * 6 + 4],
+                            ripplePositions[i * 6 + 5]
+                        );
+                        
+                        float dist = length(pos - ripplePos);
+                        
+                        // Enhanced ripple wave pattern
+                        float frequency = 4.0;
+                        float speed = 4.0;
+                        float decay = 1.5;
+                        float wave = sin(dist * frequency - age * speed) * exp(-dist * decay - age * 0.75);
+                        
+                        // Improved ripple effect calculation
+                        float rippleWeight = abs(wave) * smoothstep(2.0, 0.0, age);
+                        rippleEffect += wave * 0.3;
+                        
+                        // Accumulate color with improved weighting
+                        totalColor += color * rippleWeight;
+                        totalWeight += rippleWeight;
+                        rippleIntensity = max(rippleIntensity, rippleWeight);
+                    }
+                    
+                    // Normalize the ripple color with improved blending
+                    rippleColor = totalWeight > 0.0 ? totalColor / totalWeight : vec3(0.0);
+                    rippleIntensity *= 0.6; // Adjust overall intensity
+                    return rippleEffect;
+                }
+
                 void main() {
                     vUv = uv;
                     
                     vec3 pos3 = vec3(position.x * 2.0, position.y * 2.0, time * 0.2);
                     float noise = fluidNoise(pos3);
                     
-                    float elevation = noise * 1.5;
+                    float rippleIntensity;
+                    vec3 rippleColor;
+                    float rippleElevation = calculateRipples(position.xy, rippleColor, rippleIntensity);
+                    float elevation = noise * 1.5 + rippleElevation;
+                    
                     vElevation = elevation;
                     vWaveHeight = (elevation + 1.0) * 0.5;
+                    vRippleColor = rippleColor;
+                    vRippleIntensity = rippleIntensity;
                     
                     vec3 pos = position;
                     pos.z += elevation * 0.8;
@@ -656,14 +740,18 @@ class OceanWave {
                 varying vec2 vUv;
                 varying float vElevation;
                 varying float vWaveHeight;
+                varying vec3 vRippleColor;
+                varying float vRippleIntensity;
                 
                 void main() {
                     float depthFactor = smoothstep(-1.0, 1.0, vElevation);
                     vec3 deepColor = mix(color1, color2, depthFactor * 0.7);
                     
                     float highlightIntensity = smoothstep(0.4, 1.0, vWaveHeight) * 0.4;
-                    vec3 finalColor = mix(deepColor, color3, highlightIntensity);
+                    vec3 baseColor = mix(deepColor, color3, highlightIntensity);
                     
+                    // Improved color blending for ripples
+                    vec3 finalColor = mix(baseColor, vRippleColor, vRippleIntensity);
                     float alpha = mix(0.95, 0.98, vWaveHeight * 0.8);
                     
                     gl_FragColor = vec4(finalColor, alpha);
@@ -671,17 +759,106 @@ class OceanWave {
             `,
             transparent: true
         });
+    }
+ 
 
+    createOceanMesh() {
         // Create and add the ocean mesh
         this.ocean = new THREE.Mesh(this.geometry, this.material);
         this.ocean.rotation.x = -Math.PI / 2.5;
         this.scene.add(this.ocean);
+    }
 
-        // Start the animation
-        this.animate();
-        
+    setupEventListeners() {
+        // Add mouse interaction handlers
+        this.renderer.domElement.addEventListener('mousedown', this.handleMouseDown.bind(this));
+        this.renderer.domElement.addEventListener('mousemove', this.handleMouseMove.bind(this));
+        this.renderer.domElement.addEventListener('mouseup', this.handleMouseUp.bind(this));
+        this.renderer.domElement.addEventListener('mouseleave', this.handleMouseUp.bind(this));
+
         // Handle window resizing
         window.addEventListener('resize', () => this.onResize());
+    }
+
+    handleMouseDown(event) {
+        this.isDragging = true;
+        const pos = this.getMousePosition(event);
+        this.lastMousePos = pos;
+        this.addRipple(pos.x, pos.y, false); // Click effect (green)
+    }
+
+    handleMouseMove(event) {
+        if (!this.isDragging) return;
+        
+        const pos = this.getMousePosition(event);
+        if (this.lastMousePos) {
+            const steps = 5;
+            for (let i = 0; i <= steps; i++) {
+                const t = i / steps;
+                const x = this.lastMousePos.x + (pos.x - this.lastMousePos.x) * t;
+                const y = this.lastMousePos.y + (pos.y - this.lastMousePos.y) * t;
+                this.addRipple(x, y, true); // Drag effect (red)
+            }
+        }
+        this.lastMousePos = pos;
+    }
+
+    handleMouseUp() {
+        this.isDragging = false;
+        this.lastMousePos = null;
+    }
+
+    getMousePosition(event) {
+        const rect = this.renderer.domElement.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+        return { x, y };
+    }
+
+    addRipple(x, y, isDragging) {
+        const currentTime = performance.now();
+        if (currentTime - this.lastRippleTime < this.rippleSpacing) {
+            return; // Skip if ripples are too close together
+        }
+        this.lastRippleTime = currentTime;
+
+        // Muted, more aesthetically pleasing colors
+        const color = isDragging 
+            ? { r: 0.7, g: 0.2, b: 0.3 }  // Muted wine red for dragging
+            : { r: 0.3, g: 0.8, b: 0.4 };  // Softer green for clicking
+
+        this.ripples.push({
+            x: x,
+            y: y,
+            age: 0,
+            color: color,
+            intensity: 1.0
+        });
+        
+        if (this.ripples.length > 10) {
+            this.ripples.shift();
+        }
+    }
+
+    updateRipples() {
+        this.ripples = this.ripples.filter(ripple => {
+            ripple.age += 0.016;
+            return ripple.age < 2.0;
+        });
+
+        const rippleData = new Float32Array(60);
+        this.ripples.forEach((ripple, index) => {
+            const baseIndex = index * 6;
+            rippleData[baseIndex] = ripple.x;
+            rippleData[baseIndex + 1] = ripple.y;
+            rippleData[baseIndex + 2] = ripple.age;
+            rippleData[baseIndex + 3] = ripple.color.r;
+            rippleData[baseIndex + 4] = ripple.color.g;
+            rippleData[baseIndex + 5] = ripple.color.b;
+        });
+        
+        this.material.uniforms.ripplePositions.value = rippleData;
+        this.material.uniforms.rippleCount.value = this.ripples.length;
     }
 
     animate() {
@@ -689,6 +866,9 @@ class OceanWave {
         
         // Update wave animation
         this.material.uniforms.time.value += 0.01;
+        
+        // Update ripples
+        this.updateRipples();
         
         this.renderer.render(this.scene, this.camera);
     }
@@ -703,23 +883,18 @@ class OceanWave {
     }
 }
 
-// Function to add ocean waves to system messages
-function addOceanWavesToMessages() {
+// Initialize the ocean waves for system messages
+document.addEventListener('DOMContentLoaded', () => {
     const systemMessages = document.querySelectorAll('.message.system');
-    
     systemMessages.forEach(message => {
         const container = document.createElement('div');
         container.className = 'ocean-wave-container';
         message.appendChild(container);
-        
         new OceanWave(container);
     });
-}
+});
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', addOceanWavesToMessages);
-
-// Handle dynamically added messages
+// Observer for dynamically added system messages
 const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
         mutation.addedNodes.forEach((node) => {
@@ -734,6 +909,12 @@ const observer = new MutationObserver((mutations) => {
 });
 
 observer.observe(document.querySelector('.chat-messages'), { childList: true });
-    </script>
+
+
+
+
+
+
+    </script>   
 </body>
 </html>
