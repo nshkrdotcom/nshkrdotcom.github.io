@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <style>
         :root {
-            /* Enhanced blue theme */
+            /* Color theme */
             --bg-primary: #080B12;
             --bg-secondary: #0F1520;
             --chat-bg: #0A0E17;
@@ -24,6 +24,24 @@
             --border-color: rgba(255, 255, 255, 0.125);
             --message-bg: rgba(59, 130, 246, 0.05);
             --gradient-glow: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.1));
+            
+            /* Typography scale */
+            --font-size-xs: 0.75rem;    /* 12px */
+            --font-size-sm: 0.875rem;   /* 14px */
+            --font-size-base: 1rem;     /* 16px */
+            --font-size-lg: 1.125rem;   /* 18px */
+            --font-size-xl: 1.25rem;    /* 20px */
+            --font-size-2xl: 1.5rem;    /* 24px */
+            --font-size-3xl: 1.875rem;  /* 30px */
+            
+            /* Spacing scale */
+            --space-1: 0.25rem;   /* 4px */
+            --space-2: 0.5rem;    /* 8px */
+            --space-3: 0.75rem;   /* 12px */
+            --space-4: 1rem;      /* 16px */
+            --space-6: 1.5rem;    /* 24px */
+            --space-8: 2rem;      /* 32px */
+            --space-12: 3rem;     /* 48px */
         }
 
         * {
@@ -34,28 +52,29 @@
 
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            line-height: 1.7;
+            line-height: 1.6;
             color: var(--text-primary);
             background: var(--bg-primary);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            font-size: var(--font-size-base);
         }
 
         .app-container {
             display: flex;
             flex-direction: column;
             height: 100vh;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem;
+            padding: var(--space-4);
             width: 100%;
         }
 
         .chat-container {
             flex: 1;
             background: var(--chat-bg);
-            border-radius: 24px;
+            border-radius: 16px;
             border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
@@ -65,20 +84,22 @@
         }
 
         .chat-header {
-            padding: 1.5rem 2rem;
+            padding: var(--space-4) var(--space-6);
             background: var(--bg-secondary);
             border-bottom: 1px solid var(--border-color);
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: var(--space-3);
+            height: 60px;
         }
 
         .ai-status {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
+            gap: var(--space-2);
+            font-size: var(--font-size-sm);
             color: var(--accent-secondary);
+            font-weight: 500;
         }
 
         .status-dot {
@@ -92,10 +113,10 @@
         .chat-messages {
             flex: 1;
             overflow-y: auto;
-            padding: 2rem;
+            padding: var(--space-6);
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: var(--space-6);
         }
 
         .chat-messages img {
@@ -107,12 +128,12 @@
 
         .message {
             max-width: 85%;
-            padding: 1.5rem;
-            border-radius: 16px;
+            padding: var(--space-6);
+            border-radius: 12px;
             background: var(--message-bg);
             border: 1px solid var(--border-color);
-            animation: messageAppear 0.3s ease-out;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-size: var(--font-size-base);
+            line-height: 1.7;
         }
 
         .message.system {
@@ -121,31 +142,30 @@
         }
 
         .message h1 {
-            font-size: 2rem;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1.5rem;
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
             letter-spacing: -0.02em;
+            color: var(--text-primary);
         }
 
         .message h2 {
-            font-size: 1.5rem;
-            color: var(--accent-secondary);
-            margin: 2rem 0 1rem;
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: var(--space-8) 0 var(--space-4);
             letter-spacing: -0.01em;
         }
 
         .message p {
             color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-size: 1.125rem;
-            line-height: 1.8;
+            margin-bottom: var(--space-4);
+            font-size: var(--font-size-base);
+            line-height: 1.7;
         }
 
         .input-area {
-            padding: 2rem;
+            padding: var(--space-4) var(--space-6);
             background: var(--bg-secondary);
             border-top: 1px solid var(--border-color);
         }
@@ -153,12 +173,15 @@
         .fake-input {
             background: var(--chat-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1rem;
+            border-radius: 8px;
+            padding: var(--space-4);
             color: var(--text-secondary);
-            font-size: 0.875rem;
-            cursor: default;
+            font-size: var(--font-size-sm);
+            cursor: text;
             transition: border-color 0.2s ease;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
         }
 
         .fake-input:hover {
@@ -167,26 +190,46 @@
 
         .mermaid {
             background: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem 0;
+            padding: var(--space-6);
+            border-radius: 8px;
+            margin: var(--space-6) 0;
             border: 1px solid var(--border-color);
+            font-size: var(--font-size-sm);
         }
 
         pre {
             background: var(--bg-secondary);
-            padding: 1.5rem;
-            border-radius: 12px;
+            padding: var(--space-4);
+            border-radius: 8px;
             overflow-x: auto;
-            margin: 1.5rem 0;
+            margin: var(--space-4) 0;
             border: 1px solid var(--border-color);
-            font-size: 0.95rem;
+            font-size: var(--font-size-sm);
         }
 
         code {
             font-family: 'JetBrains Mono', monospace;
             color: var(--accent-tertiary);
+            font-size: var(--font-size-sm);
         }
+
+/* Custom scrollbar */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary);
+}
 
         @keyframes messageAppear {
             from {
