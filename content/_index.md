@@ -31,6 +31,12 @@ Meeting location (meme): <br />
 To join, please email us: <br />  
 **hello {at} nshkr.com**
 
+
+# February 28, 2025 update:
+
+{{< include-section "sections/personal-security-mesh.md" >}}
+
+
 # Feb 1, 2025 update:
 
 
