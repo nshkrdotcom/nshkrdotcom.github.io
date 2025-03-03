@@ -31,6 +31,13 @@ Meeting location (meme): <br />
 To join, please email us: <br />  
 **hello {at} nshkr.com**
 
+# March 2, 2025 update:
+
+Published at 9:12 PM HST on github (this commit is 9:13 PM, but the markdown file is 9:12 PM)
+
+{{< include-section "sections/20250302-211200HST.md" >}}
+
+
 
 # February 28, 2025 update:
 
