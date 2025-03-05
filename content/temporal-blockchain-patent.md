@@ -855,3 +855,30 @@ The Temporal Blockchain System with Integrated Hardware-Secured Timechain Techno
 The extensive development documented here demonstrates the system's potential to address critical challenges across multiple domains while maintaining the core principles of decentralization, security, and trustlessness that make blockchain technology valuable.
 
 As this patent moves toward implementation, it has the potential to create entirely new markets and solutions to some of society's most pressing challenges, establishing time itself as a first-class citizen in the digital world.
+
+## Original Document Fragments
+
+Below are links to each of the original document sections that contributed to this comprehensive patent documentation:
+
+### Core Patent Documentation
+* [20250302-211200HST: Original Temporal Blockchain System Patent](/sections/20250302-211200HST/)
+
+### Grok Contributions
+* [20250304-grok-1: Advanced Applications and Extensions](/sections/20250304-grok-1/)
+* [20250304-grok-2-SRA: Systemic Resilience Alignment Framework](/sections/20250304-grok-2-SRA/)
+* [20250304-grok-3-temporal: Innovative Applications of Temporal Blockchain with SRA](/sections/20250304-grok-3-temporal/)
+* [20250304-grok-4: Chrono-Resilient Systems Framework](/sections/20250304-grok-4/)
+
+### Claude Contributions
+* [20250304-temporal-patent-claude-1: Resilient Systems Framework](/sections/20250304-temporal-patent-claude-1/)
+* [20250304-temporal-patent-claude-2: Temporal Resilience Framework](/sections/20250304-temporal-patent-claude-2/)
+* [20250304-temporal-patent-claude-3: Chrono-Resilient Systems Synthesis](/sections/20250304-temporal-patent-claude-3/)
+* [20250304-temporal-patent-claude-4: Unified Framework for Temporal Resilience](/sections/20250304-temporal-patent-claude-4/)
+
+### Gemini Contributions
+* [20250304-temporal-patent-gemini-1-prelim: Systemic Resilience Framework Preliminaries](/sections/20250304-temporal-patent-gemini-1-prelim/)
+* [20250304-temporal-patent-gemini-2-applications-new-claims: Applications Analysis and New Claims](/sections/20250304-temporal-patent-gemini-2-applications-new-claims/)
+
+These individual sections provide the raw materials that were synthesized into the comprehensive patent documentation above.
+
+For a dedicated page with all original fragments organized chronologically, see the [Temporal Blockchain Patent - Original Fragments](/temporal-blockchain-fragments/) page.
