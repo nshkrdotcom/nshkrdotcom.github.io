@@ -1,0 +1,91 @@
+name: Hugo Troubleshooting
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: List repository contents
+        run: |
+          echo "=== Repository Root ==="
+          ls -la
+          echo ""
+          
+          echo "=== Config Files ==="
+          [ -f "config.toml" ] && cat config.toml
+          [ -f "config.yaml" ] && cat config.yaml
+          [ -f "config.json" ] && cat config.json
+          [ -f "hugo.toml" ] && cat hugo.toml
+          echo ""
+          
+          echo "=== Themes Directory ==="
+          if [ -d "themes" ]; then
+            ls -la themes/
+          else
+            echo "No themes directory found."
+          fi
+          echo ""
+          
+          echo "=== Content Directory ==="
+          if [ -d "content" ]; then
+            ls -la content/
+          else
+            echo "No content directory found."
+          fi
+          echo ""
+
+      - name: Install Hugo
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.121.2/hugo_extended_0.121.2_linux-amd64.deb
+          sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      
+      - name: Verify Hugo installation
+        run: hugo version
+      
+      - name: Test Hugo environment variables
+        run: |
+          echo "HUGO_ENV: ${HUGO_ENV}"
+          echo "HUGO_ENVIRONMENT: ${HUGO_ENVIRONMENT}"
+      
+      - name: Try building with verbose output
+        run: hugo --verbose || echo "Hugo build failed with error code $?"
+      
+      - name: Try building with debug output
+        run: hugo --debug || echo "Hugo build failed with error code $?"
+      
+      - name: Check for common issues
+        run: |
+          echo "=== Checking for common Hugo issues ==="
+          
+          # Check for content directory
+          if [ ! -d "content" ]; then
+            echo "WARNING: No content directory found. Hugo sites typically need a content directory."
+          fi
+          
+          # Check for theme configuration
+          if [ -f "config.toml" ]; then
+            THEME=$(grep -E "^theme\s*=" config.toml || echo "No theme specified in config.toml")
+            echo "Theme configuration: $THEME"
+          elif [ -f "config.yaml" ]; then
+            THEME=$(grep -E "^theme:" config.yaml || echo "No theme specified in config.yaml")
+            echo "Theme configuration: $THEME"
+          elif [ -f "hugo.toml" ]; then
+            THEME=$(grep -E "^theme\s*=" hugo.toml || echo "No theme specified in hugo.toml")
+            echo "Theme configuration: $THEME"
+          else
+            echo "Could not find a Hugo config file."
+          fi
+          
+          # Check for theme modules
+          if [ -f "go.mod" ]; then
+            echo "Found go.mod file, checking for theme modules:"
+            cat go.mod
+          fi
