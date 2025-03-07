@@ -18,19 +18,33 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive  # Get theme submodules if any
+          fetch-depth: 0
+
+      - name: Setup Pages
+        id: pages  # Add this ID so you can reference it
+        uses: actions/configure-pages@v4
+
       - name: Install Hugo
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.121.2/hugo_extended_0.121.2_linux-amd64.deb
           sudo dpkg -i ${{ runner.temp }}/hugo.deb
       
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v4
-      
+      - name: Verify Hugo installation
+        run: hugo version
+
       - name: Build
         run: |
+          echo "Building with base URL: ${{ steps.pages.outputs.base_url }}"
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      
+      - name: List public directory
+        run: ls -la ./public || echo "Public directory not found!"
 
       - name: Upload
         uses: actions/upload-pages-artifact@v3
@@ -45,4 +59,5 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy
+        id: deployment
         uses: actions/deploy-pages@v4

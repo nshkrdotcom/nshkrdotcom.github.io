@@ -14,6 +14,7 @@ Existing blockchain technologies rely on potentially unreliable timestamps provi
 *   **Secure Time Processing Units (STPUs):** Tamper-resistant hardware security modules that generate cryptographically attested timestamps.
 *   **Physical Unclonable Functions (PUFs):** Providing unique, unclonable hardware identities for each TMN.
 
+
 The system uses a novel **Proof of Temporal Authority (PoTA)** consensus mechanism. PoTA achieves network-wide time synchronization with Byzantine fault tolerance. Unlike traditional blockchains, voting power in PoTA is weighted primarily by a node's *temporal reputation*—a measure of its historical accuracy in providing timestamps.  This incentivizes accurate timekeeping and deters manipulation.
 
 A key innovation of the Temporal Blockchain is its **Temporal Execution Engine (TEE)**.  The TEE allows smart contracts to interact directly with the hardware-secured consensus time via new opcodes, including `TIMESTAMP_NOW` and `SCHEDULE_CALL`. This enables *self-triggering smart contracts* that execute autonomously based on verifiable temporal conditions, *without* requiring external oracles or triggers. This opens up entirely new possibilities for decentralized applications.
