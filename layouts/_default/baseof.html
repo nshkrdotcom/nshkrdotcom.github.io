@@ -45,6 +45,9 @@
             --space-6: 1.5rem;    /* 24px */
             --space-8: 2rem;      /* 32px */
             --space-12: 3rem;     /* 48px */
+            
+            /* Breakpoints */
+            --breakpoint-mobile: 768px;
         }
 
         * {
@@ -72,6 +75,12 @@
             margin: 0 auto;
             padding: var(--space-4);
             width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .app-container {
+                padding: var(--space-2);
+            }
         }
 
         .chat-container {
@@ -146,6 +155,16 @@
             align-self: flex-start;
             background: var(--gradient-glow);
         }
+        
+        @media (max-width: 768px) {
+            .message {
+                max-width: 100%;
+            }
+            
+            .message.system {
+                width: 100%;
+            }
+        }
 
         .message h1 {
             font-size: var(--font-size-2xl);
@@ -168,6 +187,10 @@
             margin-bottom: var(--space-4);
             font-size: var(--font-size-base);
             line-height: 1.7;
+        }
+        
+        .message ul {
+            margin-bottom: var(--space-6);
         }
 
         .input-area {
@@ -260,6 +283,12 @@
             opacity: 0.4;  /* Increased for testing */
             pointer-events: none;
             overflow: hidden;
+        }
+        
+        @media (max-width: 768px) {
+            .ocean-animation-container {
+                display: none;
+            }
         }
 
         #oceanCanvas {
@@ -507,6 +536,16 @@
             overflow: hidden;
             border-radius: 12px;
             opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .message.system {
+                width: 100%;
+            }
+            
+            .ocean-wave-container {
+                display: none;
+            }
         }
     `;
     document.head.appendChild(style);
