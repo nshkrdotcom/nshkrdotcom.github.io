@@ -252,6 +252,25 @@
             color: var(--accent-tertiary);
             font-size: var(--font-size-sm);
         }
+        
+        /* Header anchor links */
+        .header-anchor {
+            opacity: 0;
+            margin-left: 0.5rem;
+            font-size: 0.8em;
+            transition: opacity 0.2s ease;
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+        
+        h1:hover .header-anchor,
+        h2:hover .header-anchor,
+        h3:hover .header-anchor,
+        h4:hover .header-anchor,
+        h5:hover .header-anchor,
+        h6:hover .header-anchor {
+            opacity: 1;
+        }
 
         /* Custom scrollbar */
         .chat-messages::-webkit-scrollbar {
@@ -401,6 +420,20 @@
                     useMaxWidth: true,
                     htmlLabels: true,
                     curve: 'basis'
+                }
+            });
+            
+            // Add anchor links to headings with IDs
+            const headings = document.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]');
+            headings.forEach(heading => {
+                const id = heading.getAttribute('id');
+                if (id) {
+                    const anchor = document.createElement('a');
+                    anchor.className = 'header-anchor';
+                    anchor.href = `#${id}`;
+                    anchor.innerHTML = '¶';
+                    anchor.setAttribute('aria-hidden', 'true');
+                    heading.appendChild(anchor);
                 }
             });
 
