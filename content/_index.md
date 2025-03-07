@@ -35,10 +35,6 @@ To join, please email us: <br />
 
 {{< include-section "sections/20250307-news-temporal-provisional.md" >}}
 
-# March 5, 2025 update:
-
-[Temporal Blockchain Patent Development - Complete Documentation](/temporal-blockchain-patent/)
-
 # March 2, 2025 update:
 
 Published at 9:12 PM HST on github (this commit is 9:13 PM, but the markdown file is 9:12 PM)
