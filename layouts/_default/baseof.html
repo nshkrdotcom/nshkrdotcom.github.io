@@ -169,6 +169,12 @@
             .message.system {
                 width: 100%;
             }
+            
+            /* Force long text without spaces to wrap on mobile */
+            .message.system {
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
         }
 
         .message h1 {
