@@ -127,7 +127,7 @@ In this model, GUARDRAIL components are integrated directly into the host applic
 GUARDRAIL functions as a standalone security gateway where all MCP traffic passes through a centralized point of control. This model provides comprehensive policy enforcement at network boundaries and is ideal for enterprise environments with strict security requirements.
 
 ```mermaid
-flowchart LR
+flowchart TD
     subgraph "Client Side"
         MC[MCP Client]
     end
@@ -174,7 +174,7 @@ GUARDRAIL implements a capability-based access control system where access right
 The Context Verification Layer uses a Bayesian trust model to calculate confidence in execution environments:
 
 ```mermaid
-flowchart TB
+flowchart TD
     subgraph "Attestation Process"
         EV[Collect Evidence] --> VA[Validate Attestation]
         VA --> TS[Calculate Trust Score]
