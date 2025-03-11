@@ -32,6 +32,10 @@ To join, please email us: <br />
 **hello {at} nshkr.com**
 
 
+# March 10, 2025 update:
+
+{{< include-section "sections/guardrail-2025-03-10.md" >}}
+
 # February 28, 2025 update:
 
 {{< include-section "sections/personal-security-mesh.md" >}}
