@@ -92,8 +92,6 @@ cascade:
               <dd>Utility - Provisional Application under 35 U.S.C. § 111(b)</dd>
               <dt>Filing Status:</dt>
               <dd>Filed with USPTO</dd>
-              <dt>Inventor:</dt>
-              <dd>Paul Edward Lowndes</dd>
           </dl>
           <p class="disclaimer text-center">
             Disclaimer: This filing represents a Provisional Patent Application with the United States Patent and Trademark Office (USPTO). It establishes an early filing date but is not a granted patent and has not yet undergone formal examination.
