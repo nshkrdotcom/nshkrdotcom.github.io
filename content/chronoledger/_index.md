@@ -266,9 +266,9 @@ cascade:
                 NC[Node Clocks] -- Time? --> B
                 P[PoH/VDF] -- Relative Order --> B
             end
-             classDef red fill:#f99,stroke:#333,stroke-width:2px;
+             classDef red fill:#DC2626,stroke:#991b1b,stroke-width:1px;
              class O,NC,P red;
-             style B fill:#ccc,stroke:#333,stroke-width:2px;
+             style B fill:#000E30,stroke:#4A5568,stroke-width:1px;
         </div>
         <small class="d-block mt-2 text-muted">Fig. A: Traditional blockchains lack intrinsic, verifiable time.</small>
       </div>
@@ -300,12 +300,12 @@ cascade:
               end
               subgraph Temporal Blockchain
                  direction LR
-                 TB["Blockchain (PoTA Consensus)"]
+                 TB["Blockchain<br>(PoTA Consensus)"]
               end
               TMN1 -- Hardware-Attested Time --> TB
               TMN2 -- Hardware-Attested Time --> TB
               TMN3 -- Hardware-Attested Time --> TB
-              style TB fill:#60A5FA,stroke:#3B82F6,stroke-width:2px,color:#fff;
+              style TB fill:#00050A,stroke:#3B82F6,stroke-width:2px,color:#fff;
               classDef tmn fill:#059669,stroke:#047857,stroke-width:2px,color:#fff;
               class TMN1,TMN2,TMN3 tmn;
         </div>
@@ -369,7 +369,7 @@ cascade:
                       C --> E[PUF<br>Identity]
                       C --> F[Crypto Circuits]
                   end
-                  style C fill:#93C5FD,stroke:#3B82F6,stroke-width:2px,color:#080B12
+                  style C fill:#03355D,stroke:#3B82F6,stroke-width:2px,color:#080B12
            </div>
         </div>
          <div class="col-md-4">
@@ -386,7 +386,7 @@ cascade:
                   B -- Invalid --> G[Reject Block/Penalize];
                   D -- No --> A;  
                   style E fill:#059669,stroke:#065f46,color:#fff
-                  style G fill:#DC2626,stroke:#991b1b,color:#fff
+                  style G fill:#3C5656,stroke:#991b1b,color:#fff
           </div>
         </div>
          <div class="col-md-4">
@@ -404,7 +404,7 @@ cascade:
                       B --> E(State Database)
                       A --> F(Hardware Time Interface<br>via STPU)
                   end
-                   style A fill:#60A5FA,stroke:#3B82F6,stroke-width:1px,color:#080B12
+                   style A fill:#50350A,stroke:#3B82F6,stroke-width:1px,color:#080B12
            </div>
         </div>
      </div>
@@ -474,6 +474,19 @@ cascade:
         <!-- <p><a href="/chronoledger/hardware-specs/" class="btn btn-outline-primary">View Detailed Hardware Specs (Draft)</a></p> -->
        </div>
        <div class="col-md-5 text-center">
+          <div class="mermaid">
+              graph TD
+                  A["Tamper-Resistant<br>Enclosure"];
+                  subgraph Inside Enclosure
+                      B(Atomic Clock System<br>CSAC/TCXO/GNSS);
+                      C(Secure Time Proc.<br>STPU/HSM/PUF);
+                      E(Processing/<br>Networking);
+                      F(Power & Sensors);
+                  end
+                  A --> B; A --> C; A --> E; A --> F;
+                  B --> C; F --> B & C & E; E --> C;
+            </div>            
+          <small class="d-block mt-2 text-muted">Conceptual TMN Hardware Components</small>
             <div class="mermaid">
               graph TD
                   A[Tamper-Resistant Enclosure];
@@ -488,7 +501,7 @@ cascade:
                   A --> B; A --> C; A --> D; A --> E; A --> F; A --> G;
                   B --> C; D --> C; E --> C; F --> B; F --> C; F --> D; F --> E; F-->G; G --> C;
             </div>
-          <small class="d-block mt-2 text-muted">Conceptual TMN Hardware Components</small>
+          <small class="d-block mt-2 text-muted">TMN Hardware Component Details</small>
        </div>
      </div>
   </section>
