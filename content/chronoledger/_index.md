@@ -8,6 +8,129 @@ cascade:
 ---
 
 <style>
+/* ================================== */
+/* Hero Section Styles for ChronoLedger */
+/* ================================== */
+
+.hero {
+  /* Background: Use a subtle gradient blending the primary and secondary backgrounds */
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 80%);
+  padding-top: var(--space-12); /* Increase top padding */
+  padding-bottom: var(--space-12); /* Increase bottom padding */
+  border-bottom: 1px solid var(--border-color); /* Subtle separator line */
+  color: var(--text-primary); /* Ensure default text color is light */
+}
+
+.hero h1.display-4 {
+  font-weight: 700; /* Bolder main title */
+  color: var(--text-primary);
+  padding-left:0.5em;
+    letter-spacing: -0.02em; /* Slight tightening */
+  /* Optional: Subtle text shadow for depth */
+  /* text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); */
+}
+
+.hero h2.lead {
+  font-weight: 400; /* Keep lead lighter */
+  color: var(--text-secondary); /* Use secondary text color */
+  max-width: 750px; /* Limit width for readability */
+  margin-left: 1.75em;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.hero p.mb-4 { /* Targeting the main paragraph */
+  max-width: 650px; /* Limit width */
+  margin-left: 2.5em;
+  margin-right: auto;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8) !important; /* Ensure enough space before buttons, override mb-4 if needed */
+  font-size: var(--font-size-lg); /* Slightly larger paragraph text */
+}
+
+/* Button Styling within Hero */
+.hero .btn {
+  padding: var(--space-3) var(--space-8); /* Generous padding */
+  font-size: var(--font-size-lg);
+  border-radius: 8px; /* Consistent border radius */
+  font-weight: 600; /* Medium-bold weight */
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+  border: 2px solid transparent; /* Use border for structure */
+  cursor: pointer;
+  margin-top: var(--space-2); /* Add some top margin for wrapping */
+}
+
+.hero .btn-primary {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white; /* Ensure high contrast */
+}
+
+.hero .btn-primary:hover,
+.hero .btn-primary:focus {
+  background-color: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+  color: white;
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); /* Glow effect */
+}
+
+.hero .btn-outline-secondary {
+  background-color: transparent;
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
+}
+
+.hero .btn-outline-secondary:hover,
+.hero .btn-outline-secondary:focus {
+  background-color: rgba(96, 165, 250, 0.1); /* Subtle background on hover */
+  border-color: var(--accent-tertiary);
+  color: var(--accent-tertiary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.2);
+}
+
+/* Spacing for buttons if they wrap on smaller screens */
+.hero .btn.mx-2 {
+   margin-left: var(--space-3) !important; /* Adjust default bootstrap spacing if needed */
+   margin-right: var(--space-3) !important;
+}
+
+.hero .container {
+  padding-left: 1em;
+}
+
+/* Optional: Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+  }
+  .hero h1.display-4 {
+     font-size: 2.5rem; /* Adjust H1 size on mobile */
+  }
+   .hero h2.lead {
+     font-size: var(--font-size-lg); /* Adjust lead size on mobile */
+  }
+  .hero p.mb-4 {
+     font-size: var(--font-size-base);
+  }
+  .hero .btn {
+    width: 80%; /* Make buttons wider on mobile */
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+   .hero .btn + .btn { /* Add space between stacked buttons */
+      margin-top: var(--space-4);
+   }
+}
+
+/* ================================== */
+/* End Hero Section Styles            */
+/* ================================== */
+  
     a {
     color: #3489F0;        
     }
@@ -62,16 +185,19 @@ cascade:
       font-size: var(--font-size-sm);
       color: var(--text-secondary);
   }
+
+  
 </style>
 
 <!-- Hero Section -->
 <section class="hero text-center py-5">
   <div class="container">
     <h1 class="display-4">Introducing ChronoLedger</h1>
-    <h2 class="lead fw-normal mb-4">The World's First Blockchain with Hardware-Secured Consensus Time</h2>
-    <p class="mb-4">ChronoLedger Systems is pioneering the Temporal Blockchain, integrating tamper-proof, high-precision timekeeping directly into the core of distributed ledger technology. Move beyond unreliable oracles and manipulated timestamps to build applications demanding verifiable, accurate, and trustless time.</p>
+    <!-- Refined tagline emphasizes high-assurance -->
+    <h2 class="lead fw-normal mb-4">The World's First Blockchain with Hardware-Secured Consensus Time for High-Assurance Applications</h2>
+    <p class="mb-4">ChronoLedger Systems is pioneering the Temporal Blockchain, integrating tamper-proof, high-precision timekeeping directly into the core of distributed ledger technology. We provide the foundational infrastructure for applications demanding the highest levels of verifiable, accurate, and trustless time – moving beyond the limitations of oracles and manipulated timestamps.</p>
     <a href="#learn-more" class="btn btn-primary btn-lg mx-2">Learn More</a>
-    <a href="#developers" class="btn btn-outline-secondary btn-lg mx-2">For Developers</a>
+    <a href="#use-cases" class="btn btn-outline-secondary btn-lg mx-2">Target Applications</a>
   </div>
 </section>
 
@@ -95,6 +221,7 @@ cascade:
           </dl>
           <p class="disclaimer text-center">
             Disclaimer: This filing represents a Provisional Patent Application with the United States Patent and Trademark Office (USPTO). It establishes an early filing date but is not a granted patent and has not yet undergone formal examination.
+            ChronoLedger Systems technology is patent pending.
           </p>
       </div>
   </div>
@@ -151,7 +278,7 @@ cascade:
           <li><strong>Proof of Temporal Authority (PoTA):</strong> A novel consensus mechanism where trust and voting power are derived from *proven temporal accuracy*.</li>
           <li><strong>Temporal Execution Engine (TEE):</strong> An enhanced smart contract environment with native opcodes for interacting with hardware-verified time.</li>
         </ul>
-        <p>The result is a decentralized, tamper-proof, and highly accurate temporal foundation for the next generation of blockchain applications.</p>
+        <p>The result is a decentralized, tamper-proof, and highly accurate temporal foundation for the next generation of high-assurance blockchain applications.</p>
       </div>
       <div class="col-md-6 text-center">
         <div class="mermaid">
@@ -178,39 +305,39 @@ cascade:
     </div>
   </section>
 
-  <!-- Key Features Section -->
+  <!-- Key Features Section - Added Tamper-Proof -->
   <section class="features mb-5 pb-4 border-bottom text-center">
     <h2>Key Features & Benefits</h2>
     <div class="row mt-4">
       <div class="col-md-4 mb-3">
         <div class="feature-icon">⏱️</div>
         <h4>Unprecedented Accuracy</h4>
-        <p>Leverages chip-scale atomic clocks for nanosecond-level precision, far exceeding traditional blockchain timestamps.</p>
+        <p>Leverages chip-scale atomic clocks for nanosecond-level precision, essential for high-frequency applications and regulatory compliance.</p>
       </div>
       <div class="col-md-4 mb-3">
         <div class="feature-icon">🛡️</div>
         <h4>Hardware-Grade Security</h4>
-        <p>TMNs utilize tamper-resistant hardware (STPUs, HSMs, PUFs) and secure boot processes to prevent time manipulation.</p>
+        <p>TMNs utilize tamper-resistant hardware (STPUs, HSMs, PUFs) and secure boot processes to prevent physical and logical time manipulation.</p>
+      </div>
+       <div class="col-md-4 mb-3">
+        <div class="feature-icon">🔒</div> <!-- New Icon -->
+        <h4>Tamper-Proof Chain Time</h4>
+        <p>Intrinsic, consensus-verified time provides an irrefutable temporal record, resistant to retroactive alteration.</p>
       </div>
       <div class="col-md-4 mb-3">
         <div class="feature-icon">🤖</div>
         <h4>Autonomous Smart Contracts</h4>
-        <p>The TEE enables self-triggering contracts based on hardware-verified time, eliminating external oracle dependencies.</p>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="feature-icon">🔗</div>
-        <h4>Trustless & Decentralized</h4>
-        <p>PoTA consensus ensures time is determined by the network's reputable nodes, not a central authority.</p>
+        <p>The TEE enables self-triggering contracts based on hardware-verified time, automating complex time-dependent workflows without oracles.</p>
       </div>
        <div class="col-md-4 mb-3">
         <div class="feature-icon">🌐</div>
-        <h4>Interoperability</h4>
-        <p>The Temporal Bridge allows other blockchains to securely verify and utilize Temporal Blockchain's time.</p>
+        <h4>Interoperability (Temporal Bridge)</h4>
+        <p>Allows other blockchains to securely verify and leverage ChronoLedger's time for enhanced cross-chain temporal consistency.</p>
       </div>
        <div class="col-md-4 mb-3">
         <div class="feature-icon">🔌</div>
         <h4>Secure Offline Operation</h4>
-        <p>TMNs can generate verifiable timestamps even during network disruptions using pre-shared crypto and drift compensation.</p>
+        <p>TMNs maintain verifiable timekeeping during network disruptions, critical for resilient and air-gapped systems.</p>
       </div>
     </div>
   </section>
@@ -276,43 +403,44 @@ cascade:
   </section>
 
    <!-- Use Cases Section -->
-  <section class="use-cases mb-5 pb-4 border-bottom">
-    <h2 class="text-center mb-4">Transformative Use Cases</h2>
+  <section class="use-cases mb-5 pb-4 border-bottom" id="use-cases">
+    <h2 class="text-center mb-4">High-Assurance Applications</h2>
+    <p class="text-center text-secondary mb-4">ChronoLedger targets use cases where precision, security, and verifiable time are paramount, justifying the advanced hardware requirements.</p>
     <div class="row">
       <div class="col-md-6 col-lg-4">
         <div class="use-case-box">
-          <h5>Finance & DeFi</h5>
-          <p>Precise settlement, time-locked instruments, verifiable HFT timestamps, automated derivatives execution, regulatory compliance.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-         <div class="use-case-box">
-          <h5>Supply Chain & Logistics</h5>
-          <p>Verifiable proof-of-delivery/custody timestamps, cold chain integrity, SLA enforcement with automatic penalties.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-         <div class="use-case-box">
-          <h5>Legal, Compliance & Archival</h5>
-          <p>Tamper-proof digital evidence timestamping, secure document notarization, long-term verifiable archival.</p>
-         </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="use-case-box">
-          <h5>IoT & Industrial Systems</h5>
-          <p>Secure device synchronization, critical infrastructure timing, time-based access control for secure facilities.</p>
+          <h5>High-Security Finance & Compliance</h5>
+          <p>Provides regulatory-grade, tamper-proof timestamps (e.g., MiFID II). Enables precise, automated settlement for derivatives and complex financial instruments, reducing counterparty risk.</p>
         </div>
       </div>
        <div class="col-md-6 col-lg-4">
         <div class="use-case-box">
-          <h5>Governance & DAOs</h5>
-          <p>Time-bound voting periods, scheduled execution of passed proposals, verifiable dead man's switches.</p>
+          <h5>Critical Infrastructure & Defense</h5>
+          <p>Ensures secure, verifiable time synchronization for power grids, telecom networks (5G/6G), and defense systems, resistant to GPS spoofing and network attacks. Supports secure offline operation.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
          <div class="use-case-box">
-          <h5>Gaming & Metaverse</h5>
-          <p>Fair event timing, verifiable randomness generation, time-locked virtual assets and experiences.</p>
+          <h5>Legal, Long-Term Archival & Forensics</h5>
+          <p>Creates irrefutable, hardware-attested timestamps for digital evidence, contracts, and intellectual property, ensuring long-term validity and resistance to retroactive tampering.</p>
+         </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+         <div class="use-case-box">
+          <h5>Secure Supply Chain & Logistics</h5>
+          <p>Offers verifiable proof-of-custody and condition monitoring (e.g., cold chain) with high-integrity timestamps, enabling automated SLA enforcement and dispute resolution.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="use-case-box">
+          <h5>High-Stakes Governance</h5>
+          <p>Supports secure DAOs and consortia with time-bound voting, scheduled execution of critical proposals, and verifiable dead man's switches for contingency planning.</p>
+        </div>
+      </div>
+       <div class="col-md-6 col-lg-4">
+         <div class="use-case-box">
+          <h5>Scientific Research Integrity</h5>
+          <p>Provides verifiable timestamps for experiments and data collection, ensuring data integrity, provenance, and reproducibility for long-term studies.</p>
          </div>
       </div>
     </div>
@@ -375,7 +503,7 @@ cascade:
   <section class="contact text-center bg-light py-5" style="background-color: var(--bg-secondary) !important;"> <!-- Inline style override for bg -->
     <div class="container">
       <h2>Get Involved</h2>
-      <p class="lead mb-4">Join us in building the future of trustless time. We are seeking partners, developers, and early adopters.</p>
+      <p class="lead mb-4">We are building the future of trustless time for applications where accuracy and security cannot be compromised. We are seeking partners in finance, critical infrastructure, compliance, and defense, as well as expert developers and early adopters.</p>
       <a href="mailto:ZeroTrust@NSHkr.com" class="btn btn-info btn-lg">Contact Us</a>
        <!-- NOTE: Update this link when the page exists -->
        <p class="mt-3"><a href="/chronoledger/whitepaper/" target="_blank">Read the Full Whitepaper (Draft)</a></p>
