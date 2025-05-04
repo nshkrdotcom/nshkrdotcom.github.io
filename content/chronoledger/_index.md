@@ -185,7 +185,16 @@ cascade:
       font-size: var(--font-size-sm);
       color: var(--text-secondary);
   }
+  section.contact {
+    margin-top: 1em;
+    padding-top: 0;
+  }
 
+  section.contact .container {
+    margin-top:0;
+    padding: 1em;
+    padding-top: 0.01em;
+  }
   
 </style>
 
