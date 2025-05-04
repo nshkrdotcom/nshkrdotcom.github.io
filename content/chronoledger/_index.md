@@ -8,6 +8,10 @@ cascade:
 ---
 
 <style>
+
+    a {
+    color: #3489F0;        
+    }
 /* ================================== */
 /* Hero Section Styles for ChronoLedger */
 /* ================================== */

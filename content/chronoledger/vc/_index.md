@@ -5,6 +5,34 @@ draft: false
 description: "Whitepaper detailing the Temporal Blockchain System, integrating hardware-secured time into consensus for trustless temporal awareness, enabling new decentralized applications."
 ---
 
+
+
+<style>
+    a {
+    color: #3489F0;        
+    }
+  /* Optional: Add specific styles for this page if needed */
+  .feature-icon {
+    font-size: 2em; /* Example */
+    margin-bottom: 10px;
+  }
+  .use-case-box {
+    border: 1px solid #eee; /* Consider using var(--border-color) */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: rgba(15, 21, 32, 0.5); /* Slightly lighter background for boxes */
+  }
+  /* Ensure mermaid diagrams render correctly */
+   .mermaid {
+    background-color: var(--bg-secondary); /* Match pre background */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: var(--space-4);
+    margin: var(--space-4) 0;
+  }
+</style>
+
 **MEMORANDUM**
 
 **To:** Investment Committee, [TODO: VC Firm Name]
