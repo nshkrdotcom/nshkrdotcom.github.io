@@ -127,3 +127,5 @@ Despite the significant risks, particularly around hardware cost economics and t
 4.  Detailed technical roadmap for PoTA, TEE, and hardware integration.
 5.  Founder's plan for building the core technical team.
 6.  Evidence of interest or validation from initial target market segments.
+
+<a href="/chronoledger/">Back to ChronoLedger</a>

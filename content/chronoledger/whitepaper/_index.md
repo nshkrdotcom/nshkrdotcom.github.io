@@ -626,3 +626,5 @@ The Temporal Blockchain fundamentally solves the problem of trustless time in di
 24. *(TODO: Include Clock/Timing Specs as cited in Patent Doc)*
 25. *(TODO: Include Clock/Timing Specs as cited in Patent Doc)*
 26. *(TODO: Include Oracle Docs/Papers as cited in Patent Doc)*
+
+<a href="/chronoledger/">Back to ChronoLedger</a>
