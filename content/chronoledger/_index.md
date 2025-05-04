@@ -31,6 +31,37 @@ cascade:
     padding: var(--space-4);
     margin: var(--space-4) 0;
   }
+
+  .patent-info {
+    margin-top: 1em;
+  }
+    /* Style for the patent info section */
+  .patent-info dl {
+    margin-left: var(--space-4);
+  }
+  .patent-info dt {
+    font-weight: 600; /* Use '600' from your theme */
+    color: var(--text-primary);
+    width: 180px; /* Adjust as needed */
+    float: left;
+    clear: left;
+  }
+  .patent-info dd {
+    margin-left: 190px; /* dt width + margin */
+    margin-bottom: var(--space-2);
+    color: var(--text-secondary);
+  }
+   .patent-info dd code {
+    color: var(--accent-tertiary); /* Use theme code color */
+    background-color: transparent;
+    padding: 0;
+  }
+  .patent-info .disclaimer {
+      margin-top: var(--space-4);
+      font-style: italic;
+      font-size: var(--font-size-sm);
+      color: var(--text-secondary);
+  }
 </style>
 
 <!-- Hero Section -->
@@ -43,6 +74,35 @@ cascade:
     <a href="#developers" class="btn btn-outline-secondary btn-lg mx-2">For Developers</a>
   </div>
 </section>
+
+
+<!-- Patent Info Section -->
+<section class="patent-info container py-4 mb-4 border-bottom">
+  <h3 class="text-center mb-4">Provisional Patent Filing Information</h3>
+  <div class="row justify-content-center">
+      <div class="col-md-8">
+          <dl>
+              <dt>Application Number:</dt>
+              <dd><code>63/768,222</code></dd>
+              <dt>Title of Invention:</dt>
+              <dd>Temporal Blockchain System with Hardware-Secured Consensus Time</dd>
+              <dt>Filing Date:</dt>
+              <dd>March 7, 2025</dd>  
+              <dt>Application Type:</dt>
+              <dd>Utility - Provisional Application under 35 U.S.C. § 111(b)</dd>
+              <dt>Filing Status:</dt>
+              <dd>Filed with USPTO</dd>
+              <dt>Inventor:</dt>
+              <dd>Paul Edward Lowndes</dd>
+          </dl>
+          <p class="disclaimer text-center">
+            Disclaimer: This filing represents a Provisional Patent Application with the United States Patent and Trademark Office (USPTO). It establishes an early filing date but is not a granted patent and has not yet undergone formal examination.
+          </p>
+      </div>
+  </div>
+</section>
+<!-- End Patent Info Section -->
+
 
 <div class="container py-5" id="learn-more">
 
