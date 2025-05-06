@@ -157,3 +157,5 @@ Despite the significant risks, particularly around hardware cost economics and t
 6.  Evidence of interest or validation from initial target market segments.
 
 <a href="/chronoledger/">Back to ChronoLedger</a>
+
+<a href="/chronoledger/vc/apps">Applications</a>
