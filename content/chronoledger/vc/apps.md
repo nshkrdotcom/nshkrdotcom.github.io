@@ -165,6 +165,9 @@ Ready to explore how ChronoLedger can bring unparalleled temporal assurance to y
 
 <a href="/chronoledger/">Back to ChronoLedger</a>
 
+
+<a href="/chronoledger/vc/">VC Letter</a>
+
 <!-- **[Request a Demo]**  
 **[Contact Sales]**  
 **[Join Technical Preview]** -->
