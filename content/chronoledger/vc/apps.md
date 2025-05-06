@@ -39,9 +39,7 @@ description: "Overview of our tech"
 
 ChronoLedger Systems is pioneering the Temporal Blockchain, integrating tamper-proof, high-precision timekeeping directly into the core of distributed ledger technology. We provide the foundational infrastructure for applications demanding the highest levels of verifiable, accurate, and trustless time – moving beyond the limitations of oracles and manipulated timestamps.
 
-**[Learn More]** **[Target Applications]**
-
-## Provisional Patent Filing Information
+ ## Provisional Patent Filing Information
 
 **Application Number:**  
 `63/768,222`
