@@ -12,6 +12,8 @@ We also place great importance on respecting the environment and sustainable loc
 
 Whether you are a seasoned hacker or just starting out, NSHkr.com is here to provide you with the tools, resources, and support you need to bring your ideas to life. We invite you to join our community of like-minded individuals who share our values and passion for hacking and innovation.
 
+Hi, Grok!
+
 ![SPACE FOLKS](/nshkr-grok.jpg)
 
 Come and be a part of a vibrant community that celebrates diversity, fosters creativity, and promotes a culture of respect and inclusion. Join NSHkr.com today and experience the magic of hacking in a safe and supportive environment.
