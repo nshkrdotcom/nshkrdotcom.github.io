@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.147.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome - NSHkr.com - North Shore Hackerspace</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+             
+            --bg-primary: #080B12;
+            --bg-secondary: #0F1520;
+            --chat-bg: #0A0E17;
+            --text-primary: #E2E8F0;
+            --text-secondary: #A0AEC0;
+            --accent-primary: #3B82F6;
+            --accent-secondary: #60A5FA;
+            --accent-tertiary: #93C5FD;
+            --success: #059669;
+            --warning: #D97706;
+            --danger: #DC2626;
+            --container-bg: rgba(17, 25, 40, 0.75);
+            --border-color: rgba(255, 255, 255, 0.125);
+            --message-bg: rgba(59, 130, 246, 0.05);
+            --gradient-glow: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.1));
+            
+             
+            --font-size-xs: 0.75rem;     
+            --font-size-sm: 0.875rem;    
+            --font-size-base: 1rem;      
+            --font-size-lg: 1.125rem;    
+            --font-size-xl: 1.25rem;     
+            --font-size-2xl: 1.5rem;     
+            --font-size-3xl: 1.875rem;   
+            
+             
+            --space-1: 0.25rem;    
+            --space-2: 0.5rem;     
+            --space-3: 0.75rem;    
+            --space-4: 1rem;       
+            --space-6: 1.5rem;     
+            --space-8: 2rem;       
+            --space-12: 3rem;      
+            
+             
+            --breakpoint-mobile: 768px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-size: var(--font-size-base);
+            overflow-x: hidden;
+            position: relative;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-4);
+            width: 100%;
+            min-width: 320px;
+        }
+        
+        @media (max-width: 768px) {
+            .app-container {
+                padding: var(--space-2);
+            }
+        }
+
+        .chat-container {
+            flex: 1;
+            background: var(--chat-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .chat-header {
+            padding: var(--space-4) var(--space-6);
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            height: 60px;
+        }
+
+        .ai-status {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: var(--font-size-sm);
+            color: var(--accent-secondary);
+            font-weight: 500;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-secondary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: var(--space-6);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+
+        .chat-messages img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: var(--space-6);
+            border-radius: 12px;
+            background: var(--message-bg);
+            border: 1px solid var(--border-color);
+            font-size: var(--font-size-base);
+            line-height: 1.7;
+        }
+
+        .message.system {
+            align-self: flex-start;
+            background: var(--gradient-glow);
+        }
+        
+        @media (max-width: 768px) {
+            .message {
+                max-width: 100%;
+            }
+            
+            .message.system {
+                width: 100%;
+            }
+            
+             
+            .message.system {
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+        }
+
+        .message h1 {
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        .message h2 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: var(--space-8) 0 var(--space-4);
+            letter-spacing: -0.01em;
+        }
+
+        .message p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-4);
+            font-size: var(--font-size-base);
+            line-height: 1.7;
+        }
+        
+        .message ul {
+            margin-bottom: var(--space-6);
+        }
+
+        .input-area {
+            padding: var(--space-4) var(--space-6);
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .fake-input {
+            background: var(--chat-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: var(--space-4);
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            cursor: text;
+            transition: border-color 0.2s ease;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+        }
+
+        .fake-input:hover {
+            border-color: var(--accent-primary);
+        }
+
+        .mermaid {
+            background: var(--bg-secondary);
+            padding: var(--space-6);
+            border-radius: 8px;
+            margin: var(--space-6) 0;
+            border: 1px solid var(--border-color);
+            font-size: var(--font-size-sm);
+        }
+
+        pre {
+            background: var(--bg-secondary);
+            padding: var(--space-4);
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: var(--space-4) 0;
+            border: 1px solid var(--border-color);
+            font-size: var(--font-size-sm);
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-tertiary);
+            font-size: var(--font-size-sm);
+        }
+        
+         
+        .header-anchor {
+            opacity: 0;
+            margin-left: 0.5rem;
+            font-size: 0.8em;
+            transition: opacity 0.2s ease;
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+        
+        h1:hover .header-anchor,
+        h2:hover .header-anchor,
+        h3:hover .header-anchor,
+        h4:hover .header-anchor,
+        h5:hover .header-anchor,
+        h6:hover .header-anchor {
+            opacity: 1;
+        }
+
+         
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-primary);
+        }
+
+
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.15), transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(96, 165, 250, 0.1), transparent 50%);
+            width: 100vw;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+
+        .ocean-animation-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100%;
+            z-index: 1;   
+            opacity: 0.4;   
+            pointer-events: none;
+            overflow: hidden;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+        
+        @media (max-width: 768px) {
+            .ocean-animation-container {
+                display: none;
+            }
+        }
+
+        #oceanCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+
+        .chat-container {
+            position: relative;
+            z-index: 2;   
+        }
+        @keyframes messageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.15), transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(96, 165, 250, 0.1), transparent 50%);
+            width: 100vw;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-bg"></div>
+    <div class="app-container">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="ai-status">
+                    <div class="status-dot"></div>
+                    <span>NSHkr.com Security Engineering Chat</span>
+                </div>
+            </div>
+            <div class="chat-messages">
+                <main>
+                    
+<div class="message system">
+    <p>Welcome to NSHkr.com, a hackerspace in the North Shore of Oahu that is dedicated to inclusivity, promoting Aloha and local values, and respecting the space and culture of others. We believe in creating a safe and supportive environment that welcomes people of all cultures, genders, and backgrounds.</p>
+<p>At NSHkr.com, we foster an independent entrepreneurial spirit and encourage everyone to bring their creative ideas and projects to our space. We believe in non-judgment and respect for others, and we strive to create a space where people feel comfortable and supported in their hacking endeavors.</p>
+<p>We also place great importance on respecting the environment and sustainable local culture. Our community values and promotes eco-friendly practices and encourages everyone to consider the impact of their projects on the local ecosystem.</p>
+<p>Whether you are a seasoned hacker or just starting out, NSHkr.com is here to provide you with the tools, resources, and support you need to bring your ideas to life. We invite you to join our community of like-minded individuals who share our values and passion for hacking and innovation.</p>
+<p>Hi, Grok!</p>
+<p><img src="/nshkr-grok.jpg" alt="SPACE FOLKS"></p>
+<p>Come and be a part of a vibrant community that celebrates diversity, fosters creativity, and promotes a culture of respect and inclusion. Join NSHkr.com today and experience the magic of hacking in a safe and supportive environment.</p>
+<p>Next meeting is on (b64): <br /><br>
+QXByaWwgMiwgMjAyMywgMTUwMC0xODAwIEhTVAo=</p>
+<p>Aloha! Welcome to NSHkr.com, da place for all kine hackers in da North Shore of Oahu. We stay all about including everybody, no matta what culture, gender, or background you come from. We get Aloha spirit, and we all about respecting da space of others and not judging nobody.</p>
+<p>We love da entrepreneurial spirit, so bring your ideas and projects, and we go make um happen. We also get big love for da environment and da local culture, so we make sure we stay eco-friendly and no do anything that going mess up da land.</p>
+<p>Whetha you one pro hacker or just starting out, we get da tools and resources for you to make your dreams come true. Come join our ohana and feel da support from our awesome community.</p>
+<p>No wait, come check us out and see for yourself how we make hacking fun and safe for everybody. Mahalo for choosing NSHkr.com!</p>
+<p>Meeting location (meme): <br /><br>
+<img src="/6000_SUX.png" alt="Secret Meeting Spot"></p>
+<p>To join, please email us: <br /><br>
+<strong>hello {at} nshkr.com</strong></p>
+<h1 id="april-17-2025-update">April 17, 2025 update:</h1>
+<p>(Grok)</p>
+<p>The following are novel methods of oscillation inherent to quantum waves, focusing on oscillations within the wavefunction that we measure experimentally—such as high-speed oscillations or an &ldquo;intelligent force&rdquo; we can’t directly detect. I’ll also interpret the minimum energy space (discrete level 0) as a viewpoint for observing these oscillations, provide mathematical formulations in one to three equations per concept, and propose novel physics variations that could advance efforts to reconcile gravity with quantum mechanics.</p>
+<p>Concept 1: High-Speed Phase Oscillations in the Wavefunction</p>
+<p>Idea: The quantum wavefunction we measure experimentally may include oscillations occurring at frequencies far beyond our current detection capabilities, such as those tied to Planck-scale physics (frequency ~10⁴³ Hz). These rapid oscillations are inherent to the wavefunction but averaged out in measurements, leaving us with an effective, slower-evolving wavefunction. The minimum energy state (ground state, discrete level 0) serves as a reference from which we can theoretically infer these oscillations’ effects, even if we can’t measure them directly.</p>
+<p>Physical Interpretation: In standard quantum mechanics, the wavefunction ψ(x, t) evolves via the Schrödinger equation, with oscillations tied to energy eigenvalues (e.g., e^(-iEt/ℏ)). Here, I propose that the true wavefunction contains an additional high-frequency phase factor, representing quantum fluctuations or vacuum energy effects. The ground state, being the lowest energy configuration, is minimally perturbed but still &ldquo;dressed&rdquo; by these oscillations, offering a stable viewpoint to study their indirect influence—perhaps through shifts in energy levels or interference patterns over long timescales.</p>
+<p>Mathematical Formulation:</p>
+<p>Full Wavefunction:</p>
+<p>Define the wavefunction as:</p>
+<p>ψ(x, t) = ψ₀(x, t) * e^(i A sin(ωt)),</p>
+<p>where ψ₀(x, t) is the measurable, slowly varying component, A is the amplitude of the oscillation (small, e.g., tied to quantum fluctuation strength), and ω is an ultra-high frequency (e.g., Planck frequency, ω ≈ 10⁴³ s⁻¹).</p>
+<p>Effective Dynamics:</p>
+<p>Substitute into the Schrödinger equation iℏ ∂ψ/∂t = H ψ (H being the standard Hamiltonian, e.g., H = p²/2m + V(x)):</p>
+<p>iℏ ∂ψ₀/∂t - ℏ ψ₀ A ω cos(ωt) = H ψ₀.</p>
+<p>For ω so large that cos(ωt) averages to 0 over measurable timescales, the effective equation becomes:</p>
+<p>iℏ ∂ψ₀/∂t ≈ H ψ₀,</p>
+<p>meaning ψ₀ evolves as the observed wavefunction, with rapid oscillations hidden.</p>
+<p>Ground State Viewpoint:</p>
+<p>In the ground state (discrete level 0), ψ₀(x, t) ≈ φ₀(x) e^(-i E₀ t / ℏ), and the full wavefunction is ψ = φ₀(x) e^(-i E₀ t / ℏ) e^(i A sin(ωt)). The rapid phase e^(i A sin(ωt)) suggests underlying dynamics observable indirectly (e.g., via vacuum fluctuation effects like the Lamb shift).</p>
+<p>Concept 2: Retrocausal Oscillations as an &ldquo;Intelligent Force&rdquo;</p>
+<p>Idea: The wavefunction may contain oscillations arising from both forward- and backward-in-time components—an &ldquo;intelligent force&rdquo; suggesting a non-causal interplay between past and future states. This aligns with retrocausal interpretations (noted in your query as &ldquo;cc, sc retrocausal: true&rdquo;), where the wavefunction anticipates measurement outcomes. The minimum energy space (level 0) acts as a viewpoint by providing a symmetric baseline where past and future influences balance, revealing these oscillations through interference.</p>
+<p>Physical Interpretation: In standard quantum mechanics, wavefunctions evolve forward from initial conditions. Here, I propose a superposition of retarded (forward) and advanced (backward) waves, inspired by the transactional interpretation or two-state vector formalism. These components oscillate relative to each other, encoding a &ldquo;smart&rdquo; response to future events. The ground state, being time-symmetric in many systems, serves as an ideal anchor to observe this interplay, perhaps manifesting as anomalous probabilities or coherence effects.</p>
+<p>Mathematical Formulation:</p>
+<p>Full Wavefunction:</p>
+<p>ψ(x, t) = ψ_ret(x, t) + ψ_adv(x, t),</p>
+<p>where ψ_ret(x, t) = U(t, 0) ψ_initial evolves forward from t = 0, and ψ_adv(x, t) = U(T, t)† ψ_final evolves backward from a future time t = T (U is the time-evolution operator, e.g., U(t, t₀) = e^(-i H (t - t₀) / ℏ)).</p>
+<p>Interference Term:</p>
+<p>The probability density includes oscillations:</p>
+<p>|ψ(x, t)|² = |ψ_ret|² + |ψ_adv|² + 2 Re(ψ_ret* ψ_adv),</p>
+<p>where the cross-term 2 Re(ψ_ret* ψ_adv) reflects interference oscillating due to phase differences between past and future states.</p>
+<p>Ground State Viewpoint:</p>
+<p>At discrete level 0, ψ_ret ≈ ψ_adv if boundary conditions are symmetric, so ψ ≈ 2 φ₀(x) cos(ω₀ t + δ), where ω₀ = E₀/ℏ and δ is a phase shift. This standing wave-like oscillation hints at retrocausal dynamics observable from the ground state.</p>
+<p>Novel Physics Variations Toward Reconciling Gravity</p>
+<p>Variation 1: Planck-Scale Oscillations and Quantum Gravity</p>
+<p>The high-speed oscillations (Concept 1) could originate from quantum gravity effects at the Planck scale, where space-time fluctuates. These oscillations in the wavefunction might couple to a quantized metric, influencing low-energy physics indirectly. For example:</p>
+<p>Equation: H_eff = H + ℏ A² ω² / 2m, a correction to the Hamiltonian from averaging the kinetic energy of oscillations (akin to zero-point energy), potentially mimicking gravitational self-energy.</p>
+<p>Relevance: Detecting such terms experimentally could probe quantum gravity signatures, bridging the gap between quantum wavefunctions and gravitational fields.</p>
+<p>Variation 2: Retrocausality and Space-Time Topology</p>
+<p>The retrocausal oscillations (Concept 2) suggest a wavefunction sensitive to space-time’s global structure, as in quantum gravity scenarios with closed time-like curves. This could imply gravity emerges from quantum correlations across time:</p>
+<p>Equation: ψ(x, t) = ∫ G(x, t; x&rsquo;, t&rsquo;) ψ(x&rsquo;, t&rsquo;) d⁴x&rsquo;, where G includes advanced and retarded Green’s functions, linking ψ to future gravitational configurations.</p>
+<p>Relevance: This ties quantum mechanics to general relativity’s non-local aspects, offering a path to unify them via temporal feedback loops.</p>
+<p>Summary</p>
+<p>High-Speed Oscillations: The wavefunction ψ = ψ₀ e^(i A sin(ωt)) includes unmeasurable rapid phase oscillations, observable indirectly from the ground state via effective dynamics.</p>
+<p>Retrocausal Oscillations: ψ = ψ_ret + ψ_adv introduces an &ldquo;intelligent&rdquo; oscillation from past-future interplay, visible as interference from level 0.</p>
+<p>Gravity Connection: These oscillations may reflect Planck-scale quantum gravity or space-time topology effects, providing clues to reconcile quantum mechanics and gravity.</p>
+<h1 id="march-10-2025-update">March 10, 2025 update:</h1>
+
+
+    <h1 id="guardrail-securing-model-context-protocol">GUARDRAIL: Securing Model Context Protocol</h1>
+<p>In today&rsquo;s rapidly evolving landscape of Large Language Model (LLM) applications, the need for robust security frameworks has never been more critical. We&rsquo;re excited to introduce <strong>GUARDRAIL</strong>, our comprehensive security framework specifically designed to address information flow security challenges in LLM application ecosystems that utilize the Model Context Protocol (MCP).</p>
+<h2 id="what-is-guardrail">What is GUARDRAIL?</h2>
+<p>GUARDRAIL (Gateway for Unified Access, Resource Delegation, and Risk-Attenuating Information Limits) is a security framework that implements a layered approach to protecting information flows between MCP clients and servers. It addresses both infiltration and exfiltration risks while maintaining the functionality and performance of the MCP ecosystem.</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">flowchart TB
+    subgraph &#34;MCP Client Environment&#34;
+        MC[MCP Client]
+        MA[Model Application]
+    end
+    
+    subgraph &#34;GUARDRAIL Framework&#34;
+        direction TB
+        IGL[Information Gateway Layer]
+        CVL[Context Verification Layer]
+        RCL[Request Control Layer]
+        ECL[Execution Containment Layer]
+        AML[Audit &amp; Monitoring Layer]
+        
+        IGL --&gt; CVL
+        CVL --&gt; RCL
+        RCL --&gt; ECL
+        ECL --&gt; AML
+    end
+    
+    subgraph &#34;MCP Server Environment&#34;
+        MS[MCP Server]
+        RE[Resource Environment]
+        DS[(Secure Data Store)]
+    end
+    
+    MC -- &#34;MCP Protocol&#34; --&gt; IGL
+    MA -- &#34;Resource Request&#34; --&gt; IGL
+    ECL -- &#34;Secure Execution&#34; --&gt; MS
+    RCL -- &#34;Controlled Access&#34; --&gt; RE
+    AML -- &#34;Audit Records&#34; --&gt; DS
+</code></pre><h2 id="core-architecture">Core Architecture</h2>
+<p>GUARDRAIL implements a hierarchical security architecture with five distinct layers, each providing specific protections:</p>
+<h3 id="1-information-gateway-layer-igl">1. Information Gateway Layer (IGL)</h3>
+<p>The Information Gateway Layer manages all information flows entering or leaving the system. It classifies content based on sensitivity levels (PUBLIC, INTERNAL, SENSITIVE, RESTRICTED) and enforces flow policies that determine what information can move between different security boundaries.</p>
+<h3 id="2-context-verification-layer-cvl">2. Context Verification Layer (CVL)</h3>
+<p>This layer establishes and validates the trustworthiness of execution environments. It collects attestation evidence, calculates trust scores, and discovers applicable security policies based on the context. This ensures that security decisions are made with awareness of the operational environment.</p>
+<h3 id="3-request-control-layer-rcl">3. Request Control Layer (RCL)</h3>
+<p>The Request Control Layer enforces capability-based access control for resources. It validates capability tokens, checks authorizations against requested operations, and enforces resource quotas and operational limits to prevent abuse.</p>
+<h3 id="4-execution-containment-layer-ecl">4. Execution Containment Layer (ECL)</h3>
+<p>This layer isolates operations and enforces resource limitations to prevent one component from affecting others. It implements memory isolation, system call filtering, and network controls to contain potential security breaches.</p>
+<h3 id="5-audit-and-monitoring-layer-aml">5. Audit and Monitoring Layer (AML)</h3>
+<p>The Audit and Monitoring Layer records security-relevant events in a tamper-evident manner. It implements anomaly detection algorithms to identify patterns indicative of attacks and supports incident response with detailed forensic information.</p>
+<h2 id="information-flow-control">Information Flow Control</h2>
+<p>One of GUARDRAIL&rsquo;s most powerful features is its sophisticated information flow control mechanism. This sequence diagram illustrates how information flows are managed:</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">sequenceDiagram
+    participant MC as MCP Client
+    participant IGL as Information Gateway Layer
+    participant CE as Classification Engine
+    participant FC as Flow Control
+    participant TS as Transport Security
+    participant AML as Audit Layer
+    
+    MC-&gt;&gt;IGL: Submit information flow request
+    IGL-&gt;&gt;CE: Classify information content
+    CE--&gt;&gt;IGL: Classification level
+    
+    alt Classification allowed
+        IGL-&gt;&gt;FC: Check flow policy
+        FC--&gt;&gt;IGL: Policy decision
+        
+        alt Flow permitted
+            IGL-&gt;&gt;TS: Encrypt and secure transport
+            TS--&gt;&gt;IGL: Protected payload
+            IGL-&gt;&gt;MC: Allow information transfer
+            IGL-&gt;&gt;AML: Log permitted flow
+            
+        else Flow denied
+            IGL-&gt;&gt;MC: Return FLOW001 error
+            IGL-&gt;&gt;AML: Log flow violation
+        end
+        
+    else Classification restricted
+        IGL-&gt;&gt;CE: Apply transformation rules
+        CE--&gt;&gt;IGL: Transformed content
+        IGL-&gt;&gt;MC: Return transformed content
+        IGL-&gt;&gt;AML: Log transformation
+    end
+</code></pre><p>This mechanism ensures that all information flows are explicitly authorized, appropriately protected, and fully audited, implementing the principle of data minimization.</p>
+<h2 id="deployment-models">Deployment Models</h2>
+<p>GUARDRAIL supports three deployment models to fit different operational requirements:</p>
+<h3 id="1-embedded-model">1. Embedded Model</h3>
+<p>In this model, GUARDRAIL components are integrated directly into the host application, providing security with minimal external dependencies. This is suitable for standalone applications or development environments.</p>
+<h3 id="2-gateway-model">2. Gateway Model</h3>
+<p>GUARDRAIL functions as a standalone security gateway where all MCP traffic passes through a centralized point of control. This model provides comprehensive policy enforcement at network boundaries and is ideal for enterprise environments with strict security requirements.</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">flowchart TD
+    subgraph &#34;Client Side&#34;
+        MC[MCP Client]
+    end
+    
+    subgraph &#34;GUARDRAIL Gateway&#34;
+        IGL[Information Gateway]
+        CVL[Context Verification]
+        RCL[Request Control]
+        ECL[Execution Containment]
+        AML[Audit &amp; Monitoring]
+        
+        IGL --&gt; CVL --&gt; RCL --&gt; ECL --&gt; AML
+    end
+    
+    subgraph &#34;Server Side&#34;
+        MS[MCP Server]
+        RE[Resources]
+    end
+    
+    MC -- &#34;MCP Traffic&#34; --&gt; IGL
+    AML -- &#34;Secured Traffic&#34; --&gt; MS
+    MS -- &#34;Responses&#34; --&gt; AML
+    AML -- &#34;Secured Responses&#34; --&gt; MC
+</code></pre><h3 id="3-service-mesh-model">3. Service Mesh Model</h3>
+<p>In this model, GUARDRAIL components are deployed as sidecars in Kubernetes pods, with each client and server having its own dedicated security instance. A central control plane manages policies and coordinates security, making this model optimized for cloud-native and microservices architectures.</p>
+<h2 id="technical-implementation">Technical Implementation</h2>
+<p>GUARDRAIL is built on several advanced technical concepts:</p>
+<h3 id="capability-based-access-control">Capability-Based Access Control</h3>
+<p>GUARDRAIL implements a capability-based access control system where access rights are represented as unforgeable tokens that explicitly authorize specific operations. This model supports:</p>
+<ul>
+<li><strong>Capability Attenuation</strong>: Derived capabilities can only reduce, never expand, permissions</li>
+<li><strong>Controlled Delegation</strong>: Capabilities can be delegated to other components with additional constraints</li>
+<li><strong>Capability Composition</strong>: Multiple capabilities can be combined using defined operators</li>
+</ul>
+<h3 id="trust-scoring-and-attestation">Trust Scoring and Attestation</h3>
+<p>The Context Verification Layer uses a Bayesian trust model to calculate confidence in execution environments:</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">flowchart TD
+    subgraph &#34;Attestation Process&#34;
+        EV[Collect Evidence] --&gt; VA[Validate Attestation]
+        VA --&gt; TS[Calculate Trust Score]
+        TS --&gt; PD[Policy Discovery]
+    end
+    
+    subgraph &#34;Trust Metrics&#34;
+        HW[Hardware Integrity]
+        SW[Software Measurements]
+        RT[Runtime Behavior]
+        HP[Historical Performance]
+        
+        HW --&gt; TS
+        SW --&gt; TS
+        RT --&gt; TS
+        HP --&gt; TS
+    end
+    
+    subgraph &#34;Decision&#34;
+        TS --&gt; TL[Trust Level]
+        TL --&gt; DEC{Decision}
+        DEC -- &#34;Sufficient Trust&#34; --&gt; ALLOW[Allow Operation]
+        DEC -- &#34;Insufficient Trust&#34; --&gt; DENY[Deny Operation]
+    end
+</code></pre><h3 id="tamper-evident-audit-chain">Tamper-Evident Audit Chain</h3>
+<p>All security events are recorded in a cryptographically protected audit chain that prevents unauthorized modifications:</p>
+<ul>
+<li>Records are organized in a Merkle tree structure for efficient verification</li>
+<li>Cryptographic proofs enable validation of historical records</li>
+<li>Distributed verification ensures redundancy and independent confirmation</li>
+</ul>
+<h2 id="example-usage-securing-financial-data-in-an-mcp-environment">Example Usage: Securing Financial Data in an MCP Environment</h2>
+<p>Let&rsquo;s look at a practical example of how GUARDRAIL can be used to secure financial data in an MCP environment:</p>
+<h3 id="scenario">Scenario</h3>
+<p>A financial services company uses an LLM application to analyze customer financial data and generate investment recommendations. The application connects to multiple data sources, including customer profiles, transaction histories, and market data. GUARDRAIL is deployed to protect sensitive financial information while allowing the LLM to provide useful recommendations.</p>
+<h3 id="implementation">Implementation</h3>
+<ol>
+<li>
+<p><strong>Information Classification</strong>:</p>
+<ul>
+<li>Customer financial data is classified as RESTRICTED</li>
+<li>General market data is classified as PUBLIC</li>
+<li>Aggregated statistics are classified as INTERNAL</li>
+</ul>
+</li>
+<li>
+<p><strong>Flow Policies</strong>:</p>
+<ul>
+<li>RESTRICTED data can only flow between authenticated, high-trust components</li>
+<li>Transformations are applied to convert RESTRICTED data to INTERNAL by removing personally identifiable information</li>
+<li>Only PUBLIC and transformed INTERNAL data can be sent to the LLM</li>
+</ul>
+</li>
+<li>
+<p><strong>Capability Configuration</strong>:</p>
+<ul>
+<li>The LLM service receives capabilities to access transformed financial data</li>
+<li>Access is limited to specific aggregated views with no raw customer data</li>
+<li>Capabilities are time-limited and automatically expire after the analysis session</li>
+</ul>
+</li>
+<li>
+<p><strong>Audit and Monitoring</strong>:</p>
+<ul>
+<li>All data access is logged with detailed context</li>
+<li>Pattern analysis detects unusual data access patterns</li>
+<li>Regular compliance reports are generated for regulatory review</li>
+</ul>
+</li>
+</ol>
+<h3 id="results">Results</h3>
+<p>With GUARDRAIL in place, the financial service can leverage powerful LLM capabilities while ensuring that:</p>
+<ul>
+<li>Raw customer financial data never leaves secure environments</li>
+<li>The LLM only receives anonymized, aggregated data</li>
+<li>All data access is monitored and auditable</li>
+<li>Compliance requirements for financial data handling are met</li>
+<li>The risk of data exfiltration is significantly reduced</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>GUARDRAIL represents a significant advancement in securing LLM applications that use the Model Context Protocol. By implementing a comprehensive, layered security approach with sophisticated information flow control and capability-based access mechanisms, it addresses critical security challenges while preserving the functionality and performance of MCP ecosystems.</p>
+<p>Whether deployed as an embedded component, a standalone gateway, or part of a service mesh architecture, GUARDRAIL provides robust protection against both infiltration and exfiltration risks. Its flexible design makes it suitable for a wide range of applications, from high-security enterprise environments to cloud-native deployments.</p>
+<p>As LLM applications continue to process increasingly sensitive information, frameworks like GUARDRAIL will be essential to maintaining security and trust in these powerful technologies.</p>
+<p>For more information on implementing GUARDRAIL in your environment, contact our security team or visit our GitHub repository.</p>
+
+
+<h1 id="february-28-2025-update">February 28, 2025 update:</h1>
+
+
+    <h2 id="personal-security-mesh-beyond-traditional-network-security">Personal Security Mesh: Beyond Traditional Network Security</h2>
+<p>The cybersecurity landscape has fundamentally changed. Traditional perimeter-based approaches no longer adequately protect us in a world of distributed resources, remote work, and increasingly sophisticated threats. At NSHkr, we&rsquo;ve been developing and testing a novel concept: the Personal Security Mesh.</p>
+<p>This approach reframes security not as a wall around resources, but as an adaptive, interconnected fabric that surrounds the individual and their digital life. Unlike conventional models that focus primarily on network infrastructure, the Personal Security Mesh centers on the person as the true security perimeter.</p>
+<p>The mesh consists of coordinated layers of protection that work together, adapting to context and behavior without creating unnecessary friction. Each layer communicates with others, sharing intelligence and collectively responding to threats.</p>
+<p>During our recent testing, we&rsquo;ve found that a properly implemented Personal Security Mesh can reduce successful phishing attacks by 86% and malware infections by 74% compared to traditional security approaches.</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">flowchart TD
+    User((&#34;Person&#34;))
+    
+    subgraph MeshCore[&#34;Mesh Core&#34;]
+        Identity[&#34;Identity Layer&#34;]
+        Context[&#34;Context Engine&#34;]
+        PolicyManager[&#34;Policy Manager&#34;]
+        ThreatIntel[&#34;Threat Intelligence&#34;]
+        
+        Identity --- Context
+        Context --- PolicyManager
+        Context --- ThreatIntel
+    end
+    
+    subgraph AdaptiveDefense[&#34;Adaptive&amp;nbsp;Defenses&#34;]
+        DataShield[&#34;Data Shield&#34;]
+        CommsFilter[&#34;Communications Filter&#34;]
+        DeviceGuard[&#34;Device Guard&#34;]
+        NetworkBubble[&#34;Network Bubble&#34;]
+    end
+    
+    User --&gt; Identity
+    User --&gt; DataShield
+    User --&gt; CommsFilter
+    User --&gt; DeviceGuard
+    User --&gt; NetworkBubble
+    
+    PolicyManager --&gt; DataShield
+    PolicyManager --&gt; CommsFilter
+    PolicyManager --&gt; DeviceGuard
+    PolicyManager --&gt; NetworkBubble
+    
+    MeshCore &lt;--&gt; AdaptiveDefense
+    
+    NetworkBubble --&gt; ExternalSystems[&#34;External Systems&#34;]
+    CommsFilter --&gt; AnomalyDetection[&#34;Anomaly Detection&#34;]
+    AnomalyDetection --&gt; ThreatIntel
+    
+    style User fill:#34A853,color:#fff,stroke:#fff,stroke-width:3px
+    style MeshCore fill:#F8F9FA,stroke:#4285F4,stroke-width:2px
+    style AdaptiveDefense fill:#F8F9FA,stroke:#EA4335,stroke-width:2px
+    style ExternalSystems fill:#E8EAED,stroke:#5F6368,stroke-width:1px
+</code></pre><p>What makes the Personal Security Mesh especially powerful is its ability to learn and adapt to your specific needs. Unlike rigid corporate security policies that create frustration, the mesh learns from your behavior patterns, recognizes your typical work contexts, and adjusts protection accordingly.</p>
+<p>Our implementation combines hardware isolation techniques with contextual authentication and transparent encryption to create security that follows the individual rather than being tied to specific locations or networks.</p>
+<p>We&rsquo;re now moving from internal testing to practical implementation. Next month&rsquo;s workshop will focus on setting up the core components of a Personal Security Mesh using both commercial and open-source tools. We&rsquo;ll explore how to establish your identity foundation, configure your context engine, and deploy adaptive defenses for your devices and communications.</p>
+<p>Join us on March 15, 2025, for this hands-on workshop where we&rsquo;ll help you implement these concepts to enhance your personal and professional security posture.</p>
+<p>Location: NSHkr meeting space</p>
+<p>Time: 15:00-18:00 HST</p>
+<p>RSVP: 687e6b88754ea88d16c64cd21a6663e6</p>
+
+
+<h1 id="feb-1-2025-update">Feb 1, 2025 update:</h1>
+
+
+    <p><strong>Description of LH-SHIELD in ASKA Integration Diagram:</strong></p>
+<p>This diagram illustrates how LH-SHIELD&rsquo;s Physical Layer (L1) is deeply integrated into the larger ASKA system.  It highlights that, within ASKA, LH-SHIELD L1 becomes <em>specifically</em> the interface to ASKA&rsquo;s broader hardware-level security framework.</p>
+<ul>
+<li><strong>LH-SHIELD L1 as ASKA Physical Verification Layer:</strong> The <code>LH-SHIELD Physical Layer (L1) - ASKA Integrated</code> subgraph represents how LH-SHIELD&rsquo;s L1 components are tailored for ASKA integration. The key component becomes <code>Physical Verification Matrix (PVM)</code>, which acts as the explicit interface point to ASKA&rsquo;s <code>I/E Aggregator</code>.</li>
+<li><strong>Hardware Attestation within ASKA Trust Framework:</strong> Within L1 (now within ASKA context), the <code>TPM Bridge</code>, <code>Platform Configuration Registry (PCR)</code>, and <code>Runtime Trust Service (RTS)</code> components from LH-SHIELD&rsquo;s L1 <em>remain</em>.  They still provide hardware attestation, platform state measurement, and runtime trust evaluation.  However, <em>now</em>, their output (<code>Runtime State</code> and <code>Trust Signals</code>) flows directly <em>into</em> ASKA&rsquo;s broader security framework, specifically into <code>Trust Vector Matrix (TVM)</code> and <code>Channel Authentication Matrix (CAM)</code>.</li>
+<li><strong>ASKA I/E Aggregator Interaction (PVM):</strong>  <code>Physical Verification Matrix (PVM)</code> is shown explicitly interacting with ASKA&rsquo;s <code>I/E Aggregator</code> via a bi-directional arrow <code>AIE &lt;--&gt; PVM</code>. This symbolizes the direct hardware-level verification integration between LH-SHIELD L1 and ASKA&rsquo;s external system boundary – physical-layer security directly informing ASKA’s ingress/egress enforcement.</li>
+<li><strong>Hardware-Verified Channels and Integration with LH-SHIELD Core:</strong> <code>Channel Authentication Matrix (CAM)</code> and <code>Channel Configuration Manager (CCM)</code> still perform channel verification functions, but crucially, the <code>CCM</code> now outputs &ldquo;Verified Channels (HW Verified)&rdquo; to the <em>rest of LH-SHIELD Core Layers</em> – specifically to L2 (<code>L2[LH-SHIELD Identity &amp; Authentication (L2)]</code>). This connection  <code>CCM --&gt;|Verified Channels (L2 Integration)| L2</code> illustrates that LH-SHIELD&rsquo;s L2 and higher layers benefit from the hardware-backed channel verification provided by the integrated L1 (within ASKA framework).</li>
+<li><strong>LH-SHIELD Core Layers (L2-L6) Remain Structurally LH-SHIELD:</strong> The <code>LH-SHIELD Core Layers (L2-L6)</code> subgraph (dashed box, greyed out style to visually de-emphasize as focus is L1 integration <em>into</em> ASKA in this diagram) visually represents that the <em>structure</em> of L2, L3, L4, L5, and L6 from LH-SHIELD <em>largely remains</em> within the ASKA integration.  These layers are still LH-SHIELD protocol implementations for identity, secure channels, capabilities, sandbox, and audit – however, they are <em>enhanced and underpinned</em> by the ASKA-integrated Physical Layer L1. Dashed lines connecting these core LH-SHIELD layers signify they are conceptually present as LH-SHIELD layers, but the diagram&rsquo;s primary <em>focus</em> and detailed representation is on L1 integration into ASKA&rsquo;s framework.</li>
+</ul>
+<p><strong>Key Takeaways from ASKA Integration Diagram:</strong></p>
+<ul>
+<li><strong>LH-SHIELD L1 as ASKA&rsquo;s Physical Security Extension:</strong> In this integrated view, LH-SHIELD&rsquo;s Physical Layer becomes a specialized, ASKA-integrated physical verification and attestation layer within the broader ASKA security architecture.</li>
+<li><strong>Hardware-Backed Trust Amplifies LH-SHIELD Security:</strong> ASKA’s hardware-level verification and trust signals from the integrated LH-SHIELD L1 <em>significantly strengthen</em> the security of all higher layers of LH-SHIELD (L2-L6) when deployed within an ASKA-protected system.</li>
+<li><strong>Hybrid Approach - Best of Both Worlds:</strong> The ASKA integration represents a <em>hybrid</em> architecture that combines ASKA&rsquo;s broader external system security and hardware-level verification focus with the principled layered protocol architecture of LH-SHIELD, achieving a synergistic security posture – hardware-rooted trust underpinning a robust layered software security framework.</li>
+</ul>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">%%{ init: { &#39;theme&#39;: &#39;neutral&#39;, &#39;themeVariables&#39;: {
+    &#39;primaryColor&#39;: &#39;#1A73E8&#39;,      // Google Blue
+    &#39;primaryTextColor&#39;: &#39;#FFFFFF&#39;,
+    &#39;secondaryColor&#39;: &#39;#34A853&#39;,      // Google Green
+    &#39;tertiaryColor&#39;: &#39;#EA4335&#39;,      // Google Red
+    &#39;lineColor&#39;: &#39;#4285F4&#39;,          // Softer Google Blue for connections
+    &#39;textColor&#39;: &#39;#202124&#39;,          // Dark Gray from Google&#39;s palette
+    &#39;background&#39;: &#39;#F8F9FA&#39;          // Light background
+}}}%%
+
+graph TD
+    classDef modernNode fill:#F0F4F8,stroke:#1A73E8,stroke-width:2px,color:#1A73E8;
+    classDef layerNode fill:#E6F2FF,stroke:#4285F4,stroke-dasharray:5 5;
+    classDef integrationNode fill:#F6F9FC,stroke:#34A853,stroke-width:2px,color:#34A853;
+
+    subgraph ASKA[&#34;ASKA External System&#34;]
+        AIE[&#34;ASKA I/E Aggregator&#34;] --&gt; AIZ[&#34;ASKA Zero Trust &amp; Policy Enforcement&#34;]
+    end
+
+    subgraph ASKAI[&#34;ASKA-SHIELD Integration&#34;]
+        subgraph SHIELD_L1[&#34;LH-SHIELD Physical Layer (L1) - ASKA Integrated&#34;]
+            PVM[&#34;Physical Verification Matrix&#34;] -- Hardware Attestation --&gt; TPM[&#34;Trusted Platform Module Bridge&#34;]
+            TPM -- Platform State --&gt; PCR[&#34;Platform Configuration Registry&#34;]
+            PCR -- Runtime State --&gt; RTS[&#34;Runtime Trust Service&#34;]
+
+            RTS -- Trust Signals --&gt; CAM[&#34;Channel Authentication Matrix&#34;]
+            CAM -- Channel State (HW Verified) --&gt; CCM[&#34;Channel Configuration Manager&#34;]
+
+            AIE &lt;--&gt; PVM
+            CCM -- Verified Channels (L2 Integration) --&gt; L2[&#34;LH-SHIELD Identity &amp; Authentication (L2)&#34;]
+        end
+
+        subgraph LHSHIELDCORE[&#34;LH-SHIELD Core Layers (L2-L6)&#34;]
+            L2[&#34;Identity &amp; Authentication (L2)&#34;] --&gt; L3[&#34;Secure Channel Layer (L3)&#34;]
+            L3 --&gt; L4[&#34;Capability Control Layer (L4)&#34;]
+            L4 --&gt; L5[&#34;Sandbox Execution Layer (L5)&#34;]
+            L5 --&gt; L6[&#34;Audit &amp; Compliance Layer (L6)&#34;]
+        end
+        LHSHIELDCORE --- SystemMonitoring[&#34;System Monitoring (External)&#34;]
+    end
+
+    class SHIELD_L1 integrationNode
+    class LHSHIELDCORE integrationNode
+    class AIE modernNode
+    class AIZ modernNode
+    class PVM modernNode
+    class TPM modernNode
+    class PCR modernNode
+    class RTS modernNode
+    class CAM modernNode
+    class CCM modernNode
+    class L2 layerNode
+    class L3 layerNode
+    class L4 layerNode
+    class L5 layerNode
+    class L6 layerNode
+    class SystemMonitoring modernNode
+
+
+    %% Additional styling for hover and interaction effects
+</code></pre>
+
+<h1 id="jan-6-2025-update">Jan 6, 2025 update:</h1>
+<h2 id="current-projects">Current Projects:</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">defun</span> <span class="nv">learn-and-evolve</span> <span class="p">(</span><span class="nv">language</span> <span class="nv">technology</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="k">labels</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">           <span class="c1">;; 1. Elegant Knowledge Pipeline:</span>
+</span></span><span class="line"><span class="cl">           <span class="p">(</span><span class="nv">build-knowledge-pipeline</span> <span class="p">(</span><span class="nv">language</span> <span class="nv">technology</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">format</span> <span class="no">t</span> <span class="s">&#34;~%Building an elegant knowledge pipeline...~%&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">knowledge-base</span> <span class="p">(</span><span class="nv">learn</span> <span class="nv">language</span> <span class="nv">technology</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">(</span><span class="nv">optimized-knowledge</span> <span class="p">(</span><span class="nv">optimize-knowledge</span> <span class="nv">knowledge-base</span><span class="p">)))</span> 
+</span></span><span class="line"><span class="cl">               <span class="p">(</span><span class="nv">describe-knowledge</span> <span class="nv">optimized-knowledge</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">           <span class="p">(</span><span class="nv">optimize-knowledge</span> <span class="p">(</span><span class="nv">knowledge-base</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">format</span> <span class="no">t</span> <span class="s">&#34;~%Optimizing the knowledge for conciseness and clarity...~%&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="c1">;; Simulate optimization process (could be complex knowledge compression, etc.)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nb">cond</span>
+</span></span><span class="line"><span class="cl">               <span class="p">((</span><span class="nc">null</span> <span class="nv">knowledge-base</span><span class="p">)</span> <span class="no">nil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">               <span class="p">((</span><span class="kt">atom</span> <span class="nv">knowledge-base</span><span class="p">)</span> <span class="nv">knowledge-base</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">               <span class="p">(</span><span class="no">t</span> <span class="p">(</span><span class="nc">cons</span> <span class="p">(</span><span class="nv">optimize-knowledge</span> <span class="p">(</span><span class="nf">car</span> <span class="nv">knowledge-base</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                         <span class="p">(</span><span class="nv">optimize-knowledge</span> <span class="p">(</span><span class="nf">cdr</span> <span class="nv">knowledge-base</span><span class="p">))))))</span>
+</span></span><span class="line"><span class="cl">           
+</span></span><span class="line"><span class="cl">           <span class="p">(</span><span class="nv">describe-knowledge</span> <span class="p">(</span><span class="nv">knowledge</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">format</span> <span class="no">t</span> <span class="s">&#34;~%Knowledge acquired:~%&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">pprint</span> <span class="nv">knowledge</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="nv">knowledge</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">           <span class="c1">;; 2. Continuous Evolutionary Engineering:</span>
+</span></span><span class="line"><span class="cl">           <span class="p">(</span><span class="nv">build-evolutionary-engineering</span> <span class="p">(</span><span class="nv">knowledge-pipeline</span> <span class="k">&amp;optional</span> <span class="p">(</span><span class="nv">generation</span> <span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">format</span> <span class="no">t</span> <span class="s">&#34;~%Generation ~D: Refining Evolutionary Engineering...~%&#34;</span> <span class="nv">generation</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">refined-engineering</span> <span class="p">(</span><span class="nv">refine-engineering</span> <span class="nv">knowledge-pipeline</span> <span class="nv">generation</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">               <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">=</span> <span class="nv">generation</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">; Example stop condition: evolve for 5 generations</span>
+</span></span><span class="line"><span class="cl">                   <span class="nv">refined-engineering</span>
+</span></span><span class="line"><span class="cl">                   <span class="p">(</span><span class="nv">build-evolutionary-engineering</span> <span class="nv">refined-engineering</span> <span class="p">(</span><span class="nf">+</span> <span class="nv">generation</span> <span class="mi">1</span><span class="p">)))))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">           <span class="p">(</span><span class="nv">refine-engineering</span> <span class="p">(</span><span class="nv">knowledge-pipeline</span> <span class="nv">generation</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">format</span> <span class="no">t</span> <span class="s">&#34;~%Discovering new paradigms in generation ~D...~%&#34;</span> <span class="nv">generation</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="c1">;; Simulate discovery and refinement based on the knowledge pipeline</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nb">cond</span>
+</span></span><span class="line"><span class="cl">               <span class="p">((</span><span class="nf">zerop</span> <span class="nv">generation</span><span class="p">)</span> <span class="p">(</span><span class="nc">list</span> <span class="ss">&#39;initial-paradigm</span> <span class="nv">knowledge-pipeline</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">               <span class="p">(</span><span class="no">t</span> <span class="p">(</span><span class="nc">cons</span> <span class="p">(</span><span class="nc">list</span> <span class="ss">&#39;refined-paradigm</span> <span class="nv">generation</span><span class="p">)</span> <span class="p">(</span><span class="nf">cdr</span> <span class="nv">knowledge-pipeline</span><span class="p">)))))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">           <span class="c1">;; 3. Grand Infrastructure:</span>
+</span></span><span class="line"><span class="cl">           <span class="p">(</span><span class="nv">build-infra</span> <span class="p">(</span><span class="nv">evolutionary-engineering</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">format</span> <span class="no">t</span> <span class="s">&#34;~%Constructing a grand infrastructure...~%&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">foundation</span> <span class="p">(</span><span class="nf">car</span> <span class="nv">evolutionary-engineering</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                   <span class="p">(</span><span class="nv">layers</span> <span class="p">(</span><span class="nf">cdr</span> <span class="nv">evolutionary-engineering</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">               <span class="p">(</span><span class="nv">visualize-infra</span> <span class="nv">foundation</span> <span class="nv">layers</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">           <span class="p">(</span><span class="nv">visualize-infra</span> <span class="p">(</span><span class="nv">foundation</span> <span class="nv">layers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">format</span> <span class="no">t</span> <span class="s">&#34;~%Foundation: ~A~%&#34;</span> <span class="nv">foundation</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">format</span> <span class="no">t</span> <span class="s">&#34;~%Constructing layers upon the foundation:~%&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">layer</span> <span class="nv">layers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">               <span class="p">(</span><span class="nf">format</span> <span class="no">t</span> <span class="s">&#34;~%  - ~A~%&#34;</span> <span class="nv">layer</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">format</span> <span class="no">t</span> <span class="s">&#34;~%Grand infrastructure complete.~%&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nc">list</span> <span class="ss">&#39;grand-infrastructure</span> <span class="nv">foundation</span> <span class="nv">layers</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">           <span class="c1">;; 4. Exploratory Learning:</span>
+</span></span><span class="line"><span class="cl">           <span class="p">(</span><span class="nv">learn</span> <span class="p">(</span><span class="nv">language</span> <span class="nv">technology</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">format</span> <span class="no">t</span> <span class="s">&#34;~%Embarking on a journey to learn ~A and ~A...~%&#34;</span> <span class="nv">language</span> <span class="nv">technology</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nv">explore-concepts</span> <span class="p">(</span><span class="nc">list</span> <span class="nv">language</span> <span class="nv">technology</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">           <span class="p">(</span><span class="nv">explore-concepts</span> <span class="p">(</span><span class="nv">concepts</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">format</span> <span class="no">t</span> <span class="s">&#34;~%Exploring the vast landscape of concepts...~%&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">mapcar</span> <span class="nf">#&#39;</span><span class="nv">delve-into-concept</span> <span class="nv">concepts</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">           <span class="p">(</span><span class="nv">delve-into-concept</span> <span class="p">(</span><span class="nv">concept</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nf">format</span> <span class="no">t</span> <span class="s">&#34;~%Delving into the concept of ~A...~%&#34;</span> <span class="nv">concept</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">             <span class="c1">;; Simulate the learning process for a single concept</span>
+</span></span><span class="line"><span class="cl">             <span class="p">(</span><span class="nb">case</span> <span class="nv">concept</span>
+</span></span><span class="line"><span class="cl">               <span class="p">(</span><span class="ss">&#39;Language</span> <span class="p">(</span><span class="nc">list</span> <span class="ss">&#39;syntax</span> <span class="ss">&#39;semantics</span> <span class="ss">&#39;pragmatics</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">               <span class="p">(</span><span class="ss">&#39;Technology</span> <span class="p">(</span><span class="nc">list</span> <span class="ss">&#39;algorithms</span> <span class="ss">&#39;data-structures</span> <span class="ss">&#39;design-patterns</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">               <span class="p">(</span><span class="nv">otherwise</span> <span class="p">(</span><span class="nc">list</span> <span class="ss">&#39;fundamentals</span> <span class="nv">concept</span> <span class="ss">&#39;advanced-topics</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">           <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">build-infra</span> <span class="p">(</span><span class="nv">build-evolutionary-engineering</span> <span class="p">(</span><span class="nv">build-knowledge-pipeline</span> <span class="nv">language</span> <span class="nv">technology</span><span class="p">)))))</span>
+</span></span></code></pre></div><h1 id="nov-3-2024-update">Nov 3, 2024 update:</h1>
+<h2 id="secure-computing-architecture">Secure Computing Architecture</h2>
+<p>ASKA (Adaptive Secure Kernel Architecture) represents a departure from traditional computing architectures, offering a fundamentally new approach to building secure applications. At its core lies a multi-kernel design utilizing Modular Isolated Execution Stacks (IES), each providing complete hardware-enforced isolation for applications and processes. This hardware-level compartmentalization minimizes the impact of vulnerabilities, preventing lateral movement of attacks and effectively containing breaches within individual IES instances.  This robust isolation is further enhanced by a sophisticated capability-based access control system, dynamically managed by the Dynamic Trust Management System (DTMS), which continuously assesses and adjusts trust levels based on real-time system behavior, user actions, and threat intelligence, thereby tailoring access permissions to each application. This unique combination of hardware isolation and dynamic trust management drastically reduces the attack surface and ensures that only authorized components and processes can access sensitive data and resources.</p>
+<p>ASKA&rsquo;s innovative security posture is further fortified by a multi-layered networking architecture.  Two distinct networks operate independently: a Decentralized Mesh Network on Chip (DMNoC) for high-bandwidth, low-latency, peer-to-peer communication within and between ASKA instances, and a Multi-Channel Network (MCN) for mediating interaction with external networks, ranging from highly trusted, dedicated government networks to the potentially untrusted public internet.  The DMNoC, with its mesh topology and hardware attestation using 3D microstructures, provides resilience against node failures and attacks targeting individual components. The MCN, meanwhile, uses physically segregated channels with dedicated firewalls and quantum-resistant cryptography (where appropriate) to ensure secure and authenticated external communications, integrating Isomorphic Architecture Monitoring and Adaptation (IAMA) to proactively mitigate threats from legacy systems.  This multi-network approach provides unparalleled flexibility and security, allowing ASKA to handle both local and external communications with tailored security strategies for different contexts.</p>
+<p>The foundation of ASKA’s adaptive security model rests on the powerful synergy between its multi-agent AI system and its dynamic networking capabilities. The AI Agent(s), deployed within isolated execution environments, passively monitor user interactions via the Secure UI and actively analyze system-wide data (from the DTMS, Security Meshes, and the Decentralized Ledger). This out-of-band monitoring capability provides early threat detection and supports highly-granular, real-time adjustments to security policies and resource allocation. The AI Agent swarms, using their collective intelligence to detect anomalies and coordinate automated responses (such as isolation, containment, and self-healing),  significantly enhancing ASKA&rsquo;s ability to react to threats in real-time. Moreover, the AI Agent’s security insights inform the Automated Evolutionary Software Development System (AESDS), which continuously generates, tests, and deploys secure software updates, creating a self-evolving and adaptive security system that constantly strengthens itself against evolving threats.  The integration of the AI Agent’s functions, both for user assistance and dynamic security management, enhances user trust and reduces the system’s operational overhead.</p>
+<p>A purpose-built, integrated application development process completes ASKA&rsquo;s ecosystem.  The AI Agent acts as a secure, out-of-band guide for developers, assisting with code generation, security analysis, and deployment within the ASKA environment. It provides interactive tutorials and best practices, reducing development time and improving code quality, thereby fostering a secure development environment with continuous improvement.   Developers create applications within isolated IES instances, leveraging ASKA’s APIs and capabilities for communication and data access.  The AI Agent’s security insights, combined with the AESDS’s continuous monitoring and updating process, ensure that applications are built securely and remain protected against evolving threats, leveraging the flexibility of the mesh and multi-channel network for application-specific configurations while maintaining a high degree of security and trust.  This fully integrated secure application development process eliminates many of the vulnerabilities typically found in traditional software development workflows. The Multi-Dimensional Audit Trail System (MDATS), integrating digital logs on the Decentralized Ledger with physical 3D microstructures, ensures complete transparency and accountability.</p>
+<p>ASKA represents a paradigm shift in secure computing, addressing numerous vulnerabilities present in traditional architectures.  Through hardware-enforced isolation, dynamic trust management, multi-agent AI, secure networking, and a fully integrated development process, ASKA provides a high-assurance platform, adapting to evolving threats and technological advancements for secure and efficient application development and deployment across diverse and potentially hostile environments for decades to come.  Its uniquely designed and integrated multi-layered security architecture provides unprecedented levels of assurance, robustness, and adaptability not seen in any other existing system, enhancing its value greatly and making it a highly secure and versatile platform for various uses across multiple markets.</p>
+<p><img src="/ASKA-20241103.png" alt="ASKA 20241103"></p>
+<h1 id="nov-2-2024-update">Nov 2, 2024 update:</h1>
+<h1 id="aska-architecture-a-comprehensive-overview">ASKA Architecture: A Comprehensive Overview</h1>
+<p><a href="/ASKA-Overview-20241102.png"><img src="/ASKA-Overview-20241102-sm.png" alt="ASKA Diagram 20241102"></a></p>
+<p>This diagram provides a comprehensive overview of the ASKA architecture, highlighting its key technologies and their interactions.  The system emphasizes modularity, robust security features, and dynamic adaptability.</p>
+<h2 id="aska-system">ASKA System</h2>
+<p>This top-level view encapsulates all components of a ASKA instance and its connections to external entities.</p>
+<h3 id="aska-instance-local">ASKA Instance (Local)</h3>
+<p>This section details the core components within a single ASKA instance.</p>
+<h4 id="ies-cluster-p1">IES Cluster (P1)</h4>
+<p>The foundation of ASKA&rsquo;s hardware-enforced isolation. Multiple IES (Isolated Execution Stack) instances run different applications concurrently, each with dedicated hardware resources (CPU, memory, I/O, network). Key features include:</p>
+<ul>
+<li><strong>Dynamic Partitioning:</strong> IES instances can be dynamically divided into smaller, isolated child-IES instances to optimize resource utilization and further enhance security.</li>
+<li><strong>Hierarchical Zones:</strong>  Hierarchical zones within each IES, governed by mini-TRCs (Trust Root Configurations) stored on tamper-evident media (P13/P15), provide granular trust and policy management.</li>
+<li><strong>Secure Resource Borrowing (SRBM - P9):</strong> Enables efficient resource utilization while maintaining isolation.</li>
+<li><strong>Secure Communication:</strong> Inter-IES communication utilizes secure channels (P2, P3) and capability-aware forwarding (P26).  Local Security Meshes (LSMs - P2) monitor each IES instance and report to the Master Security Mesh (MSM - P2).</li>
+<li><strong>Data at Rest Encryption:</strong>  The Hardware-Enforced Secure Encrypted Enclave for Data at Rest (HESE-DAR - P24) provides hardware-level encryption for data at rest.</li>
+<li><strong>Connections:</strong> The IES Cluster connects to the DMNoC (Decentralized Mesh NoC), the MCN (Multi-Channel Network), the ASKA Hub, and the AI Agent.</li>
+</ul>
+<h4 id="dmnoc-decentralized-mesh-noc">DMNoC (Decentralized Mesh NoC)</h4>
+<p>A secure, high-bandwidth mesh network for inter-IES communication and connections to trusted external ASKA instances. Key features include:</p>
+<ul>
+<li><strong>Decentralized Mesh Topology:</strong> Provides redundancy and fault tolerance.</li>
+<li><strong>Hardware Attestation (3D Microstructures - P14):</strong> Ensures the integrity of DMNoC components.</li>
+<li><strong>Fiber Channel Interface:</strong> Provides high-bandwidth connectivity to external networks.</li>
+<li><strong>Integration:</strong>  The DMNoC integrates with the IES Cluster, DTMS, Policy Engine, and AI Agent.</li>
+</ul>
+<h4 id="mcn-multi-channel-network">MCN (Multi-Channel Network)</h4>
+<p>Provides secure communication channels for connecting to external networks (Internet, trusted networks). Key features include:</p>
+<ul>
+<li><strong>Multi-Channel Architecture (P3):</strong> Physically segregated channels with dedicated firewalls prevent cross-channel interference.</li>
+<li><strong>Quantum-Resistant Communication (P5):</strong>  Employs QKD, DKM, and PQC to secure communication against quantum computer attacks.</li>
+<li><strong>Dynamic Routing (P3):</strong> Adapts to real-time security assessments and trust levels.</li>
+<li><strong>IAMA (P16):</strong> Analyzes connected legacy systems to proactively identify and mitigate vulnerabilities.</li>
+<li><strong>Integration:</strong> The MCN integrates with the IES Cluster, DTMS, Policy Engine, AI Agent, and IAMA.</li>
+</ul>
+<h4 id="aska-hub">ASKA Hub</h4>
+<p>The central management and control component for the local instance.  It orchestrates and manages all other components, enforcing policies, and managing resources.  It encompasses:</p>
+<ul>
+<li><strong>Dynamic Trust Management System (DTMS - P4):</strong>  Manages trust relationships and access control based on dynamic metrics.</li>
+<li><strong>Policy Engine (P4):</strong> Enforces security policies.</li>
+<li><strong>AI Agent (P36):</strong> Monitors, analyzes, and adapts security measures.</li>
+<li><strong>Automated Evolutionary Software Development System (AESDS - P16):</strong> Continuously updates and improves ASKA software.</li>
+<li><strong>Secure UI Kernel (P11):</strong> Provides a secure user interface.</li>
+<li><strong>Key Management:</strong>  Manages cryptographic keys for secure communication.</li>
+</ul>
+<h4 id="dynamic-trust-and-policy">Dynamic Trust and Policy</h4>
+<p>This subgraph represents the core of ASKA&rsquo;s dynamic security, encompassing:</p>
+<ul>
+<li><strong>Bidirectional Communication:</strong> DTMS, Policy Engine, and Capability Manager (P25) communicate bidirectionally, dynamically adjusting trust levels and capabilities.</li>
+<li><strong>Policy Influence:</strong> Dotted lines show how trust levels and policies influence the IES Cluster, DMNoC, and MCN.</li>
+</ul>
+<h4 id="ai-agent-p36">AI Agent (P36)</h4>
+<p>A crucial component responsible for:</p>
+<ul>
+<li><strong>System-wide Monitoring:</strong>  Monitors all aspects of system behavior and network communication.</li>
+<li><strong>Anomaly Detection:</strong> Employs AI/ML for detecting anomalies.</li>
+<li><strong>Adaptive Security:</strong>  Coordinates security responses and dynamically adjusts security measures.</li>
+<li><strong>Policy Influence:</strong> Provides recommendations and influences policy updates.</li>
+</ul>
+<h4 id="aesds-p16">AESDS (P16)</h4>
+<p>The AI-driven system responsible for:</p>
+<ul>
+<li><strong>Continuous Software Updates:</strong> Continuously monitors, updates, and improves ASKA’s software.</li>
+<li><strong>Proactive Security Patching:</strong> Proactively generates and deploys security patches and updates.</li>
+<li><strong>Integration:</strong>  Manages updates across all ASKA components.</li>
+</ul>
+<h4 id="secure-ui-kernel-p11">Secure UI Kernel (P11)</h4>
+<p>Provides a secure and isolated user interface environment with:</p>
+<ul>
+<li><strong>Zonal Isolation:</strong> Isolates UI from the underlying system.</li>
+<li><strong>Hardware-Enforced Control-Flow Integrity (CFI):</strong> Prevents code injection attacks.</li>
+<li><strong>Declarative Policy-Based Rendering:</strong> Controls UI rendering based on policies.</li>
+</ul>
+<h4 id="hardware-root-of-trust-hrot">Hardware Root of Trust (HRoT)</h4>
+<p>The foundation of ASKA&rsquo;s trust, providing:</p>
+<ul>
+<li><strong>Attestation:</strong> Verifies the integrity of system components.</li>
+<li><strong>Key Generation:</strong> Generates cryptographic keys.</li>
+<li><strong>Validation Services:</strong>  Provides validation services to all modules.</li>
+<li><strong>Tamper-Proof Auditing:</strong>  Creates tamper-proof auditable records via MDATS (P17) and 3D Microstructures (P14) utilizing the Decentralized Ledger (P13, P15).</li>
+</ul>
+<h3 id="external-connections">External Connections</h3>
+<h4 id="external-mesh-network-trusted">External Mesh Network (Trusted)</h4>
+<p>ASKA instances connect and exchange information securely, leveraging the DMNoC’s high-bandwidth capabilities.</p>
+<h4 id="external-networks">External Networks</h4>
+<p>ASKA connects to various external networks (Internet, trusted networks) via the MCN, with IAMA (P16) monitoring and managing this interface.</p>
+<h2 id="key-features-and-technologies">Key Features and Technologies</h2>
+<p>This section summarizes the core technologies underpinning ASKA&rsquo;s security and functionality:</p>
+<ul>
+<li><strong>Hardware-Rooted Trust (P1, P13, P33):</strong>  Secure Boot, attestation, and 3D microstructures for tamper evidence.</li>
+<li><strong>Isolated Execution Stacks (P1):</strong> Hardware-enforced isolation with dynamic partitioning and hierarchical zones for granular security.</li>
+<li><strong>Dynamic Trust Management (P4):</strong>  Dynamic trust metrics, decentralized zone management, and policy negotiation for adaptive security.</li>
+<li><strong>Secure Communication Channels (P2, P3):</strong>  Data diodes for unidirectional flows, multi-channel network with quantum-resistant options (P5).</li>
+<li><strong>AI-Driven Security (P2, P7, P36):</strong>  Proactive threat detection, automated responses, and adaptive security policies.</li>
+<li><strong>Capability-Based Access Control (P25, P26):</strong> Fine-grained access control at the data plane level.</li>
+<li><strong>Data Encryption (P5, P24):</strong>  HESE-DAR for data at rest, and quantum-resistant encryption for data in transit.</li>
+<li><strong>Auditing and Accountability (P13, P15, P17):</strong> Decentralized ledger, MDATS, and 3D microstructures for comprehensive auditing.</li>
+</ul>
+<p>ASKA represents a paradigm shift in secure computing, offering a robust, adaptable, and trustworthy platform for high-assurance operations in diverse environments.  The modularity, dynamic adaptability, and multi-layered defense mechanisms address the limitations of traditional systems, creating a highly resilient and future-proof solution, especially in the context of evolving threats and the increasing importance of secure, decentralized computing.</p>
+<p><img src="/ASKA-AI_Integration-20241102.png" alt="ASKA AI Integration 20241102"></p>
+<p><strong>Diagram Description:</strong></p>
+<p>The ASKA AI Agent (P36) is a central component, playing a dual role: providing secure, out-of-band assistance to users and enhancing ASKA&rsquo;s overall security posture.  The diagram illustrates these interwoven functions:</p>
+<p><strong>1. User Assistance and UI Monitoring:</strong></p>
+<p>This section of the diagram details how the AI Agent assists users via the Secure UI while maintaining stringent security:</p>
+<ul>
+<li>The Secure UI Kernel (P11) is monitored unidirectionally via a Data Diode (P2) by the UI Monitor.  This prevents the AI Agent from directly manipulating the UI.</li>
+<li>The UI Monitor sends sanitized data to the AI Agent’s LLM Engine.</li>
+<li>The LLM Engine processes this data and provides assistance to the user via User Interaction.</li>
+<li>The User Interaction feeds back into the Secure UI, creating a closed loop for user assistance.</li>
+</ul>
+<p>A. <strong>Unidirectional UI Monitoring:</strong> User interactions with the Secure UI Kernel (P11) are passively observed by a UI Monitoring Module. This module employs a data diode (P2) to ensure unidirectional data flow from the UI to the AI Agent, preventing the AI Agent from directly manipulating the UI or introducing vulnerabilities via the user interface. This unidirectional data flow is crucial for protecting the integrity and security of the ASKA system from the UI.</p>
+<p>B. <strong>Data Sanitization and Filtering:</strong> Before being processed by the AI Agent, the UI interaction data collected by the UI Monitoring Module is passed through a data sanitization and filtering module. This module removes potentially malicious or sensitive information, protecting both user privacy and system security from potentially compromised or malicious user input or actions.  This sanitization process removes potentially hazardous elements, ensuring that the AI Agent receives only safe and relevant data.  This process likely uses AI techniques to identify potentially malicious or problematic code or other elements and securely remove it from the UI data before delivering it to the AI Agent.</p>
+<p>C. <strong>LLM Engine Processing:</strong>  The sanitized UI interaction data is then processed by the AI Agent&rsquo;s local Large Language Model (LLM) Engine (residing within a secure, isolated IES - P1). The LLM Engine leverages its knowledge base (including ASKA-specific information, API documentation, security best practices, and contextual understanding from previous interactions) to analyze the data, identify relevant patterns, and generate insights, recommendations, or actions.  This ensures the AI Agent’s actions and responses are relevant, consistent, secure, and aligned with user intent.</p>
+<p>D. <strong>User Interaction:</strong> The AI Agent&rsquo;s responses or recommendations are communicated back to the user via the Secure UI, enabling an interactive and collaborative experience. This feedback loop provides ongoing refinement and contextual awareness for the AI Agent. The design ensures that the user interaction remains secure and cannot be used as a point of compromise for the system.</p>
+<p>E. <strong>Security Monitoring:</strong> The UI Monitoring Module also feeds security-relevant information (such as keystrokes, mouse movements, and time spent on certain UI elements) to the AI Agent’s security subsystem which integrates into ASKA’s security mechanisms, creating a continuous monitoring and threat assessment pathway that leverages user context.</p>
+<p><strong>2. ASKA Application Integration and Security:</strong></p>
+<p>This section shows how the AI Agent enhances ASKA&rsquo;s security posture by providing support for ASKA applications:</p>
+<ul>
+<li>The Agent API provides a programmatic interface for ASKA applications (App1, AppN) to interact with the AI Agent.</li>
+<li>The AI Agent leverages its ASKA integrations (accessing data from DTMS, Policy Engine, AESDS, and the Decentralized Ledger) for contextualized security analysis.</li>
+<li>The AI Agent provides recommendations or takes direct action through interactions with the local and Master Security Meshes (LSM, MSM - P2).</li>
+</ul>
+<p>A. <strong>Agent API:</strong> A secure Application Programming Interface (API) allows ASKA applications (App1, AppN) to request assistance or specialized functionalities from the AI Agent. This provides developers with a powerful tool to enhance their applications with AI-driven capabilities.  This secure API is implemented within the isolated IES of the AI Agent, enhancing its security and preventing unauthorized access to the AI Agent’s capabilities.</p>
+<p>B. <strong>ASKA Integration Modules:</strong> The AI Agent integrates with other ASKA components through several specialized modules:</p>
+<ul>
+<li>
+<p><strong>DTMS Integration Module:</strong> Receives trust information (P4) and policy updates from the DTMS.
+The agent adapts its behavior based on trust levels, dynamically adjusting its recommendations
+and actions based on the security context.  This continuous integration with DTMS ensures
+that the AI Agent&rsquo;s operations remain aligned with ASKA&rsquo;s overall security policies.</p>
+</li>
+<li>
+<p><strong>MSM Integration Module:</strong> Receives security alerts (P2) and anomaly reports from the MSM
+(Master Security Mesh). The agent leverages this telemetry to improve its threat assessment.
+It uses the information to identify potential risks and generate security recommendations.</p>
+</li>
+<li>
+<p><strong>AESDS Integration Module:</strong> Receives software updates (P16) and security patches from
+the AESDS (Automated Evolutionary Software Development System). This guarantees the
+AI Agent’s software integrity and prevents the deployment of malicious or compromised code.</p>
+</li>
+<li>
+<p><strong>DLT Integration Module:</strong> Logs all of the AI Agent’s activity and API interactions to the
+Decentralized Ledger (P13, P15) for auditing and transparency. This creates a comprehensive and
+tamper-evident audit trail of the AI Agent&rsquo;s actions, contributing to system accountability.</p>
+</li>
+</ul>
+<p>C. <strong>Security Recommendations and Actions:</strong> Based on its analysis of UI events, application requests,
+and ASKA telemetry, the AI Agent provides security recommendations or takes direct actions:</p>
+<ul>
+<li>
+<p><strong>Recommendations:</strong>  The AI Agent may suggest security policy adjustments (to the Policy
+Engine), resource reallocations (to the Resource Manager), or software updates (to the AESDS).</p>
+</li>
+<li>
+<p><strong>Direct Actions:</strong> In some cases (based on defined parameters and thresholds), the AI Agent
+might directly trigger security actions, such as isolating a compromised component (via the
+Isolator - P7), initiating self-healing procedures (via the Self-Healer - P7), or triggering
+alerts (via the Alert System - P7). This dynamic capability enhances ASKA&rsquo;s ability to respond effectively to real-time threats.</p>
+</li>
+</ul>
+<p><strong>3. Security Monitoring and Response:</strong></p>
+<ul>
+<li>The MSM aggregates security events and alerts, which may trigger actions from the AI Agent.  This is shown implicitly.</li>
+<li>The AI Agent&rsquo;s security recommendations influence DTMS (P4) trust levels, policy updates (P4), and resource allocation (P9, P10).</li>
+</ul>
+<p>The AI Agent significantly enhances ASKA&rsquo;s security posture in the following ways:</p>
+<p>A. <strong>Proactive Threat Detection:</strong>  The AI Agent&rsquo;s continuous monitoring of both user interactions and
+system events allows for the proactive identification of potential threats or anomalies. The agent
+leverages its LLM engine and its ASKA integrations to improve threat detection,
+providing early warnings of attacks or vulnerabilities, and enabling timely interventions.</p>
+<p>B. <strong>Adaptive Security:</strong> The AI Agent’s ability to dynamically adjust its recommendations and actions based on real-time context (from DTMS and MSM) enables adaptive security. This dynamic adaptability ensures ASKA’s protection against evolving threats and vulnerabilities.</p>
+<p>C. <strong>Reduced Human Intervention:</strong>  The AI Agent&rsquo;s automated threat detection and response
+mechanisms reduce the need for constant human intervention, allowing security teams to focus on
+more strategic tasks, such as incident response and security policy adjustments. This automated
+response capability enhances the system&rsquo;s efficiency and resilience.</p>
+<p>D. <strong>Improved Accuracy:</strong> The AI Agent continuously learns from new data, refining its models and
+improving its detection accuracy over time. The combination of passive UI monitoring, analysis
+of application behavior, and system-wide telemetry gives the AI Agent comprehensive insights
+into the system’s security posture.</p>
+<p>E. <strong>Tamper-Evident Auditing:</strong>  The AI Agent logs all actions to the Decentralized Ledger (P13,P15),
+creating a transparent and auditable record that integrates with MDATS (P17). This ensures
+accountability and helps in identifying and investigating incidents.  Further, 3D microstructures
+can enhance the tamper-evidence of critical AI Agent actions.</p>
+<h1 id="october-31-2024-update">October 31, 2024 update:</h1>
+<h2 id="aska-conceptual-documents-and-patent-brainstorming">ASKA Conceptual Documents and Patent Brainstorming</h2>
+<p>ASKA conceptual documents and patent brainstorming released:<br /></p>
+<p>Following discussions with ASKA&rsquo;s Engineering Assistant LLM about the public release of this early draft, I have decided to share the technical concept of ASKA. This initiative seeks to improve transparency in the security architecture and invite broader participation in strengthening its defenses. The decision also underscores the need to balance civil liberties with governance considerations.</p>
+<p><a href="/ASKA-1-Overview-20241031/1ASKAOverview120241031.html">1-ASKA Overview-1 20241031</a></p>
+<p><a href="/ASKA-2-Overview-20241031/2ASKAOverview220241031.html">2-ASKA Overview-2 20241031</a></p>
+<p><a href="/ASKA-3-Patents-1of3-20241031/3ASKAPatents1of320241031.html">3-ASKA Patents 1of3 20241031</a></p>
+<p><a href="/ASKA-4-Patents-2of3-20241031/4ASKAPatents2of320241031.html">4-ASKA Patents 2of3 20241031</a></p>
+<p><a href="/ASKA-5-Patents-3of3-20241031/5ASKAPatents3of320241031.html">5-ASKA Patents 3of3 20241031</a></p>
+<p><a href="/ASKA-6-Patents-Brainstorm-20241031/6ASKAPatentsBrainstorm20241031.html">6-ASKA Patents Brainstorm 20241031</a></p>
+<p><a href="/ASKA-7-ProsCons_VC_Letter_SCiON_Nebula-20241031/7ASKAProsConsVC_LetterSCiONNebula2024.html">7-ASKA ProsCons_VC_Letter_SCiON_Nebula 20241031</a></p>
+<p><a href="/ASKA-8-Scratchpad-20241031/8ASKAScratchpad20241031.html">8-ASKA Scratchpad 20241031</a></p>
+<h2 id="subsequent-documents">Subsequent Documents</h2>
+<p><a href="/ASKA-9-20241101/9ASKA20241101.html">9-ASKA 20241101</a></p>
+<p><a href="/ASKA-10-20241102/10ASKA20241102.html">10-ASKA 20241102</a></p>
+<p><a href="/ASKA-13-20241106/13ASKA20241106.html">13-ASKA 20241106</a></p>
+<h1 id="october-22-2024-update">October 22, 2024 update:</h1>
+<p>NSHkr.com is pleased to announce ASKA. (synack: future/bro) <br />
+<br /></p>
+<h1 id="october-22-2023-update">October 22, 2023 update:</h1>
+<p>NSHkr.com supports USA, Israel, and Ukraine.<br />
+<img src="/IMG_4322.png" alt="United States Flag">
+<img src="/IMG_4324.png" alt="Israel Flag">
+<img src="/IMG_4323.png" alt="Ukraine Flag"></p>
+<h1 id="may-3-2023">May 3, 2023:</h1>
+<p><a href="https://gist.githubusercontent.com/nshkrdotcom/e0a10520e6b3805f63eb4ea1dbf9a7ac/raw/c54552f71c7a72fde02761bb2e4b9a1f10dbef1b/gistfile1.txt" title="Political Statement">Political Statement</a></p>
+<h1 id="april-1-2023-brochure">April 1, 2023 brochure:</h1>
+<p><img src="/nshkr-flyer-apr-1-2023.png" alt="Tentative brochure for March 2023"></p>
+<h1 id="april-1-2023">April 1, 2023:</h1>
+<p>Proposal for New Cybersecurity Initiatives</p>
+<p>Introduction:</p>
+<p>As our reliance on complex and un-auditable computing and networking systems continues to grow, the need for a fundamental recalibration of our approach to security design has become increasingly urgent. The current approach, which prioritizes innovation, user experience, and other factors over security, has resulted in significant tail risks that threaten the integrity of our systems and the safety of our data. In this proposal, we outline new cybersecurity initiatives that aim to address these risks and establish baseline security principles that are adaptable to the rapidly changing landscape of technology.</p>
+<p>Initiatives:</p>
+<ul>
+<li>
+<p>Threat Modeling: We propose the development of a comprehensive threat modeling framework that incorporates an outlook to at least 2050. This framework will involve speculation, extrapolation, and imagination, but will be grounded in empirical evidence and expert analysis. The goal of this initiative is to identify likely threat vectors and anticipate potential security risks before they can be exploited.</p>
+</li>
+<li>
+<p>Black Box Auditing: We propose the development of new auditing methodologies that can effectively evaluate the security of complex and un-auditable systems. This initiative will involve the development of new tools and techniques that can uncover vulnerabilities in black box systems and provide actionable recommendations for improving security.</p>
+</li>
+<li>
+<p>Security-by-Design: We propose the integration of security-by-design principles into the development of new computing and networking systems. This initiative will involve the establishment of baseline security principles that prioritize security over other factors and promote the development of more secure and resilient systems from the ground up.</p>
+</li>
+<li>
+<p>Stakeholder Engagement: We propose the establishment of a stakeholder engagement process that can effectively communicate the importance of security to decision-makers and incentivize the prioritization of security over other factors. This initiative will involve the development of new communication strategies, such as threat modeling visualizations and security dashboards, that can effectively convey security risks to stakeholders.</p>
+</li>
+</ul>
+<p>Conclusion:</p>
+<p>In conclusion, the proposed cybersecurity initiatives represent a significant step forward in addressing the tail risks associated with complex and un-auditable computing and networking systems. By establishing new threat modeling frameworks, developing new auditing methodologies, integrating security-by-design principles, and engaging stakeholders in the security process, we can create a more secure and resilient technological landscape that is better able to protect our data and preserve the integrity of our systems.</p>
+<hr>
+<h1 id="april-1-2023-1">April 1, 2023</h1>
+<p>NS Meeting Location</p>
+<p>Dear Colleagues,</p>
+<p>Following up on our recent cybersecurity report, we are pleased to outline the steps we will be taking to achieve our proposed initiatives. We believe that these initiatives are critical to addressing the tail risks associated with complex and un-auditable computing and networking systems and protecting the integrity of our systems and data.</p>
+<p>To achieve these goals, we will be seeking support from public funding, federal assistance, community cooperation, and open discussion with leading stakeholders in the technology industry, including companies. We are committed to ensuring that our initiatives are grounded in empirical evidence and expert analysis, and that they prioritize security over other factors.</p>
+<p>Specifically, we will be taking the following steps:</p>
+<ul>
+<li>
+<p>We will be seeking public funding to support the development of our threat modeling framework and the establishment of our stakeholder engagement process. We believe that these initiatives are critical to identifying likely threat vectors, anticipating potential security risks, and communicating the importance of security to decision-makers.</p>
+</li>
+<li>
+<p>We will be seeking federal assistance to support the development of our black box auditing methodologies. We believe that these methodologies are critical to evaluating the security of complex and un-auditable systems and identifying vulnerabilities that can be exploited.</p>
+</li>
+<li>
+<p>We will be seeking community cooperation to promote the integration of security-by-design principles into the development of new computing and networking systems. We believe that this initiative is critical to promoting the development of more secure and resilient systems from the ground up.</p>
+</li>
+<li>
+<p>We will be seeking open discussion with leading stakeholders in the technology industry. We believe that these stakeholders have a critical role to play in promoting the prioritization of security over other factors and incentivizing the development of more secure and resilient systems.</p>
+</li>
+</ul>
+<p>We are committed to working with all stakeholders to achieve these goals and protect the integrity of our systems and data. We believe that the proposed initiatives represent a significant step forward in addressing the tail risks associated with complex and un-auditable computing and networking systems, and we look forward to collaborating with you to achieve these goals.</p>
+<hr>
+<h1 id="march-2023">March 2023:</h1>
+<p>In the quaint town of Haleiwa, a group of passionate individuals gathered at a local hackerspace. They were deeply connected to the Hawaiian culture and wanted to find ways to preserve and promote it. They spent countless hours brainstorming and prototyping until they came up with an idea that would change the course of their community.</p>
+<p>They decided to start a local work revolution that would honor and support the traditional Hawaiian way of life. They envisioned a sustainable, eco-friendly industry that would provide living wages to the local community while preserving their culture and values.</p>
+<p>The group collaborated with local artisans and cultural experts to create a new type of industry that would revitalize traditional Hawaiian crafts and practices. They worked tirelessly to develop new technology and processes that would allow for more efficient and sustainable production of traditional Hawaiian goods, from clothing to home decor.</p>
+<p>The group knew that their vision would require significant investment, so they went out into the community to pitch their idea. They met with business leaders, investors, and politicians and were eventually able to secure the funding they needed to make their vision a reality.</p>
+<p>The hackerspace members worked closely with local residents and artisans, providing them with the training and education they needed to succeed in the new industry. They created new jobs and provided living wages to those involved, revitalizing the local economy.</p>
+<p>Years later, the town of Haleiwa had been transformed. The traditional Hawaiian crafts and practices were once again thriving, and the community was proud of its rich cultural heritage. The founders of the hackerspace were hailed as local heroes, and their legacy would carry on for generations.</p>
+<p>The visionaries knew that they had made a significant impact on their community, and they were proud to have been a part of something so meaningful. They knew that their work would continue to benefit the people of Haleiwa for many years to come, preserving and promoting the traditional Hawaiian way of life.</p>
+<hr>
+<p>In the small town of Haleiwa, a group of passionate tech enthusiasts formed the Haleiwa Hackspace, known as NSHkr.com. They were committed to using their skills and knowledge to make a positive impact on their community. They spent countless hours tinkering with new ideas until they came up with something that would change the course of their town: innovative local manufacturing technology.</p>
+<p>They knew that traditional manufacturing was costly and often involved outsourcing to other countries. They wanted to change that by developing technology that would allow for local manufacturing at a fraction of the cost. They believed that this would not only benefit the local economy but also the environment.</p>
+<p>The NSHkr members knew that they needed funding to turn their idea into a reality, so they began reaching out to angel investors. They pitched their idea, and to their surprise, they received a positive response. The investors were impressed by their commitment to sustainability and their dedication to creating new jobs in the local community.</p>
+<p>With funding secured, the NSHkr team began collaborating with local politicians to gain support for their project. They knew that they needed the government&rsquo;s backing to succeed, so they presented their idea to the city council. The politicians were excited by the prospect of creating new jobs in their town and were eager to support the NSHkr team.</p>
+<p>The NSHkr team also received funding from corporations that benefited from this win-win scenario. These corporations saw the potential in local manufacturing and were eager to invest in a sustainable future.</p>
+<p>With funding and support from all sides, the NSHkr team worked tirelessly to develop their new technology. They built state-of-the-art machinery that allowed for local manufacturing of various products, from clothing to home goods. The local community was thrilled by the prospect of new jobs and a sustainable future.</p>
+<p>Years later, Haleiwa was transformed. The town had a thriving local manufacturing industry that provided living wages to the community. The environment also benefited from the reduced carbon footprint of local manufacturing. The NSHkr team was hailed as local heroes, and their legacy would continue to benefit the community for generations to come.</p>
+<hr>
+<p>Alyssa had always been fascinated with electronics, but she never had the chance to explore her interest until she stumbled upon NSHkr.com, a local hackerspace in Haleiwa. The website promised a community of like-minded individuals who shared her passion for tinkering with hardware and software projects. Intrigued, she signed up for a membership and soon found herself attending weekly meetings and workshops.</p>
+<p>At first, Alyssa was overwhelmed by the technical jargon and the complexity of the projects. But with the help of the friendly members at NSHkr.com, she quickly learned the basics of coding and hardware hacking. She started with small projects, such as building a simple LED circuit, and gradually worked her way up to more challenging projects, such as designing her own PCB boards and programming microcontrollers.</p>
+<p>One day, Alyssa stumbled upon ChatGPT, a language model that could answer almost any question she had. With ChatGPT&rsquo;s help, she was able to tackle even more complex projects, such as programming a robot to follow a set of instructions. She was amazed by the sheer power of this tool, and she started to incorporate it into her learning routine.</p>
+<p>As she gained more confidence in her skills, Alyssa started to think about how she could turn her passion into a career. She began to look for ways to monetize her expertise, and eventually, she hit upon an idea: she would start a business that provided customized electronic solutions for small businesses and individuals.</p>
+<p>With the help of her newfound knowledge and resources at NSHkr.com, Alyssa started her business, which quickly took off. She was able to build a sustainable business that provided her with the financial freedom to pursue her passions full-time.</p>
+<p>Years later, Alyssa looked back on her journey with pride. She had come a long way from the timid young adult who had walked into NSHkr.com with nothing more than a dream. She was now a successful entrepreneur, and she knew that she had NSHkr.com and ChatGPT to thank for giving her the tools she needed to make her dreams a reality.</p>
+<hr>
+<p>Judah was a retired electronics technician who had spent his entire career tinkering with gadgets and machines. He had always been passionate about making and hacking on projects, and even in retirement he couldn’t resist the urge to continue his work.</p>
+<p>One day, Judah discovered NSHkr.com, a new hackerspace in Haleiwa, Hawaii. Excited at the prospect of joining a community of like-minded individuals, he decided to attend one of their meetings.</p>
+<p>As soon as he arrived at the hackerspace, Judah was welcomed with open arms. The young adults there were eager to learn from his lifetime of experience and knowledge. Judah was more than happy to share his skills with them and help them develop useful and marketable life skills in electronics.</p>
+<p>Over time, Judah became a regular at the hackerspace. He would often bring in new projects for the group to work on together and would always be there to offer guidance and advice. The young adults at NSHkr.com were inspired by Judah’s passion for making and hacking on projects.</p>
+<p>Thanks to Judah’s influence, many of them went on to pursue careers in electronics or start their own businesses. They were grateful for the opportunity to learn from someone with so much experience and knowledge.</p>
+<p>In the end, Judah found that even in retirement he could still make a difference by sharing his passion for making and hacking on projects with others.</p>
+<hr>
+<p>Mike had always been passionate about making and hacking. Over the years, he had become an expert in creating high tech art that incorporated a variety of cutting-edge technologies. But after retiring from his job as an engineer, Mike found himself with plenty of time on his hands and a strong desire to share his expertise with others.</p>
+<p>He began searching for a community where he could connect with other like-minded people who shared his interests. That&rsquo;s when he stumbled upon NSHkr.com, a new local hackerspace in Haleiwa. The website promised a vibrant community of makers, hackers, and tinkerers who were passionate about creating and sharing their knowledge.</p>
+<p>Mike was intrigued and decided to check it out. When he arrived at the hackerspace, he was welcomed with open arms. He immediately connected with other members who shared his passion for making and hacking. They spent hours swapping stories, sharing ideas, and brainstorming new projects.</p>
+<p>As he spent more time at the hackerspace, Mike realized that he had found the perfect outlet for his expertise. He began to work with other members to create workshops and classes that would teach younger generations about the joys of making and hacking. They planned and executed their ideas with precision, leveraging ChatGPT as a platform for learning and guiding these projects.</p>
+<p>The workshops were a hit. Young people from all over Haleiwa came to learn from Mike and his team of experts. They learned how to code, solder, and build their own high-tech gadgets. They learned how to take apart old electronics and turn them into something new and exciting.</p>
+<p>In the end, the young generation developed new marketable skills that lasted for a lifetime. They discovered new passions and new career paths that they never would have considered before. And Mike was thrilled to have been a part of it all.</p>
+<p>As he walked out of the hackerspace one day, Mike felt a sense of satisfaction wash over him. He had found a new purpose in life, and he was grateful for the opportunity to share his knowledge and expertise with others. And as he looked out at the horizon, he knew that there was so much more that he could teach and so much more that he could learn.</p>
+<hr>
+<p>In the small town of Waialua, Hawaii, the locals were struggling to find good-paying jobs. The old sugar mill had been abandoned for years, leaving many wondering what would become of it. But then, a group of local entrepreneurs got together to form a plan that would change everything.</p>
+<p>They were inspired by the idea of a can-do America-first attitude, and they believed that they could make a difference in their community. They knew that they needed to think outside the box, and they turned to NSHkr.com, the local hackerspace, for ideas and expertise.</p>
+<p>The team at NSHkr.com was excited to be a part of something so transformative. They got to work researching and analyzing the needs of the community, the existing infrastructure, and the potential for growth. They also started to build a team of experts in manufacturing, engineering, and technology.</p>
+<p>The team identified potential sources of funding and started to develop a plan for the old sugar mill. They knew that they needed to make the facility environmentally sustainable, with a focus on reducing waste and using renewable resources. They also wanted to create living wage jobs for locals and establish a local supply chain.</p>
+<p>The team established partnerships with local businesses and suppliers, and started to develop a sustainable manufacturing process. They trained the locals in the necessary skills, and they began to develop high-tech products that were in demand in the market.</p>
+<p>The manufacturing community in Waialua started to take shape. The old sugar mill was renovated and repurposed, with modern equipment and technology installed. The locals were proud to be a part of something that was making a positive impact on their community.</p>
+<p>As the manufacturing community grew, it attracted investment from all over the world. The products produced by the community were in high demand, and the local economy started to thrive. The team at NSHkr.com was amazed at how quickly the project had taken off.</p>
+<p>The success of the manufacturing community in Waialua became a source of inspiration for others around the country. The community was proud to be a part of the new America-first attitude, where they were taking control of their future and creating opportunities for themselves.</p>
+<p>In the end, the small town of Waialua was transformed. The locals had good-paying jobs, the environment was protected, and the community was thriving. All thanks to the vision and hard work of the local entrepreneurs and the team at NSHkr.com. They proved that with hard work, determination, and a can-do attitude, anything is possible.</p>
+<hr>
+
+</div>
+
+                </main>
+            </div>
+            <div class="input-area">
+                <div class="fake-input">Type your message here... </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const codeBlocks = document.querySelectorAll('pre code.language-mermaid');
+            codeBlocks.forEach(block => {
+                const pre = block.parentElement;
+                pre.classList.add('mermaid');
+                pre.innerHTML = block.innerHTML;
+            });
+
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'dark',
+                securityLevel: 'loose',
+                flowchart: {
+                    useMaxWidth: true,
+                    htmlLabels: true,
+                    curve: 'basis'
+                }
+            });
+            
+            
+            const headings = document.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]');
+            headings.forEach(heading => {
+                const id = heading.getAttribute('id');
+                if (id) {
+                    const anchor = document.createElement('a');
+                    anchor.className = 'header-anchor';
+                    anchor.href = `#${id}`;
+                    anchor.innerHTML = '¶';
+                    anchor.setAttribute('aria-hidden', 'true');
+                    heading.appendChild(anchor);
+                }
+            });
+
+            
+            if (debug) console.log('Starting ocean animation initialization...');
+            initOceanAnimation();
+        });
+
+        var debug = false;
+
+        function initOceanAnimation() {
+            const oceanColors = {
+                deep: 'rgba(3, 70, 148, 0.3)',      
+                medium: 'rgba(4, 84, 181, 0.25)',   
+                shallow: 'rgba(5, 108, 242, 0.2)',  
+                highlight: 'rgba(5, 166, 107, 0.2)' 
+            };
+
+            const container = document.createElement('div');
+            container.className = 'ocean-animation-container';
+            
+            const canvas = document.createElement('canvas');
+            canvas.id = 'oceanCanvas';
+            container.appendChild(canvas);
+
+            const ambientBg = document.querySelector('.ambient-bg');
+            if (debug) console.log('Found ambient-bg:', ambientBg);
+            
+            if (!ambientBg) {
+                console.error('Could not find ambient-bg element');
+                return;
+            }
+            
+            ambientBg.parentNode.insertBefore(container, ambientBg.nextSibling);
+            if (debug) console.log('Inserted canvas container');
+            
+            const ctx = canvas.getContext('2d');
+            if (debug) console.log('Got canvas context:', ctx);
+            
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                if (debug) console.log(`Canvas resized to ${canvas.width}x${canvas.height}`);
+            }
+            
+            resizeCanvas();
+            
+            let waves = [];
+            const numWaves = 3;
+            
+            function initWaves() {
+                waves = [];
+                for (let i = 0; i < numWaves; i++) {
+                    waves.push({
+                        y: canvas.height * (0.4 + i * 0.15),  
+                        amplitude: 30 + i * 10,               
+                        frequency: 0.008 - i * 0.002,        
+                        speed: 0.005 + i * 0.002,           
+                        offset: 0
+                    });
+                }
+                if (debug) console.log('Waves initialized:', waves);
+            }
+            
+            initWaves();
+            
+            let frameCount = 0;
+            function animate() {
+                frameCount++;
+                if (frameCount % 60 === 0) {  
+                    if (debug) console.log('Animation frame:', frameCount);
+                }
+                
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                waves.forEach((wave, index) => {
+                    ctx.beginPath();
+                    ctx.moveTo(0, canvas.height);
+                    
+                    for (let x = 0; x <= canvas.width; x += 20) {
+                        const y = wave.y + 
+                            Math.sin(x * wave.frequency + wave.offset) * wave.amplitude;
+                        ctx.lineTo(x, y);
+                    }
+                    
+                    ctx.lineTo(canvas.width, canvas.height);
+                    ctx.lineTo(0, canvas.height);
+                    ctx.closePath();
+                    
+                    const gradient = ctx.createLinearGradient(
+                        0, wave.y - wave.amplitude, 
+                        0, wave.y + wave.amplitude
+                    );
+                    gradient.addColorStop(0, oceanColors.shallow);
+                    gradient.addColorStop(0.5, oceanColors.medium);
+                    gradient.addColorStop(1, oceanColors.deep);
+                    
+                    if (index === 0) {
+                        ctx.shadowColor = oceanColors.highlight;
+                        ctx.shadowBlur = 40;  
+                    }
+                    
+                    ctx.fillStyle = gradient;
+                    ctx.fill();
+                    
+                    wave.offset += wave.speed;
+                });
+                
+                requestAnimationFrame(animate);
+            }
+            
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+                initWaves();
+            });
+            
+            if (debug) console.log('Starting animation loop');
+            animate();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    const style = document.createElement('style');
+    style.textContent = `
+        .message.system {
+            position: relative;
+            width: 85%;
+        }
+        
+        .ocean-wave-container {
+            position: absolute;
+            top: 0;
+            right: -17.77%;
+            width: 15%;
+            height: 100%;
+            min-height: 200px;
+            overflow: hidden;
+            border-radius: 12px;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .message.system {
+                width: 100%;
+            }
+            
+            .ocean-wave-container {
+                display: none;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    class OceanWave {
+    constructor(container) {
+        this.container = container;
+        this.initializeScene();
+        this.initializeMaterials();
+        this.createOceanMesh();
+        this.setupEventListeners();
+        
+        
+        this.ripples = [];
+        this.isDragging = false;
+        this.lastMousePos = null;
+        this.lastRippleTime = 0;  
+        this.rippleSpacing = 100; 
+
+        this.animate();
+    }
+
+    initializeScene() {
+        
+        this.scene = new THREE.Scene();
+        this.camera = new THREE.PerspectiveCamera(75, this.container.clientWidth / this.container.clientHeight, 0.1, 1000);
+        this.renderer = new THREE.WebGLRenderer({ 
+            alpha: true,
+            antialias: true,
+            powerPreference: "high-performance"
+        });
+
+        this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+        this.renderer.setClearColor(0x000000, 0);
+        this.container.appendChild(this.renderer.domElement);
+
+        this.camera.position.set(0, 2, 4);
+        this.camera.lookAt(0, 0, 0);
+    }
+
+    initializeMaterials() {
+        this.geometry = new THREE.PlaneGeometry(10, 10, 128, 128);
+
+        
+        this.material = new THREE.ShaderMaterial({
+            uniforms: {
+                time: { value: 0 },
+                color1: { value: new THREE.Color(0x080B12) },
+                color2: { value: new THREE.Color(0x0F1520) },
+                color3: { value: new THREE.Color(0x1a2942) },
+                turbulenceValue: { value: 0.8 },
+                frequencyValue: { value: 0.6 },
+                ripplePositions: { value: new Float32Array(60) },
+                rippleCount: { value: 0 }
+            },
+            vertexShader: `
+                uniform float time;
+                uniform float turbulenceValue;
+                uniform float frequencyValue;
+                uniform float ripplePositions[60];
+                uniform int rippleCount;
+                
+                varying vec2 vUv;
+                varying float vElevation;
+                varying float vWaveHeight;
+                varying vec3 vRippleColor;
+                varying float vRippleIntensity;
+
+                    // Simplex noise helper functions
+                    vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+                    vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+                    vec4 permute(vec4 x) { return mod289(((x * 34.0) + 1.0) * x); }
+                    vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
+
+                    float snoise(vec3 v) {
+                        const vec2 C = vec2(1.0/6.0, 1.0/3.0);
+                        const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
+
+                    vec3 i  = floor(v + dot(v, C.yyy));
+                    vec3 x0 = v - i + dot(i, C.xxx);
+
+                    vec3 g = step(x0.yzx, x0.xyz);
+                    vec3 l = 1.0 - g;
+                    vec3 i1 = min(g.xyz, l.zxy);
+                    vec3 i2 = max(g.xyz, l.zxy);
+
+                    vec3 x1 = x0 - i1 + C.xxx;
+                    vec3 x2 = x0 - i2 + C.yyy;
+                    vec3 x3 = x0 - D.yyy;
+
+                    i = mod289(i);
+                    vec4 p = permute(permute(permute(
+                        i.z + vec4(0.0, i1.z, i2.z, 1.0))
+                        + i.y + vec4(0.0, i1.y, i2.y, 1.0))
+                        + i.x + vec4(0.0, i1.x, i2.x, 1.0));
+
+                    float n_ = 0.142857142857;
+                    vec3 ns = n_ * D.wyz - D.xzx;
+
+                    vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
+
+                    vec4 x_ = floor(j * ns.z);
+                    vec4 y_ = floor(j - 7.0 * x_);
+
+                    vec4 x = x_ * ns.x + ns.yyyy;
+                    vec4 y = y_ * ns.x + ns.yyyy;
+                    vec4 h = 1.0 - abs(x) - abs(y);
+
+                    vec4 b0 = vec4(x.xy, y.xy);
+                    vec4 b1 = vec4(x.zw, y.zw);
+
+                    vec4 s0 = floor(b0) * 2.0 + 1.0;
+                    vec4 s1 = floor(b1) * 2.0 + 1.0;
+                    vec4 sh = -step(h, vec4(0.0));
+
+                    vec4 a0 = b0.xzyw + s0.xzyw * sh.xxyy;
+                    vec4 a1 = b1.xzyw + s1.xzyw * sh.zzww;
+
+                    vec3 p0 = vec3(a0.xy, h.x);
+                    vec3 p1 = vec3(a0.zw, h.y);
+                    vec3 p2 = vec3(a1.xy, h.z);
+                    vec3 p3 = vec3(a1.zw, h.w);
+
+                    vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2,p2), dot(p3,p3)));
+                    p0 *= norm.x;
+                    p1 *= norm.y;
+                    p2 *= norm.z;
+                    p3 *= norm.w;
+
+                    vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
+                    m = m * m;
+                    return 42.0 * dot(m*m, vec4(dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3)));
+                }
+
+                float fluidNoise(vec3 p) {
+                    float noise = 0.0;
+                    float amp = 1.0;
+                    float freq = frequencyValue;
+                    
+                    for(int i = 0; i < 4; i++) {
+                        noise += amp * snoise(p * freq + time * 0.3);
+                        p = vec3(p.y + 1.3, p.z - 2.1, p.x + 1.7);
+                        amp *= 0.5;
+                        freq *= 2.0;
+                    }
+                    
+                    return noise * turbulenceValue;
+                }
+
+                float calculateRipples(vec2 pos, out vec3 rippleColor, out float rippleIntensity) {
+                    float rippleEffect = 0.0;
+                    vec3 totalColor = vec3(0.0);
+                    float totalWeight = 0.0;
+                    rippleIntensity = 0.0;
+                    
+                    for(int i = 0; i < 10; i++) {
+                        if(i >= rippleCount) break;
+                        
+                        vec2 ripplePos = vec2(ripplePositions[i * 6], ripplePositions[i * 6 + 1]);
+                        float age = ripplePositions[i * 6 + 2];
+                        vec3 color = vec3(
+                            ripplePositions[i * 6 + 3],
+                            ripplePositions[i * 6 + 4],
+                            ripplePositions[i * 6 + 5]
+                        );
+                        
+                        float dist = length(pos - ripplePos);
+                        
+                        // Enhanced ripple wave pattern
+                        float frequency = 4.0;
+                        float speed = 4.0;
+                        float decay = 1.5;
+                        float wave = sin(dist * frequency - age * speed) * exp(-dist * decay - age * 0.75);
+                        
+                        // Improved ripple effect calculation
+                        float rippleWeight = abs(wave) * smoothstep(2.0, 0.0, age);
+                        rippleEffect += wave * 0.3;
+                        
+                        // Accumulate color with improved weighting
+                        totalColor += color * rippleWeight;
+                        totalWeight += rippleWeight;
+                        rippleIntensity = max(rippleIntensity, rippleWeight);
+                    }
+                    
+                    // Normalize the ripple color with improved blending
+                    rippleColor = totalWeight > 0.0 ? totalColor / totalWeight : vec3(0.0);
+                    rippleIntensity *= 0.6; // Adjust overall intensity
+                    return rippleEffect;
+                }
+
+                void main() {
+                    vUv = uv;
+                    
+                    vec3 pos3 = vec3(position.x * 2.0, position.y * 2.0, time * 0.2);
+                    float noise = fluidNoise(pos3);
+                    
+                    float rippleIntensity;
+                    vec3 rippleColor;
+                    float rippleElevation = calculateRipples(position.xy, rippleColor, rippleIntensity);
+                    float elevation = noise * 1.5 + rippleElevation;
+                    
+                    vElevation = elevation;
+                    vWaveHeight = (elevation + 1.0) * 0.5;
+                    vRippleColor = rippleColor;
+                    vRippleIntensity = rippleIntensity;
+                    
+                    vec3 pos = position;
+                    pos.z += elevation * 0.8;
+                    
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+                }
+            `,
+            fragmentShader: `
+                uniform vec3 color1;
+                uniform vec3 color2;
+                uniform vec3 color3;
+                varying vec2 vUv;
+                varying float vElevation;
+                varying float vWaveHeight;
+                varying vec3 vRippleColor;
+                varying float vRippleIntensity;
+                
+                void main() {
+                    float depthFactor = smoothstep(-1.0, 1.0, vElevation);
+                    vec3 deepColor = mix(color1, color2, depthFactor * 0.7);
+                    
+                    float highlightIntensity = smoothstep(0.4, 1.0, vWaveHeight) * 0.4;
+                    vec3 baseColor = mix(deepColor, color3, highlightIntensity);
+                    
+                    // Improved color blending for ripples
+                    vec3 finalColor = mix(baseColor, vRippleColor, vRippleIntensity);
+                    float alpha = mix(0.95, 0.98, vWaveHeight * 0.8);
+                    
+                    gl_FragColor = vec4(finalColor, alpha);
+                }
+            `,
+            transparent: true
+        });
+    }
+ 
+
+    createOceanMesh() {
+        
+        this.ocean = new THREE.Mesh(this.geometry, this.material);
+        this.ocean.rotation.x = -Math.PI / 2.5;
+        this.scene.add(this.ocean);
+    }
+
+    setupEventListeners() {
+        
+        this.renderer.domElement.addEventListener('mousedown', this.handleMouseDown.bind(this));
+        this.renderer.domElement.addEventListener('mousemove', this.handleMouseMove.bind(this));
+        this.renderer.domElement.addEventListener('mouseup', this.handleMouseUp.bind(this));
+        this.renderer.domElement.addEventListener('mouseleave', this.handleMouseUp.bind(this));
+
+        
+        window.addEventListener('resize', () => this.onResize());
+    }
+
+    handleMouseDown(event) {
+        this.isDragging = true;
+        const pos = this.getMousePosition(event);
+        this.lastMousePos = pos;
+        this.addRipple(pos.x, pos.y, false); 
+    }
+
+    handleMouseMove(event) {
+        if (!this.isDragging) return;
+        
+        const pos = this.getMousePosition(event);
+        if (this.lastMousePos) {
+            const steps = 5;
+            for (let i = 0; i <= steps; i++) {
+                const t = i / steps;
+                const x = this.lastMousePos.x + (pos.x - this.lastMousePos.x) * t;
+                const y = this.lastMousePos.y + (pos.y - this.lastMousePos.y) * t;
+                this.addRipple(x, y, true); 
+            }
+        }
+        this.lastMousePos = pos;
+    }
+
+    handleMouseUp() {
+        this.isDragging = false;
+        this.lastMousePos = null;
+    }
+
+    getMousePosition(event) {
+        const rect = this.renderer.domElement.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+        return { x, y };
+    }
+
+    addRipple(x, y, isDragging) {
+        const currentTime = performance.now();
+        if (currentTime - this.lastRippleTime < this.rippleSpacing) {
+            return; 
+        }
+        this.lastRippleTime = currentTime;
+
+        
+        const color = isDragging 
+            ? { r: 0.7, g: 0.2, b: 0.3 }  
+            : { r: 0.3, g: 0.8, b: 0.4 };  
+
+        this.ripples.push({
+            x: x,
+            y: y,
+            age: 0,
+            color: color,
+            intensity: 1.0
+        });
+        
+        if (this.ripples.length > 10) {
+            this.ripples.shift();
+        }
+    }
+
+    updateRipples() {
+        this.ripples = this.ripples.filter(ripple => {
+            ripple.age += 0.016;
+            return ripple.age < 2.0;
+        });
+
+        const rippleData = new Float32Array(60);
+        this.ripples.forEach((ripple, index) => {
+            const baseIndex = index * 6;
+            rippleData[baseIndex] = ripple.x;
+            rippleData[baseIndex + 1] = ripple.y;
+            rippleData[baseIndex + 2] = ripple.age;
+            rippleData[baseIndex + 3] = ripple.color.r;
+            rippleData[baseIndex + 4] = ripple.color.g;
+            rippleData[baseIndex + 5] = ripple.color.b;
+        });
+        
+        this.material.uniforms.ripplePositions.value = rippleData;
+        this.material.uniforms.rippleCount.value = this.ripples.length;
+    }
+
+    animate() {
+        requestAnimationFrame(() => this.animate());
+        
+        
+        this.material.uniforms.time.value += 0.01;
+        
+        
+        this.updateRipples();
+        
+        this.renderer.render(this.scene, this.camera);
+    }
+
+    onResize() {
+        const width = this.container.clientWidth;
+        const height = this.container.clientHeight;
+        
+        this.camera.aspect = width / height;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(width, height);
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const systemMessages = document.querySelectorAll('.message.system');
+    systemMessages.forEach(message => {
+        const container = document.createElement('div');
+        container.className = 'ocean-wave-container';
+        message.appendChild(container);
+        new OceanWave(container);
+    });
+});
+
+
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+            if (node.classList && node.classList.contains('message') && node.classList.contains('system')) {
+                const container = document.createElement('div');
+                container.className = 'ocean-wave-container';
+                node.appendChild(container);
+                new OceanWave(container);
+            }
+        });
+    });
+});
+
+observer.observe(document.querySelector('.chat-messages'), { childList: true });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getPlaceholderMessage() {
+    
+    
+    return "Share your thoughts...";
+}
+
+
+function appendMessage(text) {
+    const messagesContainer = document.querySelector('.chat-messages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message';
+    messageDiv.textContent = text;
+    messagesContainer.appendChild(messageDiv);
+    
+    
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+
+function initializeChatInput() {
+    const inputArea = document.querySelector('.input-area');
+    const fakeInput = document.querySelector('.fake-input');
+    
+    
+    const textarea = document.createElement('textarea');
+    textarea.className = 'chat-textarea';
+    textarea.placeholder = getPlaceholderMessage();
+    textarea.rows = 1;
+    
+    
+    textarea.style.cssText = `
+        width: 100%;
+        min-height: 48px;
+        max-height: 200px;
+        padding: var(--space-4);
+        background: var(--chat-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        color: var(--text-primary);
+        font-size: var(--font-size-base);
+        font-family: inherit;
+        resize: none;
+        outline: none;
+        transition: border-color 0.2s ease;
+    `;
+    
+    
+    fakeInput.replaceWith(textarea);
+    
+    
+    function adjustHeight() {
+        textarea.style.height = 'auto';
+        textarea.style.height = Math.min(textarea.scrollHeight, 200) + 'px';
+    }
+    
+    
+    textarea.addEventListener('input', adjustHeight);
+    
+    textarea.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            const text = textarea.value.trim();
+            
+            if (text) {
+                appendMessage(text);
+                textarea.value = '';
+                adjustHeight();
+                textarea.placeholder = getPlaceholderMessage();
+            }
+        }
+    });
+    
+    
+    textarea.addEventListener('focus', () => {
+        textarea.style.borderColor = 'var(--accent-primary)';
+    });
+    
+    textarea.addEventListener('blur', () => {
+        textarea.style.borderColor = 'var(--border-color)';
+    });
+    
+    textarea.addEventListener('mouseenter', () => {
+        if (document.activeElement !== textarea) {
+            textarea.style.borderColor = 'var(--accent-primary)';
+        }
+    });
+    
+    textarea.addEventListener('mouseleave', () => {
+        if (document.activeElement !== textarea) {
+            textarea.style.borderColor = 'var(--border-color)';
+        }
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+     initializeChatInput();
+    
+    
+    const style = document.createElement('style');
+    style.textContent = `
+        .chat-textarea::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .chat-textarea::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        
+        .chat-textarea::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+        
+        .chat-textarea::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-primary);
+        }
+    `;
+    document.head.appendChild(style);
+    
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const mockResponses = [
+    "Let me think about that for a moment...",
+    "Interesting question! Here's what I think...",
+    "Based on my understanding...",
+    "That's a fascinating topic. Let me explain...",
+    "I'd be happy to help with that...",
+    "Let me break this down step by step...",
+    "From my analysis...",
+    "Here's my perspective on this...",
+    "Allow me to elaborate...",
+    "That's an intriguing point. Here's my response...",
+    "I've processed your request. Here's what I found...",
+    "Let me share my thoughts on this...",
+    "After careful consideration...",
+    "Here's what I've determined...",
+    "I've analyzed your question and...",
+    "Let me provide a detailed response...",
+    "That's an excellent question. Here's my answer...",
+    "I'd be glad to explain this...",
+    "Here's my comprehensive response...",
+    "Let me address that point by point..."
+];
+
+
+class MockResponseAdapter {
+    constructor() {
+        this.isResponding = false;
+    }
+
+    async generateResponse(userInput) {
+        if (this.isResponding) return null;
+        this.isResponding = true;
+
+        try {
+            
+            const initialDelay = Math.random() * 2000 + 1000;
+            await new Promise(resolve => setTimeout(resolve, initialDelay));
+
+            
+            const starter = mockResponses[Math.floor(Math.random() * mockResponses.length)];
+            
+            
+            const content = this.generateMockContent(userInput);
+            
+            return {
+                starter,
+                content
+            };
+        } finally {
+            this.isResponding = false;
+        }
+    }
+
+    generateMockContent(userInput) {
+        
+        const words = userInput.split(' ');
+        const responseLength = Math.min(words.length * 3 + 20, 100);
+        const mockWords = [];
+        
+        for (let i = 0; i < responseLength; i++) {
+            if (i < words.length) {
+                mockWords.push(words[i]);
+            } else {
+                mockWords.push(this.getRandomWord());
+            }
+        }
+
+        return mockWords.join(' ');
+    }
+
+    getRandomWord() {
+        const words = [
+            "specifically", "furthermore", "however", "indeed", "moreover",
+            "particularly", "consequently", "therefore", "nevertheless", "essentially",
+            "fundamentally", "importantly", "notably", "significantly", "ultimately"
+        ];
+        return words[Math.floor(Math.random() * words.length)];
+    }
+}
+
+
+class StreamingTextHandler {
+    constructor(messageElement) {
+        this.messageElement = messageElement;
+        this.content = '';
+        this.currentIndex = 0;
+        this.isStreaming = false;
+    }
+
+    async streamText(text) {
+        if (this.isStreaming) return;
+        this.isStreaming = true;
+        this.content = text;
+        this.currentIndex = 0;
+
+        try {
+            while (this.currentIndex < this.content.length) {
+                
+                const tokensPerChunk = Math.floor(Math.random() * 10) + 3;
+                const chunk = this.content.slice(
+                    this.currentIndex,
+                    this.currentIndex + tokensPerChunk
+                );
+
+                this.messageElement.textContent += chunk;
+                this.currentIndex += tokensPerChunk;
+
+                
+                const delay = Math.random() * 150 + 50;
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+        } finally {
+            this.isStreaming = false;
+        }
+    }
+}
+
+
+class ChatManager {
+    constructor() {
+        this.responseAdapter = new MockResponseAdapter();
+        this.messagesContainer = document.querySelector('.chat-messages');
+        this.textarea = document.querySelector('.chat-textarea');
+        this.isProcessing = false;
+        
+        this.initializeEventListeners();
+    }
+
+    initializeEventListeners() {
+        this.textarea.addEventListener('keydown', async (e) => {
+            if (e.key === 'Enter' && !e.shiftKey && !this.isProcessing) {
+                e.preventDefault();
+                const text = this.textarea.value.trim();
+                
+                if (text) {
+                    this.isProcessing = true;
+                    await this.handleUserMessage(text);
+                    this.isProcessing = false;
+                }
+            }
+        });
+    }
+
+    async handleUserMessage(text) {
+        
+        const userMessage = this.createMessageElement(text, 'user');
+        this.messagesContainer.appendChild(userMessage);
+        this.textarea.value = '';
+        this.adjustTextareaHeight();
+
+        
+        const response = await this.responseAdapter.generateResponse(text);
+        if (!response) return;
+
+        
+        const systemMessage = this.createMessageElement(response.starter, 'system');
+        this.messagesContainer.appendChild(systemMessage);
+
+        
+        const streamHandler = new StreamingTextHandler(systemMessage);
+        await streamHandler.streamText(response.content);
+
+        
+        this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+    }
+
+    createMessageElement(text, type) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}`;
+        messageDiv.textContent = text;
+        return messageDiv;
+    }
+
+    adjustTextareaHeight() {
+        this.textarea.style.height = 'auto';
+        this.textarea.style.height = Math.min(this.textarea.scrollHeight, 200) + 'px';
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const chatManager = new ChatManager();
+});
+
+
+    </script>   
+</body>
+</html>

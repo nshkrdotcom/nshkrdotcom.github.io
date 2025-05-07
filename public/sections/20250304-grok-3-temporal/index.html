@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - NSHkr.com - North Shore Hackerspace</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        :root {
+             
+            --bg-primary: #080B12;
+            --bg-secondary: #0F1520;
+            --chat-bg: #0A0E17;
+            --text-primary: #E2E8F0;
+            --text-secondary: #A0AEC0;
+            --accent-primary: #3B82F6;
+            --accent-secondary: #60A5FA;
+            --accent-tertiary: #93C5FD;
+            --success: #059669;
+            --warning: #D97706;
+            --danger: #DC2626;
+            --container-bg: rgba(17, 25, 40, 0.75);
+            --border-color: rgba(255, 255, 255, 0.125);
+            --message-bg: rgba(59, 130, 246, 0.05);
+            --gradient-glow: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.1));
+            
+             
+            --font-size-xs: 0.75rem;     
+            --font-size-sm: 0.875rem;    
+            --font-size-base: 1rem;      
+            --font-size-lg: 1.125rem;    
+            --font-size-xl: 1.25rem;     
+            --font-size-2xl: 1.5rem;     
+            --font-size-3xl: 1.875rem;   
+            
+             
+            --space-1: 0.25rem;    
+            --space-2: 0.5rem;     
+            --space-3: 0.75rem;    
+            --space-4: 1rem;       
+            --space-6: 1.5rem;     
+            --space-8: 2rem;       
+            --space-12: 3rem;      
+            
+             
+            --breakpoint-mobile: 768px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-size: var(--font-size-base);
+            overflow-x: hidden;
+            position: relative;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-4);
+            width: 100%;
+            min-width: 320px;
+        }
+        
+        @media (max-width: 768px) {
+            .app-container {
+                padding: var(--space-2);
+            }
+        }
+
+        .chat-container {
+            flex: 1;
+            background: var(--chat-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .chat-header {
+            padding: var(--space-4) var(--space-6);
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            height: 60px;
+        }
+
+        .ai-status {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: var(--font-size-sm);
+            color: var(--accent-secondary);
+            font-weight: 500;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-secondary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: var(--space-6);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-6);
+        }
+
+        .chat-messages img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: var(--space-6);
+            border-radius: 12px;
+            background: var(--message-bg);
+            border: 1px solid var(--border-color);
+            font-size: var(--font-size-base);
+            line-height: 1.7;
+        }
+
+        .message.system {
+            align-self: flex-start;
+            background: var(--gradient-glow);
+        }
+        
+        @media (max-width: 768px) {
+            .message {
+                max-width: 100%;
+            }
+            
+            .message.system {
+                width: 100%;
+            }
+            
+             
+            .message.system {
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+        }
+
+        .message h1 {
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        .message h2 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: var(--space-8) 0 var(--space-4);
+            letter-spacing: -0.01em;
+        }
+
+        .message p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-4);
+            font-size: var(--font-size-base);
+            line-height: 1.7;
+        }
+        
+        .message ul {
+            margin-bottom: var(--space-6);
+        }
+
+        .input-area {
+            padding: var(--space-4) var(--space-6);
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .fake-input {
+            background: var(--chat-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: var(--space-4);
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            cursor: text;
+            transition: border-color 0.2s ease;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+        }
+
+        .fake-input:hover {
+            border-color: var(--accent-primary);
+        }
+
+        .mermaid {
+            background: var(--bg-secondary);
+            padding: var(--space-6);
+            border-radius: 8px;
+            margin: var(--space-6) 0;
+            border: 1px solid var(--border-color);
+            font-size: var(--font-size-sm);
+        }
+
+        pre {
+            background: var(--bg-secondary);
+            padding: var(--space-4);
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: var(--space-4) 0;
+            border: 1px solid var(--border-color);
+            font-size: var(--font-size-sm);
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-tertiary);
+            font-size: var(--font-size-sm);
+        }
+        
+         
+        .header-anchor {
+            opacity: 0;
+            margin-left: 0.5rem;
+            font-size: 0.8em;
+            transition: opacity 0.2s ease;
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+        
+        h1:hover .header-anchor,
+        h2:hover .header-anchor,
+        h3:hover .header-anchor,
+        h4:hover .header-anchor,
+        h5:hover .header-anchor,
+        h6:hover .header-anchor {
+            opacity: 1;
+        }
+
+         
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-primary);
+        }
+
+
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.15), transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(96, 165, 250, 0.1), transparent 50%);
+            width: 100vw;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+
+        .ocean-animation-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100%;
+            z-index: 1;   
+            opacity: 0.4;   
+            pointer-events: none;
+            overflow: hidden;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+        
+        @media (max-width: 768px) {
+            .ocean-animation-container {
+                display: none;
+            }
+        }
+
+        #oceanCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+
+        .chat-container {
+            position: relative;
+            z-index: 2;   
+        }
+        @keyframes messageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.15), transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(96, 165, 250, 0.1), transparent 50%);
+            width: 100vw;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-bg"></div>
+    <div class="app-container">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="ai-status">
+                    <div class="status-dot"></div>
+                    <span>NSHkr.com Security Engineering Chat</span>
+                </div>
+            </div>
+            <div class="chat-messages">
+                <main>
+                    
+<div class="message system">
+    <article>
+        <h1></h1>
+        <h1 id="innovative-applications-combining-your-temporal-blockchain-with-the-systemic-resilience-alignment-sra-framework">Innovative Applications Combining Your Temporal Blockchain with the Systemic Resilience Alignment (SRA) Framework</h1>
+<p>Congratulations on inventing the Temporal Blockchain System with Integrated Hardware-Secured Timechain Technology! Your system, as outlined in your patent draft, addresses the critical time oracle issue in blockchain technology by embedding hardware-secured timekeeping directly into the consensus mechanism using Temporal Mining Nodes (TMNs) and the Proof of Temporal Authority (PoTA) protocol. This creates a trustless, precise, and tamper-resistant temporal foundation, opening up a wealth of innovative possibilities when combined with mathematical frameworks like the Systemic Resilience Alignment (SRA) Framework, which models societal resilience through agent resilience, collective resilience, flow efficiency, and anchor stability.</p>
+<p>Below, I propose a series of novel innovations that leverage your temporal blockchain’s unique capabilities alongside the SRA Framework’s mathematical constructs. These ideas extend beyond simply solving the time oracle problem, introducing new use cases that enhance systemic resilience across various domains.</p>
+<h2 id="understanding-the-foundations">Understanding the Foundations</h2>
+<h3 id="your-temporal-blockchain">Your Temporal Blockchain</h3>
+<p>Your system uses TMNs equipped with chip-scale atomic clocks, secured GNSS receivers, and tamper-resistant hardware to generate temporally attested blocks. The PoTA consensus ensures network-wide time synchronization with Byzantine fault tolerance, enabling smart contracts to self-trigger based on precise, consensus-verified time. This eliminates reliance on unreliable external time oracles, making it ideal for time-sensitive applications.</p>
+<h3 id="the-sra-framework">The SRA Framework</h3>
+<p>The SRA Framework quantifies resilience through:</p>
+<ul>
+<li><strong>Agent Resilience:</strong> $R_A(a) = C_a \cdot A_a \cdot (1 - E_a)$, where $C_a$ is capacity, $A_a$ is autonomy, and $E_a$ is exposure.</li>
+<li><strong>Collective Resilience:</strong> Models alliances of agents, influenced by coordination and shared goals.</li>
+<li><strong>Flow Efficiency:</strong> Measures asset movement, with velocity $V_f$ and integrity $I_f$.</li>
+<li><strong>Anchor Stability:</strong> $S_N(n) = S_n \cdot R_n \cdot e^{-F_n}$, where $S_n$ is strength, $R_n$ is reach, and $F_n$ is flexibility.</li>
+</ul>
+<p>By integrating your blockchain’s temporal precision with these mathematical models, we can create systems that are not only time-accurate but also resilient to disruptions.</p>
+<h2 id="proposed-innovations">Proposed Innovations</h2>
+<h3 id="1-time-aware-agent-resilience-tracking">1. Time-Aware Agent Resilience Tracking</h3>
+<p><strong>Concept:</strong> Enhance agent resilience by incorporating historical performance data with temporal weighting, using your blockchain’s tamper-proof timestamps.</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>
+<p>Record each agent’s actions (e.g., task completion, resource allocation) on the blockchain with precise timestamps from TMNs.</p>
+</li>
+<li>
+<p>Calculate a time-weighted capacity $\tilde{C}_a(t)$ using a decay function:</p>
+<p>$\tilde{C}<em>a(t) = \frac{\sum</em>{i=1}^{k} w_i \cdot C_a(t_i)}{\sum_{i=1}^{k} w_i}$,  $w_i = e^{-\lambda (t - t_i)}$</p>
+<p>where $t_i$ are past timestamps, and $\lambda$ adjusts the influence of recent actions.</p>
+</li>
+<li>
+<p>Update resilience dynamically:</p>
+<p>$R_A(a, t) = \tilde{C}_a(t) \cdot A_a(t) \cdot (1 - E_a(t))$</p>
+</li>
+</ul>
+<p><strong>Use Case:</strong></p>
+<ul>
+<li><strong>Reputation Systems:</strong> In decentralized marketplaces, sellers’ reliability scores reflect recent performance more heavily, verified by hardware-secured time, ensuring trust without intermediaries.</li>
+</ul>
+<p><strong>Benefit:</strong> Combines temporal accuracy with resilience modeling for a more responsive and trustworthy agent assessment.</p>
+<h3 id="2-synchronized-collective-resilience-networks">2. Synchronized Collective Resilience Networks</h3>
+<p><strong>Concept:</strong> Use your blockchain’s shared, precise time to optimize coordination within collectives, enhancing their resilience.</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>
+<p>Timestamp collective actions (e.g., votes, resource sharing) and calculate a synchronization score $S_k(t)$ based on timestamp variance:</p>
+<p>$S_k(t) = \frac{1}{\text{Var}({t_{a_1}, t_{a_2}, \ldots, t_{a_n}})}$</p>
+<p>where $t_{a_i}$ are action timestamps from collective members.</p>
+</li>
+<li>
+<p>Adjust collective resilience:</p>
+<p>$R_K(k, t) = \frac{L_k \cdot D_k}{1 + S_k^{-1}} \cdot S_k(t)$</p>
+<p>where $L_k$ is leverage and $D_k$ is diversity.</p>
+</li>
+</ul>
+<p><strong>Use Case:</strong></p>
+<ul>
+<li><strong>Emergency Response:</strong> Decentralized teams (e.g., first responders) synchronize actions across regions with hardware-verified timing, improving collective efficacy during crises.</li>
+</ul>
+<p><strong>Benefit:</strong> Leverages temporal precision to maximize coordination, directly boosting collective resilience.</p>
+<h3 id="3-timely-and-secure-flow-optimization">3. Timely and Secure Flow Optimization</h3>
+<p><strong>Concept:</strong> Ensure asset flows occur at optimal times with high integrity, using your blockchain’s temporal execution engine.</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>
+<p>Track flow events (e.g., goods shipment) with attested timestamps and measure velocity $V_f(t)$ as:</p>
+<p>$V_f(t) = \frac{\text{Distance}}{\Delta t}$,  $\Delta t = t_{\text{arrival}} - t_{\text{departure}}$</p>
+</li>
+<li>
+<p>Enhance flow efficiency $E_F(f)$ by penalizing delays beyond a threshold, verified by smart contracts triggered <em>via</em> SCHEDULE_CALL.</p>
+</li>
+<li>
+<p>Maintain integrity $I_f$ using tamper-resistant timestamps.</p>
+</li>
+</ul>
+<p><strong>Use Case:</strong></p>
+<ul>
+<li><strong>Supply Chain Management:</strong> Goods movement is tracked with millisecond precision, triggering penalties or rerouting if delays occur, all enforced by self-executing contracts.</li>
+</ul>
+<p><strong>Benefit:</strong> Combines flow efficiency with temporal guarantees, reducing waste and enhancing system reliability.</p>
+<h3 id="4-dynamic-temporal-anchors">4. Dynamic Temporal Anchors</h3>
+<p><strong>Concept:</strong> Create adaptive anchors (smart contracts) that adjust their strength based on performance over time, using your blockchain’s temporal data.</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>
+<p>Define anchor strength $S_n(t)$ dynamically:</p>
+<p>$S_n(t) = S_n(t-1) + \Delta S_n(t)$</p>
+<p>where $\Delta S_n(t)$ increases with successful regulation (e.g., timely flow enforcement) and decreases with failures, recorded on-chain.</p>
+</li>
+<li>
+<p>Update stability:</p>
+<p>$S_N(n, t) = S_n(t) \cdot R_n \cdot e^{-F_n}$
+<strong>Use Case:</strong></p>
+</li>
+<li>
+<p><strong>Regulatory Compliance</strong>: Smart contracts enforce environmental regulations, strengthening when compliance is timely and weakening if deadlines are missed, all verified by hardware clocks.</p>
+</li>
+</ul>
+<p><strong>Benefit:</strong> Introduces adaptability to anchors, aligning stability with real-time performance.</p>
+<h3 id="5-decentralized-finance-defi-with-temporal-incentives">5. Decentralized Finance (DeFi) with Temporal Incentives</h3>
+<p><strong>Concept:</strong> Enable time-locked transactions and incentives using your blockchain’s self-triggering smart contracts.</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>
+<p>Deploy contracts with SCHEDULE_CALL to release funds at precise times:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-solidity" data-lang="solidity"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nf">lockFunds</span><span class="p">(</span><span class="kt">uint256</span> <span class="n">amount</span><span class="p">,</span> <span class="kt">uint256</span> <span class="n">unlockTime</span><span class="p">)</span> <span class="k">public</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">SCHEDULE_CALL</span><span class="p">(</span><span class="kt">address</span><span class="p">(</span><span class="nb">this</span><span class="p">),</span> <span class="s">&#34;releaseFunds&#34;</span><span class="p">,</span> <span class="n">unlockTime</span><span class="p">,</span> <span class="n">amount</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Add temporal incentives, adjusting rewards based on timeliness:</p>
+<p>$\text{Reward}(t) = R_{\text{base}} \cdot e^{-\mu (t - t_{\text{expected}})}$</p>
+</li>
+</ul>
+<p><strong>Use Case:</strong></p>
+<ul>
+<li><strong>Timed Investments:</strong> Investors lock funds for a set period, receiving bonuses for early commitments, with releases guaranteed by hardware-secured timing.</li>
+</ul>
+<p><strong>Benefit:</strong> Enhances DeFi with precise, trustless temporal mechanisms, reducing risk and increasing engagement.</p>
+<h3 id="6-decentralized-science-desci-with-temporal-verification">6. Decentralized Science (DeSci) with Temporal Verification</h3>
+<p><strong>Concept:</strong> Use your blockchain to timestamp scientific data, ensuring credibility and reproducibility.</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>
+<p>Record experiment events (e.g., observations, dosages) with attested timestamps.</p>
+</li>
+<li>
+<p>Calculate experiment reliability:</p>
+<p>$R_{\text{exp}} = \prod_{i=1}^{m} I_{f_i} \cdot T_{f_i}$</p>
+<p>where $I_{f_i}$ is data integrity and $T_{f_i} = e^{-\mu |t_i - t_{\text{expected}}|}$ is timeliness.</p>
+</li>
+</ul>
+<p><strong>Use Case:</strong></p>
+<ul>
+<li><strong>Clinical Trials:</strong> Participant actions are logged with hardware-verified timestamps, ensuring data integrity and regulatory compliance.</li>
+</ul>
+<p><strong>Benefit:</strong> Provides a tamper-proof temporal backbone for scientific research, enhancing trust and accuracy.</p>
+<h2 id="mathematical-integration-highlights">Mathematical Integration Highlights</h2>
+<p>These innovations integrate your blockchain’s temporal precision with the SRA Framework as follows:</p>
+<ul>
+<li><strong>Time as a Variable:</strong> Introduces ($t$) into resilience equations, making them dynamic and history-aware.</li>
+<li><strong>Synchronization:</strong> Leverages your PoTA consensus to align agent and collective actions, quantifiable <em>via</em> $S_k(t)$.</li>
+<li><strong>Integrity and Stability:</strong> Uses tamper-resistant timestamps to ensure $I_f$ and $S_n(t)$ reflect true system states.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Your temporal blockchain’s ability to provide trustless, hardware-secured time transforms it into a powerful tool when paired with the SRA Framework. These innovations—spanning reputation systems, emergency coordination, supply chains, regulatory enforcement, DeFi, and scientific research—demonstrate its potential to address systemic challenges with precision and resilience. Each application not only solves the time oracle issue but also creates novel value by embedding time as a core component of decentralized systems.</p>
+<p>Would you like me to expand on any of these ideas or explore additional use cases? Your invention has vast potential, and I’m excited to see where you take it!</p>
+
+    </article>
+</div>
+
+                </main>
+            </div>
+            <div class="input-area">
+                <div class="fake-input">Type your message here... </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const codeBlocks = document.querySelectorAll('pre code.language-mermaid');
+            codeBlocks.forEach(block => {
+                const pre = block.parentElement;
+                pre.classList.add('mermaid');
+                pre.innerHTML = block.innerHTML;
+            });
+
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'dark',
+                securityLevel: 'loose',
+                flowchart: {
+                    useMaxWidth: true,
+                    htmlLabels: true,
+                    curve: 'basis'
+                }
+            });
+            
+            
+            const headings = document.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]');
+            headings.forEach(heading => {
+                const id = heading.getAttribute('id');
+                if (id) {
+                    const anchor = document.createElement('a');
+                    anchor.className = 'header-anchor';
+                    anchor.href = `#${id}`;
+                    anchor.innerHTML = '¶';
+                    anchor.setAttribute('aria-hidden', 'true');
+                    heading.appendChild(anchor);
+                }
+            });
+
+            
+            if (debug) console.log('Starting ocean animation initialization...');
+            initOceanAnimation();
+        });
+
+        var debug = false;
+
+        function initOceanAnimation() {
+            const oceanColors = {
+                deep: 'rgba(3, 70, 148, 0.3)',      
+                medium: 'rgba(4, 84, 181, 0.25)',   
+                shallow: 'rgba(5, 108, 242, 0.2)',  
+                highlight: 'rgba(5, 166, 107, 0.2)' 
+            };
+
+            const container = document.createElement('div');
+            container.className = 'ocean-animation-container';
+            
+            const canvas = document.createElement('canvas');
+            canvas.id = 'oceanCanvas';
+            container.appendChild(canvas);
+
+            const ambientBg = document.querySelector('.ambient-bg');
+            if (debug) console.log('Found ambient-bg:', ambientBg);
+            
+            if (!ambientBg) {
+                console.error('Could not find ambient-bg element');
+                return;
+            }
+            
+            ambientBg.parentNode.insertBefore(container, ambientBg.nextSibling);
+            if (debug) console.log('Inserted canvas container');
+            
+            const ctx = canvas.getContext('2d');
+            if (debug) console.log('Got canvas context:', ctx);
+            
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                if (debug) console.log(`Canvas resized to ${canvas.width}x${canvas.height}`);
+            }
+            
+            resizeCanvas();
+            
+            let waves = [];
+            const numWaves = 3;
+            
+            function initWaves() {
+                waves = [];
+                for (let i = 0; i < numWaves; i++) {
+                    waves.push({
+                        y: canvas.height * (0.4 + i * 0.15),  
+                        amplitude: 30 + i * 10,               
+                        frequency: 0.008 - i * 0.002,        
+                        speed: 0.005 + i * 0.002,           
+                        offset: 0
+                    });
+                }
+                if (debug) console.log('Waves initialized:', waves);
+            }
+            
+            initWaves();
+            
+            let frameCount = 0;
+            function animate() {
+                frameCount++;
+                if (frameCount % 60 === 0) {  
+                    if (debug) console.log('Animation frame:', frameCount);
+                }
+                
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                waves.forEach((wave, index) => {
+                    ctx.beginPath();
+                    ctx.moveTo(0, canvas.height);
+                    
+                    for (let x = 0; x <= canvas.width; x += 20) {
+                        const y = wave.y + 
+                            Math.sin(x * wave.frequency + wave.offset) * wave.amplitude;
+                        ctx.lineTo(x, y);
+                    }
+                    
+                    ctx.lineTo(canvas.width, canvas.height);
+                    ctx.lineTo(0, canvas.height);
+                    ctx.closePath();
+                    
+                    const gradient = ctx.createLinearGradient(
+                        0, wave.y - wave.amplitude, 
+                        0, wave.y + wave.amplitude
+                    );
+                    gradient.addColorStop(0, oceanColors.shallow);
+                    gradient.addColorStop(0.5, oceanColors.medium);
+                    gradient.addColorStop(1, oceanColors.deep);
+                    
+                    if (index === 0) {
+                        ctx.shadowColor = oceanColors.highlight;
+                        ctx.shadowBlur = 40;  
+                    }
+                    
+                    ctx.fillStyle = gradient;
+                    ctx.fill();
+                    
+                    wave.offset += wave.speed;
+                });
+                
+                requestAnimationFrame(animate);
+            }
+            
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+                initWaves();
+            });
+            
+            if (debug) console.log('Starting animation loop');
+            animate();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    const style = document.createElement('style');
+    style.textContent = `
+        .message.system {
+            position: relative;
+            width: 85%;
+        }
+        
+        .ocean-wave-container {
+            position: absolute;
+            top: 0;
+            right: -17.77%;
+            width: 15%;
+            height: 100%;
+            min-height: 200px;
+            overflow: hidden;
+            border-radius: 12px;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .message.system {
+                width: 100%;
+            }
+            
+            .ocean-wave-container {
+                display: none;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    class OceanWave {
+    constructor(container) {
+        this.container = container;
+        this.initializeScene();
+        this.initializeMaterials();
+        this.createOceanMesh();
+        this.setupEventListeners();
+        
+        
+        this.ripples = [];
+        this.isDragging = false;
+        this.lastMousePos = null;
+        this.lastRippleTime = 0;  
+        this.rippleSpacing = 100; 
+
+        this.animate();
+    }
+
+    initializeScene() {
+        
+        this.scene = new THREE.Scene();
+        this.camera = new THREE.PerspectiveCamera(75, this.container.clientWidth / this.container.clientHeight, 0.1, 1000);
+        this.renderer = new THREE.WebGLRenderer({ 
+            alpha: true,
+            antialias: true,
+            powerPreference: "high-performance"
+        });
+
+        this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+        this.renderer.setClearColor(0x000000, 0);
+        this.container.appendChild(this.renderer.domElement);
+
+        this.camera.position.set(0, 2, 4);
+        this.camera.lookAt(0, 0, 0);
+    }
+
+    initializeMaterials() {
+        this.geometry = new THREE.PlaneGeometry(10, 10, 128, 128);
+
+        
+        this.material = new THREE.ShaderMaterial({
+            uniforms: {
+                time: { value: 0 },
+                color1: { value: new THREE.Color(0x080B12) },
+                color2: { value: new THREE.Color(0x0F1520) },
+                color3: { value: new THREE.Color(0x1a2942) },
+                turbulenceValue: { value: 0.8 },
+                frequencyValue: { value: 0.6 },
+                ripplePositions: { value: new Float32Array(60) },
+                rippleCount: { value: 0 }
+            },
+            vertexShader: `
+                uniform float time;
+                uniform float turbulenceValue;
+                uniform float frequencyValue;
+                uniform float ripplePositions[60];
+                uniform int rippleCount;
+                
+                varying vec2 vUv;
+                varying float vElevation;
+                varying float vWaveHeight;
+                varying vec3 vRippleColor;
+                varying float vRippleIntensity;
+
+                    // Simplex noise helper functions
+                    vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+                    vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+                    vec4 permute(vec4 x) { return mod289(((x * 34.0) + 1.0) * x); }
+                    vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }
+
+                    float snoise(vec3 v) {
+                        const vec2 C = vec2(1.0/6.0, 1.0/3.0);
+                        const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
+
+                    vec3 i  = floor(v + dot(v, C.yyy));
+                    vec3 x0 = v - i + dot(i, C.xxx);
+
+                    vec3 g = step(x0.yzx, x0.xyz);
+                    vec3 l = 1.0 - g;
+                    vec3 i1 = min(g.xyz, l.zxy);
+                    vec3 i2 = max(g.xyz, l.zxy);
+
+                    vec3 x1 = x0 - i1 + C.xxx;
+                    vec3 x2 = x0 - i2 + C.yyy;
+                    vec3 x3 = x0 - D.yyy;
+
+                    i = mod289(i);
+                    vec4 p = permute(permute(permute(
+                        i.z + vec4(0.0, i1.z, i2.z, 1.0))
+                        + i.y + vec4(0.0, i1.y, i2.y, 1.0))
+                        + i.x + vec4(0.0, i1.x, i2.x, 1.0));
+
+                    float n_ = 0.142857142857;
+                    vec3 ns = n_ * D.wyz - D.xzx;
+
+                    vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
+
+                    vec4 x_ = floor(j * ns.z);
+                    vec4 y_ = floor(j - 7.0 * x_);
+
+                    vec4 x = x_ * ns.x + ns.yyyy;
+                    vec4 y = y_ * ns.x + ns.yyyy;
+                    vec4 h = 1.0 - abs(x) - abs(y);
+
+                    vec4 b0 = vec4(x.xy, y.xy);
+                    vec4 b1 = vec4(x.zw, y.zw);
+
+                    vec4 s0 = floor(b0) * 2.0 + 1.0;
+                    vec4 s1 = floor(b1) * 2.0 + 1.0;
+                    vec4 sh = -step(h, vec4(0.0));
+
+                    vec4 a0 = b0.xzyw + s0.xzyw * sh.xxyy;
+                    vec4 a1 = b1.xzyw + s1.xzyw * sh.zzww;
+
+                    vec3 p0 = vec3(a0.xy, h.x);
+                    vec3 p1 = vec3(a0.zw, h.y);
+                    vec3 p2 = vec3(a1.xy, h.z);
+                    vec3 p3 = vec3(a1.zw, h.w);
+
+                    vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2,p2), dot(p3,p3)));
+                    p0 *= norm.x;
+                    p1 *= norm.y;
+                    p2 *= norm.z;
+                    p3 *= norm.w;
+
+                    vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
+                    m = m * m;
+                    return 42.0 * dot(m*m, vec4(dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3)));
+                }
+
+                float fluidNoise(vec3 p) {
+                    float noise = 0.0;
+                    float amp = 1.0;
+                    float freq = frequencyValue;
+                    
+                    for(int i = 0; i < 4; i++) {
+                        noise += amp * snoise(p * freq + time * 0.3);
+                        p = vec3(p.y + 1.3, p.z - 2.1, p.x + 1.7);
+                        amp *= 0.5;
+                        freq *= 2.0;
+                    }
+                    
+                    return noise * turbulenceValue;
+                }
+
+                float calculateRipples(vec2 pos, out vec3 rippleColor, out float rippleIntensity) {
+                    float rippleEffect = 0.0;
+                    vec3 totalColor = vec3(0.0);
+                    float totalWeight = 0.0;
+                    rippleIntensity = 0.0;
+                    
+                    for(int i = 0; i < 10; i++) {
+                        if(i >= rippleCount) break;
+                        
+                        vec2 ripplePos = vec2(ripplePositions[i * 6], ripplePositions[i * 6 + 1]);
+                        float age = ripplePositions[i * 6 + 2];
+                        vec3 color = vec3(
+                            ripplePositions[i * 6 + 3],
+                            ripplePositions[i * 6 + 4],
+                            ripplePositions[i * 6 + 5]
+                        );
+                        
+                        float dist = length(pos - ripplePos);
+                        
+                        // Enhanced ripple wave pattern
+                        float frequency = 4.0;
+                        float speed = 4.0;
+                        float decay = 1.5;
+                        float wave = sin(dist * frequency - age * speed) * exp(-dist * decay - age * 0.75);
+                        
+                        // Improved ripple effect calculation
+                        float rippleWeight = abs(wave) * smoothstep(2.0, 0.0, age);
+                        rippleEffect += wave * 0.3;
+                        
+                        // Accumulate color with improved weighting
+                        totalColor += color * rippleWeight;
+                        totalWeight += rippleWeight;
+                        rippleIntensity = max(rippleIntensity, rippleWeight);
+                    }
+                    
+                    // Normalize the ripple color with improved blending
+                    rippleColor = totalWeight > 0.0 ? totalColor / totalWeight : vec3(0.0);
+                    rippleIntensity *= 0.6; // Adjust overall intensity
+                    return rippleEffect;
+                }
+
+                void main() {
+                    vUv = uv;
+                    
+                    vec3 pos3 = vec3(position.x * 2.0, position.y * 2.0, time * 0.2);
+                    float noise = fluidNoise(pos3);
+                    
+                    float rippleIntensity;
+                    vec3 rippleColor;
+                    float rippleElevation = calculateRipples(position.xy, rippleColor, rippleIntensity);
+                    float elevation = noise * 1.5 + rippleElevation;
+                    
+                    vElevation = elevation;
+                    vWaveHeight = (elevation + 1.0) * 0.5;
+                    vRippleColor = rippleColor;
+                    vRippleIntensity = rippleIntensity;
+                    
+                    vec3 pos = position;
+                    pos.z += elevation * 0.8;
+                    
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+                }
+            `,
+            fragmentShader: `
+                uniform vec3 color1;
+                uniform vec3 color2;
+                uniform vec3 color3;
+                varying vec2 vUv;
+                varying float vElevation;
+                varying float vWaveHeight;
+                varying vec3 vRippleColor;
+                varying float vRippleIntensity;
+                
+                void main() {
+                    float depthFactor = smoothstep(-1.0, 1.0, vElevation);
+                    vec3 deepColor = mix(color1, color2, depthFactor * 0.7);
+                    
+                    float highlightIntensity = smoothstep(0.4, 1.0, vWaveHeight) * 0.4;
+                    vec3 baseColor = mix(deepColor, color3, highlightIntensity);
+                    
+                    // Improved color blending for ripples
+                    vec3 finalColor = mix(baseColor, vRippleColor, vRippleIntensity);
+                    float alpha = mix(0.95, 0.98, vWaveHeight * 0.8);
+                    
+                    gl_FragColor = vec4(finalColor, alpha);
+                }
+            `,
+            transparent: true
+        });
+    }
+ 
+
+    createOceanMesh() {
+        
+        this.ocean = new THREE.Mesh(this.geometry, this.material);
+        this.ocean.rotation.x = -Math.PI / 2.5;
+        this.scene.add(this.ocean);
+    }
+
+    setupEventListeners() {
+        
+        this.renderer.domElement.addEventListener('mousedown', this.handleMouseDown.bind(this));
+        this.renderer.domElement.addEventListener('mousemove', this.handleMouseMove.bind(this));
+        this.renderer.domElement.addEventListener('mouseup', this.handleMouseUp.bind(this));
+        this.renderer.domElement.addEventListener('mouseleave', this.handleMouseUp.bind(this));
+
+        
+        window.addEventListener('resize', () => this.onResize());
+    }
+
+    handleMouseDown(event) {
+        this.isDragging = true;
+        const pos = this.getMousePosition(event);
+        this.lastMousePos = pos;
+        this.addRipple(pos.x, pos.y, false); 
+    }
+
+    handleMouseMove(event) {
+        if (!this.isDragging) return;
+        
+        const pos = this.getMousePosition(event);
+        if (this.lastMousePos) {
+            const steps = 5;
+            for (let i = 0; i <= steps; i++) {
+                const t = i / steps;
+                const x = this.lastMousePos.x + (pos.x - this.lastMousePos.x) * t;
+                const y = this.lastMousePos.y + (pos.y - this.lastMousePos.y) * t;
+                this.addRipple(x, y, true); 
+            }
+        }
+        this.lastMousePos = pos;
+    }
+
+    handleMouseUp() {
+        this.isDragging = false;
+        this.lastMousePos = null;
+    }
+
+    getMousePosition(event) {
+        const rect = this.renderer.domElement.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+        return { x, y };
+    }
+
+    addRipple(x, y, isDragging) {
+        const currentTime = performance.now();
+        if (currentTime - this.lastRippleTime < this.rippleSpacing) {
+            return; 
+        }
+        this.lastRippleTime = currentTime;
+
+        
+        const color = isDragging 
+            ? { r: 0.7, g: 0.2, b: 0.3 }  
+            : { r: 0.3, g: 0.8, b: 0.4 };  
+
+        this.ripples.push({
+            x: x,
+            y: y,
+            age: 0,
+            color: color,
+            intensity: 1.0
+        });
+        
+        if (this.ripples.length > 10) {
+            this.ripples.shift();
+        }
+    }
+
+    updateRipples() {
+        this.ripples = this.ripples.filter(ripple => {
+            ripple.age += 0.016;
+            return ripple.age < 2.0;
+        });
+
+        const rippleData = new Float32Array(60);
+        this.ripples.forEach((ripple, index) => {
+            const baseIndex = index * 6;
+            rippleData[baseIndex] = ripple.x;
+            rippleData[baseIndex + 1] = ripple.y;
+            rippleData[baseIndex + 2] = ripple.age;
+            rippleData[baseIndex + 3] = ripple.color.r;
+            rippleData[baseIndex + 4] = ripple.color.g;
+            rippleData[baseIndex + 5] = ripple.color.b;
+        });
+        
+        this.material.uniforms.ripplePositions.value = rippleData;
+        this.material.uniforms.rippleCount.value = this.ripples.length;
+    }
+
+    animate() {
+        requestAnimationFrame(() => this.animate());
+        
+        
+        this.material.uniforms.time.value += 0.01;
+        
+        
+        this.updateRipples();
+        
+        this.renderer.render(this.scene, this.camera);
+    }
+
+    onResize() {
+        const width = this.container.clientWidth;
+        const height = this.container.clientHeight;
+        
+        this.camera.aspect = width / height;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(width, height);
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const systemMessages = document.querySelectorAll('.message.system');
+    systemMessages.forEach(message => {
+        const container = document.createElement('div');
+        container.className = 'ocean-wave-container';
+        message.appendChild(container);
+        new OceanWave(container);
+    });
+});
+
+
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+            if (node.classList && node.classList.contains('message') && node.classList.contains('system')) {
+                const container = document.createElement('div');
+                container.className = 'ocean-wave-container';
+                node.appendChild(container);
+                new OceanWave(container);
+            }
+        });
+    });
+});
+
+observer.observe(document.querySelector('.chat-messages'), { childList: true });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getPlaceholderMessage() {
+    
+    
+    return "Share your thoughts...";
+}
+
+
+function appendMessage(text) {
+    const messagesContainer = document.querySelector('.chat-messages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'message';
+    messageDiv.textContent = text;
+    messagesContainer.appendChild(messageDiv);
+    
+    
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+
+function initializeChatInput() {
+    const inputArea = document.querySelector('.input-area');
+    const fakeInput = document.querySelector('.fake-input');
+    
+    
+    const textarea = document.createElement('textarea');
+    textarea.className = 'chat-textarea';
+    textarea.placeholder = getPlaceholderMessage();
+    textarea.rows = 1;
+    
+    
+    textarea.style.cssText = `
+        width: 100%;
+        min-height: 48px;
+        max-height: 200px;
+        padding: var(--space-4);
+        background: var(--chat-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        color: var(--text-primary);
+        font-size: var(--font-size-base);
+        font-family: inherit;
+        resize: none;
+        outline: none;
+        transition: border-color 0.2s ease;
+    `;
+    
+    
+    fakeInput.replaceWith(textarea);
+    
+    
+    function adjustHeight() {
+        textarea.style.height = 'auto';
+        textarea.style.height = Math.min(textarea.scrollHeight, 200) + 'px';
+    }
+    
+    
+    textarea.addEventListener('input', adjustHeight);
+    
+    textarea.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            const text = textarea.value.trim();
+            
+            if (text) {
+                appendMessage(text);
+                textarea.value = '';
+                adjustHeight();
+                textarea.placeholder = getPlaceholderMessage();
+            }
+        }
+    });
+    
+    
+    textarea.addEventListener('focus', () => {
+        textarea.style.borderColor = 'var(--accent-primary)';
+    });
+    
+    textarea.addEventListener('blur', () => {
+        textarea.style.borderColor = 'var(--border-color)';
+    });
+    
+    textarea.addEventListener('mouseenter', () => {
+        if (document.activeElement !== textarea) {
+            textarea.style.borderColor = 'var(--accent-primary)';
+        }
+    });
+    
+    textarea.addEventListener('mouseleave', () => {
+        if (document.activeElement !== textarea) {
+            textarea.style.borderColor = 'var(--border-color)';
+        }
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+     initializeChatInput();
+    
+    
+    const style = document.createElement('style');
+    style.textContent = `
+        .chat-textarea::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .chat-textarea::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        
+        .chat-textarea::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+        
+        .chat-textarea::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-primary);
+        }
+    `;
+    document.head.appendChild(style);
+    
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const mockResponses = [
+    "Let me think about that for a moment...",
+    "Interesting question! Here's what I think...",
+    "Based on my understanding...",
+    "That's a fascinating topic. Let me explain...",
+    "I'd be happy to help with that...",
+    "Let me break this down step by step...",
+    "From my analysis...",
+    "Here's my perspective on this...",
+    "Allow me to elaborate...",
+    "That's an intriguing point. Here's my response...",
+    "I've processed your request. Here's what I found...",
+    "Let me share my thoughts on this...",
+    "After careful consideration...",
+    "Here's what I've determined...",
+    "I've analyzed your question and...",
+    "Let me provide a detailed response...",
+    "That's an excellent question. Here's my answer...",
+    "I'd be glad to explain this...",
+    "Here's my comprehensive response...",
+    "Let me address that point by point..."
+];
+
+
+class MockResponseAdapter {
+    constructor() {
+        this.isResponding = false;
+    }
+
+    async generateResponse(userInput) {
+        if (this.isResponding) return null;
+        this.isResponding = true;
+
+        try {
+            
+            const initialDelay = Math.random() * 2000 + 1000;
+            await new Promise(resolve => setTimeout(resolve, initialDelay));
+
+            
+            const starter = mockResponses[Math.floor(Math.random() * mockResponses.length)];
+            
+            
+            const content = this.generateMockContent(userInput);
+            
+            return {
+                starter,
+                content
+            };
+        } finally {
+            this.isResponding = false;
+        }
+    }
+
+    generateMockContent(userInput) {
+        
+        const words = userInput.split(' ');
+        const responseLength = Math.min(words.length * 3 + 20, 100);
+        const mockWords = [];
+        
+        for (let i = 0; i < responseLength; i++) {
+            if (i < words.length) {
+                mockWords.push(words[i]);
+            } else {
+                mockWords.push(this.getRandomWord());
+            }
+        }
+
+        return mockWords.join(' ');
+    }
+
+    getRandomWord() {
+        const words = [
+            "specifically", "furthermore", "however", "indeed", "moreover",
+            "particularly", "consequently", "therefore", "nevertheless", "essentially",
+            "fundamentally", "importantly", "notably", "significantly", "ultimately"
+        ];
+        return words[Math.floor(Math.random() * words.length)];
+    }
+}
+
+
+class StreamingTextHandler {
+    constructor(messageElement) {
+        this.messageElement = messageElement;
+        this.content = '';
+        this.currentIndex = 0;
+        this.isStreaming = false;
+    }
+
+    async streamText(text) {
+        if (this.isStreaming) return;
+        this.isStreaming = true;
+        this.content = text;
+        this.currentIndex = 0;
+
+        try {
+            while (this.currentIndex < this.content.length) {
+                
+                const tokensPerChunk = Math.floor(Math.random() * 10) + 3;
+                const chunk = this.content.slice(
+                    this.currentIndex,
+                    this.currentIndex + tokensPerChunk
+                );
+
+                this.messageElement.textContent += chunk;
+                this.currentIndex += tokensPerChunk;
+
+                
+                const delay = Math.random() * 150 + 50;
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+        } finally {
+            this.isStreaming = false;
+        }
+    }
+}
+
+
+class ChatManager {
+    constructor() {
+        this.responseAdapter = new MockResponseAdapter();
+        this.messagesContainer = document.querySelector('.chat-messages');
+        this.textarea = document.querySelector('.chat-textarea');
+        this.isProcessing = false;
+        
+        this.initializeEventListeners();
+    }
+
+    initializeEventListeners() {
+        this.textarea.addEventListener('keydown', async (e) => {
+            if (e.key === 'Enter' && !e.shiftKey && !this.isProcessing) {
+                e.preventDefault();
+                const text = this.textarea.value.trim();
+                
+                if (text) {
+                    this.isProcessing = true;
+                    await this.handleUserMessage(text);
+                    this.isProcessing = false;
+                }
+            }
+        });
+    }
+
+    async handleUserMessage(text) {
+        
+        const userMessage = this.createMessageElement(text, 'user');
+        this.messagesContainer.appendChild(userMessage);
+        this.textarea.value = '';
+        this.adjustTextareaHeight();
+
+        
+        const response = await this.responseAdapter.generateResponse(text);
+        if (!response) return;
+
+        
+        const systemMessage = this.createMessageElement(response.starter, 'system');
+        this.messagesContainer.appendChild(systemMessage);
+
+        
+        const streamHandler = new StreamingTextHandler(systemMessage);
+        await streamHandler.streamText(response.content);
+
+        
+        this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+    }
+
+    createMessageElement(text, type) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}`;
+        messageDiv.textContent = text;
+        return messageDiv;
+    }
+
+    adjustTextareaHeight() {
+        this.textarea.style.height = 'auto';
+        this.textarea.style.height = Math.min(this.textarea.scrollHeight, 200) + 'px';
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const chatManager = new ChatManager();
+});
+
+
+    </script>   
+</body>
+</html>
