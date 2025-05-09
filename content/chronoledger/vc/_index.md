@@ -159,3 +159,5 @@ Despite the significant risks, particularly around hardware cost economics and t
 <a href="/chronoledger/">Back to ChronoLedger</a>
 
 <a href="/chronoledger/vc/apps">Applications</a>
+
+<a href="/chronoledger/vc/why">Why ChronoLedger</a>
