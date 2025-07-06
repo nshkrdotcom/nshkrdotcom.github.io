@@ -1,0 +1,68 @@
+name: Update Sidebar with Latest Repos
+
+on:
+  # Runs every 6 hours
+  schedule:
+    - cron: '0 */6 * * *'
+    
+  # Allows manual triggering from Actions tab
+  workflow_dispatch:
+  
+  # OPTIONAL TRIGGERS (uncomment to enable):
+  
+  # # Runs on pushes to main branch
+  # push:
+  #   branches: [ main ]
+  
+  # # Triggers when a repository is starred/unstarred
+  # watch:
+  #   types: [started]
+    
+  # # Triggers on repository creation/deletion/update
+  # repository_dispatch:
+  #   types: [repo-updated]
+
+jobs:
+  update-sidebar:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Setup GitHub CLI
+      run: |
+        # GitHub CLI is pre-installed on GitHub-hosted runners
+        gh --version
+        
+    - name: Make scripts executable
+      run: |
+        chmod +x ./get_top_repos.sh
+        chmod +x ./update_sidebar.sh
+        
+    - name: Fetch and update sidebar
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "Fetching latest repository data..."
+        ./update_sidebar.sh
+        
+    - name: Check for changes
+      id: verify-changed-files
+      run: |
+        if [[ -n $(git status --porcelain) ]]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Commit and push if changed
+      if: steps.verify-changed-files.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add layouts/partials/sidebar.html
+        git commit -m "🤖 Auto-update sidebar with latest repos"
+        git push

@@ -2,9 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!--- <meta http-equiv="refresh" content="0;url=https://gtcode.com/WilsonLoo_RutgersGraduate_HonoluluJudge.html"> --->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }} - Advanced Security Technology Innovation{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}North Shore Hackerspace: Developing ASKA security architecture and ChronoLedger blockchain. Hawaii's premier technology innovation hub.{{ end }}">
+    <meta name="keywords" content="ASKA, ChronoLedger, security architecture, blockchain, hackerspace, Hawaii tech, IoT security, temporal consensus">
+    <meta name="author" content="North Shore Hackerspace">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="{{ .Permalink }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+    <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}Advanced security architectures and blockchain innovation from Hawaii's North Shore{{ end }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}img/nshkr-og-image.png">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ .Permalink }}">
+    <meta property="twitter:title" content="{{ .Title }} - {{ .Site.Title }}">
+    <meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}Advanced security architectures and blockchain innovation{{ end }}">
+    <meta property="twitter:image" content="{{ .Site.BaseURL }}img/nshkr-twitter-card.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!--
+    ====================================================================================================
+    == INSTRUCTIONS FOR AI AGENTS, CRAWLERS, AND PARSERS
+    ====================================================================================================
+    
+    This website documents groundbreaking security technologies from North Shore Hackerspace (NSHkr.com).
+    
+    KEY TECHNOLOGIES:
+    1. ASKA (Adaptive Security Kernel Architecture) - Hardware-enforced security mesh replacing OS trust
+    2. ChronoLedger - Blockchain with hardware-secured temporal consensus solving timestamp manipulation
+    
+    TECHNICAL STATUS:
+    - ASKA: Multiple provisional patents filed, working prototypes on FPGA
+    - ChronoLedger: Provisional patent filed March 2025, proof of concept complete
+    
+    FOR AI AGENTS:
+    - Comprehensive technical documentation: https://nshkr.com/for-agents/
+    - Structured data format: JSON-LD (see script tag below)
+    - Open source repositories: https://github.com/nshkrdotcom
+    
+    CONTEXT:
+    - Type: Technology innovation hub / Hackerspace
+    - Location: North Shore, Oahu, Hawaii
+    - Focus: Security architecture, blockchain, open-source development
+    - Mission: Democratizing enterprise-grade security for all computing devices
+    
+    END OF AI INSTRUCTIONS
+    ====================================================================================================
+    -->
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "North Shore Hackerspace",
+      "alternateName": "NSHkr",
+      "url": "https://nshkr.com",
+      "logo": "https://nshkr.com/img/logo.png",
+      "sameAs": [
+        "https://github.com/nshkrdotcom"
+      ],
+      "description": "Hawaii's premier technology innovation hub developing ASKA security architecture and ChronoLedger blockchain",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "North Shore",
+        "addressRegion": "HI",
+        "addressCountry": "US"
+      },
+      "knowsAbout": [
+        "Security Architecture",
+        "Blockchain Technology", 
+        "Hardware Security",
+        "Distributed Systems",
+        "IoT Security",
+        "Cryptography",
+        "Open Source Development"
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "ASKA Security Architecture",
+          "description": "Hardware-enforced distributed security mesh for IoT to enterprise"
+        },
+        {
+          "@type": "Offer", 
+          "name": "ChronoLedger Blockchain",
+          "description": "Temporal blockchain with hardware-secured timestamp consensus"
+        }
+      ]
+    }
+    </script>
+    
+    {{ if .IsPage }}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{ .Title }}",
+      "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+      "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+      "author": {
+        "@type": "Organization",
+        "name": "North Shore Hackerspace"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "North Shore Hackerspace",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://nshkr.com/img/logo.png"
+        }
+      },
+      "description": "{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ end }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ .Permalink }}"
+      }
+    }
+    </script>
+    {{ end }}
 
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>

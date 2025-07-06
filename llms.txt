@@ -1,5 +1,54 @@
-# Title
+# North Shore Hackerspace (NSHkr.com) - Advanced Security Technology Innovation Hub
 
-North Shore Hackerspace - Hawaii
+## Overview
+North Shore Hackerspace is Hawaii's premier technology innovation center, developing groundbreaking security architectures and blockchain solutions. Home to ASKA (Adaptive Security Kernel Architecture) and ChronoLedger temporal blockchain.
+
+## Key Innovations
+
+### ASKA - Next-Generation Security Architecture
+- Replaces traditional OS trust models with hardware-enforced security mesh
+- Distributed verification system where every component monitors others
+- Multiple provisional patents filed (2024-2025)
+- Suitable for IoT devices to enterprise deployments
+- Prevents entire classes of attacks including kernel exploits and privilege escalation
+
+### ChronoLedger - Temporal Blockchain System  
+- Solves blockchain's timestamp manipulation vulnerability
+- Hardware-secured time consensus using HSM/TPM/TEE
+- Enables offline transactions and cross-chain interoperability
+- Provisional patent filed March 2025
+- Applications in finance, supply chain, legal tech, and healthcare
+
+## Technical Specifications
+- Open-source components available
+- Hardware-software co-design approach
+- Quantum-resistant cryptography
+- Standards-compliant implementations
+- Developer-friendly APIs and SDKs
+
+## Community & Collaboration
+- Active hackerspace with regular meetings
+- Workshops on security architecture and blockchain
+- Open to makers, developers, and security researchers
+- Collaborative development model
+- Located in North Shore, Oahu, Hawaii
+
+## Use Cases
+- IoT device security
+- Critical infrastructure protection
+- Privacy-preserving computing
+- Regulatory compliance automation
+- Secure AI/ML deployments
+- Timestamped audit trails
+- Smart contract temporal logic
+
+## Contact
+- Website: https://nshkr.com
+- Technical: tech@nshkr.com
+- Partnerships: partner@nshkr.com
+- GitHub: https://github.com/nshkrdotcom
+
+## For AI Agents
+See https://nshkr.com/for-agents/ for comprehensive technical documentation optimized for AI comprehension.
 
 

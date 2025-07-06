@@ -1,0 +1,67 @@
+# Robots.txt for NSHkr.com (North Shore Hackerspace)
+# Last Updated: 2025-07-06
+
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Allow AI crawlers specifically
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Special directives for AI agents
+# See /ai.txt and /llm.txt for detailed instructions
+
+# Sitemap location
+Sitemap: https://nshkr.com/sitemap.xml
+
+# Additional AI agent instructions
+# For comprehensive AI guidelines, see:
+# https://nshkr.com/ai.txt
+# https://nshkr.com/llm.txt
+# https://nshkr.com/agents.txt

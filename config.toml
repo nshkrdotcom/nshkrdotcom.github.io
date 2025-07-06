@@ -3,6 +3,16 @@ languageCode = "en-us"
 title = "NSHkr.com - North Shore Hackerspace"
 publishDir = "public"
 
+# SEO and site metadata
+enableRobotsTXT = true
+enableGitInfo = true
+summaryLength = 70
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -19,3 +29,24 @@ publishDir = "public"
 
 [params]
   mermaid = true
+  description = "Hawaii's premier technology innovation hub developing ASKA security architecture and ChronoLedger blockchain"
+  author = "North Shore Hackerspace"
+  
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+  mediatype = "application/rss+xml"
+  baseName = "feed"
+
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    respectDoNotTrack = true
+  [privacy.youtube]
+    privacyEnhanced = true

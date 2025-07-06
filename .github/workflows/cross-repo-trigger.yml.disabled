@@ -1,0 +1,43 @@
+# DISABLED: Rename to .yml (remove .disabled) to enable cross-repository triggers
+name: Cross-Repository Sidebar Update
+
+on:
+  # Triggered by webhook from other repos
+  repository_dispatch:
+    types: [external-repo-updated]
+
+jobs:
+  update-on-external-change:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Log trigger info
+      run: |
+        echo "Triggered by repository: ${{ github.event.client_payload.repository }}"
+        echo "Event type: ${{ github.event.client_payload.event_type }}"
+        echo "Stars: ${{ github.event.client_payload.stars }}"
+        
+    - name: Make scripts executable
+      run: |
+        chmod +x ./get_top_repos.sh
+        chmod +x ./update_sidebar.sh
+        
+    - name: Update sidebar
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: ./update_sidebar.sh
+        
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        if [[ -n $(git status --porcelain) ]]; then
+          git add layouts/partials/sidebar.html
+          git commit -m "🤖 Update sidebar - triggered by ${{ github.event.client_payload.repository }}"
+          git push
+        fi
