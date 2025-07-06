@@ -238,8 +238,35 @@
             border-bottom: 1px solid var(--border-color);
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: var(--space-3);
             height: 60px;
+        }
+        
+        .chat-nav {
+            display: flex;
+            gap: var(--space-3);
+        }
+        
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 6px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+            font-size: var(--font-size-sm);
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-secondary);
+            transform: translateX(-2px);
         }
 
         .ai-status {
@@ -519,6 +546,9 @@
                     <div class="status-dot"></div>
                     <span>NSHkr.com Security Engineering Chat</span>
                 </div>
+                <nav class="chat-nav">
+                    <a href="/" class="nav-link">← Home</a>
+                </nav>
             </div>
             <div class="chat-messages">
                 <main>

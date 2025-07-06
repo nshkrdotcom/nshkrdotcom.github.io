@@ -1,5 +1,9 @@
 {{ define "main" }}
 <div class="blog-container">
+    <nav class="blog-nav">
+        <a href="/" class="nav-link">← Back to Home</a>
+    </nav>
+    
     <div class="blog-header">
         <h1>NSHkr.com Blog</h1>
         <p>Updates and news from our AI innovation lab</p>
@@ -24,6 +28,30 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px;
+}
+
+.blog-nav {
+    margin-bottom: 40px;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #0fbcf9;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 1px solid rgba(15, 188, 249, 0.3);
+    border-radius: 8px;
+    background: rgba(15, 188, 249, 0.05);
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    background: rgba(15, 188, 249, 0.1);
+    border-color: #0fbcf9;
+    transform: translateX(-2px);
 }
 
 .blog-header {

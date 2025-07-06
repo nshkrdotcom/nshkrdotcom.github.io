@@ -47,6 +47,7 @@ cat > layouts/partials/sidebar.html << 'EOF'
     scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
     position: relative;
     height: calc(100vh - 180px); /* Account for header and footer */
+    z-index: 10; /* Above main content */
 }
 
 .sidebar::-webkit-scrollbar {

@@ -1,5 +1,10 @@
 {{ define "main" }}
 <article class="blog-article">
+    <nav class="article-nav">
+        <a href="/" class="nav-link">← Home</a>
+        <a href="/blog" class="nav-link">← Blog</a>
+    </nav>
+    
     <header class="article-header">
         <div class="article-meta">
             <time>{{ .Date.Format "January 2, 2006" }}</time>
@@ -19,7 +24,7 @@
     </div>
     
     <footer class="article-footer">
-        <a href="/blog" class="back-to-blog">← Back to Blog</a>
+        <a href="/blog" class="nav-link">← Back to Blog</a>
     </footer>
 </article>
 
@@ -28,6 +33,32 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px;
+}
+
+.article-nav {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #0fbcf9;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 1px solid rgba(15, 188, 249, 0.3);
+    border-radius: 8px;
+    background: rgba(15, 188, 249, 0.05);
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    background: rgba(15, 188, 249, 0.1);
+    border-color: #0fbcf9;
+    transform: translateX(-2px);
 }
 
 .article-header {
@@ -161,17 +192,6 @@
     margin-top: 60px;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.back-to-blog {
-    color: #ffa801;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.back-to-blog:hover {
-    color: #0fbcf9;
 }
 </style>
 {{ end }}
