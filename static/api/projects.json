@@ -1,0 +1,129 @@
+{
+  "last_updated": "2025-07-06T00:00:00Z",
+  "organization": "North Shore Hackerspace",
+  "projects": [
+    {
+      "id": "aska",
+      "name": "ASKA (Adaptive Security Kernel Architecture)",
+      "status": "active",
+      "phase": "prototype",
+      "description": "Hardware-enforced distributed security mesh replacing traditional OS trust models",
+      "repository": "https://github.com/nshkrdotcom/ASKA",
+      "technologies": ["FPGA", "VHDL", "C", "Rust", "Elixir"],
+      "milestones": {
+        "completed": [
+          "Architecture design",
+          "Mathematical proofs",
+          "FPGA prototype",
+          "Patent applications"
+        ],
+        "current": "ASIC design",
+        "upcoming": [
+          "Silicon tape-out",
+          "Developer SDK",
+          "Commercial pilots"
+        ]
+      },
+      "team_size": 5,
+      "started": "2023-06-01",
+      "links": {
+        "documentation": "https://nshkr.com/aska",
+        "whitepaper": "https://nshkr.com/aska/whitepaper.pdf",
+        "patents": ["Provisional filed 2024", "CIP filed 2025"]
+      }
+    },
+    {
+      "id": "chronoledger",
+      "name": "ChronoLedger",
+      "status": "active",
+      "phase": "proof-of-concept",
+      "description": "Hardware-secured temporal blockchain solving timestamp manipulation",
+      "repository": "https://github.com/nshkrdotcom/ChronoLedger",
+      "technologies": ["Rust", "VHDL", "Elixir", "HSM/TPM"],
+      "milestones": {
+        "completed": [
+          "Temporal consensus design",
+          "Hardware time anchor proof-of-concept",
+          "Patent application",
+          "Performance benchmarks"
+        ],
+        "current": "Testnet development",
+        "upcoming": [
+          "Public testnet Q2 2025",
+          "Cross-chain bridges",
+          "Mainnet launch Q4 2025"
+        ]
+      },
+      "team_size": 4,
+      "started": "2024-01-01",
+      "patent": {
+        "number": "63/768,222",
+        "title": "Temporal Blockchain System with Hardware-Secured Consensus Time",
+        "filed": "2025-03-07",
+        "status": "Provisional"
+      }
+    },
+    {
+      "id": "guardrail",
+      "name": "GUARDRAIL",
+      "status": "active",
+      "phase": "production",
+      "description": "Comprehensive security framework for Elixir applications",
+      "repository": "https://github.com/nshkrdotcom/GUARDRAIL",
+      "technologies": ["Elixir", "Erlang/OTP"],
+      "features": [
+        "Input validation",
+        "Rate limiting",
+        "CSRF protection",
+        "SQL injection prevention",
+        "XSS mitigation"
+      ],
+      "downloads": 10000,
+      "version": "1.2.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "json_remedy",
+      "name": "JsonRemedy",
+      "status": "active",
+      "phase": "production",
+      "description": "Industrial-strength JSON repair library",
+      "repository": "https://github.com/nshkrdotcom/json_remedy",
+      "technologies": ["Elixir"],
+      "features": [
+        "Automatic JSON repair",
+        "Streaming support",
+        "Error recovery",
+        "Performance optimized"
+      ],
+      "downloads": 25000,
+      "version": "2.1.3",
+      "license": "MIT"
+    },
+    {
+      "id": "exdantic",
+      "name": "Exdantic",
+      "status": "active",
+      "phase": "beta",
+      "description": "Pydantic-inspired data validation for Elixir",
+      "repository": "https://github.com/nshkrdotcom/exdantic",
+      "technologies": ["Elixir"],
+      "features": [
+        "Schema validation",
+        "Type coercion",
+        "Custom validators",
+        "Nested structures"
+      ],
+      "version": "0.8.0",
+      "license": "MIT"
+    }
+  ],
+  "research_areas": [
+    "Post-quantum cryptography",
+    "Byzantine fault tolerance",
+    "Hardware security modules",
+    "Distributed systems",
+    "Blockchain consensus",
+    "AI/ML security"
+  ]
+}

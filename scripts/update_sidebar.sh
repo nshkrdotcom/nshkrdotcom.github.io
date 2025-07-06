@@ -22,7 +22,7 @@ descriptions["digits_py"]="Digit manipulation utilities"
 descriptions["cf_ex"]="CloudFlare API client for Elixir"
 descriptions["AutoElixir"]="Code generation and automation"
 descriptions["diagram_experiments"]="Diagram generation experiments"
-descriptions["ChronoLedger"]="Temporal blockchain system"
+descriptions["ChronoLedger"]="Hardware-secured temporal blockchain"
 descriptions["vscode-extensions"]="VS Code extension collection"
 descriptions["ElixirScope"]="Elixir code intelligence"
 

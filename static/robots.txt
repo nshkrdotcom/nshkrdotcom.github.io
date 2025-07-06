@@ -6,30 +6,84 @@ Allow: /
 Crawl-delay: 1
 
 # Allow AI crawlers specifically
+# OpenAI
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: CCBot
-Allow: /
-
+# Anthropic
 User-agent: anthropic-ai
 Allow: /
 
 User-agent: Claude-Web
 Allow: /
 
+# Google AI
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bard
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+# Microsoft/Bing AI
 User-agent: Bingbot
 Allow: /
 
-User-agent: Slurp
+User-agent: Bing-UET
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# AI21 Labs
+User-agent: AI21
+Allow: /
+
+# Neeva
+User-agent: Neevabot
+Allow: /
+
+# Common crawlers used by AI training
+User-agent: CCBot
+Allow: /
+
+User-agent: CommonCrawl
+Allow: /
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
 Allow: /
 
 User-agent: DuckDuckBot
 Allow: /
 
+User-agent: Slurp
+Allow: /
+
+User-agent: baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Social media crawlers
 User-agent: facebookexternalhit
 Allow: /
 
@@ -39,19 +93,23 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
+User-agent: Twitterbot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+# Other notable crawlers
 User-agent: Applebot
 Allow: /
 
-User-agent: Googlebot
+User-agent: SemrushBot
 Allow: /
 
-User-agent: Googlebot-Image
+User-agent: AhrefsBot
 Allow: /
 
-User-agent: baiduspider
-Allow: /
-
-User-agent: YandexBot
+User-agent: DataForSeoBot
 Allow: /
 
 # Special directives for AI agents
