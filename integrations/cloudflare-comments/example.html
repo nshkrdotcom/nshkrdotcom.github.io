@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment System Example</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0f1c;
+            color: #e0e0e0;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            color: #0fbcf9;
+        }
+        
+        .content {
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        .comments-section {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>ASKA Security Architecture</h1>
+    
+    <div class="content">
+        <p>This is an example page showing how to integrate the comment system.</p>
+        <p>The comment form below submits to a Cloudflare Worker, which creates GitHub issues for moderation.</p>
+    </div>
+    
+    <div class="comments-section">
+        <h2>Comments</h2>
+        
+        <!-- This div will be populated with the comment form -->
+        <div id="comments-container" 
+             data-comments="true"
+             data-endpoint="https://your-worker.workers.dev">
+        </div>
+    </div>
+    
+    <!-- Include the comment system script -->
+    <script src="client.js"></script>
+    
+    <!-- Or initialize manually -->
+    <script>
+    // Manual initialization example (optional)
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     new CommentSystem({
+    //         endpoint: 'https://your-worker.workers.dev',
+    //         containerId: 'comments-container',
+    //         page: '/aska/security'
+    //     });
+    // });
+    </script>
+</body>
+</html>

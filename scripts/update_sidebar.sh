@@ -28,7 +28,9 @@ descriptions["ElixirScope"]="Elixir code intelligence"
 
 # Get top repos
 echo "Fetching top repositories..."
-repos_json=$(./get_top_repos.sh)
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+repos_json=$("$SCRIPT_DIR/get_top_repos.sh")
 
 # Start building the sidebar HTML
 cat > layouts/partials/sidebar.html << 'EOF'

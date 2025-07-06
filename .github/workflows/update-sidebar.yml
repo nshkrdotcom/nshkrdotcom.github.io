@@ -39,15 +39,15 @@ jobs:
         
     - name: Make scripts executable
       run: |
-        chmod +x ./get_top_repos.sh
-        chmod +x ./update_sidebar.sh
+        chmod +x ./scripts/get_top_repos.sh
+        chmod +x ./scripts/update_sidebar.sh
         
     - name: Fetch and update sidebar
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         echo "Fetching latest repository data..."
-        ./update_sidebar.sh
+        ./scripts/update_sidebar.sh
         
     - name: Check for changes
       id: verify-changed-files
