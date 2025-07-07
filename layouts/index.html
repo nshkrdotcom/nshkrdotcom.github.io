@@ -824,6 +824,8 @@ END OF AI INSTRUCTIONS
         @media (max-width: 768px) {
             .container {
                 grid-template-rows: 60px 1fr auto;
+                min-height: 100vh;
+                height: auto;
             }
             
             header {
@@ -873,6 +875,9 @@ END OF AI INSTRUCTIONS
             
             .main-content {
                 padding: 20px;
+                min-height: 0;
+                height: auto;
+                overflow-y: visible;
             }
             
             .hero-title {
@@ -927,6 +932,8 @@ END OF AI INSTRUCTIONS
                 gap: 10px;
                 padding: 20px;
                 text-align: center;
+                position: relative;
+                margin-top: auto;
             }
         }
         
