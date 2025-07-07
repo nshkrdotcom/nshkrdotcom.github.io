@@ -1104,6 +1104,36 @@ END OF AI INSTRUCTIONS
                         navMenu.classList.remove('active');
                     });
                 });
+                
+                // Add swipe-to-close functionality for mobile
+                let startX = 0;
+                let startY = 0;
+                let startTime = 0;
+                
+                navMenu.addEventListener('touchstart', function(e) {
+                    startX = e.touches[0].clientX;
+                    startY = e.touches[0].clientY;
+                    startTime = Date.now();
+                }, { passive: true });
+                
+                navMenu.addEventListener('touchend', function(e) {
+                    if (!e.changedTouches || e.changedTouches.length === 0) return;
+                    
+                    const endX = e.changedTouches[0].clientX;
+                    const endY = e.changedTouches[0].clientY;
+                    const endTime = Date.now();
+                    
+                    const deltaX = endX - startX;
+                    const deltaY = endY - startY;
+                    const deltaTime = endTime - startTime;
+                    
+                    // Check for right swipe: move right at least 100px, time under 300ms, mostly horizontal
+                    if (deltaX > 100 && 
+                        Math.abs(deltaY) < Math.abs(deltaX) && 
+                        deltaTime < 300) {
+                        navMenu.classList.remove('active');
+                    }
+                }, { passive: true });
             }
             
             // Create floating particles
