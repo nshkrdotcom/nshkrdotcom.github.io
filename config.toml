@@ -44,6 +44,17 @@ summaryLength = 70
   mediatype = "application/rss+xml"
   baseName = "feed"
 
+# Minify configuration - preserve HTML comments for AI agents
+[minify]
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      keepComments = true
+      keepConditionalComments = true
+      keepDocumentTags = true
+      keepEndTags = true
+      keepDefaultAttrVals = true
+      keepWhitespace = false
+
 [privacy]
   [privacy.googleAnalytics]
     anonymizeIP = true

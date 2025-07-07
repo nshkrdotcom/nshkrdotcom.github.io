@@ -1,18 +1,37 @@
-# North Shore Hackerspace (NSHkr.com) - Advanced Security Technology Innovation Hub
+# North Shore Hackerspace (NSHkr.com) - Virtual AI Empire & ElixirML Innovation Hub
 
 ## Overview
-North Shore Hackerspace is Hawaii's premier technology innovation center, developing groundbreaking security architectures and blockchain solutions. Home to ASKA (Adaptive Security Kernel Architecture) and ChronoLedger temporal blockchain.
+North Shore Hackerspace is Hawaii's premier AI innovation lab, cultivating tomorrow's intelligent systems with island wisdom and BEAM excellence. Home to 20+ open-source ElixirML tools, ASKA security architecture, and ChronoLedger temporal blockchain.
 
-## Key Innovations
+## Primary Focus
 
-### ASKA - Next-Generation Security Architecture
+### ElixirML Ecosystem - Open Source AI/ML Tools
+- 20+ production-ready libraries for AI/ML on the BEAM platform
+- Industrial-strength tools: json_remedy, GUARDRAIL, exdantic
+- Neural network libraries: axon contributions and extensions
+- Developer productivity tools: Claude Code SDK, VS Code extensions
+- Data processing frameworks: pipeline_ex, ds_ex, foundation
+- Post-quantum cryptography research: pqc-hqc
+
+### Key Open Source Projects
+- **json_remedy** (13★) - Industrial-strength JSON repair library
+- **GUARDRAIL** (10★) - Comprehensive Elixir security framework
+- **axon** (10★) - Neural network library contributions for Elixir
+- **exdantic** (3★) - Pydantic-inspired validation for Elixir
+- **claude_code_sdk_elixir** - Official Claude Code SDK for Elixir
+- **pipeline_ex** - Distributed pipeline processing framework
+- **ElixirScope** - Code intelligence and analysis tools
+
+### Advanced Research Projects
+
+#### ASKA - Next-Generation Security Architecture
 - Replaces traditional OS trust models with hardware-enforced security mesh
 - Distributed verification system where every component monitors others
 - Multiple provisional patents filed (2024-2025)
 - Suitable for IoT devices to enterprise deployments
 - Prevents entire classes of attacks including kernel exploits and privilege escalation
 
-### ChronoLedger - Temporal Blockchain System  
+#### ChronoLedger - Temporal Blockchain System  
 - Solves blockchain's timestamp manipulation vulnerability
 - Hardware-secured time consensus using HSM/TPM/TEE
 - Enables offline transactions and cross-chain interoperability
@@ -34,7 +53,13 @@ North Shore Hackerspace is Hawaii's premier technology innovation center, develo
 - Located in North Shore, Oahu, Hawaii
 
 ## Use Cases
-- IoT device security
+- AI/ML model development and deployment on BEAM
+- Industrial data processing and validation
+- Security framework development in Elixir
+- Distributed AI agent orchestration
+- Neural network training and inference
+- Developer productivity enhancement
+- IoT device security with ASKA
 - Critical infrastructure protection
 - Privacy-preserving computing
 - Regulatory compliance automation
