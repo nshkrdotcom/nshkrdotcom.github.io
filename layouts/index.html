@@ -825,7 +825,16 @@ END OF AI INSTRUCTIONS
             .container {
                 grid-template-rows: 60px 1fr auto;
                 height: 100vh;
+                height: 100dvh; /* Dynamic viewport height for iOS */
                 overflow: hidden;
+            }
+            
+            /* iOS Safari specific fixes */
+            @supports (-webkit-touch-callout: none) {
+                .container {
+                    height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+                    min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+                }
             }
             
             header {
@@ -932,10 +941,13 @@ END OF AI INSTRUCTIONS
                 padding: 15px 10px;
                 text-align: center;
                 height: auto;
+                min-height: 50px;
                 flex-shrink: 0;
                 justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
+                position: relative;
+                z-index: 100;
             }
             
             .footer-item {
