@@ -927,12 +927,42 @@ END OF AI INSTRUCTIONS
             }
             
             footer {
-                flex-direction: column;
-                gap: 10px;
-                padding: 20px;
+                flex-direction: row;
+                gap: 15px;
+                padding: 15px 10px;
                 text-align: center;
                 height: auto;
                 flex-shrink: 0;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            
+            .footer-item {
+                font-size: 12px !important;
+                margin: 0;
+            }
+            
+            /* Condensed mobile footer layout */
+            .footer-item:nth-child(1) {
+                order: 2;
+                flex: 1;
+                text-align: center;
+            }
+            
+            .footer-item:nth-child(2) {
+                order: 1;
+                flex: 0 0 auto;
+            }
+            
+            .footer-item:nth-child(3) {
+                order: 4;
+                flex: 0 0 auto;
+            }
+            
+            .footer-item:nth-child(4) {
+                order: 3;
+                flex: 0 0 auto;
             }
         }
         
@@ -1043,9 +1073,9 @@ END OF AI INSTRUCTIONS
             <div class="footer-item">
                 <a href="https://github.com/nshkrdotcom">GitHub</a>
             </div>
-            <div class="footer-item">North Shore, Oahu 🌺</div>
+            <div class="footer-item">🌺</div>
             <div class="footer-item">
-                <a href="mailto:hello@nshkr.com">hello@nshkr.com</a>
+                <a href="mailto:hello@nshkr.com">✉️</a>
             </div>
         </footer>
     </div>
