@@ -68,3 +68,10 @@ jobs:
         git add layouts/partials/sidebar.html
         git commit -m "🤖 Auto-update sidebar with latest repos"
         git push
+        
+    - name: Trigger Hugo deployment
+      if: steps.verify-changed-files.outputs.changed == 'true'
+      run: |
+        gh workflow run hugo-deploy.yml
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
