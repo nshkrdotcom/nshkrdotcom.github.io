@@ -32,7 +32,7 @@ echo "Fetching top repositories..."
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 repos_json=$("$SCRIPT_DIR/get_top_repos.sh")
 
-# Start building the sidebar HTML
+# Start building the desktop sidebar HTML
 cat > layouts/partials/sidebar.html << 'EOF'
 <style>
 /* Sidebar styles */
@@ -167,5 +167,54 @@ cat >> layouts/partials/sidebar.html << 'EOF'
 </aside>
 EOF
 
+# Start building the mobile sidebar content (no styles, no aside wrapper)
+cat > layouts/partials/mobile-sidebar-content.html << 'EOF'
+<h3 style="color: #ffa801; margin-bottom: 20px;">GitHub Projects</h3>
+<ul class="project-list">
+EOF
+
+# Process each repository again for mobile version
+echo "$repos_json" | jq -r '.[] | @base64' | while read -r repo_base64; do
+    # Decode the repo data
+    repo=$(echo "$repo_base64" | base64 -d)
+    
+    # Extract fields
+    link=$(echo "$repo" | jq -r '.link')
+    title=$(echo "$repo" | jq -r '.title')
+    stars=$(echo "$repo" | jq -r '.stars')
+    
+    # Get description or use default
+    desc="${descriptions[$title]:-"GitHub repository"}"
+    
+    # Special handling for specific repos to mark as active
+    active_class=""
+    if [[ "$title" == "GUARDRAIL" ]] || [[ "$title" == "ChronoLedger" ]]; then
+        active_class=" active"
+    fi
+    
+    # Write the HTML for this repo (mobile version)
+    cat >> layouts/partials/mobile-sidebar-content.html << EOF
+    <li class="project-item${active_class}">
+        <a href="${link}" style="text-decoration: none; color: inherit; display: block;" target="_blank">
+            <div class="project-title">
+                <span>${title}</span>
+                <span class="star-count">
+                    <svg class="star-icon" fill="#ffa801" viewBox="0 0 16 16">
+                        <path d="M8 0.25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
+                    </svg>
+                    ${stars}
+                </span>
+            </div>
+            <div class="project-desc">${desc}</div>
+        </a>
+    </li>
+EOF
+done
+
+# Close the mobile sidebar content
+cat >> layouts/partials/mobile-sidebar-content.html << 'EOF'
+</ul>
+EOF
+
 echo "Sidebar updated successfully!"
-echo "Generated $(echo "$repos_json" | jq '. | length') repository entries"
+echo "Generated $(echo "$repos_json" | jq '. | length') repository entries for both desktop and mobile versions"

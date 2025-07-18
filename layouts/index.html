@@ -453,7 +453,7 @@ END OF AI INSTRUCTIONS
         }
         
         /* Mobile menu toggle */
-        .menu-toggle {
+        .menu-toggle, .projects-toggle {
             display: none;
             background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -470,6 +470,16 @@ END OF AI INSTRUCTIONS
         .menu-toggle svg {
             width: 24px;
             height: 24px;
+        }
+        
+        .projects-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* Hide mobile sidebar elements on desktop */
+        .mobile-sidebar, .mobile-sidebar-overlay {
+            display: none;
         }
 
         nav a {
@@ -514,7 +524,6 @@ END OF AI INSTRUCTIONS
             align-items: center;
             justify-content: flex-start;
             padding: 40px;
-            padding-bottom: 220px; /* Space for showcase buttons */
             position: relative;
             z-index: 1; /* Lower than sidebars */
             overflow-y: auto;
@@ -711,31 +720,27 @@ END OF AI INSTRUCTIONS
 
         /* Project showcase */
         .project-showcase {
-            position: fixed;
-            bottom: 120px; /* Above footer */
-            left: 50%;
-            transform: translateX(-50%);
             display: flex;
-            gap: 20px;
+            gap: 10px;
             align-items: center;
             justify-content: center;
-            z-index: 5; /* Above main content but below sidebars */
+            margin-top: 60px;
             background: rgba(10, 15, 28, 0.8);
-            padding: 20px;
+            padding: 10px;
             border-radius: 20px;
             backdrop-filter: blur(10px);
         }
 
         .showcase-item {
-            width: 150px;
-            height: 150px;
+            width: 80px;
+            height: 80px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
+            font-size: 32px;
             cursor: pointer;
             transition: all 0.3s;
             position: relative;
@@ -788,12 +793,12 @@ END OF AI INSTRUCTIONS
                 font-size: 56px;
             }
             .project-showcase {
-                gap: 15px;
-                padding: 15px;
+                gap: 10px;
+                padding: 10px;
             }
             .showcase-item {
-                width: 130px;
-                height: 130px;
+                width: 80px;
+                height: 80px;
             }
         }
 
@@ -804,13 +809,109 @@ END OF AI INSTRUCTIONS
             }
             header {
                 height: 60px;
+                padding: 0 10px 0 0;
+                gap: 10px;
             }
             .logo {
                 height: 59px;
+                flex-shrink: 0;
             }
             .sidebar, .right-panel {
                 display: none;
             }
+            
+            /* Mobile projects button */
+            .projects-toggle {
+                display: flex;
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                color: white;
+                padding: 8px;
+                border-radius: 4px;
+                cursor: pointer;
+                width: 40px;
+                height: 40px;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.2s ease;
+            }
+            
+            .projects-toggle:hover {
+                background: rgba(255, 255, 255, 0.1);
+                border-color: rgba(255, 255, 255, 0.5);
+            }
+            
+            .projects-toggle svg {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .projects-toggle {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: none;
+            }
+            
+            /* Mobile sidebar overlay */
+            .mobile-sidebar {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(15, 20, 35, 0.98);
+                backdrop-filter: blur(15px);
+                z-index: 2000;
+                transition: left 0.3s ease;
+                overflow-y: auto;
+                padding: 80px 20px 20px 20px;
+            }
+            
+            /* Mobile sidebar compact styling */
+            .mobile-sidebar .project-item {
+                margin-bottom: 12px;
+                padding: 10px;
+            }
+            
+            .mobile-sidebar .project-title {
+                font-size: 16px;
+            }
+            
+            .mobile-sidebar .project-desc {
+                font-size: 12px;
+                line-height: 1.3;
+            }
+            
+            .mobile-sidebar .star-count {
+                font-size: 12px;
+            }
+            
+            .mobile-sidebar.active {
+                left: 0;
+            }
+            
+            .mobile-sidebar-overlay {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 1999;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+            
+            .mobile-sidebar-overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+            
             .hero-title {
                 font-size: 48px;
             }
@@ -837,22 +938,12 @@ END OF AI INSTRUCTIONS
                 }
             }
             
-            header {
-                padding: 0 10px 0 0;
-                height: 60px;
-                gap: 10px;
-            }
-            
-            .logo {
-                height: 59px;
-                flex-shrink: 0;
-            }
-            
             .menu-toggle {
                 display: flex;
             }
             
             nav {
+                display: block;
                 position: fixed;
                 top: 60px;
                 right: -100%;
@@ -880,6 +971,9 @@ END OF AI INSTRUCTIONS
                 font-size: 14px;
                 padding: 12px 20px;
                 text-align: left;
+                margin-bottom: 8px;
+                display: block;
+                border-radius: 8px;
             }
             
             .main-content {
@@ -915,24 +1009,17 @@ END OF AI INSTRUCTIONS
             }
             
             .project-showcase {
-                position: static;
                 margin-top: 40px;
-                gap: 15px;
-                padding: 20px 20px; /* Add vertical padding for mobile */
+                gap: 10px;
+                padding: 10px;
                 justify-content: center;
                 flex-wrap: wrap;
-                width: 100%;
-                left: auto;
-                transform: none;
-                background: rgba(10, 15, 28, 0.8);
-                border-radius: 20px;
-                backdrop-filter: blur(10px);
             }
             
             .showcase-item {
-                width: 120px;
-                height: 120px;
-                font-size: 36px;
+                width: 80px;
+                height: 80px;
+                font-size: 32px;
             }
             
             footer {
@@ -989,13 +1076,13 @@ END OF AI INSTRUCTIONS
             
             .project-showcase {
                 gap: 10px;
-                padding: 15px 15px; /* Maintain vertical padding on very narrow screens */
+                padding: 10px;
             }
             
             .showcase-item {
-                width: 70px;
-                height: 70px;
-                font-size: 28px;
+                width: 80px;
+                height: 80px;
+                font-size: 32px;
             }
         }
     </style>
@@ -1009,6 +1096,12 @@ END OF AI INSTRUCTIONS
             <a href="/" class="logo">
                 <img src="/NSHkr_dot_com_logo_02_cropped.jpg" alt="NSHkr.com" class="logo-img">
             </a>
+            <button class="projects-toggle" id="projectsToggle" aria-label="Toggle projects">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 1v6m8-6v6" />
+                </svg>
+            </button>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -1025,6 +1118,12 @@ END OF AI INSTRUCTIONS
         </header>
 
         {{ partial "sidebar.html" . }}
+        
+        <!-- Mobile-only sidebar -->
+        <div class="mobile-sidebar-overlay" id="mobileSidebarOverlay"></div>
+        <div class="mobile-sidebar" id="mobileSidebar">
+            {{ partial "mobile-sidebar-content.html" . }}
+        </div>
 
         <main class="main-content">
             <div class="hero-section">
@@ -1097,6 +1196,9 @@ END OF AI INSTRUCTIONS
             // Mobile menu toggle
             const menuToggle = document.getElementById('menuToggle');
             const navMenu = document.getElementById('navMenu');
+            const projectsToggle = document.getElementById('projectsToggle');
+            const mobileSidebar = document.getElementById('mobileSidebar');
+            const mobileSidebarOverlay = document.getElementById('mobileSidebarOverlay');
             
             if (menuToggle && navMenu) {
                 menuToggle.addEventListener('click', function() {
@@ -1146,6 +1248,129 @@ END OF AI INSTRUCTIONS
                         navMenu.classList.remove('active');
                     }
                 }, { passive: true });
+            }
+            
+            // Mobile projects sidebar toggle
+            if (projectsToggle && mobileSidebar && mobileSidebarOverlay) {
+                projectsToggle.addEventListener('click', function() {
+                    mobileSidebar.classList.toggle('active');
+                    mobileSidebarOverlay.classList.toggle('active');
+                    // Close nav menu if open
+                    if (navMenu) {
+                        navMenu.classList.remove('active');
+                    }
+                });
+                
+                // Close sidebar when clicking on overlay
+                mobileSidebarOverlay.addEventListener('click', function() {
+                    mobileSidebar.classList.remove('active');
+                    mobileSidebarOverlay.classList.remove('active');
+                });
+                
+                // Close sidebar when clicking on project links
+                mobileSidebar.querySelectorAll('.project-item a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileSidebar.classList.remove('active');
+                        mobileSidebarOverlay.classList.remove('active');
+                    });
+                });
+                
+                // Add swipe/drag-to-close functionality for mobile sidebar
+                let sidebarStartX = 0;
+                let sidebarStartY = 0;
+                let sidebarStartTime = 0;
+                let isDragging = false;
+                
+                // Touch events for mobile
+                mobileSidebar.addEventListener('touchstart', function(e) {
+                    sidebarStartX = e.touches[0].clientX;
+                    sidebarStartY = e.touches[0].clientY;
+                    sidebarStartTime = Date.now();
+                    isDragging = true;
+                }, { passive: true });
+                
+                mobileSidebar.addEventListener('touchmove', function(e) {
+                    if (!isDragging) return;
+                    
+                    const currentX = e.touches[0].clientX;
+                    const deltaX = currentX - sidebarStartX;
+                    
+                    // Allow dragging the sidebar left (negative deltaX)
+                    if (deltaX < 0) {
+                        const translateX = Math.max(deltaX, -280); // Don't exceed sidebar width
+                        mobileSidebar.style.transform = `translateX(${translateX}px)`;
+                    }
+                }, { passive: true });
+                
+                mobileSidebar.addEventListener('touchend', function(e) {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    
+                    if (!e.changedTouches || e.changedTouches.length === 0) return;
+                    
+                    const endX = e.changedTouches[0].clientX;
+                    const endY = e.changedTouches[0].clientY;
+                    const deltaX = endX - sidebarStartX;
+                    const deltaY = endY - sidebarStartY;
+                    const deltaTime = Date.now() - sidebarStartTime;
+                    
+                    // Reset transform
+                    mobileSidebar.style.transform = '';
+                    
+                    // Check for left swipe/drag: move left at least 80px OR fast swipe
+                    const isLeftSwipe = deltaX < -80 || (deltaX < -50 && deltaTime < 200);
+                    const isMostlyHorizontal = Math.abs(deltaY) < Math.abs(deltaX) * 2;
+                    
+                    if (isLeftSwipe && isMostlyHorizontal) {
+                        mobileSidebar.classList.remove('active');
+                        mobileSidebarOverlay.classList.remove('active');
+                    }
+                }, { passive: true });
+                
+                // Mouse events for desktop/tablet with mouse
+                mobileSidebar.addEventListener('mousedown', function(e) {
+                    sidebarStartX = e.clientX;
+                    sidebarStartY = e.clientY;
+                    sidebarStartTime = Date.now();
+                    isDragging = true;
+                    e.preventDefault();
+                });
+                
+                document.addEventListener('mousemove', function(e) {
+                    if (!isDragging) return;
+                    
+                    const currentX = e.clientX;
+                    const deltaX = currentX - sidebarStartX;
+                    
+                    // Allow dragging the sidebar left (negative deltaX)
+                    if (deltaX < 0) {
+                        const translateX = Math.max(deltaX, -280); // Don't exceed sidebar width
+                        mobileSidebar.style.transform = `translateX(${translateX}px)`;
+                    }
+                });
+                
+                document.addEventListener('mouseup', function(e) {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    
+                    const endX = e.clientX;
+                    const endY = e.clientY;
+                    const deltaX = endX - sidebarStartX;
+                    const deltaY = endY - sidebarStartY;
+                    const deltaTime = Date.now() - sidebarStartTime;
+                    
+                    // Reset transform
+                    mobileSidebar.style.transform = '';
+                    
+                    // Check for left drag: move left at least 80px OR fast drag
+                    const isLeftDrag = deltaX < -80 || (deltaX < -50 && deltaTime < 200);
+                    const isMostlyHorizontal = Math.abs(deltaY) < Math.abs(deltaX) * 2;
+                    
+                    if (isLeftDrag && isMostlyHorizontal) {
+                        mobileSidebar.classList.remove('active');
+                        mobileSidebarOverlay.classList.remove('active');
+                    }
+                });
             }
             
             // Create floating particles
