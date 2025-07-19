@@ -67,7 +67,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add layouts/partials/sidebar.html
+        git add layouts/partials/sidebar.html layouts/partials/mobile-sidebar-content.html
         git commit -m "🤖 Auto-update sidebar with latest repos"
         git push
         
