@@ -8,7 +8,7 @@ declare -A descriptions
 descriptions["json_remedy"]="Industrial-strength JSON repair library"
 descriptions["GUARDRAIL"]="Security framework for Elixir applications"
 descriptions["axon"]="Neural network library for Elixir"
-descriptions["ds_ex"]="Data structures for Elixir"
+descriptions["ds_ex"]="Declarative Self Improving Elixir"
 descriptions["ex_dbg"]="Enhanced debugging for Elixir"
 descriptions["foundation"]="Core utilities and patterns"
 descriptions["elixir_scope"]="Code analysis and scoping tools"
