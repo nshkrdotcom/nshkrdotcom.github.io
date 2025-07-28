@@ -3,29 +3,6 @@
 # Script to update the sidebar with GitHub repos from get_top_repos.sh
 # This script fetches the top repos and generates the sidebar partial
 
-# Define descriptions for known repositories
-declare -A descriptions
-descriptions["json_remedy"]="Industrial-strength JSON repair library"
-descriptions["GUARDRAIL"]="Security framework for Elixir applications"
-descriptions["axon"]="Neural network library for Elixir"
-descriptions["ds_ex"]="Declarative Self Improving Elixir"
-descriptions["ex_dbg"]="Enhanced debugging for Elixir"
-descriptions["foundation"]="Core utilities and patterns"
-descriptions["elixir_scope"]="Code analysis and scoping tools"
-descriptions["gemini_ex"]="Gemini API client for Elixir"
-descriptions["sinter"]="Schema validation for Elixir"
-descriptions["exdantic"]="Pydantic-inspired validation for Elixir"
-descriptions["pqc-hqc"]="Hamming Quasi-Cyclic"
-descriptions["claude_code_sdk_elixir"]="Claude Code SDK for Elixir"
-descriptions["pipeline_ex"]="Pipeline processing framework"
-descriptions["digits_py"]="First attempt using GPT-3 to solve a NY Times puzzle"
-descriptions["DSPex"]="Declarative Self-Improving Elixir"
-descriptions["cf_ex"]="CloudFlare API client for Elixir"
-descriptions["AutoElixir"]="Code generation and automation"
-descriptions["diagram_experiments"]="Diagram generation experiments"
-descriptions["ChronoLedger"]="Hardware-secured temporal blockchain"
-descriptions["vscode-extensions"]="VS Code extension collection"
-descriptions["ElixirScope"]="Elixir code intelligence"
 
 # Get top repos
 echo "Fetching top repositories..."
@@ -134,8 +111,8 @@ echo "$repos_json" | jq -r '.[] | @base64' | while read -r repo_base64; do
     title=$(echo "$repo" | jq -r '.title')
     stars=$(echo "$repo" | jq -r '.stars')
     
-    # Get description or use default
-    desc="${descriptions[$title]:-"GitHub repository"}"
+    # Get description from API data
+    desc=$(echo "$repo" | jq -r '.description')
     
     # Special handling for specific repos to mark as active
     active_class=""
@@ -184,8 +161,8 @@ echo "$repos_json" | jq -r '.[] | @base64' | while read -r repo_base64; do
     title=$(echo "$repo" | jq -r '.title')
     stars=$(echo "$repo" | jq -r '.stars')
     
-    # Get description or use default
-    desc="${descriptions[$title]:-"GitHub repository"}"
+    # Get description from API data
+    desc=$(echo "$repo" | jq -r '.description')
     
     # Special handling for specific repos to mark as active
     active_class=""

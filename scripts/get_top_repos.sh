@@ -11,5 +11,6 @@ gh api users/nshkrdotcom/repos \
   --jq 'sort_by(.stargazers_count) | reverse | .[0:20] | map({
     "link": .html_url,
     "title": .name,
-    "stars": .stargazers_count
+    "stars": .stargazers_count,
+    "description": (.description // "GitHub repository")
   })'
