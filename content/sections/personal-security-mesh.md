@@ -1,7 +1,7 @@
 ---
 title: "Personal Security Mesh"
 date: 2025-08-08T11:55:49.030588Z
-draft: true
+draft: false
 ---
 
 ## Personal Security Mesh: Beyond Traditional Network Security

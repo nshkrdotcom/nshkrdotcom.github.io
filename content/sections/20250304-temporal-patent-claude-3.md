@@ -1,7 +1,7 @@
 ---
 title: "Chrono-Resilient Systems: A Synthesis Framework"
 date: 2025-08-08T11:45:51.353386Z
-draft: true
+draft: false
 ---
 
 # Chrono-Resilient Systems: A Synthesis Framework

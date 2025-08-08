@@ -1,7 +1,7 @@
 ---
 title: "Redrafted Patent Claims for Temporal Blockchain System"
 date: 2025-08-08T11:52:04.991244Z
-draft: true
+draft: false
 ---
 
 # Redrafted Patent Claims for Temporal Blockchain System

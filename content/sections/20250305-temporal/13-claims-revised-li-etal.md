@@ -1,7 +1,7 @@
 ---
 title: "Revised Patent Application for Hardware-Secured Temporal Blockchain System"
 date: 2025-08-08T11:53:57.940381Z
-draft: true
+draft: false
 ---
 
 # Revised Patent Application for Hardware-Secured Temporal Blockchain System

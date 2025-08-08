@@ -1,7 +1,7 @@
 ---
 title: "Resilient Systems Framework: Overcoming Systemic Vulnerabilities"
 date: 2025-08-08T11:44:55.195632Z
-draft: true
+draft: false
 ---
 
 # Resilient Systems Framework: Overcoming Systemic Vulnerabilities

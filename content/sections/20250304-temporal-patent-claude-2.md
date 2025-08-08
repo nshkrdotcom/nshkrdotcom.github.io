@@ -1,7 +1,7 @@
 ---
 title: "Temporal Resilience Framework: Integrating Hardware-Secured Timechain with Distributed Trust Architecture"
 date: 2025-08-08T11:45:23.714529Z
-draft: true
+draft: false
 ---
 
 # Temporal Resilience Framework: Integrating Hardware-Secured Timechain with Distributed Trust Architecture
