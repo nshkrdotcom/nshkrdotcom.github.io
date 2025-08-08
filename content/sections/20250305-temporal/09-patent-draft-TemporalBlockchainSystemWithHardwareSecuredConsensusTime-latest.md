@@ -1,3 +1,9 @@
+---
+title: "Temporal Blockchain System with Hardware-Secured Consensus Time"
+date: 2025-08-08T11:51:30.138544Z
+draft: true
+---
+
 **United States Patent Application**
 
 **Title:** Temporal Blockchain System with Hardware-Secured Consensus Time
