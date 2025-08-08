@@ -37,7 +37,7 @@ summaryLength = 70
   category = "categories"
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
 
 [outputFormats.RSS]
