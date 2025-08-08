@@ -1,7 +1,8 @@
-+++
-title = "Mermaid Diagrams Demo"
-date = "2025-02-01"
-+++
+---
+title: "Mermaid Diagrams Demo"
+date: 2025-08-08T11:55:03.968832Z
+draft: true
+---
 
 
 **Description of LH-SHIELD in ASKA Integration Diagram:**

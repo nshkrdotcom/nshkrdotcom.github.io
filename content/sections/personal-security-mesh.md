@@ -1,7 +1,8 @@
-+++
-title = "Personal Security Mesh"
-date = "2025-02-28"
-+++
+---
+title: "Personal Security Mesh"
+date: 2025-08-08T11:55:49.030588Z
+draft: true
+---
 
 ## Personal Security Mesh: Beyond Traditional Network Security
 

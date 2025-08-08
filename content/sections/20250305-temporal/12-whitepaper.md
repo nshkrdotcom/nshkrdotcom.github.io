@@ -1,3 +1,9 @@
+---
+title: "Temporal Blockchain: Hardware-Secured Time for Trustless Systems"
+date: 2025-08-08T11:53:17.382894Z
+draft: true
+---
+
 # Temporal Blockchain: Hardware-Secured Time for Trustless Systems
 
 **Whitepaper v1.0.0**

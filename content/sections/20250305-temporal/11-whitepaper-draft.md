@@ -1,3 +1,9 @@
+---
+title: "Temporal Blockchain System: Integrating Hardware-Secured Time for Trustless Temporal Awareness"
+date: 2025-08-08T11:52:38.995960Z
+draft: true
+---
+
 # Temporal Blockchain System: Integrating Hardware-Secured Time for Trustless Temporal Awareness
 
 **Author:** Paul E Lowndes <ZeroTrust@NSHkr.com>
