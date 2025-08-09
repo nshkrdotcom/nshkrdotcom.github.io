@@ -8,7 +8,7 @@ Next meeting is on (b64): <br />
 QXByaWwgMiwgMjAyMywgMTUwMC0xODAwIEhTVAo=
 
 Meeting location (b64): <br />  
-![Secret Meeting Spot](/nshkr-location-b64.png)
+![Secret Meeting Spot](/6000_SUX.png)
   
 To join, please email us: <br />  
 **hello {at} nshkr.com**
