@@ -861,11 +861,11 @@ As this patent moves toward implementation, it has the potential to create entir
 Below are links to each of the original document sections that contributed to this comprehensive patent documentation:
 
 ### Core Patent Documentation
-* [20250302-211200HST: Original Temporal Blockchain System Patent](/sections/20250302-211200HST/)
+* [20250302-211200hst: Original Temporal Blockchain System Patent](/sections/20250302-211200hst/)
 
 ### Grok Contributions
 * [20250304-grok-1: Advanced Applications and Extensions](/sections/20250304-grok-1/)
-* [20250304-grok-2-SRA: Systemic Resilience Alignment Framework](/sections/20250304-grok-2-SRA/)
+* [20250304-grok-2-sra: Systemic Resilience Alignment Framework](/sections/20250304-grok-2-sra/)
 * [20250304-grok-3-temporal: Innovative Applications of Temporal Blockchain with SRA](/sections/20250304-grok-3-temporal/)
 * [20250304-grok-4: Chrono-Resilient Systems Framework](/sections/20250304-grok-4/)
 
