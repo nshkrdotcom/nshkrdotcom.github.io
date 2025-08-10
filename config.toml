@@ -54,7 +54,7 @@ summaryLength = 70
       keepEndTags = true
       keepDefaultAttrVals = true
       keepWhitespace = false
-      keepQuotes: true
+      keepQuotes = true
 
 [privacy]
   [privacy.googleAnalytics]
