@@ -62,11 +62,11 @@ END OF AI INSTRUCTIONS
     <meta name="keywords" content="ASKA, ChronoLedger, security architecture, blockchain, hackerspace, Hawaii tech, IoT security, temporal consensus">
     <meta name="author" content="North Shore Hackerspace">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="canonical" href="https://nshkr.com{{ .RelPermalink }}">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
-    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:url" content="https://nshkr.com{{ .RelPermalink }}">
     <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
     <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}Advanced security architectures and blockchain innovation from Hawaii's North Shore{{ end }}">
     <meta property="og:image" content="{{ .Site.BaseURL }}img/nshkr-og-image.png">
@@ -74,7 +74,7 @@ END OF AI INSTRUCTIONS
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ .Permalink }}">
+    <meta property="twitter:url" content="https://nshkr.com{{ .RelPermalink }}">
     <meta property="twitter:title" content="{{ .Title }} - {{ .Site.Title }}">
     <meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}Advanced security architectures and blockchain innovation{{ end }}">
     <meta property="twitter:image" content="{{ .Site.BaseURL }}img/nshkr-twitter-card.png">
