@@ -14,10 +14,10 @@ North Shore Hackerspace is Hawaii's premier AI innovation lab, cultivating tomor
 - Post-quantum cryptography research: pqc-hqc
 
 ### Key Open Source Projects
-- **json_remedy** (13★) - Industrial-strength JSON repair library
-- **GUARDRAIL** (10★) - Comprehensive Elixir security framework
-- **axon** (10★) - Neural network library contributions for Elixir
-- **exdantic** (3★) - Pydantic-inspired validation for Elixir
+- **json_remedy** - Industrial-strength JSON repair library
+- **GUARDRAIL** - Comprehensive Elixir security framework
+- **axon** - Neural network library contributions for Elixir
+- **exdantic** - Pydantic-inspired validation for Elixir
 - **claude_code_sdk_elixir** - Official Claude Code SDK for Elixir
 - **pipeline_ex** - Distributed pipeline processing framework
 - **ElixirScope** - Code intelligence and analysis tools
