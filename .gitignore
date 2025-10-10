@@ -15,3 +15,5 @@ hugo.linux
 .DS_Store
 
 repomix*.xml
+
+all_readmes.md
