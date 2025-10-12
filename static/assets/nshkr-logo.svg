@@ -1,0 +1,56 @@
+<svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hawaiian-inspired hexagonal circuit pattern with wave motifs -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0fbcf9;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4cd4b0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffa801;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0fbcf9;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#4cd4b0;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background hexagonal pattern (Hawaiian kapa-inspired geometry) -->
+  <g opacity="0.15">
+    <path d="M15,10 L25,5 L35,10 L35,20 L25,25 L15,20 Z" stroke="url(#logoGradient)" stroke-width="0.5" fill="none"/>
+    <path d="M35,10 L45,5 L55,10 L55,20 L45,25 L35,20 Z" stroke="url(#logoGradient)" stroke-width="0.5" fill="none"/>
+    <path d="M25,25 L35,20 L45,25 L45,35 L35,40 L25,35 Z" stroke="url(#logoGradient)" stroke-width="0.5" fill="none"/>
+  </g>
+  
+  <!-- Main circuit-inspired Hawaiian design -->
+  <!-- Central node (represents Oahu/North Shore) -->
+  <circle cx="30" cy="30" r="4" fill="url(#logoGradient)"/>
+  
+  <!-- Wave-like circuit traces flowing outward -->
+  <path d="M34,30 Q40,25 46,30 T58,30" stroke="url(#logoGradient)" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M30,26 Q35,18 40,15 Q45,12 50,15" stroke="url(#waveGradient)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M30,34 Q35,42 40,45 Q45,48 50,45" stroke="url(#waveGradient)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Connection nodes (distributed system representation) -->
+  <circle cx="46" cy="30" r="2.5" fill="#0fbcf9"/>
+  <circle cx="58" cy="30" r="2.5" fill="#4cd4b0"/>
+  <circle cx="40" cy="15" r="2" fill="#0fbcf9" opacity="0.8"/>
+  <circle cx="50" cy="15" r="2" fill="#4cd4b0" opacity="0.8"/>
+  <circle cx="40" cy="45" r="2" fill="#0fbcf9" opacity="0.8"/>
+  <circle cx="50" cy="45" r="2" fill="#4cd4b0" opacity="0.8"/>
+  
+  <!-- Traditional Hawaiian triangular pattern elements -->
+  <path d="M26,30 L22,26 L22,34 Z" fill="url(#logoGradient)" opacity="0.6"/>
+  <path d="M18,30 L14,26 L14,34 Z" fill="url(#logoGradient)" opacity="0.4"/>
+  
+  <!-- Ocean wave motif integrated with circuit -->
+  <path d="M58,30 Q64,28 68,30 Q72,32 76,30" stroke="url(#logoGradient)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M60,26 Q64,24 68,26" stroke="#0fbcf9" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.5"/>
+  <path d="M60,34 Q64,36 68,34" stroke="#4cd4b0" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.5"/>
+  
+  <!-- Text: nshkrdotcom -->
+  <text x="85" y="38" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="url(#logoGradient)">nshkr</text>
+  <text x="138" y="38" font-family="'Inter', 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="400" fill="#0fbcf9" opacity="0.8">.com</text>
+  
+  <!-- Subtle accent dots (representing stars/navigation) -->
+  <circle cx="82" cy="18" r="1" fill="#ffa801" opacity="0.6"/>
+  <circle cx="165" cy="20" r="1" fill="#0fbcf9" opacity="0.6"/>
+  <circle cx="175" cy="45" r="1" fill="#4cd4b0" opacity="0.6"/>
+</svg>
