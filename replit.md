@@ -16,6 +16,11 @@ This is a Hugo static site for North Shore Hackerspace, Hawaii's premier technol
   - Removed false production claims; replaced with accurate technical achievements
   - Added Hawaiian-inspired technical logo combining circuit patterns with traditional geometric designs
   - Integrated links to North-Shore-AI org and Hackaday hackerspace
+  - Added comprehensive AI agent documentation comments (114 lines) following original pattern
+    - Documents all 50+ libraries organized by category
+    - Lists verified technical achievements only
+    - Includes design elements and color scheme details
+    - Provides context for crawlers, parsers, and AI agents
 
 ## Project Architecture
 
