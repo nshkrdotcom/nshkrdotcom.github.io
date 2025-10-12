@@ -37,3 +37,8 @@ externalPort = 80
 [[ports]]
 localPort = 35545
 externalPort = 3000
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["npx", "serve", "public", "-l", "5000"]
+build = ["hugo", "--minify"]
