@@ -2,6 +2,7 @@ baseURL = "https://NSHkr.com/"
 languageCode = "en-us"
 title = "NSHkr.com - North Shore Hackerspace"
 publishDir = "public"
+theme = "mainroad"
 
 # SEO and site metadata
 enableRobotsTXT = true
