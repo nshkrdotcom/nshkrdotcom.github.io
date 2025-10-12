@@ -1,0 +1,259 @@
+# Auto-updated repository data
+# Last updated: 2025-10-12
+# Do not edit manually - this file is updated by scripts/update_hugo_data.sh
+
+repos:
+  # Crucible Framework
+  crucible:
+    name: crucible
+    org: nshkrdotcom
+    stars: 0
+    description: "Core LLM reliability research framework"
+    
+  crucible_framework:
+    name: crucible_framework
+    org: nshkrdotcom
+    stars: 0
+    description: "Crucible Framework - LLM reliability testing"
+    
+  crucible_bench:
+    name: crucible_bench
+    org: nshkrdotcom
+    stars: 0
+    description: "Benchmarking suite for Crucible"
+    
+  crucible_ensemble:
+    name: crucible_ensemble
+    org: nshkrdotcom
+    stars: 0
+    description: "Ensemble methods for LLM reliability"
+    
+  crucible_hedging:
+    name: crucible_hedging
+    org: nshkrdotcom
+    stars: 0
+    description: "Hedging strategies for LLM outputs"
+    
+  crucible_trace:
+    name: crucible_trace
+    org: nshkrdotcom
+    stars: 0
+    description: "Distributed tracing for LLM workflows"
+    
+  crucible_datasets:
+    name: crucible_datasets
+    org: nshkrdotcom
+    stars: 0
+    description: "Curated datasets for reliability testing"
+    
+  crucible_telemetry:
+    name: crucible_telemetry
+    org: nshkrdotcom
+    stars: 0
+    description: "Telemetry and observability tools"
+    
+  crucible_harness:
+    name: crucible_harness
+    org: nshkrdotcom
+    stars: 0
+    description: "Testing harness for reliability experiments"
+    
+  crucible_adversary:
+    name: crucible_adversary
+    org: nshkrdotcom
+    stars: 0
+    description: "Adversarial testing framework"
+    
+  crucible_xai:
+    name: crucible_xai
+    org: nshkrdotcom
+    stars: 0
+    description: "Explainable AI integration"
+    
+  # North-Shore-AI Projects
+  ExDataCheck:
+    name: ExDataCheck
+    org: North-Shore-AI
+    stars: 0
+    description: "Data validation & quality library for ML pipelines"
+    
+  ExFairness:
+    name: ExFairness
+    org: North-Shore-AI
+    stars: 0
+    description: "Fairness & bias detection library for AI/ML systems"
+    
+  ExGuard:
+    name: ExGuard
+    org: North-Shore-AI
+    stars: 0
+    description: "AI firewall & guardrails for LLM-based applications"
+    
+  # AI & LLM Infrastructure
+  json_remedy:
+    name: json_remedy
+    org: nshkrdotcom
+    stars: 20
+    description: "A practical, multi-layered JSON repair library for Elixir"
+    
+  axon:
+    name: axon
+    org: nshkrdotcom
+    stars: 19
+    description: "Elixir-powered AI agent orchestration"
+    
+  gemini_ex:
+    name: gemini_ex
+    org: nshkrdotcom
+    stars: 15
+    description: "Elixir Interface for Google Gemini LLM"
+    
+  ds_ex:
+    name: ds_ex
+    org: nshkrdotcom
+    stars: 14
+    description: "DSPEx - Declarative Self-improving Elixir"
+    
+  # Developer Tools & Infrastructure
+  foundation:
+    name: foundation
+    org: nshkrdotcom
+    stars: 10
+    description: "Elixir infrastructure and Observability Library"
+    
+  ex_dbg:
+    name: ex_dbg
+    org: nshkrdotcom
+    stars: 9
+    description: "State-of-the-Art Introspection and Debugging System"
+    
+  snakepit:
+    name: snakepit
+    org: nshkrdotcom
+    stars: 8
+    description: "Python orchestrator for BEAM"
+    active_dev: true
+    
+  sinter:
+    name: sinter
+    org: nshkrdotcom
+    stars: 8
+    description: "Unified schema definition and validation"
+    
+  exdantic:
+    name: exdantic
+    org: nshkrdotcom
+    stars: 8
+    description: "Powerful schema definition and validation library"
+    
+  DSPex:
+    name: DSPex
+    org: nshkrdotcom
+    stars: 8
+    description: "Declarative Self Improving Elixir"
+    
+  # AI SDKs & Integration
+  playwriter:
+    name: playwriter
+    org: nshkrdotcom
+    stars: 6
+    description: "Elixir WSL-to-Windows browser integration"
+    
+  pipeline_ex:
+    name: pipeline_ex
+    org: nshkrdotcom
+    stars: 6
+    description: "Claude Code + Gemini AI collaboration tools"
+    
+  perimeter:
+    name: perimeter
+    org: nshkrdotcom
+    stars: 6
+    description: "Security perimeter for AI applications"
+    
+  claude_agent_sdk:
+    name: claude_agent_sdk
+    org: nshkrdotcom
+    stars: 0
+    description: "Claude Agent SDK for Elixir"
+    
+  jules_ex:
+    name: jules_ex
+    org: nshkrdotcom
+    stars: 0
+    description: "Jules integration for Elixir"
+    
+  # ML & AI Research
+  superlearner:
+    name: superlearner
+    org: nshkrdotcom
+    stars: 5
+    description: "Ensemble learning framework"
+    
+  mabeam:
+    name: mabeam
+    org: nshkrdotcom
+    stars: 4
+    description: "Multi-armed bandit algorithms on BEAM"
+    
+  elixir_scope:
+    name: elixir_scope
+    org: nshkrdotcom
+    stars: 4
+    description: "Code analysis and scoping tools"
+    
+  ALTAR:
+    name: ALTAR
+    org: nshkrdotcom
+    stars: 4
+    description: "Automated Learning and Testing Architecture"
+    
+  AutoElixir:
+    name: AutoElixir
+    org: nshkrdotcom
+    stars: 3
+    description: "AutoML for Elixir"
+    
+  # Testing & Quality
+  supertester:
+    name: supertester
+    org: nshkrdotcom
+    stars: 3
+    description: "Advanced testing framework"
+    
+  sandbox:
+    name: sandbox
+    org: nshkrdotcom
+    stars: 3
+    description: "Isolated execution environment"
+    
+  cluster_test:
+    name: cluster_test
+    org: nshkrdotcom
+    stars: 3
+    description: "Distributed testing framework"
+    
+  # Additional Tools
+  cf_ex:
+    name: cf_ex
+    org: nshkrdotcom
+    stars: 3
+    description: "Collaborative filtering for Elixir"
+    
+  arsenal:
+    name: arsenal
+    org: nshkrdotcom
+    stars: 3
+    description: "Comprehensive toolkit"
+    
+  apex:
+    name: apex
+    org: nshkrdotcom
+    stars: 3
+    description: "Advanced processing engine"
+    
+  ElixirScope:
+    name: ElixirScope
+    org: nshkrdotcom
+    stars: 3
+    description: "Advanced code analysis"
