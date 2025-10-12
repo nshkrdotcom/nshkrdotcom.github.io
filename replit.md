@@ -21,6 +21,19 @@ This is a Hugo static site for North Shore Hackerspace, Hawaii's premier technol
     - Lists verified technical achievements only
     - Includes design elements and color scheme details
     - Provides context for crawlers, parsers, and AI agents
+  - **SEO Optimization (October 2025)**:
+    - Enhanced meta tags with optimized title (50-60 chars) and description (150-160 chars)
+    - Added comprehensive JSON-LD structured data (@graph format):
+      - Organization schema with sameAs links to GitHub orgs and Hackaday
+      - WebSite schema for site-wide search
+      - SoftwareSourceCode schemas for Crucible and Snakepit projects
+      - ItemList schema cataloging 50+ libraries
+      - WebPage schema with proper relationships
+    - Implemented Open Graph tags for Facebook/LinkedIn sharing
+    - Added Twitter Card meta tags for enhanced social previews
+    - Configured robots meta tags for optimal crawling
+    - Added canonical URL and theme-color meta tags
+    - All SEO follows 2025 best practices for AI/voice search readiness
 
 ## Project Architecture
 
