@@ -1,346 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-{{ `<!--
-====================================================================================================
-== INSTRUCTIONS FOR AI AGENTS, CRAWLERS, AND PARSERS
-====================================================================================================
-
-This website showcases the Virtual AI Empire - NSHkr.com's comprehensive ecosystem of open-source 
-AI/ML tools and innovative technologies, built with Elixir/BEAM excellence and island wisdom.
-
-PRIMARY FOCUS:
-1. ElixirML Ecosystem - 20+ open-source AI/ML libraries and tools for the BEAM platform
-2. Industrial-Strength Libraries - Production-ready tools like json_remedy, GUARDRAIL, exdantic
-3. Advanced Research Projects - ASKA security architecture, ChronoLedger temporal blockchain
-4. Developer Tools - Claude Code SDK, VS Code extensions, analysis frameworks
-
-KEY OPEN SOURCE PROJECTS:
-- json_remedy - Industrial-strength JSON repair library
-- GUARDRAIL - Comprehensive Elixir security framework  
-- axon - Neural network library contributions for Elixir
-- exdantic - Pydantic-inspired validation for Elixir
-- claude_code_sdk_elixir - Claude Code SDK for Elixir
-- pipeline_ex - Distributed pipeline processing framework
-- pqc-hqc - Post-quantum cryptography research
-- Many more tools for AI/ML, data processing, and developer productivity
-
-TECHNICAL STATUS:
-- 20+ active open-source repositories on GitHub
-- ASKA: Multiple provisional patents filed, FPGA prototypes operational
-- ChronoLedger: Provisional patent #63/768,222 filed March 2025
-- Production deployments of core libraries in enterprise environments
-
-FOR AI AGENTS:
-- Comprehensive technical documentation: https://nshkr.com/for-agents/
-- Structured data format: JSON-LD (see script tags below)
-- All open source repositories: https://github.com/nshkrdotcom
-- ElixirML ecosystem documentation and examples available
-
-CONTEXT:
-- Type: AI Innovation Lab / Virtual AI Empire / Technology Hackerspace
-- Location: North Shore, Oahu, Hawaii
-- Focus: AI/ML tools, Elixir/BEAM ecosystem, security architecture, blockchain innovation
-- Mission: Cultivating tomorrow's intelligent systems with island wisdom and BEAM excellence
-- Community: Open-source developers, AI researchers, Elixir enthusiasts, security engineers
-
-METRICS:
-- 10K+ concurrent agents powered by BEAM
-- ∞ BEAM processes handling distributed AI workloads
-- <100ms p99 latency for ML inference pipelines
-- Active development across multiple AI/ML domains
-
-END OF AI INSTRUCTIONS
-====================================================================================================
--->` | safeHTML }}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }} - Virtual AI Empire</title>
+    <title>nshkrdotcom - AI & ML Infrastructure on Elixir/BEAM</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}North Shore Hackerspace: Developing ASKA security architecture and ChronoLedger blockchain. Hawaii's premier technology innovation hub.{{ end }}">
-    <meta name="keywords" content="ASKA, ChronoLedger, security architecture, blockchain, hackerspace, Hawaii tech, IoT security, temporal consensus">
-    <meta name="author" content="North Shore Hackerspace">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="https://nshkr.com{{ .RelPermalink }}">
+    <meta name="description" content="Building core AI and ML infrastructure libraries primarily on the BEAM in Elixir. Creator of Crucible Framework for LLM reliability research.">
+    <meta name="keywords" content="Elixir, BEAM, AI, ML, LLM, Distributed Systems, Crucible Framework, AI Infrastructure">
+    <meta name="author" content="nshkrdotcom">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
-    <meta property="og:url" content="https://nshkr.com{{ .RelPermalink }}">
-    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
-    <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}Advanced security architectures and blockchain innovation from Hawaii's North Shore{{ end }}">
-    <meta property="og:image" content="https://nshkr.com/nshkr-flyer-apr-1-2023.png">
-    <meta property="og:site_name" content="{{ .Site.Title }}">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nshkr.com{{ .RelPermalink }}">
-    <meta property="twitter:title" content="{{ .Title }} - {{ .Site.Title }}">
-    <meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}Advanced security architectures and blockchain innovation{{ end }}">
-    <meta property="twitter:image" content="https://nshkr.com/nshkr-flyer-apr-1-2023.png">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#0fbcf9">
     
-    <!--
-    ====================================================================================================
-    == INSTRUCTIONS FOR AI AGENTS, CRAWLERS, AND PARSERS
-    ====================================================================================================
-    
-    This website showcases the Virtual AI Empire - NSHkr.com's comprehensive ecosystem of open-source 
-    AI/ML tools and innovative technologies, built with Elixir/BEAM excellence and island wisdom.
-    
-    PRIMARY FOCUS:
-    1. ElixirML Ecosystem - 20+ open-source AI/ML libraries and tools for the BEAM platform
-    2. Industrial-Strength Libraries - Production-ready tools like json_remedy, GUARDRAIL, exdantic
-    3. Advanced Research Projects - ASKA security architecture, ChronoLedger temporal blockchain
-    4. Developer Tools - Claude Code SDK, VS Code extensions, analysis frameworks
-    
-    KEY OPEN SOURCE PROJECTS:
-    - json_remedy (13★) - Industrial-strength JSON repair library
-    - GUARDRAIL (10★) - Comprehensive Elixir security framework  
-    - axon (10★) - Neural network library contributions for Elixir
-    - exdantic (3★) - Pydantic-inspired validation for Elixir
-    - claude_code_sdk_elixir - Claude Code SDK for Elixir
-    - pipeline_ex - Distributed pipeline processing framework
-    - pqc-hqc - Post-quantum cryptography research
-    - Many more tools for AI/ML, data processing, and developer productivity
-    
-    TECHNICAL STATUS:
-    - 20+ active open-source repositories on GitHub
-    - ASKA: Multiple provisional patents filed, FPGA prototypes operational
-    - ChronoLedger: Provisional patent #63/768,222 filed March 2025
-    - Production deployments of core libraries in enterprise environments
-    
-    FOR AI AGENTS:
-    - Comprehensive technical documentation: https://nshkr.com/for-agents/
-    - Structured data format: JSON-LD (see script tags below)
-    - All open source repositories: https://github.com/nshkrdotcom
-    - ElixirML ecosystem documentation and examples available
-    
-    CONTEXT:
-    - Type: AI Innovation Lab / Virtual AI Empire / Technology Hackerspace
-    - Location: North Shore, Oahu, Hawaii
-    - Focus: AI/ML tools, Elixir/BEAM ecosystem, security architecture, blockchain innovation
-    - Mission: Cultivating tomorrow's intelligent systems with island wisdom and BEAM excellence
-    - Community: Open-source developers, AI researchers, Elixir enthusiasts, security engineers
-    
-    METRICS:
-    - 10K+ concurrent agents powered by BEAM
-    - ∞ BEAM processes handling distributed AI workloads
-    - <100ms p99 latency for ML inference pipelines
-    - Active development across multiple AI/ML domains
-    
-    END OF AI INSTRUCTIONS
-    ====================================================================================================
-    -->
-    
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "North Shore Hackerspace",
-      "alternateName": "NSHkr",
-      "url": "https://nshkr.com",
-      "logo": "https://nshkr.com/img/logo.png",
-      "sameAs": [
-        "https://github.com/nshkrdotcom"
-      ],
-      "description": "Virtual AI Empire: Hawaii's premier AI innovation lab developing 20+ open-source ElixirML tools, ASKA security architecture, and ChronoLedger blockchain",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "North Shore",
-        "addressRegion": "HI",
-        "addressCountry": "US"
-      },
-      "knowsAbout": [
-        "Artificial Intelligence",
-        "Machine Learning",
-        "Elixir Programming", 
-        "BEAM Virtual Machine",
-        "Functional Programming",
-        "Distributed Systems",
-        "Security Architecture",
-        "Blockchain Technology",
-        "Hardware Security",
-        "IoT Security",
-        "Cryptography",
-        "Open Source Development",
-        "Developer Tools",
-        "Data Processing",
-        "Neural Networks",
-        "Industrial Software Libraries"
-      ],
-      "makesOffer": [
-        {
-          "@type": "Offer",
-          "name": "ElixirML Ecosystem",
-          "description": "20+ open-source AI/ML libraries and tools for the BEAM platform"
-        },
-        {
-          "@type": "Offer",
-          "name": "json_remedy",
-          "description": "Industrial-strength JSON repair library for production systems"
-        },
-        {
-          "@type": "Offer",
-          "name": "GUARDRAIL Security Framework",
-          "description": "Comprehensive security framework for Elixir applications"
-        },
-        {
-          "@type": "Offer",
-          "name": "exdantic Validation Library", 
-          "description": "Pydantic-inspired data validation for Elixir"
-        },
-        {
-          "@type": "Offer",
-          "name": "Claude Code SDK for Elixir",
-          "description": "Official Elixir SDK for Claude Code development platform"
-        },
-        {
-          "@type": "Offer",
-          "name": "ASKA Security Architecture",
-          "description": "Hardware-enforced distributed security mesh for IoT to enterprise"
-        },
-        {
-          "@type": "Offer", 
-          "name": "ChronoLedger Blockchain",
-          "description": "Temporal blockchain with hardware-secured timestamp consensus"
-        }
-      ]
-    }
-    </script>
-    
-    <!-- SoftwareApplication Schema for ASKA -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "ASKA (Adaptive Security Kernel Architecture)",
-      "applicationCategory": "Security Software",
-      "operatingSystem": "Linux, RTOS, Embedded Systems",
-      "softwareVersion": "1.0.0-alpha",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "creator": {
-        "@type": "Organization",
-        "name": "North Shore Hackerspace",
-        "url": "https://nshkr.com"
-      },
-      "description": "Hardware-enforced distributed security mesh replacing traditional OS trust models with capability-based access control",
-      "featureList": [
-        "Hardware-enforced security primitives",
-        "Distributed trust verification mesh",
-        "Capability-based access control",
-        "Byzantine fault tolerance",
-        "Quantum-resistant cryptography",
-        "Real-time anomaly detection",
-        "Zero-trust architecture"
-      ],
-      "softwareRequirements": "FPGA or ASIC hardware support, 512MB RAM minimum",
-      "releaseNotes": "Alpha release with FPGA prototype implementation",
-      "url": "https://nshkr.com/aska",
-      "downloadUrl": "https://github.com/nshkrdotcom/ASKA",
-      "screenshot": "https://nshkr.com/img/aska-architecture.png"
-    }
-    </script>
-    
-    <!-- SoftwareApplication Schema for ChronoLedger -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "ChronoLedger",
-      "applicationCategory": "Blockchain Platform",
-      "operatingSystem": "Linux, Windows, macOS",
-      "softwareVersion": "0.1.0-poc",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "creator": {
-        "@type": "Organization",
-        "name": "North Shore Hackerspace",
-        "url": "https://nshkr.com"
-      },
-      "description": "Hardware-secured temporal blockchain solving timestamp manipulation through cryptographic time anchoring",
-      "featureList": [
-        "Hardware-secured time consensus",
-        "Temporal Mining Nodes (TMN)",
-        "Proof of Temporal Authority (PoTA)",
-        "Offline transaction support",
-        "Cross-chain time bridges",
-        "Sub-second finality",
-        "10,000+ TPS throughput"
-      ],
-      "softwareRequirements": "HSM/TPM/TEE hardware, atomic clock or GPS time source recommended",
-      "releaseNotes": "Proof of concept release, patent pending",
-      "url": "https://nshkr.com/chronoledger",
-      "downloadUrl": "https://github.com/nshkrdotcom/ChronoLedger",
-      "screenshot": "https://nshkr.com/img/chronoledger-architecture.png"
-    }
-    </script>
-    
-    <!-- FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is ASKA and how does it improve security?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ASKA (Adaptive Security Kernel Architecture) is a hardware-enforced security system that replaces traditional OS trust models. Instead of trusting a single kernel, ASKA creates a distributed mesh where every component monitors others, making it impossible for attackers to compromise the system by exploiting a single vulnerability. It's suitable for everything from IoT devices to enterprise servers."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does ChronoLedger solve blockchain's timestamp problem?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ChronoLedger integrates hardware-secured timekeeping directly into blockchain consensus. Using specialized Temporal Mining Nodes with atomic clocks and secure processors, it creates tamper-proof timestamps that cannot be manipulated. This enables applications requiring precise, verifiable time like high-frequency trading, legal documents, and regulatory compliance."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are ASKA and ChronoLedger open source?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, both projects have open-source components available on GitHub. While core innovations are patent-pending, we believe in community collaboration and provide reference implementations, documentation, and development tools. Visit github.com/nshkrdotcom for repositories."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What hardware is required for ASKA?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ASKA can run on various hardware platforms. For development, an FPGA development board is sufficient. Production deployments will use custom ASICs or secure processors. The architecture is designed to be lightweight enough for IoT devices while scalable for enterprise systems."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can ChronoLedger work with existing blockchains?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, ChronoLedger includes a temporal bridge protocol that allows existing blockchains to benefit from hardware-secured timestamps. This enables cross-chain time synchronization and allows legacy systems to gain temporal security without complete migration."
-          }
-        }
-      ]
-    }
-    </script>
-
     <style>
         * {
             margin: 0;
@@ -348,15 +20,23 @@ END OF AI INSTRUCTIONS
             box-sizing: border-box;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #0a0f1c;
-            color: #e0e0e0;
-            overflow: hidden;
-            height: 100vh;
+        :root {
+            --primary: #0fbcf9;
+            --secondary: #ffa801;
+            --accent: #ff6b35;
+            --dark: #0a0f1c;
+            --dark-light: #1f4068;
+            --text: #e0e0e0;
+            --text-muted: rgba(255, 255, 255, 0.7);
         }
 
-        /* Hawaii-inspired gradient background */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
         .bg-gradient {
             position: fixed;
             top: 0;
@@ -370,1141 +50,827 @@ END OF AI INSTRUCTIONS
                 #1b6ca8 75%, 
                 #0fbcf9 100%
             );
-            opacity: 0.8;
-            z-index: -2;
-        }
-
-        /* Animated particles */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            opacity: 0.3;
             z-index: -1;
         }
 
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            from {
-                transform: translateY(100vh) translateX(0);
-            }
-            to {
-                transform: translateY(-10vh) translateX(100px);
-            }
-        }
-
-        /* Main container */
-        .container {
-            height: 100vh;
-            display: grid;
-            grid-template-columns: 300px 1fr 300px;
-            grid-template-rows: 80px 1fr 100px;
-            gap: 0;
-            width: 100%;
-            max-width: 100vw;
-            overflow-x: hidden;
-        }
-
-        /* Header */
         header {
-            grid-column: 1 / -1;
-            background: rgba(10, 15, 28, 0.9);
+            background: rgba(10, 15, 28, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 40px 0 0;
+            border-bottom: 1px solid rgba(15, 188, 249, 0.2);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
             z-index: 100;
         }
 
-        .logo {
-            display: block;
-            height: 79px;
-            overflow: hidden;
-        }
-        
-        .logo-img {
-            height: 100%;
-            width: auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-        
-        .logo:hover .logo-img {
-            transform: scale(1.05);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         nav {
             display: flex;
-            gap: 15px;
+            justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-        
-        /* Mobile menu toggle */
-        .menu-toggle, .projects-toggle {
-            display: none;
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 8px;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .menu-toggle svg {
-            width: 24px;
-            height: 24px;
-        }
-        
-        .projects-toggle svg {
-            width: 20px;
-            height: 20px;
-        }
-        
-        /* Hide mobile sidebar elements on desktop */
-        .mobile-sidebar, .mobile-sidebar-overlay {
-            display: none;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 6px 16px;
-            border-radius: 20px;
-            transition: all 0.3s;
-            position: relative;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        nav a:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-1px);
-        }
-
-        /* Special styling for hackerspace link */
-        .hackerspace-link {
-            background: linear-gradient(135deg, #ffa801, #ff6b35);
-            border: 1px solid transparent;
-            color: white !important;
-            font-weight: 600;
-        }
-
-        .hackerspace-link:hover {
-            background: linear-gradient(135deg, #ff6b35, #ffa801);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255, 168, 1, 0.3);
-        }
-
-        /* Sidebar styles moved to partials/sidebar.html */
-
-        /* Main content */
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 40px;
-            position: relative;
-            z-index: 1; /* Lower than sidebars */
-            overflow-y: auto;
-            overflow-x: hidden;
-            height: 100%;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
-        }
-        
-        .main-content::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .main-content::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .main-content::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 3px;
-        }
-
-        .main-content::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .hero-section {
-            text-align: center;
-            max-width: 800px;
-            animation: fadeInUp 1s ease-out;
-            margin: auto 0;
-            padding: 40px 0;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-title {
-            font-size: 72px;
+        .logo {
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff 0%, #0fbcf9 50%, #ffa801 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.1;
+            background-clip: text;
         }
 
-        .hero-subtitle {
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
-            font-weight: 300;
-        }
-
-        .cta-buttons {
+        .nav-links {
             display: flex;
-            gap: 20px;
-            justify-content: center;
+            gap: 2rem;
+            align-items: center;
         }
 
-        .cta-button {
-            padding: 15px 40px;
-            font-size: 18px;
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
             font-weight: 500;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
             text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-primary {
-            background: linear-gradient(135deg, #0fbcf9, #1b6ca8);
-            color: white;
-        }
-
-        .cta-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(15, 188, 249, 0.4);
-        }
-
-        .cta-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .cta-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: white;
-        }
-
-        /* Right panel */
-        .right-panel {
-            background: rgba(15, 20, 35, 0.6);
-            backdrop-filter: blur(10px);
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            overflow-y: auto;
-            overflow-x: hidden;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
-            position: relative;
-            height: calc(100vh - 180px); /* Account for header and footer */
-            z-index: 10; /* Above main content */
-        }
-
-        .panel-section {
-            margin-bottom: 40px;
-        }
-
-        .panel-title {
-            font-size: 20px;
             font-weight: 600;
-            margin-bottom: 15px;
-            color: #0fbcf9;
-        }
-        
-        .icon-list {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        
-        .icon-list p {
-            margin-bottom: 10px;
-            padding-left: 1.5em;
-            text-indent: -1.5em;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .stat-grid {
-            display: grid;
-            gap: 15px;
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .stat-value {
-            font-size: 36px;
-            font-weight: 700;
-            color: #ffa801;
-        }
-
-        #hawaii-time, #hawaii-subtitle {
-            transition: opacity 0.3s ease;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 5px;
-        }
-
-        /* Footer */
-        footer {
-            grid-column: 1 / -1;
-            background: rgba(10, 15, 28, 0.9);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            padding: 0 40px;
-        }
-
-        .footer-item {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 14px;
-        }
-
-        .footer-item a {
-            color: #0fbcf9;
-            text-decoration: none;
-        }
-
-        .footer-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Project showcase */
-        .project-showcase {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            justify-content: center;
-            margin-top: 60px;
-            background: rgba(10, 15, 28, 0.8);
-            padding: 10px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        .showcase-item {
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .showcase-item:hover {
-            transform: translateY(-5px);
-            border-color: #0fbcf9;
+        .btn-primary:hover {
+            transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(15, 188, 249, 0.3);
         }
 
-        .showcase-item::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(15, 188, 249, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.5s;
-            opacity: 0;
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
         }
 
-        .showcase-item:hover::before {
-            animation: shimmer 0.5s ease-in-out;
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 50%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        @keyframes shimmer {
-            0% {
-                transform: translateX(-100%) translateY(-100%) rotate(45deg);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateX(100%) translateY(100%) rotate(45deg);
-                opacity: 0;
-            }
+        .hero p {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 2rem;
         }
 
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .container {
-                grid-template-columns: 250px 1fr 250px;
-            }
-            .hero-title {
-                font-size: 56px;
-            }
-            .project-showcase {
-                gap: 10px;
-                padding: 10px;
-            }
-            .showcase-item {
-                width: 80px;
-                height: 80px;
-            }
+        .hero-icons {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
         }
 
-        @media (max-width: 992px) {
-            .container {
-                grid-template-columns: 1fr;
-                grid-template-rows: 60px 1fr auto;
-            }
-            header {
-                height: 60px;
-                padding: 0 10px 0 0;
-                gap: 10px;
-            }
-            .logo {
-                height: 59px;
-                flex-shrink: 0;
-            }
-            .sidebar, .right-panel {
-                display: none;
-            }
-            
-            /* Mobile projects button */
-            .projects-toggle {
-                display: flex;
-                background: transparent;
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                color: white;
-                padding: 8px;
-                border-radius: 4px;
-                cursor: pointer;
-                width: 40px;
-                height: 40px;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.2s ease;
-            }
-            
-            .projects-toggle:hover {
-                background: rgba(255, 255, 255, 0.1);
-                border-color: rgba(255, 255, 255, 0.5);
-            }
-            
-            .projects-toggle svg {
-                width: 20px;
-                height: 20px;
-            }
-            
-            .projects-toggle {
-                display: flex;
-            }
-            
-            .menu-toggle {
-                display: none;
-            }
-            
-            /* Mobile sidebar overlay */
-            .mobile-sidebar {
-                display: block;
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 280px;
-                height: 100vh;
-                background: rgba(15, 20, 35, 0.98);
-                backdrop-filter: blur(15px);
-                z-index: 2000;
-                transition: left 0.3s ease;
-                overflow-y: auto;
-                padding: 80px 20px 20px 20px;
-            }
-            
-            /* Mobile sidebar compact styling */
-            .mobile-sidebar .project-item {
-                margin-bottom: 12px;
-                padding: 10px;
-            }
-            
-            .mobile-sidebar .project-title {
-                font-size: 16px;
-            }
-            
-            .mobile-sidebar .project-desc {
-                font-size: 12px;
-                line-height: 1.3;
-            }
-            
-            .mobile-sidebar .star-count {
-                font-size: 12px;
-            }
-            
-            .mobile-sidebar.active {
-                left: 0;
-            }
-            
-            .mobile-sidebar-overlay {
-                display: block;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 1999;
-                opacity: 0;
-                visibility: hidden;
-                transition: opacity 0.3s ease, visibility 0.3s ease;
-            }
-            
-            .mobile-sidebar-overlay.active {
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            .hero-title {
-                font-size: 48px;
-            }
-            .project-showcase {
-                flex-wrap: wrap;
-                justify-content: center;
-                bottom: 20px;
-            }
+        .hero-icon {
+            text-align: center;
+        }
+
+        .hero-icon svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-icon p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(31, 64, 104, 0.3);
+            border: 1px solid rgba(15, 188, 249, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(15, 188, 249, 0.2);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .project-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .project-stars {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .project-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: 1rem;
+        }
+
+        .project-link:hover {
+            color: var(--secondary);
+        }
+
+        .crucible-highlight {
+            background: linear-gradient(135deg, rgba(15, 188, 249, 0.1), rgba(255, 168, 1, 0.1));
+            border: 2px solid var(--primary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(31, 64, 104, 0.3);
+            border-radius: 12px;
+            border: 1px solid rgba(15, 188, 249, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tech-tag {
+            background: rgba(15, 188, 249, 0.1);
+            border: 1px solid var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        footer {
+            background: rgba(10, 15, 28, 0.95);
+            border-top: 1px solid rgba(15, 188, 249, 0.2);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
         }
 
         @media (max-width: 768px) {
-            .container {
-                grid-template-rows: 60px 1fr auto;
-                height: 100vh;
-                height: 100dvh; /* Dynamic viewport height for iOS */
-                overflow: hidden;
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
-            /* iOS Safari specific fixes */
-            @supports (-webkit-touch-callout: none) {
-                .container {
-                    height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-                    min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
-                }
+            .hero p {
+                font-size: 1.1rem;
             }
             
-            .menu-toggle {
-                display: flex;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
             
-            nav {
-                display: block;
-                position: fixed;
-                top: 60px;
-                right: -100%;
-                width: 250px;
-                height: calc(100vh - 60px);
-                background: rgba(10, 15, 28, 0.95);
-                backdrop-filter: blur(10px);
+            .nav-links {
                 flex-direction: column;
-                justify-content: flex-start;
-                align-items: stretch;
-                gap: 10px;
-                padding: 20px;
-                transition: right 0.3s ease;
-                z-index: 1000;
-                border-left: 1px solid rgba(255, 255, 255, 0.1);
-                overflow-y: auto;
+                gap: 1rem;
             }
             
-            nav.active {
-                right: 0;
-            }
-            
-            nav a {
-                width: 100%;
-                font-size: 14px;
-                padding: 12px 20px;
-                text-align: left;
-                margin-bottom: 8px;
-                display: block;
-                border-radius: 8px;
-            }
-            
-            .main-content {
-                padding: 20px 20px 60px 20px;
-                overflow-y: auto;
-                height: 100%;
-            }
-            
-            .hero-title {
-                font-size: 32px;
-                line-height: 1.2;
-                margin-bottom: 15px;
-            }
-            
-            .hero-subtitle {
-                font-size: 16px;
-                line-height: 1.4;
-                margin-bottom: 30px;
-            }
-            
-            .cta-buttons {
+            .hero-icons {
                 flex-direction: column;
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-                gap: 15px;
-            }
-            
-            .cta-button {
-                width: 100%;
-                padding: 12px 30px;
-                font-size: 16px;
-            }
-            
-            .project-showcase {
-                margin-top: 30px;
-                margin-bottom: 30px;
-                gap: 10px;
-                padding: 10px;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            
-            .showcase-item {
-                width: 80px;
-                height: 80px;
-                font-size: 32px;
-            }
-            
-            footer {
-                flex-direction: row;
-                gap: 15px;
-                padding: 15px 10px;
-                text-align: center;
-                height: auto;
-                min-height: 50px;
-                flex-shrink: 0;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: wrap;
-                position: relative;
-                z-index: 100;
-            }
-            
-            .footer-item {
-                font-size: 12px !important;
-                margin: 0;
-            }
-            
-            /* Condensed mobile footer layout */
-            .footer-item:nth-child(1) {
-                order: 2;
-                flex: 1;
-                text-align: center;
-            }
-            
-            .footer-item:nth-child(2) {
-                order: 1;
-                flex: 0 0 auto;
-            }
-            
-            .footer-item:nth-child(3) {
-                order: 4;
-                flex: 0 0 auto;
-            }
-            
-            .footer-item:nth-child(4) {
-                order: 3;
-                flex: 0 0 auto;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 28px;
-            }
-            
-            .hero-subtitle {
-                font-size: 14px;
-            }
-            
-            .project-showcase {
-                margin-bottom: 40px;
-                gap: 10px;
-                padding: 10px;
-            }
-            
-            .showcase-item {
-                width: 80px;
-                height: 80px;
-                font-size: 32px;
+                gap: 2rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="bg-gradient"></div>
-    <div class="particles" id="particles"></div>
-
-    <div class="container">
-        <header>
-            <a href="/" class="logo">
-                <img src="/NSHkr_dot_com_logo_02_cropped.jpg" alt="NSHkr.com" class="logo-img">
-            </a>
-            <button class="projects-toggle" id="projectsToggle" aria-label="Toggle projects">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 1v6m8-6v6" />
-                </svg>
-            </button>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-            <nav id="navMenu">
-                <a href="/">Home</a>
-                <a href="/blog">Blog</a>
-                <a href="/aska">ASKA</a>
-                <a href="/chronoledger">ChronoLedger</a>
-                <a href="/hackerspace" class="hackerspace-link">Hackerspace</a>
-                <a href="mailto:hello@nshkr.com">Contact</a>
-            </nav>
-        </header>
-
-        {{ partial "sidebar.html" . }}
-        
-        <!-- Mobile-only sidebar -->
-        <div class="mobile-sidebar-overlay" id="mobileSidebarOverlay"></div>
-        <div class="mobile-sidebar" id="mobileSidebar">
-            {{ partial "mobile-sidebar-content.html" . }}
-        </div>
-
-        <main class="main-content">
-            <div class="hero-section">
-                <h1 class="hero-title">Welcome to the Virtual AI Empire</h1>
-                <p class="hero-subtitle">Cultivating tomorrow's intelligent systems with island wisdom and BEAM excellence</p>
-                <div class="cta-buttons">
-                    <a href="/aska" class="cta-button cta-primary">Explore ASKA</a>
-                    <a href="/blog" class="cta-button cta-secondary">Read Updates</a>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">nshkrdotcom</div>
+                <div class="nav-links">
+                    <a href="https://github.com/nshkrdotcom">GitHub</a>
+                    <a href="https://github.com/North-Shore-AI">North-Shore-AI</a>
+                    <a href="https://hackaday.io/hackerspace/190119-nshkr" class="btn-primary">Hackerspace</a>
                 </div>
-            </div>
+            </nav>
+        </div>
+    </header>
 
-            <div class="project-showcase">
-                <a href="/aska" class="showcase-item" title="ASKA" style="text-decoration: none; color: inherit;">🛡️</a>
-                <a href="/chronoledger" class="showcase-item" title="ChronoLedger" style="text-decoration: none; color: inherit;">⏰</a>
-                <a href="https://github.com/nshkrdotcom/exdantic" class="showcase-item" title="Exdantic" style="text-decoration: none; color: inherit;">💜</a>
-                <a href="https://github.com/nshkrdotcom/json_remedy" class="showcase-item" title="JsonRemedy" style="text-decoration: none; color: inherit;">🔧</a>
-            </div>
-        </main>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>AI & ML Infrastructure on Elixir/BEAM</h1>
+                <p>Building core AI and ML infrastructure libraries primarily on the BEAM platform. Creator of Crucible Framework for LLM reliability research.</p>
+                
+                <div class="hero-icons">
+                    <div class="hero-icon">
+                        <img src="/assets/neural-network.svg" alt="Neural Networks">
+                        <p>LLM Reliability</p>
+                    </div>
+                    <div class="hero-icon">
+                        <img src="/assets/distributed-beam.svg" alt="Distributed Systems">
+                        <p>Distributed Systems</p>
+                    </div>
+                    <div class="hero-icon">
+                        <img src="/assets/code-lib.svg" alt="Developer Tools">
+                        <p>50+ Libraries</p>
+                    </div>
+                    <div class="hero-icon">
+                        <img src="/assets/research-lab.svg" alt="Research">
+                        <p>Research-Grade</p>
+                    </div>
+                    <div class="hero-icon">
+                        <img src="/assets/ensemble-reliability.svg" alt="Ensemble Methods">
+                        <p>99%+ Reliability</p>
+                    </div>
+                </div>
 
-        <aside class="right-panel">
-            <div class="panel-section">
-                <h3 class="panel-title">ElixirML Metrics</h3>
-                <div class="stat-grid">
+                <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-value" id="agent-count">10K+</div>
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Elixir Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10K+</div>
                         <div class="stat-label">Concurrent Agents</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-value" id="beam-nodes">∞</div>
-                        <div class="stat-label">BEAM Processes</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="p99-latency"><100ms</div>
+                        <div class="stat-number">&lt;100ms</div>
                         <div class="stat-label">p99 Latency</div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="panel-section">
-                <h3 class="panel-title">Building the Future</h3>
-                <div class="icon-list">
-                    <p>🌱 ElixirML unified agents sprouting</p>
-                    <p>🧬 DSPEx teleprompters evolving daily</p>
-                    <p>🌊 Pipeline orchestration flowing smooth</p>
-                    <p>💜 BEAM excellence in every iteration</p>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Crucible Framework - LLM Reliability Research</h2>
+                <p class="section-subtitle">A platform for conducting reproducible experiments on large language model reliability, built on Elixir/OTP. Goal: Building towards 99%+ LLM reliability through ensemble voting and request hedging.</p>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">Elixir</span>
+                    <span class="tech-tag">OTP</span>
+                    <span class="tech-tag">BEAM VM</span>
+                    <span class="tech-tag">Statistical Testing</span>
+                    <span class="tech-tag">Ensemble Methods</span>
+                    <span class="tech-tag">Telemetry</span>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card crucible-highlight">
+                        <div class="project-header">
+                            <div class="project-name">crucible_framework</div>
+                        </div>
+                        <p class="project-desc">Documentation hub & research framework for LLM reliability experiments</p>
+                        <a href="https://github.com/North-Shore-AI/crucible_framework" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card crucible-highlight">
+                        <div class="project-header">
+                            <div class="project-name">crucible_bench</div>
+                        </div>
+                        <p class="project-desc">Statistical testing & analysis (15+ tests, effect sizes, power analysis)</p>
+                        <a href="https://github.com/North-Shore-AI/crucible_bench" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card crucible-highlight">
+                        <div class="project-header">
+                            <div class="project-name">crucible_ensemble</div>
+                        </div>
+                        <p class="project-desc">Multi-model voting strategies for improved reliability</p>
+                        <a href="https://github.com/North-Shore-AI/crucible_ensemble" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card crucible-highlight">
+                        <div class="project-header">
+                            <div class="project-name">crucible_hedging</div>
+                        </div>
+                        <p class="project-desc">Request hedging for latency reduction in distributed systems</p>
+                        <a href="https://github.com/North-Shore-AI/crucible_hedging" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card crucible-highlight">
+                        <div class="project-header">
+                            <div class="project-name">crucible_trace</div>
+                        </div>
+                        <p class="project-desc">Causal reasoning chain logging for LLM transparency</p>
+                        <a href="https://github.com/North-Shore-AI/crucible_trace" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card crucible-highlight">
+                        <div class="project-header">
+                            <div class="project-name">crucible_datasets</div>
+                        </div>
+                        <p class="project-desc">Unified interface to benchmark datasets (MMLU, HumanEval, GSM8K)</p>
+                        <a href="https://github.com/North-Shore-AI/crucible_datasets" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card crucible-highlight">
+                        <div class="project-header">
+                            <div class="project-name">crucible_telemetry</div>
+                        </div>
+                        <p class="project-desc">Research-grade instrumentation & metrics collection</p>
+                        <a href="https://github.com/North-Shore-AI/crucible_telemetry" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card crucible-highlight">
+                        <div class="project-header">
+                            <div class="project-name">crucible_harness</div>
+                        </div>
+                        <p class="project-desc">Automated experiment orchestration & reporting</p>
+                        <a href="https://github.com/North-Shore-AI/crucible_harness" class="project-link">View on GitHub →</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="panel-section">
-                <h3 class="panel-title">Island Rhythm</h3>
-                <div id="hawaii-time" style="font-size: 20px; color: #ffa801; font-weight: 600; line-height: 1.4;"></div>
-                <div id="hawaii-subtitle" style="color: rgba(255, 255, 255, 0.5); font-size: 14px; margin-top: 5px;"></div>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">In-Progress Extensions</h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">crucible_adversary</div>
+                        </div>
+                        <p class="project-desc">Adversarial testing & robustness evaluation framework</p>
+                        <a href="https://github.com/North-Shore-AI/crucible_adversary" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">crucible_xai</div>
+                        </div>
+                        <p class="project-desc">Explainable AI tools (LIME, SHAP, feature attribution)</p>
+                        <a href="https://github.com/North-Shore-AI/crucible_xai" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">ExDataCheck</div>
+                        </div>
+                        <p class="project-desc">Data validation & quality library for ML pipelines</p>
+                        <a href="https://github.com/North-Shore-AI/ExDataCheck" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">ExFairness</div>
+                        </div>
+                        <p class="project-desc">Fairness & bias detection library for AI/ML systems</p>
+                        <a href="https://github.com/North-Shore-AI/ExFairness" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">LLMGuard</div>
+                        </div>
+                        <p class="project-desc">AI firewall & guardrails for LLM-based applications</p>
+                        <a href="https://github.com/North-Shore-AI/ExGuard" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
             </div>
-        </aside>
+        </section>
 
-        <footer>
-            <div class="footer-item">© 2025 NSHkr.com</div>
-            <div class="footer-item">
-                <a href="https://github.com/nshkrdotcom">GitHub</a>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">AI & LLM Infrastructure</h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">json_remedy</div>
+                            <div class="project-stars">⭐ 20</div>
+                        </div>
+                        <p class="project-desc">A practical, multi-layered JSON repair library for Elixir that intelligently fixes malformed JSON strings</p>
+                        <a href="https://github.com/nshkrdotcom/json_remedy" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">axon</div>
+                            <div class="project-stars">⭐ 19</div>
+                        </div>
+                        <p class="project-desc">Axon: Elixir-powered AI agent orchestration, built on battle-tested principles of Erlang/OTP</p>
+                        <a href="https://github.com/nshkrdotcom/axon" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">gemini_ex</div>
+                            <div class="project-stars">⭐ 15</div>
+                        </div>
+                        <p class="project-desc">Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI</p>
+                        <a href="https://github.com/nshkrdotcom/gemini_ex" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">ds_ex</div>
+                            <div class="project-stars">⭐ 14</div>
+                        </div>
+                        <p class="project-desc">DSPEx - Declarative Self-improving Elixir | A BEAM-Native AI Program Optimizer</p>
+                        <a href="https://github.com/nshkrdotcom/ds_ex" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-item">🌺</div>
-            <div class="footer-item">
-                <a href="mailto:hello@nshkr.com">✉️</a>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Developer Tools & Infrastructure</h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">foundation</div>
+                            <div class="project-stars">⭐ 10</div>
+                        </div>
+                        <p class="project-desc">Elixir infrastructure and Observability Library</p>
+                        <a href="https://github.com/nshkrdotcom/foundation" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">ex_dbg</div>
+                            <div class="project-stars">⭐ 9</div>
+                        </div>
+                        <p class="project-desc">State-of-the-Art Introspection and Debugging System for Elixir/Phoenix</p>
+                        <a href="https://github.com/nshkrdotcom/ex_dbg" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">snakepit</div>
+                            <div class="project-stars">⭐ 8</div>
+                        </div>
+                        <p class="project-desc">High-performance, generalized process pooler and session manager for Elixir</p>
+                        <a href="https://github.com/nshkrdotcom/snakepit" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">sinter</div>
+                            <div class="project-stars">⭐ 8</div>
+                        </div>
+                        <p class="project-desc">Unified schema definition, validation, and JSON generation for Elixir</p>
+                        <a href="https://github.com/nshkrdotcom/sinter" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">exdantic</div>
+                            <div class="project-stars">⭐ 8</div>
+                        </div>
+                        <p class="project-desc">A powerful, flexible schema definition and validation library for Elixir</p>
+                        <a href="https://github.com/nshkrdotcom/exdantic" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">DSPex</div>
+                            <div class="project-stars">⭐ 8</div>
+                        </div>
+                        <p class="project-desc">Declarative Self Improving Elixir - DSPy Orchestration in Elixir</p>
+                        <a href="https://github.com/nshkrdotcom/DSPex" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
             </div>
-        </footer>
-    </div>
+        </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const menuToggle = document.getElementById('menuToggle');
-            const navMenu = document.getElementById('navMenu');
-            const projectsToggle = document.getElementById('projectsToggle');
-            const mobileSidebar = document.getElementById('mobileSidebar');
-            const mobileSidebarOverlay = document.getElementById('mobileSidebarOverlay');
-            
-            if (menuToggle && navMenu) {
-                menuToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                });
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">AI SDKs & Integration</h2>
                 
-                // Close menu when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                        navMenu.classList.remove('active');
-                    }
-                });
-                
-                // Close menu when clicking on a link
-                navMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        navMenu.classList.remove('active');
-                    });
-                });
-                
-                // Add swipe-to-close functionality for mobile
-                let startX = 0;
-                let startY = 0;
-                let startTime = 0;
-                
-                navMenu.addEventListener('touchstart', function(e) {
-                    startX = e.touches[0].clientX;
-                    startY = e.touches[0].clientY;
-                    startTime = Date.now();
-                }, { passive: true });
-                
-                navMenu.addEventListener('touchend', function(e) {
-                    if (!e.changedTouches || e.changedTouches.length === 0) return;
-                    
-                    const endX = e.changedTouches[0].clientX;
-                    const endY = e.changedTouches[0].clientY;
-                    const endTime = Date.now();
-                    
-                    const deltaX = endX - startX;
-                    const deltaY = endY - startY;
-                    const deltaTime = endTime - startTime;
-                    
-                    // Check for right swipe: move right at least 100px, time under 300ms, mostly horizontal
-                    if (deltaX > 100 && 
-                        Math.abs(deltaY) < Math.abs(deltaX) && 
-                        deltaTime < 300) {
-                        navMenu.classList.remove('active');
-                    }
-                }, { passive: true });
-            }
-            
-            // Mobile projects sidebar toggle
-            if (projectsToggle && mobileSidebar && mobileSidebarOverlay) {
-                projectsToggle.addEventListener('click', function() {
-                    mobileSidebar.classList.toggle('active');
-                    mobileSidebarOverlay.classList.toggle('active');
-                    // Close nav menu if open
-                    if (navMenu) {
-                        navMenu.classList.remove('active');
-                    }
-                });
-                
-                // Close sidebar when clicking on overlay
-                mobileSidebarOverlay.addEventListener('click', function() {
-                    mobileSidebar.classList.remove('active');
-                    mobileSidebarOverlay.classList.remove('active');
-                });
-                
-                // Close sidebar when clicking on project links
-                mobileSidebar.querySelectorAll('.project-item a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileSidebar.classList.remove('active');
-                        mobileSidebarOverlay.classList.remove('active');
-                    });
-                });
-                
-                // Add swipe/drag-to-close functionality for mobile sidebar
-                let sidebarStartX = 0;
-                let sidebarStartY = 0;
-                let sidebarStartTime = 0;
-                let isDragging = false;
-                
-                // Touch events for mobile
-                mobileSidebar.addEventListener('touchstart', function(e) {
-                    sidebarStartX = e.touches[0].clientX;
-                    sidebarStartY = e.touches[0].clientY;
-                    sidebarStartTime = Date.now();
-                    isDragging = true;
-                }, { passive: true });
-                
-                mobileSidebar.addEventListener('touchmove', function(e) {
-                    if (!isDragging) return;
-                    
-                    const currentX = e.touches[0].clientX;
-                    const deltaX = currentX - sidebarStartX;
-                    
-                    // Allow dragging the sidebar left (negative deltaX)
-                    if (deltaX < 0) {
-                        const translateX = Math.max(deltaX, -280); // Don't exceed sidebar width
-                        mobileSidebar.style.transform = `translateX(${translateX}px)`;
-                    }
-                }, { passive: true });
-                
-                mobileSidebar.addEventListener('touchend', function(e) {
-                    if (!isDragging) return;
-                    isDragging = false;
-                    
-                    if (!e.changedTouches || e.changedTouches.length === 0) return;
-                    
-                    const endX = e.changedTouches[0].clientX;
-                    const endY = e.changedTouches[0].clientY;
-                    const deltaX = endX - sidebarStartX;
-                    const deltaY = endY - sidebarStartY;
-                    const deltaTime = Date.now() - sidebarStartTime;
-                    
-                    // Reset transform
-                    mobileSidebar.style.transform = '';
-                    
-                    // Check for left swipe/drag: move left at least 80px OR fast swipe
-                    const isLeftSwipe = deltaX < -80 || (deltaX < -50 && deltaTime < 200);
-                    const isMostlyHorizontal = Math.abs(deltaY) < Math.abs(deltaX) * 2;
-                    
-                    if (isLeftSwipe && isMostlyHorizontal) {
-                        mobileSidebar.classList.remove('active');
-                        mobileSidebarOverlay.classList.remove('active');
-                    }
-                }, { passive: true });
-                
-                // Mouse events for desktop/tablet with mouse
-                mobileSidebar.addEventListener('mousedown', function(e) {
-                    sidebarStartX = e.clientX;
-                    sidebarStartY = e.clientY;
-                    sidebarStartTime = Date.now();
-                    isDragging = true;
-                    e.preventDefault();
-                });
-                
-                document.addEventListener('mousemove', function(e) {
-                    if (!isDragging) return;
-                    
-                    const currentX = e.clientX;
-                    const deltaX = currentX - sidebarStartX;
-                    
-                    // Allow dragging the sidebar left (negative deltaX)
-                    if (deltaX < 0) {
-                        const translateX = Math.max(deltaX, -280); // Don't exceed sidebar width
-                        mobileSidebar.style.transform = `translateX(${translateX}px)`;
-                    }
-                });
-                
-                document.addEventListener('mouseup', function(e) {
-                    if (!isDragging) return;
-                    isDragging = false;
-                    
-                    const endX = e.clientX;
-                    const endY = e.clientY;
-                    const deltaX = endX - sidebarStartX;
-                    const deltaY = endY - sidebarStartY;
-                    const deltaTime = Date.now() - sidebarStartTime;
-                    
-                    // Reset transform
-                    mobileSidebar.style.transform = '';
-                    
-                    // Check for left drag: move left at least 80px OR fast drag
-                    const isLeftDrag = deltaX < -80 || (deltaX < -50 && deltaTime < 200);
-                    const isMostlyHorizontal = Math.abs(deltaY) < Math.abs(deltaX) * 2;
-                    
-                    if (isLeftDrag && isMostlyHorizontal) {
-                        mobileSidebar.classList.remove('active');
-                        mobileSidebarOverlay.classList.remove('active');
-                    }
-                });
-            }
-            
-            // Create floating particles
-            const particlesContainer = document.getElementById('particles');
-            for (let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-                particlesContainer.appendChild(particle);
-            }
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">playwriter</div>
+                            <div class="project-stars">⭐ 6</div>
+                        </div>
+                        <p class="project-desc">Elixir WSL-to-Windows browser integration</p>
+                        <a href="https://github.com/nshkrdotcom/playwriter" class="project-link">View on GitHub →</a>
+                    </div>
 
-            // Hawaiian time philosophy statements
-            const hawaiianTimeStatements = [
-            "Code flows like water, no need rush",
-            "Building tomorrow with aloha spirit",
-            "Quality over speed, always",
-            "Sunset deploys are the best deploys", 
-            "Morning surf, afternoon merge",
-            "Patience brings perfect solutions",
-            "Island pace, global impact",
-            "Deep work happens in island time",
-            "No hurry, no worry, just excellence",
-            "Living the ahupua'a of code",
-            "Sustainable pace like the tides",
-            "Malama the codebase, malama the team"
-        ];
-        
-        const hawaiianSubtitles = [
-            "Living pono with the flow",
-            "Aloha in every commit", 
-            "Ho'oponopono for clean code",
-            "Kuleana drives excellence",
-            "Mana'o guides innovation",
-            "Lokahi in distributed systems",
-            "Ha'aha'a in our approach",
-            "Imua with intention"
-        ];
-        
-        // Set initial random statement immediately
-        const initialIndex = Math.floor(Math.random() * hawaiianTimeStatements.length);
-        const hawaiiTimeEl = document.getElementById('hawaii-time');
-        const hawaiiSubtitleEl = document.getElementById('hawaii-subtitle');
-        
-        if (hawaiiTimeEl) {
-            hawaiiTimeEl.textContent = hawaiianTimeStatements[initialIndex];
-        }
-        if (hawaiiSubtitleEl) {
-            hawaiiSubtitleEl.textContent = hawaiianSubtitles[Math.floor(Math.random() * hawaiianSubtitles.length)];
-        }
-        
-        function updateHawaiianTime() {
-            const statementIndex = Math.floor(Math.random() * hawaiianTimeStatements.length);
-            const subtitleIndex = Math.floor(Math.random() * hawaiianSubtitles.length);
-            
-            if (hawaiiTimeEl) {
-                hawaiiTimeEl.style.opacity = '0';
-                setTimeout(() => {
-                    hawaiiTimeEl.textContent = hawaiianTimeStatements[statementIndex];
-                    hawaiiTimeEl.style.opacity = '1';
-                }, 300);
-            }
-            
-            if (hawaiiSubtitleEl) {
-                hawaiiSubtitleEl.style.opacity = '0';
-                setTimeout(() => {
-                    hawaiiSubtitleEl.textContent = hawaiianSubtitles[subtitleIndex];
-                    hawaiiSubtitleEl.style.opacity = '1';
-                }, 300);
-            }
-        }
-        
-        setInterval(updateHawaiianTime, 8000);
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">pipeline_ex</div>
+                            <div class="project-stars">⭐ 6</div>
+                        </div>
+                        <p class="project-desc">Claude Code + Gemini AI collaboration orchestration tools</p>
+                        <a href="https://github.com/nshkrdotcom/pipeline_ex" class="project-link">View on GitHub →</a>
+                    </div>
 
-        // Animate ElixirML metrics
-        let processCount = 2_000_000;
-        function updateMetrics() {
-            // Simulate BEAM process count fluctuation
-            processCount += Math.floor(Math.random() * 10000) - 5000;
-            if (processCount < 1_000_000) processCount = 1_000_000;
-            if (processCount > 3_000_000) processCount = 3_000_000;
-            
-            const beamEl = document.getElementById('beam-nodes');
-            if (beamEl) {
-                if (processCount > 2_500_000) {
-                    beamEl.textContent = '2.5M+';
-                    beamEl.style.color = '#50fa7b'; // Green when high
-                } else if (processCount > 2_000_000) {
-                    beamEl.textContent = '2M+';
-                    beamEl.style.color = '#ffa801'; // Orange normal
-                } else {
-                    beamEl.textContent = Math.floor(processCount / 1000) + 'K';
-                    beamEl.style.color = '#ffa801';
-                }
-            }
-            
-            // Occasionally show "let it crash" philosophy in action
-            if (Math.random() < 0.05) {
-                const p99El = document.getElementById('p99-latency');
-                if (p99El) {
-                    p99El.textContent = 'restarting...';
-                    p99El.style.color = '#ff5555';
-                    setTimeout(() => {
-                        p99El.textContent = '<100ms';
-                        p99El.style.color = '#ffa801';
-                    }, 500);
-                }
-            }
-        }
-        updateMetrics();
-        setInterval(updateMetrics, 3000);
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">perimeter</div>
+                            <div class="project-stars">⭐ 6</div>
+                        </div>
+                        <p class="project-desc">Elixir Typing Mechanism</p>
+                        <a href="https://github.com/nshkrdotcom/perimeter" class="project-link">View on GitHub →</a>
+                    </div>
 
-        // Project item click handlers
-        document.querySelectorAll('.project-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                // Don't interfere with the link navigation
-                document.querySelectorAll('.project-item').forEach(p => p.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">claude_agent_sdk</div>
+                        </div>
+                        <p class="project-desc">Elixir SDK for Claude AI Agent API</p>
+                        <a href="https://github.com/nshkrdotcom/claude_agent_sdk" class="project-link">View on GitHub →</a>
+                    </div>
 
-        // Showcase item hover effect
-        document.querySelectorAll('.showcase-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px) scale(1.05)';
-            });
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-    }); // End DOMContentLoaded
-    </script>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">jules_ex</div>
+                        </div>
+                        <p class="project-desc">Elixir client SDK for the Jules API - orchestrate AI coding sessions</p>
+                        <a href="https://github.com/nshkrdotcom/jules_ex" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Multi-Agent & OTP Systems</h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">superlearner</div>
+                            <div class="project-stars">⭐ 5</div>
+                        </div>
+                        <p class="project-desc">OTP Supervisor Educational Platform</p>
+                        <a href="https://github.com/nshkrdotcom/superlearner" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">mabeam</div>
+                            <div class="project-stars">⭐ 4</div>
+                        </div>
+                        <p class="project-desc">Multi Agent BEAM - distributed agent orchestration</p>
+                        <a href="https://github.com/nshkrdotcom/mabeam" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">elixir_scope</div>
+                            <div class="project-stars">⭐ 4</div>
+                        </div>
+                        <p class="project-desc">Revolutionary AST-based debugging and code intelligence platform for Elixir</p>
+                        <a href="https://github.com/nshkrdotcom/elixir_scope" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">ALTAR</div>
+                            <div class="project-stars">⭐ 4</div>
+                        </div>
+                        <p class="project-desc">The Agent & Tool Arbitration Protocol</p>
+                        <a href="https://github.com/nshkrdotcom/ALTAR" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">AutoElixir</div>
+                            <div class="project-stars">⭐ 3</div>
+                        </div>
+                        <p class="project-desc">AI Multi Agent Swarms in Elixir</p>
+                        <a href="https://github.com/nshkrdotcom/AutoElixir" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Testing & Quality</h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">supertester</div>
+                            <div class="project-stars">⭐ 3</div>
+                        </div>
+                        <p class="project-desc">A battle-hardened testing toolkit for building robust and resilient Elixir applications</p>
+                        <a href="https://github.com/nshkrdotcom/supertester" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">sandbox</div>
+                            <div class="project-stars">⭐ 3</div>
+                        </div>
+                        <p class="project-desc">Isolated OTP application management system for Elixir/Erlang</p>
+                        <a href="https://github.com/nshkrdotcom/sandbox" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">cluster_test</div>
+                            <div class="project-stars">⭐ 3</div>
+                        </div>
+                        <p class="project-desc">Distributed Erlang/Elixir test cluster management via Mix tasks</p>
+                        <a href="https://github.com/nshkrdotcom/cluster_test" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Cloud & Edge Computing</h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">cf_ex</div>
+                            <div class="project-stars">⭐ 3</div>
+                        </div>
+                        <p class="project-desc">Elixir libraries for Cloudflare edge computing services. Battle-tested for production</p>
+                        <a href="https://github.com/nshkrdotcom/cf_ex" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">arsenal</div>
+                            <div class="project-stars">⭐ 3</div>
+                        </div>
+                        <p class="project-desc">Metaprogramming framework for automatic REST API generation from OTP processes</p>
+                        <a href="https://github.com/nshkrdotcom/arsenal" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">apex</div>
+                            <div class="project-stars">⭐ 3</div>
+                        </div>
+                        <p class="project-desc">Core Apex framework for OTP supervision and monitoring</p>
+                        <a href="https://github.com/nshkrdotcom/apex" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">ElixirScope</div>
+                            <div class="project-stars">⭐ 3</div>
+                        </div>
+                        <p class="project-desc">AI-Powered Execution Cinema Debugger for Elixir/BEAM</p>
+                        <a href="https://github.com/nshkrdotcom/ElixirScope" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Tech Stack</h2>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">Elixir</span>
+                    <span class="tech-tag">Erlang</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">JavaScript/TypeScript</span>
+                    <span class="tech-tag">Rust</span>
+                    <span class="tech-tag">Phoenix</span>
+                    <span class="tech-tag">OTP</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">BEAM VM</span>
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">GCP</span>
+                    <span class="tech-tag">Cloudflare Workers</span>
+                </div>
+
+                <h3 style="margin-top: 3rem; font-size: 1.8rem; color: var(--primary);">Specialties</h3>
+                <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
+                    <li>Distributed systems & fault tolerance</li>
+                    <li>AI/LLM infrastructure & reliability</li>
+                    <li>Functional programming & metaprogramming</li>
+                    <li>Statistical analysis & experimental design</li>
+                    <li>Developer tools & productivity</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://github.com/nshkrdotcom">GitHub: @nshkrdotcom</a>
+                    <a href="https://github.com/North-Shore-AI">North-Shore-AI Organization</a>
+                    <a href="https://hackaday.io/hackerspace/190119-nshkr">North Shore Hackerspace</a>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Building core AI and ML infrastructure on the BEAM platform</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
