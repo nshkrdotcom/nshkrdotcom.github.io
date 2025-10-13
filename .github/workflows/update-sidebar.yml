@@ -1,4 +1,4 @@
-name: Update Sidebar with Latest Repos
+name: Update Repository Star Counts
 
 on:
   # Runs every hour
@@ -23,7 +23,7 @@ on:
   #   types: [repo-updated]
 
 jobs:
-  update-sidebar:
+  update-star-counts:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -41,15 +41,14 @@ jobs:
         
     - name: Make scripts executable
       run: |
-        chmod +x ./scripts/get_top_repos.sh
-        chmod +x ./scripts/update_sidebar.sh
+        chmod +x ./scripts/update_hugo_data.sh
         
-    - name: Fetch and update sidebar
+    - name: Fetch and update Hugo data
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo "Fetching latest repository data..."
-        ./scripts/update_sidebar.sh
+        echo "Fetching latest repository star counts..."
+        ./scripts/update_hugo_data.sh
         
     - name: Check for changes
       id: verify-changed-files
@@ -67,8 +66,8 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add layouts/partials/sidebar.html layouts/partials/mobile-sidebar-content.html
-        git commit -m "🤖 Auto-update sidebar with latest repos"
+        git add data/repos.yml
+        git commit -m "🤖 Auto-update repository star counts"
         git push
         
     - name: Trigger Hugo deployment
