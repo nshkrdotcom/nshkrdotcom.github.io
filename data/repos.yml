@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-10-13T07:18:06Z
+# Last updated: 2025-10-13T08:25:29Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -74,13 +74,6 @@ repos:
     description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
     license: "MIT License"
 
-  playwriter:
-    name: playwriter
-    org: nshkrdotcom
-    stars: 7
-    description: "Elixir WSL-to-Windows browser integration"
-    license: "MIT License"
-
   claude_code_sdk_elixir:
     name: claude_code_sdk_elixir
     org: nshkrdotcom
@@ -93,6 +86,13 @@ repos:
     org: nshkrdotcom
     stars: 6
     description: "OTP Supervisor Educational Platform"
+
+  playwriter:
+    name: playwriter
+    org: nshkrdotcom
+    stars: 6
+    description: "Elixir WSL-to-Windows browser integration"
+    license: "MIT License"
 
   pipeline_ex:
     name: pipeline_ex
