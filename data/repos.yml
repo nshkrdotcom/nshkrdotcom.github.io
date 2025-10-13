@@ -1,259 +1,359 @@
 # Auto-updated repository data
-# Last updated: 2025-10-12
-# Do not edit manually - this file is updated by scripts/update_hugo_data.sh
+# Last updated: 2025-10-13T04:06:43Z
+# Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
+# Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
 repos:
-  # Crucible Framework
-  crucible:
-    name: crucible
-    org: nshkrdotcom
-    stars: 0
-    description: "Core LLM reliability research framework"
-    
-  crucible_framework:
-    name: crucible_framework
-    org: nshkrdotcom
-    stars: 0
-    description: "Crucible Framework - LLM reliability testing"
-    
-  crucible_bench:
-    name: crucible_bench
-    org: nshkrdotcom
-    stars: 0
-    description: "Benchmarking suite for Crucible"
-    
-  crucible_ensemble:
-    name: crucible_ensemble
-    org: nshkrdotcom
-    stars: 0
-    description: "Ensemble methods for LLM reliability"
-    
-  crucible_hedging:
-    name: crucible_hedging
-    org: nshkrdotcom
-    stars: 0
-    description: "Hedging strategies for LLM outputs"
-    
-  crucible_trace:
-    name: crucible_trace
-    org: nshkrdotcom
-    stars: 0
-    description: "Distributed tracing for LLM workflows"
-    
-  crucible_datasets:
-    name: crucible_datasets
-    org: nshkrdotcom
-    stars: 0
-    description: "Curated datasets for reliability testing"
-    
-  crucible_telemetry:
-    name: crucible_telemetry
-    org: nshkrdotcom
-    stars: 0
-    description: "Telemetry and observability tools"
-    
-  crucible_harness:
-    name: crucible_harness
-    org: nshkrdotcom
-    stars: 0
-    description: "Testing harness for reliability experiments"
-    
-  crucible_adversary:
-    name: crucible_adversary
-    org: nshkrdotcom
-    stars: 0
-    description: "Adversarial testing framework"
-    
-  crucible_xai:
-    name: crucible_xai
-    org: nshkrdotcom
-    stars: 0
-    description: "Explainable AI integration"
-    
-  # North-Shore-AI Projects
-  ExDataCheck:
-    name: ExDataCheck
-    org: North-Shore-AI
-    stars: 0
-    description: "Data validation & quality library for ML pipelines"
-    
-  ExFairness:
-    name: ExFairness
-    org: North-Shore-AI
-    stars: 0
-    description: "Fairness & bias detection library for AI/ML systems"
-    
-  ExGuard:
-    name: ExGuard
-    org: North-Shore-AI
-    stars: 0
-    description: "AI firewall & guardrails for LLM-based applications"
-    
-  # AI & LLM Infrastructure
   json_remedy:
     name: json_remedy
     org: nshkrdotcom
     stars: 20
-    description: "A practical, multi-layered JSON repair library for Elixir"
-    
+    description: "A practical, multi-layered JSON repair library for Elixir that intelligently fixes malformed JSON strings commonly produced by LLMs, legacy systems, and data pipelines."
+    license: "MIT License"
+
   axon:
     name: axon
     org: nshkrdotcom
     stars: 19
-    description: "Elixir-powered AI agent orchestration"
-    
+    description: "Axon: Elixir-powered AI agent orchestration, built on the battle-tested principles of Erlang/OTP. Seamlessly integrate and manage Python's pydantic-ai agents with the BEAM's concurrency, fault tolerance, and distributed might. Finally, a GenServer for your LLM."
+    license: "MIT License"
+
   gemini_ex:
     name: gemini_ex
     org: nshkrdotcom
     stars: 15
-    description: "Elixir Interface for Google Gemini LLM"
-    
+    description: "Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI"
+    license: "MIT License"
+
   ds_ex:
     name: ds_ex
     org: nshkrdotcom
     stars: 14
-    description: "DSPEx - Declarative Self-improving Elixir"
-    
-  # Developer Tools & Infrastructure
+    description: "DSPEx - Declarative Self-improving Elixir | A BEAM-Native AI Program Optimization Framework"
+    license: "MIT License"
+
   foundation:
     name: foundation
     org: nshkrdotcom
     stars: 10
     description: "Elixir infrastructure and Observability Library"
-    
+    license: "MIT License"
+
   ex_dbg:
     name: ex_dbg
     org: nshkrdotcom
     stars: 9
-    description: "State-of-the-Art Introspection and Debugging System"
-    
+    description: "State-of-the-Art Introspection and Debugging System for Elixir/Phoenix Applications"
+    license: "MIT License"
+
   snakepit:
     name: snakepit
     org: nshkrdotcom
     stars: 8
-    description: "Python orchestrator for BEAM"
-    active_dev: true
-    
+    description: "High-performance, generalized process pooler and session manager for external language integrations. Orchestrates and supervises languages like Python and Javascript from Elixir."
+    license: "MIT License"
+
   sinter:
     name: sinter
     org: nshkrdotcom
     stars: 8
-    description: "Unified schema definition and validation"
-    
+    description: "Unified schema definition, validation, and JSON generation for Elixir"
+    license: "MIT License"
+
   exdantic:
     name: exdantic
     org: nshkrdotcom
     stars: 8
-    description: "Powerful schema definition and validation library"
-    
+    description: "A powerful, flexible schema definition and validation library for Elixir, inspired by Python's Pydantic."
+    license: "MIT License"
+
   DSPex:
     name: DSPex
     org: nshkrdotcom
     stars: 8
-    description: "Declarative Self Improving Elixir"
-    
-  # AI SDKs & Integration
+    description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
+    license: "MIT License"
+
   playwriter:
     name: playwriter
     org: nshkrdotcom
-    stars: 6
+    stars: 7
     description: "Elixir WSL-to-Windows browser integration"
-    
+    license: "MIT License"
+
+  claude_code_sdk_elixir:
+    name: claude_code_sdk_elixir
+    org: nshkrdotcom
+    stars: 7
+    description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
+    license: "MIT License"
+
+  superlearner:
+    name: superlearner
+    org: nshkrdotcom
+    stars: 6
+    description: "OTP Supervisor Educational Platform"
+
   pipeline_ex:
     name: pipeline_ex
     org: nshkrdotcom
     stars: 6
-    description: "Claude Code + Gemini AI collaboration tools"
-    
+    description: "Claude Code + Gemini AI collaboration orchestration tools"
+    license: "MIT License"
+
   perimeter:
     name: perimeter
     org: nshkrdotcom
     stars: 6
-    description: "Security perimeter for AI applications"
-    
-  claude_agent_sdk:
-    name: claude_agent_sdk
-    org: nshkrdotcom
-    stars: 0
-    description: "Claude Agent SDK for Elixir"
-    
-  jules_ex:
-    name: jules_ex
-    org: nshkrdotcom
-    stars: 0
-    description: "Jules integration for Elixir"
-    
-  # ML & AI Research
-  superlearner:
-    name: superlearner
-    org: nshkrdotcom
-    stars: 5
-    description: "Ensemble learning framework"
-    
+    description: "Elixir Typing Mechanism"
+    license: "MIT License"
+
   mabeam:
     name: mabeam
     org: nshkrdotcom
     stars: 4
-    description: "Multi-armed bandit algorithms on BEAM"
-    
+    description: "Multi Agent BEAM"
+    license: "Apache License 2.0"
+
   elixir_scope:
     name: elixir_scope
     org: nshkrdotcom
     stars: 4
-    description: "Code analysis and scoping tools"
-    
+    description: "Revolutionary AST-based debugging and code intelligence platform for Elixir applications"
+    license: "MIT License"
+
   ALTAR:
     name: ALTAR
     org: nshkrdotcom
     stars: 4
-    description: "Automated Learning and Testing Architecture"
-    
-  AutoElixir:
-    name: AutoElixir
-    org: nshkrdotcom
-    stars: 3
-    description: "AutoML for Elixir"
-    
-  # Testing & Quality
+    description: "The Agent & Tool Arbitration Protocol"
+    license: "MIT License"
+
   supertester:
     name: supertester
     org: nshkrdotcom
     stars: 3
-    description: "Advanced testing framework"
-    
+    description: "A battle-hardened testing toolkit for building robust and resilient Elixir & OTP applications."
+    license: "MIT License"
+
   sandbox:
     name: sandbox
     org: nshkrdotcom
     stars: 3
-    description: "Isolated execution environment"
-    
+    description: "Isolated OTP application management system for Elixir/Erlang"
+    license: "MIT License"
+
   cluster_test:
     name: cluster_test
     org: nshkrdotcom
     stars: 3
-    description: "Distributed testing framework"
-    
-  # Additional Tools
+    description: "Distributed Erlang/Elixir test cluster management via Mix tasks"
+    license: "MIT License"
+
   cf_ex:
     name: cf_ex
     org: nshkrdotcom
     stars: 3
-    description: "Collaborative filtering for Elixir"
-    
+    description: "Elixir libraries for Cloudflare edge computing services. Battle-tested BEAM implementations of Cloudflare Calls and Durable Objects."
+    license: "MIT License"
+
   arsenal:
     name: arsenal
     org: nshkrdotcom
     stars: 3
-    description: "Comprehensive toolkit"
-    
+    description: "Metaprogramming framework for automatic REST API generation from OTP operations"
+    license: "MIT License"
+
+  apex_ui:
+    name: apex_ui
+    org: nshkrdotcom
+    stars: 3
+    description: "Web UI for Apex OTP supervision and monitoring tools"
+    license: "MIT License"
+
   apex:
     name: apex
     org: nshkrdotcom
     stars: 3
-    description: "Advanced processing engine"
-    
+    description: "Core Apex framework for OTP supervision and monitoring"
+    license: "MIT License"
+
   ElixirScope:
     name: ElixirScope
     org: nshkrdotcom
     stars: 3
-    description: "Advanced code analysis"
+    description: "AI-Powered Execution Cinema Debugger for Elixir/BEAM"
+    license: "MIT License"
+
+  AutoElixir:
+    name: AutoElixir
+    org: nshkrdotcom
+    stars: 3
+    description: "AI Multi Agent Swarms in Elixir"
+    license: "MIT License"
+
+  arsenal_plug:
+    name: arsenal_plug
+    org: nshkrdotcom
+    stars: 2
+    description: "Phoenix/Plug adapter for Apex Arsenal framework"
+    license: "MIT License"
+
+  youtube_audio_dl:
+    name: youtube_audio_dl
+    org: nshkrdotcom
+    stars: 0
+    description: "Download high-quality audio from YouTube as MP3 files using Elixir. Features 104 music genres, duration filtering, per-genre caching, C++ DSP filters, and ML-based transient detection."
+
+  tools:
+    name: tools
+    org: nshkrdotcom
+    stars: 0
+    description: "Elixir repository"
+
+  jules_ex:
+    name: jules_ex
+    org: nshkrdotcom
+    stars: 0
+    description: "Elixir client SDK for the Jules API - orchestrate AI coding sessions"
+    license: "MIT License"
+
+  jido_bug_demo:
+    name: jido_bug_demo
+    org: nshkrdotcom
+    stars: 0
+    description: "Elixir repository"
+
+  ex_cloudflare_phoenix:
+    name: ex_cloudflare_phoenix
+    org: nshkrdotcom
+    stars: 0
+    description: "Cloudflare Durable Objects and Calls for Phoenix Framework"
+    license: "Apache License 2.0"
+
+  codex_sdk:
+    name: codex_sdk
+    org: nshkrdotcom
+    stars: 0
+    description: "OpenAI Codex SDK written in Elixir"
+    license: "MIT License"
+
+  claude_agent_sdk:
+    name: claude_agent_sdk
+    org: nshkrdotcom
+    stars: 0
+    description: "Elixir SDK for Claude AI Agent API - Renamed from claude_code_sdk_elixir"
+    license: "MIT License"
+
+  Citadel:
+    name: Citadel
+    org: nshkrdotcom
+    stars: 0
+    description: "The command and control layer for the AI-powered enterprise"
+    license: "MIT License"
+
+  Assessor:
+    name: Assessor
+    org: nshkrdotcom
+    stars: 0
+    description: "The definitive CI/CD platform for AI Quality."
+    license: "MIT License"
+
+  AITrace:
+    name: AITrace
+    org: nshkrdotcom
+    stars: 0
+    description: "The unified observability layer for the AI Control Plane"
+    license: "MIT License"
+
+  crucible_xai:
+    name: crucible_xai
+    org: North-Shore-AI
+    stars: 0
+    description: "Explainable AI (XAI) tools for the Crucible framework"
+    license: "MIT License"
+
+  crucible_trace:
+    name: crucible_trace
+    org: North-Shore-AI
+    stars: 0
+    description: "Structured causal reasoning chain logging for LLM transparency"
+    license: "MIT License"
+
+  crucible_telemetry:
+    name: crucible_telemetry
+    org: North-Shore-AI
+    stars: 0
+    description: "Advanced telemetry collection and analysis for AI research"
+    license: "MIT License"
+
+  crucible_hedging:
+    name: crucible_hedging
+    org: North-Shore-AI
+    stars: 0
+    description: "Request hedging for tail latency reduction in distributed systems"
+    license: "MIT License"
+
+  crucible_harness:
+    name: crucible_harness
+    org: North-Shore-AI
+    stars: 0
+    description: "Experimental research framework for running AI benchmarks at scale"
+    license: "MIT License"
+
+  crucible_framework:
+    name: crucible_framework
+    org: North-Shore-AI
+    stars: 0
+    description: "CrucibleFramework: A scientific platform for LLM reliability research on the BEAM"
+    license: "MIT License"
+
+  crucible_ensemble:
+    name: crucible_ensemble
+    org: North-Shore-AI
+    stars: 0
+    description: "Multi-model ensemble voting strategies for LLM reliability"
+    license: "MIT License"
+
+  crucible_datasets:
+    name: crucible_datasets
+    org: North-Shore-AI
+    stars: 0
+    description: "Dataset management and caching for AI research benchmarks"
+    license: "MIT License"
+
+  crucible_bench:
+    name: crucible_bench
+    org: North-Shore-AI
+    stars: 0
+    description: "Statistical testing and analysis framework for AI research"
+    license: "MIT License"
+
+  crucible_adversary:
+    name: crucible_adversary
+    org: North-Shore-AI
+    stars: 0
+    description: "Adversarial testing and robustness evaluation for the Crucible framework"
+    license: "MIT License"
+
+  LlmGuard:
+    name: LlmGuard
+    org: North-Shore-AI
+    stars: 0
+    description: "AI Firewall and guardrails for LLM-based Elixir applications"
+    license: "MIT License"
+
+  ExFairness:
+    name: ExFairness
+    org: North-Shore-AI
+    stars: 0
+    description: "Fairness and bias detection library for Elixir AI/ML systems"
+    license: "MIT License"
+
+  ExDataCheck:
+    name: ExDataCheck
+    org: North-Shore-AI
+    stars: 0
+    description: "Data validation and quality library for ML pipelines in Elixir"
+    license: "MIT License"
+
