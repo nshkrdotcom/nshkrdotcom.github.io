@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-10-12
+# Last updated: 2025-10-13T03:07:58Z
 # Do not edit manually - this file is updated by scripts/update_hugo_data.sh
 
 repos:
@@ -130,14 +130,14 @@ repos:
   snakepit:
     name: snakepit
     org: nshkrdotcom
-    stars: 8
+    stars: 0
     description: "Python orchestrator for BEAM"
     active_dev: true
     
   sinter:
     name: sinter
     org: nshkrdotcom
-    stars: 8
+    stars: 0
     description: "Unified schema definition and validation"
     
   exdantic:
@@ -156,7 +156,7 @@ repos:
   playwriter:
     name: playwriter
     org: nshkrdotcom
-    stars: 6
+    stars: 7
     description: "Elixir WSL-to-Windows browser integration"
     
   pipeline_ex:
@@ -187,7 +187,7 @@ repos:
   superlearner:
     name: superlearner
     org: nshkrdotcom
-    stars: 5
+    stars: 0
     description: "Ensemble learning framework"
     
   mabeam:
@@ -218,13 +218,13 @@ repos:
   supertester:
     name: supertester
     org: nshkrdotcom
-    stars: 3
+    stars: 0
     description: "Advanced testing framework"
     
   sandbox:
     name: sandbox
     org: nshkrdotcom
-    stars: 3
+    stars: 0
     description: "Isolated execution environment"
     
   cluster_test:
