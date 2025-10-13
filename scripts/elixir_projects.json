@@ -237,7 +237,7 @@
     "watchers_count": 7,
     "forks_count": 1,
     "language": "Elixir",
-    "size": 497,
+    "size": 502,
     "owner_type": "user",
     "owner_login": "nshkrdotcom"
   },
@@ -663,13 +663,13 @@
     "link": "https://github.com/nshkrdotcom/jules_ex",
     "title": "jules_ex",
     "stars": 0,
-    "description": "Elixir client SKK for the Jules API - orchestrate AI coding sessions",
+    "description": "Elixir client SDK for the Jules API - orchestrate AI coding sessions",
     "private": false,
     "fork": false,
     "archived": false,
     "license": "MIT License",
     "topics": [],
-    "updated_at": "2025-10-10T21:53:45Z",
+    "updated_at": "2025-10-10T23:50:31Z",
     "pushed_at": "2025-10-10T21:54:01Z",
     "created_at": "2025-10-10T07:47:23Z",
     "default_branch": "main",
@@ -743,7 +743,7 @@
     "watchers_count": 0,
     "forks_count": 0,
     "language": "Elixir",
-    "size": 0,
+    "size": 330,
     "owner_type": "user",
     "owner_login": "nshkrdotcom"
   },
@@ -831,7 +831,7 @@
     "watchers_count": 0,
     "forks_count": 0,
     "language": "Elixir",
-    "size": 42,
+    "size": 39,
     "owner_type": "org",
     "owner_login": "North-Shore-AI"
   },
@@ -853,7 +853,7 @@
     "watchers_count": 0,
     "forks_count": 0,
     "language": "Elixir",
-    "size": 44,
+    "size": 45,
     "owner_type": "org",
     "owner_login": "North-Shore-AI"
   },
@@ -875,7 +875,7 @@
     "watchers_count": 0,
     "forks_count": 0,
     "language": "Elixir",
-    "size": 38,
+    "size": 36,
     "owner_type": "org",
     "owner_login": "North-Shore-AI"
   },
@@ -897,7 +897,7 @@
     "watchers_count": 0,
     "forks_count": 0,
     "language": "Elixir",
-    "size": 47,
+    "size": 51,
     "owner_type": "org",
     "owner_login": "North-Shore-AI"
   },
@@ -919,7 +919,7 @@
     "watchers_count": 0,
     "forks_count": 0,
     "language": "Elixir",
-    "size": 206,
+    "size": 217,
     "owner_type": "org",
     "owner_login": "North-Shore-AI"
   },
@@ -941,7 +941,7 @@
     "watchers_count": 0,
     "forks_count": 0,
     "language": "Elixir",
-    "size": 53,
+    "size": 49,
     "owner_type": "org",
     "owner_login": "North-Shore-AI"
   },
@@ -963,7 +963,7 @@
     "watchers_count": 0,
     "forks_count": 0,
     "language": "Elixir",
-    "size": 40,
+    "size": 41,
     "owner_type": "org",
     "owner_login": "North-Shore-AI"
   },
@@ -985,7 +985,7 @@
     "watchers_count": 0,
     "forks_count": 0,
     "language": "Elixir",
-    "size": 55,
+    "size": 51,
     "owner_type": "org",
     "owner_login": "North-Shore-AI"
   }
