@@ -3,7 +3,19 @@
 ## Project Overview
 This is a Hugo static site for North Shore Hackerspace, Hawaii's premier technology innovation hub. The site showcases projects including ASKA security architecture and ChronoLedger blockchain, along with ElixirML metrics and GitHub projects.
 
-## Recent Changes (October 12, 2025)
+## Recent Changes
+
+### October 13, 2025 - Data-Driven Architecture
+- **Hugo Data Files Implementation**: Converted hardcoded star counts to dynamic data-driven system
+  - Created `data/repos.yml` centralizing all repository metadata (25 repos with stars, org, descriptions)
+  - Built `scripts/update_hugo_data.sh` to fetch live star counts via GitHub CLI (both nshkrdotcom & North-Shore-AI orgs)
+  - Modified `layouts/index.html` to use Hugo templating: `{{ (index .Site.Data.repos.repos "repo_name").stars }}`
+  - Updated `.github/workflows/update-sidebar.yml` (renamed to `update-star-counts`) for hourly cron automation
+  - Data file preserves special flags (e.g., snakepit's `active_dev: true` for "Active Dev" badge)
+  - Architecture achieves clean separation: data layer (repos.yml) → presentation layer (templates) → automation (GitHub Actions)
+  - Script includes backup, timestamp tracking, and summary output for maintainability
+
+### October 12, 2025 - Initial Redesign
 - Installed Hugo static site generator via Nix package system
 - Cloned Hugo themes (mainroad and hugo-theme-shell) from Git repositories
 - Added theme configuration to config.toml
@@ -49,10 +61,14 @@ This is a Hugo static site for North Shore Hackerspace, Hawaii's premier technol
 .
 ├── archetypes/          # Content templates
 ├── content/            # Markdown content files
+├── data/               # Hugo data files (YAML/JSON)
+│   └── repos.yml      # Repository metadata for dynamic star counts
 ├── layouts/            # Custom Hugo layouts and templates
 │   ├── _default/       # Default templates
 │   ├── partials/       # Partial templates
 │   └── shortcodes/     # Custom shortcodes
+├── scripts/            # Automation scripts
+│   └── update_hugo_data.sh  # GitHub CLI script to update star counts
 ├── static/             # Static assets (images, PDFs, JSON APIs)
 │   ├── api/           # JSON data files
 │   ├── assets/        # Custom SVG logos and icons
@@ -61,6 +77,8 @@ This is a Hugo static site for North Shore Hackerspace, Hawaii's premier technol
 ├── themes/             # Hugo themes
 │   ├── mainroad/      # Main theme in use
 │   └── hugo-theme-shell/
+├── .github/workflows/  # GitHub Actions
+│   └── update-sidebar.yml  # Hourly cron to update star counts
 ├── config.toml         # Hugo configuration
 └── public/            # Generated site (gitignored)
 ```
@@ -95,3 +113,6 @@ This is a Hugo static site for North Shore Hackerspace, Hawaii's premier technol
 - HTML comments are preserved for AI agent metadata
 - Git submodules are used for theme management
 - SEO features include sitemap, robots.txt, and metadata configuration
+- **Data-driven architecture**: Star counts auto-update hourly via GitHub Actions calling `update_hugo_data.sh`
+- **Hugo data files**: `data/repos.yml` serves as single source of truth for repository metadata
+- **Adding new repos**: Add entry to `data/repos.yml` following schema (name, org, stars, description, optional flags)
