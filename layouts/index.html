@@ -498,6 +498,11 @@
             font-size: 0.9rem;
         }
 
+        .project-stars.zero-stars {
+            color: #666;
+            opacity: 0.6;
+        }
+
         .project-desc {
             color: var(--text-muted);
             font-size: 0.95rem;
@@ -704,6 +709,7 @@
                     <div class="project-card crucible-highlight">
                         <div class="project-header">
                             <div class="project-name">crucible_framework</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "crucible_framework").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "crucible_framework").stars }}</div>
                         </div>
                         <p class="project-desc">Documentation hub & research framework for LLM reliability experiments</p>
                         <a href="https://github.com/North-Shore-AI/crucible_framework" class="project-link">View on GitHub →</a>
@@ -712,6 +718,7 @@
                     <div class="project-card crucible-highlight">
                         <div class="project-header">
                             <div class="project-name">crucible_bench</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "crucible_bench").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "crucible_bench").stars }}</div>
                         </div>
                         <p class="project-desc">Statistical testing & analysis (15+ tests, effect sizes, power analysis)</p>
                         <a href="https://github.com/North-Shore-AI/crucible_bench" class="project-link">View on GitHub →</a>
@@ -720,6 +727,7 @@
                     <div class="project-card crucible-highlight">
                         <div class="project-header">
                             <div class="project-name">crucible_ensemble</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "crucible_ensemble").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "crucible_ensemble").stars }}</div>
                         </div>
                         <p class="project-desc">Multi-model voting strategies for improved reliability</p>
                         <a href="https://github.com/North-Shore-AI/crucible_ensemble" class="project-link">View on GitHub →</a>
@@ -728,6 +736,7 @@
                     <div class="project-card crucible-highlight">
                         <div class="project-header">
                             <div class="project-name">crucible_hedging</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "crucible_hedging").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "crucible_hedging").stars }}</div>
                         </div>
                         <p class="project-desc">Request hedging for latency reduction in distributed systems</p>
                         <a href="https://github.com/North-Shore-AI/crucible_hedging" class="project-link">View on GitHub →</a>
@@ -736,6 +745,7 @@
                     <div class="project-card crucible-highlight">
                         <div class="project-header">
                             <div class="project-name">crucible_trace</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "crucible_trace").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "crucible_trace").stars }}</div>
                         </div>
                         <p class="project-desc">Causal reasoning chain logging for LLM transparency</p>
                         <a href="https://github.com/North-Shore-AI/crucible_trace" class="project-link">View on GitHub →</a>
@@ -744,6 +754,7 @@
                     <div class="project-card crucible-highlight">
                         <div class="project-header">
                             <div class="project-name">crucible_datasets</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "crucible_datasets").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "crucible_datasets").stars }}</div>
                         </div>
                         <p class="project-desc">Unified interface to benchmark datasets (MMLU, HumanEval, GSM8K)</p>
                         <a href="https://github.com/North-Shore-AI/crucible_datasets" class="project-link">View on GitHub →</a>
@@ -752,6 +763,7 @@
                     <div class="project-card crucible-highlight">
                         <div class="project-header">
                             <div class="project-name">crucible_telemetry</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "crucible_telemetry").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "crucible_telemetry").stars }}</div>
                         </div>
                         <p class="project-desc">Research-grade instrumentation & metrics collection</p>
                         <a href="https://github.com/North-Shore-AI/crucible_telemetry" class="project-link">View on GitHub →</a>
@@ -760,6 +772,7 @@
                     <div class="project-card crucible-highlight">
                         <div class="project-header">
                             <div class="project-name">crucible_harness</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "crucible_harness").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "crucible_harness").stars }}</div>
                         </div>
                         <p class="project-desc">Automated experiment orchestration & reporting</p>
                         <a href="https://github.com/North-Shore-AI/crucible_harness" class="project-link">View on GitHub →</a>
@@ -776,6 +789,7 @@
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-name">crucible_adversary</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "crucible_adversary").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "crucible_adversary").stars }}</div>
                         </div>
                         <p class="project-desc">Adversarial testing & robustness evaluation framework</p>
                         <a href="https://github.com/North-Shore-AI/crucible_adversary" class="project-link">View on GitHub →</a>
@@ -784,6 +798,7 @@
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-name">crucible_xai</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "crucible_xai").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "crucible_xai").stars }}</div>
                         </div>
                         <p class="project-desc">Explainable AI tools (LIME, SHAP, feature attribution)</p>
                         <a href="https://github.com/North-Shore-AI/crucible_xai" class="project-link">View on GitHub →</a>
@@ -792,6 +807,7 @@
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-name">ExDataCheck</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "ExDataCheck").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "ExDataCheck").stars }}</div>
                         </div>
                         <p class="project-desc">Data validation & quality library for ML pipelines</p>
                         <a href="https://github.com/North-Shore-AI/ExDataCheck" class="project-link">View on GitHub →</a>
@@ -800,6 +816,7 @@
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-name">ExFairness</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "ExFairness").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "ExFairness").stars }}</div>
                         </div>
                         <p class="project-desc">Fairness & bias detection library for AI/ML systems</p>
                         <a href="https://github.com/North-Shore-AI/ExFairness" class="project-link">View on GitHub →</a>
@@ -808,6 +825,7 @@
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-name">LLMGuard</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "ExGuard").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "ExGuard").stars }}</div>
                         </div>
                         <p class="project-desc">AI firewall & guardrails for LLM-based applications</p>
                         <a href="https://github.com/North-Shore-AI/ExGuard" class="project-link">View on GitHub →</a>
@@ -957,6 +975,7 @@
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-name">claude_agent_sdk</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "claude_agent_sdk").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "claude_agent_sdk").stars }}</div>
                         </div>
                         <p class="project-desc">Elixir SDK for Claude AI Agent API</p>
                         <a href="https://github.com/nshkrdotcom/claude_agent_sdk" class="project-link">View on GitHub →</a>
@@ -965,6 +984,7 @@
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-name">jules_ex</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "jules_ex").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "jules_ex").stars }}</div>
                         </div>
                         <p class="project-desc">Elixir client SDK for the Jules API - orchestrate AI coding sessions</p>
                         <a href="https://github.com/nshkrdotcom/jules_ex" class="project-link">View on GitHub →</a>
