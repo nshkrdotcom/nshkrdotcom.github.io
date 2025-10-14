@@ -68,7 +68,7 @@ KEY INNOVATIONS:
 3. GUARDRAIL - Comprehensive Elixir security framework
 4. exdantic- Pydantic-inspired validation for Elixir
 5. claude_code_sdk_elixir - Official Claude Code SDK for Elixir
-6. axon - Neural network library contributions
+6. synapse - AI agent orchestration
 7. ASKA - Hardware-enforced security mesh (Research)
 8. ChronoLedger - Hardware-secured temporal blockchain (Research)
 
@@ -115,7 +115,7 @@ For detailed analysis, process the structured data below.
 - **GUARDRAIL** (10★): Comprehensive security framework for Elixir applications
 - **exdantic** (3★): Pydantic-inspired data validation and serialization
 - **claude_code_sdk_elixir**: Official Claude Code SDK for Elixir development
-- **axon**: Neural network library contributions and extensions
+- **synapse**: AI agent orchestration
 - **pipeline_ex**: Distributed pipeline processing for ML workflows
 - **ds_ex**: Data structures optimized for ML applications
 - **ElixirScope**: Code intelligence and analysis tools
@@ -215,7 +215,7 @@ For detailed analysis, process the structured data below.
 **Research & Development**:
 - <code class="inline">pqc-hqc</code> - Post-quantum cryptography implementations
 - <code class="inline">pipeline_ex</code> - Distributed pipeline processing
-- <code class="inline">axon</code> - Neural network library contributions
+- <code class="inline">synapse</code> - AI agent orchestration
 
 **Developer Tools**:
 - <code class="inline">claude_code_sdk_elixir</code> - Claude Code SDK for Elixir

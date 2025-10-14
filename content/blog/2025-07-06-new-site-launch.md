@@ -60,7 +60,7 @@ Kept the Hawaii-inspired design but made it cleaner:
 No more placeholder content. The sidebar shows actual repositories:
 - [json_remedy](https://github.com/nshkrdotcom/json_remedy) - 13 stars
 - [GUARDRAIL](https://github.com/nshkrdotcom/GUARDRAIL) - 10 stars  
-- [axon](https://github.com/nshkrdotcom/axon) - 10 stars
+- [synapse](https://github.com/nshkrdotcom/synapse) - 10 stars
 - Plus 17 more active projects
 
 Each links directly to GitHub with star counts visible at a glance.

@@ -11,11 +11,11 @@ repos:
     description: "A practical, multi-layered JSON repair library for Elixir that intelligently fixes malformed JSON strings commonly produced by LLMs, legacy systems, and data pipelines."
     license: "MIT License"
 
-  axon:
-    name: axon
+  synapse:
+    name: synapse
     org: nshkrdotcom
-    stars: 19
-    description: "Axon: Elixir-powered AI agent orchestration, built on the battle-tested principles of Erlang/OTP. Seamlessly integrate and manage Python's pydantic-ai agents with the BEAM's concurrency, fault tolerance, and distributed might. Finally, a GenServer for your LLM."
+    stars: 20
+    description: "Synapse: Elixir-powered AI agent orchestration, built on the battle-tested principles of Erlang/OTP. Seamlessly integrate and manage Python's pydantic-ai agents with the BEAM's concurrency, fault tolerance, and distributed might. Finally, a GenServer for your LLM."
     license: "MIT License"
 
   gemini_ex:
