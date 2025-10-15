@@ -835,27 +835,71 @@
 
         <section class="section">
             <div class="container">
-                <h2 class="section-title">AI & LLM Infrastructure</h2>
-                
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-name">json_remedy</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "json_remedy").stars }}</div>
-                        </div>
-                        <p class="project-desc">A practical, multi-layered JSON repair library for Elixir that intelligently fixes malformed JSON strings</p>
-                        <a href="https://github.com/nshkrdotcom/json_remedy" class="project-link">View on GitHub →</a>
-                    </div>
+                <h2 class="section-title">AI Agent Orchestration & Multi-Agent Systems</h2>
 
+                <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-name">synapse</div>
                             <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "synapse").stars }}</div>
                         </div>
-                        <p class="project-desc">Synapse: AI agent orchestration</p>
+                        <p class="project-desc">Synapse: Elixir-powered AI agent orchestration, built on the battle-tested principles of Erlang/OTP</p>
                         <a href="https://github.com/nshkrdotcom/synapse" class="project-link">View on GitHub →</a>
                     </div>
 
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">ds_ex</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "ds_ex").stars }}</div>
+                        </div>
+                        <p class="project-desc">DSPEx - Declarative Self-improving Elixir | A BEAM-Native AI Program Optimizer</p>
+                        <a href="https://github.com/nshkrdotcom/ds_ex" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">DSPex</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "DSPex").stars }}</div>
+                        </div>
+                        <p class="project-desc">Declarative Self Improving Elixir - DSPy Orchestration in Elixir</p>
+                        <a href="https://github.com/nshkrdotcom/DSPex" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">mabeam</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "mabeam").stars }}</div>
+                        </div>
+                        <p class="project-desc">Multi Agent BEAM - distributed agent orchestration</p>
+                        <a href="https://github.com/nshkrdotcom/mabeam" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">AutoElixir</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "AutoElixir").stars }}</div>
+                        </div>
+                        <p class="project-desc">AI Multi Agent Swarms in Elixir</p>
+                        <a href="https://github.com/nshkrdotcom/AutoElixir" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">ALTAR</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "ALTAR").stars }}</div>
+                        </div>
+                        <p class="project-desc">The Agent & Tool Arbitration Protocol</p>
+                        <a href="https://github.com/nshkrdotcom/ALTAR" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">AI SDKs & API Clients</h2>
+
+                <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-name">gemini_ex</div>
@@ -867,11 +911,38 @@
 
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-name">ds_ex</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "ds_ex").stars }}</div>
+                            <div class="project-name">claude_agent_sdk</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "claude_agent_sdk").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "claude_agent_sdk").stars }}</div>
                         </div>
-                        <p class="project-desc">DSPEx - Declarative Self-improving Elixir | A BEAM-Native AI Program Optimizer</p>
-                        <a href="https://github.com/nshkrdotcom/ds_ex" class="project-link">View on GitHub →</a>
+                        <p class="project-desc">Elixir SDK for Claude AI Agent API</p>
+                        <a href="https://github.com/nshkrdotcom/claude_agent_sdk" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">codex_sdk</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "codex_sdk").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "codex_sdk").stars }}</div>
+                        </div>
+                        <p class="project-desc">OpenAI Codex SDK written in Elixir</p>
+                        <a href="https://github.com/nshkrdotcom/codex_sdk" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">jules_ex</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "jules_ex").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "jules_ex").stars }}</div>
+                        </div>
+                        <p class="project-desc">Elixir client SDK for the Jules API - orchestrate AI coding sessions</p>
+                        <a href="https://github.com/nshkrdotcom/jules_ex" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">pipeline_ex</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "pipeline_ex").stars }}</div>
+                        </div>
+                        <p class="project-desc">Claude Code + Gemini AI collaboration orchestration tools</p>
+                        <a href="https://github.com/nshkrdotcom/pipeline_ex" class="project-link">View on GitHub →</a>
                     </div>
                 </div>
             </div>
@@ -879,25 +950,25 @@
 
         <section class="section">
             <div class="container">
-                <h2 class="section-title">Developer Tools & Infrastructure</h2>
-                
+                <h2 class="section-title">AI Infrastructure & Utilities</h2>
+
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-name">foundation</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "foundation").stars }}</div>
+                            <div class="project-name">weaviate_ex</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "weaviate_ex").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "weaviate_ex").stars }}</div>
                         </div>
-                        <p class="project-desc">Elixir infrastructure and Observability Library</p>
-                        <a href="https://github.com/nshkrdotcom/foundation" class="project-link">View on GitHub →</a>
+                        <p class="project-desc">Modern Elixir client for Weaviate vector database with health checks and friendly error messages</p>
+                        <a href="https://github.com/nshkrdotcom/weaviate_ex" class="project-link">View on GitHub →</a>
                     </div>
 
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-name">ex_dbg</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "ex_dbg").stars }}</div>
+                            <div class="project-name">json_remedy</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "json_remedy").stars }}</div>
                         </div>
-                        <p class="project-desc">State-of-the-Art Introspection and Debugging System for Elixir/Phoenix</p>
-                        <a href="https://github.com/nshkrdotcom/ex_dbg" class="project-link">View on GitHub →</a>
+                        <p class="project-desc">A practical, multi-layered JSON repair library for Elixir that intelligently fixes malformed JSON strings</p>
+                        <a href="https://github.com/nshkrdotcom/json_remedy" class="project-link">View on GitHub →</a>
                     </div>
 
                     <div class="project-card">
@@ -905,10 +976,18 @@
                             <div class="project-name">snakepit</div>
                             <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "snakepit").stars }}{{ if (index .Site.Data.repos.repos "snakepit").active_dev }} • Active Dev{{ end }}</div>
                         </div>
-                        <p class="project-desc">Aiming to become the de facto Python orchestrator for BEAM - dual-mode parallelism with Python 3.13+ free-threading support, gRPC communication, and session-based execution</p>
+                        <p class="project-desc">High-performance, generalized process pooler and session manager for external language integrations. Orchestrates Python from Elixir</p>
                         <a href="https://github.com/nshkrdotcom/snakepit" class="project-link">View on GitHub →</a>
                     </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Schema & Data Validation</h2>
+
+                <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-header">
                             <div class="project-name">sinter</div>
@@ -929,90 +1008,28 @@
 
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-name">DSPex</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "DSPex").stars }}</div>
-                        </div>
-                        <p class="project-desc">Declarative Self Improving Elixir - DSPy Orchestration in Elixir</p>
-                        <a href="https://github.com/nshkrdotcom/DSPex" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">AI SDKs & Integration</h2>
-                
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-name">playwriter</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "playwriter").stars }}</div>
-                        </div>
-                        <p class="project-desc">Elixir WSL-to-Windows browser integration</p>
-                        <a href="https://github.com/nshkrdotcom/playwriter" class="project-link">View on GitHub →</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-name">pipeline_ex</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "pipeline_ex").stars }}</div>
-                        </div>
-                        <p class="project-desc">Claude Code + Gemini AI collaboration orchestration tools</p>
-                        <a href="https://github.com/nshkrdotcom/pipeline_ex" class="project-link">View on GitHub →</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
                             <div class="project-name">perimeter</div>
                             <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "perimeter").stars }}</div>
                         </div>
                         <p class="project-desc">Elixir Typing Mechanism</p>
                         <a href="https://github.com/nshkrdotcom/perimeter" class="project-link">View on GitHub →</a>
                     </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-name">claude_agent_sdk</div>
-                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "claude_agent_sdk").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "claude_agent_sdk").stars }}</div>
-                        </div>
-                        <p class="project-desc">Elixir SDK for Claude AI Agent API</p>
-                        <a href="https://github.com/nshkrdotcom/claude_agent_sdk" class="project-link">View on GitHub →</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-name">jules_ex</div>
-                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "jules_ex").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "jules_ex").stars }}</div>
-                        </div>
-                        <p class="project-desc">Elixir client SDK for the Jules API - orchestrate AI coding sessions</p>
-                        <a href="https://github.com/nshkrdotcom/jules_ex" class="project-link">View on GitHub →</a>
-                    </div>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <h2 class="section-title">Multi-Agent & OTP Systems</h2>
-                
+                <h2 class="section-title">Developer Tools & Debugging</h2>
+
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-name">superlearner</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "superlearner").stars }}</div>
+                            <div class="project-name">ex_dbg</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "ex_dbg").stars }}</div>
                         </div>
-                        <p class="project-desc">OTP Supervisor Educational Platform</p>
-                        <a href="https://github.com/nshkrdotcom/superlearner" class="project-link">View on GitHub →</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-name">mabeam</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "mabeam").stars }}</div>
-                        </div>
-                        <p class="project-desc">Multi Agent BEAM - distributed agent orchestration</p>
-                        <a href="https://github.com/nshkrdotcom/mabeam" class="project-link">View on GitHub →</a>
+                        <p class="project-desc">State-of-the-Art Introspection and Debugging System for Elixir/Phoenix</p>
+                        <a href="https://github.com/nshkrdotcom/ex_dbg" class="project-link">View on GitHub →</a>
                     </div>
 
                     <div class="project-card">
@@ -1026,20 +1043,11 @@
 
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-name">ALTAR</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "ALTAR").stars }}</div>
+                            <div class="project-name">ElixirScope</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "ElixirScope").stars }}</div>
                         </div>
-                        <p class="project-desc">The Agent & Tool Arbitration Protocol</p>
-                        <a href="https://github.com/nshkrdotcom/ALTAR" class="project-link">View on GitHub →</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-name">AutoElixir</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "AutoElixir").stars }}</div>
-                        </div>
-                        <p class="project-desc">AI Multi Agent Swarms in Elixir</p>
-                        <a href="https://github.com/nshkrdotcom/AutoElixir" class="project-link">View on GitHub →</a>
+                        <p class="project-desc">AI-Powered Execution Cinema Debugger for Elixir/BEAM</p>
+                        <a href="https://github.com/nshkrdotcom/ElixirScope" class="project-link">View on GitHub →</a>
                     </div>
                 </div>
             </div>
@@ -1047,8 +1055,61 @@
 
         <section class="section">
             <div class="container">
-                <h2 class="section-title">Testing & Quality</h2>
-                
+                <h2 class="section-title">OTP & Distributed Systems</h2>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">superlearner</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "superlearner").stars }}</div>
+                        </div>
+                        <p class="project-desc">OTP Supervisor Educational Platform</p>
+                        <a href="https://github.com/nshkrdotcom/superlearner" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">apex</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "apex").stars }}</div>
+                        </div>
+                        <p class="project-desc">Core Apex framework for OTP supervision and monitoring</p>
+                        <a href="https://github.com/nshkrdotcom/apex" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">apex_ui</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "apex_ui").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "apex_ui").stars }}</div>
+                        </div>
+                        <p class="project-desc">Web UI for Apex OTP supervision and monitoring tools</p>
+                        <a href="https://github.com/nshkrdotcom/apex_ui" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">arsenal</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "arsenal").stars }}</div>
+                        </div>
+                        <p class="project-desc">Metaprogramming framework for automatic REST API generation from OTP processes</p>
+                        <a href="https://github.com/nshkrdotcom/arsenal" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">arsenal_plug</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "arsenal_plug").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "arsenal_plug").stars }}</div>
+                        </div>
+                        <p class="project-desc">Phoenix/Plug adapter for Apex Arsenal framework</p>
+                        <a href="https://github.com/nshkrdotcom/arsenal_plug" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Testing & Quality Assurance</h2>
+
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-header">
@@ -1082,69 +1143,16 @@
 
         <section class="section">
             <div class="container">
-                <h2 class="section-title">Cloud & Edge Computing</h2>
-                
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-name">cf_ex</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "cf_ex").stars }}</div>
-                        </div>
-                        <p class="project-desc">Elixir libraries for Cloudflare edge computing services. Battle-tested for production</p>
-                        <a href="https://github.com/nshkrdotcom/cf_ex" class="project-link">View on GitHub →</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-name">arsenal</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "arsenal").stars }}</div>
-                        </div>
-                        <p class="project-desc">Metaprogramming framework for automatic REST API generation from OTP processes</p>
-                        <a href="https://github.com/nshkrdotcom/arsenal" class="project-link">View on GitHub →</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-name">apex</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "apex").stars }}</div>
-                        </div>
-                        <p class="project-desc">Core Apex framework for OTP supervision and monitoring</p>
-                        <a href="https://github.com/nshkrdotcom/apex" class="project-link">View on GitHub →</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-name">ElixirScope</div>
-                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "ElixirScope").stars }}</div>
-                        </div>
-                        <p class="project-desc">AI-Powered Execution Cinema Debugger for Elixir/BEAM</p>
-                        <a href="https://github.com/nshkrdotcom/ElixirScope" class="project-link">View on GitHub →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Utilities & Enterprise Tools</h2>
+                <h2 class="section-title">Infrastructure & Observability</h2>
 
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-name">Citadel</div>
-                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "Citadel").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "Citadel").stars }}</div>
+                            <div class="project-name">foundation</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "foundation").stars }}</div>
                         </div>
-                        <p class="project-desc">The command and control layer for the AI-powered enterprise</p>
-                        <a href="https://github.com/nshkrdotcom/Citadel" class="project-link">View on GitHub →</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-name">Assessor</div>
-                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "Assessor").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "Assessor").stars }}</div>
-                        </div>
-                        <p class="project-desc">The definitive CI/CD platform for AI Quality</p>
-                        <a href="https://github.com/nshkrdotcom/Assessor" class="project-link">View on GitHub →</a>
+                        <p class="project-desc">Elixir infrastructure and Observability Library</p>
+                        <a href="https://github.com/nshkrdotcom/foundation" class="project-link">View on GitHub →</a>
                     </div>
 
                     <div class="project-card">
@@ -1158,29 +1166,37 @@
 
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-name">apex_ui</div>
-                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "apex_ui").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "apex_ui").stars }}</div>
+                            <div class="project-name">Assessor</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "Assessor").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "Assessor").stars }}</div>
                         </div>
-                        <p class="project-desc">Web UI for Apex OTP supervision and monitoring tools</p>
-                        <a href="https://github.com/nshkrdotcom/apex_ui" class="project-link">View on GitHub →</a>
+                        <p class="project-desc">The definitive CI/CD platform for AI Quality</p>
+                        <a href="https://github.com/nshkrdotcom/Assessor" class="project-link">View on GitHub →</a>
                     </div>
 
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-name">arsenal_plug</div>
-                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "arsenal_plug").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "arsenal_plug").stars }}</div>
+                            <div class="project-name">Citadel</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "Citadel").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "Citadel").stars }}</div>
                         </div>
-                        <p class="project-desc">Phoenix/Plug adapter for Apex Arsenal framework</p>
-                        <a href="https://github.com/nshkrdotcom/arsenal_plug" class="project-link">View on GitHub →</a>
+                        <p class="project-desc">The command and control layer for the AI-powered enterprise</p>
+                        <a href="https://github.com/nshkrdotcom/Citadel" class="project-link">View on GitHub →</a>
                     </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Cloud & Edge Computing</h2>
+
+                <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-header">
-                            <div class="project-name">codex_sdk</div>
-                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "codex_sdk").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "codex_sdk").stars }}</div>
+                            <div class="project-name">cf_ex</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "cf_ex").stars }}</div>
                         </div>
-                        <p class="project-desc">OpenAI Codex SDK written in Elixir</p>
-                        <a href="https://github.com/nshkrdotcom/codex_sdk" class="project-link">View on GitHub →</a>
+                        <p class="project-desc">Elixir libraries for Cloudflare edge computing services. Battle-tested for production</p>
+                        <a href="https://github.com/nshkrdotcom/cf_ex" class="project-link">View on GitHub →</a>
                     </div>
 
                     <div class="project-card">
@@ -1191,6 +1207,40 @@
                         <p class="project-desc">Cloudflare Durable Objects and Calls for Phoenix Framework</p>
                         <a href="https://github.com/nshkrdotcom/ex_cloudflare_phoenix" class="project-link">View on GitHub →</a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Browser & Platform Integration</h2>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">playwriter</div>
+                            <div class="project-stars">⭐ {{ (index .Site.Data.repos.repos "playwriter").stars }}</div>
+                        </div>
+                        <p class="project-desc">Elixir WSL-to-Windows browser integration</p>
+                        <a href="https://github.com/nshkrdotcom/playwriter" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Utilities</h2>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">youtube_audio_dl</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "youtube_audio_dl").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "youtube_audio_dl").stars }}</div>
+                        </div>
+                        <p class="project-desc">Download high-quality audio from YouTube as MP3 files using Elixir</p>
+                        <a href="https://github.com/nshkrdotcom/youtube_audio_dl" class="project-link">View on GitHub →</a>
+                    </div>
 
                     <div class="project-card">
                         <div class="project-header">
@@ -1199,15 +1249,6 @@
                         </div>
                         <p class="project-desc">Elixir utility tools collection</p>
                         <a href="https://github.com/nshkrdotcom/tools" class="project-link">View on GitHub →</a>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-name">youtube_audio_dl</div>
-                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "youtube_audio_dl").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "youtube_audio_dl").stars }}</div>
-                        </div>
-                        <p class="project-desc">Download high-quality audio from YouTube as MP3 files using Elixir</p>
-                        <a href="https://github.com/nshkrdotcom/youtube_audio_dl" class="project-link">View on GitHub →</a>
                     </div>
                 </div>
             </div>
