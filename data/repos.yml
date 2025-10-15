@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-10-15T04:20:29Z
+# Last updated: 2025-10-15T05:16:47Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -204,6 +204,13 @@ repos:
     org: nshkrdotcom
     stars: 0
     description: "Download high-quality audio from YouTube as MP3 files using Elixir. Features 104 music genres, duration filtering, per-genre caching, C++ DSP filters, and ML-based transient detection."
+
+  weaviate_ex:
+    name: weaviate_ex
+    org: nshkrdotcom
+    stars: 0
+    description: "Modern Elixir client for Weaviate vector database with health checks and friendly error messages"
+    license: "MIT License"
 
   tools:
     name: tools
