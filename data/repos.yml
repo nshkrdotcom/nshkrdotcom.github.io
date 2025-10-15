@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-10-14T23:15:10Z
+# Last updated: 2025-10-15T01:18:42Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -74,8 +74,8 @@ repos:
     description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
     license: "MIT License"
 
-  claude_code_sdk_elixir:
-    name: claude_code_sdk_elixir
+  claude_agent_sdk:
+    name: claude_agent_sdk
     org: nshkrdotcom
     stars: 7
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
@@ -236,13 +236,6 @@ repos:
     org: nshkrdotcom
     stars: 0
     description: "OpenAI Codex SDK written in Elixir"
-    license: "MIT License"
-
-  claude_agent_sdk:
-    name: claude_agent_sdk
-    org: nshkrdotcom
-    stars: 0
-    description: "Elixir SDK for Claude AI Agent API - Renamed from claude_code_sdk_elixir"
     license: "MIT License"
 
   Citadel:
