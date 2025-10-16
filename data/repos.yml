@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-10-16T11:14:50Z
+# Last updated: 2025-10-16T12:37:47Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -217,13 +217,6 @@ repos:
     org: nshkrdotcom
     stars: 0
     description: "Elixir repository"
-
-  neo4j_ex:
-    name: neo4j_ex
-    org: nshkrdotcom
-    stars: 0
-    description: "Neo4j driver client in Elixir"
-    license: "MIT License"
 
   jules_ex:
     name: jules_ex
