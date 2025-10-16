@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-10-16T10:19:44Z
+# Last updated: 2025-10-16T11:14:50Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -218,6 +218,13 @@ repos:
     stars: 0
     description: "Elixir repository"
 
+  neo4j_ex:
+    name: neo4j_ex
+    org: nshkrdotcom
+    stars: 0
+    description: "Neo4j driver client in Elixir"
+    license: "MIT License"
+
   jules_ex:
     name: jules_ex
     org: nshkrdotcom
@@ -237,6 +244,13 @@ repos:
     stars: 0
     description: "Cloudflare Durable Objects and Calls for Phoenix Framework"
     license: "Apache License 2.0"
+
+  duckdb_ex:
+    name: duckdb_ex
+    org: nshkrdotcom
+    stars: 0
+    description: "DuckDB driver client in Elixir"
+    license: "MIT License"
 
   codex_sdk:
     name: codex_sdk
