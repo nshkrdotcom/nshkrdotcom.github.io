@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-10-18T01:14:41Z
+# Last updated: 2025-10-18T02:53:10Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -237,6 +237,13 @@ repos:
     stars: 0
     description: "Cloudflare Durable Objects and Calls for Phoenix Framework"
     license: "Apache License 2.0"
+
+  elixir_dashboard:
+    name: elixir_dashboard
+    org: nshkrdotcom
+    stars: 0
+    description: "A Phoenix LiveView performance monitoring dashboard for tracking slow endpoints and database queries"
+    license: "MIT License"
 
   duckdb_ex:
     name: duckdb_ex
