@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-10-18T06:23:19Z
+# Last updated: 2025-10-18T07:14:48Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -243,6 +243,7 @@ repos:
     org: nshkrdotcom
     stars: 0
     description: "Local-first observability for Elixir with New Relic API parity"
+    license: "MIT License"
 
   elixir_dashboard:
     name: elixir_dashboard
