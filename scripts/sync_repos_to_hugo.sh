@@ -17,13 +17,34 @@ DATA_FILE="$PROJECT_DIR/data/repos.yml"
 echo "📡 Fetching all Elixir repositories from GitHub..."
 bash "$SCRIPT_DIR/get_elixir_projects.sh"
 
-# Step 2: Backup existing data file
+# Step 2: Compare star counts against the existing data file so we only rewrite when needed
+new_digest=$(jq -r '.[] | "\(.title)=\(.stars)"' "$JSON_FILE" | sort)
+existing_digest=""
+if [ -f "$DATA_FILE" ]; then
+  existing_digest=$(awk '
+    /^  [^[:space:]][^:]*:/ {
+      repo = $1
+      sub(":$", "", repo)
+      sub(/^[[:space:]]+/, "", repo)
+    }
+    /^[[:space:]]{4}stars:/ {
+      print repo "=" $2
+    }
+  ' "$DATA_FILE" | sort)
+fi
+
+if [ -f "$DATA_FILE" ] && [ "$existing_digest" = "$new_digest" ]; then
+  echo "✨ No star count changes detected. Skipping update."
+  exit 0
+fi
+
+# Step 3: Backup existing data file (only when we're about to update)
 if [ -f "$DATA_FILE" ]; then
   cp "$DATA_FILE" "$DATA_FILE.bak"
   echo "📋 Backup saved to $DATA_FILE.bak"
 fi
 
-# Step 3: Convert JSON to YAML format Hugo expects
+# Step 4: Convert JSON to YAML format Hugo expects
 echo "📝 Converting to Hugo YAML format..."
 
 cat > "$DATA_FILE" << 'HEADER'
