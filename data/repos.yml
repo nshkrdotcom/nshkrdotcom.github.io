@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-10-21T01:20:26Z
+# Last updated: 2025-10-21T05:17:06Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -322,6 +322,12 @@ repos:
     stars: 0
     description: "CrucibleFramework: A scientific platform for LLM reliability research on the BEAM"
     license: "MIT License"
+
+  crucible_examples:
+    name: crucible_examples
+    org: North-Shore-AI
+    stars: 0
+    description: "Interactive Phoenix LiveView demonstrations of the Crucible Framework - showcasing ensemble voting, request hedging, statistical analysis, and more with mock LLMs"
 
   crucible_ensemble:
     name: crucible_ensemble
