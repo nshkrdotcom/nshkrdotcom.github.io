@@ -2,7 +2,7 @@
   {
     "link": "https://github.com/nshkrdotcom/synapse",
     "title": "synapse",
-    "stars": 20,
+    "stars": 21,
     "description": "Synapse: Elixir-powered AI agent orchestration, built on the battle-tested principles of Erlang/OTP. Seamlessly integrate and manage Python's pydantic-ai agents with the BEAM's concurrency, fault tolerance, and distributed might. Finally, a GenServer for your LLM.",
     "private": false,
     "fork": false,
@@ -30,12 +30,12 @@
       "python-integration",
       "supervision"
     ],
-    "updated_at": "2025-10-14T23:37:48Z",
+    "updated_at": "2025-10-21T22:54:53Z",
     "pushed_at": "2025-10-14T20:07:40Z",
     "created_at": "2024-12-26T06:42:52Z",
     "default_branch": "main",
     "open_issues_count": 0,
-    "watchers_count": 20,
+    "watchers_count": 21,
     "forks_count": 0,
     "language": "Elixir",
     "size": 332,
