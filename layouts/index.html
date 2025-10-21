@@ -809,6 +809,15 @@
                         <p class="project-desc">Automated experiment orchestration & reporting</p>
                         <a href="https://github.com/North-Shore-AI/crucible_harness" class="project-link">View on GitHub →</a>
                     </div>
+
+                    <div class="project-card crucible-highlight">
+                        <div class="project-header">
+                            <div class="project-name">crucible_examples</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "crucible_examples").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "crucible_examples").stars }}</div>
+                        </div>
+                        <p class="project-desc">Interactive Phoenix LiveView demos showcasing all framework components with mock LLMs</p>
+                        <a href="https://github.com/North-Shore-AI/crucible_examples" class="project-link">View on GitHub →</a>
+                    </div>
                 </div>
             </div>
         </section>
