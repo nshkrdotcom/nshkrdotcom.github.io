@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-10-23T03:02:12Z
+# Last updated: 2025-10-25T23:14:36Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -7,7 +7,7 @@ repos:
   synapse:
     name: synapse
     org: nshkrdotcom
-    stars: 21
+    stars: 22
     description: "Synapse: Elixir-powered AI agent orchestration, built on the battle-tested principles of Erlang/OTP. Seamlessly integrate and manage Python's pydantic-ai agents with the BEAM's concurrency, fault tolerance, and distributed might. Finally, a GenServer for your LLM."
     license: "MIT License"
 
