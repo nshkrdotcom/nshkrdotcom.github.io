@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-10-26T04:19:28Z
+# Last updated: 2025-10-26T07:15:20Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -224,6 +224,13 @@ repos:
     org: nshkrdotcom
     stars: 0
     description: "Utility library and helper functions for Elixir development - common patterns, debugging aids, and productivity tools"
+
+  snakebridge:
+    name: snakebridge
+    org: nshkrdotcom
+    stars: 0
+    description: "Elixir repository"
+    license: "MIT License"
 
   skill_ex:
     name: skill_ex
