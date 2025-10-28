@@ -76,7 +76,7 @@
     "watchers_count": 20,
     "forks_count": 1,
     "language": "Elixir",
-    "size": 694,
+    "size": 750,
     "owner_type": "user",
     "owner_login": "nshkrdotcom"
   },
@@ -1803,8 +1803,8 @@
       "research-framework",
       "statistical-testing"
     ],
-    "updated_at": "2025-10-21T05:48:31Z",
-    "pushed_at": "2025-10-21T05:48:28Z",
+    "updated_at": "2025-10-28T23:04:45Z",
+    "pushed_at": "2025-10-28T23:04:44Z",
     "created_at": "2025-10-10T02:06:26Z",
     "default_branch": "main",
     "open_issues_count": 0,
