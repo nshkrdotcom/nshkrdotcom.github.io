@@ -989,6 +989,24 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-header">
+                            <div class="project-name">gepa_ex</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "gepa_ex").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "gepa_ex").stars }}</div>
+                        </div>
+                        <p class="project-desc">GEPA (Genetic-Pareto) optimizer combining LLM-powered reflection with Pareto search to evolve text-based system components</p>
+                        <a href="https://github.com/nshkrdotcom/gepa_ex" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">snakebridge</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "snakebridge").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "snakebridge").stars }}</div>
+                        </div>
+                        <p class="project-desc">Configuration-driven Python library integration for Elixir - auto-generate type-safe wrappers for any Python library</p>
+                        <a href="https://github.com/nshkrdotcom/snakebridge" class="project-link">View on GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
                             <div class="project-name">weaviate_ex</div>
                             <div class="project-stars{{ if eq (index .Site.Data.repos.repos "weaviate_ex").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "weaviate_ex").stars }}</div>
                         </div>
