@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-10-29T12:38:24Z
+# Last updated: 2025-10-29T13:31:18Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -252,6 +252,12 @@ repos:
     stars: 0
     description: "Elixir client SDK for the Jules API - orchestrate AI coding sessions"
     license: "MIT License"
+
+  gepa_ex:
+    name: gepa_ex
+    org: nshkrdotcom
+    stars: 0
+    description: "Elixir repository"
 
   ex_cloudflare_phoenix:
     name: ex_cloudflare_phoenix
