@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-10-29T16:09:55Z
+# Last updated: 2025-10-29T16:52:26Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -7,7 +7,7 @@ repos:
   synapse:
     name: synapse
     org: nshkrdotcom
-    stars: 0
+    stars: 22
     description: "Synapse: Elixir-powered AI agent orchestration, built on the battle-tested principles of Erlang/OTP. Seamlessly integrate and manage Python's pydantic-ai agents with the BEAM's concurrency, fault tolerance, and distributed might. Finally, a GenServer for your LLM."
     license: "MIT License"
 
@@ -49,14 +49,14 @@ repos:
   snakepit:
     name: snakepit
     org: nshkrdotcom
-    stars: 0
+    stars: 8
     description: "High-performance, generalized process pooler and session manager for external language integrations. Orchestrates and supervises languages like Python and Javascript from Elixir."
     license: "MIT License"
 
   sinter:
     name: sinter
     org: nshkrdotcom
-    stars: 0
+    stars: 8
     description: "Unified schema definition, validation, and JSON generation for Elixir"
     license: "MIT License"
 
@@ -84,27 +84,27 @@ repos:
   superlearner:
     name: superlearner
     org: nshkrdotcom
-    stars: 0
+    stars: 6
     description: "OTP Supervisor Educational Platform"
 
   playwriter:
     name: playwriter
     org: nshkrdotcom
-    stars: 0
+    stars: 6
     description: "Elixir WSL-to-Windows browser integration"
     license: "MIT License"
 
   pipeline_ex:
     name: pipeline_ex
     org: nshkrdotcom
-    stars: 0
+    stars: 6
     description: "Claude Code + Gemini AI collaboration orchestration tools"
     license: "MIT License"
 
   perimeter:
     name: perimeter
     org: nshkrdotcom
-    stars: 0
+    stars: 6
     description: "Advanced typing and type validation mechanism for Elixir - runtime type checking and contract enforcement for BEAM applications"
     license: "MIT License"
 
@@ -132,14 +132,14 @@ repos:
   supertester:
     name: supertester
     org: nshkrdotcom
-    stars: 0
+    stars: 3
     description: "A battle-hardened testing toolkit for building robust and resilient Elixir & OTP applications."
     license: "MIT License"
 
   sandbox:
     name: sandbox
     org: nshkrdotcom
-    stars: 0
+    stars: 3
     description: "Isolated OTP application management system for Elixir/Erlang"
     license: "MIT License"
 
@@ -199,6 +199,20 @@ repos:
     description: "Phoenix/Plug adapter for Apex Arsenal framework"
     license: "MIT License"
 
+  codex_sdk:
+    name: codex_sdk
+    org: nshkrdotcom
+    stars: 1
+    description: "OpenAI Codex SDK written in Elixir"
+    license: "MIT License"
+
+  crucible_harness:
+    name: crucible_harness
+    org: North-Shore-AI
+    stars: 1
+    description: "Experimental research framework for running AI benchmarks at scale"
+    license: "MIT License"
+
   youtube_audio_dl:
     name: youtube_audio_dl
     org: nshkrdotcom
@@ -218,11 +232,32 @@ repos:
     stars: 0
     description: "Utility library and helper functions for Elixir development - common patterns, debugging aids, and productivity tools"
 
+  snakebridge:
+    name: snakebridge
+    org: nshkrdotcom
+    stars: 0
+    description: "Configuration-driven Python library integration for Elixir. Automatically generate type-safe Elixir modules from declarative configs with zero wrapper code. Bridge to Python ML ecosystem (DSPy, NumPy, LangChain) with streaming support, bidirectional tools, and compile-time optimization. Built on Snakepit."
+    license: "MIT License"
+
+  skill_ex:
+    name: skill_ex
+    org: nshkrdotcom
+    stars: 0
+    description: "Elixir repository"
+    license: "MIT License"
+
   jules_ex:
     name: jules_ex
     org: nshkrdotcom
     stars: 0
     description: "Elixir client SDK for the Jules API - orchestrate AI coding sessions"
+    license: "MIT License"
+
+  gepa_ex:
+    name: gepa_ex
+    org: nshkrdotcom
+    stars: 0
+    description: "Elixir implementation of GEPA: LLM-driven evolutionary optimization using Pareto-efficient search for text-based systems. Features OpenAI/Gemini integration, BEAM concurrency, OTP supervision, 218 tests with 75% coverage."
     license: "MIT License"
 
   ex_cloudflare_phoenix:
@@ -251,13 +286,6 @@ repos:
     org: nshkrdotcom
     stars: 0
     description: "DuckDB driver client in Elixir"
-    license: "MIT License"
-
-  codex_sdk:
-    name: codex_sdk
-    org: nshkrdotcom
-    stars: 1
-    description: "OpenAI Codex SDK written in Elixir"
     license: "MIT License"
 
   Citadel:
@@ -307,13 +335,6 @@ repos:
     org: North-Shore-AI
     stars: 0
     description: "Request hedging for tail latency reduction in distributed systems"
-    license: "MIT License"
-
-  crucible_harness:
-    name: crucible_harness
-    org: North-Shore-AI
-    stars: 1
-    description: "Experimental research framework for running AI benchmarks at scale"
     license: "MIT License"
 
   crucible_framework:
