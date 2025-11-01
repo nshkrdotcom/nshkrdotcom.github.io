@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-11-01T01:25:07Z
+# Last updated: 2025-11-01T12:32:27Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -199,6 +199,13 @@ repos:
     description: "Phoenix/Plug adapter for Apex Arsenal framework"
     license: "MIT License"
 
+  jules_ex:
+    name: jules_ex
+    org: nshkrdotcom
+    stars: 1
+    description: "Elixir client SDK for the Jules API - orchestrate AI coding sessions"
+    license: "MIT License"
+
   codex_sdk:
     name: codex_sdk
     org: nshkrdotcom
@@ -244,13 +251,6 @@ repos:
     org: nshkrdotcom
     stars: 0
     description: "Elixir repository"
-    license: "MIT License"
-
-  jules_ex:
-    name: jules_ex
-    org: nshkrdotcom
-    stars: 0
-    description: "Elixir client SDK for the Jules API - orchestrate AI coding sessions"
     license: "MIT License"
 
   gepa_ex:
