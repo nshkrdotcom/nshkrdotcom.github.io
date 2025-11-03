@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-11-01T12:32:27Z
+# Last updated: 2025-11-03T03:15:40Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -39,6 +39,13 @@ repos:
     description: "Elixir infrastructure and Observability Library"
     license: "MIT License"
 
+  sinter:
+    name: sinter
+    org: nshkrdotcom
+    stars: 9
+    description: "Unified schema definition, validation, and JSON generation for Elixir"
+    license: "MIT License"
+
   ex_dbg:
     name: ex_dbg
     org: nshkrdotcom
@@ -51,13 +58,6 @@ repos:
     org: nshkrdotcom
     stars: 8
     description: "High-performance, generalized process pooler and session manager for external language integrations. Orchestrates and supervises languages like Python and Javascript from Elixir."
-    license: "MIT License"
-
-  sinter:
-    name: sinter
-    org: nshkrdotcom
-    stars: 8
-    description: "Unified schema definition, validation, and JSON generation for Elixir"
     license: "MIT License"
 
   exdantic:
