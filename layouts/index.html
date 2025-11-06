@@ -978,6 +978,15 @@
                         <p class="project-desc">Claude Code + Gemini AI collaboration orchestration tools</p>
                         <a href="https://github.com/nshkrdotcom/pipeline_ex" class="project-link">View on GitHub →</a>
                     </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-name">mcp_client</div>
+                            <div class="project-stars{{ if eq (index .Site.Data.repos.repos "mcp_client").stars 0 }} zero-stars{{ end }}">⭐ {{ (index .Site.Data.repos.repos "mcp_client").stars }}</div>
+                        </div>
+                        <p class="project-desc">Full-featured Model Context Protocol client for Elixir with transports, resources, prompts, and tool calling</p>
+                        <a href="https://github.com/nshkrdotcom/mcp_client" class="project-link">View on GitHub →</a>
+                    </div>
                 </div>
             </div>
         </section>
