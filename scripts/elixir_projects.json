@@ -380,15 +380,15 @@
       "sdk",
       "streaming"
     ],
-    "updated_at": "2025-11-11T22:09:48Z",
-    "pushed_at": "2025-11-11T22:09:44Z",
+    "updated_at": "2025-11-11T23:02:39Z",
+    "pushed_at": "2025-11-11T23:02:35Z",
     "created_at": "2025-06-29T01:57:42Z",
     "default_branch": "main",
     "open_issues_count": 1,
     "watchers_count": 8,
     "forks_count": 1,
     "language": "Elixir",
-    "size": 1166,
+    "size": 1294,
     "owner_type": "user",
     "owner_login": "nshkrdotcom"
   },
