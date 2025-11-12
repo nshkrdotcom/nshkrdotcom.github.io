@@ -2,7 +2,7 @@
   {
     "link": "https://github.com/nshkrdotcom/synapse",
     "title": "synapse",
-    "stars": 24,
+    "stars": 25,
     "description": "Declarative, headless multi-agent runtime for code review orchestration with signals, workflows, and Postgres persistence.",
     "private": false,
     "fork": false,
@@ -30,12 +30,12 @@
       "telemetry",
       "workflows"
     ],
-    "updated_at": "2025-11-12T18:56:58Z",
+    "updated_at": "2025-11-12T19:25:24Z",
     "pushed_at": "2025-11-12T18:12:34Z",
     "created_at": "2024-12-26T06:42:52Z",
     "default_branch": "main",
     "open_issues_count": 0,
-    "watchers_count": 24,
+    "watchers_count": 25,
     "forks_count": 1,
     "language": "Elixir",
     "size": 783,
