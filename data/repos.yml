@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-11-13T01:23:10Z
+# Last updated: 2025-11-17T03:14:20Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -39,6 +39,13 @@ repos:
     description: "Elixir infrastructure and Observability Library"
     license: "MIT License"
 
+  snakepit:
+    name: snakepit
+    org: nshkrdotcom
+    stars: 9
+    description: "High-performance, generalized process pooler and session manager for external language integrations. Orchestrates and supervises languages like Python and Javascript from Elixir."
+    license: "MIT License"
+
   sinter:
     name: sinter
     org: nshkrdotcom
@@ -53,11 +60,11 @@ repos:
     description: "State-of-the-Art Introspection and Debugging System for Elixir/Phoenix Applications"
     license: "MIT License"
 
-  snakepit:
-    name: snakepit
+  DSPex:
+    name: DSPex
     org: nshkrdotcom
-    stars: 8
-    description: "High-performance, generalized process pooler and session manager for external language integrations. Orchestrates and supervises languages like Python and Javascript from Elixir."
+    stars: 9
+    description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
     license: "MIT License"
 
   exdantic:
@@ -72,13 +79,6 @@ repos:
     org: nshkrdotcom
     stars: 8
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
-    license: "MIT License"
-
-  DSPex:
-    name: DSPex
-    org: nshkrdotcom
-    stars: 8
-    description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
     license: "MIT License"
 
   superlearner:
