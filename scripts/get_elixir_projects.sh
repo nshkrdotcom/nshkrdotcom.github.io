@@ -6,7 +6,8 @@
 
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-OUTPUT_FILE="${SCRIPT_DIR}/elixir_projects.json"
+# Allow overriding the output location (used when we only want to write on change)
+OUTPUT_FILE="${ELIXIR_PROJECTS_OUTPUT_FILE:-${SCRIPT_DIR}/elixir_projects.json}"
 
 # Parse CLI arguments
 INCLUDE_PRIVATE=false

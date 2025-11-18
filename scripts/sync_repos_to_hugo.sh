@@ -13,12 +13,20 @@ PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 JSON_FILE="$SCRIPT_DIR/elixir_projects.json"
 DATA_FILE="$PROJECT_DIR/data/repos.yml"
 
+# Always fetch into a temporary file so we don't touch the tracked JSON
+# unless we know the star counts actually changed.
+TMP_JSON="$(mktemp)"
+cleanup() {
+  rm -f "$TMP_JSON"
+}
+trap cleanup EXIT
+
 # Step 1: Fetch latest repo data
 echo "📡 Fetching all Elixir repositories from GitHub..."
-bash "$SCRIPT_DIR/get_elixir_projects.sh"
+ELIXIR_PROJECTS_OUTPUT_FILE="$TMP_JSON" bash "$SCRIPT_DIR/get_elixir_projects.sh"
 
 # Step 2: Compare star counts against the existing data file so we only rewrite when needed
-new_digest=$(jq -r '.[] | "\(.title)=\(.stars)"' "$JSON_FILE" | sort)
+new_digest=$(jq -r '.[] | "\(.title)=\(.stars)"' "$TMP_JSON" | sort)
 existing_digest=""
 if [ -f "$DATA_FILE" ]; then
   existing_digest=$(awk '
@@ -37,6 +45,10 @@ if [ -f "$DATA_FILE" ] && [ "$existing_digest" = "$new_digest" ]; then
   echo "✨ No star count changes detected. Skipping update."
   exit 0
 fi
+
+# Promote the temporary JSON to the tracked location now that we know
+# there's an actual change.
+mv "$TMP_JSON" "$JSON_FILE"
 
 # Step 3: Backup existing data file (only when we're about to update)
 if [ -f "$DATA_FILE" ]; then
