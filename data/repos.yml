@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-11-22T01:19:06Z
+# Last updated: 2025-11-22T23:16:26Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -53,6 +53,13 @@ repos:
     description: "Unified schema definition, validation, and JSON generation for Elixir"
     license: "MIT License"
 
+  exdantic:
+    name: exdantic
+    org: nshkrdotcom
+    stars: 9
+    description: "A powerful, flexible schema definition and validation library for Elixir, inspired by Python's Pydantic."
+    license: "MIT License"
+
   ex_dbg:
     name: ex_dbg
     org: nshkrdotcom
@@ -65,13 +72,6 @@ repos:
     org: nshkrdotcom
     stars: 9
     description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
-    license: "MIT License"
-
-  exdantic:
-    name: exdantic
-    org: nshkrdotcom
-    stars: 8
-    description: "A powerful, flexible schema definition and validation library for Elixir, inspired by Python's Pydantic."
     license: "MIT License"
 
   claude_agent_sdk:
