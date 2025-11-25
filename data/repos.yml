@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-11-24T16:20:42Z
+# Last updated: 2025-11-25T07:18:24Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -322,6 +322,13 @@ repos:
     stars: 0
     description: "Elixir SDK for the Tinker ML platform—LoRA training, sampling, and service orchestration built on OTP, Finch, and telemetry."
     license: "Apache License 2.0"
+
+  ex_topology:
+    name: ex_topology
+    org: North-Shore-AI
+    stars: 0
+    description: "Pure Elixir library for graph topology, TDA, and computational topology"
+    license: "MIT License"
 
   crucible_xai:
     name: crucible_xai
