@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-11-25T07:18:24Z
+# Last updated: 2025-11-25T22:17:42Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -413,8 +413,8 @@ repos:
     description: "Phoenix LiveView interface for CNS dialectical reasoning experiments"
     license: "Apache License 2.0"
 
-  cns_experiments:
-    name: cns_experiments
+  cns_crucible:
+    name: cns_crucible
     org: North-Shore-AI
     stars: 0
     description: "Elixir repository"
