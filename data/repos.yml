@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-11-25T22:17:42Z
+# Last updated: 2025-11-26T12:39:26Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -7,7 +7,7 @@ repos:
   synapse:
     name: synapse
     org: nshkrdotcom
-    stars: 26
+    stars: 27
     description: "Declarative, headless multi-agent runtime for code review orchestration with signals, workflows, and Postgres persistence."
     license: "MIT License"
 
