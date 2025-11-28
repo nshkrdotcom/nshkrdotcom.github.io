@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-11-28T20:19:45Z
+# Last updated: 2025-11-28T21:15:25Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -21,7 +21,7 @@ repos:
   gemini_ex:
     name: gemini_ex
     org: nshkrdotcom
-    stars: 19
+    stars: 20
     description: "Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI"
     license: "MIT License"
 
@@ -143,6 +143,13 @@ repos:
     description: "Isolated OTP application management system for Elixir/Erlang"
     license: "MIT License"
 
+  cluster_test:
+    name: cluster_test
+    org: nshkrdotcom
+    stars: 4
+    description: "Distributed Erlang/Elixir test cluster management via Mix tasks"
+    license: "MIT License"
+
   arsenal:
     name: arsenal
     org: nshkrdotcom
@@ -150,11 +157,25 @@ repos:
     description: "Metaprogramming framework for automatic REST API generation from OTP operations"
     license: "MIT License"
 
-  cluster_test:
-    name: cluster_test
+  apex_ui:
+    name: apex_ui
     org: nshkrdotcom
-    stars: 3
-    description: "Distributed Erlang/Elixir test cluster management via Mix tasks"
+    stars: 4
+    description: "Web UI for Apex OTP supervision and monitoring tools"
+    license: "MIT License"
+
+  apex:
+    name: apex
+    org: nshkrdotcom
+    stars: 4
+    description: "Core Apex framework for OTP supervision and monitoring"
+    license: "MIT License"
+
+  ElixirScope:
+    name: ElixirScope
+    org: nshkrdotcom
+    stars: 4
+    description: "AI-Powered Execution Cinema Debugger for Elixir/BEAM"
     license: "MIT License"
 
   cf_ex:
@@ -164,25 +185,11 @@ repos:
     description: "Elixir libraries for Cloudflare edge computing services. Battle-tested BEAM implementations of Cloudflare Calls and Durable Objects."
     license: "MIT License"
 
-  apex_ui:
-    name: apex_ui
+  arsenal_plug:
+    name: arsenal_plug
     org: nshkrdotcom
     stars: 3
-    description: "Web UI for Apex OTP supervision and monitoring tools"
-    license: "MIT License"
-
-  apex:
-    name: apex
-    org: nshkrdotcom
-    stars: 3
-    description: "Core Apex framework for OTP supervision and monitoring"
-    license: "MIT License"
-
-  ElixirScope:
-    name: ElixirScope
-    org: nshkrdotcom
-    stars: 3
-    description: "AI-Powered Execution Cinema Debugger for Elixir/BEAM"
+    description: "Phoenix/Plug adapter for Apex Arsenal framework"
     license: "MIT License"
 
   AutoElixir:
@@ -192,18 +199,44 @@ repos:
     description: "AI Multi Agent Swarms in Elixir"
     license: "MIT License"
 
-  arsenal_plug:
-    name: arsenal_plug
-    org: nshkrdotcom
-    stars: 2
-    description: "Phoenix/Plug adapter for Apex Arsenal framework"
-    license: "MIT License"
-
   jules_ex:
     name: jules_ex
     org: nshkrdotcom
-    stars: 1
+    stars: 2
     description: "Elixir client SDK for the Jules API - orchestrate AI coding sessions"
+    license: "MIT License"
+
+  codex_sdk:
+    name: codex_sdk
+    org: nshkrdotcom
+    stars: 2
+    description: "OpenAI Codex SDK written in Elixir"
+    license: "MIT License"
+
+  youtube_audio_dl:
+    name: youtube_audio_dl
+    org: nshkrdotcom
+    stars: 1
+    description: "Download high-quality audio from YouTube as MP3 files using Elixir. Features 104 music genres, duration filtering, per-genre caching, C++ DSP filters, and ML-based transient detection."
+
+  weaviate_ex:
+    name: weaviate_ex
+    org: nshkrdotcom
+    stars: 1
+    description: "Modern Elixir client for Weaviate vector database with health checks and friendly error messages"
+    license: "MIT License"
+
+  tools:
+    name: tools
+    org: nshkrdotcom
+    stars: 1
+    description: "Utility library and helper functions for Elixir development - common patterns, debugging aids, and productivity tools"
+
+  elixir_tracer:
+    name: elixir_tracer
+    org: nshkrdotcom
+    stars: 1
+    description: "Local-first observability for Elixir with New Relic API parity"
     license: "MIT License"
 
   elixir_dashboard:
@@ -213,11 +246,32 @@ repos:
     description: "A Phoenix LiveView performance monitoring dashboard for tracking slow endpoints and database queries"
     license: "MIT License"
 
-  codex_sdk:
-    name: codex_sdk
+  duckdb_ex:
+    name: duckdb_ex
     org: nshkrdotcom
     stars: 1
-    description: "OpenAI Codex SDK written in Elixir"
+    description: "DuckDB driver client in Elixir"
+    license: "MIT License"
+
+  Citadel:
+    name: Citadel
+    org: nshkrdotcom
+    stars: 1
+    description: "The command and control layer for the AI-powered enterprise"
+    license: "MIT License"
+
+  Assessor:
+    name: Assessor
+    org: nshkrdotcom
+    stars: 1
+    description: "The definitive CI/CD platform for AI Quality."
+    license: "MIT License"
+
+  AITrace:
+    name: AITrace
+    org: nshkrdotcom
+    stars: 1
+    description: "The unified observability layer for the AI Control Plane"
     license: "MIT License"
 
   crucible_harness:
@@ -232,25 +286,6 @@ repos:
     org: North-Shore-AI
     stars: 1
     description: "Interactive Phoenix LiveView demonstrations of the Crucible Framework - showcasing ensemble voting, request hedging, statistical analysis, and more with mock LLMs"
-
-  youtube_audio_dl:
-    name: youtube_audio_dl
-    org: nshkrdotcom
-    stars: 0
-    description: "Download high-quality audio from YouTube as MP3 files using Elixir. Features 104 music genres, duration filtering, per-genre caching, C++ DSP filters, and ML-based transient detection."
-
-  weaviate_ex:
-    name: weaviate_ex
-    org: nshkrdotcom
-    stars: 0
-    description: "Modern Elixir client for Weaviate vector database with health checks and friendly error messages"
-    license: "MIT License"
-
-  tools:
-    name: tools
-    org: nshkrdotcom
-    stars: 0
-    description: "Utility library and helper functions for Elixir development - common patterns, debugging aids, and productivity tools"
 
   snakebridge:
     name: snakebridge
@@ -286,41 +321,6 @@ repos:
     stars: 0
     description: "Cloudflare Durable Objects and Calls for Phoenix Framework"
     license: "Apache License 2.0"
-
-  elixir_tracer:
-    name: elixir_tracer
-    org: nshkrdotcom
-    stars: 0
-    description: "Local-first observability for Elixir with New Relic API parity"
-    license: "MIT License"
-
-  duckdb_ex:
-    name: duckdb_ex
-    org: nshkrdotcom
-    stars: 0
-    description: "DuckDB driver client in Elixir"
-    license: "MIT License"
-
-  Citadel:
-    name: Citadel
-    org: nshkrdotcom
-    stars: 0
-    description: "The command and control layer for the AI-powered enterprise"
-    license: "MIT License"
-
-  Assessor:
-    name: Assessor
-    org: nshkrdotcom
-    stars: 0
-    description: "The definitive CI/CD platform for AI Quality."
-    license: "MIT License"
-
-  AITrace:
-    name: AITrace
-    org: nshkrdotcom
-    stars: 0
-    description: "The unified observability layer for the AI Control Plane"
-    license: "MIT License"
 
   tinkex:
     name: tinkex
