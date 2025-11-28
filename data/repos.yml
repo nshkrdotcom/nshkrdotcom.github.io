@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-11-28T14:18:15Z
+# Last updated: 2025-11-28T20:19:45Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -7,14 +7,14 @@ repos:
   synapse:
     name: synapse
     org: nshkrdotcom
-    stars: 27
+    stars: 28
     description: "Declarative, headless multi-agent runtime for code review orchestration with signals, workflows, and Postgres persistence."
     license: "MIT License"
 
   json_remedy:
     name: json_remedy
     org: nshkrdotcom
-    stars: 20
+    stars: 21
     description: "A practical, multi-layered JSON repair library for Elixir that intelligently fixes malformed JSON strings commonly produced by LLMs, legacy systems, and data pipelines."
     license: "MIT License"
 
@@ -28,64 +28,78 @@ repos:
   ds_ex:
     name: ds_ex
     org: nshkrdotcom
-    stars: 14
+    stars: 15
     description: "DSPEx - Declarative Self-improving Elixir | A BEAM-Native AI Program Optimization Framework"
     license: "MIT License"
 
   foundation:
     name: foundation
     org: nshkrdotcom
-    stars: 10
+    stars: 11
     description: "Elixir infrastructure and Observability Library"
     license: "MIT License"
 
   snakepit:
     name: snakepit
     org: nshkrdotcom
-    stars: 9
+    stars: 10
     description: "High-performance, generalized process pooler and session manager for external language integrations. Orchestrates and supervises languages like Python and Javascript from Elixir."
     license: "MIT License"
 
   sinter:
     name: sinter
     org: nshkrdotcom
-    stars: 9
+    stars: 10
     description: "Unified schema definition, validation, and JSON generation for Elixir"
     license: "MIT License"
 
   exdantic:
     name: exdantic
     org: nshkrdotcom
-    stars: 9
+    stars: 10
     description: "A powerful, flexible schema definition and validation library for Elixir, inspired by Python's Pydantic."
     license: "MIT License"
 
   ex_dbg:
     name: ex_dbg
     org: nshkrdotcom
-    stars: 9
+    stars: 10
     description: "State-of-the-Art Introspection and Debugging System for Elixir/Phoenix Applications"
     license: "MIT License"
 
   DSPex:
     name: DSPex
     org: nshkrdotcom
-    stars: 9
+    stars: 10
     description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
     license: "MIT License"
 
   claude_agent_sdk:
     name: claude_agent_sdk
     org: nshkrdotcom
-    stars: 8
+    stars: 9
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
     license: "MIT License"
 
   superlearner:
     name: superlearner
     org: nshkrdotcom
-    stars: 6
+    stars: 7
     description: "OTP Supervisor Educational Platform"
+
+  pipeline_ex:
+    name: pipeline_ex
+    org: nshkrdotcom
+    stars: 7
+    description: "Claude Code + Gemini AI collaboration orchestration tools"
+    license: "MIT License"
+
+  perimeter:
+    name: perimeter
+    org: nshkrdotcom
+    stars: 7
+    description: "Advanced typing and type validation mechanism for Elixir - runtime type checking and contract enforcement for BEAM applications"
+    license: "MIT License"
 
   playwriter:
     name: playwriter
@@ -94,53 +108,46 @@ repos:
     description: "Elixir WSL-to-Windows browser integration"
     license: "MIT License"
 
-  pipeline_ex:
-    name: pipeline_ex
-    org: nshkrdotcom
-    stars: 6
-    description: "Claude Code + Gemini AI collaboration orchestration tools"
-    license: "MIT License"
-
-  perimeter:
-    name: perimeter
-    org: nshkrdotcom
-    stars: 6
-    description: "Advanced typing and type validation mechanism for Elixir - runtime type checking and contract enforcement for BEAM applications"
-    license: "MIT License"
-
   mabeam:
     name: mabeam
     org: nshkrdotcom
-    stars: 4
+    stars: 5
     description: "Multi-agent systems framework for the BEAM platform - build distributed autonomous agents with OTP supervision and fault tolerance"
     license: "Apache License 2.0"
 
   elixir_scope:
     name: elixir_scope
     org: nshkrdotcom
-    stars: 4
+    stars: 5
     description: "Revolutionary AST-based debugging and code intelligence platform for Elixir applications"
     license: "MIT License"
 
   ALTAR:
     name: ALTAR
     org: nshkrdotcom
-    stars: 4
+    stars: 5
     description: "The Agent & Tool Arbitration Protocol"
     license: "MIT License"
 
   supertester:
     name: supertester
     org: nshkrdotcom
-    stars: 3
+    stars: 4
     description: "A battle-hardened testing toolkit for building robust and resilient Elixir & OTP applications."
     license: "MIT License"
 
   sandbox:
     name: sandbox
     org: nshkrdotcom
-    stars: 3
+    stars: 4
     description: "Isolated OTP application management system for Elixir/Erlang"
+    license: "MIT License"
+
+  arsenal:
+    name: arsenal
+    org: nshkrdotcom
+    stars: 4
+    description: "Metaprogramming framework for automatic REST API generation from OTP operations"
     license: "MIT License"
 
   cluster_test:
@@ -155,13 +162,6 @@ repos:
     org: nshkrdotcom
     stars: 3
     description: "Elixir libraries for Cloudflare edge computing services. Battle-tested BEAM implementations of Cloudflare Calls and Durable Objects."
-    license: "MIT License"
-
-  arsenal:
-    name: arsenal
-    org: nshkrdotcom
-    stars: 3
-    description: "Metaprogramming framework for automatic REST API generation from OTP operations"
     license: "MIT License"
 
   apex_ui:
