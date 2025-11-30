@@ -1,105 +1,202 @@
 #!/bin/bash
 
-# Sync all Elixir repos from GitHub to Hugo data file
-# This script fetches ALL public Elixir repos and generates data/repos.yml
+# Sync all repos from GitHub to Hugo data file with category-based organization
+# Uses nshkr-* topic tags for categorization
+# Repos with nshkr-archive are hidden from site
+# Uncategorized repos appear in "Other Projects"
 
 set -e
 
-echo "🔄 Syncing all Elixir repositories to Hugo data..."
+echo "Syncing repositories to Hugo data..."
 
-# Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
-JSON_FILE="$SCRIPT_DIR/elixir_projects.json"
 DATA_FILE="$PROJECT_DIR/data/repos.yml"
+TMP_FILE="$(mktemp)"
 
-# Always fetch into a temporary file so we don't touch the tracked JSON
-# unless we know the star counts actually changed.
-TMP_JSON="$(mktemp)"
 cleanup() {
-  rm -f "$TMP_JSON"
+    rm -f "$TMP_FILE"
 }
 trap cleanup EXIT
 
-# Step 1: Fetch latest repo data
-echo "📡 Fetching all Elixir repositories from GitHub..."
-ELIXIR_PROJECTS_OUTPUT_FILE="$TMP_JSON" bash "$SCRIPT_DIR/get_elixir_projects.sh"
+# Category definitions (order matters for display)
+declare -A CATEGORY_NAMES=(
+    ["nshkr-crucible"]="Crucible Framework"
+    ["nshkr-ai-agents"]="AI Agent Orchestration"
+    ["nshkr-ai-sdk"]="AI SDKs & API Clients"
+    ["nshkr-ai-infra"]="AI Infrastructure"
+    ["nshkr-schema"]="Schema & Validation"
+    ["nshkr-devtools"]="Developer Tools"
+    ["nshkr-otp"]="OTP & Distributed"
+    ["nshkr-testing"]="Testing & QA"
+    ["nshkr-observability"]="Observability"
+    ["nshkr-cloud"]="Cloud & Edge"
+    ["nshkr-browser"]="Browser Integration"
+    ["nshkr-data"]="Data & Databases"
+    ["nshkr-security"]="Security"
+    ["nshkr-research"]="Research"
+    ["nshkr-utility"]="Utilities"
+)
 
-# Step 2: Compare star counts against the existing data file so we only rewrite when needed
-new_digest=$(jq -r '.[] | "\(.title)=\(.stars)"' "$TMP_JSON" | sort)
-existing_digest=""
+# Display order
+CATEGORY_ORDER=(
+    "nshkr-crucible"
+    "nshkr-ai-agents"
+    "nshkr-ai-sdk"
+    "nshkr-ai-infra"
+    "nshkr-schema"
+    "nshkr-devtools"
+    "nshkr-otp"
+    "nshkr-testing"
+    "nshkr-observability"
+    "nshkr-cloud"
+    "nshkr-browser"
+    "nshkr-data"
+    "nshkr-security"
+    "nshkr-research"
+    "nshkr-utility"
+)
+
+echo "Fetching repos from GitHub..."
+
+# Fetch all public repos with topics from both accounts (handles pagination)
+fetch_repos() {
+    local owner=$1
+    local type=$2  # "users" or "orgs"
+
+    gh api --paginate "${type}/${owner}/repos?per_page=100&type=public" --jq '.[] | {
+        name: .name,
+        full_name: .full_name,
+        html_url: .html_url,
+        description: (.description // ""),
+        stars: .stargazers_count,
+        language: (.language // ""),
+        topics: .topics,
+        fork: .fork,
+        archived: .archived,
+        owner: .owner.login
+    }' 2>/dev/null
+}
+
+# Combine repos from both sources
+{
+    fetch_repos "nshkrdotcom" "users"
+    fetch_repos "North-Shore-AI" "orgs"
+} | jq -s '
+    # Deduplicate by name (prefer higher star count)
+    group_by(.name) | map(sort_by(-.stars) | first) |
+
+    # Filter out archived repos and forks
+    map(select(
+        (.topics | index("nshkr-archive") | not) and
+        (.fork == false)
+    )) |
+
+    # Add category field based on nshkr-* topic
+    map(. + {
+        category: (
+            .topics | map(select(startswith("nshkr-"))) | first // "uncategorized"
+        )
+    }) |
+
+    # Sort by stars within each category
+    sort_by(-.stars)
+' > "$TMP_FILE"
+
+# Check if anything changed
 if [ -f "$DATA_FILE" ]; then
-  existing_digest=$(awk '
-    /^  [^[:space:]][^:]*:/ {
-      repo = $1
-      sub(":$", "", repo)
-      sub(/^[[:space:]]+/, "", repo)
-    }
-    /^[[:space:]]{4}stars:/ {
-      print repo "=" $2
-    }
-  ' "$DATA_FILE" | sort)
+    new_digest=$(jq -r '.[] | "\(.name)=\(.stars)=\(.category)"' "$TMP_FILE" | sort)
+    existing_digest=$(grep -E "^\s{4}stars:|^\s{4}category:|^\s{2}[a-zA-Z]" "$DATA_FILE" 2>/dev/null | \
+        awk '
+            /^  [a-zA-Z]/ { repo = $1; gsub(/:$/, "", repo) }
+            /stars:/ { stars = $2 }
+            /category:/ { cat = $2; print repo "=" stars "=" cat }
+        ' | sort)
+
+    if [ "$existing_digest" = "$new_digest" ]; then
+        echo "No changes detected. Skipping update."
+        exit 0
+    fi
 fi
 
-if [ -f "$DATA_FILE" ] && [ "$existing_digest" = "$new_digest" ]; then
-  echo "✨ No star count changes detected. Skipping update."
-  exit 0
-fi
+echo "Generating Hugo data file..."
 
-# Promote the temporary JSON to the tracked location now that we know
-# there's an actual change.
-mv "$TMP_JSON" "$JSON_FILE"
-
-# Step 3: Backup existing data file (only when we're about to update)
+# Backup existing file
 if [ -f "$DATA_FILE" ]; then
-  cp "$DATA_FILE" "$DATA_FILE.bak"
-  echo "📋 Backup saved to $DATA_FILE.bak"
+    cp "$DATA_FILE" "$DATA_FILE.bak"
 fi
 
-# Step 4: Convert JSON to YAML format Hugo expects
-echo "📝 Converting to Hugo YAML format..."
-
+# Generate YAML header
 cat > "$DATA_FILE" << 'HEADER'
-# Auto-updated repository data
+# Auto-generated repository data with category-based organization
 # Last updated: TIMESTAMP
-# Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
-# Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
+# Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
+# Categories are controlled via GitHub topics (nshkr-*)
+# Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
 
-repos:
 HEADER
 
-# Replace timestamp
 sed -i "s/TIMESTAMP/$(date -u +"%Y-%m-%dT%H:%M:%SZ")/" "$DATA_FILE"
 
-# Convert JSON to YAML entries
-jq -r '.[] |
-  "  " + .title + ":\n" +
-  "    name: " + .title + "\n" +
-  "    org: " + .owner_login + "\n" +
-  "    stars: " + (.stars | tostring) + "\n" +
-  "    description: \"" + .description + "\"\n" +
-  (if .fork then "    fork: true\n" else "" end) +
-  (if .archived then "    archived: true\n" else "" end) +
-  (if .private then "    private: true\n" else "" end) +
-  (if .license then "    license: \"" + .license + "\"\n" else "" end) +
-  ""
-' "$JSON_FILE" >> "$DATA_FILE"
+# Generate categories section
+echo "categories:" >> "$DATA_FILE"
+for cat in "${CATEGORY_ORDER[@]}"; do
+    cat_name="${CATEGORY_NAMES[$cat]}"
+    echo "  ${cat}:" >> "$DATA_FILE"
+    echo "    name: \"${cat_name}\"" >> "$DATA_FILE"
+    echo "    slug: \"${cat}\"" >> "$DATA_FILE"
+done
+echo "  uncategorized:" >> "$DATA_FILE"
+echo "    name: \"Other Projects\"" >> "$DATA_FILE"
+echo "    slug: \"uncategorized\"" >> "$DATA_FILE"
+echo "" >> "$DATA_FILE"
 
-echo "✅ Successfully synced $DATA_FILE with all Elixir repositories"
+# Generate repos section grouped by category
+echo "repos:" >> "$DATA_FILE"
 
-# Show summary
+# Process each category
+for cat in "${CATEGORY_ORDER[@]}" "uncategorized"; do
+    repos_in_cat=$(jq -r --arg cat "$cat" '.[] | select(.category == $cat)' "$TMP_FILE")
+
+    if [ -n "$repos_in_cat" ]; then
+        jq -r --arg cat "$cat" '
+            .[] | select(.category == $cat) |
+            "  " + .name + ":\n" +
+            "    name: \"" + .name + "\"\n" +
+            "    org: \"" + .owner + "\"\n" +
+            "    stars: " + (.stars | tostring) + "\n" +
+            "    category: \"" + .category + "\"\n" +
+            "    description: \"" + (.description | gsub("\""; "\\\"")) + "\"\n" +
+            "    url: \"" + .html_url + "\"\n" +
+            (if .language != "" then "    language: \"" + .language + "\"\n" else "" end) +
+            (if .archived then "    archived: true\n" else "" end)
+        ' "$TMP_FILE" >> "$DATA_FILE"
+    fi
+done
+
+# Summary
 echo ""
-echo "📊 Summary:"
-TOTAL=$(jq 'length' "$JSON_FILE")
-echo "  Total repos: $TOTAL"
-NSHKR=$(jq '[.[] | select(.owner_login == "nshkrdotcom")] | length' "$JSON_FILE")
-echo "  nshkrdotcom: $NSHKR"
-NORTH=$(jq '[.[] | select(.owner_login == "North-Shore-AI")] | length' "$JSON_FILE")
-echo "  North-Shore-AI: $NORTH"
+echo "Sync complete!"
+echo ""
+echo "Summary:"
+total=$(jq 'length' "$TMP_FILE")
+echo "  Total repos: $total"
+echo ""
+echo "By category:"
+for cat in "${CATEGORY_ORDER[@]}"; do
+    count=$(jq --arg cat "$cat" '[.[] | select(.category == $cat)] | length' "$TMP_FILE")
+    if [ "$count" -gt 0 ]; then
+        echo "  ${CATEGORY_NAMES[$cat]}: $count"
+    fi
+done
+uncat=$(jq '[.[] | select(.category == "uncategorized")] | length' "$TMP_FILE")
+if [ "$uncat" -gt 0 ]; then
+    echo "  Other Projects: $uncat"
+fi
 
 echo ""
-echo "⭐ Top 10 repositories by stars:"
-jq -r '.[:10] | .[] | "  ★" + (.stars | tostring) + " " + .title' "$JSON_FILE"
+echo "Top repos by stars:"
+jq -r '.[:10] | .[] | "  \(.stars) \(.name)"' "$TMP_FILE"
 
 echo ""
-echo "🎉 Done! Run 'hugo' to rebuild the site with updated star counts."
+echo "Data written to: $DATA_FILE"

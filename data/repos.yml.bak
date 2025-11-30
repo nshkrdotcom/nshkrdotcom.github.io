@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-11-30T03:38:11Z
+# Last updated: 2025-11-30T03:37:19Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -208,15 +208,6 @@ repos:
     url: "https://github.com/North-Shore-AI/crucible_xai"
     language: "Elixir"
 
-  synapse:
-    name: "synapse"
-    org: "nshkrdotcom"
-    stars: 29
-    category: "nshkr-ai-agents"
-    description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
-    url: "https://github.com/nshkrdotcom/synapse"
-    language: "Elixir"
-
   ds_ex:
     name: "ds_ex"
     org: "nshkrdotcom"
@@ -233,15 +224,6 @@ repos:
     category: "nshkr-ai-agents"
     description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
     url: "https://github.com/nshkrdotcom/DSPex"
-    language: "Elixir"
-
-  pipeline_ex:
-    name: "pipeline_ex"
-    org: "nshkrdotcom"
-    stars: 7
-    category: "nshkr-ai-agents"
-    description: "Claude Code + Gemini AI collaboration orchestration tools"
-    url: "https://github.com/nshkrdotcom/pipeline_ex"
     language: "Elixir"
 
   ALTAR:
@@ -316,15 +298,6 @@ repos:
     url: "https://github.com/nshkrdotcom/json_remedy"
     language: "Elixir"
 
-  snakepit:
-    name: "snakepit"
-    org: "nshkrdotcom"
-    stars: 10
-    category: "nshkr-ai-infra"
-    description: "High-performance, generalized process pooler and session manager for external language integrations. Orchestrates and supervises languages like Python and Javascript from Elixir."
-    url: "https://github.com/nshkrdotcom/snakepit"
-    language: "Elixir"
-
   tinkerer:
     name: "tinkerer"
     org: "North-Shore-AI"
@@ -352,24 +325,6 @@ repos:
     url: "https://github.com/nshkrdotcom/gepa_ex"
     language: "Elixir"
 
-  skill_ex:
-    name: "skill_ex"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: ""
-    url: "https://github.com/nshkrdotcom/skill_ex"
-    language: "Elixir"
-
-  snakebridge:
-    name: "snakebridge"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Configuration-driven Python library integration for Elixir. Automatically generate type-safe Elixir modules from declarative configs with zero wrapper code. Bridge to Python ML ecosystem (DSPy, NumPy, LangChain) with streaming support, bidirectional tools, and compile-time optimization. Built on Snakepit."
-    url: "https://github.com/nshkrdotcom/snakebridge"
-    language: "Elixir"
-
   exdantic:
     name: "exdantic"
     org: "nshkrdotcom"
@@ -377,24 +332,6 @@ repos:
     category: "nshkr-schema"
     description: "A powerful, flexible schema definition and validation library for Elixir, inspired by Python's Pydantic."
     url: "https://github.com/nshkrdotcom/exdantic"
-    language: "Elixir"
-
-  sinter:
-    name: "sinter"
-    org: "nshkrdotcom"
-    stars: 10
-    category: "nshkr-schema"
-    description: "Unified schema definition, validation, and JSON generation for Elixir"
-    url: "https://github.com/nshkrdotcom/sinter"
-    language: "Elixir"
-
-  perimeter:
-    name: "perimeter"
-    org: "nshkrdotcom"
-    stars: 7
-    category: "nshkr-schema"
-    description: "Advanced typing and type validation mechanism for Elixir - runtime type checking and contract enforcement for BEAM applications"
-    url: "https://github.com/nshkrdotcom/perimeter"
     language: "Elixir"
 
   ex_dbg:
@@ -442,15 +379,6 @@ repos:
     url: "https://github.com/nshkrdotcom/elixir_tracer"
     language: "Elixir"
 
-  superlearner:
-    name: "superlearner"
-    org: "nshkrdotcom"
-    stars: 7
-    category: "nshkr-otp"
-    description: "OTP Supervisor Educational Platform"
-    url: "https://github.com/nshkrdotcom/superlearner"
-    language: "Elixir"
-
   apex:
     name: "apex"
     org: "nshkrdotcom"
@@ -496,24 +424,6 @@ repos:
     url: "https://github.com/nshkrdotcom/cluster_test"
     language: "Elixir"
 
-  sandbox:
-    name: "sandbox"
-    org: "nshkrdotcom"
-    stars: 4
-    category: "nshkr-testing"
-    description: "Isolated OTP application management system for Elixir/Erlang"
-    url: "https://github.com/nshkrdotcom/sandbox"
-    language: "Elixir"
-
-  supertester:
-    name: "supertester"
-    org: "nshkrdotcom"
-    stars: 4
-    category: "nshkr-testing"
-    description: "A battle-hardened testing toolkit for building robust and resilient Elixir & OTP applications."
-    url: "https://github.com/nshkrdotcom/supertester"
-    language: "Elixir"
-
   foundation:
     name: "foundation"
     org: "nshkrdotcom"
@@ -541,15 +451,6 @@ repos:
     url: "https://github.com/nshkrdotcom/Citadel"
     language: "Elixir"
 
-  playwriter:
-    name: "playwriter"
-    org: "nshkrdotcom"
-    stars: 6
-    category: "nshkr-browser"
-    description: "Elixir WSL-to-Windows browser integration"
-    url: "https://github.com/nshkrdotcom/playwriter"
-    language: "Elixir"
-
   duckdb_ex:
     name: "duckdb_ex"
     org: "nshkrdotcom"
@@ -557,15 +458,6 @@ repos:
     category: "nshkr-data"
     description: "DuckDB driver client in Elixir"
     url: "https://github.com/nshkrdotcom/duckdb_ex"
-    language: "Elixir"
-
-  weaviate_ex:
-    name: "weaviate_ex"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-data"
-    description: "Modern Elixir client for Weaviate vector database with health checks and friendly error messages"
-    url: "https://github.com/nshkrdotcom/weaviate_ex"
     language: "Elixir"
 
   ex_topology:
@@ -592,22 +484,6 @@ repos:
     category: "nshkr-security"
     description: "Secure Computing in the AI age"
     url: "https://github.com/nshkrdotcom/ASKA"
-
-  pqc-hqc:
-    name: "pqc-hqc"
-    org: "nshkrdotcom"
-    stars: 5
-    category: "nshkr-security"
-    description: "Post-quantum cryptographic implementation of HQC (Hamming Quasi-Cyclic) - a NIST PQC candidate for quantum-resistant key encapsulation using code-based cryptography"
-    url: "https://github.com/nshkrdotcom/pqc-hqc"
-
-  Shield:
-    name: "Shield"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-security"
-    description: "SHIELD: Secure Hierarchical Inter-agent Layer for Distributed Environments"
-    url: "https://github.com/nshkrdotcom/Shield"
 
   ChronoLedger:
     name: "ChronoLedger"
@@ -642,23 +518,5 @@ repos:
     category: "nshkr-research"
     description: "Phoenix LiveView interface for CNS dialectical reasoning experiments"
     url: "https://github.com/North-Shore-AI/cns_ui"
-    language: "Elixir"
-
-  tools:
-    name: "tools"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-utility"
-    description: "Utility library and helper functions for Elixir development - common patterns, debugging aids, and productivity tools"
-    url: "https://github.com/nshkrdotcom/tools"
-    language: "Elixir"
-
-  youtube_audio_dl:
-    name: "youtube_audio_dl"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-utility"
-    description: "Download high-quality audio from YouTube as MP3 files using Elixir. Features 104 music genres, duration filtering, per-genre caching, C++ DSP filters, and ML-based transient detection."
-    url: "https://github.com/nshkrdotcom/youtube_audio_dl"
     language: "Elixir"
 
