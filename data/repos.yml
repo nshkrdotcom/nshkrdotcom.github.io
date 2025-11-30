@@ -1,5 +1,5 @@
 # Auto-updated repository data
-# Last updated: 2025-11-28T21:15:25Z
+# Last updated: 2025-11-30T03:25:25Z
 # Do not edit manually - this file is updated by scripts/sync_repos_to_hugo.sh
 # Source: All public Elixir repos from nshkrdotcom and North-Shore-AI
 
@@ -7,8 +7,8 @@ repos:
   synapse:
     name: synapse
     org: nshkrdotcom
-    stars: 28
-    description: "Declarative, headless multi-agent runtime for code review orchestration with signals, workflows, and Postgres persistence."
+    stars: 29
+    description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     license: "MIT License"
 
   json_remedy:
@@ -274,6 +274,13 @@ repos:
     description: "The unified observability layer for the AI Control Plane"
     license: "MIT License"
 
+  tinkex:
+    name: tinkex
+    org: North-Shore-AI
+    stars: 1
+    description: "Elixir SDK for the Tinker ML platform—LoRA training, sampling, and service orchestration built on OTP, Finch, and telemetry."
+    license: "Apache License 2.0"
+
   crucible_harness:
     name: crucible_harness
     org: North-Shore-AI
@@ -320,13 +327,6 @@ repos:
     org: nshkrdotcom
     stars: 0
     description: "Cloudflare Durable Objects and Calls for Phoenix Framework"
-    license: "Apache License 2.0"
-
-  tinkex:
-    name: tinkex
-    org: North-Shore-AI
-    stars: 0
-    description: "Elixir SDK for the Tinker ML platform—LoRA training, sampling, and service orchestration built on OTP, Finch, and telemetry."
     license: "Apache License 2.0"
 
   ex_topology:
