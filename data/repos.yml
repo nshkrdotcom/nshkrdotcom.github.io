@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-11-30T03:38:11Z
+# Last updated: 2025-11-30T12:15:32Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -661,4 +661,13 @@ repos:
     description: "Download high-quality audio from YouTube as MP3 files using Elixir. Features 104 music genres, duration filtering, per-genre caching, C++ DSP filters, and ML-based transient detection."
     url: "https://github.com/nshkrdotcom/youtube_audio_dl"
     language: "Elixir"
+
+  nshkrdotcom:
+    name: "nshkrdotcom"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "uncategorized"
+    description: "Personal GitHub profile README with Elixir/AI projects and LLM reliability research"
+    url: "https://github.com/nshkrdotcom/nshkrdotcom"
+    language: "Shell"
 
