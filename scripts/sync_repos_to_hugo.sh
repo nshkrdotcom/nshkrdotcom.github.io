@@ -121,11 +121,6 @@ fi
 
 echo "Generating Hugo data file..."
 
-# Backup existing file
-if [ -f "$DATA_FILE" ]; then
-    cp "$DATA_FILE" "$DATA_FILE.bak"
-fi
-
 # Generate YAML header
 cat > "$DATA_FILE" << 'HEADER'
 # Auto-generated repository data with category-based organization
