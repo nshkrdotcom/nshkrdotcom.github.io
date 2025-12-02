@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-02T00:44:53Z
+# Last updated: 2025-12-02T03:29:07Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -8,6 +8,9 @@ categories:
   nshkr-crucible:
     name: "Crucible Framework"
     slug: "nshkr-crucible"
+  nshkr-ingot:
+    name: "Ingot Data Labeling"
+    slug: "nshkr-ingot"
   nshkr-ai-agents:
     name: "AI Agent Orchestration"
     slug: "nshkr-ai-agents"
@@ -206,6 +209,33 @@ repos:
     category: "nshkr-crucible"
     description: "Explainable AI (XAI) tools for the Crucible framework"
     url: "https://github.com/North-Shore-AI/crucible_xai"
+    language: "Elixir"
+
+  anvil:
+    name: "anvil"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-ingot"
+    description: "Labeling queue library for managing human labeling workflows"
+    url: "https://github.com/North-Shore-AI/anvil"
+    language: "Elixir"
+
+  forge:
+    name: "forge"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-ingot"
+    description: "Sample factory library for generating, transforming, and computing measurements on samples"
+    url: "https://github.com/North-Shore-AI/forge"
+    language: "Elixir"
+
+  ingot:
+    name: "ingot"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-ingot"
+    description: "Phoenix LiveView interface for sample generation and human labeling workflows"
+    url: "https://github.com/North-Shore-AI/ingot"
     language: "Elixir"
 
   synapse:

@@ -22,6 +22,7 @@ trap cleanup EXIT
 # Category definitions (order matters for display)
 declare -A CATEGORY_NAMES=(
     ["nshkr-crucible"]="Crucible Framework"
+    ["nshkr-ingot"]="Ingot Data Labeling"
     ["nshkr-ai-agents"]="AI Agent Orchestration"
     ["nshkr-ai-sdk"]="AI SDKs & API Clients"
     ["nshkr-ai-infra"]="AI Infrastructure"
@@ -41,6 +42,7 @@ declare -A CATEGORY_NAMES=(
 # Display order
 CATEGORY_ORDER=(
     "nshkr-crucible"
+    "nshkr-ingot"
     "nshkr-ai-agents"
     "nshkr-ai-sdk"
     "nshkr-ai-infra"
