@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-02T03:29:07Z
+# Last updated: 2025-12-02T03:53:24Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -8,54 +8,71 @@ categories:
   nshkr-crucible:
     name: "Crucible Framework"
     slug: "nshkr-crucible"
+    weight: 0
   nshkr-ingot:
     name: "Ingot Data Labeling"
     slug: "nshkr-ingot"
+    weight: 1
   nshkr-ai-agents:
     name: "AI Agent Orchestration"
     slug: "nshkr-ai-agents"
+    weight: 2
   nshkr-ai-sdk:
     name: "AI SDKs & API Clients"
     slug: "nshkr-ai-sdk"
+    weight: 3
   nshkr-ai-infra:
     name: "AI Infrastructure"
     slug: "nshkr-ai-infra"
+    weight: 4
   nshkr-schema:
     name: "Schema & Validation"
     slug: "nshkr-schema"
+    weight: 5
   nshkr-devtools:
     name: "Developer Tools"
     slug: "nshkr-devtools"
+    weight: 6
   nshkr-otp:
     name: "OTP & Distributed"
     slug: "nshkr-otp"
+    weight: 7
   nshkr-testing:
     name: "Testing & QA"
     slug: "nshkr-testing"
+    weight: 8
   nshkr-observability:
     name: "Observability"
     slug: "nshkr-observability"
+    weight: 9
   nshkr-cloud:
     name: "Cloud & Edge"
     slug: "nshkr-cloud"
+    weight: 10
   nshkr-browser:
     name: "Browser Integration"
     slug: "nshkr-browser"
+    weight: 11
   nshkr-data:
     name: "Data & Databases"
     slug: "nshkr-data"
+    weight: 12
   nshkr-security:
     name: "Security"
     slug: "nshkr-security"
+    weight: 13
   nshkr-research:
     name: "Research"
     slug: "nshkr-research"
+    weight: 14
   nshkr-utility:
     name: "Utilities"
     slug: "nshkr-utility"
+    weight: 15
   uncategorized:
     name: "Other Projects"
     slug: "uncategorized"
+    weight: 999
 
 repos:
   crucible_examples:

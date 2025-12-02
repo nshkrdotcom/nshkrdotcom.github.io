@@ -135,17 +135,21 @@ HEADER
 
 sed -i "s/TIMESTAMP/$(date -u +"%Y-%m-%dT%H:%M:%SZ")/" "$DATA_FILE"
 
-# Generate categories section
+# Generate categories section with weights for ordering
 echo "categories:" >> "$DATA_FILE"
+weight=0
 for cat in "${CATEGORY_ORDER[@]}"; do
     cat_name="${CATEGORY_NAMES[$cat]}"
     echo "  ${cat}:" >> "$DATA_FILE"
     echo "    name: \"${cat_name}\"" >> "$DATA_FILE"
     echo "    slug: \"${cat}\"" >> "$DATA_FILE"
+    echo "    weight: ${weight}" >> "$DATA_FILE"
+    weight=$((weight + 1))
 done
 echo "  uncategorized:" >> "$DATA_FILE"
 echo "    name: \"Other Projects\"" >> "$DATA_FILE"
 echo "    slug: \"uncategorized\"" >> "$DATA_FILE"
+echo "    weight: 999" >> "$DATA_FILE"
 echo "" >> "$DATA_FILE"
 
 # Generate repos section grouped by category

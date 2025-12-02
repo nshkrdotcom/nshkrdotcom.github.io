@@ -723,8 +723,13 @@
             </div>
         </section>
 
-        {{/* Dynamic project sections - iterate over categories from data/repos.yml */}}
-        {{ range $catSlug, $catInfo := $.Site.Data.repos.categories }}
+        {{/* Dynamic project sections - iterate over categories from data/repos.yml, sorted by weight */}}
+        {{ $catList := slice }}
+        {{ range $slug, $info := $.Site.Data.repos.categories }}
+            {{ $catList = $catList | append (dict "slug" $slug "name" $info.name "weight" (default 999 $info.weight)) }}
+        {{ end }}
+        {{ range $catInfo := sort $catList "weight" }}
+            {{ $catSlug := $catInfo.slug }}
                 {{/* Collect repos in this category */}}
                 {{ $catRepos := slice }}
                 {{ range $name, $repo := $.Site.Data.repos.repos }}
