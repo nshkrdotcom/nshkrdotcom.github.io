@@ -723,13 +723,8 @@
             </div>
         </section>
 
-        {{/* Dynamic project sections - generated from data/repos.yml categories */}}
-        {{ $categories := slice "nshkr-crucible" "nshkr-ingot" "nshkr-ai-agents" "nshkr-ai-sdk" "nshkr-ai-infra" "nshkr-schema" "nshkr-devtools" "nshkr-otp" "nshkr-testing" "nshkr-observability" "nshkr-cloud" "nshkr-browser" "nshkr-data" "nshkr-security" "nshkr-research" "nshkr-utility" "uncategorized" }}
-
-        {{ range $catSlug := $categories }}
-            {{/* Get category info */}}
-            {{ $catInfo := index $.Site.Data.repos.categories $catSlug }}
-            {{ if $catInfo }}
+        {{/* Dynamic project sections - iterate over categories from data/repos.yml */}}
+        {{ range $catSlug, $catInfo := $.Site.Data.repos.categories }}
                 {{/* Collect repos in this category */}}
                 {{ $catRepos := slice }}
                 {{ range $name, $repo := $.Site.Data.repos.repos }}
@@ -773,7 +768,6 @@
                         </div>
                     </section>
                 {{ end }}
-            {{ end }}
         {{ end }}
 
 
