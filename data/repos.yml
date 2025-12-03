@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-03T00:44:32Z
+# Last updated: 2025-12-03T12:18:45Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -75,6 +75,15 @@ categories:
     weight: 999
 
 repos:
+  LlmGuard:
+    name: "LlmGuard"
+    org: "North-Shore-AI"
+    stars: 2
+    category: "nshkr-crucible"
+    description: "AI Firewall and guardrails for LLM-based Elixir applications"
+    url: "https://github.com/North-Shore-AI/LlmGuard"
+    language: "Elixir"
+
   crucible_examples:
     name: "crucible_examples"
     org: "North-Shore-AI"
@@ -100,15 +109,6 @@ repos:
     category: "nshkr-crucible"
     description: "Fairness and bias detection library for Elixir AI/ML systems"
     url: "https://github.com/North-Shore-AI/ExFairness"
-    language: "Elixir"
-
-  LlmGuard:
-    name: "LlmGuard"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "AI Firewall and guardrails for LLM-based Elixir applications"
-    url: "https://github.com/North-Shore-AI/LlmGuard"
     language: "Elixir"
 
   cns_crucible:
@@ -253,6 +253,15 @@ repos:
     category: "nshkr-ingot"
     description: "Phoenix LiveView interface for sample generation and human labeling workflows"
     url: "https://github.com/North-Shore-AI/ingot"
+    language: "Elixir"
+
+  labeling_ir:
+    name: "labeling_ir"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-ingot"
+    description: "Shared IR structs for the North Shore labeling stack (Forge/Anvil/Ingot) — typed datasets, samples, assignments, labels, artifacts, and evaluation runs for labeling workflows"
+    url: "https://github.com/North-Shore-AI/labeling_ir"
     language: "Elixir"
 
   synapse:
@@ -716,15 +725,6 @@ repos:
     category: "nshkr-utility"
     description: "Download high-quality audio from YouTube as MP3 files using Elixir. Features 104 music genres, duration filtering, per-genre caching, C++ DSP filters, and ML-based transient detection."
     url: "https://github.com/nshkrdotcom/youtube_audio_dl"
-    language: "Elixir"
-
-  labeling_ir:
-    name: "labeling_ir"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "uncategorized"
-    description: ""
-    url: "https://github.com/North-Shore-AI/labeling_ir"
     language: "Elixir"
 
   nshkrdotcom:
