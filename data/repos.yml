@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-02T12:19:33Z
+# Last updated: 2025-12-03T00:44:32Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -258,7 +258,7 @@ repos:
   synapse:
     name: "synapse"
     org: "nshkrdotcom"
-    stars: 29
+    stars: 30
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
@@ -716,6 +716,15 @@ repos:
     category: "nshkr-utility"
     description: "Download high-quality audio from YouTube as MP3 files using Elixir. Features 104 music genres, duration filtering, per-genre caching, C++ DSP filters, and ML-based transient detection."
     url: "https://github.com/nshkrdotcom/youtube_audio_dl"
+    language: "Elixir"
+
+  labeling_ir:
+    name: "labeling_ir"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "uncategorized"
+    description: ""
+    url: "https://github.com/North-Shore-AI/labeling_ir"
     language: "Elixir"
 
   nshkrdotcom:
