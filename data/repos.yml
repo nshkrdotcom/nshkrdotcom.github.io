@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-04T00:44:40Z
+# Last updated: 2025-12-04T12:19:12Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -267,7 +267,7 @@ repos:
   synapse:
     name: "synapse"
     org: "nshkrdotcom"
-    stars: 30
+    stars: 31
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
@@ -510,7 +510,7 @@ repos:
   superlearner:
     name: "superlearner"
     org: "nshkrdotcom"
-    stars: 7
+    stars: 8
     category: "nshkr-otp"
     description: "OTP Supervisor Educational Platform"
     url: "https://github.com/nshkrdotcom/superlearner"
@@ -640,6 +640,15 @@ repos:
     category: "nshkr-data"
     description: "Pure Elixir library for graph topology, TDA, and computational topology"
     url: "https://github.com/North-Shore-AI/ex_topology"
+    language: "Elixir"
+
+  nx_penalties:
+    name: "nx_penalties"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-data"
+    description: "Composable regularization penalties for Elixir Nx. L1/L2/Elastic Net, KL divergence, entropy, consistency, gradient penalty, orthogonality. Pure Nx.Defn for JIT across EXLA/Torchx. Pipeline composition and Axon.Loop integration."
+    url: "https://github.com/North-Shore-AI/nx_penalties"
     language: "Elixir"
 
   GUARDRAIL:
