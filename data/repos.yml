@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-06T12:15:47Z
+# Last updated: 2025-12-07T00:50:48Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -228,6 +228,33 @@ repos:
     url: "https://github.com/North-Shore-AI/crucible_xai"
     language: "Elixir"
 
+  datasets_ex:
+    name: "datasets_ex"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Dataset management library for ML experiments—loaders for SciFact, FEVER, GSM8K, HumanEval, MMLU, TruthfulQA, HellaSwag; git-like versioning with lineage tracking; transformation pipelines; quality validation with schema checks and duplicate detection; GenStage streaming for large datasets. Built for reproducible AI research."
+    url: "https://github.com/North-Shore-AI/datasets_ex"
+    language: "Elixir"
+
+  eval_ex:
+    name: "eval_ex"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Model evaluation harness for standardized benchmarking—comprehensive metrics (F1, BLEU, ROUGE, METEOR, BERTScore, pass@k), statistical analysis (confidence intervals, effect size, bootstrap CI, ANOVA), multi-model comparison, and report generation. Research-grade evaluation for LLM and ML experiments."
+    url: "https://github.com/North-Shore-AI/eval_ex"
+    language: "Elixir"
+
+  metrics_ex:
+    name: "metrics_ex"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Metrics aggregation and alerting for ML experiments—multi-backend export (Prometheus, InfluxDB, Datadog, OpenTelemetry), advanced aggregations (percentiles, histograms, moving averages), threshold-based alerting with anomaly detection (z-score, IQR), and time-series storage. Research-grade observability for the NSAI ecosystem."
+    url: "https://github.com/North-Shore-AI/metrics_ex"
+    language: "Elixir"
+
   anvil:
     name: "anvil"
     org: "North-Shore-AI"
@@ -327,6 +354,15 @@ repos:
     url: "https://github.com/nshkrdotcom/flowstone"
     language: "Elixir"
 
+  synapse_ai:
+    name: "synapse_ai"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-agents"
+    description: "Synapse integration for altar_ai - SDK-backed LLM providers for multi-agent workflows with automatic fallback, signal handlers, and workflow actions"
+    url: "https://github.com/nshkrdotcom/synapse_ai"
+    language: "Elixir"
+
   gemini_ex:
     name: "gemini_ex"
     org: "nshkrdotcom"
@@ -363,6 +399,15 @@ repos:
     url: "https://github.com/nshkrdotcom/jules_ex"
     language: "Elixir"
 
+  altar_ai:
+    name: "altar_ai"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-sdk"
+    description: "Protocol-based AI adapter foundation for Elixir - unified abstractions for gemini_ex, claude_agent_sdk, codex_sdk with automatic fallback, capability detection, and telemetry"
+    url: "https://github.com/nshkrdotcom/altar_ai"
+    language: "Elixir"
+
   mcp_client:
     name: "mcp_client"
     org: "nshkrdotcom"
@@ -390,6 +435,15 @@ repos:
     url: "https://github.com/nshkrdotcom/snakepit"
     language: "Elixir"
 
+  tinkex:
+    name: "tinkex"
+    org: "North-Shore-AI"
+    stars: 2
+    category: "nshkr-ai-infra"
+    description: "Elixir SDK for the Tinker ML platform—LoRA training, sampling, and service orchestration built on OTP, Finch, and telemetry."
+    url: "https://github.com/North-Shore-AI/tinkex"
+    language: "Elixir"
+
   tinkerer:
     name: "tinkerer"
     org: "North-Shore-AI"
@@ -399,13 +453,13 @@ repos:
     url: "https://github.com/North-Shore-AI/tinkerer"
     language: "Python"
 
-  tinkex:
-    name: "tinkex"
-    org: "North-Shore-AI"
-    stars: 1
+  flowstone_ai:
+    name: "flowstone_ai"
+    org: "nshkrdotcom"
+    stars: 0
     category: "nshkr-ai-infra"
-    description: "Elixir SDK for the Tinker ML platform—LoRA training, sampling, and service orchestration built on OTP, Finch, and telemetry."
-    url: "https://github.com/North-Shore-AI/tinkex"
+    description: "FlowStone integration for altar_ai - AI-powered data pipeline assets with classify_each, enrich_each, embed_each helpers and unified telemetry"
+    url: "https://github.com/nshkrdotcom/flowstone_ai"
     language: "Elixir"
 
   gepa_ex:
@@ -415,6 +469,33 @@ repos:
     category: "nshkr-ai-infra"
     description: "Elixir implementation of GEPA: LLM-driven evolutionary optimization using Pareto-efficient search for text-based systems. Features OpenAI/Gemini integration, BEAM concurrency, OTP supervision, 218 tests with 75% coverage."
     url: "https://github.com/nshkrdotcom/gepa_ex"
+    language: "Elixir"
+
+  nsai_gateway:
+    name: "nsai_gateway"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Unified API gateway for the NSAI ecosystem—authentication (JWT, API keys, OAuth2/OIDC), distributed rate limiting with burst allowance, circuit breakers, request tracing, Prometheus metrics, and service proxying. Production-ready with comprehensive observability and multi-tenant support."
+    url: "https://github.com/North-Shore-AI/nsai_gateway"
+    language: "Elixir"
+
+  nsai_registry:
+    name: "nsai_registry"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Service discovery and registry for the NSAI ecosystem—distributed registry with health checking, circuit breakers, multiple storage backends (ETS/PostgreSQL), PubSub event broadcasting, and comprehensive telemetry. Built on OTP with Horde-ready architecture for multi-node deployments."
+    url: "https://github.com/North-Shore-AI/nsai_registry"
+    language: "Elixir"
+
+  pilot:
+    name: "pilot"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Interactive CLI and REPL for the NSAI ecosystem—unified interface to registry, gateway, jobs, experiments, datasets, embeddings, and metrics services; tab completion with bash/zsh scripts; configurable environments; JSON output mode for scripting; escript distribution. The cockpit for North Shore AI operations."
+    url: "https://github.com/North-Shore-AI/pilot"
     language: "Elixir"
 
   skill_ex:
@@ -624,6 +705,15 @@ repos:
     url: "https://github.com/nshkrdotcom/duckdb_ex"
     language: "Elixir"
 
+  embed_ex:
+    name: "embed_ex"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-data"
+    description: "Vector embeddings service for Elixir—multi-provider support (OpenAI, Cohere, Voyage AI), intelligent caching with Cachex, batch processing with rate limiting, Nx-powered similarity computations, k-means/DBSCAN clustering, semantic deduplication, and ETS-based vector storage. Built for CNS and ML pipelines."
+    url: "https://github.com/North-Shore-AI/embed_ex"
+    language: "Elixir"
+
   weaviate_ex:
     name: "weaviate_ex"
     org: "nshkrdotcom"
@@ -744,4 +834,13 @@ repos:
     description: "Personal GitHub profile README with Elixir/AI projects and LLM reliability research"
     url: "https://github.com/nshkrdotcom/nshkrdotcom"
     language: "Shell"
+
+  work:
+    name: "work"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "uncategorized"
+    description: "NSAI.Work - Unified job scheduler for North-Shore-AI platform"
+    url: "https://github.com/North-Shore-AI/work"
+    language: "Elixir"
 
