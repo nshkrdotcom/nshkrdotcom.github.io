@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-10T12:19:09Z
+# Last updated: 2025-12-11T00:47:12Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -330,7 +330,7 @@ repos:
   ALTAR:
     name: "ALTAR"
     org: "nshkrdotcom"
-    stars: 5
+    stars: 6
     category: "nshkr-ai-agents"
     description: "The Agent & Tool Arbitration Protocol"
     url: "https://github.com/nshkrdotcom/ALTAR"
