@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-13T00:43:25Z
+# Last updated: 2025-12-13T12:16:00Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -514,6 +514,15 @@ repos:
     category: "nshkr-ai-infra"
     description: "Configuration-driven Python library integration for Elixir. Automatically generate type-safe Elixir modules from declarative configs with zero wrapper code. Bridge to Python ML ecosystem (DSPy, NumPy, LangChain) with streaming support, bidirectional tools, and compile-time optimization. Built on Snakepit."
     url: "https://github.com/nshkrdotcom/snakebridge"
+    language: "Elixir"
+
+  tiktoken_ex:
+    name: "tiktoken_ex"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Pure Elixir TikToken-style byte-level BPE tokenizer (Kimi K2 compatible)."
+    url: "https://github.com/North-Shore-AI/tiktoken_ex"
     language: "Elixir"
 
   exdantic:
