@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-15T12:20:09Z
+# Last updated: 2025-12-16T00:46:47Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -258,7 +258,7 @@ repos:
   anvil:
     name: "anvil"
     org: "North-Shore-AI"
-    stars: 0
+    stars: 1
     category: "nshkr-ingot"
     description: "Labeling queue library for managing human labeling workflows"
     url: "https://github.com/North-Shore-AI/anvil"
@@ -267,7 +267,7 @@ repos:
   forge:
     name: "forge"
     org: "North-Shore-AI"
-    stars: 0
+    stars: 1
     category: "nshkr-ingot"
     description: "Sample factory library for generating, transforming, and computing measurements on samples"
     url: "https://github.com/North-Shore-AI/forge"
@@ -276,7 +276,7 @@ repos:
   ingot:
     name: "ingot"
     org: "North-Shore-AI"
-    stars: 0
+    stars: 1
     category: "nshkr-ingot"
     description: "Phoenix LiveView interface for sample generation and human labeling workflows"
     url: "https://github.com/North-Shore-AI/ingot"
@@ -285,7 +285,7 @@ repos:
   labeling_ir:
     name: "labeling_ir"
     org: "North-Shore-AI"
-    stars: 0
+    stars: 1
     category: "nshkr-ingot"
     description: "Shared IR structs for the North Shore labeling stack (Forge/Anvil/Ingot) — typed datasets, samples, assignments, labels, artifacts, and evaluation runs for labeling workflows"
     url: "https://github.com/North-Shore-AI/labeling_ir"
@@ -336,6 +336,15 @@ repos:
     url: "https://github.com/nshkrdotcom/ALTAR"
     language: "Elixir"
 
+  flowstone:
+    name: "flowstone"
+    org: "nshkrdotcom"
+    stars: 5
+    category: "nshkr-ai-agents"
+    description: "Asset-first data orchestration for Elixir/BEAM. Dagster-inspired with OTP fault tolerance, LiveView dashboard, lineage tracking, checkpoint gates, and distributed execution via Oban."
+    url: "https://github.com/nshkrdotcom/flowstone"
+    language: "Elixir"
+
   mabeam:
     name: "mabeam"
     org: "nshkrdotcom"
@@ -345,19 +354,10 @@ repos:
     url: "https://github.com/nshkrdotcom/mabeam"
     language: "Elixir"
 
-  flowstone:
-    name: "flowstone"
-    org: "nshkrdotcom"
-    stars: 4
-    category: "nshkr-ai-agents"
-    description: "Asset-first data orchestration for Elixir/BEAM. Dagster-inspired with OTP fault tolerance, LiveView dashboard, lineage tracking, checkpoint gates, and distributed execution via Oban."
-    url: "https://github.com/nshkrdotcom/flowstone"
-    language: "Elixir"
-
   synapse_ai:
     name: "synapse_ai"
     org: "nshkrdotcom"
-    stars: 0
+    stars: 1
     category: "nshkr-ai-agents"
     description: "Synapse integration for altar_ai - SDK-backed LLM providers for multi-agent workflows with automatic fallback, signal handlers, and workflow actions"
     url: "https://github.com/nshkrdotcom/synapse_ai"
@@ -402,7 +402,7 @@ repos:
   altar_ai:
     name: "altar_ai"
     org: "nshkrdotcom"
-    stars: 0
+    stars: 1
     category: "nshkr-ai-sdk"
     description: "Protocol-based AI adapter foundation for Elixir - unified abstractions for gemini_ex, claude_agent_sdk, codex_sdk with automatic fallback, capability detection, and telemetry"
     url: "https://github.com/nshkrdotcom/altar_ai"
@@ -444,19 +444,10 @@ repos:
     url: "https://github.com/North-Shore-AI/tinkex"
     language: "Elixir"
 
-  tinkerer:
-    name: "tinkerer"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-ai-infra"
-    description: "Chiral Narrative Synthesis workspace for Thinker/Tinker LoRA pipelines, semantic fact-checking, telemetry, and reviewer-ready CNS docs."
-    url: "https://github.com/North-Shore-AI/tinkerer"
-    language: "Python"
-
   flowstone_ai:
     name: "flowstone_ai"
     org: "nshkrdotcom"
-    stars: 0
+    stars: 1
     category: "nshkr-ai-infra"
     description: "FlowStone integration for altar_ai - AI-powered data pipeline assets with classify_each, enrich_each, embed_each helpers and unified telemetry"
     url: "https://github.com/nshkrdotcom/flowstone_ai"
@@ -465,7 +456,7 @@ repos:
   gepa_ex:
     name: "gepa_ex"
     org: "nshkrdotcom"
-    stars: 0
+    stars: 1
     category: "nshkr-ai-infra"
     description: "Elixir implementation of GEPA: LLM-driven evolutionary optimization using Pareto-efficient search for text-based systems. Features OpenAI/Gemini integration, BEAM concurrency, OTP supervision, 218 tests with 75% coverage."
     url: "https://github.com/nshkrdotcom/gepa_ex"
@@ -474,7 +465,7 @@ repos:
   nsai_gateway:
     name: "nsai_gateway"
     org: "North-Shore-AI"
-    stars: 0
+    stars: 1
     category: "nshkr-ai-infra"
     description: "Unified API gateway for the NSAI ecosystem—authentication (JWT, API keys, OAuth2/OIDC), distributed rate limiting with burst allowance, circuit breakers, request tracing, Prometheus metrics, and service proxying. Production-ready with comprehensive observability and multi-tenant support."
     url: "https://github.com/North-Shore-AI/nsai_gateway"
@@ -483,11 +474,38 @@ repos:
   nsai_registry:
     name: "nsai_registry"
     org: "North-Shore-AI"
-    stars: 0
+    stars: 1
     category: "nshkr-ai-infra"
     description: "Service discovery and registry for the NSAI ecosystem—distributed registry with health checking, circuit breakers, multiple storage backends (ETS/PostgreSQL), PubSub event broadcasting, and comprehensive telemetry. Built on OTP with Horde-ready architecture for multi-node deployments."
     url: "https://github.com/North-Shore-AI/nsai_registry"
     language: "Elixir"
+
+  snakebridge:
+    name: "snakebridge"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "Configuration-driven Python library integration for Elixir. Automatically generate type-safe Elixir modules from declarative configs with zero wrapper code. Bridge to Python ML ecosystem (DSPy, NumPy, LangChain) with streaming support, bidirectional tools, and compile-time optimization. Built on Snakepit."
+    url: "https://github.com/nshkrdotcom/snakebridge"
+    language: "Elixir"
+
+  tiktoken_ex:
+    name: "tiktoken_ex"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "Pure Elixir TikToken-style byte-level BPE tokenizer (Kimi K2 compatible)."
+    url: "https://github.com/North-Shore-AI/tiktoken_ex"
+    language: "Elixir"
+
+  tinkerer:
+    name: "tinkerer"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "Chiral Narrative Synthesis workspace for Thinker/Tinker LoRA pipelines, semantic fact-checking, telemetry, and reviewer-ready CNS docs."
+    url: "https://github.com/North-Shore-AI/tinkerer"
+    language: "Python"
 
   pilot:
     name: "pilot"
@@ -505,24 +523,6 @@ repos:
     category: "nshkr-ai-infra"
     description: ""
     url: "https://github.com/nshkrdotcom/skill_ex"
-    language: "Elixir"
-
-  snakebridge:
-    name: "snakebridge"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Configuration-driven Python library integration for Elixir. Automatically generate type-safe Elixir modules from declarative configs with zero wrapper code. Bridge to Python ML ecosystem (DSPy, NumPy, LangChain) with streaming support, bidirectional tools, and compile-time optimization. Built on Snakepit."
-    url: "https://github.com/nshkrdotcom/snakebridge"
-    language: "Elixir"
-
-  tiktoken_ex:
-    name: "tiktoken_ex"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Pure Elixir TikToken-style byte-level BPE tokenizer (Kimi K2 compatible)."
-    url: "https://github.com/North-Shore-AI/tiktoken_ex"
     language: "Elixir"
 
   exdantic:
@@ -835,6 +835,15 @@ repos:
     url: "https://github.com/nshkrdotcom/youtube_audio_dl"
     language: "Elixir"
 
+  work:
+    name: "work"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "uncategorized"
+    description: "NSAI.Work - Unified job scheduler for North-Shore-AI platform"
+    url: "https://github.com/North-Shore-AI/work"
+    language: "Elixir"
+
   nshkrdotcom:
     name: "nshkrdotcom"
     org: "nshkrdotcom"
@@ -843,13 +852,4 @@ repos:
     description: "Personal GitHub profile README with Elixir/AI projects and LLM reliability research"
     url: "https://github.com/nshkrdotcom/nshkrdotcom"
     language: "Shell"
-
-  work:
-    name: "work"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "uncategorized"
-    description: "NSAI.Work - Unified job scheduler for North-Shore-AI platform"
-    url: "https://github.com/North-Shore-AI/work"
-    language: "Elixir"
 
