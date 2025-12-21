@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-21T00:51:02Z
+# Last updated: 2025-12-21T12:16:17Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -525,6 +525,15 @@ repos:
     url: "https://github.com/North-Shore-AI/tinkerer"
     language: "Python"
 
+  hf_hub_ex:
+    name: "hf_hub_ex"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Elixir client for HuggingFace Hub—dataset/model metadata, file downloads, caching, and authentication. The BEAM-native foundation for HF ecosystem ports."
+    url: "https://github.com/North-Shore-AI/hf_hub_ex"
+    language: "Elixir"
+
   exdantic:
     name: "exdantic"
     org: "nshkrdotcom"
@@ -835,6 +844,15 @@ repos:
     url: "https://github.com/nshkrdotcom/youtube_audio_dl"
     language: "Elixir"
 
+  portfolio_manager:
+    name: "portfolio_manager"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-utility"
+    description: "AI-native personal project intelligence system - manage, track, and search across all your repositories with semantic understanding"
+    url: "https://github.com/nshkrdotcom/portfolio_manager"
+    language: "Elixir"
+
   work:
     name: "work"
     org: "North-Shore-AI"
@@ -852,4 +870,12 @@ repos:
     description: "Personal GitHub profile README with Elixir/AI projects and LLM reliability research"
     url: "https://github.com/nshkrdotcom/nshkrdotcom"
     language: "Shell"
+
+  tinkex_cookbook:
+    name: "tinkex_cookbook"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "uncategorized"
+    description: "Elixir port feasibility analysis and cookbook for Tinker ML training platform"
+    url: "https://github.com/North-Shore-AI/tinkex_cookbook"
 
