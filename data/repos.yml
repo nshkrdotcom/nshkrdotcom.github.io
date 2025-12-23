@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-23T00:46:01Z
+# Last updated: 2025-12-23T12:18:53Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -244,6 +244,15 @@ repos:
     category: "nshkr-crucible"
     description: "Model evaluation harness for standardized benchmarking—comprehensive metrics (F1, BLEU, ROUGE, METEOR, BERTScore, pass@k), statistical analysis (confidence intervals, effect size, bootstrap CI, ANOVA), multi-model comparison, and report generation. Research-grade evaluation for LLM and ML experiments."
     url: "https://github.com/North-Shore-AI/eval_ex"
+    language: "Elixir"
+
+  hf_datasets_ex:
+    name: "hf_datasets_ex"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "HuggingFace Datasets for Elixir - A native Elixir port of the popular HuggingFace datasets library. Stream, load, and process ML datasets from the HuggingFace Hub with full BEAM/OTP integration. Supports Parquet streaming, dataset splitting, shuffling, and seamless integration with Nx tensors for machine learning workflows."
+    url: "https://github.com/North-Shore-AI/hf_datasets_ex"
     language: "Elixir"
 
   metrics_ex:
