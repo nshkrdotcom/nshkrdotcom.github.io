@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-26T00:46:32Z
+# Last updated: 2025-12-26T12:18:14Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -154,6 +154,7 @@ repos:
     category: "nshkr-crucible"
     description: "ML model deployment for the Crucible ecosystem. vLLM and Ollama integration, canary deployments, A/B testing, traffic routing, health checks, rollback strategies, and inference serving for Elixir-based ML workflows."
     url: "https://github.com/North-Shore-AI/crucible_deployment"
+    language: "Elixir"
 
   crucible_ensemble:
     name: "crucible_ensemble"
@@ -171,6 +172,7 @@ repos:
     category: "nshkr-crucible"
     description: "ML feedback loop management for the Crucible ecosystem. Quality monitoring, data drift detection, model performance tracking, data curation, active learning, human-in-the-loop workflows, and continuous improvement for Elixir-based ML."
     url: "https://github.com/North-Shore-AI/crucible_feedback"
+    language: "Elixir"
 
   crucible_framework:
     name: "crucible_framework"
@@ -215,6 +217,7 @@ repos:
     category: "nshkr-crucible"
     description: "ML model registry for the Crucible ecosystem. Artifact storage, model versioning, lineage tracking, metadata management, model comparison, reproducibility, and integration with training pipelines for Elixir-based ML workflows."
     url: "https://github.com/North-Shore-AI/crucible_model_registry"
+    language: "Elixir"
 
   crucible_telemetry:
     name: "crucible_telemetry"
@@ -241,6 +244,7 @@ repos:
     category: "nshkr-crucible"
     description: "ML training orchestration for the Crucible ecosystem. Distributed training, hyperparameter optimization, checkpointing, model versioning, metrics collection, early stopping, LR scheduling, gradient accumulation, and mixed precision training with Nx/Scholar integration."
     url: "https://github.com/North-Shore-AI/crucible_train"
+    language: "Elixir"
 
   crucible_ui:
     name: "crucible_ui"
