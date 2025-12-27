@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-27T00:45:01Z
+# Last updated: 2025-12-27T12:17:00Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -588,6 +588,32 @@ repos:
     url: "https://github.com/North-Shore-AI/hf_hub_ex"
     language: "Elixir"
 
+  portfolio_core:
+    name: "portfolio_core"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Hexagonal architecture core for Elixir RAG systems. Port specifications, manifest-based config, adapter registry, and DI framework. Enables swappable vector/graph/embedding/LLM backends via clean port/adapter abstractions. Hex.pm publishable."
+    url: "https://github.com/nshkrdotcom/portfolio_core"
+    language: "Elixir"
+
+  portfolio_index:
+    name: "portfolio_index"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Production adapters and pipelines for PortfolioCore. Vector stores (pgvector, Qdrant), graph stores (Neo4j), embedders (OpenAI), Broadway pipelines, advanced RAG (Self-RAG, CRAG, GraphRAG, Agentic), multi-graph federation, and observability."
+    url: "https://github.com/nshkrdotcom/portfolio_index"
+
+  portfolio_manager:
+    name: "portfolio_manager"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "AI-native personal project intelligence system - manage, track, and search across all your repositories with semantic understanding"
+    url: "https://github.com/nshkrdotcom/portfolio_manager"
+    language: "Elixir"
+
   tinkex_cookbook:
     name: "tinkex_cookbook"
     org: "North-Shore-AI"
@@ -842,7 +868,7 @@ repos:
   ASKA:
     name: "ASKA"
     org: "nshkrdotcom"
-    stars: 6
+    stars: 7
     category: "nshkr-security"
     description: "Secure Computing in the AI age"
     url: "https://github.com/nshkrdotcom/ASKA"
@@ -914,15 +940,6 @@ repos:
     category: "nshkr-utility"
     description: "Download high-quality audio from YouTube as MP3 files using Elixir. Features 104 music genres, duration filtering, per-genre caching, C++ DSP filters, and ML-based transient detection."
     url: "https://github.com/nshkrdotcom/youtube_audio_dl"
-    language: "Elixir"
-
-  portfolio_manager:
-    name: "portfolio_manager"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-utility"
-    description: "AI-native personal project intelligence system - manage, track, and search across all your repositories with semantic understanding"
-    url: "https://github.com/nshkrdotcom/portfolio_manager"
     language: "Elixir"
 
   work:
