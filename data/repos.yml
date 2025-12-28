@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-27T12:17:00Z
+# Last updated: 2025-12-28T00:54:06Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -420,7 +420,7 @@ repos:
   claude_agent_sdk:
     name: "claude_agent_sdk"
     org: "nshkrdotcom"
-    stars: 11
+    stars: 12
     category: "nshkr-ai-sdk"
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
     url: "https://github.com/nshkrdotcom/claude_agent_sdk"
@@ -557,7 +557,7 @@ repos:
     org: "nshkrdotcom"
     stars: 1
     category: "nshkr-ai-infra"
-    description: "Configuration-driven Python library integration for Elixir. Automatically generate type-safe Elixir modules from declarative configs with zero wrapper code. Bridge to Python ML ecosystem (DSPy, NumPy, LangChain) with streaming support, bidirectional tools, and compile-time optimization. Built on Snakepit."
+    description: "Compile-time Elixir code generator for Python library bindings. Declare dependencies in mix.exs, generate type-safe modules with introspected typespecs and docs. Deterministic git-friendly output, strict CI mode, streaming, and custom helpers. Runtime via Snakepit."
     url: "https://github.com/nshkrdotcom/snakebridge"
     language: "Elixir"
 
@@ -604,6 +604,7 @@ repos:
     category: "nshkr-ai-infra"
     description: "Production adapters and pipelines for PortfolioCore. Vector stores (pgvector, Qdrant), graph stores (Neo4j), embedders (OpenAI), Broadway pipelines, advanced RAG (Self-RAG, CRAG, GraphRAG, Agentic), multi-graph federation, and observability."
     url: "https://github.com/nshkrdotcom/portfolio_index"
+    language: "Elixir"
 
   portfolio_manager:
     name: "portfolio_manager"
@@ -897,6 +898,15 @@ repos:
     description: "Hardware-Secured Temporal Blockchain"
     url: "https://github.com/nshkrdotcom/ChronoLedger"
 
+  cns:
+    name: "cns"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-research"
+    description: "Chiral Narrative Synthesis - Dialectical reasoning framework for automated knowledge discovery"
+    url: "https://github.com/North-Shore-AI/cns"
+    language: "Elixir"
+
   EADS:
     name: "EADS"
     org: "nshkrdotcom"
@@ -905,15 +915,6 @@ repos:
     description: "Evolutionary Autonomous Development System"
     url: "https://github.com/nshkrdotcom/EADS"
     language: "Python"
-
-  cns:
-    name: "cns"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-research"
-    description: "Chiral Narrative Synthesis - Dialectical reasoning framework for automated knowledge discovery"
-    url: "https://github.com/North-Shore-AI/cns"
-    language: "Elixir"
 
   cns_ui:
     name: "cns_ui"
