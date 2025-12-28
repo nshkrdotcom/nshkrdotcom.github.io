@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-28T00:54:06Z
+# Last updated: 2025-12-28T12:17:04Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -208,6 +208,15 @@ repos:
     category: "nshkr-crucible"
     description: "Intermediate Representation for the Crucible ML reliability ecosystem"
     url: "https://github.com/North-Shore-AI/crucible_ir"
+    language: "Elixir"
+
+  crucible_kitchen:
+    name: "crucible_kitchen"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Industrial ML training orchestration - backend-agnostic workflow engine for supervised, reinforcement, and preference learning. Provides composable workflows, declarative stage DSL, comprehensive telemetry, and port/adapter patterns for any ML backend. The missing orchestration layer that makes ML cookbooks trivially thin."
+    url: "https://github.com/nshkrdotcom/crucible_kitchen"
     language: "Elixir"
 
   crucible_model_registry:
@@ -696,6 +705,14 @@ repos:
     url: "https://github.com/nshkrdotcom/elixir_tracer"
     language: "Elixir"
 
+  pristine:
+    name: "pristine"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-devtools"
+    description: "Manifest-driven hexagonal core for generating Elixir SDKs and services with pluggable ports/adapters for transport, schema, retries, telemetry, streaming, and multipart."
+    url: "https://github.com/nshkrdotcom/pristine"
+
   superlearner:
     name: "superlearner"
     org: "nshkrdotcom"
@@ -794,6 +811,14 @@ repos:
     description: "The command and control layer for the AI-powered enterprise"
     url: "https://github.com/nshkrdotcom/Citadel"
     language: "Elixir"
+
+  telemetry_reporter:
+    name: "telemetry_reporter"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-observability"
+    description: "Pachka-powered telemetry reporter for Elixir that batches client-side events, supports pluggable transports and :telemetry forwarding, and drains reliably on shutdown."
+    url: "https://github.com/nshkrdotcom/telemetry_reporter"
 
   playwriter:
     name: "playwriter"
