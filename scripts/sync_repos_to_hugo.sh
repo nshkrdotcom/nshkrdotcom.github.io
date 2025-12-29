@@ -26,20 +26,124 @@ cleanup() {
 }
 trap cleanup EXIT
 
+# Fetch logo from GitHub raw URL
+# Returns 0 on success, 1 on failure
+fetch_logo_from_github() {
+    local owner=$1
+    local repo_name=$2
+    local remote_path=$3
+    local dest_path=$4
+
+    local url="https://raw.githubusercontent.com/${owner}/${repo_name}/main/${remote_path}"
+
+    # Use curl with silent mode, fail on HTTP errors, follow redirects
+    if curl -sfL --max-time 10 "$url" -o "$dest_path" 2>/dev/null; then
+        # Verify we got actual content (not a 404 page)
+        if [[ -s "$dest_path" ]] && ! grep -q "404" "$dest_path" 2>/dev/null; then
+            return 0
+        fi
+        rm -f "$dest_path"
+    fi
+    return 1
+}
+
+# Try to fetch logo from GitHub by parsing remote README or trying standard paths
+fetch_logo_remote() {
+    local repo_name=$1
+    local owner=$2
+
+    local readme_url="https://raw.githubusercontent.com/${owner}/${repo_name}/main/README.md"
+    local readme_content=""
+    local logo_file=""
+    local logo_dir=""
+
+    # Try to fetch and parse README
+    readme_content=$(curl -sfL --max-time 10 "$readme_url" 2>/dev/null || echo "")
+
+    if [[ -n "$readme_content" ]]; then
+        # Check for <img src="assets/..."
+        logo_file=$(echo "$readme_content" | grep -oP '(?<=src=["'"'"']assets/)[^"'"'"']+' | head -1)
+        if [[ -n "$logo_file" ]]; then
+            logo_dir="assets"
+        fi
+
+        # Check for <img src="logo/..."
+        if [[ -z "$logo_file" ]]; then
+            logo_file=$(echo "$readme_content" | grep -oP '(?<=src=["'"'"']logo/)[^"'"'"']+' | head -1)
+            if [[ -n "$logo_file" ]]; then
+                logo_dir="logo"
+            fi
+        fi
+
+        # Check for ![...](assets/...)
+        if [[ -z "$logo_file" ]]; then
+            logo_file=$(echo "$readme_content" | grep -oP '(?<=\]\(assets/)[^)]+' | head -1)
+            if [[ -n "$logo_file" ]]; then
+                logo_dir="assets"
+            fi
+        fi
+
+        # Check for ![...](logo/...)
+        if [[ -z "$logo_file" ]]; then
+            logo_file=$(echo "$readme_content" | grep -oP '(?<=\]\(logo/)[^)]+' | head -1)
+            if [[ -n "$logo_file" ]]; then
+                logo_dir="logo"
+            fi
+        fi
+    fi
+
+    # If found in README, try to fetch it
+    if [[ -n "$logo_file" ]] && [[ -n "$logo_dir" ]]; then
+        local ext="${logo_file##*.}"
+        local dest_path="$LOGOS_DIR/${repo_name}.${ext}"
+        if fetch_logo_from_github "$owner" "$repo_name" "${logo_dir}/${logo_file}" "$dest_path"; then
+            echo "/logos/${repo_name}.${ext}"
+            return
+        fi
+    fi
+
+    # Fallback: try standard paths
+    for dir in assets logo; do
+        for ext in svg png; do
+            for pattern in "${repo_name}.${ext}" "${repo_name}_logo.${ext}" "${repo_name}-logo.${ext}" "logo.${ext}"; do
+                local dest_path="$LOGOS_DIR/${repo_name}.${ext}"
+                if fetch_logo_from_github "$owner" "$repo_name" "${dir}/${pattern}" "$dest_path"; then
+                    echo "/logos/${repo_name}.${ext}"
+                    return
+                fi
+            done
+        done
+    done
+
+    echo ""
+}
+
 # Extract logo from local repo and copy to static/logos/{repo}.{ext}
+# Falls back to fetching from GitHub if local repo not available
 # Returns the logo path (e.g., /logos/repo.svg) or empty string
 extract_logo() {
     local repo_name=$1
     local owner=$2
     local repo_dir=""
 
+    # Check if logo already exists (avoid re-fetching)
+    for ext in svg png; do
+        if [[ -f "$LOGOS_DIR/${repo_name}.${ext}" ]]; then
+            echo "/logos/${repo_name}.${ext}"
+            return
+        fi
+    done
+
     # Find local repo path
     if [[ "$owner" == "nshkrdotcom" ]] && [[ -d "$LOCAL_NSHKR/$repo_name" ]]; then
         repo_dir="$LOCAL_NSHKR/$repo_name"
     elif [[ "$owner" == "North-Shore-AI" ]] && [[ -d "$LOCAL_NORTHSHORE/$repo_name" ]]; then
         repo_dir="$LOCAL_NORTHSHORE/$repo_name"
-    else
-        echo ""
+    fi
+
+    # If no local repo, try fetching from GitHub
+    if [[ -z "$repo_dir" ]]; then
+        fetch_logo_remote "$repo_name" "$owner"
         return
     fi
 
@@ -96,7 +200,8 @@ extract_logo() {
     fi
 
     if [[ -z "$logo_file" ]] || [[ -z "$logo_dir" ]]; then
-        echo ""
+        # Local repo exists but no logo found - try remote as last resort
+        fetch_logo_remote "$repo_name" "$owner"
         return
     fi
 
