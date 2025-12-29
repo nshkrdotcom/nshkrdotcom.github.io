@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-28T12:17:04Z
+# Last updated: 2025-12-29T00:52:35Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -704,6 +704,14 @@ repos:
     description: "Local-first observability for Elixir with New Relic API parity"
     url: "https://github.com/nshkrdotcom/elixir_tracer"
     language: "Elixir"
+
+  portfolio_coder:
+    name: "portfolio_coder"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-devtools"
+    description: "Code Intelligence Platform: Repository analysis, semantic code search, dependency graphs, and AI-powered code understanding built on the Portfolio RAG ecosystem. Features multi-language parsing (Elixir, Python, JavaScript, TypeScript), AST-aware chunking, call graph analysis, and intelligent code agents for review, refactoring, and documentation."
+    url: "https://github.com/nshkrdotcom/portfolio_coder"
 
   pristine:
     name: "pristine"
