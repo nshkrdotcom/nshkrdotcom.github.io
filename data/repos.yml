@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-29T08:14:57Z
+# Last updated: 2025-12-29T12:19:29Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -82,7 +82,6 @@ repos:
     category: "nshkr-crucible"
     description: "AI Firewall and guardrails for LLM-based Elixir applications"
     url: "https://github.com/North-Shore-AI/LlmGuard"
-    logo: "/logos/LlmGuard.svg"
     language: "Elixir"
 
   crucible_examples:
@@ -101,7 +100,6 @@ repos:
     category: "nshkr-crucible"
     description: "Data validation and quality library for ML pipelines in Elixir"
     url: "https://github.com/North-Shore-AI/ExDataCheck"
-    logo: "/logos/ExDataCheck.svg"
     language: "Elixir"
 
   ExFairness:
@@ -111,7 +109,6 @@ repos:
     category: "nshkr-crucible"
     description: "Fairness and bias detection library for Elixir AI/ML systems"
     url: "https://github.com/North-Shore-AI/ExFairness"
-    logo: "/logos/ExFairness.svg"
     language: "Elixir"
 
   cns_crucible:
@@ -130,7 +127,6 @@ repos:
     category: "nshkr-crucible"
     description: "Adversarial testing and robustness evaluation for the Crucible framework"
     url: "https://github.com/North-Shore-AI/crucible_adversary"
-    logo: "/logos/crucible_adversary.svg"
     language: "Elixir"
 
   crucible_bench:
@@ -140,7 +136,6 @@ repos:
     category: "nshkr-crucible"
     description: "Statistical testing and analysis framework for AI research"
     url: "https://github.com/North-Shore-AI/crucible_bench"
-    logo: "/logos/crucible_bench.svg"
     language: "Elixir"
 
   crucible_datasets:
@@ -150,7 +145,6 @@ repos:
     category: "nshkr-crucible"
     description: "Dataset management and caching for AI research benchmarks"
     url: "https://github.com/North-Shore-AI/crucible_datasets"
-    logo: "/logos/crucible_datasets.svg"
     language: "Elixir"
 
   crucible_deployment:
@@ -160,7 +154,6 @@ repos:
     category: "nshkr-crucible"
     description: "ML model deployment for the Crucible ecosystem. vLLM and Ollama integration, canary deployments, A/B testing, traffic routing, health checks, rollback strategies, and inference serving for Elixir-based ML workflows."
     url: "https://github.com/North-Shore-AI/crucible_deployment"
-    logo: "/logos/crucible_deployment.svg"
     language: "Elixir"
 
   crucible_ensemble:
@@ -170,7 +163,6 @@ repos:
     category: "nshkr-crucible"
     description: "Multi-model ensemble voting strategies for LLM reliability"
     url: "https://github.com/North-Shore-AI/crucible_ensemble"
-    logo: "/logos/crucible_ensemble.svg"
     language: "Elixir"
 
   crucible_feedback:
@@ -180,7 +172,6 @@ repos:
     category: "nshkr-crucible"
     description: "ML feedback loop management for the Crucible ecosystem. Quality monitoring, data drift detection, model performance tracking, data curation, active learning, human-in-the-loop workflows, and continuous improvement for Elixir-based ML."
     url: "https://github.com/North-Shore-AI/crucible_feedback"
-    logo: "/logos/crucible_feedback.svg"
     language: "Elixir"
 
   crucible_framework:
@@ -190,7 +181,6 @@ repos:
     category: "nshkr-crucible"
     description: "CrucibleFramework: A scientific platform for LLM reliability research on the BEAM"
     url: "https://github.com/North-Shore-AI/crucible_framework"
-    logo: "/logos/crucible_framework.svg"
     language: "Elixir"
 
   crucible_harness:
@@ -200,7 +190,6 @@ repos:
     category: "nshkr-crucible"
     description: "Experimental research framework for running AI benchmarks at scale"
     url: "https://github.com/North-Shore-AI/crucible_harness"
-    logo: "/logos/crucible_harness.svg"
     language: "Elixir"
 
   crucible_hedging:
@@ -210,7 +199,6 @@ repos:
     category: "nshkr-crucible"
     description: "Request hedging for tail latency reduction in distributed systems"
     url: "https://github.com/North-Shore-AI/crucible_hedging"
-    logo: "/logos/crucible_hedging.svg"
     language: "Elixir"
 
   crucible_ir:
@@ -220,7 +208,6 @@ repos:
     category: "nshkr-crucible"
     description: "Intermediate Representation for the Crucible ML reliability ecosystem"
     url: "https://github.com/North-Shore-AI/crucible_ir"
-    logo: "/logos/crucible_ir.svg"
     language: "Elixir"
 
   crucible_kitchen:
@@ -239,7 +226,6 @@ repos:
     category: "nshkr-crucible"
     description: "ML model registry for the Crucible ecosystem. Artifact storage, model versioning, lineage tracking, metadata management, model comparison, reproducibility, and integration with training pipelines for Elixir-based ML workflows."
     url: "https://github.com/North-Shore-AI/crucible_model_registry"
-    logo: "/logos/crucible_model_registry.svg"
     language: "Elixir"
 
   crucible_telemetry:
@@ -249,7 +235,6 @@ repos:
     category: "nshkr-crucible"
     description: "Advanced telemetry collection and analysis for AI research"
     url: "https://github.com/North-Shore-AI/crucible_telemetry"
-    logo: "/logos/crucible_telemetry.svg"
     language: "Elixir"
 
   crucible_trace:
@@ -259,7 +244,6 @@ repos:
     category: "nshkr-crucible"
     description: "Structured causal reasoning chain logging for LLM transparency"
     url: "https://github.com/North-Shore-AI/crucible_trace"
-    logo: "/logos/crucible_trace.svg"
     language: "Elixir"
 
   crucible_train:
@@ -269,7 +253,6 @@ repos:
     category: "nshkr-crucible"
     description: "ML training orchestration for the Crucible ecosystem. Distributed training, hyperparameter optimization, checkpointing, model versioning, metrics collection, early stopping, LR scheduling, gradient accumulation, and mixed precision training with Nx/Scholar integration."
     url: "https://github.com/North-Shore-AI/crucible_train"
-    logo: "/logos/crucible_train.svg"
     language: "Elixir"
 
   crucible_ui:
@@ -279,7 +262,6 @@ repos:
     category: "nshkr-crucible"
     description: "Phoenix LiveView dashboard for the Crucible ML reliability stack"
     url: "https://github.com/North-Shore-AI/crucible_ui"
-    logo: "/logos/crucible_ui.svg"
     language: "Elixir"
 
   crucible_xai:
@@ -289,7 +271,6 @@ repos:
     category: "nshkr-crucible"
     description: "Explainable AI (XAI) tools for the Crucible framework"
     url: "https://github.com/North-Shore-AI/crucible_xai"
-    logo: "/logos/crucible_xai.svg"
     language: "Elixir"
 
   datasets_ex:
@@ -299,7 +280,6 @@ repos:
     category: "nshkr-crucible"
     description: "Dataset management library for ML experiments—loaders for SciFact, FEVER, GSM8K, HumanEval, MMLU, TruthfulQA, HellaSwag; git-like versioning with lineage tracking; transformation pipelines; quality validation with schema checks and duplicate detection; GenStage streaming for large datasets. Built for reproducible AI research."
     url: "https://github.com/North-Shore-AI/datasets_ex"
-    logo: "/logos/datasets_ex.svg"
     language: "Elixir"
 
   eval_ex:
@@ -309,7 +289,6 @@ repos:
     category: "nshkr-crucible"
     description: "Model evaluation harness for standardized benchmarking—comprehensive metrics (F1, BLEU, ROUGE, METEOR, BERTScore, pass@k), statistical analysis (confidence intervals, effect size, bootstrap CI, ANOVA), multi-model comparison, and report generation. Research-grade evaluation for LLM and ML experiments."
     url: "https://github.com/North-Shore-AI/eval_ex"
-    logo: "/logos/eval_ex.svg"
     language: "Elixir"
 
   hf_datasets_ex:
@@ -319,7 +298,6 @@ repos:
     category: "nshkr-crucible"
     description: "HuggingFace Datasets for Elixir - A native Elixir port of the popular HuggingFace datasets library. Stream, load, and process ML datasets from the HuggingFace Hub with full BEAM/OTP integration. Supports Parquet streaming, dataset splitting, shuffling, and seamless integration with Nx tensors for machine learning workflows."
     url: "https://github.com/North-Shore-AI/hf_datasets_ex"
-    logo: "/logos/hf_datasets_ex.svg"
     language: "Elixir"
 
   metrics_ex:
@@ -329,7 +307,6 @@ repos:
     category: "nshkr-crucible"
     description: "Metrics aggregation and alerting for ML experiments—multi-backend export (Prometheus, InfluxDB, Datadog, OpenTelemetry), advanced aggregations (percentiles, histograms, moving averages), threshold-based alerting with anomaly detection (z-score, IQR), and time-series storage. Research-grade observability for the NSAI ecosystem."
     url: "https://github.com/North-Shore-AI/metrics_ex"
-    logo: "/logos/metrics_ex.svg"
     language: "Elixir"
 
   anvil:
@@ -339,7 +316,6 @@ repos:
     category: "nshkr-ingot"
     description: "Labeling queue library for managing human labeling workflows"
     url: "https://github.com/North-Shore-AI/anvil"
-    logo: "/logos/anvil.svg"
     language: "Elixir"
 
   forge:
@@ -349,7 +325,6 @@ repos:
     category: "nshkr-ingot"
     description: "Sample factory library for generating, transforming, and computing measurements on samples"
     url: "https://github.com/North-Shore-AI/forge"
-    logo: "/logos/forge.svg"
     language: "Elixir"
 
   ingot:
@@ -359,7 +334,6 @@ repos:
     category: "nshkr-ingot"
     description: "Phoenix LiveView interface for sample generation and human labeling workflows"
     url: "https://github.com/North-Shore-AI/ingot"
-    logo: "/logos/ingot.svg"
     language: "Elixir"
 
   labeling_ir:
@@ -369,7 +343,6 @@ repos:
     category: "nshkr-ingot"
     description: "Shared IR structs for the North Shore labeling stack (Forge/Anvil/Ingot) — typed datasets, samples, assignments, labels, artifacts, and evaluation runs for labeling workflows"
     url: "https://github.com/North-Shore-AI/labeling_ir"
-    logo: "/logos/labeling_ir.svg"
     language: "Elixir"
 
   synapse:
@@ -379,7 +352,6 @@ repos:
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
-    logo: "/logos/synapse.svg"
     language: "Elixir"
 
   ds_ex:
@@ -398,7 +370,6 @@ repos:
     category: "nshkr-ai-agents"
     description: "Asset-first data orchestration for Elixir/BEAM. Dagster-inspired with OTP fault tolerance, LiveView dashboard, lineage tracking, checkpoint gates, and distributed execution via Oban."
     url: "https://github.com/nshkrdotcom/flowstone"
-    logo: "/logos/flowstone.svg"
     language: "Elixir"
 
   DSPex:
@@ -408,7 +379,6 @@ repos:
     category: "nshkr-ai-agents"
     description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
     url: "https://github.com/nshkrdotcom/DSPex"
-    logo: "/logos/DSPex.svg"
     language: "Elixir"
 
   pipeline_ex:
@@ -418,7 +388,6 @@ repos:
     category: "nshkr-ai-agents"
     description: "Claude Code + Gemini AI collaboration orchestration tools"
     url: "https://github.com/nshkrdotcom/pipeline_ex"
-    logo: "/logos/pipeline_ex.svg"
     language: "Elixir"
 
   ALTAR:
@@ -428,7 +397,6 @@ repos:
     category: "nshkr-ai-agents"
     description: "The Agent & Tool Arbitration Protocol"
     url: "https://github.com/nshkrdotcom/ALTAR"
-    logo: "/logos/ALTAR.svg"
     language: "Elixir"
 
   mabeam:
@@ -447,7 +415,6 @@ repos:
     category: "nshkr-ai-agents"
     description: "Synapse integration for altar_ai - SDK-backed LLM providers for multi-agent workflows with automatic fallback, signal handlers, and workflow actions"
     url: "https://github.com/nshkrdotcom/synapse_ai"
-    logo: "/logos/synapse_ai.svg"
     language: "Elixir"
 
   gemini_ex:
@@ -457,7 +424,6 @@ repos:
     category: "nshkr-ai-sdk"
     description: "Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI"
     url: "https://github.com/nshkrdotcom/gemini_ex"
-    logo: "/logos/gemini_ex.svg"
     language: "Elixir"
 
   claude_agent_sdk:
@@ -467,7 +433,6 @@ repos:
     category: "nshkr-ai-sdk"
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
     url: "https://github.com/nshkrdotcom/claude_agent_sdk"
-    logo: "/logos/claude_agent_sdk.svg"
     language: "Elixir"
 
   codex_sdk:
@@ -477,7 +442,6 @@ repos:
     category: "nshkr-ai-sdk"
     description: "OpenAI Codex SDK written in Elixir"
     url: "https://github.com/nshkrdotcom/codex_sdk"
-    logo: "/logos/codex_sdk.svg"
     language: "Elixir"
 
   jules_ex:
@@ -487,7 +451,6 @@ repos:
     category: "nshkr-ai-sdk"
     description: "Elixir client SDK for the Jules API - orchestrate AI coding sessions"
     url: "https://github.com/nshkrdotcom/jules_ex"
-    logo: "/logos/jules_ex.svg"
     language: "Elixir"
 
   altar_ai:
@@ -497,7 +460,6 @@ repos:
     category: "nshkr-ai-sdk"
     description: "Protocol-based AI adapter foundation for Elixir - unified abstractions for gemini_ex, claude_agent_sdk, codex_sdk with automatic fallback, capability detection, and telemetry"
     url: "https://github.com/nshkrdotcom/altar_ai"
-    logo: "/logos/altar_ai.svg"
     language: "Elixir"
 
   mcp_client:
@@ -507,7 +469,6 @@ repos:
     category: "nshkr-ai-sdk"
     description: "Full-featured Elixir client for the Model Context Protocol (MCP) with multi-transport support, resources, prompts, tools, and telemetry."
     url: "https://github.com/nshkrdotcom/mcp_client"
-    logo: "/logos/mcp_client.svg"
     language: "Elixir"
 
   json_remedy:
@@ -517,7 +478,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "A practical, multi-layered JSON repair library for Elixir that intelligently fixes malformed JSON strings commonly produced by LLMs, legacy systems, and data pipelines."
     url: "https://github.com/nshkrdotcom/json_remedy"
-    logo: "/logos/json_remedy.svg"
     language: "Elixir"
 
   snakepit:
@@ -527,7 +487,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "High-performance, generalized process pooler and session manager for external language integrations. Orchestrates and supervises languages like Python and Javascript from Elixir."
     url: "https://github.com/nshkrdotcom/snakepit"
-    logo: "/logos/snakepit.svg"
     language: "Elixir"
 
   tinkex:
@@ -537,7 +496,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Elixir SDK for the Tinker ML platform—LoRA training, sampling, and service orchestration built on OTP, Finch, and telemetry."
     url: "https://github.com/North-Shore-AI/tinkex"
-    logo: "/logos/tinkex.svg"
     language: "Elixir"
 
   flowstone_ai:
@@ -547,7 +505,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "FlowStone integration for altar_ai - AI-powered data pipeline assets with classify_each, enrich_each, embed_each helpers and unified telemetry"
     url: "https://github.com/nshkrdotcom/flowstone_ai"
-    logo: "/logos/flowstone_ai.svg"
     language: "Elixir"
 
   gepa_ex:
@@ -557,7 +514,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Elixir implementation of GEPA: LLM-driven evolutionary optimization using Pareto-efficient search for text-based systems. Features OpenAI/Gemini integration, BEAM concurrency, OTP supervision, 218 tests with 75% coverage."
     url: "https://github.com/nshkrdotcom/gepa_ex"
-    logo: "/logos/gepa_ex.svg"
     language: "Elixir"
 
   nsai_gateway:
@@ -567,7 +523,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Unified API gateway for the NSAI ecosystem—authentication (JWT, API keys, OAuth2/OIDC), distributed rate limiting with burst allowance, circuit breakers, request tracing, Prometheus metrics, and service proxying. Production-ready with comprehensive observability and multi-tenant support."
     url: "https://github.com/North-Shore-AI/nsai_gateway"
-    logo: "/logos/nsai_gateway.svg"
     language: "Elixir"
 
   nsai_registry:
@@ -577,7 +532,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Service discovery and registry for the NSAI ecosystem—distributed registry with health checking, circuit breakers, multiple storage backends (ETS/PostgreSQL), PubSub event broadcasting, and comprehensive telemetry. Built on OTP with Horde-ready architecture for multi-node deployments."
     url: "https://github.com/North-Shore-AI/nsai_registry"
-    logo: "/logos/nsai_registry.svg"
     language: "Elixir"
 
   pilot:
@@ -587,7 +541,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Interactive CLI and REPL for the NSAI ecosystem—unified interface to registry, gateway, jobs, experiments, datasets, embeddings, and metrics services; tab completion with bash/zsh scripts; configurable environments; JSON output mode for scripting; escript distribution. The cockpit for North Shore AI operations."
     url: "https://github.com/North-Shore-AI/pilot"
-    logo: "/logos/pilot.svg"
     language: "Elixir"
 
   rag_ex:
@@ -597,7 +550,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Elixir RAG library with multi-LLM routing (Gemini, Claude, OpenAI, Ollama), GraphRAG, knowledge graphs, modular retrievers/rerankers, composable pipelines, pgvector integration, advanced chunking, and tool-using agents. Fork of bitcrowd/rag."
     url: "https://github.com/nshkrdotcom/rag_ex"
-    logo: "/logos/rag_ex.svg"
     language: "Elixir"
 
   skill_ex:
@@ -607,7 +559,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Claude Skill Aggregator"
     url: "https://github.com/nshkrdotcom/skill_ex"
-    logo: "/logos/skill_ex.svg"
     language: "Elixir"
 
   snakebridge:
@@ -617,7 +568,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Compile-time Elixir code generator for Python library bindings. Declare dependencies in mix.exs, generate type-safe modules with introspected typespecs and docs. Deterministic git-friendly output, strict CI mode, streaming, and custom helpers. Runtime via Snakepit."
     url: "https://github.com/nshkrdotcom/snakebridge"
-    logo: "/logos/snakebridge.svg"
     language: "Elixir"
 
   tiktoken_ex:
@@ -627,7 +577,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Pure Elixir TikToken-style byte-level BPE tokenizer (Kimi K2 compatible)."
     url: "https://github.com/North-Shore-AI/tiktoken_ex"
-    logo: "/logos/tiktoken_ex.svg"
     language: "Elixir"
 
   tinkerer:
@@ -637,7 +586,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Chiral Narrative Synthesis workspace for Thinker/Tinker LoRA pipelines, semantic fact-checking, telemetry, and reviewer-ready CNS docs."
     url: "https://github.com/North-Shore-AI/tinkerer"
-    logo: "/logos/tinkerer.svg"
     language: "Python"
 
   hf_hub_ex:
@@ -647,7 +595,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Elixir client for HuggingFace Hub—dataset/model metadata, file downloads, caching, and authentication. The BEAM-native foundation for HF ecosystem ports."
     url: "https://github.com/North-Shore-AI/hf_hub_ex"
-    logo: "/logos/hf_hub_ex.svg"
     language: "Elixir"
 
   portfolio_core:
@@ -657,7 +604,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Hexagonal architecture core for Elixir RAG systems. Port specifications, manifest-based config, adapter registry, and DI framework. Enables swappable vector/graph/embedding/LLM backends via clean port/adapter abstractions. Hex.pm publishable."
     url: "https://github.com/nshkrdotcom/portfolio_core"
-    logo: "/logos/portfolio_core.svg"
     language: "Elixir"
 
   portfolio_index:
@@ -667,7 +613,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Production adapters and pipelines for PortfolioCore. Vector stores (pgvector, Qdrant), graph stores (Neo4j), embedders (OpenAI), Broadway pipelines, advanced RAG (Self-RAG, CRAG, GraphRAG, Agentic), multi-graph federation, and observability."
     url: "https://github.com/nshkrdotcom/portfolio_index"
-    logo: "/logos/portfolio_index.svg"
     language: "Elixir"
 
   portfolio_manager:
@@ -677,7 +622,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "AI-native personal project intelligence system - manage, track, and search across all your repositories with semantic understanding"
     url: "https://github.com/nshkrdotcom/portfolio_manager"
-    logo: "/logos/portfolio_manager.svg"
     language: "Elixir"
 
   tinkex_cookbook:
@@ -687,7 +631,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "Elixir port of tinker-cookbook: training and evaluation recipes for the Tinker ML platform."
     url: "https://github.com/North-Shore-AI/tinkex_cookbook"
-    logo: "/logos/tinkex_cookbook.svg"
     language: "Elixir"
 
   exdantic:
@@ -706,7 +649,6 @@ repos:
     category: "nshkr-schema"
     description: "Unified schema definition, validation, and JSON generation for Elixir"
     url: "https://github.com/nshkrdotcom/sinter"
-    logo: "/logos/sinter.svg"
     language: "Elixir"
 
   perimeter:
@@ -752,7 +694,6 @@ repos:
     category: "nshkr-devtools"
     description: "A Phoenix LiveView performance monitoring dashboard for tracking slow endpoints and database queries"
     url: "https://github.com/nshkrdotcom/elixir_dashboard"
-    logo: "/logos/elixir_dashboard.svg"
     language: "Elixir"
 
   elixir_tracer:
@@ -762,7 +703,6 @@ repos:
     category: "nshkr-devtools"
     description: "Local-first observability for Elixir with New Relic API parity"
     url: "https://github.com/nshkrdotcom/elixir_tracer"
-    logo: "/logos/elixir_tracer.svg"
     language: "Elixir"
 
   portfolio_coder:
@@ -772,7 +712,6 @@ repos:
     category: "nshkr-devtools"
     description: "Code Intelligence Platform: Repository analysis, semantic code search, dependency graphs, and AI-powered code understanding built on the Portfolio RAG ecosystem. Features multi-language parsing (Elixir, Python, JavaScript, TypeScript), AST-aware chunking, call graph analysis, and intelligent code agents for review, refactoring, and documentation."
     url: "https://github.com/nshkrdotcom/portfolio_coder"
-    logo: "/logos/portfolio_coder.svg"
     language: "Elixir"
 
   pristine:
@@ -782,7 +721,6 @@ repos:
     category: "nshkr-devtools"
     description: "Manifest-driven hexagonal core for generating Elixir SDKs and services with pluggable ports/adapters for transport, schema, retries, telemetry, streaming, and multipart."
     url: "https://github.com/nshkrdotcom/pristine"
-    logo: "/logos/pristine.svg"
     language: "Elixir"
 
   superlearner:
@@ -819,7 +757,6 @@ repos:
     category: "nshkr-otp"
     description: "Metaprogramming framework for automatic REST API generation from OTP operations"
     url: "https://github.com/nshkrdotcom/arsenal"
-    logo: "/logos/arsenal.svg"
     language: "Elixir"
 
   arsenal_plug:
@@ -856,7 +793,6 @@ repos:
     category: "nshkr-testing"
     description: "A battle-hardened testing toolkit for building robust and resilient Elixir & OTP applications."
     url: "https://github.com/nshkrdotcom/supertester"
-    logo: "/logos/supertester.svg"
     language: "Elixir"
 
   foundation:
@@ -866,7 +802,6 @@ repos:
     category: "nshkr-observability"
     description: "Elixir infrastructure and Observability Library"
     url: "https://github.com/nshkrdotcom/foundation"
-    logo: "/logos/foundation.svg"
     language: "Elixir"
 
   AITrace:
@@ -876,7 +811,6 @@ repos:
     category: "nshkr-observability"
     description: "The unified observability layer for the AI Control Plane"
     url: "https://github.com/nshkrdotcom/AITrace"
-    logo: "/logos/AITrace.svg"
     language: "Elixir"
 
   Citadel:
@@ -895,7 +829,7 @@ repos:
     category: "nshkr-observability"
     description: "Pachka-powered telemetry reporter for Elixir that batches client-side events, supports pluggable transports and :telemetry forwarding, and drains reliably on shutdown."
     url: "https://github.com/nshkrdotcom/telemetry_reporter"
-    logo: "/logos/telemetry_reporter.svg"
+    language: "Elixir"
 
   playwriter:
     name: "playwriter"
@@ -913,7 +847,6 @@ repos:
     category: "nshkr-data"
     description: "DuckDB driver client in Elixir"
     url: "https://github.com/nshkrdotcom/duckdb_ex"
-    logo: "/logos/duckdb_ex.svg"
     language: "Elixir"
 
   embed_ex:
@@ -923,7 +856,6 @@ repos:
     category: "nshkr-data"
     description: "Vector embeddings service for Elixir—multi-provider support (OpenAI, Cohere, Voyage AI), intelligent caching with Cachex, batch processing with rate limiting, Nx-powered similarity computations, k-means/DBSCAN clustering, semantic deduplication, and ETS-based vector storage. Built for CNS and ML pipelines."
     url: "https://github.com/North-Shore-AI/embed_ex"
-    logo: "/logos/embed_ex.svg"
     language: "Elixir"
 
   weaviate_ex:
@@ -933,7 +865,6 @@ repos:
     category: "nshkr-data"
     description: "Modern Elixir client for Weaviate vector database with health checks and friendly error messages"
     url: "https://github.com/nshkrdotcom/weaviate_ex"
-    logo: "/logos/weaviate_ex.svg"
     language: "Elixir"
 
   chz_ex:
@@ -943,7 +874,6 @@ repos:
     category: "nshkr-data"
     description: "Elixir port of OpenAI's chz library - a powerful configuration management system for building composable, type-safe command-line interfaces with hierarchical configuration, environment variable support, and flexible argument parsing"
     url: "https://github.com/North-Shore-AI/chz_ex"
-    logo: "/logos/chz_ex.svg"
     language: "Elixir"
 
   ex_topology:
@@ -953,7 +883,6 @@ repos:
     category: "nshkr-data"
     description: "Pure Elixir library for graph topology, TDA, and computational topology"
     url: "https://github.com/North-Shore-AI/ex_topology"
-    logo: "/logos/ex_topology.svg"
     language: "Elixir"
 
   nx_penalties:
@@ -963,7 +892,6 @@ repos:
     category: "nshkr-data"
     description: "Composable regularization penalties for Elixir Nx. L1/L2/Elastic Net, KL divergence, entropy, consistency, gradient penalty, orthogonality. Pure Nx.Defn for JIT across EXLA/Torchx. Pipeline composition and Axon.Loop integration."
     url: "https://github.com/North-Shore-AI/nx_penalties"
-    logo: "/logos/nx_penalties.svg"
     language: "Elixir"
 
   GUARDRAIL:
@@ -1013,7 +941,6 @@ repos:
     category: "nshkr-research"
     description: "Chiral Narrative Synthesis - Dialectical reasoning framework for automated knowledge discovery"
     url: "https://github.com/North-Shore-AI/cns"
-    logo: "/logos/cns.svg"
     language: "Elixir"
 
   EADS:
@@ -1032,7 +959,6 @@ repos:
     category: "nshkr-research"
     description: "Phoenix LiveView interface for CNS dialectical reasoning experiments"
     url: "https://github.com/North-Shore-AI/cns_ui"
-    logo: "/logos/cns_ui.svg"
     language: "Elixir"
 
   tools:
@@ -1051,7 +977,6 @@ repos:
     category: "nshkr-utility"
     description: "Download high-quality audio from YouTube as MP3 files using Elixir. Features 104 music genres, duration filtering, per-genre caching, C++ DSP filters, and ML-based transient detection."
     url: "https://github.com/nshkrdotcom/youtube_audio_dl"
-    logo: "/logos/youtube_audio_dl.svg"
     language: "Elixir"
 
   work:
