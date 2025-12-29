@@ -1,0 +1,135 @@
+<svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <!-- Gradient for hex background - electric magenta into aqua -->
+    <linearGradient id="remedy-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff4ecb;" />
+      <stop offset="45%" style="stop-color:#8b2cfa;" />
+      <stop offset="100%" style="stop-color:#00f6ff;" />
+    </linearGradient>
+
+    <!-- Neon edge stroke -->
+    <linearGradient id="remedy-outline" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffb347;" />
+      <stop offset="100%" style="stop-color:#28ffb5;" />
+    </linearGradient>
+
+    <!-- Gradient for cross -->
+    <linearGradient id="cross-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;" />
+      <stop offset="100%" style="stop-color:#d5fff6;" />
+    </linearGradient>
+
+    <!-- Gradient stroke for checkmark -->
+    <linearGradient id="check-gradient" x1="38" y1="40" x2="62" y2="57" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" style="stop-color:#00ffa3;" />
+      <stop offset="100%" style="stop-color:#7c4dff;" />
+    </linearGradient>
+
+    <!-- Radial highlight to add shine -->
+    <radialGradient id="hex-highlight" cx="30%" cy="25%" r="60%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.75);" />
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0);" />
+    </radialGradient>
+
+    <!-- Shadow for depth -->
+    <filter id="remedy-shadow" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.2"/>
+      <feOffset dx="1.5" dy="1.5" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offsetblur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Glow effect for the medical cross -->
+    <filter id="cross-glow" height="150%" width="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="0" dy="0" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.8"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offsetblur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Hex background -->
+  <path
+    d="M 50 2 L 91.6 26 L 91.6 74 L 50 98 L 8.4 74 L 8.4 26 Z"
+    fill="url(#remedy-gradient)"
+    filter="url(#remedy-shadow)"
+  />
+
+  <!-- Neon outline and highlight overlay -->
+  <path
+    d="M 50 2 L 91.6 26 L 91.6 74 L 50 98 L 8.4 74 L 8.4 26 Z"
+    fill="url(#hex-highlight)"
+    stroke="url(#remedy-outline)"
+    stroke-width="1.8"
+    opacity="0.95"
+  />
+
+  <!-- JSON curly braces in background (subtle) -->
+  <g opacity="0.18" fill="white">
+    <text
+      x="25%"
+      y="50%"
+      font-family="Monaco, 'Courier New', monospace"
+      font-size="40"
+      font-weight="bold"
+      fill="white"
+      text-anchor="middle"
+      dominant-baseline="central"
+    >
+      {
+    </text>
+    <text
+      x="75%"
+      y="50%"
+      font-family="Monaco, 'Courier New', monospace"
+      font-size="40"
+      font-weight="bold"
+      fill="white"
+      text-anchor="middle"
+      dominant-baseline="central"
+    >
+      }
+    </text>
+  </g>
+
+  <!-- Medical cross (the "remedy" symbol) -->
+  <g filter="url(#cross-glow)">
+    <!-- Horizontal bar of cross -->
+    <rect x="38" y="45" width="24" height="10" rx="2" fill="url(#cross-gradient)"/>
+
+    <!-- Vertical bar of cross -->
+    <rect x="45" y="38" width="10" height="24" rx="2" fill="url(#cross-gradient)"/>
+  </g>
+
+  <!-- Stylized checkmark overlay (repair/fix indicator) - integrated into cross -->
+  <g opacity="0.75">
+    <path
+      d="M 38 50 L 45 57 L 62 40"
+      stroke="url(#check-gradient)"
+      stroke-width="3.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+      filter="url(#cross-glow)"
+    />
+  </g>
+
+  <!-- Optional: Small circuit pattern in corner (tech/parsing aspect) -->
+  <g opacity="0.3" stroke="white" stroke-width="0.8" fill="none">
+    <circle cx="22" cy="22" r="2" fill="white"/>
+    <line x1="22" y1="24" x2="22" y2="30"/>
+    <circle cx="22" cy="32" r="1.5" fill="white"/>
+    <line x1="24" y1="22" x2="30" y2="22"/>
+    <circle cx="32" cy="22" r="1.5" fill="white"/>
+  </g>
+</svg>

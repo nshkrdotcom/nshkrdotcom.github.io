@@ -1,0 +1,233 @@
+{{ define "main" }}
+<style>
+    /* Ecosystem-specific styles */
+    .ecosystem-page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .ecosystem-page h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #0fbcf9, #ffa801);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .ecosystem-page h2 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin: 3rem 0 1rem;
+        color: #0fbcf9;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(15, 188, 249, 0.3);
+    }
+
+    .ecosystem-page h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 2rem 0 1rem;
+        color: #4cd4b0;
+    }
+
+    .ecosystem-page h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 1.5rem 0 0.5rem;
+        color: #ffa801;
+    }
+
+    .ecosystem-page p {
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+    }
+
+    .ecosystem-page ul, .ecosystem-page ol {
+        margin: 1rem 0 1.5rem 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .ecosystem-page li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+    }
+
+    .ecosystem-page hr {
+        border: none;
+        border-top: 1px solid rgba(15, 188, 249, 0.2);
+        margin: 3rem 0;
+    }
+
+    /* Code blocks and pre */
+    .ecosystem-page pre {
+        background: rgba(10, 15, 28, 0.8);
+        border: 1px solid rgba(15, 188, 249, 0.2);
+        border-radius: 8px;
+        padding: 1.5rem;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+        font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .ecosystem-page code {
+        font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        font-size: 0.9em;
+        background: rgba(15, 188, 249, 0.1);
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        color: #0fbcf9;
+    }
+
+    .ecosystem-page pre code {
+        background: none;
+        padding: 0;
+        color: inherit;
+    }
+
+    /* Tables */
+    .ecosystem-page table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        background: rgba(31, 64, 104, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .ecosystem-page th {
+        background: rgba(15, 188, 249, 0.1);
+        color: #0fbcf9;
+        font-weight: 600;
+        text-align: left;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(15, 188, 249, 0.2);
+    }
+
+    .ecosystem-page td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    .ecosystem-page tr:last-child td {
+        border-bottom: none;
+    }
+
+    .ecosystem-page tr:hover {
+        background: rgba(15, 188, 249, 0.05);
+    }
+
+    /* Blockquotes */
+    .ecosystem-page blockquote {
+        border-left: 3px solid #0fbcf9;
+        margin: 1.5rem 0;
+        padding: 1rem 1.5rem;
+        background: rgba(15, 188, 249, 0.05);
+        border-radius: 0 8px 8px 0;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Links */
+    .ecosystem-page a {
+        color: #0fbcf9;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .ecosystem-page a:hover {
+        color: #ffa801;
+        text-decoration: underline;
+    }
+
+    /* Strong and emphasis */
+    .ecosystem-page strong {
+        color: #ffa801;
+        font-weight: 600;
+    }
+
+    .ecosystem-page em {
+        color: #4cd4b0;
+        font-style: italic;
+    }
+
+    /* Navigation */
+    .page-nav {
+        margin-bottom: 2rem;
+    }
+
+    .nav-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #0fbcf9;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 16px;
+        border: 1px solid rgba(15, 188, 249, 0.3);
+        border-radius: 8px;
+        background: rgba(15, 188, 249, 0.05);
+        transition: all 0.3s;
+        margin-right: 1rem;
+    }
+
+    .nav-link:hover {
+        background: rgba(15, 188, 249, 0.1);
+        border-color: #0fbcf9;
+        transform: translateX(-2px);
+        text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .ecosystem-page {
+            padding: 1rem;
+        }
+
+        .ecosystem-page h1 {
+            font-size: 2rem;
+        }
+
+        .ecosystem-page h2 {
+            font-size: 1.5rem;
+        }
+
+        .ecosystem-page pre {
+            font-size: 0.75rem;
+            padding: 1rem;
+        }
+
+        .ecosystem-page table {
+            display: block;
+            overflow-x: auto;
+        }
+    }
+
+    /* ASCII diagram styling */
+    .ecosystem-page pre {
+        white-space: pre;
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+    }
+
+    /* Highlight for key terms */
+    .ecosystem-page td code {
+        background: rgba(255, 168, 1, 0.1);
+        color: #ffa801;
+    }
+</style>
+
+<nav class="page-nav">
+    <a href="/" class="nav-link">Home</a>
+    <a href="https://github.com/North-Shore-AI" class="nav-link">GitHub</a>
+</nav>
+
+<div class="ecosystem-page">
+    {{ .Content }}
+</div>
+{{ end }}

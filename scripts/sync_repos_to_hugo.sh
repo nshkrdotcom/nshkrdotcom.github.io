@@ -12,12 +12,107 @@ echo "Syncing repositories to Hugo data..."
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 DATA_FILE="$PROJECT_DIR/data/repos.yml"
+LOGOS_DIR="$PROJECT_DIR/static/logos"
 TMP_FILE="$(mktemp)"
+
+# Local repo paths
+LOCAL_NSHKR="$HOME/p/g/n"
+LOCAL_NORTHSHORE="$HOME/p/g/North-Shore-AI"
+
+mkdir -p "$LOGOS_DIR"
 
 cleanup() {
     rm -f "$TMP_FILE"
 }
 trap cleanup EXIT
+
+# Extract logo from local repo and copy to static/logos/{repo}.{ext}
+# Returns the logo path (e.g., /logos/repo.svg) or empty string
+extract_logo() {
+    local repo_name=$1
+    local owner=$2
+    local repo_dir=""
+
+    # Find local repo path
+    if [[ "$owner" == "nshkrdotcom" ]] && [[ -d "$LOCAL_NSHKR/$repo_name" ]]; then
+        repo_dir="$LOCAL_NSHKR/$repo_name"
+    elif [[ "$owner" == "North-Shore-AI" ]] && [[ -d "$LOCAL_NORTHSHORE/$repo_name" ]]; then
+        repo_dir="$LOCAL_NORTHSHORE/$repo_name"
+    else
+        echo ""
+        return
+    fi
+
+    local readme="$repo_dir/README.md"
+    local logo_file=""
+    local logo_dir=""
+
+    # Parse README for logo in assets/ or logo/ directories
+    if [[ -f "$readme" ]]; then
+        # Check for <img src="assets/..." first
+        logo_file=$(grep -oP '(?<=src=["'"'"']assets/)[^"'"'"']+' "$readme" | head -1)
+        if [[ -n "$logo_file" ]]; then
+            logo_dir="assets"
+        fi
+
+        # Check for <img src="logo/..."
+        if [[ -z "$logo_file" ]]; then
+            logo_file=$(grep -oP '(?<=src=["'"'"']logo/)[^"'"'"']+' "$readme" | head -1)
+            if [[ -n "$logo_file" ]]; then
+                logo_dir="logo"
+            fi
+        fi
+
+        # Check for ![...](assets/...)
+        if [[ -z "$logo_file" ]]; then
+            logo_file=$(grep -oP '(?<=\]\(assets/)[^)]+' "$readme" | head -1)
+            if [[ -n "$logo_file" ]]; then
+                logo_dir="assets"
+            fi
+        fi
+
+        # Check for ![...](logo/...)
+        if [[ -z "$logo_file" ]]; then
+            logo_file=$(grep -oP '(?<=\]\(logo/)[^)]+' "$readme" | head -1)
+            if [[ -n "$logo_file" ]]; then
+                logo_dir="logo"
+            fi
+        fi
+    fi
+
+    # Fallback: check for standard logo filenames if not found in README
+    if [[ -z "$logo_file" ]]; then
+        for dir in assets logo; do
+            for ext in svg png; do
+                for pattern in "${repo_name}.${ext}" "${repo_name}_logo.${ext}" "${repo_name}-logo.${ext}"; do
+                    if [[ -f "$repo_dir/$dir/$pattern" ]]; then
+                        logo_file="$pattern"
+                        logo_dir="$dir"
+                        break 3
+                    fi
+                done
+            done
+        done
+    fi
+
+    if [[ -z "$logo_file" ]] || [[ -z "$logo_dir" ]]; then
+        echo ""
+        return
+    fi
+
+    local src_path="$repo_dir/$logo_dir/$logo_file"
+    if [[ ! -f "$src_path" ]]; then
+        echo ""
+        return
+    fi
+
+    # Get extension and copy with normalized name
+    local ext="${logo_file##*.}"
+    local dest_path="$LOGOS_DIR/${repo_name}.${ext}"
+    cp "$src_path" "$dest_path"
+
+    echo "/logos/${repo_name}.${ext}"
+}
 
 # Category definitions (order matters for display)
 declare -A CATEGORY_NAMES=(
@@ -160,18 +255,29 @@ for cat in "${CATEGORY_ORDER[@]}" "uncategorized"; do
     repos_in_cat=$(jq -r --arg cat "$cat" '.[] | select(.category == $cat)' "$TMP_FILE")
 
     if [ -n "$repos_in_cat" ]; then
+        # Process each repo to extract logo and generate YAML
         jq -r --arg cat "$cat" '
             .[] | select(.category == $cat) |
-            "  " + .name + ":\n" +
-            "    name: \"" + .name + "\"\n" +
-            "    org: \"" + .owner + "\"\n" +
-            "    stars: " + (.stars | tostring) + "\n" +
-            "    category: \"" + .category + "\"\n" +
-            "    description: \"" + (.description | gsub("\""; "\\\"")) + "\"\n" +
-            "    url: \"" + .html_url + "\"\n" +
-            (if .language != "" then "    language: \"" + .language + "\"\n" else "" end) +
-            (if .archived then "    archived: true\n" else "" end)
-        ' "$TMP_FILE" >> "$DATA_FILE"
+            "\(.name)|\(.owner)"
+        ' "$TMP_FILE" | while IFS='|' read -r repo_name owner; do
+            # Extract logo (copies file and returns path)
+            logo_path=$(extract_logo "$repo_name" "$owner")
+
+            # Get repo data from JSON
+            jq -r --arg name "$repo_name" --arg logo "$logo_path" '
+                .[] | select(.name == $name) |
+                "  " + .name + ":\n" +
+                "    name: \"" + .name + "\"\n" +
+                "    org: \"" + .owner + "\"\n" +
+                "    stars: " + (.stars | tostring) + "\n" +
+                "    category: \"" + .category + "\"\n" +
+                "    description: \"" + (.description | gsub("\""; "\\\"")) + "\"\n" +
+                "    url: \"" + .html_url + "\"\n" +
+                (if $logo != "" then "    logo: \"" + $logo + "\"\n" else "" end) +
+                (if .language != "" then "    language: \"" + .language + "\"\n" else "" end) +
+                (if .archived then "    archived: true\n" else "" end)
+            ' "$TMP_FILE" >> "$DATA_FILE"
+        done
     fi
 done
 

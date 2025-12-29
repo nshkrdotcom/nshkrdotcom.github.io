@@ -1,0 +1,47 @@
+<svg width="256" height="256" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Supertester DSPy Orchestrator Logo</title>
+  <desc id="logoDesc">A professional logo for Supertester, a DSPy orchestrator with a high-performance 'snakepit' core. The design features two stylized serpents intertwined within a hexagon, symbolizing orchestration and AI-driven prompting. The color scheme is dark with vibrant green and purple accents, conveying a modern, high-tech feel.</desc>
+
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A2E; stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#12121A; stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="snakeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F260" />
+      <stop offset="100%" stop-color="#0575E6" />
+    </linearGradient>
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Hexagon -->
+  <path d="M60 5 L110 32.5 V 87.5 L60 115 L10 87.5 V 32.5 Z" fill="url(#bgGradient)" stroke="#4A4458" stroke-width="2"/>
+
+  <!-- Intertwined Serpents -->
+  <g transform="translate(0, 2)" filter="url(#neonGlow)">
+    <!-- Serpent 1 -->
+    <path d="M 45,80 C 25,70 35,40 50,30 S 70,25 70,45 S 50,60 60,70 S 80,85 75,95" stroke="url(#snakeGradient)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- Serpent 2 -->
+    <path d="M 75,80 C 95,70 85,40 70,30 S 50,25 50,45 S 70,60 60,70 S 40,85 45,95" stroke="#C875FF" stroke-width="4" fill="none" stroke-linecap="round"/>
+    
+    <!-- Serpent Heads -->
+    <g fill="#FFFFFF">
+      <circle cx="45" cy="95" r="3" fill="#C875FF"/>
+      <circle cx="75" cy="95" r="3" fill="#0575E6"/>
+    </g>
+  </g>
+
+  <!-- Abstract Prompt/Code Elements -->
+  <g fill="#4A4458" opacity="0.6">
+    <text x="25" y="40" font-family="monospace" font-size="10" fill-opacity="0.5">&lt;></text>
+    <text x="85" y="75" font-family="monospace" font-size="10" fill-opacity="0.5">{...}</text>
+    <circle cx="30" cy="60" r="1.5"/>
+    <circle cx="90" cy="50" r="1.5"/>
+  </g>
+</svg>

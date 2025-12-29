@@ -538,6 +538,19 @@
             color: var(--secondary);
         }
 
+        .project-logo {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .project-header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
         .crucible-highlight {
             background: linear-gradient(135deg, rgba(15, 188, 249, 0.1), rgba(255, 168, 1, 0.1));
             border: 2px solid var(--primary);
@@ -669,6 +682,7 @@
                     <img src="/assets/nshkr-logo.svg" alt="nshkrdotcom">
                 </div>
                 <div class="nav-links">
+                    <a href="/ecosystem/">Ecosystem</a>
                     <a href="https://github.com/nshkrdotcom">GitHub</a>
                     <a href="https://github.com/North-Shore-AI">North-Shore-AI</a>
                     <a href="https://hackaday.io/hackerspace/190119-nshkr" class="btn-primary">Hackerspace</a>
@@ -723,6 +737,263 @@
             </div>
         </section>
 
+        <!-- Ecosystem Highlight Section -->
+        <section class="section ecosystem-highlight">
+            <div class="container">
+                <h2 class="section-title">North Shore AI Ecosystem</h2>
+                <p class="section-subtitle">A 7-tiered industrial ML infrastructure built on Elixir and the BEAM platform</p>
+
+                <div class="ecosystem-grid">
+                    <!-- Portfolio RAG Stack -->
+                    <div class="ecosystem-card">
+                        <div class="ecosystem-card-header">
+                            <span class="ecosystem-badge">RAG Stack</span>
+                            <h3>Portfolio Ecosystem</h3>
+                        </div>
+                        <div class="ecosystem-card-body">
+                            <p>Hexagonal architecture for Retrieval-Augmented Generation with 16 port specifications.</p>
+                            <ul class="ecosystem-list">
+                                <li><strong>portfolio_core</strong> - 16 Ports, ETS Registry</li>
+                                <li><strong>portfolio_index</strong> - Pgvector, Neo4j, Broadway</li>
+                                <li><strong>portfolio_manager</strong> - CLI, Multi-Provider</li>
+                                <li><strong>portfolio_coder</strong> - Code Intelligence</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Orchestration -->
+                    <div class="ecosystem-card">
+                        <div class="ecosystem-card-header">
+                            <span class="ecosystem-badge">Orchestration</span>
+                            <h3>Data & Agent Coordination</h3>
+                        </div>
+                        <div class="ecosystem-card-body">
+                            <p>Complementary frameworks for data pipelines and multi-agent systems.</p>
+                            <ul class="ecosystem-list">
+                                <li><strong>flowstone</strong> - Asset-first data orchestration</li>
+                                <li><strong>synapse</strong> - Multi-agent signal bus</li>
+                                <li>Lineage tracking & partition-aware execution</li>
+                                <li>Durable workflows with Postgres persistence</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- CNS Dialectical -->
+                    <div class="ecosystem-card">
+                        <div class="ecosystem-card-header">
+                            <span class="ecosystem-badge">Reasoning</span>
+                            <h3>CNS Dialectical Engine</h3>
+                        </div>
+                        <div class="ecosystem-card-body">
+                            <p>Thesis-Antithesis-Synthesis reasoning with critic-guided resolution.</p>
+                            <ul class="ecosystem-list">
+                                <li><strong>Proposer</strong> - Thesis generation, SNO extraction</li>
+                                <li><strong>Antagonist</strong> - Contradiction detection, B1 gaps</li>
+                                <li><strong>Synthesizer</strong> - Evidence-based resolution</li>
+                                <li><strong>5 Critics</strong> - Grounding, Logic, Novelty, Bias, Causal</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Kitchen/Metalworking -->
+                    <div class="ecosystem-card">
+                        <div class="ecosystem-card-header">
+                            <span class="ecosystem-badge">Metaphors</span>
+                            <h3>Industrial Patterns</h3>
+                        </div>
+                        <div class="ecosystem-card-body">
+                            <p>Organizing metaphors that encode architectural decisions into memorable concepts.</p>
+                            <ul class="ecosystem-list">
+                                <li><strong>Kitchen</strong> - Training infrastructure (crucible_kitchen)</li>
+                                <li><strong>Cookbook</strong> - Training recipes (tinkex_cookbook)</li>
+                                <li><strong>Forge/Anvil/Ingot</strong> - Data labeling stack</li>
+                                <li><strong>Crucible</strong> - ML experimentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NSAI Sites Links -->
+                <div class="nsai-sites">
+                    <h3>NSAI Network</h3>
+                    <div class="sites-grid">
+                        <a href="https://nsai.online" class="site-link" target="_blank" rel="noopener">
+                            <span class="site-domain">nsai.online</span>
+                            <span class="site-desc">Corporate</span>
+                        </a>
+                        <a href="https://nsai.store" class="site-link" target="_blank" rel="noopener">
+                            <span class="site-domain">nsai.store</span>
+                            <span class="site-desc">Marketplace</span>
+                        </a>
+                        <a href="https://nsai.space" class="site-link" target="_blank" rel="noopener">
+                            <span class="site-domain">nsai.space</span>
+                            <span class="site-desc">Research Docs</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ecosystem-cta">
+                    <a href="/ecosystem/" class="btn-primary">Explore Full Ecosystem Documentation</a>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .ecosystem-highlight {
+                background: linear-gradient(135deg, rgba(15, 188, 249, 0.05), rgba(255, 168, 1, 0.05));
+                border-top: 1px solid rgba(15, 188, 249, 0.2);
+                border-bottom: 1px solid rgba(15, 188, 249, 0.2);
+            }
+
+            .ecosystem-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .ecosystem-card {
+                background: rgba(31, 64, 104, 0.4);
+                border: 1px solid rgba(15, 188, 249, 0.2);
+                border-radius: 12px;
+                overflow: hidden;
+                transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            }
+
+            .ecosystem-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--primary);
+                box-shadow: 0 10px 30px rgba(15, 188, 249, 0.15);
+            }
+
+            .ecosystem-card-header {
+                background: rgba(15, 188, 249, 0.1);
+                padding: 1rem 1.5rem;
+                border-bottom: 1px solid rgba(15, 188, 249, 0.1);
+            }
+
+            .ecosystem-badge {
+                display: inline-block;
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                color: white;
+                font-size: 0.75rem;
+                font-weight: 600;
+                padding: 0.25rem 0.75rem;
+                border-radius: 50px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 0.5rem;
+            }
+
+            .ecosystem-card-header h3 {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: white;
+                margin: 0;
+            }
+
+            .ecosystem-card-body {
+                padding: 1.5rem;
+            }
+
+            .ecosystem-card-body p {
+                color: var(--text-muted);
+                font-size: 0.95rem;
+                margin-bottom: 1rem;
+                line-height: 1.5;
+            }
+
+            .ecosystem-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .ecosystem-list li {
+                color: var(--text-muted);
+                font-size: 0.9rem;
+                padding: 0.4rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .ecosystem-list li:last-child {
+                border-bottom: none;
+            }
+
+            .ecosystem-list strong {
+                color: var(--primary);
+            }
+
+            .nsai-sites {
+                margin-top: 3rem;
+                text-align: center;
+            }
+
+            .nsai-sites h3 {
+                font-size: 1.3rem;
+                color: var(--secondary);
+                margin-bottom: 1.5rem;
+            }
+
+            .sites-grid {
+                display: flex;
+                justify-content: center;
+                gap: 1.5rem;
+                flex-wrap: wrap;
+            }
+
+            .site-link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 2rem;
+                background: rgba(31, 64, 104, 0.3);
+                border: 1px solid rgba(15, 188, 249, 0.2);
+                border-radius: 8px;
+                text-decoration: none;
+                transition: all 0.3s;
+            }
+
+            .site-link:hover {
+                background: rgba(15, 188, 249, 0.1);
+                border-color: var(--primary);
+                transform: translateY(-3px);
+            }
+
+            .site-domain {
+                color: var(--primary);
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+
+            .site-desc {
+                color: var(--text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.25rem;
+            }
+
+            .ecosystem-cta {
+                text-align: center;
+                margin-top: 2.5rem;
+            }
+
+            @media (max-width: 768px) {
+                .ecosystem-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .sites-grid {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .site-link {
+                    width: 100%;
+                    max-width: 300px;
+                }
+            }
+        </style>
+
         {{/* Dynamic project sections - iterate over categories from data/repos.yml, sorted by weight */}}
         {{ $catList := slice }}
         {{ range $slug, $info := $.Site.Data.repos.categories }}
@@ -762,7 +1033,10 @@
                                 {{ range $repo := $catRepos }}
                                 <div class="project-card{{ if eq $catSlug "nshkr-crucible" }} crucible-highlight{{ end }}">
                                     <div class="project-header">
-                                        <div class="project-name">{{ $repo.name }}</div>
+                                        <div class="project-header-left">
+                                            {{ if $repo.logo }}<img src="{{ $repo.logo }}" alt="{{ $repo.name }} logo" class="project-logo">{{ end }}
+                                            <div class="project-name">{{ $repo.name }}</div>
+                                        </div>
                                         <div class="project-stars{{ if eq $repo.stars 0 }} zero-stars{{ end }}">⭐ {{ $repo.stars }}</div>
                                     </div>
                                     <p class="project-desc">{{ $repo.description }}</p>
@@ -812,6 +1086,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-links">
+                    <a href="/ecosystem/">Ecosystem</a>
                     <a href="https://github.com/nshkrdotcom">GitHub: @nshkrdotcom</a>
                     <a href="https://github.com/North-Shore-AI">North-Shore-AI Organization</a>
                     <a href="https://hackaday.io/hackerspace/190119-nshkr">North Shore Hackerspace</a>

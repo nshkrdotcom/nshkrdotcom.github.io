@@ -1,0 +1,71 @@
+<svg width="320" height="336" viewBox="0 0 320 336" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FlowStone logo">
+  <defs>
+    <linearGradient id="hexGradient" x1="60" y1="30" x2="260" y2="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1C2A52"/>
+      <stop offset="45%" stop-color="#244778"/>
+      <stop offset="100%" stop-color="#1B1F38"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#5EE6FF" stop-opacity="0.65"/>
+      <stop offset="60%" stop-color="#1C2A52" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0A1024" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pathGradient" x1="80" y1="80" x2="240" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8AF3FF"/>
+      <stop offset="40%" stop-color="#6AC8FF"/>
+      <stop offset="100%" stop-color="#4AA3FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0A0F24" flood-opacity="0.55"/>
+    </filter>
+    <filter id="innerGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feComposite in="blur" in2="SourceGraphic" operator="atop"/>
+    </filter>
+  </defs>
+
+  <!-- Outer hexagon -->
+  <polygon points="160,12 286,90 286,246 160,324 34,246 34,90"
+           fill="url(#hexGradient)" stroke="#6AC8FF" stroke-width="3.5" filter="url(#shadow)"/>
+
+  <!-- Inner glow -->
+  <polygon points="160,24 274,96 274,240 160,312 46,240 46,96"
+           fill="url(#glow)" opacity="0.9"/>
+
+  <!-- Facet lines -->
+  <g stroke="#5EE6FF" stroke-opacity="0.18" stroke-width="2">
+    <line x1="46" y1="96" x2="274" y2="240"/>
+    <line x1="274" y1="96" x2="46" y2="240"/>
+    <line x1="160" y1="24" x2="160" y2="312"/>
+    <line x1="46" y1="168" x2="274" y2="168"/>
+    <line x1="100" y1="62" x2="220" y2="274"/>
+    <line x1="220" y1="62" x2="100" y2="274"/>
+  </g>
+
+  <!-- Flow path -->
+  <path d="M96 168 C116 140 148 136 168 156 C188 176 204 182 224 166
+           C242 152 250 122 232 104 C208 80 170 90 152 116
+           C138 136 120 140 104 126 C88 112 84 88 98 70
+           C122 38 172 34 210 54 C250 76 272 124 246 166
+           C224 202 186 214 156 202 C134 194 104 200 90 218
+           C88 252 96 271 114 280 C152 306 204 290 232 258"
+        fill="none" stroke="url(#pathGradient)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"
+        filter="url(#innerGlow)" />
+
+  <!-- Nodes -->
+  <g fill="#8AF3FF" stroke="#0B1328" stroke-width="2">
+    <circle cx="98" cy="70" r="7"/>
+    <circle cx="152" cy="116" r="7.5"/>
+    <circle cx="224" cy="166" r="7.5"/>
+    <circle cx="90" cy="218" r="7"/>
+    <circle cx="156" cy="202" r="7"/>
+    <circle cx="232" cy="258" r="8"/>
+  </g>
+
+  <!-- Center stone (centered at 160,168) -->
+  <path d="M160 134 L188 152 L188 184 L160 202 L132 184 L132 152 Z"
+        fill="#11172F" stroke="#6AC8FF" stroke-width="3" />
+  <path d="M160 140 L182 154 L182 180 L160 194 L138 180 L138 154 Z"
+        fill="url(#pathGradient)" stroke="#8AF3FF" stroke-width="2" />
+
+</svg>

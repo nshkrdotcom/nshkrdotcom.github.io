@@ -1,0 +1,93 @@
+<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Claude Agent SDK Logo">
+  <defs>
+    <!-- Main Body Gradient: Deep Elixir Purple -->
+    <linearGradient id="body-grad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#36205D"/>
+      <stop offset="100%" stop-color="#1A0F2E"/>
+    </linearGradient>
+
+    <!-- Stroke Gradient: Subtle highlighting -->
+    <linearGradient id="stroke-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#704D9D"/>
+      <stop offset="100%" stop-color="#3E2663"/>
+    </linearGradient>
+
+    <!-- The "Intelligence" Glow (Cyan/White) -->
+    <radialGradient id="core-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#66F9FF"/>
+      <stop offset="100%" stop-color="#66F9FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Network Gradient (Magenta to Purple) -->
+    <linearGradient id="network-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D799FF"/>
+      <stop offset="100%" stop-color="#8F6BFF"/>
+    </linearGradient>
+
+    <!-- Soft Shadow for depth -->
+    <filter id="soft-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- 1. The Container: Rounded Hexagon -->
+  <path
+    d="M110 15 
+       L192.2 62.5 
+       L192.2 157.5 
+       L110 205 
+       L27.8 157.5 
+       L27.8 62.5 
+       Z"
+    fill="url(#body-grad)"
+    stroke="url(#stroke-grad)"
+    stroke-width="2"
+    filter="url(#soft-shadow)"
+  />
+
+  <!-- 2. Technical Detail: Background Circuitry (Subtle) -->
+  <g stroke="#533980" stroke-width="1.5" opacity="0.2" fill="none">
+    <path d="M110 205 L110 160"/>
+    <path d="M27.8 62.5 L70 90"/>
+    <path d="M192.2 62.5 L150 90"/>
+    <circle cx="110" cy="110" r="60" stroke-dasharray="4 6"/>
+  </g>
+
+  <!-- 3. The Symbol: Elixir Drop Network -->
+  <!-- This translates the iconic drop shape into a node-graph -->
+  <g transform="translate(110, 118)">
+    
+    <!-- Connectivity Lines -->
+    <g stroke="#A37ACC" stroke-width="3" stroke-linecap="round">
+      <!-- Left to Top -->
+      <path d="M-35 15 Q-30 -20 0 -65"/>
+      <!-- Right to Top -->
+      <path d="M35 15 Q30 -20 0 -65"/>
+      <!-- Left to Right (Base) -->
+      <path d="M-35 15 Q0 35 35 15"/>
+      <!-- Center connections -->
+      <line x1="0" y1="-10" x2="-35" y2="15" stroke-width="1.5" opacity="0.6"/>
+      <line x1="0" y1="-10" x2="35" y2="15" stroke-width="1.5" opacity="0.6"/>
+      <line x1="0" y1="-10" x2="0" y2="-65" stroke-width="1.5" opacity="0.6"/>
+    </g>
+
+    <!-- The Nodes (Agents/Processes) -->
+    <!-- Top Node (The Source/CLI) -->
+    <circle cx="0" cy="-65" r="7" fill="url(#network-grad)"/>
+    
+    <!-- Bottom Left Node (Input) -->
+    <circle cx="-35" cy="15" r="7" fill="url(#network-grad)"/>
+    
+    <!-- Bottom Right Node (Output) -->
+    <circle cx="35" cy="15" r="7" fill="url(#network-grad)"/>
+
+    <!-- 4. The Core Intelligence (Claude) -->
+    <!-- Central processing node with AI glow -->
+    <circle cx="0" cy="-10" r="14" fill="#2E1A4F" stroke="#7A4BFF" stroke-width="1.5"/>
+    <circle cx="0" cy="-10" r="5" fill="#FFFFFF"/>
+    <!-- The glow effect -->
+    <circle cx="0" cy="-10" r="12" fill="url(#core-glow)" opacity="0.6" style="mix-blend-mode: screen;"/>
+  </g>
+
+</svg>
