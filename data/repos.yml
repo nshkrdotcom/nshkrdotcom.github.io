@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-31T00:48:16Z
+# Last updated: 2025-12-31T12:18:28Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -464,7 +464,7 @@ repos:
   gemini_ex:
     name: "gemini_ex"
     org: "nshkrdotcom"
-    stars: 21
+    stars: 22
     category: "nshkr-ai-sdk"
     description: "Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI"
     url: "https://github.com/nshkrdotcom/gemini_ex"
@@ -541,6 +541,16 @@ repos:
     logo: "/logos/snakepit.svg"
     language: "Elixir"
 
+  snakebridge:
+    name: "snakebridge"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-ai-infra"
+    description: "Compile-time Elixir code generator for Python library bindings. Declare dependencies in mix.exs, generate type-safe modules with introspected typespecs and docs. Deterministic git-friendly output, strict CI mode, streaming, and custom helpers. Runtime via Snakepit."
+    url: "https://github.com/nshkrdotcom/snakebridge"
+    logo: "/logos/snakebridge.svg"
+    language: "Elixir"
+
   tinkex:
     name: "tinkex"
     org: "North-Shore-AI"
@@ -609,16 +619,6 @@ repos:
     description: "Claude Skill Aggregator"
     url: "https://github.com/nshkrdotcom/skill_ex"
     logo: "/logos/skill_ex.svg"
-    language: "Elixir"
-
-  snakebridge:
-    name: "snakebridge"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-ai-infra"
-    description: "Compile-time Elixir code generator for Python library bindings. Declare dependencies in mix.exs, generate type-safe modules with introspected typespecs and docs. Deterministic git-friendly output, strict CI mode, streaming, and custom helpers. Runtime via Snakepit."
-    url: "https://github.com/nshkrdotcom/snakebridge"
-    logo: "/logos/snakebridge.svg"
     language: "Elixir"
 
   tiktoken_ex:
