@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2025-12-31T12:18:28Z
+# Last updated: 2026-01-01T00:54:19Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -660,6 +660,16 @@ repos:
     logo: "/logos/hf_hub_ex.svg"
     language: "Elixir"
 
+  hf_peft_ex:
+    name: "hf_peft_ex"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Elixir port of HuggingFace's PEFT (Parameter-Efficient Fine-Tuning) library. Implements LoRA, AdaLoRA, IA3, prefix tuning, prompt tuning, and 30+ state-of-the-art PEFT methods for efficient neural network adaptation. Built for the BEAM ecosystem with native Nx/Axon integration."
+    url: "https://github.com/North-Shore-AI/hf_peft_ex"
+    logo: "/logos/hf_peft_ex.svg"
+    language: "Jupyter Notebook"
+
   portfolio_core:
     name: "portfolio_core"
     org: "nshkrdotcom"
@@ -1036,6 +1046,16 @@ repos:
     logo: "/logos/cns_ui.svg"
     language: "Elixir"
 
+  youtube_audio_dl:
+    name: "youtube_audio_dl"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-utility"
+    description: "Download high-quality audio from YouTube as MP3 files using Elixir. Features 104 music genres, duration filtering, per-genre caching, C++ DSP filters, and ML-based transient detection."
+    url: "https://github.com/nshkrdotcom/youtube_audio_dl"
+    logo: "/logos/youtube_audio_dl.svg"
+    language: "Elixir"
+
   tools:
     name: "tools"
     org: "nshkrdotcom"
@@ -1043,16 +1063,6 @@ repos:
     category: "nshkr-utility"
     description: "Utility library and helper functions for Elixir development - common patterns, debugging aids, and productivity tools"
     url: "https://github.com/nshkrdotcom/tools"
-    language: "Elixir"
-
-  youtube_audio_dl:
-    name: "youtube_audio_dl"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-utility"
-    description: "Download high-quality audio from YouTube as MP3 files using Elixir. Features 104 music genres, duration filtering, per-genre caching, C++ DSP filters, and ML-based transient detection."
-    url: "https://github.com/nshkrdotcom/youtube_audio_dl"
-    logo: "/logos/youtube_audio_dl.svg"
     language: "Elixir"
 
   chz_ex:
