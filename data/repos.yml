@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-02T12:18:08Z
+# Last updated: 2026-01-03T00:44:32Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -376,7 +376,7 @@ repos:
   synapse:
     name: "synapse"
     org: "nshkrdotcom"
-    stars: 31
+    stars: 32
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
@@ -657,6 +657,7 @@ repos:
     category: "nshkr-ai-infra"
     description: "Core Elixir library for AI agent orchestration - unified workbench for running, tracking, and orchestrating multi-provider LLM agents with sessions, workflows, RAG indexes, tool approvals, and cost tracking"
     url: "https://github.com/nshkrdotcom/command"
+    language: "Elixir"
 
   hf_hub_ex:
     name: "hf_hub_ex"
@@ -776,7 +777,7 @@ repos:
   elixir_dashboard:
     name: "elixir_dashboard"
     org: "nshkrdotcom"
-    stars: 1
+    stars: 2
     category: "nshkr-devtools"
     description: "A Phoenix LiveView performance monitoring dashboard for tracking slow endpoints and database queries"
     url: "https://github.com/nshkrdotcom/elixir_dashboard"
