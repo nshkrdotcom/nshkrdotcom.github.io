@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-03T12:16:45Z
+# Last updated: 2026-01-04T00:54:33Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -571,6 +571,15 @@ repos:
     logo: "/logos/tinkex.svg"
     language: "Elixir"
 
+  command:
+    name: "command"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "Core Elixir library for AI agent orchestration - unified workbench for running, tracking, and orchestrating multi-provider LLM agents with sessions, workflows, RAG indexes, tool approvals, and cost tracking"
+    url: "https://github.com/nshkrdotcom/command"
+    language: "Elixir"
+
   gepa_ex:
     name: "gepa_ex"
     org: "nshkrdotcom"
@@ -648,15 +657,6 @@ repos:
     category: "nshkr-ai-infra"
     description: "NSAI.Work - Unified job scheduler for North-Shore-AI platform"
     url: "https://github.com/North-Shore-AI/work"
-    language: "Elixir"
-
-  command:
-    name: "command"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Core Elixir library for AI agent orchestration - unified workbench for running, tracking, and orchestrating multi-provider LLM agents with sessions, workflows, RAG indexes, tool approvals, and cost tracking"
-    url: "https://github.com/nshkrdotcom/command"
     language: "Elixir"
 
   hf_hub_ex:
