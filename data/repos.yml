@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-05T12:19:50Z
+# Last updated: 2026-01-06T00:47:40Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -650,6 +650,16 @@ repos:
     logo: "/logos/tinkerer.svg"
     language: "Python"
 
+  tinkex_cookbook:
+    name: "tinkex_cookbook"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "Elixir port of tinker-cookbook: training and evaluation recipes for the Tinker ML platform."
+    url: "https://github.com/North-Shore-AI/tinkex_cookbook"
+    logo: "/logos/tinkex_cookbook.svg"
+    language: "Elixir"
+
   work:
     name: "work"
     org: "North-Shore-AI"
@@ -707,16 +717,6 @@ repos:
     description: "AI-native personal project intelligence system - manage, track, and search across all your repositories with semantic understanding"
     url: "https://github.com/nshkrdotcom/portfolio_manager"
     logo: "/logos/portfolio_manager.svg"
-    language: "Elixir"
-
-  tinkex_cookbook:
-    name: "tinkex_cookbook"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Elixir port of tinker-cookbook: training and evaluation recipes for the Tinker ML platform."
-    url: "https://github.com/North-Shore-AI/tinkex_cookbook"
-    logo: "/logos/tinkex_cookbook.svg"
     language: "Elixir"
 
   exdantic:
