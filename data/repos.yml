@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-07T00:47:12Z
+# Last updated: 2026-01-07T12:19:55Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -484,7 +484,7 @@ repos:
   codex_sdk:
     name: "codex_sdk"
     org: "nshkrdotcom"
-    stars: 4
+    stars: 5
     category: "nshkr-ai-sdk"
     description: "OpenAI Codex SDK written in Elixir"
     url: "https://github.com/nshkrdotcom/codex_sdk"
