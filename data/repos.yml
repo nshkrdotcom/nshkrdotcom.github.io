@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-08T00:47:50Z
+# Last updated: 2026-01-08T12:20:30Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -333,6 +333,14 @@ repos:
     logo: "/logos/metrics_ex.svg"
     language: "Elixir"
 
+  training_ir:
+    name: "training_ir"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Training IR for reproducible ML jobs across Crucible and Kitchen. Defines model specs, adapters, learning config, checkpointing, validation, and resource envelopes to standardize training pipelines."
+    url: "https://github.com/North-Shore-AI/training_ir"
+
   anvil:
     name: "anvil"
     org: "North-Shore-AI"
@@ -376,7 +384,7 @@ repos:
   synapse:
     name: "synapse"
     org: "nshkrdotcom"
-    stars: 32
+    stars: 33
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
@@ -474,7 +482,7 @@ repos:
   claude_agent_sdk:
     name: "claude_agent_sdk"
     org: "nshkrdotcom"
-    stars: 15
+    stars: 16
     category: "nshkr-ai-sdk"
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
     url: "https://github.com/nshkrdotcom/claude_agent_sdk"
@@ -511,6 +519,14 @@ repos:
     logo: "/logos/altar_ai.svg"
     language: "Elixir"
 
+  crucible_prompts:
+    name: "crucible_prompts"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-ai-sdk"
+    description: "Prompt and parsing utilities for Crucible and NSAI. Provides templating, schema validation, structured output parsing, and tool-call helpers for consistent LLM IO."
+    url: "https://github.com/North-Shore-AI/crucible_prompts"
+
   mcp_client:
     name: "mcp_client"
     org: "nshkrdotcom"
@@ -520,6 +536,14 @@ repos:
     url: "https://github.com/nshkrdotcom/mcp_client"
     logo: "/logos/mcp_client.svg"
     language: "Elixir"
+
+  nsai_llm:
+    name: "nsai_llm"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-ai-sdk"
+    description: "Shared LLM Actions for NSAI runtimes. Wraps PortfolioCore adapters with Jido.Action semantics and CrucibleIR.Backend input/output to centralize provider access."
+    url: "https://github.com/North-Shore-AI/nsai_llm"
 
   json_remedy:
     name: "json_remedy"
@@ -747,6 +771,14 @@ repos:
     url: "https://github.com/nshkrdotcom/perimeter"
     language: "Elixir"
 
+  batch_ir:
+    name: "batch_ir"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-schema"
+    description: "Batch IR for standardized data interchange across training and inference backends. Covers text/token/chat/instruct batch types with encoding, validation, and portable schemas."
+    url: "https://github.com/North-Shore-AI/batch_ir"
+
   ex_dbg:
     name: "ex_dbg"
     org: "nshkrdotcom"
@@ -925,6 +957,14 @@ repos:
     description: "The command and control layer for the AI-powered enterprise"
     url: "https://github.com/nshkrdotcom/Citadel"
     language: "Elixir"
+
+  lineage_ir:
+    name: "lineage_ir"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-observability"
+    description: "Lineage IR for cross-system traces, spans, artifacts, and provenance edges. Provides a shared event envelope and sink interface for consolidation across runtimes."
+    url: "https://github.com/North-Shore-AI/lineage_ir"
 
   telemetry_reporter:
     name: "telemetry_reporter"
