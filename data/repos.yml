@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-08T12:20:30Z
+# Last updated: 2026-01-09T00:48:13Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -544,6 +544,16 @@ repos:
     category: "nshkr-ai-sdk"
     description: "Shared LLM Actions for NSAI runtimes. Wraps PortfolioCore adapters with Jido.Action semantics and CrucibleIR.Backend input/output to centralize provider access."
     url: "https://github.com/North-Shore-AI/nsai_llm"
+
+  ollixir:
+    name: "ollixir"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-sdk"
+    description: "Ollixir provides a first-class Elixir client with feature parity to the official ollama-python library. Ollixir runs large language models locally or on your infrastructure via Ollama."
+    url: "https://github.com/nshkrdotcom/ollixir"
+    logo: "/logos/ollixir.png"
+    language: "Elixir"
 
   json_remedy:
     name: "json_remedy"
