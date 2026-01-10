@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-10T00:46:35Z
+# Last updated: 2026-01-10T12:16:24Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -562,6 +562,7 @@ repos:
     category: "nshkr-ai-sdk"
     description: "vLLM - High-throughput, memory-efficient LLM inference engine with PagedAttention, continuous batching, CUDA/HIP optimization, quantization (GPTQ/AWQ/INT4/INT8/FP8), tensor/pipeline parallelism, OpenAI-compatible API, multi-GPU/TPU/Neuron support, prefix caching, and multi-LoRA capabilities"
     url: "https://github.com/nshkrdotcom/vllm"
+    language: "Elixir"
 
   json_remedy:
     name: "json_remedy"
@@ -910,6 +911,16 @@ repos:
     url: "https://github.com/nshkrdotcom/arsenal_plug"
     language: "Elixir"
 
+  supertester:
+    name: "supertester"
+    org: "nshkrdotcom"
+    stars: 7
+    category: "nshkr-testing"
+    description: "A battle-hardened testing toolkit for building robust and resilient Elixir & OTP applications."
+    url: "https://github.com/nshkrdotcom/supertester"
+    logo: "/logos/supertester.svg"
+    language: "Elixir"
+
   playwriter:
     name: "playwriter"
     org: "nshkrdotcom"
@@ -917,16 +928,6 @@ repos:
     category: "nshkr-testing"
     description: "Elixir WSL-to-Windows browser integration"
     url: "https://github.com/nshkrdotcom/playwriter"
-    language: "Elixir"
-
-  supertester:
-    name: "supertester"
-    org: "nshkrdotcom"
-    stars: 6
-    category: "nshkr-testing"
-    description: "A battle-hardened testing toolkit for building robust and resilient Elixir & OTP applications."
-    url: "https://github.com/nshkrdotcom/supertester"
-    logo: "/logos/supertester.svg"
     language: "Elixir"
 
   cluster_test:
