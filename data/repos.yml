@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-11T12:17:41Z
+# Last updated: 2026-01-12T00:51:48Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -482,7 +482,7 @@ repos:
   claude_agent_sdk:
     name: "claude_agent_sdk"
     org: "nshkrdotcom"
-    stars: 17
+    stars: 18
     category: "nshkr-ai-sdk"
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
     url: "https://github.com/nshkrdotcom/claude_agent_sdk"
@@ -492,7 +492,7 @@ repos:
   codex_sdk:
     name: "codex_sdk"
     org: "nshkrdotcom"
-    stars: 5
+    stars: 6
     category: "nshkr-ai-sdk"
     description: "OpenAI Codex SDK written in Elixir"
     url: "https://github.com/nshkrdotcom/codex_sdk"
@@ -914,7 +914,7 @@ repos:
   supertester:
     name: "supertester"
     org: "nshkrdotcom"
-    stars: 7
+    stars: 8
     category: "nshkr-testing"
     description: "A battle-hardened testing toolkit for building robust and resilient Elixir & OTP applications."
     url: "https://github.com/nshkrdotcom/supertester"
