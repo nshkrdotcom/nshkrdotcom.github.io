@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-15T12:20:00Z
+# Last updated: 2026-01-16T00:49:39Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -384,7 +384,7 @@ repos:
   synapse:
     name: "synapse"
     org: "nshkrdotcom"
-    stars: 34
+    stars: 35
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
@@ -394,7 +394,7 @@ repos:
   ds_ex:
     name: "ds_ex"
     org: "nshkrdotcom"
-    stars: 15
+    stars: 16
     category: "nshkr-ai-agents"
     description: "DSPEx - Declarative Self-improving Elixir | A BEAM-Native AI Program Optimization Framework"
     url: "https://github.com/nshkrdotcom/ds_ex"
@@ -413,7 +413,7 @@ repos:
   DSPex:
     name: "DSPex"
     org: "nshkrdotcom"
-    stars: 10
+    stars: 11
     category: "nshkr-ai-agents"
     description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
     url: "https://github.com/nshkrdotcom/DSPex"
@@ -423,7 +423,7 @@ repos:
   pipeline_ex:
     name: "pipeline_ex"
     org: "nshkrdotcom"
-    stars: 7
+    stars: 8
     category: "nshkr-ai-agents"
     description: "Claude Code + Gemini AI collaboration orchestration tools"
     url: "https://github.com/nshkrdotcom/pipeline_ex"
@@ -492,7 +492,7 @@ repos:
   codex_sdk:
     name: "codex_sdk"
     org: "nshkrdotcom"
-    stars: 6
+    stars: 7
     category: "nshkr-ai-sdk"
     description: "OpenAI Codex SDK written in Elixir"
     url: "https://github.com/nshkrdotcom/codex_sdk"
@@ -519,6 +519,16 @@ repos:
     logo: "/logos/altar_ai.svg"
     language: "Elixir"
 
+  mcp_client:
+    name: "mcp_client"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-sdk"
+    description: "Full-featured Elixir client for the Model Context Protocol (MCP) with multi-transport support, resources, prompts, tools, and telemetry."
+    url: "https://github.com/nshkrdotcom/mcp_client"
+    logo: "/logos/mcp_client.svg"
+    language: "Elixir"
+
   ollixir:
     name: "ollixir"
     org: "nshkrdotcom"
@@ -536,16 +546,6 @@ repos:
     category: "nshkr-ai-sdk"
     description: "Prompt and parsing utilities for Crucible and NSAI. Provides templating, schema validation, structured output parsing, and tool-call helpers for consistent LLM IO."
     url: "https://github.com/North-Shore-AI/crucible_prompts"
-
-  mcp_client:
-    name: "mcp_client"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-sdk"
-    description: "Full-featured Elixir client for the Model Context Protocol (MCP) with multi-transport support, resources, prompts, tools, and telemetry."
-    url: "https://github.com/nshkrdotcom/mcp_client"
-    logo: "/logos/mcp_client.svg"
-    language: "Elixir"
 
   nsai_llm:
     name: "nsai_llm"
