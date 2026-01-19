@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-19T00:52:49Z
+# Last updated: 2026-01-19T12:21:12Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -394,7 +394,7 @@ repos:
   ds_ex:
     name: "ds_ex"
     org: "nshkrdotcom"
-    stars: 16
+    stars: 15
     category: "nshkr-ai-agents"
     description: "DSPEx - Declarative Self-improving Elixir | A BEAM-Native AI Program Optimization Framework"
     url: "https://github.com/nshkrdotcom/ds_ex"
@@ -863,6 +863,16 @@ repos:
     description: "Manifest-driven hexagonal core for generating Elixir SDKs and services with pluggable ports/adapters for transport, schema, retries, telemetry, streaming, and multipart."
     url: "https://github.com/nshkrdotcom/pristine"
     logo: "/logos/pristine.svg"
+    language: "Elixir"
+
+  prompt_runner_sdk:
+    name: "prompt_runner_sdk"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-devtools"
+    description: "Prompt Runner SDK - Elixir toolkit for orchestrating multi-step prompt executions with Claude Code SDK and Codex SDK. Streaming output, progress tracking, multi-repo commits, configurable LLM backends with per-prompt overrides, and automatic git integration."
+    url: "https://github.com/nshkrdotcom/prompt_runner_sdk"
+    logo: "/logos/prompt_runner_sdk.svg"
     language: "Elixir"
 
   superlearner:
