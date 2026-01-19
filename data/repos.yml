@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-18T12:17:17Z
+# Last updated: 2026-01-19T00:52:49Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -567,7 +567,7 @@ repos:
   json_remedy:
     name: "json_remedy"
     org: "nshkrdotcom"
-    stars: 23
+    stars: 24
     category: "nshkr-ai-infra"
     description: "A practical, multi-layered JSON repair library for Elixir that intelligently fixes malformed JSON strings commonly produced by LLMs, legacy systems, and data pipelines."
     url: "https://github.com/nshkrdotcom/json_remedy"
