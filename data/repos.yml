@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-19T12:21:12Z
+# Last updated: 2026-01-20T00:46:48Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -538,6 +538,14 @@ repos:
     url: "https://github.com/nshkrdotcom/ollixir"
     logo: "/logos/ollixir.png"
     language: "Elixir"
+
+  agent_session_manager:
+    name: "agent_session_manager"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-sdk"
+    description: "Agent Session Manager - A comprehensive Elixir library for managing AI agent sessions, state persistence, conversation context, and multi-agent orchestration workflows"
+    url: "https://github.com/nshkrdotcom/agent_session_manager"
 
   crucible_prompts:
     name: "crucible_prompts"
