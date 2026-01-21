@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-21T00:50:07Z
+# Last updated: 2026-01-21T12:21:39Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -594,6 +594,16 @@ repos:
     logo: "/logos/snakepit.svg"
     language: "Elixir"
 
+  snakebridge:
+    name: "snakebridge"
+    org: "nshkrdotcom"
+    stars: 4
+    category: "nshkr-ai-infra"
+    description: "Compile-time Elixir code generator for Python library bindings. Declare dependencies in mix.exs, generate type-safe modules with introspected typespecs and docs. Deterministic git-friendly output, strict CI mode, streaming, and custom helpers. Runtime via Snakepit."
+    url: "https://github.com/nshkrdotcom/snakebridge"
+    logo: "/logos/snakebridge.svg"
+    language: "Elixir"
+
   rag_ex:
     name: "rag_ex"
     org: "nshkrdotcom"
@@ -602,16 +612,6 @@ repos:
     description: "Elixir RAG library with multi-LLM routing (Gemini, Claude, OpenAI, Ollama), GraphRAG, knowledge graphs, modular retrievers/rerankers, composable pipelines, pgvector integration, advanced chunking, and tool-using agents. Fork of bitcrowd/rag."
     url: "https://github.com/nshkrdotcom/rag_ex"
     logo: "/logos/rag_ex.svg"
-    language: "Elixir"
-
-  snakebridge:
-    name: "snakebridge"
-    org: "nshkrdotcom"
-    stars: 3
-    category: "nshkr-ai-infra"
-    description: "Compile-time Elixir code generator for Python library bindings. Declare dependencies in mix.exs, generate type-safe modules with introspected typespecs and docs. Deterministic git-friendly output, strict CI mode, streaming, and custom helpers. Runtime via Snakepit."
-    url: "https://github.com/nshkrdotcom/snakebridge"
-    logo: "/logos/snakebridge.svg"
     language: "Elixir"
 
   tinkex:
