@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-27T12:21:02Z
+# Last updated: 2026-01-28T00:49:31Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -384,7 +384,7 @@ repos:
   synapse:
     name: "synapse"
     org: "nshkrdotcom"
-    stars: 35
+    stars: 36
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
@@ -394,7 +394,7 @@ repos:
   ds_ex:
     name: "ds_ex"
     org: "nshkrdotcom"
-    stars: 15
+    stars: 16
     category: "nshkr-ai-agents"
     description: "DSPEx - Declarative Self-improving Elixir | A BEAM-Native AI Program Optimization Framework"
     url: "https://github.com/nshkrdotcom/ds_ex"
@@ -433,7 +433,7 @@ repos:
   ALTAR:
     name: "ALTAR"
     org: "nshkrdotcom"
-    stars: 6
+    stars: 7
     category: "nshkr-ai-agents"
     description: "The Agent & Tool Arbitration Protocol"
     url: "https://github.com/nshkrdotcom/ALTAR"
@@ -482,7 +482,7 @@ repos:
   claude_agent_sdk:
     name: "claude_agent_sdk"
     org: "nshkrdotcom"
-    stars: 19
+    stars: 20
     category: "nshkr-ai-sdk"
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
     url: "https://github.com/nshkrdotcom/claude_agent_sdk"
@@ -492,11 +492,21 @@ repos:
   codex_sdk:
     name: "codex_sdk"
     org: "nshkrdotcom"
-    stars: 7
+    stars: 8
     category: "nshkr-ai-sdk"
     description: "OpenAI Codex SDK written in Elixir"
     url: "https://github.com/nshkrdotcom/codex_sdk"
     logo: "/logos/codex_sdk.svg"
+    language: "Elixir"
+
+  altar_ai:
+    name: "altar_ai"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-ai-sdk"
+    description: "Protocol-based AI adapter foundation for Elixir - unified abstractions for gemini_ex, claude_agent_sdk, codex_sdk with automatic fallback, capability detection, and telemetry"
+    url: "https://github.com/nshkrdotcom/altar_ai"
+    logo: "/logos/altar_ai.svg"
     language: "Elixir"
 
   jules_ex:
@@ -517,16 +527,6 @@ repos:
     description: "Ollixir provides a first-class Elixir client with feature parity to the official ollama-python library. Ollixir runs large language models locally or on your infrastructure via Ollama."
     url: "https://github.com/nshkrdotcom/ollixir"
     logo: "/logos/ollixir.png"
-    language: "Elixir"
-
-  altar_ai:
-    name: "altar_ai"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-ai-sdk"
-    description: "Protocol-based AI adapter foundation for Elixir - unified abstractions for gemini_ex, claude_agent_sdk, codex_sdk with automatic fallback, capability detection, and telemetry"
-    url: "https://github.com/nshkrdotcom/altar_ai"
-    logo: "/logos/altar_ai.svg"
     language: "Elixir"
 
   mcp_client:
@@ -673,6 +673,16 @@ repos:
     logo: "/logos/pilot.svg"
     language: "Elixir"
 
+  portfolio_core:
+    name: "portfolio_core"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "Hexagonal architecture core for Elixir RAG systems. Port specifications, manifest-based config, adapter registry, and DI framework. Enables swappable vector/graph/embedding/LLM backends via clean port/adapter abstractions. Hex.pm publishable."
+    url: "https://github.com/nshkrdotcom/portfolio_core"
+    logo: "/logos/portfolio_core.svg"
+    language: "Elixir"
+
   skill_ex:
     name: "skill_ex"
     org: "nshkrdotcom"
@@ -741,16 +751,6 @@ repos:
     url: "https://github.com/North-Shore-AI/hf_peft_ex"
     logo: "/logos/hf_peft_ex.svg"
     language: "Jupyter Notebook"
-
-  portfolio_core:
-    name: "portfolio_core"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Hexagonal architecture core for Elixir RAG systems. Port specifications, manifest-based config, adapter registry, and DI framework. Enables swappable vector/graph/embedding/LLM backends via clean port/adapter abstractions. Hex.pm publishable."
-    url: "https://github.com/nshkrdotcom/portfolio_core"
-    logo: "/logos/portfolio_core.svg"
-    language: "Elixir"
 
   portfolio_index:
     name: "portfolio_index"
