@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-01-29T00:57:09Z
+# Last updated: 2026-01-29T12:27:09Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -492,7 +492,7 @@ repos:
   codex_sdk:
     name: "codex_sdk"
     org: "nshkrdotcom"
-    stars: 8
+    stars: 9
     category: "nshkr-ai-sdk"
     description: "OpenAI Codex SDK written in Elixir"
     url: "https://github.com/nshkrdotcom/codex_sdk"
@@ -663,6 +663,15 @@ repos:
     logo: "/logos/nsai_registry.svg"
     language: "Elixir"
 
+  nsai_work:
+    name: "nsai_work"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "NSAI.Work - Unified job scheduler for North-Shore-AI platform"
+    url: "https://github.com/North-Shore-AI/nsai_work"
+    language: "Elixir"
+
   pilot:
     name: "pilot"
     org: "North-Shore-AI"
@@ -721,15 +730,6 @@ repos:
     description: "Elixir port of tinker-cookbook: training and evaluation recipes for the Tinker ML platform."
     url: "https://github.com/North-Shore-AI/tinkex_cookbook"
     logo: "/logos/tinkex_cookbook.svg"
-    language: "Elixir"
-
-  work:
-    name: "work"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-ai-infra"
-    description: "NSAI.Work - Unified job scheduler for North-Shore-AI platform"
-    url: "https://github.com/North-Shore-AI/work"
     language: "Elixir"
 
   hf_hub_ex:
@@ -1005,6 +1005,8 @@ repos:
     category: "nshkr-observability"
     description: "Lineage IR for cross-system traces, spans, artifacts, and provenance edges. Provides a shared event envelope and sink interface for consolidation across runtimes."
     url: "https://github.com/North-Shore-AI/lineage_ir"
+    logo: "/logos/lineage_ir.svg"
+    language: "Elixir"
 
   telemetry_reporter:
     name: "telemetry_reporter"
