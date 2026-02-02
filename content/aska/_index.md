@@ -1,158 +1,571 @@
 ---
-title: "ASKA"
-date: 2025-05-16
+title: "ASKA: Adaptive Security Kernel Architecture"
+date: 2026-02-02
 draft: false
-description: "Converted docs from 2014 Release"
+description: "Hardware-enforced security through physical isolation. ASKA eliminates shared-substrate side-channel attacks by giving every trust domain its own silicon."
+categories:
+  - technical
 ---
 
+## The Problem: Shared Silicon Is Broken
 
+Every major Trusted Execution Environment shares silicon substrate with untrusted code. This is not a bug --- it is an architectural inevitability. Shared caches, shared power delivery, shared memory controllers, and shared execution units create permanent leakage channels that cannot be patched away.
 
-<style>
-    a {
-    color: #3489F0;        
-    }
-  /* Optional: Add specific styles for this page if needed */
-  .feature-icon {
-    font-size: 2em; /* Example */
-    margin-bottom: 10px;
-  }
-  .use-case-box {
-    border: 1px solid #eee; /* Consider using var(--border-color) */
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    background-color: rgba(15, 21, 32, 0.5); /* Slightly lighter background for boxes */
-  }
-  /* Ensure mermaid diagrams render correctly */
-   .mermaid {
-    background-color: var(--bg-secondary); /* Match pre background */
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: var(--space-4);
-    margin: var(--space-4) 0;
-  }
-</style>
+**Twelve major TEE compromises in seven years:**
 
+| Year | Attack | Target | Root Cause |
+|------|--------|--------|------------|
+| 2018 | Foreshadow | Intel SGX | Shared L1 cache |
+| 2018 | SEVered | AMD SEV | Shared memory controller |
+| 2019 | Plundervolt | Intel SGX | Shared voltage regulator |
+| 2020 | PLATYPUS | Intel SGX | Shared power interface |
+| 2021 | CacheOut | Intel SGX | Shared L1 cache |
+| 2022 | AEPIC Leak | Intel SGX | Shared APIC MMIO |
+| 2023 | Downfall (GDS) | Intel TDX | Shared gather unit |
+| 2023 | CacheWarp | AMD SEV-SNP | Shared cache |
+| 2023 | Inception | AMD SEV | Shared branch predictor |
+| 2024 | GoFetch | Apple M-series | Shared DMP |
+| 2024 | TDXShadow | Intel TDX | Shared page tables |
+| 2024 | Hertzbleed | Intel/AMD | Shared frequency scaling |
 
-**SecureSphere: Distilled Technical Overview & Patents**
-Author: Paul Lowndes <ZeroTrust@NSHkr.com>
-Date: 20241031
+The pace is accelerating. Every patch addresses a specific channel while the structural problem remains: **shared substrate means shared observation**.
 
-**SecureSphere System Overview:**
-SecureSphere is a hardware-rooted secure computing architecture for high-assurance AGI-era operations. It employs modularity (IES), hardware-enforced isolation, dynamic trust (DTMS), AI-driven security (AESDS), decentralized governance (DLT, MDATS), and quantum-resistant technologies. Core principles include defense-in-depth, zero-trust, and continuous adaptation.
+Physics cannot be patched. Cache timing, power analysis, microarchitectural leakage, and electromagnetic emanation are consequences of electrons flowing through shared conductors. No software update changes the laws of electromagnetism.
 
-**Key Core Technologies/Principles:**
-*   **Modular Isolated Execution Stacks (IES - P1):** Hardware-isolated stacks (CPU, memory, I/O, network), dynamically partitionable into child-IES. Hierarchical zones with mini-TRCs. Secure resource borrowing (SRBM - P9).
-*   **Dynamic Trust Management System (DTMS - P4):** Manages trust between IES/zones via TRCs on a decentralized ledger (P15). Uses behavioral metrics (P2, P7, P10) and security posture (P13).
-*   **Automated Evolutionary Software Development System (AESDS - P16):** AI-driven system for continuous software monitoring, updates, and improvement. Uses IAMA (P16) for legacy system vulnerability analysis and patch generation.
-*   **Sovereign Trust Network (STN - P27):** Highly isolated network for sensitive data/keys.
-*   **Dynamic Trust Gateway (DTG - P28):** Mediates ATN (P3) and STN communication with dynamic channel provisioning and DPI.
-*   **Hardware-Enforced Security:** Includes HESE-DAR (P24) for data-at-rest encryption, anomaly detection (P7), memory protection (P8), secure boot (P1, P13, P33).
-*   **Multi-Channel Network (P3):** Physically segregated channels, each with a dedicated firewall.
-*   **Quantum Resistance (P5, P29):** QKD, DKM, PQC for communication; QE-OTP module.
-*   **Decentralized Audit & Governance (P13, P14, P15, P17):** DLT and 3D-Microstructure Audit Trails (MDATS).
+---
 
-**Patented Technologies:**
+## The Solution: Physical Isolation
 
-*   **Group I: Core Architecture**
-    *   **P1: Modular IES:** Isolated hardware stacks (IES) with hierarchical zones (mini-TRCs), dynamic partitioning, capability-based inter-component communication (CE-PCFS P26). Includes hierarchical out-of-band security monitoring (LSM, Watcher Meshes, AI Hub).
-    *   **P2: Secure Inter-IES Communication:** Data diodes & capability-augmented PCFS. Hierarchical Security Mesh (MSM) with LSMs. Adaptive security based on declarative policies. Hybrid enforcement (closed-loop limited, open-loop critical actions via Hub).
-    *   **P3: Adaptive Multi-Channel Network:** Physically segregated channels, out-of-band hardware firewall (per-channel instances), capability-aware forwarding, declarative policy enforcement (TRC-based rules). Channel Manager integrates with DTMS, MSM, AESDS.
-    *   **P4: Dynamic Trust Management System (DTMS):** Decentralized Zone Management (DZMS), TRC-based trust, dynamic trust metrics, distributed consensus, policy negotiation. Integrates with IES, MSM, Governance AI.
-*   **Group II: Enhanced Security & Privacy**
-    *   **P5: Quantum-Resistant Secure Communication:** QKD, DKM, PQC. Path-aware key distribution, dynamic QKD endpoint discovery, SIBRA bandwidth reservation.
-    *   **P6: Zero-Knowledge Execution Environment (ZKEE):** Computation on encrypted data. Decentralized verification, zone-based trust.
-    *   **P7: Hardware-Enforced Anomaly Detection, Isolation, Self-Healing:** Secure SCMP reporting, zonal response policies, timing side-channel detection.
-    *   **P8: Hardware-Based Memory Protection:** Capability-based access control, dynamic obfuscation, ORAM-like design.
-*   **Group III: Dynamic Resource Management**
-    *   **P9: Secure Resource Borrowing & Granular I/O Management:** TRC-based policies, multipath communication (MCM), hardware-enforced isolation (IIG, ZTIOH). Multi-Layered Virtual Console (MLVC).
-    *   **P10: AI-Powered Predictive Resource Allocation & Adaptive Scaling for IES:** Multipath optimization, declarative policies, secure sharing, trust-aware optimization (DTMS).
-*   **Group IV: Secure UI & Chiplet Integration**
-    *   **P11: Secure UI Kernel:** Zonal isolation (dedicated TRC), hardware-enforced CFI, declarative policy-based rendering, multi-region display buffer (dynamic trust levels), unidirectional data flow from IES. Secure UI Integration Module with SIZCF for inter-zone comms & remote attestation.
-    *   **P12: Secure & Adaptive Chiplet Architecture:** Dynamic resource allocation, capability-based access control, hardware-enforced isolation. Chiplet Orchestration Module, SIBRA integration, blockchain provenance.
-*   **Group V: Decentralized Governance & Auditing**
-    *   **P13: Secure Zonal Governance System:** AI-driven authentication, DLT, secure boot integration, bootstrapping certificates for voting terminals.
-    *   **P14: 3D-Printed Microstructure Audit Trail:** Tamper-evident physical audit for voting systems, unique identifiers linked to digital records.
-    *   **P15: AI-Powered Governance Auditing & Transparency:** AI Auditing Module analyzes DLT records, TRCs, physical microstructures (P14), software provenance (P17). Automated TRC conflict resolution. Real-time policy simulation engine.
-    *   **P16: Automated Evolutionary Software Development (AESDS):** AI-driven code generation/refinement using knowledge base, metrics, feedback, threat intel. Secure zoned deployment (SCION paths), TRC-based verification. Adaptive AI-driven security (SCMP vulnerability reports, proactive patches, timing side-channel mitigations). Includes Isomorphic Architecture Monitoring & Adaptation (IAMA) for legacy systems: creates isomorphic model, monitors via data diodes, predicts vulnerabilities, generates SecureSphere patches.
-    *   **P17: Multi-Dimensional Audit Trail System (MDATS):** Integrates DLT records (P13, P15) with 3D microstructures (P14). AI-driven analysis of microstructures and digital logs for tampering/inconsistencies. Software provenance tracking (links AESDS P16 updates to microstructures).
-*   **Group VI: Secure Collaboration & Data Management**
-    *   **P18: Secure & Adaptive Hyper-Virtualization System (SHVS):** For collaborative workloads. Decentralized policy management (zone-specific policies, consensus for conflict resolution), real-time security monitoring (hierarchical mesh, AI anomaly detection), privacy-preserving data sharing (Secure Data Enclaves P20, Differential Privacy, Homomorphic Encryption, MPC P19). Manages collaboration contexts with dynamic capabilities (P2).
-    *   **P19: Privacy-Preserving Federated Learning System:** Uses MPC across IES. Dynamic orchestrator adapts model selection, aggregation, privacy techniques.
-    *   **P20: Secure Data Enclave System:** Privacy-preserving collaborative data analytics within IES. Uses differential privacy, homomorphic encryption, MPC (P19). Dynamic configuration.
-    *   **P21: Blockchain-Enabled Self-Evolving Software System:** Integrates AESDS (P16) with blockchain & 3D microstructure (P14, P17) provenance tracking for secure, verifiable software evolution.
-    *   **P22: Secure Inter-Zone Collaboration Framework (SIZCF):** Secure communication & data sharing between zones. Privacy-preserving data exchange (P20), distributed ledger synchronization (P13, P15). Zone discovery, trust assessment (P4).
-*   **Group VII: Foundational Security, Communication & Media**
-    *   **P23: Adaptive Context-Aware MFA:** Biometric & behavioral analysis, out-of-band token verification, MPC for private biometric processing. DLT logging.
-    *   **P24: Hardware-Enforced Secure Encrypted Enclave for Data at Rest (HESE-DAR):** Per-IES encrypted storage, hardware crypto (PQC P5), granular access control (DTMS P4, DLT P13), dynamic resource allocation (P9, P10), anti-tamper, 3D microstructure audit for key management (P14, P17).
-    *   **P25: Dynamically Reconfigurable Capability-Based Inter-IES Communication (DRCI):** Capabilities (R/W/E, address ranges) for inter-IES memory access, dynamically managed by Hub's Capability Manager based on DTMS (P4), workload (P10), governance (P13,P15), errors. Hardware-assisted.
-    *   **P26: Capability-Enhanced Packet-Carried Forwarding State (CE-PCFS):** Integrates capabilities into PCFS hop fields for fine-grained, data-plane-level access control between components/IES.
-    *   **P27: Sovereign Trust Network (STN):** Isolated data/control planes for keys/auth. Multi-level control (primary & recovery planes). MFA, HESE-DAR. Key recovery via hierarchical trusted sync nodes. Isomorphic security stack (isolated MSM/DTMS, uses IAMA P16 for legacy threat intel to patch STN).
-    *   **P28: Adaptive Secure Inter-Zone Communication (DTG - Dynamic Trust Gateway):** Mediates ATN (P3) & STN (P27). Dynamic channel provisioning, multi-path capability aggregation, DPI, data sanitization. Uses DTMS, TRCs. DLT audit.
-    *   **P29: Quantum-Entangled One-Time Pad (QE-OTP) Module:** QEKD for key fragment distribution. DKG in HESE-DAR (P24). FKM. ILSI for legacy compatibility (PQC P5). Verifiable read-once access & state-based key progression.
-    *   **P30: Spatiotemporal Digest for Raster Content Verification:** Generates non-isomorphic "spatiotemporal metadata digest" from environmental sensor data (spatial, temporal, physical params) at time of raster content (audio, image, video) capture. One-way link to physical reality. Optional cryptographic signature.
-    *   **P31: SecureSphere Integrated Spatiotemporal Raster Content Verification:** Implements P30 within HESE-DAR (P24) under DTMS (P4) control. Binds digest to content, records on DLT (P13, P15). Quick verification & legacy integration (IAMA P16).
-    *   **P32: Decentralized Privacy Blurring Standard with SecureSphere Integration:** Opt-in DLT (P13, P15) (managed by DTMS P4 & Gov. Trusted Authority) stores anonymized biometric templates. AI agents on capture devices blur content based on templates & spatiotemporal context (P30, P31). SecureSphere Verification & Blurring Module (in HESE-DAR P24) cross-checks.
-    *   **P33: Decentralized, Hierarchical Bootstrapping and Attestation:** Hardware Root of Trust to IES zones. Dynamic trust integration with DTMS (P4). Tamper-evident audit trail (DLT P13, P15, Microstructures P14).
-    *   **P34a: Quantum-Entangled Auxiliary Memory System (QEAMS):** Out-of-band integrity verification via quantum entanglement between auxiliary memory (chiplet P12 in IES P1) and primary storage.
-    *   **P34b: Spatiotemporal Auxiliary Memory System (SAMS):** Out-of-band integrity verification using spatiotemporal metadata digests captured during data writes.
-    *   **P34c: Passively Radiative Spatiotemporal Auxiliary Memory System (PR-SAMS):** Low-power SAMS using passive radiative sensor array for environmental metadata capture.
-    *   **P35: Out-of-Band Error Module (Implied):** Collects logs from IES Local Error Modules (P7) & MSM (P2). Secure Log Redactor (AI P16, MDATS P17) for sensitive info. Multi-level output to SIEM via dedicated unswitched network paths (MCN P3).
-    *   **P36: Secure & Adaptive Onboard AI Agent:** AI agent in IES (P1). Secure UI (P11) monitoring (unidirectional). Local LLM engine (HESE-DAR P24 model storage). Integrates with DTMS, MSM, AESDS, DLT. Secure API (P2, P25). Secure update process (AESDS P16, IAMA P16, sandbox P1).
-    *   **P37: Secure UI Interaction Auditing with Tamper-Evident Data Lineage:** Captures UI inputs, system modifications, rendered outputs. Correlates into time-ordered lineage. Tamper-evident log (DLT P13, microstructures P14, or AI anomaly detection). Analysis tool for forensics. Leverages P11, P35.
-    *   **P38: Quantum Phase Tunneling Framework:** Point-to-multipoint cascading quantum entanglements for secure data transition between quantum & traditional channels. Dynamic operator-cluster failover. Adaptive security/privacy balancing algorithm (optimizes quantum resource allocation). Transparent cryptographic attestation (PUF-based auth, DLT logging).
+ASKA takes a fundamentally different approach. Instead of trying to hide secrets on shared silicon, ASKA gives every trust domain its own physically separate hardware:
 
-**Diagram Summaries (Concise):**
-*   **D1 (1.md & 2.md): SecureSphere Overview:** Hub, IES Cluster, Networks (ATN, STN, DTG), Data/Resources (HESE-DAR, QEAMS/SAMS), Security (MSM, DTMS), Audit (DLT, MDATS), Media Handling.
-*   **D2 (2.md): IES Lifecycle:** Hub Orchestrator manages IES provisioning, deployment (Secure Boot), scaling, termination via Resource Allocator, DTMS, AESDS, Policy Engine.
-*   **D3 (1.md & 2.md): UI Data Flow / Multi-Channel Network Comms:** User -> Secure UI (P11) -> Sanitizer -> IES (P1) -> App. IES communicates via MCN (P3) (capability-aware NICs, secure channels, out-of-band firewall, Channel Mgr driven by DTMS/MSM).
-*   **D4 (1.md & 2.md): DTG Architecture / HESE-DAR Data Flow:**
-    *   **DTG (1.md):** ATN -> DTG (Channel Provisioner, Capability Aggregator, Security Monitor, Audit Logger) -> STN. DLT for logs.
-    *   **HESE-DAR (2.md):** App (IES P1) -> IOMMU (P9) -> HESE-DAR Controller (Access Control P4/P13, Key Mgr P5, Crypto Engine P5/P7) -> Secure Storage. MSM/DTMS integration. 3D Microstructure for key audit (P14/P17).
-*   **D5 (1.md & 2.md): SecureSphere Detailed Overview / SIZCF Zone Interaction:**
-    *   **Detailed (1.md):** Hub, IES (child-IES, CE-PCFS P26, ZKEE P6, HESE-DAR P24), DTMS, AESDS (IAMA P16), DTG, STN (P27), ATN (P3), SIZCF (P22), SHVS (P18). Supporting Tech: DLT, MDATS, MSM, MCN, QR Comm, Chiplets, FL, SDE, MFA.
-    *   **SIZCF (2.md):** Zone A & B Hubs/Ledgers interact via SIZCF (P22) (Zone Discovery, Trust Assessment P4, Secure Comm Agent P3/P5, Privacy-Preserving Data Sharing P20, Ledger Sync).
-*   **D6 (1.md & 2.md): Security Monitoring & Response / AESDS AI Engine:**
-    *   **Monitoring (1.md):** Data sources (IES, Network, HESE-DAR, UI) -> Local MSM (P2) -> MSM -> Policy Engine/DTMS/Access Control & Anomaly Detection (F) -> Alert (G) / Response (H) (Isolator, Self-Healer, Resource Mgr). MDATS/DLT log.
-    *   **AESDS AI (2.md):** Knowledge Base, Dynamic Inputs (Metrics, Feedback, Threat Intel) -> AI Engine (Code Gen/Refinement) -> Sandbox (IES P1) -> Secure Repo -> Deployment. Integrates MSM, DTMS, HESE-DAR.
-*   **D7 (1.md & 2.md): Key Management & Recovery / Chiplet Integration Lifecycle:**
-    *   **Key Mgt (1.md):** Hub KMS (Gen, Storage P24, Monitor, Revoke). STN (P27) Key Mgr, Auth Mgr, Recovery Controller (Sync Nodes, External High-Trust). DTG (P28) Cap Mgr. MDATS/DLT log.
-    *   **Chiplet (2.md):** Chiplet Insertion -> Auth -> Resource Alloc -> Workload Assign -> Operation (in IES P1 via SCI P12) -> Removal. Chiplet Orchestration Module (P12) manages.
-*   **D8 (1.md & 2.md): Zone Mgt & Inter-Zone Comm / Decentralized Governance (Voting):**
-    *   **Zone Mgt (1.md):** Global Control Plane -> Zone Creation/Mgt, TRC Mgt (DLT). Zone (Hub, IES, LSM, Secure Comm Agent, MCN P3) -> Other Zones via SIZCF (P22). MDATS/DLT log.
-    *   **Voting (2.md):** Voter -> Auth (P11, P13, P14) -> Secure UI (P11) -> Encrypted Vote (P5) -> DLT (P13,P15) tally. Microstructure Gen (P14). Auditor verifies (MDATS P17).
-*   **D9 (1.md & 2.md): Data Flow & Security Processes / AESDS Lifecycle:**
-    *   **Data Flow (1.md):** Hub (DTMS, AESDS, Policy) -> IES (Apps, SDE P20, FL P19) -> Local MSM -> MSM -> Anomaly/Response. Data I/O via MCN (P3) to other zones/external. DLT logs.
-    *   **AESDS Cycle (2.md):** AI Engine (Knowledge Base, Threat Intel) -> Testing (IES Sandbox P1) -> Validation -> Governance (DLT P13/P15) -> Deployment (IES/Apps). Monitoring (P2) & Feedback loop. Microstructure audit (P14/P17).
-*   **D10 (1.md & 2.md): Bootstrapping & Attestation / Adaptive MCN (Quantum Highway):**
-    *   **Boot (1.md):** Power On -> HW Root of Trust -> Secure Boot ROM (TRC) -> Bootloader Verify (DTMS) -> Secure OS -> IES Init (Mini-TRC Verify) -> DTMS Integ -> App Load -> Attestation (DLT).
-    *   **MCN (2.md):** IES NICs (Capability-Aware P2/P25) -> Secure Channels (Trust Levels) -> Firewall Checkpoints (P3) -> Channel Mgr (Dynamic Routing via DTMS/MSM) -> External (QR Gateway P5, SIZCF P22) / Legacy.
-*   **D11 (1.md & 2.md): Security Meshes / DTMS in Action:**
-    *   **Meshes (1.md):** IES -> LSM -> Watcher Mesh -> AI Hub. MSM oversees. Passive RAM/SSD monitoring. Unidirectional control (MSM->LSM, Watcher->LSM). Bidirectional (Watcher<->AI Hub). Consensus-based enforcement option.
-    *   **DTMS (2.md):** IES (Trust Level X) requests Resource (Sensitivity Y). DTMS Trust Hub (Trust Level, Monitoring Data, Threat Intel Z, Policies) -> Trust Calc -> Consensus Engine -> Access Gate.
-*   **D12 (1.md & 2.md): Config Mgt & Deployment / Data Enclave (Sanctuary):**
-    *   **Config (1.md):** DLT/Policy Input -> CMM (Validators, Merge, Conflict Resolver P13/P15, Generator, Versioning, Store P24) -> DA -> IES. Simulator & Impact Analysis (AI P10/P16, MSM P2, GovAI P15) -> User (P11). Integrates DTMS, AESDS, IAMA.
-    *   **Enclave (2.md):** IES A/B (Data Sources) -> Secure Ingestion (Auth Channels P2/P3/P5) -> Enclave (Validation, Processing, MPC P19, DP, HE) -> Sanitized Output -> External (SIZCF P22). DTMS (P4) controls access. DLT (P13/P15) audits.
-*   **D13 (1.md & 2.md): Error Handling & Logging / Hub (Command Center):**
-    *   **Error (1.md):** IES App/Kernel -> Local Error Log -> Local Error Module (P7) -> Error Aggregator (P35, MSM P2 input) -> Secure Log Redactor (P16,P17, DTMS input) -> Multi-Level Output (A, B, Legacy) -> Secure Unswitched Channels (P3) -> SIEM. DLT logs.
-    *   **Hub (2.md):** Operators view Display (IES Status, Network Traffic, Alerts, Resource Use). Control Panel interacts with Hub Modules (Orchestrator, Policy Engine, MSM/DTMS/SIZCF/AESDS/Microstructure/Ledger Interfaces). External connections to IES, MSM, DTMS etc.
-*   **D14 (1.md & 2.md): Onboard AI Agent / Control-Data Planes:**
-    *   **AI Agent (1.md):** User -> Secure UI (P11) -> UI Monitor (P37, Data Diode P2) -> Sanitizer -> LLM Engine (in IES P1: Model Store P24, Inference P12, Tokenizer, Context Mgt). Integrates DTMS, MSM, AESDS, DLT, RM, SIZCF, IAMA. Agent API (P2, P25) -> Aggregation Hub. Optional FL (P19), External Sys Integ.
-    *   **Planes (2.md):** Control Plane (Hub CP -> DTMS, ZM, CM, RM, AESDS CP, MSM -> IES CP -> NIC CP -> MCN -> External). Data Plane (IES DP -> NIC DP -> MCN & IOMMU/Peripherals. IES Internals: App, SecOS, SecKernel, MMU, Memory P8, HESE-DAR P24). UI Plane (P11). DLT audits all.
-*   **D15 (1.md & 2.md): BCI Integration / Detailed Integration:**
-    *   **BCI (1.md):** BCI Hardware (P1 in IES) -> Secure Kernel (P1) (Encryption P2, TEE) -> Data Enclaves (P20) (AI Model, FL P19). HESE-DAR (P24) for storage. Secure Channels (P3,P5) to Cloud. UI (P11) via Data Diode. User/BCI input -> UI Monitor -> AI modules.
-    *   **Detailed (2.md):** IES Cluster (Internals: Child IES/Zones, MiniTRC, Local DTMS/RM, LSM, AD P7, Secure Boot P1/P13) -> Inter-IES Comm (Data Diode, CE-PCFS P26, CapMgr) & MCN (P3/P5 QR GW, Global FW). Hub (DTMS, ZM, CM, RM, AESDS, MSM). UI Plane (P11). External (SIZCF P22). DLT. Data Services (FL P19, SDE P20, ZKEE P6). SHVS (P18). 3D Microstructures (P14/P17). MFA (P23).
-*   **D16 (1.md & 2.md): Remote UI / Automated Software & Trust Systems Integration:**
-    *   **Remote UI (1.md):** Client App -> Secure Channel (P2,P3,P5) -> Hub (Auth MFA P23, Session Mgr, CapMgr P25, DTMS P4, Audit DLT) -> Remote UI Session IES (P1) (SecureUI P11, Sanitizer, Renderer, Session Monitor P2/P7 -> MSM).
-    *   **SW & Trust (2.md):**
-        *   **16a (Main):** AESDS (P16, IAMA P16C9 from Legacy Sys) updates STN (P27, Iso Sec Stack), DTG (P28), Core. STN (Key/Auth Mgr, NonSwitched FW) & DTG (MultiPath, CapMgr, AuthZ) interact with ATN/Core. DLT/MDATS audit.
-        *   **16b (AESDS+IAMA):** AI Engine (Knowledge Base, IsoModel from IAMA/LegacySys, Metrics, Feedback, ThreatIntel) -> Specialized Code Gens (STN, DTG, Core) -> Parallel Sandboxes (STN/DTG/Core specific internals) -> SecureSphere Interface (P2,P3,P4) for deployment. Vulnerability DB fed by IAMA/AI.
-        *   **16c (STN Ext):** Data Plane (Input -> NonSwitch FW -> Router -> IES P1 -> HESE-DAR P24 -> DTG P28; Ext High-Trust Comm via Data Diode P2, QR GW P5, Ded. Channel P3). Min Control Plane (Ded. Channel -> STN CP -> AuthMgr MFA P23, RM P9/P10, IAMA I/F P16C9 to AESDS P16). Iso Sec Stack (IAMA P16C9 from Legacy -> IsoMSM P2 -> IsoDTMS P4 -> IsoPEP -> IES). Key Recovery (Sync Nodes -> Recovery Ctrl MFA P23 -> KeyMgr PQC P5 -> HESE-DAR; Auth Channel to Ext High-Trust). Fully Seg. Pathway to Remote Multicloud.
-        *   **16d (STN Int):** Similar to 16c but focused on internal data flow within STN components.
-        *   **16e (DTG Int):** SCA (ATN I/F P3 -> MultiPath Mgr using DTMS P4, AESDS IAMA P16C9 -> Secure Paths P5 with Data Diodes P2, Encryptors P5, MACs P26 -> STN I/F). CapMgr (Policy Engine TRC -> CapGen -> CapStore HW-backed/Chiplet P12; MPA from SCA paths). Data Handling (STN I/F -> DPI HW-Accel -> Sanitizer -> AuthZ Cap-Based -> Data Handler/Formatter -> STN P27; MSM P2 feeds DPI). DLT Audit.
-        *   **16f (Ext. Integ):** STN (NonSwitch FW -> QR GW P5 -> Ded.Chan P3 -> Ext.High-Trust; Min CP to Hub; KeyRecNet Sync Nodes -> Ext.High-Trust). DTG (Switch FW -> DataDiode P2 -> QR GW P5 -> MCN P3 -> Ext.Sys/Zones P22; NonSwitch FW to STN's QR GW; CP to Hub). AESDS (Switch FW -> SecComm P2/P3/P5 -> Ext.Untrusted Monitored; IAMA P16C9 to Legacy@STN; Updates to STN/DTG/Core).
-*   **Patents 30-32 Integration (5.md):** SecureSphere Core (Hub, DTMS, AESDS, IES, HESE-DAR). P30: Sensor Array + Raster Capture -> Spatiotemporal Digest Gen -> Digest -> Verification (vs. Raster Content). P31: HESE-DAR hosts Spatiotemporal Content Verif. Module, integrates P30. P32: Privacy Blurring AI Agent (device) + Local Policy -> Anonymized Bio Hash -> Privacy Verif. & Blurring Module (in HESE-DAR, uses DTMS, P31, DLT for opt-in from Gov. Trusted Authority).
-*   **PR-SAMS (P34c) (5.md):** Data Write -> Spatiotemporal Metadata Capture (Passive Radiative Sensor Array, Timestamp/Auth) -> Spatiotemporal Digest Gen (SecureSphere Hashes/Metadata + Spatiotemporal -> Digest Calc -> Crypto Sig) -> Aux Memory Sys (Physical Microfeatures Read-Only + SecureSphere Crypto ID) & Crypto Sig DB. Data Read -> Spatiotemporal Verif. Module (Context Retrieval -> Digest Regen; AMS Digest/ID -> Physical Verif; Sig DB -> Sig Verif) -> Match/Mismatch (Alert to Hub/MSM).
+- **Dedicated CPU cores** per trust domain (no shared pipeline, no shared branch predictor)
+- **Private cache hierarchy** (no shared L1, L2, or LLC --- no Prime+Probe, no Flush+Reload)
+- **Dedicated memory controller and DRAM banks** (no shared memory bus, no Rowhammer across domains)
+- **Independent voltage regulator** per domain (no power analysis across domains)
+- **Independent clock with per-domain PLL** (no clock-based covert channels)
 
-**Abbreviations List:** (From original 1.md, ensure all key new ones are added if not present)
-AESDS, ATN, BCI, CE-PCFS, CFI, CMM, CapMgr, ChannelMgr, DLT, DPI, DTG, DTMS, DZMS, FL, HESE-DAR, HW, IAMA, IES, IIG, ILSI, IOMMU, KCM, KMS, LSIM, LSM, MCM, MDATS, MFA, MPC, MSM, MTE, MTLS, NIC, NVMM, OTP, PCFS, PEP, PQC, PR-SAMS, PUF, QEAMS, QEKD, QE-OTP, QRNG, QVM, RBAC, RM, SAMS, SCA, SCMP, SDE, SDEaaS, SDG, SDM, SHVS, SIBRA, SIZCF, SMC, SRBM, STN, SVM, TEE, TRC, UI, ZKEE, ZTIOH.
+This costs 3--5x silicon area compared to conventional multi-tenant designs. That is the trade-off. ASKA is not for workloads where "good enough" security suffices. It is for environments where a single breach costs millions or lives: defense, critical infrastructure, financial systems, and high-assurance AI.
+
+---
+
+## Architecture
+
+ASKA comprises four core subsystems. Each enforces security in hardware --- software configures policy, but hardware enforces it.
+
+```mermaid
+graph TB
+    subgraph "ASKA System-on-Chip"
+        subgraph "IES 1"
+            CPU1[CHERI-RISC-V Core]
+            Cache1[Private L1/L2]
+            Mem1[Dedicated Memory Controller]
+            HESE1[HESE-DAR Crypto]
+        end
+        subgraph "IES 2"
+            CPU2[CHERI-RISC-V Core]
+            Cache2[Private L1/L2]
+            Mem2[Dedicated Memory Controller]
+            HESE2[HESE-DAR Crypto]
+        end
+        subgraph "IES N"
+            CPUN[CHERI-RISC-V Core]
+            CacheN[Private L1/L2]
+            MemN[Dedicated Memory Controller]
+            HESEN[HESE-DAR Crypto]
+        end
+
+        DMNoC[DMNoC Mesh Fabric]
+        DTMS[DTMS Trust Engine]
+        SM[Security Mesh]
+
+        CPU1 --> DMNoC
+        CPU2 --> DMNoC
+        CPUN --> DMNoC
+        DMNoC --> DTMS
+        SM -.->|read-only tap| CPU1
+        SM -.->|read-only tap| CPU2
+        SM -.->|read-only tap| CPUN
+        SM --> DTMS
+    end
+```
+
+### IES: Isolated Execution Stacks
+
+An IES is a physically self-contained compute unit. Every workload runs inside an IES. There is no shared substrate between IES units for voltage, clock, cache, memory controller, or TLB.
+
+**What an IES contains:**
+
+| Component | Purpose |
+|-----------|---------|
+| RISC-V core(s) with CHERI extensions | Computation with hardware memory safety |
+| Private L1I (32KB), L1D (32KB), L2 (256KB--1MB) | No shared cache hierarchy |
+| Dedicated memory controller + DRAM bank | No shared memory bus |
+| HESE-DAR crypto engine | AES-256-GCM + post-quantum encryption at rest |
+| Per-IES voltage regulator with >60dB LC filtering | Eliminates cross-domain power analysis |
+| Independent PLL | Eliminates clock covert channels |
+| DMNoC port | Sole communication path to other IES units |
+| Hardware noise generator | Masks residual timing/power signatures |
+| Local Security Monitor tap (read-only) | Behavioral observation via hardware data diode |
+| Secure Boot ROM + Hardware Root of Trust | Attestation before any network access |
+
+**Dynamic partitioning:** A parent IES can subdivide into child IES units at runtime, down to a minimum of 1 core, 64MB DRAM, and 64KB L2. This enables fine-grained workload isolation without static provisioning.
+
+**Secure boot sequence:** Every IES goes through a six-stage hardware-verified boot before it can communicate:
+
+1. Hardware Root of Trust activates and verifies Secure Boot ROM integrity
+2. Boot ROM executes, verifies bootloader signature
+3. Bootloader initializes hardware (DMNoC port remains disabled)
+4. Trust Root Configuration loaded and verified via hash chain
+5. DTMS attestation: hardware identity, boot measurements, attestation key
+6. DMNoC port enabled --- IES is now operational
+
+**Guarantee:** A non-attested IES cannot participate in the system. The DMNoC port is physically gated by the attestation result.
+
+**What IES does NOT eliminate:** Electromagnetic emanation coupling between adjacent units (mitigated by 500um exclusion zones and on-die shielding), thermal cross-coupling through shared heat spreader (mitigated by thermal trenches), and intra-IES microarchitectural side channels (processes within the same IES still share that IES's pipeline).
+
+---
+
+### DMNoC: Dynamic Mesh Network-on-Chip
+
+IES units communicate exclusively through DMNoC, a mesh network where every link is independently encrypted and every packet carries an unforgeable capability token.
+
+**Key properties:**
+
+- **Per-link AES-256-GCM encryption** with keys derived from hardware root of trust, rotated every 60 seconds
+- **Capability-Enhanced Packet-Carried Forwarding State (CE-PCFS):** Every packet header contains a 256-bit capability token issued by the DTMS, checked in hardware at every router hop
+- **Stateless routers:** All authorization information is carried in the packet itself; routers hold no per-flow state
+- **Trust-aware routing:** High-security traffic avoids low-trust routers, even if the path is longer
+
+**CE-PCFS capability token (256 bits per packet):**
+
+| Field | Bits | Purpose |
+|-------|------|---------|
+| Source IES ID | 8 | Audit trail |
+| Target IES ID | 8 | Authorization scope |
+| Permission mask | 16 | Read/write/execute/forward/invoke/seal |
+| Resource descriptor | 32 | Memory region, service endpoint, or chiplet function |
+| Validity start | 32 | Epoch timestamp |
+| Validity expiry | 32 | Time-bounded authorization |
+| Hop constraints | 16 | Bloom filter of permitted intermediate routers |
+| Sequence number | 16 | Replay detection |
+| Reserved | 16 | Future use |
+| Cryptographic MAC | 80 | HMAC-SHA-256 proving DTMS issuance |
+
+**Per-router Capability Checking Unit (CCU) pipeline:**
+
+Every packet is validated in hardware before forwarding:
+
+1. **MAC verify** --- cryptographic proof of DTMS issuance
+2. **Revocation check** --- nonce lookup against revocation bitmap
+3. **Temporal validity** --- expiry timestamp comparison
+4. **Permission check** --- requested operation against permission mask
+5. **Resource range check** --- target within authorized range
+6. **Hop constraint check** --- current router in permitted path
+
+All six stages pipelined. Target: single-cycle throughput per packet, ~15--18 cycle total latency (dominated by MAC verification). A dropped packet at any stage is logged and reported to the Security Mesh.
+
+**CCU area per router:** ~32K gates (comparable to a minimal RISC-V core at 20--30K gates). For a 4x4 mesh with 16 routers, total DMNoC overhead is approximately 320K--640K LUTs on FPGA.
+
+**Fault tolerance:** The 2D mesh has minimum vertex connectivity of 4. A single link or router failure cannot partition the network. Failed components are detected via heartbeat within ~100ns--1us and traffic is rerouted.
+
+---
+
+### DTMS: Dynamic Trust Management System
+
+DTMS is the brain of ASKA's adaptive security. It calculates trust levels for every IES, issues capability tokens, and enforces graduated security responses.
+
+**Critical architectural invariant:** Hardware enforces what DTMS decides. DTMS decides based on observed behavior. No single IES can influence both the decision and the enforcement.
+
+**Trust model:** Every IES has a continuous trust score from 0.0 to 1.0, computed from six weighted signals:
+
+| Signal | Weight | Update Frequency |
+|--------|--------|-----------------|
+| Attestation status | 0.20--0.35 | Boot + periodic re-attestation |
+| Behavioral history (anomalies from Security Mesh) | 0.15--0.30 | Event-driven |
+| Policy violation count | 0.10--0.20 | Per-violation |
+| Current security posture | 0.10--0.20 | Periodic |
+| External threat intelligence | 0.05--0.10 | Asynchronous |
+| Zone trust level | 0.05--0.15 | On membership change |
+
+Special cases: attestation failure clamps trust to 0.0 regardless of other signals. In the absence of positive evidence, trust decays toward zero --- trust must be actively maintained.
+
+**Graduated response:**
+
+| Level | Trust Range | Actions |
+|-------|------------|---------|
+| Normal | 0.7--1.0 | Full capability scope, standard TTLs |
+| Elevated Monitoring | 0.5--0.7 | Increased scrutiny, reduced capability scope, shorter TTLs, resource borrowing restricted |
+| Restricted Operation | 0.3--0.5 | No new capabilities issued, existing TTLs shortened, DMNoC routing avoids IES |
+| Electrical Isolation | < 0.3 | All capabilities revoked, DMNoC physically disconnects IES ports, incident recorded |
+
+Escalation is automatic. De-escalation is deliberate: it requires full re-attestation, DTMS verification, sustained clean operation (default 1 hour), and zone authority approval for Level 3 recoveries.
+
+**Capability lifecycle:**
+
+1. IES requests a capability (e.g., "communicate with IES-12 for read access")
+2. DTMS evaluates requester's trust, destination's trust, and policy rules
+3. If approved, DTMS signs a time-bounded capability token
+4. Token delivered to IES via secure DMNoC control plane, stored in hardware capability table
+5. IES includes token in DMNoC packet headers; routers validate at every hop
+6. Token expires or is revoked; IES must request renewal (DTMS re-evaluates trust)
+
+**Capability TTLs by security level:**
+
+| Level | TTL | Use Case |
+|-------|-----|----------|
+| Critical | 10--60 seconds | Cross-zone, high-security data |
+| Standard | 5--30 minutes | Intra-zone compute-to-storage |
+| Low | 1--8 hours | Monitoring, logging, telemetry |
+
+**What DTMS does NOT solve:** It cannot detect attacks that perfectly mimic legitimate behavior. Calibration data for behavioral baselines does not yet exist --- early deployments will require conservative thresholds and manual tuning.
+
+---
+
+### Capability-Based Security
+
+ASKA enforces a two-level capability system: intra-IES memory safety via CHERI, and inter-IES communication authorization via CE-PCFS.
+
+#### Intra-IES: CHERI-RISC-V
+
+ASKA uses [CHERI](https://www.cl.cam.ac.uk/research/security/ctsrd/cheri/) (Capability Hardware Enhanced RISC Instructions), a 15-year research effort from Cambridge and SRI with multiple hardware prototypes, a working software stack (CheriBSD, CHERI-LLVM), and extensive formal verification.
+
+CHERI extends every pointer to a 128-bit capability with hardware-enforced bounds and permissions:
+
+| Property | Mechanism |
+|----------|-----------|
+| **Unforgeable** | Out-of-band tag bit, set only by hardware |
+| **Bounds-checked** | Every memory access validated against capability bounds |
+| **Monotonically non-increasing** | Sub-capabilities can only narrow permissions, never widen |
+| **Permission-checked** | Load, store, execute, seal/unseal --- disallowed operations trap |
+
+This eliminates entire vulnerability classes in hardware:
+
+| Vulnerability | CHERI Defense |
+|---------------|--------------|
+| Buffer overflow | Bounds checking on every dereference |
+| Use-after-free | Temporal safety via Cornucopia/CHERIvoke |
+| Pointer forgery | Tag bit prevents integer-to-capability conversion |
+| Out-of-bounds read (Heartbleed-class) | Bounds prevent reading beyond buffer |
+| Type confusion | Sealed capabilities prevent cross-type reinterpretation |
+
+**Why CHERI-RISC-V, not a custom ISA:** CHERI provides an existing toolchain (CHERI-LLVM, CheriBSD, GDB), existing formal models (Sail ISA specification), and 15 years of peer review. Building a custom ISA would cost $5--10M and 3--5 years with high risk of subtle bugs.
+
+#### Inter-IES: CE-PCFS
+
+Between IES units, every communication requires a DTMS-issued capability token embedded in the DMNoC packet header and validated in hardware at every router hop. There is no ambient authority --- an IES with no capabilities can send nothing.
+
+The application-level API hides this complexity:
+
+```c
+// Open a communication channel (requests capability from DTMS)
+aska_channel_t ch = aska_open(target_ies, ASKA_PERM_READ | ASKA_PERM_WRITE);
+
+// Send and receive data (capability in packet headers, checked at every hop)
+aska_send(ch, buffer, length);
+aska_recv(ch, buffer, max_length);
+
+// Release capability
+aska_close(ch);
+```
+
+The API resembles BSD sockets. The capability machinery --- DTMS requests, token caching, renewal, revocation handling --- is invisible to application code.
+
+---
+
+### Security Mesh: Out-of-Band Monitoring
+
+The Security Mesh provides continuous behavioral observation of all IES units through a physically separate monitoring hierarchy:
+
+```mermaid
+graph TB
+    IES1[IES 1] -->|hardware data diode| LSM1[Local Security Monitor 1]
+    IES2[IES 2] -->|hardware data diode| LSM2[Local Security Monitor 2]
+    IESN[IES N] -->|hardware data diode| LSMN[Local Security Monitor N]
+
+    LSM1 --> MSM[Mesh Security Monitor]
+    LSM2 --> MSM
+    LSMN --> MSM
+
+    MSM --> DTMS[DTMS Trust Engine]
+
+    W[Watcher] -.->|direct channel| DTMS
+    W -.->|observes| MSM
+```
+
+**Hardware data diodes:** Local Security Monitors observe IES behavior through physically one-directional connections. Data flows out of the IES to the monitor. No signal can flow back. This is enforced by circuit topology, not software configuration.
+
+**Three-tier hierarchy:**
+
+| Tier | Component | Function |
+|------|-----------|----------|
+| Local | LSM (per-IES) | High-impedance passive tap; monitors cache behavior, memory patterns, instruction mix, power consumption |
+| Cluster | MSM (per-cluster) | Correlates anomalies across multiple IES units; detects coordinated multi-IES attacks |
+| System | Watcher | Fixed-function hardware (no CPU, no firmware, no updateable microcode); hardwired decision trees; direct escalation channel to DTMS bypassing MSM |
+
+The Watcher has no instruction memory. It cannot be reprogrammed, patched, or compromised through software. Its decision logic is implemented as lookup tables burned into silicon.
+
+---
+
+### HESE-DAR: Hardware-Encrypted Storage
+
+Every IES includes a dedicated Hardware-Encrypted Storage Engine for Data at Rest:
+
+- **AES-256-GCM** pipelined at line speed (one block per cycle)
+- **Post-quantum algorithms** (Kyber-1024 for key encapsulation, Dilithium-5 for signatures) in hybrid mode with classical algorithms --- both must be broken to compromise data
+- **Key hierarchy:** Hardware Root of Trust &rarr; Master Key &rarr; Per-IES Keys &rarr; Per-Application Keys. Compromise is scoped to the affected level
+- **Tamper detection suite:** Voltage glitch detector, temperature sensor, light sensor, active shield mesh. Any trigger initiates battery-backed SRAM zeroization in under 1 microsecond
+- **Key rotation:** Per-application keys every 24 hours, per-IES keys every 7 days, immediate on DTMS demand
+
+---
+
+## Spatiotemporal Digests: The Near-Term Product
+
+While the full ASKA platform requires custom silicon, **Spatiotemporal Digests** ship on existing commodity hardware. This is a software SDK for smartphones that provides cryptographic content provenance by binding media to the physical environment where it was captured.
+
+### How It Works
+
+At the moment of content capture (photo, video, audio), the SDK simultaneously reads from every available sensor and creates a non-invertible cryptographic digest binding the content to its physical context:
+
+```mermaid
+graph LR
+    subgraph "Capture (< 500ms)"
+        GPS[GPS Coordinates]
+        Baro[Barometric Pressure]
+        Cell[Cellular Towers]
+        WiFi[WiFi Fingerprint]
+        Mag[Magnetometer]
+        IMU[IMU / Accelerometer]
+    end
+
+    subgraph "Process"
+        Norm[Normalize & Cross-Check]
+        Hash[SHA-3-256 Digest]
+        Bind[HMAC Content Binding]
+    end
+
+    subgraph "Verify"
+        GT[Ground Truth Databases]
+        Score[Confidence Score]
+        Verdict[HIGH / MEDIUM / LOW]
+    end
+
+    GPS --> Norm
+    Baro --> Norm
+    Cell --> Norm
+    WiFi --> Norm
+    Mag --> Norm
+    IMU --> Norm
+    Norm --> Hash
+    Hash --> Bind
+    Bind --> GT
+    GT --> Score
+    Score --> Verdict
+```
+
+**Six-stage pipeline:**
+
+1. **Simultaneous sensor capture** --- all sensors read within a 500ms window
+2. **Fixed-point normalization** --- GPS to 7 decimal places (~11mm), barometer to 0.01 hPa, deterministic field ordering
+3. **On-device cross-correlation** --- GPS altitude vs. barometric altitude, GPS position vs. WiFi position, device orientation vs. IMU
+4. **Feature vector assembly** --- canonical byte sequence
+5. **Digest computation** --- SHA-3-256 producing 32-byte non-invertible digest
+6. **Content binding** --- HMAC-SHA3-256 cryptographically binds content hash to digest
+
+### Verification
+
+Server-side verification queries six independent ground truth databases:
+
+| Source | Data | Weight |
+|--------|------|--------|
+| NASA CDDIS | GPS ephemeris data | 0.15 |
+| NOAA ISD | Barometric pressure records | 0.20 |
+| WiGLE | WiFi access point database | 0.15 |
+| OpenCelliD | Cellular tower locations | 0.20 |
+| IGRF | Geomagnetic field model | 0.15 |
+| USNO | Astronomical data | 0.15 |
+
+Each channel is scored on a continuous scale (1.0 = strong agreement, 0.5 = inconclusive, 0.0 = contradiction). The weighted aggregate produces a verdict:
+
+- **HIGH** (&ge; 0.8): Strong environmental evidence consistent with claimed capture
+- **MEDIUM** (0.5--0.8): Partial corroboration; some channels inconclusive
+- **LOW** (< 0.5): Insufficient evidence or contradictions detected
+- **FLAG** (any channel = 0.0): Direct contradiction; likely fabrication
+
+### What Digests Prove (and Don't)
+
+**Digests prove:** Physical environmental conditions at the time and place of capture. AI-generated content has no sensor data. Re-captured content (photographing a screen) produces a digest describing the re-capture environment, not the original scene. Casual metadata editing breaks the cryptographic binding.
+
+**Digests do NOT prove:** Content authenticity (only capture conditions). They do not defend against nation-state sensor spoofing ($50K+ per instance with GPS simulators, IMSI catchers, and Helmholtz coils). They produce lower confidence in sparse-sensor environments (rural, underground, conflict zones).
+
+### Spoofing Cost Analysis
+
+| Attacker | Budget | Sensors Defeated | Expected Verdict |
+|----------|--------|-----------------|-----------------|
+| Casual (GPS app) | < $100 | GPS only | LOW / FLAG --- WiFi and cellular cross-checks catch it |
+| Motivated (GPS SDR + WiFi APs) | $100--$5K | GPS + WiFi | LOW to MEDIUM --- cellular and barometric contradict |
+| Organized (full compound) | $50K--$200K | All channels | Potentially HIGH --- but per-instance cost makes mass fabrication impractical |
+| Nation-state | Unlimited | All channels | Defeats digest-only product --- full ASKA hardware required |
+
+The key insight: digests raise the cost of fabrication from **$0** (free metadata editing) to **$50K+ per credible instance**. This is sufficient for journalism, insurance, legal evidence, and social media triage --- contexts where probabilistic confidence and economic deterrence matter.
+
+### Environment-Dependent Confidence
+
+| Environment | Expected Confidence | Active Channels |
+|-------------|-------------------|-----------------|
+| Dense urban | HIGH | 6+ (GPS, barometric, WiFi, cellular, magnetic, audio) |
+| Suburban | HIGH to MEDIUM | 5--6 |
+| Rural | MEDIUM | 3--4 (limited WiFi/cellular) |
+| Indoor | MEDIUM to LOW | 4--5 (GPS degraded) |
+| Underground | LOW | 1--2 (barometric only reliable signal) |
+| Conflict zone | LOW to MEDIUM | Variable (infrastructure may be destroyed, GPS jamming) |
+| Open ocean | MEDIUM | 3 (GPS, barometric, magnetic) |
+
+### Relationship to Existing Standards
+
+- **vs. C2PA:** C2PA answers "which device produced this?" Digests answer "what was the physical environment?" These are orthogonal and complementary.
+- **vs. Detection approaches:** AI detection is a losing arms race against improving generators. Digests verify at capture time, not after the fact.
+- **vs. Blockchain timestamps:** Blockchain proves a content hash existed at a time. Digests provide environmental binding that blockchain lacks.
+
+### Upgrade Path
+
+Every limitation of the digest SDK is addressed by full ASKA hardware. The digest product creates the market, customer relationships, and revenue while the platform is developed. Customers who start with the SDK can upgrade to hardware-backed digests with a hardware root of trust for the sensor pipeline.
+
+---
+
+## Threat Model Summary
+
+ASKA's threat model covers four adversary tiers, 76 identified attack surfaces, and eight architectural trust boundaries.
+
+### Adversary Tiers
+
+| Tier | Budget | Access | ASKA Response |
+|------|--------|--------|---------------|
+| **1: Remote software** | < $10K | Network only | IES isolation contains blast radius; CHERI prevents memory corruption; capabilities block lateral movement |
+| **2: Sophisticated remote** | $10K--$1M | Persistent, no physical | Zero-day in single IES contained; cross-IES escalation requires physical access costing $1M+ |
+| **3: Nation-state / insider** | $1M--$100M | Physical access to hardware | Active shield mesh, tamper zeroization, multi-sensor detection. FIB circuit edit requires $200K+ equipment and weeks of labor |
+| **4: Resource-unlimited** | > $100M | Foundry-level | Explicitly out of scope. Design goal: make Tier 3 economically infeasible, Tier 4 detectable |
+
+### Attack Surface Disposition
+
+| Category | Eliminated | Mitigated | Residual | Total |
+|----------|-----------|-----------|----------|-------|
+| IES physical | 1 | 4 | 3 | 8 |
+| IES microarchitectural | 6 | 1 | 0 | 7 |
+| IES software | 0 | 3 | 2 | 5 |
+| DMNoC | 3 | 7 | 2 | 12 |
+| DTMS | 0 | 4 | 4 | 8 |
+| Security Mesh | 0 | 2 | 5 | 7 |
+| HESE-DAR | 1 | 4 | 3 | 8 |
+| Capability system | 4 | 3 | 2 | 9 |
+| Secure boot | 0 | 5 | 2 | 7 |
+| Digest-specific | 0 | 3 | 2 | 5 |
+| **Total** | **15** | **36** | **25** | **76** |
+
+**Eliminated** means the architectural design removes the attack surface entirely (e.g., physical isolation eliminates all shared-cache attacks). **Mitigated** means specific defenses bound the risk to a quantified level. **Residual** means defenses reduce but do not eliminate the risk --- these are explicitly accepted and monitored.
+
+### Defense-in-Depth
+
+No single component failure breaks the system. Key two-boundary compositions:
+
+- IES isolation + capability system &rarr; cross-IES attacks require physical access
+- DTMS + Security Mesh &rarr; behavioral anomalies detected and trust adjusted
+- HESE-DAR + tamper detection &rarr; key material protected
+- Secure boot + DTMS &rarr; only attested IES units receive capabilities
+- External boundary + DMNoC &rarr; external attackers cannot inject into mesh
+
+### Honest Residual Risks
+
+- **Behavioral mimicry:** Attackers who perfectly mimic legitimate behavior evade behavioral detection
+- **Supply chain compromise:** Hardware trojans inserted at fabrication can bypass multiple defenses. This is a foundational assumption, not a solved problem
+- **DTMS is a high-value target:** As sole capability issuer, DTMS compromise would break all inter-IES access control. Mitigated by running on dedicated Hub IES with highest protection, replicated via distributed consensus
+- **Calibration gap:** Anomaly detection effectiveness depends on deployment-specific behavioral baselines that do not yet exist
+
+---
+
+## Formal Verification Strategy
+
+Extraordinary security claims require extraordinary evidence. ASKA cannot be fully formally verified --- no complex system can. The strategy is to be precise about what is proven, what is model-checked, what is tested, and what is assumed.
+
+### Three-Tier Approach
+
+| Tier | Method | Assurance | Scope |
+|------|--------|-----------|-------|
+| **1: Theorem Proving** | Isabelle/HOL | Machine-checked mathematical proofs | Properties where a single flaw destroys the architecture |
+| **2: Model Checking** | NuSMV, SPIN, ProVerif | Exhaustive finite-state exploration | Properties with degraded-mode failures |
+| **3: Testing** | FPGA prototype, DPA, EM probing | Statistical confidence | Properties resisting formal treatment (physics, ML) |
+
+### Tier 1 Properties (Planned Proofs)
+
+| Property | Claim | Effort | What It Does NOT Prove |
+|----------|-------|--------|----------------------|
+| **IES non-interference** | No information flows between IES except via DMNoC capabilities | 12--18 person-months | Timing channels, physical channels (EM, thermal, power) |
+| **Capability system correctness** | Unforgeability, monotonic attenuation, revocation completeness | 6--12 person-months | Physical key extraction, cryptographic strength |
+| **HESE-DAR key confinement** | Keys never leave enclave in plaintext | 4--6 person-months | Side-channel leakage, fault injection |
+
+### What Cannot Be Formally Verified
+
+1. **Timing-sensitive non-interference** --- open research problem; seL4 deferred it
+2. **Full RTL-to-silicon correspondence** --- requires verified synthesis tools that do not exist
+3. **Cryptographic algorithm strength** --- number-theoretic assumptions are not machine-checkable
+4. **Physical tamper sensor effectiveness** --- empirical question about manufacturing tolerances
+5. **Anomaly detection ML models** --- no formal semantics for neural networks
+6. **Supply chain integrity** --- social and economic problem
+
+### Hard Rule
+
+ASIC tape-out proceeds only after Tier 1 abstract proofs (IES isolation, capability system) are complete and peer-reviewed.
+
+---
+
+## Competitive Positioning
+
+| Platform | Isolation Model | Side-Channel Resistance | Formal Verification | Shipping |
+|----------|----------------|------------------------|--------------------|---------|
+| Intel TDX | Logical (shared substrate) | Broken (TDXShadow, Downfall) | None published | Yes |
+| ARM CCA | Logical (shared memory controller) | Shared interconnect observable | None published | Yes |
+| AMD SEV-SNP | Logical (shared cache) | Broken (CacheWarp) | None published | Yes |
+| Apple Secure Enclave | Logical (shared DMP) | Broken (GoFetch) | None published | Yes |
+| RISC-V CHERI | Capability-based (shared substrate) | No physical isolation | Partial (ISA properties) | Research |
+| **ASKA** | **Physical (dedicated silicon per domain)** | **Eliminates shared-substrate class** | **Planned (Isabelle/HOL)** | **No** |
+
+ASKA's advantage is architectural: physical isolation eliminates the entire shared-substrate attack class rather than patching individual channels. ASKA's disadvantage is equally clear: **no shipping product, no team, no silicon**.
+
+---
+
+## Current Status
+
+| Milestone | Status |
+|-----------|--------|
+| Architecture specification | Complete (200+ pages) |
+| Patent portfolio | 34+ patents filed, 350+ claims |
+| Formal threat model | Draft complete (76 attack surfaces cataloged) |
+| Technical design documents | Complete (10 subsystem specifications) |
+| Interface specifications | Draft (7 inter-subsystem contracts) |
+| Spatiotemporal Digest SDK | Early prototype |
+| FPGA prototype | Not started |
+| ASIC design | Not started |
+| Engineering team | Solo architect |
+| Revenue | None |
+
+ASKA is pre-product. The value today is in the architectural specification, patent portfolio, and threat analysis. The digest SDK is the near-term path to market on existing hardware while the platform is developed.
+
+---
+
+## Roadmap
+
+| Phase | Timeline | Digest Track | Platform Track |
+|-------|----------|-------------|----------------|
+| **0** | Months 0--6 | SDK alpha, 3+ sensors, 5 beta customers | 2-IES FPGA proof of concept, core hires |
+| **1** | Months 6--18 | SDK 1.0, verification API launch | 16-IES FPGA, DMNoC implementation, Tier 1 proofs |
+| **2** | Months 18--36 | Hardware digest module, SDK 2.0 | ASIC design start, full integration |
+| **3** | Months 36--48 | Hardware at scale | First silicon, certifications, commercial systems |
+
+Each phase has explicit go/no-go gate criteria. If the platform track stalls, the digest track continues as an independent business.
+
+---
+
+## Resources
+
+- **GitHub:** [github.com/nshkrdotcom/ASKA](https://github.com/nshkrdotcom/ASKA)
+- **ChronoLedger** (related project): [ChronoLedger on NSHkr.com](/chronoledger/)
+- **Technical documentation for AI agents:** [/for-agents/](/for-agents/)

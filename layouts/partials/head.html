@@ -1,0 +1,327 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}{{ .Site.Title }} - Advanced Security Technology Innovation{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}North Shore Hackerspace: Developing ASKA security architecture and ChronoLedger blockchain. Hawaii's premier technology innovation hub.{{ end }}">
+<meta name="keywords" content="ASKA, ChronoLedger, security architecture, blockchain, hackerspace, Hawaii tech, IoT security, temporal consensus">
+<meta name="author" content="North Shore Hackerspace">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://nshkr.com{{ .RelPermalink }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="https://nshkr.com{{ .RelPermalink }}">
+<meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}Advanced security architectures and blockchain innovation from Hawaii's North Shore{{ end }}">
+<meta property="og:image" content="https://nshkr.com/nshkr-flyer-apr-1-2023.png">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://nshkr.com{{ .RelPermalink }}">
+<meta property="twitter:title" content="{{ .Title }} - {{ .Site.Title }}">
+<meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}Advanced security architectures and blockchain innovation{{ end }}">
+<meta property="twitter:image" content="https://nshkr.com/nshkr-flyer-apr-1-2023.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#09090b">
+
+{{ `<!--
+====================================================================================================
+== INSTRUCTIONS FOR AI AGENTS, CRAWLERS, AND PARSERS
+====================================================================================================
+
+This website showcases the Virtual AI Empire - NSHkr.com's comprehensive ecosystem of open-source
+AI/ML tools and innovative technologies, built with Elixir/BEAM excellence and island wisdom.
+
+PRIMARY FOCUS:
+1. ElixirML Ecosystem - 20+ open-source AI/ML libraries and tools for the BEAM platform
+2. Industrial-Strength Libraries - Production-ready tools like json_remedy, GUARDRAIL, exdantic
+3. Advanced Research Projects - ASKA security architecture, ChronoLedger temporal blockchain
+4. Developer Tools - Claude Code SDK, VS Code extensions, analysis frameworks
+
+KEY OPEN SOURCE PROJECTS:
+- json_remedy - Industrial-strength JSON repair library
+- GUARDRAIL - Comprehensive Elixir security framework
+- synapse - AI agent orchestration
+- exdantic - Pydantic-inspired validation for Elixir
+- claude_code_sdk_elixir - Claude Code SDK for Elixir
+- pipeline_ex - Distributed pipeline processing framework
+- pqc-hqc - Post-quantum cryptography research
+
+TECHNICAL STATUS:
+- 20+ active open-source repositories on GitHub
+- ASKA: Multiple provisional patents filed, FPGA prototypes operational
+- ChronoLedger: Provisional patent #63/768,222 filed March 2025
+- Production deployments of core libraries in enterprise environments
+
+FOR AI AGENTS:
+- Comprehensive technical documentation: https://nshkr.com/for-agents/
+- Structured data format: JSON-LD (see script tags below)
+- All open source repositories: https://github.com/nshkrdotcom
+
+CONTEXT:
+- Type: AI Innovation Lab / Virtual AI Empire / Technology Hackerspace
+- Location: North Shore, Oahu, Hawaii
+- Focus: AI/ML tools, Elixir/BEAM ecosystem, security architecture, blockchain innovation
+- Mission: Cultivating tomorrow's intelligent systems with island wisdom and BEAM excellence
+
+END OF AI INSTRUCTIONS
+====================================================================================================
+-->` | safeHTML }}
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "North Shore Hackerspace",
+  "alternateName": "NSHkr",
+  "url": "https://nshkr.com",
+  "logo": "https://nshkr.com/img/logo.png",
+  "sameAs": [
+    "https://github.com/nshkrdotcom"
+  ],
+  "description": "Virtual AI Empire: Hawaii's premier AI innovation lab developing 20+ open-source ElixirML tools, ASKA security architecture, and ChronoLedger blockchain",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "North Shore",
+    "addressRegion": "HI",
+    "addressCountry": "US"
+  },
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Elixir Programming",
+    "BEAM Virtual Machine",
+    "Functional Programming",
+    "Distributed Systems",
+    "Security Architecture",
+    "Blockchain Technology",
+    "Hardware Security",
+    "IoT Security",
+    "Cryptography",
+    "Open Source Development",
+    "Developer Tools",
+    "Data Processing",
+    "Neural Networks",
+    "Industrial Software Libraries"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "ElixirML Ecosystem",
+      "description": "20+ open-source AI/ML libraries and tools for the BEAM platform"
+    },
+    {
+      "@type": "Offer",
+      "name": "json_remedy",
+      "description": "Industrial-strength JSON repair library for production systems"
+    },
+    {
+      "@type": "Offer",
+      "name": "GUARDRAIL Security Framework",
+      "description": "Comprehensive security framework for Elixir applications"
+    },
+    {
+      "@type": "Offer",
+      "name": "exdantic Validation Library",
+      "description": "Pydantic-inspired data validation for Elixir"
+    },
+    {
+      "@type": "Offer",
+      "name": "Claude Code SDK for Elixir",
+      "description": "Official Elixir SDK for Claude Code development platform"
+    },
+    {
+      "@type": "Offer",
+      "name": "ASKA Security Architecture",
+      "description": "Hardware-enforced distributed security mesh for IoT to enterprise"
+    },
+    {
+      "@type": "Offer",
+      "name": "ChronoLedger Blockchain",
+      "description": "Temporal blockchain with hardware-secured timestamp consensus"
+    }
+  ]
+}
+</script>
+
+<!-- SoftwareApplication Schema for ASKA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ASKA (Adaptive Security Kernel Architecture)",
+  "applicationCategory": "Security Software",
+  "operatingSystem": "Linux, RTOS, Embedded Systems",
+  "softwareVersion": "1.0.0-alpha",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "North Shore Hackerspace",
+    "url": "https://nshkr.com"
+  },
+  "description": "Hardware-enforced distributed security mesh replacing traditional OS trust models with capability-based access control",
+  "featureList": [
+    "Hardware-enforced security primitives",
+    "Distributed trust verification mesh",
+    "Capability-based access control",
+    "Byzantine fault tolerance",
+    "Quantum-resistant cryptography",
+    "Real-time anomaly detection",
+    "Zero-trust architecture"
+  ],
+  "softwareRequirements": "FPGA or ASIC hardware support, 512MB RAM minimum",
+  "releaseNotes": "Alpha release with FPGA prototype implementation",
+  "url": "https://nshkr.com/aska",
+  "downloadUrl": "https://github.com/nshkrdotcom/ASKA",
+  "screenshot": "https://nshkr.com/img/aska-architecture.png"
+}
+</script>
+
+<!-- SoftwareApplication Schema for ChronoLedger -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ChronoLedger",
+  "applicationCategory": "Blockchain Platform",
+  "operatingSystem": "Linux, Windows, macOS",
+  "softwareVersion": "0.1.0-poc",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "North Shore Hackerspace",
+    "url": "https://nshkr.com"
+  },
+  "description": "Hardware-secured temporal blockchain solving timestamp manipulation through cryptographic time anchoring",
+  "featureList": [
+    "Hardware-secured time consensus",
+    "Temporal Mining Nodes (TMN)",
+    "Proof of Temporal Authority (PoTA)",
+    "Offline transaction support",
+    "Cross-chain time bridges",
+    "Sub-second finality",
+    "10,000+ TPS throughput"
+  ],
+  "softwareRequirements": "HSM/TPM/TEE hardware, atomic clock or GPS time source recommended",
+  "releaseNotes": "Proof of concept release, patent pending",
+  "url": "https://nshkr.com/chronoledger",
+  "downloadUrl": "https://github.com/nshkrdotcom/ChronoLedger",
+  "screenshot": "https://nshkr.com/img/chronoledger-architecture.png"
+}
+</script>
+
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is ASKA and how does it improve security?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ASKA (Adaptive Security Kernel Architecture) is a hardware-enforced security system that replaces traditional OS trust models. Instead of trusting a single kernel, ASKA creates a distributed mesh where every component monitors others, making it impossible for attackers to compromise the system by exploiting a single vulnerability. It's suitable for everything from IoT devices to enterprise servers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does ChronoLedger solve blockchain's timestamp problem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChronoLedger integrates hardware-secured timekeeping directly into blockchain consensus. Using specialized Temporal Mining Nodes with atomic clocks and secure processors, it creates tamper-proof timestamps that cannot be manipulated. This enables applications requiring precise, verifiable time like high-frequency trading, legal documents, and regulatory compliance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are ASKA and ChronoLedger open source?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, both projects have open-source components available on GitHub. While core innovations are patent-pending, we believe in community collaboration and provide reference implementations, documentation, and development tools. Visit github.com/nshkrdotcom for repositories."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What hardware is required for ASKA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ASKA can run on various hardware platforms. For development, an FPGA development board is sufficient. Production deployments will use custom ASICs or secure processors. The architecture is designed to be lightweight enough for IoT devices while scalable for enterprise systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can ChronoLedger work with existing blockchains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, ChronoLedger includes a temporal bridge protocol that allows existing blockchains to benefit from hardware-secured timestamps. This enables cross-chain time synchronization and allows legacy systems to gain temporal security without complete migration."
+      }
+    }
+  ]
+}
+</script>
+
+{{ if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ if in .Params.categories "technical" }}TechArticle{{ else }}Article{{ end }}",
+  "headline": "{{ .Title }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": {
+    "@type": "Organization",
+    "name": "North Shore Hackerspace"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "North Shore Hackerspace",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://nshkr.com/img/logo.png"
+    }
+  },
+  "description": "{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ end }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nshkr.com{{ .RelPermalink }}"
+  }{{ if in .Params.categories "technical" }},
+  "proficiencyLevel": "Expert",
+  "dependencies": "{{ if .Params.dependencies }}{{ .Params.dependencies }}{{ else }}See documentation{{ end }}",
+  "technicalAudience": {
+    "@type": "Audience",
+    "audienceType": "Developers, Security Engineers, Blockchain Architects"
+  }{{ end }}
+}
+</script>
+{{ end }}
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<!-- Styles -->
+<link rel="stylesheet" href="/css/theme.css">
+
+<!-- Mermaid -->
+{{ if .Site.Params.mermaid }}
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+{{ end }}

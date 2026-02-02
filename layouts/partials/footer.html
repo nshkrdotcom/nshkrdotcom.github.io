@@ -1,3 +1,38 @@
-<footer>
-    <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }} • NSHkr.com Security Research</p>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="site-logo">NSHkr<span style="color:var(--accent)">.com</span></a>
+        <p>Hawaii's premier AI innovation lab. Cultivating tomorrow's intelligent systems with island wisdom and BEAM excellence.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Projects</h4>
+        <ul class="footer-links">
+          <li><a href="/aska/">ASKA</a></li>
+          <li><a href="/chronoledger/">ChronoLedger</a></li>
+          <li><a href="/ecosystem/">Ecosystem</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Content</h4>
+        <ul class="footer-links">
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/hackerspace/">Hackerspace</a></li>
+          <li><a href="/for-agents/">For Agents</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Links</h4>
+        <ul class="footer-links">
+          <li><a href="https://github.com/nshkrdotcom" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/North-Shore-AI" target="_blank" rel="noopener">North Shore AI</a></li>
+          <li><a href="https://hackaday.io/hacker/2169544-nshkr" target="_blank" rel="noopener">Hackaday</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; {{ now.Format "2006" }} {{ .Site.Title }}</span>
+      <span>North Shore, Oahu, Hawaii</span>
+    </div>
+  </div>
 </footer>

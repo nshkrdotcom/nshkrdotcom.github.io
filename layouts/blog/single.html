@@ -1,197 +1,30 @@
 {{ define "main" }}
-<article class="blog-article">
-    <nav class="article-nav">
-        <a href="/" class="nav-link">← Home</a>
-        <a href="/blog" class="nav-link">← Blog</a>
-    </nav>
-    
-    <header class="article-header">
-        <div class="article-meta">
-            <time>{{ .Date.Format "January 2, 2006" }}</time>
-            {{ if .Params.tags }}
-            <div class="article-tags">
-                {{ range .Params.tags }}
-                <span class="tag">{{ . }}</span>
-                {{ end }}
-            </div>
-            {{ end }}
-        </div>
-        <h1 class="article-title">{{ .Title }}</h1>
-    </header>
-    
-    <div class="article-content">
-        {{ .Content }}
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    <a href="/blog/">Blog</a>
+    <span class="breadcrumb-sep">/</span>
+    <span>{{ .Title }}</span>
+  </nav>
+
+  <article class="prose">
+    <h1>{{ .Title }}</h1>
+
+    <div class="article-meta">
+      {{ if not .Date.IsZero }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ end }}
+      {{ with .Params.tags }}
+      <div class="article-tags">
+        {{ range . }}
+        <span class="badge">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
     </div>
-    
-    <footer class="article-footer">
-        <a href="/blog" class="nav-link">← Back to Blog</a>
-    </footer>
-</article>
 
-<style>
-.blog-article {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-.article-nav {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-.nav-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #0fbcf9;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 8px 16px;
-    border: 1px solid rgba(15, 188, 249, 0.3);
-    border-radius: 8px;
-    background: rgba(15, 188, 249, 0.05);
-    transition: all 0.3s;
-}
-
-.nav-link:hover {
-    background: rgba(15, 188, 249, 0.1);
-    border-color: #0fbcf9;
-    transform: translateX(-2px);
-}
-
-.article-header {
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.article-meta {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.article-meta time {
-    color: #0fbcf9;
-}
-
-.article-tags {
-    display: flex;
-    gap: 10px;
-}
-
-.tag {
-    background: rgba(255, 168, 1, 0.1);
-    color: #ffa801;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-}
-
-.article-title {
-    font-size: 48px;
-    line-height: 1.2;
-    background: linear-gradient(135deg, #fff, #0fbcf9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.article-content {
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.8;
-    font-size: 18px;
-}
-
-.article-content h1,
-.article-content h2,
-.article-content h3,
-.article-content h4,
-.article-content h5,
-.article-content h6 {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    color: #fff;
-}
-
-.article-content h2 {
-    font-size: 32px;
-    color: #0fbcf9;
-}
-
-.article-content h3 {
-    font-size: 24px;
-}
-
-.article-content p {
-    margin-bottom: 20px;
-}
-
-.article-content pre {
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 20px;
-    overflow-x: auto;
-    margin: 20px 0;
-}
-
-.article-content code {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: 'Monaco', 'Consolas', monospace;
-}
-
-.article-content pre code {
-    background: none;
-    padding: 0;
-}
-
-.article-content blockquote {
-    border-left: 4px solid #0fbcf9;
-    padding-left: 20px;
-    margin: 20px 0;
-    color: rgba(255, 255, 255, 0.8);
-    font-style: italic;
-}
-
-.article-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-.article-content a {
-    color: #0fbcf9;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s;
-}
-
-.article-content a:hover {
-    border-bottom-color: #0fbcf9;
-}
-
-.article-content ul,
-.article-content ol {
-    margin: 20px 0;
-    padding-left: 30px;
-}
-
-.article-content li {
-    margin-bottom: 10px;
-}
-
-.article-footer {
-    margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-</style>
+    {{ .Content }}
+  </article>
+</div>
 {{ end }}

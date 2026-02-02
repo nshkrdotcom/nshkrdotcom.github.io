@@ -1,39 +1,20 @@
 {{ define "main" }}
-<style>
-.page-nav {
-    margin-bottom: 2rem;
-}
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    {{ with .CurrentSection }}
+      {{ if ne .RelPermalink "/" }}
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span class="breadcrumb-sep">/</span>
+      {{ end }}
+    {{ end }}
+    <span>{{ .Title }}</span>
+  </nav>
 
-.nav-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--accent-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 8px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    transition: all 0.3s;
-    margin-right: 1rem;
-}
-
-.nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--accent-secondary);
-    transform: translateX(-2px);
-}
-</style>
-
-<nav class="page-nav">
-    <a href="/" class="nav-link">← Home</a>
-</nav>
-
-<div class="message system">
-    <article>
-        <h1>{{ .Title }}</h1>
-        {{ .Content }}
-    </article>
+  <article class="prose">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
 </div>
 {{ end }}

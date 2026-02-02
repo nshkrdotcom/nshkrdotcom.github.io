@@ -1,19 +1,21 @@
 {{ define "main" }}
-  <!-- Use the 'message system' class to mimic the chat message styling -->
-  <div class="message system"> 
-    
-    <!-- Render the page title from _index.md front matter -->
-    <h1>{{ .Title }}</h1> 
-    
-    <!-- Render the main content from _index.md -->
-    <!-- Hugo renders the Markdown content here -->
-    {{ .Content }} 
-    
-    <!-- 
-      If you later add other .md files inside /content/chronoledger/ 
-      and want to list them on this page, you could add a loop here.
-      For now, we assume this _index.md is the only content for the section.
-    -->
+<div class="container">
+  <article class="prose">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
 
+  {{ if .Pages }}
+  <div class="container mt-xl">
+    <div class="projects-grid">
+      {{ range .Pages }}
+      <a href="{{ .RelPermalink }}" class="post-card">
+        <div class="post-card-title">{{ .Title }}</div>
+        <p class="post-card-summary">{{ .Summary | truncate 200 }}</p>
+      </a>
+      {{ end }}
+    </div>
   </div>
+  {{ end }}
+</div>
 {{ end }}

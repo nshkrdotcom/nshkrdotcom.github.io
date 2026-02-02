@@ -1,55 +1,14 @@
 {{ define "main" }}
-<div class="message system">
-    <h1 style="color: var(--accent-primary); margin-bottom: 1.5rem;">404 - Page Not Found</h1>
-    
-    <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-        Oops! It looks like you've ventured into uncharted waters. The page you're looking for doesn't exist.
-    </p>
-    
-    <div style="margin: 2rem 0;">
-        <h2 style="color: var(--text-primary); margin-bottom: 1rem;">You might be interested in:</h2>
-        <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 0.5rem;">
-                <a href="/" style="color: var(--accent-secondary); text-decoration: none;">
-                    → Return to Homepage
-                </a>
-            </li>
-            <li style="margin-bottom: 0.5rem;">
-                <a href="/blog/" style="color: var(--accent-secondary); text-decoration: none;">
-                    → Browse Our Blog
-                </a>
-            </li>
-            <li style="margin-bottom: 0.5rem;">
-                <a href="/hackerspace/" style="color: var(--accent-secondary); text-decoration: none;">
-                    → Explore the Hackerspace
-                </a>
-            </li>
-        </ul>
+<div class="container">
+  <div class="error-page">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-desc">The page you're looking for doesn't exist or has been moved.</p>
+    <div class="hero-actions">
+      <a href="/" class="btn btn-primary">Back to Home</a>
+      <a href="/blog/" class="btn">Blog</a>
+      <a href="/hackerspace/" class="btn">Hackerspace</a>
     </div>
-    
-    <div style="margin-top: 3rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border-color);">
-        <p style="margin: 0; color: var(--text-secondary);">
-            <strong>North Shore Hackerspace</strong> - Advancing security architecture and blockchain innovation from Hawaii's North Shore.
-        </p>
-    </div>
+  </div>
 </div>
-
-<script>
-    // Add some dynamic content to make the 404 page more engaging
-    document.addEventListener('DOMContentLoaded', () => {
-        const messages = [
-            "The tides have carried this page away...",
-            "This page has drifted out to sea...",
-            "We couldn't navigate to this location...",
-            "The waves have washed this page away...",
-            "This page is lost in the digital ocean..."
-        ];
-        
-        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-        const messageElement = document.querySelector('.message.system p');
-        if (messageElement) {
-            messageElement.textContent = randomMessage + " The page you're looking for doesn't exist.";
-        }
-    });
-</script>
 {{ end }}

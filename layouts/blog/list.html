@@ -1,133 +1,21 @@
 {{ define "main" }}
-<div class="blog-container">
-    <nav class="blog-nav">
-        <a href="/" class="nav-link">← Back to Home</a>
-    </nav>
-    
-    <div class="blog-header">
-        <h1>NSHkr.com Blog</h1>
-        <p>Updates and news from our AI innovation lab</p>
-    </div>
-    
-    <div class="blog-posts">
-        {{ range .Pages.ByDate.Reverse }}
-        <article class="blog-post-card">
-            <div class="post-date">{{ .Date.Format "January 2, 2006" }}</div>
-            <h2 class="post-title"><a href="https://nshkr.com{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            {{ if .Summary }}
-            <div class="post-summary">{{ .Summary | plainify | truncate 200 }}</div>
-            {{ end }}
-            <a href="https://nshkr.com{{ .RelPermalink }}" class="read-more">Read more →</a>
-        </article>
-        {{ end }}
-    </div>
+<div class="container">
+  <section class="hero" style="padding-bottom: var(--space-xl);">
+    <h1 class="hero-title">Blog</h1>
+    <p class="hero-subtitle">Technical deep-dives, project updates, and research notes from NSHkr.com.</p>
+  </section>
+
+  <div class="projects-grid">
+    {{ range .Pages.ByDate.Reverse }}
+    <a href="{{ .RelPermalink }}" class="post-card">
+      {{ if not .Date.IsZero }}
+      <div class="post-card-date">{{ .Date.Format "Jan 2, 2006" }}</div>
+      {{ end }}
+      <div class="post-card-title">{{ .Title }}</div>
+      <p class="post-card-summary">{{ .Summary | truncate 200 }}</p>
+      <span class="post-card-read">Read more &rarr;</span>
+    </a>
+    {{ end }}
+  </div>
 </div>
-
-<style>
-.blog-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-.blog-nav {
-    margin-bottom: 40px;
-}
-
-.nav-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #0fbcf9;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 8px 16px;
-    border: 1px solid rgba(15, 188, 249, 0.3);
-    border-radius: 8px;
-    background: rgba(15, 188, 249, 0.05);
-    transition: all 0.3s;
-}
-
-.nav-link:hover {
-    background: rgba(15, 188, 249, 0.1);
-    border-color: #0fbcf9;
-    transform: translateX(-2px);
-}
-
-.blog-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.blog-header h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-    background: linear-gradient(135deg, #0fbcf9, #ffa801);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.blog-header p {
-    font-size: 20px;
-    color: #888;
-}
-
-.blog-posts {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.blog-post-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 30px;
-    transition: all 0.3s;
-}
-
-.blog-post-card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: #0fbcf9;
-    transform: translateY(-2px);
-}
-
-.post-date {
-    font-size: 14px;
-    color: #0fbcf9;
-    margin-bottom: 10px;
-}
-
-.post-title {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.post-title a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.post-title a:hover {
-    color: #0fbcf9;
-}
-
-.post-summary {
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.read-more {
-    color: #ffa801;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.read-more:hover {
-    color: #0fbcf9;
-}
-</style>
 {{ end }}

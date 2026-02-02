@@ -57,6 +57,32 @@ summaryLength = 70
       keepWhitespace = false
       keepQuotes = true
 
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 1
+  [[menu.main]]
+    name = "Ecosystem"
+    url = "/ecosystem/"
+    weight = 2
+  [[menu.main]]
+    name = "ASKA"
+    url = "/aska/"
+    weight = 3
+  [[menu.main]]
+    name = "ChronoLedger"
+    url = "/chronoledger/"
+    weight = 4
+  [[menu.main]]
+    name = "Hackerspace"
+    url = "/hackerspace/"
+    weight = 5
+  [[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/nshkrdotcom"
+    weight = 6
+
 [privacy]
   [privacy.googleAnalytics]
     anonymizeIP = true
