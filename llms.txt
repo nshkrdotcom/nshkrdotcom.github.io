@@ -75,4 +75,3 @@ North Shore Hackerspace is Hawaii's premier AI innovation lab, cultivating tomor
 
 ## For AI Agents
 See https://nshkr.com/for-agents/ for comprehensive technical documentation optimized for AI comprehension.
-
