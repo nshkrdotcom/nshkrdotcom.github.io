@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-02-02T12:29:03Z
+# Last updated: 2026-02-03T01:01:01Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -78,7 +78,7 @@ repos:
   LlmGuard:
     name: "LlmGuard"
     org: "North-Shore-AI"
-    stars: 4
+    stars: 5
     category: "nshkr-crucible"
     description: "AI Firewall and guardrails for LLM-based Elixir applications"
     url: "https://github.com/North-Shore-AI/LlmGuard"
@@ -472,7 +472,7 @@ repos:
   gemini_ex:
     name: "gemini_ex"
     org: "nshkrdotcom"
-    stars: 24
+    stars: 25
     category: "nshkr-ai-sdk"
     description: "Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI"
     url: "https://github.com/nshkrdotcom/gemini_ex"
