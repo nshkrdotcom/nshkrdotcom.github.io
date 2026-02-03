@@ -13,15 +13,8 @@
   {{ partial "footer.html" . }}
 
   <script>
-    // Mermaid init: convert Hugo code blocks to mermaid divs
+    // Mermaid init: divs are rendered by Hugo render hook
     if (typeof mermaid !== 'undefined') {
-      document.querySelectorAll('code.language-mermaid').forEach(function(el) {
-        var pre = el.parentElement;
-        var div = document.createElement('div');
-        div.className = 'mermaid';
-        div.textContent = el.textContent;
-        pre.parentElement.replaceChild(div, pre);
-      });
       mermaid.initialize({
         startOnLoad: true,
         theme: 'dark',

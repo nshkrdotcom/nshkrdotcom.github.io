@@ -52,31 +52,31 @@ ASKA is also explicit about what it does *not* claim:
 ```mermaid
 graph TB
   subgraph "ASKA SoC (conceptual)"
-    subgraph "IES #1"
-      CPU1[CHERI-RISC-V core(s)]
-      MEM1[Dedicated mem ctrl + DRAM bank]
-      HESE1[HESE-DAR]
-      LSM1[LSM]
+    subgraph "IES 1"
+      CPU1["CHERI-RISC-V core(s)"]
+      MEM1["Dedicated mem ctrl + DRAM bank"]
+      HESE1["HESE-DAR"]
+      LSM1["LSM"]
       CPU1 --> MEM1
       CPU1 --> HESE1
       CPU1 -.->|data diode| LSM1
     end
 
-    subgraph "IES #2"
-      CPU2[CHERI-RISC-V core(s)]
-      MEM2[Dedicated mem ctrl + DRAM bank]
-      HESE2[HESE-DAR]
-      LSM2[LSM]
+    subgraph "IES 2"
+      CPU2["CHERI-RISC-V core(s)"]
+      MEM2["Dedicated mem ctrl + DRAM bank"]
+      HESE2["HESE-DAR"]
+      LSM2["LSM"]
       CPU2 --> MEM2
       CPU2 --> HESE2
       CPU2 -.->|data diode| LSM2
     end
 
-    DMNoC[DMNoC encrypted mesh]
+    DMNoC["DMNoC encrypted mesh"]
 
     subgraph "Hub IES"
-      MSM[MSM]
-      DTMS[DTMS]
+      MSM["MSM"]
+      DTMS["DTMS"]
     end
 
     CPU1 --> DMNoC
@@ -86,8 +86,8 @@ graph TB
     MSM <--> DTMS
   end
 
-  W[Watcher (fixed-function)] -.->|diode taps| MSM
-  HUB[AI Cyber Intelligence Hub] <--> W
+  W["Watcher (fixed-function)"] -.->|diode taps| MSM
+  HUB["AI Cyber Intelligence Hub"] <--> W
 ```
 
 (Watchers and the Hub are shown as a logical relationship; the Hub may be off-chip or implemented as a high-security chiplet.)
@@ -382,17 +382,17 @@ ASKA monitoring is physically out-of-band. The monitored system cannot write to 
 
 ```mermaid
 graph TB
-  IES1[IES #1] -->|hardware data diode| LSM1[LSM #1]
-  IES2[IES #2] -->|hardware data diode| LSM2[LSM #2]
+  IES1["IES 1"] -->|hardware data diode| LSM1["LSM 1"]
+  IES2["IES 2"] -->|hardware data diode| LSM2["LSM 2"]
 
-  LSM1 -->|diode| MSM[MSM (Hub IES)]
+  LSM1 -->|diode| MSM["MSM (Hub IES)"]
   LSM2 -->|diode| MSM
 
-  MSM <--> DTMS[DTMS]
+  MSM <--> DTMS["DTMS"]
 
-  MSM -->|diode tap| WMSM[Watcher (MSM)]
-  LSM1 -->|diode tap| WLSM1[Watcher (LSM #1)]
-  WMSM <--> HUB[AI Cyber Intelligence Hub]
+  MSM -->|diode tap| WMSM["Watcher (MSM)"]
+  LSM1 -->|diode tap| WLSM1["Watcher (LSM 1)"]
+  WMSM <--> HUB["AI Cyber Intelligence Hub"]
   WLSM1 <--> HUB
 ```
 
@@ -442,11 +442,11 @@ graph LR
   end
 
   subgraph "Digest generation"
-    Norm[Normalization + fixed-point]
-    Corr[Cross-correlation]
-    Vec[Canonical feature vector]
-    Dig[SHA-3-256 digest (32B)]
-    Bind[Binding: HMAC-SHA-3-256(digest, content_hash)]
+    Norm["Normalization + fixed-point"]
+    Corr["Cross-correlation"]
+    Vec["Canonical feature vector"]
+    Dig["SHA-3-256 digest (32B)"]
+    Bind["Binding: HMAC-SHA-3-256 digest + content_hash"]
   end
 
   GPS --> Norm
