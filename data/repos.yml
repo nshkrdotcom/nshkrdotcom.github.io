@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-02-04T12:29:51Z
+# Last updated: 2026-02-05T00:59:22Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -482,7 +482,7 @@ repos:
   claude_agent_sdk:
     name: "claude_agent_sdk"
     org: "nshkrdotcom"
-    stars: 22
+    stars: 23
     category: "nshkr-ai-sdk"
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
     url: "https://github.com/nshkrdotcom/claude_agent_sdk"
@@ -497,6 +497,16 @@ repos:
     description: "OpenAI Codex SDK written in Elixir"
     url: "https://github.com/nshkrdotcom/codex_sdk"
     logo: "/logos/codex_sdk.svg"
+    language: "Elixir"
+
+  ollixir:
+    name: "ollixir"
+    org: "nshkrdotcom"
+    stars: 3
+    category: "nshkr-ai-sdk"
+    description: "Ollixir provides a first-class Elixir client with feature parity to the official ollama-python library. Ollixir runs large language models locally or on your infrastructure via Ollama."
+    url: "https://github.com/nshkrdotcom/ollixir"
+    logo: "/logos/ollixir.png"
     language: "Elixir"
 
   altar_ai:
@@ -517,16 +527,6 @@ repos:
     description: "Elixir client SDK for the Jules API - orchestrate AI coding sessions"
     url: "https://github.com/nshkrdotcom/jules_ex"
     logo: "/logos/jules_ex.svg"
-    language: "Elixir"
-
-  ollixir:
-    name: "ollixir"
-    org: "nshkrdotcom"
-    stars: 2
-    category: "nshkr-ai-sdk"
-    description: "Ollixir provides a first-class Elixir client with feature parity to the official ollama-python library. Ollixir runs large language models locally or on your infrastructure via Ollama."
-    url: "https://github.com/nshkrdotcom/ollixir"
-    logo: "/logos/ollixir.png"
     language: "Elixir"
 
   mcp_client:
