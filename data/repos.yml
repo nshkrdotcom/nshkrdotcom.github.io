@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-02-07T12:20:18Z
+# Last updated: 2026-02-08T01:16:06Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -547,6 +547,15 @@ repos:
     description: "Agent Session Manager - A comprehensive Elixir library for managing AI agent sessions, state persistence, conversation context, and multi-agent orchestration workflows"
     url: "https://github.com/nshkrdotcom/agent_session_manager"
     logo: "/logos/agent_session_manager.svg"
+    language: "Elixir"
+
+  amp_sdk:
+    name: "amp_sdk"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-sdk"
+    description: "Elixir SDK for the Amp CLI — provides a comprehensive client library for interacting with Amp's AI-powered coding agent, including thread management, tool orchestration, streaming responses, and programmatic access to Amp's full feature set from Elixir/OTP applications"
+    url: "https://github.com/nshkrdotcom/amp_sdk"
     language: "Elixir"
 
   crucible_prompts:
