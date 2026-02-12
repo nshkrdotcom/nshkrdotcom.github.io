@@ -33,8 +33,9 @@ fetch_logo_from_github() {
     local repo_name=$2
     local remote_path=$3
     local dest_path=$4
+    local branch=${5:-main}
 
-    local url="https://raw.githubusercontent.com/${owner}/${repo_name}/main/${remote_path}"
+    local url="https://raw.githubusercontent.com/${owner}/${repo_name}/${branch}/${remote_path}"
 
     # Use curl with silent mode, fail on HTTP errors, follow redirects
     if curl -sfL --max-time 10 "$url" -o "$dest_path" 2>/dev/null; then
@@ -51,8 +52,9 @@ fetch_logo_from_github() {
 fetch_logo_remote() {
     local repo_name=$1
     local owner=$2
+    local branch=${3:-main}
 
-    local readme_url="https://raw.githubusercontent.com/${owner}/${repo_name}/main/README.md"
+    local readme_url="https://raw.githubusercontent.com/${owner}/${repo_name}/${branch}/README.md"
     local readme_content=""
     local logo_file=""
     local logo_dir=""
@@ -96,7 +98,7 @@ fetch_logo_remote() {
     if [[ -n "$logo_file" ]] && [[ -n "$logo_dir" ]]; then
         local ext="${logo_file##*.}"
         local dest_path="$LOGOS_DIR/${repo_name}.${ext}"
-        if fetch_logo_from_github "$owner" "$repo_name" "${logo_dir}/${logo_file}" "$dest_path"; then
+        if fetch_logo_from_github "$owner" "$repo_name" "${logo_dir}/${logo_file}" "$dest_path" "$branch"; then
             echo "/logos/${repo_name}.${ext}"
             return
         fi
@@ -107,7 +109,7 @@ fetch_logo_remote() {
         for ext in svg png; do
             for pattern in "${repo_name}.${ext}" "${repo_name}_logo.${ext}" "${repo_name}-logo.${ext}" "logo.${ext}"; do
                 local dest_path="$LOGOS_DIR/${repo_name}.${ext}"
-                if fetch_logo_from_github "$owner" "$repo_name" "${dir}/${pattern}" "$dest_path"; then
+                if fetch_logo_from_github "$owner" "$repo_name" "${dir}/${pattern}" "$dest_path" "$branch"; then
                     echo "/logos/${repo_name}.${ext}"
                     return
                 fi
@@ -124,6 +126,7 @@ fetch_logo_remote() {
 extract_logo() {
     local repo_name=$1
     local owner=$2
+    local branch=${3:-main}
     local repo_dir=""
 
     # Check if logo already exists (avoid re-fetching)
@@ -143,7 +146,7 @@ extract_logo() {
 
     # If no local repo, try fetching from GitHub
     if [[ -z "$repo_dir" ]]; then
-        fetch_logo_remote "$repo_name" "$owner"
+        fetch_logo_remote "$repo_name" "$owner" "$branch"
         return
     fi
 
@@ -201,7 +204,7 @@ extract_logo() {
 
     if [[ -z "$logo_file" ]] || [[ -z "$logo_dir" ]]; then
         # Local repo exists but no logo found - try remote as last resort
-        fetch_logo_remote "$repo_name" "$owner"
+        fetch_logo_remote "$repo_name" "$owner" "$branch"
         return
     fi
 
@@ -276,7 +279,8 @@ fetch_repos() {
         topics: .topics,
         fork: .fork,
         archived: .archived,
-        owner: .owner.login
+        owner: .owner.login,
+        default_branch: .default_branch
     }' 2>/dev/null
 }
 
@@ -363,10 +367,10 @@ for cat in "${CATEGORY_ORDER[@]}" "uncategorized"; do
         # Process each repo to extract logo and generate YAML
         jq -r --arg cat "$cat" '
             .[] | select(.category == $cat) |
-            "\(.name)|\(.owner)"
-        ' "$TMP_FILE" | while IFS='|' read -r repo_name owner; do
+            "\(.name)|\(.owner)|\(.default_branch)"
+        ' "$TMP_FILE" | while IFS='|' read -r repo_name owner branch; do
             # Extract logo (copies file and returns path)
-            logo_path=$(extract_logo "$repo_name" "$owner")
+            logo_path=$(extract_logo "$repo_name" "$owner" "$branch")
 
             # Get repo data from JSON
             jq -r --arg name "$repo_name" --arg logo "$logo_path" '
