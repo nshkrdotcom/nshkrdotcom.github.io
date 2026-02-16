@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-02-15T12:21:22Z
+# Last updated: 2026-02-16T01:01:37Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -391,6 +391,16 @@ repos:
     logo: "/logos/synapse.svg"
     language: "Elixir"
 
+  flowstone:
+    name: "flowstone"
+    org: "nshkrdotcom"
+    stars: 18
+    category: "nshkr-ai-agents"
+    description: "Asset-first data orchestration for Elixir/BEAM. Dagster-inspired with OTP fault tolerance, LiveView dashboard, lineage tracking, checkpoint gates, and distributed execution via Oban."
+    url: "https://github.com/nshkrdotcom/flowstone"
+    logo: "/logos/flowstone.svg"
+    language: "Elixir"
+
   ds_ex:
     name: "ds_ex"
     org: "nshkrdotcom"
@@ -398,16 +408,6 @@ repos:
     category: "nshkr-ai-agents"
     description: "DSPEx - Declarative Self-improving Elixir | A BEAM-Native AI Program Optimization Framework"
     url: "https://github.com/nshkrdotcom/ds_ex"
-    language: "Elixir"
-
-  flowstone:
-    name: "flowstone"
-    org: "nshkrdotcom"
-    stars: 16
-    category: "nshkr-ai-agents"
-    description: "Asset-first data orchestration for Elixir/BEAM. Dagster-inspired with OTP fault tolerance, LiveView dashboard, lineage tracking, checkpoint gates, and distributed execution via Oban."
-    url: "https://github.com/nshkrdotcom/flowstone"
-    logo: "/logos/flowstone.svg"
     language: "Elixir"
 
   DSPex:
