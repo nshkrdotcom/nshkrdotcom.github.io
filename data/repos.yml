@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-02-16T12:32:14Z
+# Last updated: 2026-02-17T01:00:38Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -492,7 +492,7 @@ repos:
   codex_sdk:
     name: "codex_sdk"
     org: "nshkrdotcom"
-    stars: 9
+    stars: 10
     category: "nshkr-ai-sdk"
     description: "OpenAI Codex SDK written in Elixir"
     url: "https://github.com/nshkrdotcom/codex_sdk"
@@ -798,7 +798,7 @@ repos:
   exdantic:
     name: "exdantic"
     org: "nshkrdotcom"
-    stars: 10
+    stars: 11
     category: "nshkr-schema"
     description: "A powerful, flexible schema definition and validation library for Elixir, inspired by Python's Pydantic."
     url: "https://github.com/nshkrdotcom/exdantic"
@@ -957,7 +957,7 @@ repos:
   supertester:
     name: "supertester"
     org: "nshkrdotcom"
-    stars: 11
+    stars: 12
     category: "nshkr-testing"
     description: "A battle-hardened testing toolkit for building robust and resilient Elixir & OTP applications."
     url: "https://github.com/nshkrdotcom/supertester"
