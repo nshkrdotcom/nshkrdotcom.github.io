@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-02-17T12:32:18Z
+# Last updated: 2026-02-18T01:02:52Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -635,6 +635,16 @@ repos:
     logo: "/logos/snakebridge.svg"
     language: "Elixir"
 
+  tinkex_cookbook:
+    name: "tinkex_cookbook"
+    org: "North-Shore-AI"
+    stars: 3
+    category: "nshkr-ai-infra"
+    description: "Elixir port of tinker-cookbook: training and evaluation recipes for the Tinker ML platform."
+    url: "https://github.com/North-Shore-AI/tinkex_cookbook"
+    logo: "/logos/tinkex_cookbook.svg"
+    language: "Elixir"
+
   tinkex:
     name: "tinkex"
     org: "North-Shore-AI"
@@ -643,16 +653,6 @@ repos:
     description: "Elixir SDK for the Tinker ML platform—LoRA training, sampling, and service orchestration built on OTP, Finch, and telemetry."
     url: "https://github.com/North-Shore-AI/tinkex"
     logo: "/logos/tinkex.svg"
-    language: "Elixir"
-
-  tinkex_cookbook:
-    name: "tinkex_cookbook"
-    org: "North-Shore-AI"
-    stars: 2
-    category: "nshkr-ai-infra"
-    description: "Elixir port of tinker-cookbook: training and evaluation recipes for the Tinker ML platform."
-    url: "https://github.com/North-Shore-AI/tinkex_cookbook"
-    logo: "/logos/tinkex_cookbook.svg"
     language: "Elixir"
 
   command:
