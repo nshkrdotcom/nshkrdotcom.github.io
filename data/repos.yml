@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-02-18T12:31:43Z
+# Last updated: 2026-02-19T01:02:12Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -499,6 +499,16 @@ repos:
     logo: "/logos/codex_sdk.svg"
     language: "Elixir"
 
+  altar_ai:
+    name: "altar_ai"
+    org: "nshkrdotcom"
+    stars: 3
+    category: "nshkr-ai-sdk"
+    description: "Protocol-based AI adapter foundation for Elixir - unified abstractions for gemini_ex, claude_agent_sdk, codex_sdk with automatic fallback, capability detection, and telemetry"
+    url: "https://github.com/nshkrdotcom/altar_ai"
+    logo: "/logos/altar_ai.svg"
+    language: "Elixir"
+
   ollixir:
     name: "ollixir"
     org: "nshkrdotcom"
@@ -507,16 +517,6 @@ repos:
     description: "Ollixir provides a first-class Elixir client with feature parity to the official ollama-python library. Ollixir runs large language models locally or on your infrastructure via Ollama."
     url: "https://github.com/nshkrdotcom/ollixir"
     logo: "/logos/ollixir.png"
-    language: "Elixir"
-
-  altar_ai:
-    name: "altar_ai"
-    org: "nshkrdotcom"
-    stars: 2
-    category: "nshkr-ai-sdk"
-    description: "Protocol-based AI adapter foundation for Elixir - unified abstractions for gemini_ex, claude_agent_sdk, codex_sdk with automatic fallback, capability detection, and telemetry"
-    url: "https://github.com/nshkrdotcom/altar_ai"
-    logo: "/logos/altar_ai.svg"
     language: "Elixir"
 
   jules_ex:
