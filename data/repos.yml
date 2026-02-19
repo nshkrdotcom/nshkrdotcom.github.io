@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-02-19T01:02:12Z
+# Last updated: 2026-02-19T12:33:10Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -78,7 +78,7 @@ repos:
   LlmGuard:
     name: "LlmGuard"
     org: "North-Shore-AI"
-    stars: 5
+    stars: 6
     category: "nshkr-crucible"
     description: "AI Firewall and guardrails for LLM-based Elixir applications"
     url: "https://github.com/North-Shore-AI/LlmGuard"
@@ -469,6 +469,16 @@ repos:
     logo: "/logos/synapse_ai.svg"
     language: "Elixir"
 
+  gemini_ex:
+    name: "gemini_ex"
+    org: "nshkrdotcom"
+    stars: 26
+    category: "nshkr-ai-sdk"
+    description: "Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI"
+    url: "https://github.com/nshkrdotcom/gemini_ex"
+    logo: "/logos/gemini_ex.svg"
+    language: "Elixir"
+
   claude_agent_sdk:
     name: "claude_agent_sdk"
     org: "nshkrdotcom"
@@ -477,16 +487,6 @@ repos:
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
     url: "https://github.com/nshkrdotcom/claude_agent_sdk"
     logo: "/logos/claude_agent_sdk.svg"
-    language: "Elixir"
-
-  gemini_ex:
-    name: "gemini_ex"
-    org: "nshkrdotcom"
-    stars: 25
-    category: "nshkr-ai-sdk"
-    description: "Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI"
-    url: "https://github.com/nshkrdotcom/gemini_ex"
-    logo: "/logos/gemini_ex.svg"
     language: "Elixir"
 
   codex_sdk:
