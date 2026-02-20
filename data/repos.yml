@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-02-19T12:33:10Z
+# Last updated: 2026-02-20T00:58:03Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -618,7 +618,7 @@ repos:
   rag_ex:
     name: "rag_ex"
     org: "nshkrdotcom"
-    stars: 5
+    stars: 6
     category: "nshkr-ai-infra"
     description: "Elixir RAG library with multi-LLM routing (Gemini, Claude, OpenAI, Ollama), GraphRAG, knowledge graphs, modular retrievers/rerankers, composable pipelines, pgvector integration, advanced chunking, and tool-using agents. Fork of bitcrowd/rag."
     url: "https://github.com/nshkrdotcom/rag_ex"
