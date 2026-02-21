@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-02-20T12:29:19Z
+# Last updated: 2026-02-21T00:56:53Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -1111,7 +1111,7 @@ repos:
   pqc-hqc:
     name: "pqc-hqc"
     org: "nshkrdotcom"
-    stars: 5
+    stars: 6
     category: "nshkr-security"
     description: "Post-quantum cryptographic implementation of HQC (Hamming Quasi-Cyclic) - a NIST PQC candidate for quantum-resistant key encapsulation using code-based cryptography"
     url: "https://github.com/nshkrdotcom/pqc-hqc"
