@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-02-23T12:33:27Z
+# Last updated: 2026-02-24T00:58:53Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -735,6 +735,16 @@ repos:
     logo: "/logos/skill_ex.svg"
     language: "Elixir"
 
+  slither:
+    name: "slither"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "Lightweight Elixir runtime for composing and executing Python-backed data pipelines with automatic dependency resolution, lazy evaluation, fault-tolerant stage supervision, and seamless Snakebridge/Snakepit integration for production-grade cross-language AI and scientific computing workflows on the BEAM."
+    url: "https://github.com/nshkrdotcom/slither"
+    logo: "/logos/slither.svg"
+    language: "Elixir"
+
   tiktoken_ex:
     name: "tiktoken_ex"
     org: "North-Shore-AI"
@@ -793,16 +803,6 @@ repos:
     description: "AI-native personal project intelligence system - manage, track, and search across all your repositories with semantic understanding"
     url: "https://github.com/nshkrdotcom/portfolio_manager"
     logo: "/logos/portfolio_manager.svg"
-    language: "Elixir"
-
-  slither:
-    name: "slither"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Lightweight Elixir runtime for composing and executing Python-backed data pipelines with automatic dependency resolution, lazy evaluation, fault-tolerant stage supervision, and seamless Snakebridge/Snakepit integration for production-grade cross-language AI and scientific computing workflows on the BEAM."
-    url: "https://github.com/nshkrdotcom/slither"
-    logo: "/logos/slither.svg"
     language: "Elixir"
 
   exdantic:
@@ -968,7 +968,7 @@ repos:
   supertester:
     name: "supertester"
     org: "nshkrdotcom"
-    stars: 12
+    stars: 13
     category: "nshkr-testing"
     description: "A battle-hardened testing toolkit for building robust and resilient Elixir & OTP applications."
     url: "https://github.com/nshkrdotcom/supertester"
