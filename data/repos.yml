@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-02-28T12:19:36Z
+# Last updated: 2026-03-01T01:06:00Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -519,6 +519,16 @@ repos:
     logo: "/logos/ollixir.png"
     language: "Elixir"
 
+  agent_session_manager:
+    name: "agent_session_manager"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-ai-sdk"
+    description: "Agent Session Manager - A comprehensive Elixir library for managing AI agent sessions, state persistence, conversation context, and multi-agent orchestration workflows"
+    url: "https://github.com/nshkrdotcom/agent_session_manager"
+    logo: "/logos/agent_session_manager.svg"
+    language: "Elixir"
+
   jules_ex:
     name: "jules_ex"
     org: "nshkrdotcom"
@@ -527,16 +537,6 @@ repos:
     description: "Elixir client SDK for the Jules API - orchestrate AI coding sessions"
     url: "https://github.com/nshkrdotcom/jules_ex"
     logo: "/logos/jules_ex.svg"
-    language: "Elixir"
-
-  agent_session_manager:
-    name: "agent_session_manager"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-ai-sdk"
-    description: "Agent Session Manager - A comprehensive Elixir library for managing AI agent sessions, state persistence, conversation context, and multi-agent orchestration workflows"
-    url: "https://github.com/nshkrdotcom/agent_session_manager"
-    logo: "/logos/agent_session_manager.svg"
     language: "Elixir"
 
   mcp_client:
