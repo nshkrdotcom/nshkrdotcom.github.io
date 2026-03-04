@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-03-04T00:57:47Z
+# Last updated: 2026-03-04T12:27:57Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -341,6 +341,16 @@ repos:
     description: "Training IR for reproducible ML jobs across Crucible and Kitchen. Defines model specs, adapters, learning config, checkpointing, validation, and resource envelopes to standardize training pipelines."
     url: "https://github.com/North-Shore-AI/training_ir"
 
+  forge:
+    name: "forge"
+    org: "North-Shore-AI"
+    stars: 2
+    category: "nshkr-ingot"
+    description: "Sample factory library for generating, transforming, and computing measurements on samples"
+    url: "https://github.com/North-Shore-AI/forge"
+    logo: "/logos/forge.svg"
+    language: "Elixir"
+
   anvil:
     name: "anvil"
     org: "North-Shore-AI"
@@ -349,16 +359,6 @@ repos:
     description: "Labeling queue library for managing human labeling workflows"
     url: "https://github.com/North-Shore-AI/anvil"
     logo: "/logos/anvil.svg"
-    language: "Elixir"
-
-  forge:
-    name: "forge"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-ingot"
-    description: "Sample factory library for generating, transforming, and computing measurements on samples"
-    url: "https://github.com/North-Shore-AI/forge"
-    logo: "/logos/forge.svg"
     language: "Elixir"
 
   ingot:
