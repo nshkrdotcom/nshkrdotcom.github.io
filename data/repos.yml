@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-03-04T12:27:57Z
+# Last updated: 2026-03-05T01:00:08Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -443,7 +443,7 @@ repos:
   mabeam:
     name: "mabeam"
     org: "nshkrdotcom"
-    stars: 5
+    stars: 6
     category: "nshkr-ai-agents"
     description: "Multi-agent systems framework for the BEAM platform - build distributed autonomous agents with OTP supervision and fault tolerance"
     url: "https://github.com/nshkrdotcom/mabeam"
