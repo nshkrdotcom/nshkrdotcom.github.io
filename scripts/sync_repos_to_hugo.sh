@@ -5,7 +5,7 @@
 # Repos with nshkr-archive are hidden from site
 # Uncategorized repos appear in "Other Projects"
 
-set -e
+set -euo pipefail
 
 echo "Syncing repositories to Hugo data..."
 
@@ -14,6 +14,9 @@ PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 DATA_FILE="$PROJECT_DIR/data/repos.yml"
 LOGOS_DIR="$PROJECT_DIR/static/logos"
 TMP_FILE="$(mktemp)"
+USER_REPOS_FILE="$(mktemp)"
+ORG_REPOS_FILE="$(mktemp)"
+DATA_TMP_FILE="$(mktemp)"
 
 # Local repo paths
 LOCAL_NSHKR="$HOME/p/g/n"
@@ -23,6 +26,9 @@ mkdir -p "$LOGOS_DIR"
 
 cleanup() {
     rm -f "$TMP_FILE"
+    rm -f "$USER_REPOS_FILE"
+    rm -f "$ORG_REPOS_FILE"
+    rm -f "$DATA_TMP_FILE"
 }
 trap cleanup EXIT
 
@@ -268,26 +274,55 @@ echo "Fetching repos from GitHub..."
 fetch_repos() {
     local owner=$1
     local type=$2  # "users" or "orgs"
+    local output_file=$3
+    local endpoint="${type}/${owner}/repos?per_page=100&type=public"
+    local attempt
 
-    gh api --paginate "${type}/${owner}/repos?per_page=100&type=public" --jq '.[] | {
-        name: .name,
-        full_name: .full_name,
-        html_url: .html_url,
-        description: (.description // ""),
-        stars: .stargazers_count,
-        language: (.language // ""),
-        topics: .topics,
-        fork: .fork,
-        archived: .archived,
-        owner: .owner.login,
-        default_branch: .default_branch
-    }' 2>/dev/null
+    for attempt in 1 2 3; do
+        if gh api --paginate "$endpoint" | jq -ce '
+            .[] | {
+                name: .name,
+                full_name: .full_name,
+                html_url: .html_url,
+                description: (.description // ""),
+                stars: .stargazers_count,
+                language: (.language // ""),
+                topics: (.topics // []),
+                fork: .fork,
+                archived: .archived,
+                owner: .owner.login,
+                default_branch: .default_branch
+            }
+        ' > "$output_file"; then
+            if [[ -s "$output_file" ]] && jq -se '
+                length > 0 and all(.[]; (
+                    type == "object" and
+                    (.name | type == "string") and
+                    (.owner | type == "string") and
+                    (.topics | type == "array")
+                ))
+            ' "$output_file" > /dev/null; then
+                return 0
+            fi
+
+            echo "Invalid repo payload received from ${endpoint} (attempt ${attempt})" >&2
+            sed -n '1,10p' "$output_file" >&2 || true
+        fi
+
+        if [[ "$attempt" -lt 3 ]]; then
+            sleep "$attempt"
+        fi
+    done
+
+    echo "Failed to fetch valid repo data from ${endpoint}" >&2
+    return 1
 }
 
 # Combine repos from both sources
 {
-    fetch_repos "nshkrdotcom" "users"
-    fetch_repos "North-Shore-AI" "orgs"
+    fetch_repos "nshkrdotcom" "users" "$USER_REPOS_FILE"
+    fetch_repos "North-Shore-AI" "orgs" "$ORG_REPOS_FILE"
+    cat "$USER_REPOS_FILE" "$ORG_REPOS_FILE"
 } | jq -s '
     # Deduplicate by name (prefer higher star count)
     group_by(.name) | map(sort_by(-.stars) | first) |
@@ -316,7 +351,7 @@ if [ -f "$DATA_FILE" ]; then
         awk '
             /^  [a-zA-Z]/ { repo = $1; gsub(/:$/, "", repo) }
             /stars:/ { stars = $2 }
-            /category:/ { cat = $2; print repo "=" stars "=" cat }
+            /category:/ { cat = $2; gsub(/"/, "", cat); print repo "=" stars "=" cat }
         ' | sort)
 
     if [ "$existing_digest" = "$new_digest" ]; then
@@ -328,7 +363,7 @@ fi
 echo "Generating Hugo data file..."
 
 # Generate YAML header
-cat > "$DATA_FILE" << 'HEADER'
+cat > "$DATA_TMP_FILE" << 'HEADER'
 # Auto-generated repository data with category-based organization
 # Last updated: TIMESTAMP
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
@@ -337,27 +372,27 @@ cat > "$DATA_FILE" << 'HEADER'
 
 HEADER
 
-sed -i "s/TIMESTAMP/$(date -u +"%Y-%m-%dT%H:%M:%SZ")/" "$DATA_FILE"
+sed -i "s/TIMESTAMP/$(date -u +"%Y-%m-%dT%H:%M:%SZ")/" "$DATA_TMP_FILE"
 
 # Generate categories section with weights for ordering
-echo "categories:" >> "$DATA_FILE"
+echo "categories:" >> "$DATA_TMP_FILE"
 weight=0
 for cat in "${CATEGORY_ORDER[@]}"; do
     cat_name="${CATEGORY_NAMES[$cat]}"
-    echo "  ${cat}:" >> "$DATA_FILE"
-    echo "    name: \"${cat_name}\"" >> "$DATA_FILE"
-    echo "    slug: \"${cat}\"" >> "$DATA_FILE"
-    echo "    weight: ${weight}" >> "$DATA_FILE"
+    echo "  ${cat}:" >> "$DATA_TMP_FILE"
+    echo "    name: \"${cat_name}\"" >> "$DATA_TMP_FILE"
+    echo "    slug: \"${cat}\"" >> "$DATA_TMP_FILE"
+    echo "    weight: ${weight}" >> "$DATA_TMP_FILE"
     weight=$((weight + 1))
 done
-echo "  uncategorized:" >> "$DATA_FILE"
-echo "    name: \"Other Projects\"" >> "$DATA_FILE"
-echo "    slug: \"uncategorized\"" >> "$DATA_FILE"
-echo "    weight: 999" >> "$DATA_FILE"
-echo "" >> "$DATA_FILE"
+echo "  uncategorized:" >> "$DATA_TMP_FILE"
+echo "    name: \"Other Projects\"" >> "$DATA_TMP_FILE"
+echo "    slug: \"uncategorized\"" >> "$DATA_TMP_FILE"
+echo "    weight: 999" >> "$DATA_TMP_FILE"
+echo "" >> "$DATA_TMP_FILE"
 
 # Generate repos section grouped by category
-echo "repos:" >> "$DATA_FILE"
+echo "repos:" >> "$DATA_TMP_FILE"
 
 # Process each category
 for cat in "${CATEGORY_ORDER[@]}" "uncategorized"; do
@@ -385,10 +420,12 @@ for cat in "${CATEGORY_ORDER[@]}" "uncategorized"; do
                 (if $logo != "" then "    logo: \"" + $logo + "\"\n" else "" end) +
                 (if .language != "" then "    language: \"" + .language + "\"\n" else "" end) +
                 (if .archived then "    archived: true\n" else "" end)
-            ' "$TMP_FILE" >> "$DATA_FILE"
+            ' "$TMP_FILE" >> "$DATA_TMP_FILE"
         done
     fi
 done
+
+mv "$DATA_TMP_FILE" "$DATA_FILE"
 
 # Summary
 echo ""

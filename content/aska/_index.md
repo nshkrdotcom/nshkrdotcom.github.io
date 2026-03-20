@@ -569,7 +569,7 @@ As of 2026-02-02:
 | Milestone | Status |
 |----------|--------|
 | Architecture specification | Complete (200+ pages) |
-| Patent portfolio | 34+ patents with ~350 claims |
+| Prior art disclosures | 34+ published specifications with ~350 claims ([public since October 2024](https://nshkr.com/blog/2024-10-31-aska-documents-release/)) |
 | Threat model | Working draft (76 attack surfaces; includes explicit residuals and an open item) |
 | Technical design documents | Working drafts (subsystem-level specs) |
 | Interface specifications | Working draft (inter-subsystem contracts) |

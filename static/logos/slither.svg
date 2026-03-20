@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" aria-hidden="true">
+  <defs>
+    <polygon id="hex" points="55,22.058 145,22.058 190,100 145,177.942 55,177.942 10,100"/>
+    <clipPath id="hexClip">
+      <use href="#hex"/>
+    </clipPath>
+
+    <linearGradient id="bgGrad" x1="16%" y1="12%" x2="84%" y2="88%">
+      <stop offset="0%" stop-color="#081711"/>
+      <stop offset="52%" stop-color="#0f2a20"/>
+      <stop offset="100%" stop-color="#0a1d18"/>
+    </linearGradient>
+
+    <radialGradient id="ambient" cx="34%" cy="28%" r="78%">
+      <stop offset="0%" stop-color="#6ff2bf" stop-opacity="0.36"/>
+      <stop offset="42%" stop-color="#3fbf92" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#04110d" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="56%">
+      <stop offset="0%" stop-color="#80ffd0" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#80ffd0" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="ringStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9effdb" stop-opacity="0.88"/>
+      <stop offset="50%" stop-color="#54d8ab" stop-opacity="0.62"/>
+      <stop offset="100%" stop-color="#34a881" stop-opacity="0.84"/>
+    </linearGradient>
+
+    <linearGradient id="traceStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7df0bf" stop-opacity="0.74"/>
+      <stop offset="100%" stop-color="#39b88c" stop-opacity="0.42"/>
+    </linearGradient>
+
+    <linearGradient id="snakeBody" x1="20%" y1="24%" x2="82%" y2="76%">
+      <stop offset="0%" stop-color="#d8ffe9"/>
+      <stop offset="42%" stop-color="#69eab8"/>
+      <stop offset="100%" stop-color="#1d8c68"/>
+    </linearGradient>
+
+    <linearGradient id="snakeSpec" x1="24%" y1="20%" x2="78%" y2="80%">
+      <stop offset="0%" stop-color="#f2fff8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#f2fff8" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="softNoise" x="0" y="0" width="1" height="1">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="2" seed="7" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0" result="mono"/>
+      <feComponentTransfer in="mono" result="faded">
+        <feFuncA type="table" tableValues="0 0.05"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="faded" mode="soft-light"/>
+    </filter>
+
+    <filter id="snakeGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.45 0 0 0 0 0.93 0 0 0 0 0.72 0 0 0 0.68 0"/>
+    </filter>
+
+    <g id="spoke" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M100 100 L100 63 L108 49" stroke="url(#traceStroke)" stroke-width="2.8"/>
+      <path d="M96 76 L104 76" stroke="#9af8d1" stroke-opacity="0.62" stroke-width="1"/>
+      <circle cx="108" cy="49" r="3" fill="#7ef0c1" fill-opacity="0.9"/>
+      <circle cx="100" cy="63" r="2.3" fill="#bafee2" fill-opacity="0.82"/>
+    </g>
+  </defs>
+
+  <g clip-path="url(#hexClip)">
+    <use href="#hex" fill="url(#bgGrad)"/>
+    <use href="#hex" fill="url(#ambient)"/>
+
+    <rect x="10" y="22.058" width="180" height="155.884" fill="url(#centerGlow)"/>
+
+    <g filter="url(#softNoise)">
+      <use href="#hex" fill="#000" fill-opacity="0.06"/>
+    </g>
+
+    <polygon points="61,32.451 139,32.451 178,100 139,167.549 61,167.549 22,100" fill="none" stroke="url(#ringStroke)" stroke-width="3" stroke-linejoin="round"/>
+    <polygon points="67,42.843 133,42.843 166,100 133,157.157 67,157.157 34,100" fill="none" stroke="#b5ffe1" stroke-opacity="0.26" stroke-width="1.2" stroke-linejoin="round"/>
+
+    <g opacity="0.9">
+      <use href="#spoke"/>
+      <use href="#spoke" transform="rotate(60 100 100)"/>
+      <use href="#spoke" transform="rotate(120 100 100)"/>
+      <use href="#spoke" transform="rotate(180 100 100)"/>
+      <use href="#spoke" transform="rotate(240 100 100)"/>
+      <use href="#spoke" transform="rotate(300 100 100)"/>
+    </g>
+
+    <circle cx="100" cy="100" r="18" fill="#123427" fill-opacity="0.88"/>
+    <circle cx="100" cy="100" r="14" fill="none" stroke="#97f8cf" stroke-opacity="0.54" stroke-width="1.4"/>
+    <circle cx="100" cy="100" r="4" fill="#bfffe6" fill-opacity="0.9"/>
+
+    <g>
+      <path d="M74 80 C74 67 84 58 99 58 C115 58 126 66 126 78 C126 90 116 97 102 102 C86 108 74 116 74 128 C74 139 84 145 99 145 C112 145 122 140 124 132"
+        fill="none" stroke="url(#snakeBody)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" filter="url(#snakeGlow)" opacity="0.42"/>
+
+      <path d="M74 80 C74 67 84 58 99 58 C115 58 126 66 126 78 C126 90 116 97 102 102 C86 108 74 116 74 128 C74 139 84 145 99 145 C112 145 122 140 124 132"
+        fill="none" stroke="url(#snakeBody)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <path d="M76 80 C76 69 85 61 98 61 C112 61 122 68 122 78 C122 88 113 95 101 100 C88 105 77 113 77 123 C77 133 86 138 99 138 C110 138 118 134 120 129"
+        fill="none" stroke="url(#snakeSpec)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.82"/>
+
+      <g transform="translate(124 132) rotate(-15)">
+        <path d="M-3 -6 L8 0 L-3 7 L-7 0 Z" fill="url(#snakeBody)"/>
+        <circle cx="1.2" cy="-1.3" r="1" fill="#0a2b20"/>
+      </g>
+
+      <path d="M70 77 L74 80 L69 82" fill="none" stroke="#c5ffe8" stroke-opacity="0.72" stroke-width="1.2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <use href="#hex" fill="none" stroke="#d9ffef" stroke-opacity="0.22" stroke-width="0.8" stroke-linejoin="round"/>
+</svg>
