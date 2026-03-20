@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-03-20T01:23:58Z
+# Last updated: 2026-03-20T12:29:18Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -540,6 +540,16 @@ repos:
     logo: "/logos/jules_ex.svg"
     language: "Elixir"
 
+  notion_sdk:
+    name: "notion_sdk"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-ai-sdk"
+    description: "Native Elixir SDK for the Notion API — comprehensive, idiomatic client for Notion workspaces, databases, pages, blocks, users, comments, and search. Built on OTP with supervised HTTP, automatic rate limiting, pagination helpers, and robust error handling for BEAM applications."
+    url: "https://github.com/nshkrdotcom/notion_sdk"
+    logo: "/logos/notion_sdk.svg"
+    language: "Elixir"
+
   github_ex:
     name: "github_ex"
     org: "nshkrdotcom"
@@ -560,16 +570,6 @@ repos:
     logo: "/logos/mcp_client.svg"
     language: "Elixir"
 
-  notion_sdk:
-    name: "notion_sdk"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-ai-sdk"
-    description: "Native Elixir SDK for the Notion API — comprehensive, idiomatic client for Notion workspaces, databases, pages, blocks, users, comments, and search. Built on OTP with supervised HTTP, automatic rate limiting, pagination helpers, and robust error handling for BEAM applications."
-    url: "https://github.com/nshkrdotcom/notion_sdk"
-    logo: "/logos/notion_sdk.svg"
-    language: "Elixir"
-
   amp_sdk:
     name: "amp_sdk"
     org: "nshkrdotcom"
@@ -588,6 +588,7 @@ repos:
     description: "Foundational Elixir runtime library for deterministic CLI subprocess orchestration, normalized event and payload semantics, provider profile contracts, registry plumbing, and shared support modules for the nshkr AI SDK runtime stack rearchitecture."
     url: "https://github.com/nshkrdotcom/cli_subprocess_core"
     logo: "/logos/cli_subprocess_core.svg"
+    language: "Elixir"
 
   crucible_prompts:
     name: "crucible_prompts"
