@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-03-21T12:20:50Z
+# Last updated: 2026-03-23T01:04:29Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -1097,6 +1097,16 @@ repos:
     logo: "/logos/lineage_ir.svg"
     language: "Elixir"
 
+  ex_topology:
+    name: "ex_topology"
+    org: "North-Shore-AI"
+    stars: 2
+    category: "nshkr-data"
+    description: "Pure Elixir library for graph topology, TDA, and computational topology"
+    url: "https://github.com/North-Shore-AI/ex_topology"
+    logo: "/logos/ex_topology.svg"
+    language: "Elixir"
+
   weaviate_ex:
     name: "weaviate_ex"
     org: "nshkrdotcom"
@@ -1125,16 +1135,6 @@ repos:
     description: "Vector embeddings service for Elixir—multi-provider support (OpenAI, Cohere, Voyage AI), intelligent caching with Cachex, batch processing with rate limiting, Nx-powered similarity computations, k-means/DBSCAN clustering, semantic deduplication, and ETS-based vector storage. Built for CNS and ML pipelines."
     url: "https://github.com/North-Shore-AI/embed_ex"
     logo: "/logos/embed_ex.svg"
-    language: "Elixir"
-
-  ex_topology:
-    name: "ex_topology"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-data"
-    description: "Pure Elixir library for graph topology, TDA, and computational topology"
-    url: "https://github.com/North-Shore-AI/ex_topology"
-    logo: "/logos/ex_topology.svg"
     language: "Elixir"
 
   nx_penalties:
