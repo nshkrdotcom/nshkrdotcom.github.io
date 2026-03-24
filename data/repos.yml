@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-03-24T00:57:23Z
+# Last updated: 2026-03-24T12:39:31Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -503,7 +503,7 @@ repos:
   agent_session_manager:
     name: "agent_session_manager"
     org: "nshkrdotcom"
-    stars: 7
+    stars: 8
     category: "nshkr-ai-sdk"
     description: "Agent Session Manager - A comprehensive Elixir library for managing AI agent sessions, state persistence, conversation context, and multi-agent orchestration workflows"
     url: "https://github.com/nshkrdotcom/agent_session_manager"
@@ -661,7 +661,7 @@ repos:
   snakebridge:
     name: "snakebridge"
     org: "nshkrdotcom"
-    stars: 5
+    stars: 6
     category: "nshkr-ai-infra"
     description: "Compile-time Elixir code generator for Python library bindings. Declare dependencies in mix.exs, generate type-safe modules with introspected typespecs and docs. Deterministic git-friendly output, strict CI mode, streaming, and custom helpers. Runtime via Snakepit."
     url: "https://github.com/nshkrdotcom/snakebridge"
@@ -1150,7 +1150,7 @@ repos:
   GUARDRAIL:
     name: "GUARDRAIL"
     org: "nshkrdotcom"
-    stars: 17
+    stars: 18
     category: "nshkr-security"
     description: "GUARDRAIL - MCP Security - Gateway for Unified Access, Resource Delegation, and Risk-Attenuating Information Limits"
     url: "https://github.com/nshkrdotcom/GUARDRAIL"
