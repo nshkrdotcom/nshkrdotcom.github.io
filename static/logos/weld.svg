@@ -1,0 +1,89 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="halo" x1="34" y1="22" x2="166" y2="178" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A8ECFF"/>
+      <stop offset="0.52" stop-color="#47BEE9"/>
+      <stop offset="1" stop-color="#A6E6FF"/>
+    </linearGradient>
+    <linearGradient id="shell" x1="42" y1="24" x2="158" y2="176" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0F1A2B"/>
+      <stop offset="0.5" stop-color="#18314B"/>
+      <stop offset="1" stop-color="#0B1422"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="38" y1="26" x2="162" y2="174" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#EDF7FF"/>
+      <stop offset="0.28" stop-color="#9BE5FF"/>
+      <stop offset="0.62" stop-color="#3DB2DF"/>
+      <stop offset="1" stop-color="#F3FBFF"/>
+    </linearGradient>
+    <radialGradient id="panel" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 82) rotate(90) scale(84 76)">
+      <stop offset="0" stop-color="#203B58"/>
+      <stop offset="0.55" stop-color="#13263B"/>
+      <stop offset="1" stop-color="#0A111C"/>
+    </radialGradient>
+    <linearGradient id="steel" x1="62" y1="74" x2="138" y2="126" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F3F8FD"/>
+      <stop offset="0.42" stop-color="#C3D7E6"/>
+      <stop offset="1" stop-color="#6F879C"/>
+    </linearGradient>
+    <linearGradient id="steel-shadow" x1="74" y1="82" x2="126" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#19293A"/>
+      <stop offset="1" stop-color="#0E1724"/>
+    </linearGradient>
+    <linearGradient id="seam" x1="100" y1="66" x2="100" y2="134" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E9FBFF"/>
+      <stop offset="0.3" stop-color="#8EE8FF"/>
+      <stop offset="0.68" stop-color="#36B8E4"/>
+      <stop offset="1" stop-color="#1E7197"/>
+    </linearGradient>
+    <linearGradient id="seam-core" x1="100" y1="72" x2="100" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F7FEFF"/>
+      <stop offset="1" stop-color="#75D7F8"/>
+    </linearGradient>
+    <filter id="shadow" x="18" y="10" width="164" height="184" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#050B13" flood-opacity="0.28"/>
+    </filter>
+    <filter id="glow" x="18" y="10" width="164" height="184" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <clipPath id="panel-clip">
+      <path d="M100 34L154 65V135L100 166L46 135V65L100 34Z"/>
+    </clipPath>
+  </defs>
+
+  <path d="M100 12L175 56V144L100 188L25 144V56L100 12Z" fill="url(#halo)" opacity="0.14" filter="url(#glow)"/>
+
+  <g filter="url(#shadow)">
+    <path d="M100 14L173 57V143L100 186L27 143V57L100 14Z" fill="url(#shell)"/>
+    <path d="M100 14L173 57V143L100 186L27 143V57L100 14Z" stroke="url(#rim)" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M100 27L162 63V137L100 173L38 137V63L100 27Z" fill="url(#panel)"/>
+    <path d="M100 27L162 63V137L100 173L38 137V63L100 27Z" stroke="#D9F4FF" stroke-opacity="0.16" stroke-width="1.5" stroke-linejoin="round"/>
+
+    <g clip-path="url(#panel-clip)">
+      <path d="M34 70L105 38L166 68L166 84L94 52L34 80V70Z" fill="#FFFFFF" fill-opacity="0.08"/>
+      <path d="M28 135L108 96L174 128V145L101 111L28 145V135Z" fill="#050A12" fill-opacity="0.34"/>
+      <path d="M52 68H148" stroke="#A6E8FF" stroke-opacity="0.11" stroke-width="1.2"/>
+      <path d="M52 100H148" stroke="#A6E8FF" stroke-opacity="0.11" stroke-width="1.2"/>
+      <path d="M52 132H148" stroke="#A6E8FF" stroke-opacity="0.11" stroke-width="1.2"/>
+    </g>
+
+    <path d="M100 50L132 69V131L100 150L68 131V69L100 50Z" stroke="#86DFFF" stroke-opacity="0.24" stroke-width="2"/>
+
+    <g>
+      <path d="M59 79H83L96 100L83 121H59L72 100L59 79Z" fill="url(#steel)"/>
+      <path d="M141 79H117L104 100L117 121H141L128 100L141 79Z" fill="url(#steel)"/>
+      <path d="M67 86H82L89 100L82 114H67L75 100L67 86Z" fill="url(#steel-shadow)" fill-opacity="0.9"/>
+      <path d="M133 86H118L111 100L118 114H133L125 100L133 86Z" fill="url(#steel-shadow)" fill-opacity="0.9"/>
+      <path d="M62 83L82 83" stroke="#FFFFFF" stroke-opacity="0.42" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M138 83L118 83" stroke="#FFFFFF" stroke-opacity="0.42" stroke-width="1.3" stroke-linecap="round"/>
+    </g>
+
+    <g>
+      <rect x="95" y="66" width="10" height="68" rx="5" fill="url(#seam)"/>
+      <rect x="97.25" y="72" width="5.5" height="56" rx="2.75" fill="url(#seam-core)" fill-opacity="0.94"/>
+      <rect x="92" y="82" width="16" height="3" rx="1.5" fill="#D9FBFF" fill-opacity="0.88"/>
+      <rect x="92" y="99" width="16" height="3" rx="1.5" fill="#D9FBFF" fill-opacity="0.88"/>
+      <rect x="92" y="116" width="16" height="3" rx="1.5" fill="#D9FBFF" fill-opacity="0.88"/>
+    </g>
+  </g>
+</svg>

@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-03-26T12:43:15Z
+# Last updated: 2026-03-27T01:07:12Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -493,7 +493,7 @@ repos:
   codex_sdk:
     name: "codex_sdk"
     org: "nshkrdotcom"
-    stars: 17
+    stars: 18
     category: "nshkr-ai-sdk"
     description: "OpenAI Codex SDK written in Elixir"
     url: "https://github.com/nshkrdotcom/codex_sdk"
@@ -961,6 +961,16 @@ repos:
     description: "Code Intelligence Platform: Repository analysis, semantic code search, dependency graphs, and AI-powered code understanding built on the Portfolio RAG ecosystem. Features multi-language parsing (Elixir, Python, JavaScript, TypeScript), AST-aware chunking, call graph analysis, and intelligent code agents for review, refactoring, and documentation."
     url: "https://github.com/nshkrdotcom/portfolio_coder"
     logo: "/logos/portfolio_coder.svg"
+    language: "Elixir"
+
+  weld:
+    name: "weld"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-devtools"
+    description: "Deterministic Hex package projection for Elixir monorepos: audit app identities, assemble selected Mix projects into one publishable package, and verify the generated artifact end to end."
+    url: "https://github.com/nshkrdotcom/weld"
+    logo: "/logos/weld.svg"
     language: "Elixir"
 
   superlearner:
