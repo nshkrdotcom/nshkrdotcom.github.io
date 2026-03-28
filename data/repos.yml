@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-03-27T12:34:13Z
+# Last updated: 2026-03-28T12:26:42Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -483,7 +483,7 @@ repos:
   claude_agent_sdk:
     name: "claude_agent_sdk"
     org: "nshkrdotcom"
-    stars: 28
+    stars: 29
     category: "nshkr-ai-sdk"
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
     url: "https://github.com/nshkrdotcom/claude_agent_sdk"
@@ -953,6 +953,16 @@ repos:
     logo: "/logos/blitz.svg"
     language: "Elixir"
 
+  coolify_ex:
+    name: "coolify_ex"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-devtools"
+    description: "Generic Elixir tooling for triggering, monitoring, and verifying Coolify deployments from a workstation or remote server, with support for top-level Mix apps and monorepos."
+    url: "https://github.com/nshkrdotcom/coolify_ex"
+    logo: "/logos/coolify_ex.svg"
+    language: "Elixir"
+
   portfolio_coder:
     name: "portfolio_coder"
     org: "nshkrdotcom"
@@ -1071,7 +1081,7 @@ repos:
   AITrace:
     name: "AITrace"
     org: "nshkrdotcom"
-    stars: 1
+    stars: 2
     category: "nshkr-observability"
     description: "The unified observability layer for the AI Control Plane"
     url: "https://github.com/nshkrdotcom/AITrace"
