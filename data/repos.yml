@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-03-29T01:10:21Z
+# Last updated: 2026-03-30T12:45:31Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -385,7 +385,7 @@ repos:
   synapse:
     name: "synapse"
     org: "nshkrdotcom"
-    stars: 41
+    stars: 42
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
@@ -651,7 +651,7 @@ repos:
   rag_ex:
     name: "rag_ex"
     org: "nshkrdotcom"
-    stars: 6
+    stars: 7
     category: "nshkr-ai-infra"
     description: "Elixir RAG library with multi-LLM routing (Gemini, Claude, OpenAI, Ollama), GraphRAG, knowledge graphs, modular retrievers/rerankers, composable pipelines, pgvector integration, advanced chunking, and tool-using agents. Fork of bitcrowd/rag."
     url: "https://github.com/nshkrdotcom/rag_ex"
@@ -676,6 +676,16 @@ repos:
     description: "Elixir port of tinker-cookbook: training and evaluation recipes for the Tinker ML platform."
     url: "https://github.com/North-Shore-AI/tinkex_cookbook"
     logo: "/logos/tinkex_cookbook.svg"
+    language: "Elixir"
+
+  portfolio_core:
+    name: "portfolio_core"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-ai-infra"
+    description: "Hexagonal architecture core for Elixir RAG systems. Port specifications, manifest-based config, adapter registry, and DI framework. Enables swappable vector/graph/embedding/LLM backends via clean port/adapter abstractions. Hex.pm publishable."
+    url: "https://github.com/nshkrdotcom/portfolio_core"
+    logo: "/logos/portfolio_core.svg"
     language: "Elixir"
 
   slither:
@@ -756,16 +766,6 @@ repos:
     description: "Interactive CLI and REPL for the NSAI ecosystem—unified interface to registry, gateway, jobs, experiments, datasets, embeddings, and metrics services; tab completion with bash/zsh scripts; configurable environments; JSON output mode for scripting; escript distribution. The cockpit for North Shore AI operations."
     url: "https://github.com/North-Shore-AI/pilot"
     logo: "/logos/pilot.svg"
-    language: "Elixir"
-
-  portfolio_core:
-    name: "portfolio_core"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-ai-infra"
-    description: "Hexagonal architecture core for Elixir RAG systems. Port specifications, manifest-based config, adapter registry, and DI framework. Enables swappable vector/graph/embedding/LLM backends via clean port/adapter abstractions. Hex.pm publishable."
-    url: "https://github.com/nshkrdotcom/portfolio_core"
-    logo: "/logos/portfolio_core.svg"
     language: "Elixir"
 
   skill_ex:
@@ -1052,7 +1052,7 @@ repos:
   cluster_test:
     name: "cluster_test"
     org: "nshkrdotcom"
-    stars: 4
+    stars: 5
     category: "nshkr-testing"
     description: "Distributed Erlang/Elixir test cluster management via Mix tasks"
     url: "https://github.com/nshkrdotcom/cluster_test"
@@ -1283,6 +1283,7 @@ repos:
     description: ""
     url: "https://github.com/nshkrdotcom/jido_session"
     language: "Elixir"
+    archived: true
 
   nshkrdotcom:
     name: "nshkrdotcom"
