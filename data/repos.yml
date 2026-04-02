@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-01T12:46:45Z
+# Last updated: 2026-04-02T01:05:52Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -599,6 +599,16 @@ repos:
     url: "https://github.com/North-Shore-AI/crucible_prompts"
     logo: "/logos/crucible_prompts.svg"
 
+  external_runtime_transport:
+    name: "external_runtime_transport"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-sdk"
+    description: "An Elixir-first external runtime transport foundation for AI SDK integrations, focused on clean transport boundaries, provider interoperability, protocol adapters, and production-grade documentation, packaging, and operational ergonomics for downstream nshkrdotcom runtime and SDK ecosystems."
+    url: "https://github.com/nshkrdotcom/external_runtime_transport"
+    logo: "/logos/external_runtime_transport.svg"
+    language: "Elixir"
+
   gemini_cli_sdk:
     name: "gemini_cli_sdk"
     org: "nshkrdotcom"
@@ -609,6 +619,26 @@ repos:
     logo: "/logos/gemini_cli_sdk.svg"
     language: "Elixir"
 
+  linear_sdk:
+    name: "linear_sdk"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-sdk"
+    description: "Elixir SDK for Linear built on Prismatic, using a schema-driven GraphQL toolchain, thin provider-specific configuration, generated operations and models, and professional docs, verification, and examples for production-grade client use."
+    url: "https://github.com/nshkrdotcom/linear_sdk"
+    logo: "/logos/linear_sdk.svg"
+    language: "Elixir"
+
+  llama_cpp_ex:
+    name: "llama_cpp_ex"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-sdk"
+    description: "Barebones Elixir wrapper and integration surface for llama.cpp experiments, local inference workflows, and future nshkr AI SDK interoperability, with repository assets, docs, and package metadata prepared for professional distribution."
+    url: "https://github.com/nshkrdotcom/llama_cpp_ex"
+    logo: "/logos/llama_cpp_ex.svg"
+    language: "Elixir"
+
   nsai_llm:
     name: "nsai_llm"
     org: "North-Shore-AI"
@@ -617,6 +647,16 @@ repos:
     description: "Shared LLM Actions for NSAI runtimes. Wraps PortfolioCore adapters with Jido.Action semantics and CrucibleIR.Backend input/output to centralize provider access."
     url: "https://github.com/North-Shore-AI/nsai_llm"
     logo: "/logos/nsai_llm.svg"
+
+  self_hosted_inference_core:
+    name: "self_hosted_inference_core"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-sdk"
+    description: "Core Elixir primitives for building reliable self-hosted inference clients, provider adapters, transport boundaries, and operational controls for private AI runtimes across local, edge, and dedicated infrastructure."
+    url: "https://github.com/nshkrdotcom/self_hosted_inference_core"
+    logo: "/logos/self_hosted_inference_core.svg"
+    language: "Elixir"
 
   vllm:
     name: "vllm"
@@ -788,16 +828,6 @@ repos:
     logo: "/logos/tiktoken_ex.svg"
     language: "Elixir"
 
-  tinkerer:
-    name: "tinkerer"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-ai-infra"
-    description: "Chiral Narrative Synthesis workspace for Thinker/Tinker LoRA pipelines, semantic fact-checking, telemetry, and reviewer-ready CNS docs."
-    url: "https://github.com/North-Shore-AI/tinkerer"
-    logo: "/logos/tinkerer.svg"
-    language: "Python"
-
   hf_hub_ex:
     name: "hf_hub_ex"
     org: "North-Shore-AI"
@@ -837,6 +867,16 @@ repos:
     url: "https://github.com/nshkrdotcom/portfolio_manager"
     logo: "/logos/portfolio_manager.svg"
     language: "Elixir"
+
+  tinkerer:
+    name: "tinkerer"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Chiral Narrative Synthesis workspace for Thinker/Tinker LoRA pipelines, semantic fact-checking, telemetry, and reviewer-ready CNS docs."
+    url: "https://github.com/North-Shore-AI/tinkerer"
+    logo: "/logos/tinkerer.svg"
+    language: "Python"
 
   exdantic:
     name: "exdantic"
@@ -971,6 +1011,16 @@ repos:
     description: "Code Intelligence Platform: Repository analysis, semantic code search, dependency graphs, and AI-powered code understanding built on the Portfolio RAG ecosystem. Features multi-language parsing (Elixir, Python, JavaScript, TypeScript), AST-aware chunking, call graph analysis, and intelligent code agents for review, refactoring, and documentation."
     url: "https://github.com/nshkrdotcom/portfolio_coder"
     logo: "/logos/portfolio_coder.svg"
+    language: "Elixir"
+
+  prismatic:
+    name: "prismatic"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-devtools"
+    description: "GraphQL-native Elixir SDK platform and monorepo for schema-driven providers, built as the document-first sibling to Pristine with shared runtime, code generation, provider verification, and workspace tooling for thin, configuration-driven client SDKs."
+    url: "https://github.com/nshkrdotcom/prismatic"
+    logo: "/logos/prismatic.svg"
     language: "Elixir"
 
   weld:

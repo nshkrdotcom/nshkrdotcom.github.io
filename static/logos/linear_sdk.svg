@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-labelledby="title desc">
+  <title id="title">LinearSDK</title>
+  <desc id="desc">Hexagonal logo with graph lines, status bars, and orbiting nodes for LinearSDK.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07131d"/>
+      <stop offset="55%" stop-color="#0f2a3b"/>
+      <stop offset="100%" stop-color="#1a4a57"/>
+    </linearGradient>
+    <linearGradient id="hex" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8af4ff"/>
+      <stop offset="50%" stop-color="#7fd4ff"/>
+      <stop offset="100%" stop-color="#7fffbd"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#78f4ff"/>
+      <stop offset="100%" stop-color="#f7ff84"/>
+    </linearGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#041019" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+  <g transform="translate(0 10) scale(1.285714 1.285714) translate(-22.222 -20)">
+    <path d="M100 20 160 55v70l-60 35-60-35V55Z" fill="#081924" stroke="url(#hex)" stroke-width="6" filter="url(#shadow)"/>
+    <path d="M62 72h76M62 100h76M62 128h52" stroke="#7fd4ff" stroke-width="8" stroke-linecap="round" opacity="0.95"/>
+    <circle cx="144" cy="128" r="10" fill="#f7ff84"/>
+    <path d="M72 72c7-16 49-16 56 0M74 100c10 15 42 15 52 0" fill="none" stroke="url(#accent)" stroke-width="3"/>
+    <circle cx="78" cy="72" r="7" fill="#78f4ff"/>
+    <circle cx="122" cy="72" r="7" fill="#7fffbd"/>
+    <circle cx="88" cy="100" r="7" fill="#9ae8ff"/>
+    <circle cx="112" cy="100" r="7" fill="#9dffc4"/>
+    <path d="M100 46 132 62v36l-32 18-32-18V62Z" fill="none" stroke="#7fd4ff" stroke-width="2.5" opacity="0.55"/>
+  </g>
+</svg>
