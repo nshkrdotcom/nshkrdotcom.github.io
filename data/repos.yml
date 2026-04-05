@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-05T01:11:02Z
+# Last updated: 2026-04-05T12:27:56Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -402,6 +402,16 @@ repos:
     logo: "/logos/flowstone.svg"
     language: "Elixir"
 
+  DSPex:
+    name: "DSPex"
+    org: "nshkrdotcom"
+    stars: 17
+    category: "nshkr-ai-agents"
+    description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
+    url: "https://github.com/nshkrdotcom/DSPex"
+    logo: "/logos/DSPex.svg"
+    language: "Elixir"
+
   ds_ex:
     name: "ds_ex"
     org: "nshkrdotcom"
@@ -409,16 +419,6 @@ repos:
     category: "nshkr-ai-agents"
     description: "DSPEx - Declarative Self-improving Elixir | A BEAM-Native AI Program Optimization Framework"
     url: "https://github.com/nshkrdotcom/ds_ex"
-    language: "Elixir"
-
-  DSPex:
-    name: "DSPex"
-    org: "nshkrdotcom"
-    stars: 16
-    category: "nshkr-ai-agents"
-    description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
-    url: "https://github.com/nshkrdotcom/DSPex"
-    logo: "/logos/DSPex.svg"
     language: "Elixir"
 
   ALTAR:
@@ -477,6 +477,7 @@ repos:
     category: "nshkr-ai-agents"
     description: "A Phoenix-powered coordination server and local Elixir client runtime for protocol-driven multi-worker collaboration, with room-scoped execution plans, round-robin stage orchestration, and publish-consensus workflows for agentic AI task pipelines."
     url: "https://github.com/nshkrdotcom/jido_hive"
+    logo: "/logos/jido_hive.svg"
     language: "Elixir"
 
   gemini_ex:
