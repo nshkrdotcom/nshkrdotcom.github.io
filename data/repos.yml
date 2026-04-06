@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-05T12:27:56Z
+# Last updated: 2026-04-06T12:40:44Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -460,6 +460,16 @@ repos:
     logo: "/logos/flowstone_ai.svg"
     language: "Elixir"
 
+  jido_hive:
+    name: "jido_hive"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-agents"
+    description: "Phoenix coordination server and embeddable Elixir client for augmented human-AI telepathy. Transforms multiplayer terminal chat into live, room-scoped structured context graphs and actionable consensus workflows."
+    url: "https://github.com/nshkrdotcom/jido_hive"
+    logo: "/logos/jido_hive.svg"
+    language: "Elixir"
+
   synapse_ai:
     name: "synapse_ai"
     org: "nshkrdotcom"
@@ -468,16 +478,6 @@ repos:
     description: "Synapse integration for altar_ai - SDK-backed LLM providers for multi-agent workflows with automatic fallback, signal handlers, and workflow actions"
     url: "https://github.com/nshkrdotcom/synapse_ai"
     logo: "/logos/synapse_ai.svg"
-    language: "Elixir"
-
-  jido_hive:
-    name: "jido_hive"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-agents"
-    description: "A Phoenix-powered coordination server and local Elixir client runtime for protocol-driven multi-worker collaboration, with room-scoped execution plans, round-robin stage orchestration, and publish-consensus workflows for agentic AI task pipelines."
-    url: "https://github.com/nshkrdotcom/jido_hive"
-    logo: "/logos/jido_hive.svg"
     language: "Elixir"
 
   gemini_ex:
@@ -963,6 +963,16 @@ repos:
     logo: "/logos/elixir_dashboard.svg"
     language: "Elixir"
 
+  blitz:
+    name: "blitz"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-devtools"
+    description: "Small parallel command runner for Elixir and Mix workspaces that executes isolated shell commands with bounded concurrency, readable prefixed output, and structured aggregated failures for monorepo tooling and internal developer workflows."
+    url: "https://github.com/nshkrdotcom/blitz"
+    logo: "/logos/blitz.svg"
+    language: "Elixir"
+
   elixir_tracer:
     name: "elixir_tracer"
     org: "nshkrdotcom"
@@ -991,16 +1001,6 @@ repos:
     description: "Prompt Runner SDK - Elixir toolkit for orchestrating multi-step prompt executions with Claude Code SDK and Codex SDK. Streaming output, progress tracking, multi-repo commits, configurable LLM backends with per-prompt overrides, and automatic git integration."
     url: "https://github.com/nshkrdotcom/prompt_runner_sdk"
     logo: "/logos/prompt_runner_sdk.svg"
-    language: "Elixir"
-
-  blitz:
-    name: "blitz"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-devtools"
-    description: "Small parallel command runner for Elixir and Mix workspaces that executes isolated shell commands with bounded concurrency, readable prefixed output, and structured aggregated failures for monorepo tooling and internal developer workflows."
-    url: "https://github.com/nshkrdotcom/blitz"
-    logo: "/logos/blitz.svg"
     language: "Elixir"
 
   coolify_ex:
