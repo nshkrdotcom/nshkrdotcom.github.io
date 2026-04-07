@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-06T12:40:44Z
+# Last updated: 2026-04-07T12:50:30Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -639,14 +639,14 @@ repos:
     logo: "/logos/linear_sdk.svg"
     language: "Elixir"
 
-  llama_cpp_ex:
-    name: "llama_cpp_ex"
+  llama_cpp_sdk:
+    name: "llama_cpp_sdk"
     org: "nshkrdotcom"
     stars: 0
     category: "nshkr-ai-sdk"
     description: "Barebones Elixir wrapper and integration surface for llama.cpp experiments, local inference workflows, and future nshkr AI SDK interoperability, with repository assets, docs, and package metadata prepared for professional distribution."
-    url: "https://github.com/nshkrdotcom/llama_cpp_ex"
-    logo: "/logos/llama_cpp_ex.svg"
+    url: "https://github.com/nshkrdotcom/llama_cpp_sdk"
+    logo: "/logos/llama_cpp_sdk.svg"
     language: "Elixir"
 
   nsai_llm:
