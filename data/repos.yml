@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-09T01:00:28Z
+# Last updated: 2026-04-09T12:53:16Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -776,6 +776,16 @@ repos:
     description: "Core Elixir library for AI agent orchestration - unified workbench for running, tracking, and orchestrating multi-provider LLM agents with sessions, workflows, RAG indexes, tool approvals, and cost tracking"
     url: "https://github.com/nshkrdotcom/command"
     logo: "/logos/command.svg"
+    language: "Elixir"
+
+  execution_plane:
+    name: "execution_plane"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "Execution Plane is an Elixir/OTP runtime substrate for boundary-aware AI infrastructure, unifying process execution, protocol framing, transport lifecycle, realtime streams, JSON-RPC control lanes, and future sandbox-backed placement under one composable kernel for agentic systems."
+    url: "https://github.com/nshkrdotcom/execution_plane"
+    logo: "/logos/execution_plane.svg"
     language: "Elixir"
 
   nsai_gateway:
