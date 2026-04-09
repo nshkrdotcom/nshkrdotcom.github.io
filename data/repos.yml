@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-07T12:50:30Z
+# Last updated: 2026-04-09T01:00:28Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
@@ -385,7 +385,7 @@ repos:
   synapse:
     name: "synapse"
     org: "nshkrdotcom"
-    stars: 42
+    stars: 43
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
@@ -450,6 +450,16 @@ repos:
     url: "https://github.com/nshkrdotcom/mabeam"
     language: "Elixir"
 
+  jido_hive:
+    name: "jido_hive"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-ai-agents"
+    description: "Phoenix coordination server and embeddable Elixir client for augmented human-AI telepathy. Transforms multiplayer terminal chat into live, room-scoped structured context graphs and actionable consensus workflows."
+    url: "https://github.com/nshkrdotcom/jido_hive"
+    logo: "/logos/jido_hive.svg"
+    language: "Elixir"
+
   flowstone_ai:
     name: "flowstone_ai"
     org: "nshkrdotcom"
@@ -458,16 +468,6 @@ repos:
     description: "FlowStone integration for altar_ai - AI-powered data pipeline assets with classify_each, enrich_each, embed_each helpers and unified telemetry"
     url: "https://github.com/nshkrdotcom/flowstone_ai"
     logo: "/logos/flowstone_ai.svg"
-    language: "Elixir"
-
-  jido_hive:
-    name: "jido_hive"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-ai-agents"
-    description: "Phoenix coordination server and embeddable Elixir client for augmented human-AI telepathy. Transforms multiplayer terminal chat into live, room-scoped structured context graphs and actionable consensus workflows."
-    url: "https://github.com/nshkrdotcom/jido_hive"
-    logo: "/logos/jido_hive.svg"
     language: "Elixir"
 
   synapse_ai:
@@ -520,6 +520,16 @@ repos:
     logo: "/logos/agent_session_manager.svg"
     language: "Elixir"
 
+  ollixir:
+    name: "ollixir"
+    org: "nshkrdotcom"
+    stars: 5
+    category: "nshkr-ai-sdk"
+    description: "Ollixir provides a first-class Elixir client with feature parity to the official ollama-python library. Ollixir runs large language models locally or on your infrastructure via Ollama."
+    url: "https://github.com/nshkrdotcom/ollixir"
+    logo: "/logos/ollixir.png"
+    language: "Elixir"
+
   altar_ai:
     name: "altar_ai"
     org: "nshkrdotcom"
@@ -528,16 +538,6 @@ repos:
     description: "Protocol-based AI adapter foundation for Elixir - unified abstractions for gemini_ex, claude_agent_sdk, codex_sdk with automatic fallback, capability detection, and telemetry"
     url: "https://github.com/nshkrdotcom/altar_ai"
     logo: "/logos/altar_ai.svg"
-    language: "Elixir"
-
-  ollixir:
-    name: "ollixir"
-    org: "nshkrdotcom"
-    stars: 4
-    category: "nshkr-ai-sdk"
-    description: "Ollixir provides a first-class Elixir client with feature parity to the official ollama-python library. Ollixir runs large language models locally or on your infrastructure via Ollama."
-    url: "https://github.com/nshkrdotcom/ollixir"
-    logo: "/logos/ollixir.png"
     language: "Elixir"
 
   jules_ex:
@@ -681,7 +681,7 @@ repos:
   json_remedy:
     name: "json_remedy"
     org: "nshkrdotcom"
-    stars: 29
+    stars: 30
     category: "nshkr-ai-infra"
     description: "A practical, multi-layered JSON repair library for Elixir that intelligently fixes malformed JSON strings commonly produced by LLMs, legacy systems, and data pipelines."
     url: "https://github.com/nshkrdotcom/json_remedy"
