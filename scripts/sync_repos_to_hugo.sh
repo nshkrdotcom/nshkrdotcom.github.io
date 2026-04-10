@@ -22,11 +22,8 @@ nshkr_load_category_config "$CATEGORY_CONFIG"
 
 echo "Syncing repositories to Hugo data..."
 
-# Local repo paths
-LOCAL_NSHKR="$HOME/p/g/n"
-LOCAL_NORTHSHORE="$HOME/p/g/North-Shore-AI"
-
 mkdir -p "$LOGOS_DIR"
+LOGO_CACHE_CHANGED=0
 
 cleanup() {
     rm -f "$TMP_FILE"
@@ -36,200 +33,351 @@ cleanup() {
 }
 trap cleanup EXIT
 
-# Fetch logo from GitHub raw URL
-# Returns 0 on success, 1 on failure
-fetch_logo_from_github() {
+# Hash a file for content-addressed logo filenames.
+hash_file() {
+    local file_path=$1
+
+    if command -v sha256sum >/dev/null 2>&1; then
+        sha256sum "$file_path" | awk '{print substr($1, 1, 12)}'
+        return
+    fi
+
+    if command -v shasum >/dev/null 2>&1; then
+        shasum -a 256 "$file_path" | awk '{print substr($1, 1, 12)}'
+        return
+    fi
+
+    if command -v openssl >/dev/null 2>&1; then
+        openssl dgst -sha256 "$file_path" | awk '{print substr($NF, 1, 12)}'
+        return
+    fi
+
+    echo "Unable to hash logo content: no SHA-256 tool available" >&2
+    return 1
+}
+
+normalize_logo_extension() {
+    local source_path=${1,,}
+
+    case "$source_path" in
+        *.svg) echo "svg" ;;
+        *.png) echo "png" ;;
+        *.jpg|*.jpeg) echo "jpg" ;;
+        *.webp) echo "webp" ;;
+        *.gif) echo "gif" ;;
+        *) return 1 ;;
+    esac
+}
+
+sanitize_repo_relative_path() {
+    local path=$1
+
+    path="${path//$'\r'/}"
+    path="${path%%#*}"
+    path="${path%%\?*}"
+
+    while [[ "$path" == ./* ]]; do
+        path="${path#./}"
+    done
+
+    case "$path" in
+        ""|/*|http://*|https://*|data:*|mailto:*|*://*)
+            return 1
+            ;;
+    esac
+
+    printf '%s\n' "$path"
+}
+
+logo_candidate_score() {
+    local lower_path=${1,,}
+    local score=20
+
+    case "$lower_path" in
+        assets/*|logo/*|logos/*|static/logo/*|static/logos/*)
+            score=0
+            ;;
+        static/*)
+            score=4
+            ;;
+    esac
+
+    case "$lower_path" in
+        *logo*)
+            score=$((score - 3))
+            ;;
+    esac
+
+    case "$lower_path" in
+        *.svg)
+            score=$((score - 2))
+            ;;
+        *.png)
+            score=$((score - 1))
+            ;;
+    esac
+
+    printf '%s\n' "$score"
+}
+
+prune_stale_cached_logos() {
+    local repo_name=$1
+    local keep_basename=${2:-}
+    local candidate=""
+
+    while IFS= read -r -d '' candidate; do
+        if [[ -n "$keep_basename" ]] && [[ "$(basename "$candidate")" == "$keep_basename" ]]; then
+            continue
+        fi
+        rm -f "$candidate"
+        LOGO_CACHE_CHANGED=1
+    done < <(
+        find "$LOGOS_DIR" -maxdepth 1 -type f \
+            \( -name "${repo_name}.svg" -o -name "${repo_name}.png" -o -name "${repo_name}.jpg" -o -name "${repo_name}.jpeg" -o -name "${repo_name}.webp" -o -name "${repo_name}.gif" -o -name "${repo_name}-*.*" \) \
+            -print0
+    )
+}
+
+prune_unreferenced_cached_logos() {
+    local manifest_file=$1
+    local logo_file=""
+    local basename=""
+    declare -A referenced_logos=()
+
+    while IFS= read -r basename; do
+        [[ -n "$basename" ]] || continue
+        referenced_logos["$basename"]=1
+    done < <(
+        rg -o 'logo: "/logos/[^"]+"' "$manifest_file" \
+            | sed -E 's/.*\/logos\/([^"]+)".*/\1/'
+    )
+
+    while IFS= read -r -d '' logo_file; do
+        basename=$(basename "$logo_file")
+        if [[ -z "${referenced_logos[$basename]+x}" ]]; then
+            rm -f "$logo_file"
+            LOGO_CACHE_CHANGED=1
+        fi
+    done < <(find "$LOGOS_DIR" -maxdepth 1 -type f -print0)
+}
+
+cache_logo_artifact() {
+    local repo_name=$1
+    local source_path=$2
+    local temp_path=$3
+    local ext=""
+    local content_hash=""
+    local versioned_name=""
+    local final_path=""
+
+    ext=$(normalize_logo_extension "$source_path") || {
+        rm -f "$temp_path"
+        return 1
+    }
+
+    content_hash=$(hash_file "$temp_path") || {
+        rm -f "$temp_path"
+        return 1
+    }
+
+    versioned_name="${repo_name}-${content_hash}.${ext}"
+    final_path="$LOGOS_DIR/$versioned_name"
+
+    if [[ ! -f "$final_path" ]]; then
+        mv "$temp_path" "$final_path"
+        LOGO_CACHE_CHANGED=1
+    else
+        rm -f "$temp_path"
+    fi
+
+    prune_stale_cached_logos "$repo_name" "$versioned_name"
+    printf '/logos/%s\n' "$versioned_name"
+}
+
+download_github_raw_file() {
     local owner=$1
     local repo_name=$2
     local remote_path=$3
     local dest_path=$4
     local branch=${5:-main}
+    local normalized_path=""
+    local encoded_path=""
+    local url=""
 
-    local url="https://raw.githubusercontent.com/${owner}/${repo_name}/${branch}/${remote_path}"
+    normalized_path=$(sanitize_repo_relative_path "$remote_path") || return 1
+    encoded_path="${normalized_path// /%20}"
+    url="https://raw.githubusercontent.com/${owner}/${repo_name}/${branch}/${encoded_path}"
 
-    # Use curl with silent mode, fail on HTTP errors, follow redirects
-    if curl -sfL --max-time 10 "$url" -o "$dest_path" 2>/dev/null; then
-        # Verify we got actual content (not a 404 page)
-        if [[ -s "$dest_path" ]] && ! grep -q "404" "$dest_path" 2>/dev/null; then
-            return 0
-        fi
-        rm -f "$dest_path"
+    if curl -fsSL --retry 3 --retry-delay 1 --retry-all-errors --max-time 20 "$url" -o "$dest_path" 2>/dev/null && [[ -s "$dest_path" ]]; then
+        return 0
     fi
+
+    rm -f "$dest_path"
     return 1
 }
 
-# Try to fetch logo from GitHub by parsing remote README or trying standard paths
+extract_logo_path_from_readme_content() {
+    local readme_content=$1
+    local best_path=""
+    local best_score=999
+    local candidate=""
+    local sanitized=""
+    local score=""
+
+    while IFS= read -r candidate; do
+        [[ -n "$candidate" ]] || continue
+        sanitized=$(sanitize_repo_relative_path "$candidate" 2>/dev/null || true)
+        [[ -n "$sanitized" ]] || continue
+        normalize_logo_extension "$sanitized" >/dev/null 2>&1 || continue
+        score=$(logo_candidate_score "$sanitized")
+        if [[ -z "$best_path" ]] || [[ "$score" -lt "$best_score" ]]; then
+            best_path="$sanitized"
+            best_score="$score"
+        fi
+    done < <(
+        printf '%s\n' "$readme_content" \
+            | grep -oiP 'src=["'"'"'][^"'"'"']+\.(svg|png|jpe?g|webp|gif)(?:\?[^"'"'"']*)?(?:#[^"'"'"']*)?["'"'"']' \
+            | sed -E 's/^src=["'"'"'](.*)["'"'"']$/\1/I' || true
+        printf '%s\n' "$readme_content" \
+            | grep -oP '!\[[^]]*\]\([^)]+\.(svg|png|jpe?g|webp|gif)(?:\?[^)]*)?(?:#[^)]*)?\)' \
+            | sed -E 's/^!\[[^]]*\]\((.*)\)$/\1/' || true
+    )
+
+    printf '%s\n' "$best_path"
+}
+
+cache_remote_logo_candidate() {
+    local repo_name=$1
+    local owner=$2
+    local branch=$3
+    local remote_path=$4
+    local temp_path=""
+
+    temp_path=$(mktemp)
+    if download_github_raw_file "$owner" "$repo_name" "$remote_path" "$temp_path" "$branch"; then
+        cache_logo_artifact "$repo_name" "$remote_path" "$temp_path"
+        return 0
+    fi
+
+    rm -f "$temp_path"
+    return 1
+}
+
+fetch_repo_readme_content() {
+    local owner=$1
+    local repo_name=$2
+    local branch=${3:-main}
+    local readme_payload=""
+
+    readme_payload=$(gh api "repos/${owner}/${repo_name}/readme?ref=${branch}" 2>/dev/null || true)
+    if [[ -z "$readme_payload" ]]; then
+        printf '\n'
+        return
+    fi
+
+    printf '%s' "$readme_payload" | jq -r '.content // empty | gsub("\n"; "") | @base64d'
+}
+
+find_logo_path_in_repo_tree() {
+    local owner=$1
+    local repo_name=$2
+    local branch=${3:-main}
+    local preferred_path=${4:-}
+    local tree_payload=""
+
+    tree_payload=$(gh api "repos/${owner}/${repo_name}/git/trees/${branch}?recursive=1" 2>/dev/null || true)
+    if [[ -z "$tree_payload" ]]; then
+        printf '\n'
+        return
+    fi
+
+    printf '%s' "$tree_payload" | jq -r --arg repo "$repo_name" --arg preferred "$preferred_path" '
+        def canonical_basename:
+            split("/") | last | ascii_downcase;
+
+        def repo_names($repo):
+            ($repo | ascii_downcase) as $r |
+            [
+                $r + ".svg", $r + ".png", $r + ".jpg", $r + ".jpeg", $r + ".webp", $r + ".gif",
+                $r + "_logo.svg", $r + "_logo.png", $r + "_logo.jpg", $r + "_logo.jpeg", $r + "_logo.webp", $r + "_logo.gif",
+                $r + "-logo.svg", $r + "-logo.png", $r + "-logo.jpg", $r + "-logo.jpeg", $r + "-logo.webp", $r + "-logo.gif",
+                "logo.svg", "logo.png", "logo.jpg", "logo.jpeg", "logo.webp", "logo.gif"
+            ];
+
+        def in_common_dir:
+            ascii_downcase | test("(^|/)(assets|logo|logos|static/logo|static/logos|static)/");
+
+        def has_logo_hint:
+            ascii_downcase | test("logo");
+
+        def matches_repo_name($repo):
+            canonical_basename as $base |
+            repo_names($repo) | index($base) != null;
+
+        def relevant($repo; $preferred):
+            ($preferred != "" and ascii_downcase == ($preferred | ascii_downcase)) or
+            in_common_dir or
+            has_logo_hint or
+            matches_repo_name($repo);
+
+        def score($repo; $preferred):
+            (ascii_downcase) as $p |
+            (if ($preferred != "" and $p == ($preferred | ascii_downcase)) then -100
+             elif ($p | test("(^|/)(assets|logo|logos|static/logo|static/logos)/")) then 0
+             elif ($p | test("(^|/)static/")) then 4
+             else 20 end)
+            + (if $p | test("logo") then -3 else 0 end)
+            + (if $p | test("\\.svg$") then -2 elif $p | test("\\.png$") then -1 else 0 end);
+
+        (.tree // [])
+        | map(select(.type == "blob"))
+        | map(.path | gsub("^\\./"; ""))
+        | map(select(test("\\.(svg|png|jpe?g|webp|gif)$"; "i")))
+        | map(select(relevant($repo; $preferred)))
+        | sort_by(score($repo; $preferred), .)
+        | .[0] // empty
+    '
+}
+
+# Fetch and cache the authoritative logo from the repo default branch.
+# Returns the versioned Hugo asset path (for example, /logos/repo-abc123def456.svg).
 fetch_logo_remote() {
     local repo_name=$1
     local owner=$2
     local branch=${3:-main}
-
-    local readme_url="https://raw.githubusercontent.com/${owner}/${repo_name}/${branch}/README.md"
     local readme_content=""
-    local logo_file=""
-    local logo_dir=""
+    local logo_path=""
+    local resolved_path=""
 
-    # Try to fetch and parse README
-    readme_content=$(curl -sfL --max-time 10 "$readme_url" 2>/dev/null || echo "")
-
+    readme_content=$(fetch_repo_readme_content "$owner" "$repo_name" "$branch")
     if [[ -n "$readme_content" ]]; then
-        # Check for <img src="assets/..."
-        logo_file=$(echo "$readme_content" | grep -oP '(?<=src=["'"'"']assets/)[^"'"'"']+' | head -1)
-        if [[ -n "$logo_file" ]]; then
-            logo_dir="assets"
-        fi
-
-        # Check for <img src="logo/..."
-        if [[ -z "$logo_file" ]]; then
-            logo_file=$(echo "$readme_content" | grep -oP '(?<=src=["'"'"']logo/)[^"'"'"']+' | head -1)
-            if [[ -n "$logo_file" ]]; then
-                logo_dir="logo"
-            fi
-        fi
-
-        # Check for ![...](assets/...)
-        if [[ -z "$logo_file" ]]; then
-            logo_file=$(echo "$readme_content" | grep -oP '(?<=\]\(assets/)[^)]+' | head -1)
-            if [[ -n "$logo_file" ]]; then
-                logo_dir="assets"
-            fi
-        fi
-
-        # Check for ![...](logo/...)
-        if [[ -z "$logo_file" ]]; then
-            logo_file=$(echo "$readme_content" | grep -oP '(?<=\]\(logo/)[^)]+' | head -1)
-            if [[ -n "$logo_file" ]]; then
-                logo_dir="logo"
-            fi
-        fi
+        logo_path=$(extract_logo_path_from_readme_content "$readme_content")
     fi
 
-    # If found in README, try to fetch it
-    if [[ -n "$logo_file" ]] && [[ -n "$logo_dir" ]]; then
-        local ext="${logo_file##*.}"
-        local dest_path="$LOGOS_DIR/${repo_name}.${ext}"
-        if fetch_logo_from_github "$owner" "$repo_name" "${logo_dir}/${logo_file}" "$dest_path" "$branch"; then
-            echo "/logos/${repo_name}.${ext}"
-            return
-        fi
+    resolved_path=$(find_logo_path_in_repo_tree "$owner" "$repo_name" "$branch" "$logo_path")
+    if [[ -n "$resolved_path" ]] && cache_remote_logo_candidate "$repo_name" "$owner" "$branch" "$resolved_path"; then
+        return
     fi
 
-    # Fallback: try standard paths
-    for dir in assets logo; do
-        for ext in svg png; do
-            for pattern in "${repo_name}.${ext}" "${repo_name}_logo.${ext}" "${repo_name}-logo.${ext}" "logo.${ext}"; do
-                local dest_path="$LOGOS_DIR/${repo_name}.${ext}"
-                if fetch_logo_from_github "$owner" "$repo_name" "${dir}/${pattern}" "$dest_path" "$branch"; then
-                    echo "/logos/${repo_name}.${ext}"
-                    return
-                fi
-            done
-        done
-    done
-
-    echo ""
+    printf '\n'
 }
 
-# Extract logo from local repo and copy to static/logos/{repo}.{ext}
-# Falls back to fetching from GitHub if local repo not available
-# Returns the logo path (e.g., /logos/repo.svg) or empty string
+# Resolve the logo from the remote default branch so cache invalidation works
+# the same way in local runs and CI.
 extract_logo() {
     local repo_name=$1
     local owner=$2
     local branch=${3:-main}
-    local repo_dir=""
+    local logo_path=""
 
-    # Check if logo already exists (avoid re-fetching)
-    for ext in svg png; do
-        if [[ -f "$LOGOS_DIR/${repo_name}.${ext}" ]]; then
-            echo "/logos/${repo_name}.${ext}"
-            return
-        fi
-    done
-
-    # Find local repo path
-    if [[ "$owner" == "nshkrdotcom" ]] && [[ -d "$LOCAL_NSHKR/$repo_name" ]]; then
-        repo_dir="$LOCAL_NSHKR/$repo_name"
-    elif [[ "$owner" == "North-Shore-AI" ]] && [[ -d "$LOCAL_NORTHSHORE/$repo_name" ]]; then
-        repo_dir="$LOCAL_NORTHSHORE/$repo_name"
-    fi
-
-    # If no local repo, try fetching from GitHub
-    if [[ -z "$repo_dir" ]]; then
-        fetch_logo_remote "$repo_name" "$owner" "$branch"
+    logo_path=$(fetch_logo_remote "$repo_name" "$owner" "$branch")
+    if [[ -n "$logo_path" ]]; then
+        printf '%s\n' "$logo_path"
         return
     fi
 
-    local readme="$repo_dir/README.md"
-    local logo_file=""
-    local logo_dir=""
-
-    # Parse README for logo in assets/ or logo/ directories
-    if [[ -f "$readme" ]]; then
-        # Check for <img src="assets/..." first
-        logo_file=$(grep -oP '(?<=src=["'"'"']assets/)[^"'"'"']+' "$readme" | head -1)
-        if [[ -n "$logo_file" ]]; then
-            logo_dir="assets"
-        fi
-
-        # Check for <img src="logo/..."
-        if [[ -z "$logo_file" ]]; then
-            logo_file=$(grep -oP '(?<=src=["'"'"']logo/)[^"'"'"']+' "$readme" | head -1)
-            if [[ -n "$logo_file" ]]; then
-                logo_dir="logo"
-            fi
-        fi
-
-        # Check for ![...](assets/...)
-        if [[ -z "$logo_file" ]]; then
-            logo_file=$(grep -oP '(?<=\]\(assets/)[^)]+' "$readme" | head -1)
-            if [[ -n "$logo_file" ]]; then
-                logo_dir="assets"
-            fi
-        fi
-
-        # Check for ![...](logo/...)
-        if [[ -z "$logo_file" ]]; then
-            logo_file=$(grep -oP '(?<=\]\(logo/)[^)]+' "$readme" | head -1)
-            if [[ -n "$logo_file" ]]; then
-                logo_dir="logo"
-            fi
-        fi
-    fi
-
-    # Fallback: check for standard logo filenames if not found in README
-    if [[ -z "$logo_file" ]]; then
-        for dir in assets logo; do
-            for ext in svg png; do
-                for pattern in "${repo_name}.${ext}" "${repo_name}_logo.${ext}" "${repo_name}-logo.${ext}"; do
-                    if [[ -f "$repo_dir/$dir/$pattern" ]]; then
-                        logo_file="$pattern"
-                        logo_dir="$dir"
-                        break 3
-                    fi
-                done
-            done
-        done
-    fi
-
-    if [[ -z "$logo_file" ]] || [[ -z "$logo_dir" ]]; then
-        # Local repo exists but no logo found - try remote as last resort
-        fetch_logo_remote "$repo_name" "$owner" "$branch"
-        return
-    fi
-
-    local src_path="$repo_dir/$logo_dir/$logo_file"
-    if [[ ! -f "$src_path" ]]; then
-        echo ""
-        return
-    fi
-
-    # Get extension and copy with normalized name
-    local ext="${logo_file##*.}"
-    local dest_path="$LOGOS_DIR/${repo_name}.${ext}"
-    cp "$src_path" "$dest_path"
-
-    echo "/logos/${repo_name}.${ext}"
+    prune_stale_cached_logos "$repo_name"
+    printf '\n'
 }
 
 echo "Fetching repos from GitHub..."
@@ -378,7 +526,9 @@ for cat in "${ORDERED_CATEGORIES[@]}" "$NSHKR_UNCATEGORIZED_SLUG"; do
     fi
 done
 
-if [[ -f "$DATA_FILE" ]] && diff -q <(sed '/^# Last updated:/d' "$DATA_FILE") <(sed '/^# Last updated:/d' "$DATA_TMP_FILE") >/dev/null; then
+prune_unreferenced_cached_logos "$DATA_TMP_FILE"
+
+if [[ -f "$DATA_FILE" ]] && [[ "$LOGO_CACHE_CHANGED" -eq 0 ]] && diff -q <(sed '/^# Last updated:/d' "$DATA_FILE") <(sed '/^# Last updated:/d' "$DATA_TMP_FILE") >/dev/null; then
     echo "No changes detected. Skipping update."
     exit 0
 fi

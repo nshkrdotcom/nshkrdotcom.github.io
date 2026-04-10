@@ -49,16 +49,16 @@ Use `scripts/MANAGE_REPO_TOPICS.sh` to manage topics on your repos.
 
 ### Category Display Order
 
-Categories are displayed in order by weight (defined in `sync_repos_to_hugo.sh`). Within each category, repos are sorted by star count descending.
+Categories are displayed in the pinned order defined in `config/nshkr_categories.json`, with arbitrary discovered `nshkr-*` categories appended afterward. Within each category, repos are sorted by star count descending.
 
 ### Logo Extraction
 
-The sync script also extracts logos from local repo clones:
-- Parses each repo's `README.md` for images in `assets/` or `logo/` directories
-- Falls back to standard filenames like `{repo}.svg`, `{repo}_logo.svg`
-- Copies found logos to `static/logos/{repo}.svg`
+The sync script resolves logos directly from each repo's GitHub default branch:
+- Parses `README.md` image references first, then falls back to standard filenames in `assets/`, `logo/`, `logos/`, `static/`, and the repo root
+- Caches the downloaded asset under `static/logos/{repo}-{sha12}.{ext}`
+- Prunes stale cached variants automatically when the source image changes or disappears
 
-**Note:** Requires repos cloned locally at `~/p/g/n/` (nshkrdotcom) and `~/p/g/North-Shore-AI/`. Logos won't be extracted in CI unless those paths exist.
+This keeps logo extraction consistent in local runs and CI and guarantees cache-busting whenever the source logo content changes.
 
 ## Local Development
 
