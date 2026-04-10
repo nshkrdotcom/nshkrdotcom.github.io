@@ -5,10 +5,10 @@ Automated scripts to fetch and sync all Elixir repositories from GitHub to Hugo 
 ## Overview
 
 This directory contains scripts that automatically:
-1. Fetch ALL public Elixir repos from `nshkrdotcom` and `North-Shore-AI`
-2. Extract comprehensive metadata (stars, descriptions, licenses, etc.)
-3. Convert to Hugo-compatible YAML format
-4. Update the website to display accurate, live star counts
+1. Fetch all public source repositories from `nshkrdotcom` and `North-Shore-AI`
+2. Extract categories, metadata, and logo assets
+3. Convert the result into Hugo-compatible YAML
+4. Keep the deployed site in sync with GitHub changes
 
 ## Main Scripts
 
@@ -21,11 +21,14 @@ This directory contains scripts that automatically:
 ```
 
 **What it does:**
-- Calls `get_elixir_projects.sh` to fetch latest GitHub data
-- Converts JSON to YAML format for Hugo
-- Updates `data/repos.yml` with ALL 50+ repos
-- Backs up old data to `data/repos.yml.bak`
-- Shows summary of repos by organization and top repos by stars
+- Fetches live repo metadata from GitHub with topics and default branches
+- Resolves logos from remote `README.md` and `README.rst` references plus repo-tree fallbacks
+- Writes `data/repos.yml` and content-addressed assets in `static/logos/`
+- Prunes stale cached logos when source assets change or disappear
+- Shows a summary by category and top repos by stars
+
+**Quality gates:**
+- `./tests/test_sync_repos_to_hugo.sh` validates cache stability, cache busting, stale-logo pruning, and `README.rst`/`docs/_static` parsing
 
 **When to run:**
 - Before deploying site updates
@@ -77,9 +80,7 @@ Old script that updated YAML manually. **Replaced by `sync_repos_to_hugo.sh`** w
 ```
 GitHub API
     ↓
-get_elixir_projects.sh → elixir_projects.json
-    ↓
-sync_repos_to_hugo.sh → data/repos.yml
+sync_repos_to_hugo.sh → data/repos.yml + static/logos/{repo}-{sha12}.{ext}
     ↓
 Hugo build → public/index.html
 ```
@@ -121,6 +122,7 @@ gh auth login
 ```bash
 # 1. Sync latest repo data from GitHub
 cd /path/to/nshkrdotcom.github.io
+./tests/test_sync_repos_to_hugo.sh
 ./scripts/sync_repos_to_hugo.sh
 
 # 2. Rebuild Hugo site
@@ -130,51 +132,20 @@ hugo --minify
 hugo server
 
 # 4. Deploy (if happy with changes)
-git add data/repos.yml scripts/elixir_projects.json
-git commit -m "Update repository star counts"
+git add -A data/repos.yml static/logos
+git commit -m "Sync repository data"
 git push
 ```
 
 ### Automation with GitHub Actions
 
-You can automate this with a scheduled workflow (`.github/workflows/update-stars.yml`):
+Automation lives in `.github/workflows/sync-and-deploy.yml` and supports:
+- scheduled sync every 12 hours
+- immediate sync via `repository_dispatch` from source repos
+- manual `workflow_dispatch`
+- push-triggered rebuilds for direct site changes
 
-```yaml
-name: Update Repository Stars
-on:
-  schedule:
-    - cron: '0 0 * * 0'  # Weekly on Sunday
-  workflow_dispatch:  # Manual trigger
-
-jobs:
-  update:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-
-      - name: Install dependencies
-        run: sudo apt install -y jq
-
-      - name: Sync repos from GitHub
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          ./scripts/sync_repos_to_hugo.sh
-          hugo --minify
-
-      - name: Commit and push if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/repos.yml scripts/elixir_projects.json
-          git diff --quiet && git diff --staged --quiet || \
-            (git commit -m "Update repository star counts [automated]" && git push)
-```
+The workflow validates `scripts/sync_repos_to_hugo.sh` and runs `./tests/test_sync_repos_to_hugo.sh` before sync and build jobs.
 
 ## Troubleshooting
 

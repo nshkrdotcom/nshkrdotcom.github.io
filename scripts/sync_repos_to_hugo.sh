@@ -9,29 +9,33 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
-CATEGORY_CONFIG="$PROJECT_DIR/config/nshkr_categories.json"
-DATA_FILE="$PROJECT_DIR/data/repos.yml"
-LOGOS_DIR="$PROJECT_DIR/static/logos"
-TMP_FILE="$(mktemp)"
-USER_REPOS_FILE="$(mktemp)"
-ORG_REPOS_FILE="$(mktemp)"
-DATA_TMP_FILE="$(mktemp)"
+CATEGORY_CONFIG="${CATEGORY_CONFIG:-$PROJECT_DIR/config/nshkr_categories.json}"
+DATA_FILE="${DATA_FILE:-$PROJECT_DIR/data/repos.yml}"
+LOGOS_DIR="${LOGOS_DIR:-$PROJECT_DIR/static/logos}"
+TMP_FILE=""
+USER_REPOS_FILE=""
+ORG_REPOS_FILE=""
+DATA_TMP_FILE=""
+LOGO_CACHE_CHANGED=0
 
 source "$PROJECT_DIR/scripts/lib/nshkr_categories.sh"
 nshkr_load_category_config "$CATEGORY_CONFIG"
 
-echo "Syncing repositories to Hugo data..."
-
-mkdir -p "$LOGOS_DIR"
-LOGO_CACHE_CHANGED=0
+initialize_runtime() {
+    TMP_FILE="$(mktemp)"
+    USER_REPOS_FILE="$(mktemp)"
+    ORG_REPOS_FILE="$(mktemp)"
+    DATA_TMP_FILE="$(mktemp)"
+    LOGO_CACHE_CHANGED=0
+    mkdir -p "$LOGOS_DIR"
+}
 
 cleanup() {
-    rm -f "$TMP_FILE"
-    rm -f "$USER_REPOS_FILE"
-    rm -f "$ORG_REPOS_FILE"
-    rm -f "$DATA_TMP_FILE"
+    rm -f "${TMP_FILE:-}"
+    rm -f "${USER_REPOS_FILE:-}"
+    rm -f "${ORG_REPOS_FILE:-}"
+    rm -f "${DATA_TMP_FILE:-}"
 }
-trap cleanup EXIT
 
 # Hash a file for content-addressed logo filenames.
 hash_file() {
@@ -96,6 +100,12 @@ logo_candidate_score() {
     case "$lower_path" in
         assets/*|logo/*|logos/*|static/logo/*|static/logos/*)
             score=0
+            ;;
+        docs/_static/*|docs/static/*|doc/_static/*|doc/static/*|images/*|img/*)
+            score=6
+            ;;
+        docs/*|doc/*)
+            score=8
             ;;
         static/*)
             score=4
@@ -241,6 +251,8 @@ extract_logo_path_from_readme_content() {
         printf '%s\n' "$readme_content" \
             | grep -oP '!\[[^]]*\]\([^)]+\.(svg|png|jpe?g|webp|gif)(?:\?[^)]*)?(?:#[^)]*)?\)' \
             | sed -E 's/^!\[[^]]*\]\((.*)\)$/\1/' || true
+        printf '%s\n' "$readme_content" \
+            | grep -oiP '^\s*\.\.\s+(?:image|figure)::\s+\K[^[:space:]]+\.(svg|png|jpe?g|webp|gif)(?:\?[^[:space:]]*)?(?:#[^[:space:]]*)?' || true
     )
 
     printf '%s\n' "$best_path"
@@ -305,7 +317,7 @@ find_logo_path_in_repo_tree() {
             ];
 
         def in_common_dir:
-            ascii_downcase | test("(^|/)(assets|logo|logos|static/logo|static/logos|static)/");
+            ascii_downcase | test("(^|/)(assets|logo|logos|static/logo|static/logos|static|docs/_static|docs/static|doc/_static|doc/static|images|img)/");
 
         def has_logo_hint:
             ascii_downcase | test("logo");
@@ -324,6 +336,7 @@ find_logo_path_in_repo_tree() {
             (ascii_downcase) as $p |
             (if ($preferred != "" and $p == ($preferred | ascii_downcase)) then -100
              elif ($p | test("(^|/)(assets|logo|logos|static/logo|static/logos)/")) then 0
+             elif ($p | test("(^|/)(docs/_static|docs/static|doc/_static|doc/static|images|img)/")) then 6
              elif ($p | test("(^|/)static/")) then 4
              else 20 end)
             + (if $p | test("logo") then -3 else 0 end)
@@ -380,8 +393,6 @@ extract_logo() {
     printf '\n'
 }
 
-echo "Fetching repos from GitHub..."
-
 # Fetch all public repos with topics from both accounts (handles pagination)
 fetch_repos() {
     local owner=$1
@@ -430,40 +441,52 @@ fetch_repos() {
     return 1
 }
 
-# Combine repos from both sources
-{
-    fetch_repos "nshkrdotcom" "users" "$USER_REPOS_FILE"
-    fetch_repos "North-Shore-AI" "orgs" "$ORG_REPOS_FILE"
-    cat "$USER_REPOS_FILE" "$ORG_REPOS_FILE"
-} | jq -s --arg archive "$NSHKR_ARCHIVE_SLUG" --arg uncategorized "$NSHKR_UNCATEGORIZED_SLUG" '
-    # Deduplicate by name (prefer higher star count)
-    group_by(.name) | map(sort_by(-.stars) | first) |
+main() {
+    local cat=""
+    local cat_name=""
+    local count=""
+    local logo_path=""
+    local owner=""
+    local branch=""
+    local repo_name=""
+    local repos_in_cat=""
+    local total=""
+    local uncat=""
+    local weight=0
+    local -a DISCOVERED_CATEGORIES=()
+    local -a ORDERED_CATEGORIES=()
 
-    # Filter out archived repos and forks
-    map(select(
-        (.topics | index($archive) | not) and
-        (.fork == false)
-    )) |
+    initialize_runtime
+    trap cleanup EXIT
 
-    # Add category field based on nshkr-* topic
-    map(. + {
-        category: (
-            (.topics | map(select(startswith("nshkr-") and . != $archive)) | sort | first) //
-            $uncategorized
-        )
-    }) |
+    echo "Syncing repositories to Hugo data..."
+    echo "Fetching repos from GitHub..."
 
-    # Sort by stars within each category
-    sort_by(-.stars, .name)
-' > "$TMP_FILE"
+    {
+        fetch_repos "nshkrdotcom" "users" "$USER_REPOS_FILE"
+        fetch_repos "North-Shore-AI" "orgs" "$ORG_REPOS_FILE"
+        cat "$USER_REPOS_FILE" "$ORG_REPOS_FILE"
+    } | jq -s --arg archive "$NSHKR_ARCHIVE_SLUG" --arg uncategorized "$NSHKR_UNCATEGORIZED_SLUG" '
+        group_by(.name) | map(sort_by(-.stars) | first) |
+        map(select(
+            (.topics | index($archive) | not) and
+            (.fork == false)
+        )) |
+        map(. + {
+            category: (
+                (.topics | map(select(startswith("nshkr-") and . != $archive)) | sort | first) //
+                $uncategorized
+            )
+        }) |
+        sort_by(-.stars, .name)
+    ' > "$TMP_FILE"
 
-echo "Generating Hugo data file..."
+    echo "Generating Hugo data file..."
 
-mapfile -t DISCOVERED_CATEGORIES < <(jq -r '.[].category' "$TMP_FILE" | sort -u)
-mapfile -t ORDERED_CATEGORIES < <(printf '%s\n' "${DISCOVERED_CATEGORIES[@]}" | nshkr_build_ordered_topics)
+    mapfile -t DISCOVERED_CATEGORIES < <(jq -r '.[].category' "$TMP_FILE" | sort -u)
+    mapfile -t ORDERED_CATEGORIES < <(printf '%s\n' "${DISCOVERED_CATEGORIES[@]}" | nshkr_build_ordered_topics)
 
-# Generate YAML header
-cat > "$DATA_TMP_FILE" << 'HEADER'
+    cat > "$DATA_TMP_FILE" << 'HEADER'
 # Auto-generated repository data with category-based organization
 # Last updated: TIMESTAMP
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
@@ -473,91 +496,88 @@ cat > "$DATA_TMP_FILE" << 'HEADER'
 
 HEADER
 
-sed -i "s/TIMESTAMP/$(date -u +"%Y-%m-%dT%H:%M:%SZ")/" "$DATA_TMP_FILE"
+    sed -i "s/TIMESTAMP/$(date -u +"%Y-%m-%dT%H:%M:%SZ")/" "$DATA_TMP_FILE"
 
-# Generate categories section with weights for ordering
-echo "categories:" >> "$DATA_TMP_FILE"
-weight=0
-for cat in "${ORDERED_CATEGORIES[@]}"; do
-    cat_name=$(nshkr_display_name_for_topic "$cat")
-    echo "  ${cat}:" >> "$DATA_TMP_FILE"
-    echo "    name: \"${cat_name}\"" >> "$DATA_TMP_FILE"
-    echo "    slug: \"${cat}\"" >> "$DATA_TMP_FILE"
-    echo "    weight: ${weight}" >> "$DATA_TMP_FILE"
-    weight=$((weight + 1))
-done
-echo "  ${NSHKR_UNCATEGORIZED_SLUG}:" >> "$DATA_TMP_FILE"
-echo "    name: \"${NSHKR_UNCATEGORIZED_NAME}\"" >> "$DATA_TMP_FILE"
-echo "    slug: \"${NSHKR_UNCATEGORIZED_SLUG}\"" >> "$DATA_TMP_FILE"
-echo "    weight: 999" >> "$DATA_TMP_FILE"
-echo "" >> "$DATA_TMP_FILE"
+    echo "categories:" >> "$DATA_TMP_FILE"
+    for cat in "${ORDERED_CATEGORIES[@]}"; do
+        cat_name=$(nshkr_display_name_for_topic "$cat")
+        echo "  ${cat}:" >> "$DATA_TMP_FILE"
+        echo "    name: \"${cat_name}\"" >> "$DATA_TMP_FILE"
+        echo "    slug: \"${cat}\"" >> "$DATA_TMP_FILE"
+        echo "    weight: ${weight}" >> "$DATA_TMP_FILE"
+        weight=$((weight + 1))
+    done
+    echo "  ${NSHKR_UNCATEGORIZED_SLUG}:" >> "$DATA_TMP_FILE"
+    echo "    name: \"${NSHKR_UNCATEGORIZED_NAME}\"" >> "$DATA_TMP_FILE"
+    echo "    slug: \"${NSHKR_UNCATEGORIZED_SLUG}\"" >> "$DATA_TMP_FILE"
+    echo "    weight: 999" >> "$DATA_TMP_FILE"
+    echo "" >> "$DATA_TMP_FILE"
 
-# Generate repos section grouped by category
-echo "repos:" >> "$DATA_TMP_FILE"
+    echo "repos:" >> "$DATA_TMP_FILE"
 
-# Process each category
-for cat in "${ORDERED_CATEGORIES[@]}" "$NSHKR_UNCATEGORIZED_SLUG"; do
-    repos_in_cat=$(jq -r --arg cat "$cat" '.[] | select(.category == $cat)' "$TMP_FILE")
+    for cat in "${ORDERED_CATEGORIES[@]}" "$NSHKR_UNCATEGORIZED_SLUG"; do
+        repos_in_cat=$(jq -r --arg cat "$cat" '.[] | select(.category == $cat)' "$TMP_FILE")
 
-    if [ -n "$repos_in_cat" ]; then
-        # Process each repo to extract logo and generate YAML
-        jq -r --arg cat "$cat" '
-            .[] | select(.category == $cat) |
-            "\(.name)|\(.owner)|\(.default_branch)"
-        ' "$TMP_FILE" | while IFS='|' read -r repo_name owner branch; do
-            # Extract logo (copies file and returns path)
-            logo_path=$(extract_logo "$repo_name" "$owner" "$branch")
+        if [[ -n "$repos_in_cat" ]]; then
+            jq -r --arg cat "$cat" '
+                .[] | select(.category == $cat) |
+                "\(.name)|\(.owner)|\(.default_branch)"
+            ' "$TMP_FILE" | while IFS='|' read -r repo_name owner branch; do
+                logo_path=$(extract_logo "$repo_name" "$owner" "$branch")
 
-            # Get repo data from JSON
-            jq -r --arg name "$repo_name" --arg logo "$logo_path" '
-                .[] | select(.name == $name) |
-                "  " + .name + ":\n" +
-                "    name: \"" + .name + "\"\n" +
-                "    org: \"" + .owner + "\"\n" +
-                "    stars: " + (.stars | tostring) + "\n" +
-                "    category: \"" + .category + "\"\n" +
-                "    description: \"" + (.description | gsub("\""; "\\\"")) + "\"\n" +
-                "    url: \"" + .html_url + "\"\n" +
-                (if $logo != "" then "    logo: \"" + $logo + "\"\n" else "" end) +
-                (if .language != "" then "    language: \"" + .language + "\"\n" else "" end) +
-                (if .archived then "    archived: true\n" else "" end)
-            ' "$TMP_FILE" >> "$DATA_TMP_FILE"
-        done
+                jq -r --arg name "$repo_name" --arg logo "$logo_path" '
+                    .[] | select(.name == $name) |
+                    "  " + .name + ":\n" +
+                    "    name: \"" + .name + "\"\n" +
+                    "    org: \"" + .owner + "\"\n" +
+                    "    stars: " + (.stars | tostring) + "\n" +
+                    "    category: \"" + .category + "\"\n" +
+                    "    description: \"" + (.description | gsub("\""; "\\\"")) + "\"\n" +
+                    "    url: \"" + .html_url + "\"\n" +
+                    (if $logo != "" then "    logo: \"" + $logo + "\"\n" else "" end) +
+                    (if .language != "" then "    language: \"" + .language + "\"\n" else "" end) +
+                    (if .archived then "    archived: true\n" else "" end)
+                ' "$TMP_FILE" >> "$DATA_TMP_FILE"
+            done
+        fi
+    done
+
+    prune_unreferenced_cached_logos "$DATA_TMP_FILE"
+
+    if [[ -f "$DATA_FILE" ]] && [[ "$LOGO_CACHE_CHANGED" -eq 0 ]] && diff -q <(sed '/^# Last updated:/d' "$DATA_FILE") <(sed '/^# Last updated:/d' "$DATA_TMP_FILE") >/dev/null; then
+        echo "No changes detected. Skipping update."
+        return 0
     fi
-done
 
-prune_unreferenced_cached_logos "$DATA_TMP_FILE"
+    mv "$DATA_TMP_FILE" "$DATA_FILE"
 
-if [[ -f "$DATA_FILE" ]] && [[ "$LOGO_CACHE_CHANGED" -eq 0 ]] && diff -q <(sed '/^# Last updated:/d' "$DATA_FILE") <(sed '/^# Last updated:/d' "$DATA_TMP_FILE") >/dev/null; then
-    echo "No changes detected. Skipping update."
-    exit 0
-fi
-
-mv "$DATA_TMP_FILE" "$DATA_FILE"
-
-# Summary
-echo ""
-echo "Sync complete!"
-echo ""
-echo "Summary:"
-total=$(jq 'length' "$TMP_FILE")
-echo "  Total repos: $total"
-echo ""
-echo "By category:"
-for cat in "${ORDERED_CATEGORIES[@]}"; do
-    count=$(jq --arg cat "$cat" '[.[] | select(.category == $cat)] | length' "$TMP_FILE")
-    if [ "$count" -gt 0 ]; then
-        echo "  $(nshkr_display_name_for_topic "$cat"): $count"
+    echo ""
+    echo "Sync complete!"
+    echo ""
+    echo "Summary:"
+    total=$(jq 'length' "$TMP_FILE")
+    echo "  Total repos: $total"
+    echo ""
+    echo "By category:"
+    for cat in "${ORDERED_CATEGORIES[@]}"; do
+        count=$(jq --arg cat "$cat" '[.[] | select(.category == $cat)] | length' "$TMP_FILE")
+        if [[ "$count" -gt 0 ]]; then
+            echo "  $(nshkr_display_name_for_topic "$cat"): $count"
+        fi
+    done
+    uncat=$(jq --arg uncategorized "$NSHKR_UNCATEGORIZED_SLUG" '[.[] | select(.category == $uncategorized)] | length' "$TMP_FILE")
+    if [[ "$uncat" -gt 0 ]]; then
+        echo "  ${NSHKR_UNCATEGORIZED_NAME}: $uncat"
     fi
-done
-uncat=$(jq --arg uncategorized "$NSHKR_UNCATEGORIZED_SLUG" '[.[] | select(.category == $uncategorized)] | length' "$TMP_FILE")
-if [ "$uncat" -gt 0 ]; then
-    echo "  ${NSHKR_UNCATEGORIZED_NAME}: $uncat"
+
+    echo ""
+    echo "Top repos by stars:"
+    jq -r '.[:10] | .[] | "  \(.stars) \(.name)"' "$TMP_FILE"
+
+    echo ""
+    echo "Data written to: $DATA_FILE"
+}
+
+if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+    main "$@"
 fi
-
-echo ""
-echo "Top repos by stars:"
-jq -r '.[:10] | .[] | "  \(.stars) \(.name)"' "$TMP_FILE"
-
-echo ""
-echo "Data written to: $DATA_FILE"

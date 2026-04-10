@@ -5,6 +5,8 @@ on:
     - cron: '0 */12 * * *'
   push:
     branches: ["main"]
+  repository_dispatch:
+    types: ["source-assets-updated"]
   workflow_dispatch:
 
 permissions:
@@ -31,9 +33,19 @@ jobs:
           bash -n scripts/lib/nshkr_categories.sh
           bash -n scripts/sync_repos_to_hugo.sh
           bash -n scripts/MANAGE_REPO_TOPICS.sh
+          bash -n tests/test_sync_repos_to_hugo.sh
+          ./tests/test_sync_repos_to_hugo.sh
+
+      - name: Log dispatch payload
+        if: github.event_name == 'repository_dispatch'
+        run: |
+          echo "Triggered by: ${{ github.event.client_payload.source_owner }}/${{ github.event.client_payload.source_repo }}"
+          echo "Source ref: ${{ github.event.client_payload.source_ref }}"
+          echo "Source sha: ${{ github.event.client_payload.source_sha }}"
+          echo "Changed paths: ${{ toJson(github.event.client_payload.changed_paths) }}"
 
       - name: Sync repos from GitHub
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -67,7 +79,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
           fetch-depth: 0
 
       - name: Validate category config and scripts
@@ -75,6 +86,8 @@ jobs:
           jq -e '.categories | type == "array" and length > 0' config/nshkr_categories.json > /dev/null
           bash -n scripts/lib/nshkr_categories.sh
           bash -n scripts/sync_repos_to_hugo.sh
+          bash -n tests/test_sync_repos_to_hugo.sh
+          ./tests/test_sync_repos_to_hugo.sh
 
       - name: Pull latest changes
         run: git pull origin main || true

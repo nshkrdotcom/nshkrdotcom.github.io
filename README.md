@@ -54,7 +54,7 @@ Categories are displayed in the pinned order defined in `config/nshkr_categories
 ### Logo Extraction
 
 The sync script resolves logos directly from each repo's GitHub default branch:
-- Parses `README.md` image references first, then falls back to standard filenames in `assets/`, `logo/`, `logos/`, `static/`, and the repo root
+- Parses `README.md` and `README.rst` image references first, including `docs/` and `docs/_static/` assets, then falls back to logo-like files discovered in the repo tree
 - Caches the downloaded asset under `static/logos/{repo}-{sha12}.{ext}`
 - Prunes stale cached variants automatically when the source image changes or disappears
 
@@ -101,6 +101,9 @@ cd nshkrdotcom.github.io
 ### Run Locally
 
 ```bash
+# Verify the sync harness
+./tests/test_sync_repos_to_hugo.sh
+
 # Sync latest repo data (optional)
 ./scripts/sync_repos_to_hugo.sh
 
@@ -118,12 +121,13 @@ hugo --minify
 | Trigger | Action |
 |---------|--------|
 | Every 12 hours | Sync repos from GitHub, rebuild, deploy |
+| Repository dispatch | Sync repos immediately after source README/logo changes |
 | Push to main | Rebuild and deploy |
 | Manual dispatch | Sync + rebuild + deploy |
 
 ### Jobs
 
-1. **Sync** - Runs `sync_repos_to_hugo.sh`, commits if data changed
+1. **Sync** - Validates the harness, accepts repository dispatch events, runs `sync_repos_to_hugo.sh`, commits if data changed
 2. **Build** - Hugo builds with `--minify`
 3. **Deploy** - Pushes to GitHub Pages
 
