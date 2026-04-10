@@ -60,6 +60,10 @@ The sync script resolves logos directly from each repo's GitHub default branch:
 
 This keeps logo extraction consistent in local runs and CI and guarantees cache-busting whenever the source logo content changes.
 
+For freshness, the site now does two things:
+- accepts optional `repository_dispatch` events from source repos
+- runs a short scheduled source-change detector that watches recent README/logo asset pushes across both GitHub owners and only performs the heavy sync when relevant changes are found
+
 ## Local Development
 
 ### Prerequisites
@@ -120,14 +124,14 @@ hugo --minify
 
 | Trigger | Action |
 |---------|--------|
-| Every 12 hours | Sync repos from GitHub, rebuild, deploy |
-| Repository dispatch | Sync repos immediately after source README/logo changes |
+| Every 5 minutes | Check recent source README/logo pushes and sync only when relevant changes are detected |
+| Repository dispatch | Sync repos immediately after source README/logo changes when a cross-repo token is configured |
 | Push to main | Rebuild and deploy |
 | Manual dispatch | Sync + rebuild + deploy |
 
 ### Jobs
 
-1. **Sync** - Validates the harness, accepts repository dispatch events, runs `sync_repos_to_hugo.sh`, commits if data changed
+1. **Sync** - Validates the harness, accepts repository dispatch events, detects recent source changes on schedule, runs `sync_repos_to_hugo.sh`, commits if data changed
 2. **Build** - Hugo builds with `--minify`
 3. **Deploy** - Pushes to GitHub Pages
 

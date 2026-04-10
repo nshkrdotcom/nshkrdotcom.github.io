@@ -25,6 +25,7 @@ This directory contains scripts that automatically:
 - Resolves logos from remote `README.md` and `README.rst` references plus repo-tree fallbacks
 - Writes `data/repos.yml` and content-addressed assets in `static/logos/`
 - Prunes stale cached logos when source assets change or disappear
+- Detects recent source-repo README/logo pushes on a short schedule so the heavy sync only runs when needed
 - Shows a summary by category and top repos by stars
 
 **Quality gates:**
@@ -140,8 +141,8 @@ git push
 ### Automation with GitHub Actions
 
 Automation lives in `.github/workflows/sync-and-deploy.yml` and supports:
-- scheduled sync every 12 hours
-- immediate sync via `repository_dispatch` from source repos
+- scheduled source-change detection every 5 minutes with conditional sync
+- immediate sync via `repository_dispatch` from source repos when a cross-repo token is configured
 - manual `workflow_dispatch`
 - push-triggered rebuilds for direct site changes
 
