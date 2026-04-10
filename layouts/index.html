@@ -16,14 +16,15 @@
   <!-- Stats -->
   {{ $totalRepos := 0 }}
   {{ $totalStars := 0 }}
-  {{ $totalCats := 0 }}
+  {{ $usedCats := dict }}
   {{ range $name, $repo := $.Site.Data.repos.repos }}
     {{ $totalRepos = add $totalRepos 1 }}
     {{ $totalStars = add $totalStars (default 0 $repo.stars) }}
+    {{ if $repo.category }}
+      {{ $usedCats = merge $usedCats (dict $repo.category true) }}
+    {{ end }}
   {{ end }}
-  {{ range $slug, $info := $.Site.Data.repos.categories }}
-    {{ $totalCats = add $totalCats 1 }}
-  {{ end }}
+  {{ $totalCats := len $usedCats }}
   <div class="stats-bar">
     <div class="stat">
       <div class="stat-value">{{ $totalRepos }}</div>

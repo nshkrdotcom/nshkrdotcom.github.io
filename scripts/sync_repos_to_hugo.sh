@@ -7,16 +7,20 @@
 
 set -euo pipefail
 
-echo "Syncing repositories to Hugo data..."
-
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+CATEGORY_CONFIG="$PROJECT_DIR/config/nshkr_categories.json"
 DATA_FILE="$PROJECT_DIR/data/repos.yml"
 LOGOS_DIR="$PROJECT_DIR/static/logos"
 TMP_FILE="$(mktemp)"
 USER_REPOS_FILE="$(mktemp)"
 ORG_REPOS_FILE="$(mktemp)"
 DATA_TMP_FILE="$(mktemp)"
+
+source "$PROJECT_DIR/scripts/lib/nshkr_categories.sh"
+nshkr_load_category_config "$CATEGORY_CONFIG"
+
+echo "Syncing repositories to Hugo data..."
 
 # Local repo paths
 LOCAL_NSHKR="$HOME/p/g/n"
@@ -228,46 +232,6 @@ extract_logo() {
     echo "/logos/${repo_name}.${ext}"
 }
 
-# Category definitions (order matters for display)
-declare -A CATEGORY_NAMES=(
-    ["nshkr-crucible"]="Crucible Framework"
-    ["nshkr-ingot"]="Ingot Data Labeling"
-    ["nshkr-ai-agents"]="AI Agent Orchestration"
-    ["nshkr-ai-sdk"]="AI SDKs & API Clients"
-    ["nshkr-ai-infra"]="AI Infrastructure"
-    ["nshkr-schema"]="Schema & Validation"
-    ["nshkr-devtools"]="Developer Tools"
-    ["nshkr-otp"]="OTP & Distributed"
-    ["nshkr-testing"]="Testing & QA"
-    ["nshkr-observability"]="Observability"
-    ["nshkr-cloud"]="Cloud & Edge"
-    ["nshkr-browser"]="Browser Integration"
-    ["nshkr-data"]="Data & Databases"
-    ["nshkr-security"]="Security"
-    ["nshkr-research"]="Research"
-    ["nshkr-utility"]="Utilities"
-)
-
-# Display order
-CATEGORY_ORDER=(
-    "nshkr-crucible"
-    "nshkr-ingot"
-    "nshkr-ai-agents"
-    "nshkr-ai-sdk"
-    "nshkr-ai-infra"
-    "nshkr-schema"
-    "nshkr-devtools"
-    "nshkr-otp"
-    "nshkr-testing"
-    "nshkr-observability"
-    "nshkr-cloud"
-    "nshkr-browser"
-    "nshkr-data"
-    "nshkr-security"
-    "nshkr-research"
-    "nshkr-utility"
-)
-
 echo "Fetching repos from GitHub..."
 
 # Fetch all public repos with topics from both accounts (handles pagination)
@@ -323,44 +287,32 @@ fetch_repos() {
     fetch_repos "nshkrdotcom" "users" "$USER_REPOS_FILE"
     fetch_repos "North-Shore-AI" "orgs" "$ORG_REPOS_FILE"
     cat "$USER_REPOS_FILE" "$ORG_REPOS_FILE"
-} | jq -s '
+} | jq -s --arg archive "$NSHKR_ARCHIVE_SLUG" --arg uncategorized "$NSHKR_UNCATEGORIZED_SLUG" '
     # Deduplicate by name (prefer higher star count)
     group_by(.name) | map(sort_by(-.stars) | first) |
 
     # Filter out archived repos and forks
     map(select(
-        (.topics | index("nshkr-archive") | not) and
+        (.topics | index($archive) | not) and
         (.fork == false)
     )) |
 
     # Add category field based on nshkr-* topic
     map(. + {
         category: (
-            .topics | map(select(startswith("nshkr-"))) | first // "uncategorized"
+            (.topics | map(select(startswith("nshkr-") and . != $archive)) | sort | first) //
+            $uncategorized
         )
     }) |
 
     # Sort by stars within each category
-    sort_by(-.stars)
+    sort_by(-.stars, .name)
 ' > "$TMP_FILE"
 
-# Check if anything changed
-if [ -f "$DATA_FILE" ]; then
-    new_digest=$(jq -r '.[] | "\(.name)=\(.stars)=\(.category)"' "$TMP_FILE" | sort)
-    existing_digest=$(grep -E "^\s{4}stars:|^\s{4}category:|^\s{2}[a-zA-Z]" "$DATA_FILE" 2>/dev/null | \
-        awk '
-            /^  [a-zA-Z]/ { repo = $1; gsub(/:$/, "", repo) }
-            /stars:/ { stars = $2 }
-            /category:/ { cat = $2; gsub(/"/, "", cat); print repo "=" stars "=" cat }
-        ' | sort)
-
-    if [ "$existing_digest" = "$new_digest" ]; then
-        echo "No changes detected. Skipping update."
-        exit 0
-    fi
-fi
-
 echo "Generating Hugo data file..."
+
+mapfile -t DISCOVERED_CATEGORIES < <(jq -r '.[].category' "$TMP_FILE" | sort -u)
+mapfile -t ORDERED_CATEGORIES < <(printf '%s\n' "${DISCOVERED_CATEGORIES[@]}" | nshkr_build_ordered_topics)
 
 # Generate YAML header
 cat > "$DATA_TMP_FILE" << 'HEADER'
@@ -368,6 +320,7 @@ cat > "$DATA_TMP_FILE" << 'HEADER'
 # Last updated: TIMESTAMP
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
+# Pinned category metadata lives in config/nshkr_categories.json
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
 
 HEADER
@@ -377,17 +330,17 @@ sed -i "s/TIMESTAMP/$(date -u +"%Y-%m-%dT%H:%M:%SZ")/" "$DATA_TMP_FILE"
 # Generate categories section with weights for ordering
 echo "categories:" >> "$DATA_TMP_FILE"
 weight=0
-for cat in "${CATEGORY_ORDER[@]}"; do
-    cat_name="${CATEGORY_NAMES[$cat]}"
+for cat in "${ORDERED_CATEGORIES[@]}"; do
+    cat_name=$(nshkr_display_name_for_topic "$cat")
     echo "  ${cat}:" >> "$DATA_TMP_FILE"
     echo "    name: \"${cat_name}\"" >> "$DATA_TMP_FILE"
     echo "    slug: \"${cat}\"" >> "$DATA_TMP_FILE"
     echo "    weight: ${weight}" >> "$DATA_TMP_FILE"
     weight=$((weight + 1))
 done
-echo "  uncategorized:" >> "$DATA_TMP_FILE"
-echo "    name: \"Other Projects\"" >> "$DATA_TMP_FILE"
-echo "    slug: \"uncategorized\"" >> "$DATA_TMP_FILE"
+echo "  ${NSHKR_UNCATEGORIZED_SLUG}:" >> "$DATA_TMP_FILE"
+echo "    name: \"${NSHKR_UNCATEGORIZED_NAME}\"" >> "$DATA_TMP_FILE"
+echo "    slug: \"${NSHKR_UNCATEGORIZED_SLUG}\"" >> "$DATA_TMP_FILE"
 echo "    weight: 999" >> "$DATA_TMP_FILE"
 echo "" >> "$DATA_TMP_FILE"
 
@@ -395,7 +348,7 @@ echo "" >> "$DATA_TMP_FILE"
 echo "repos:" >> "$DATA_TMP_FILE"
 
 # Process each category
-for cat in "${CATEGORY_ORDER[@]}" "uncategorized"; do
+for cat in "${ORDERED_CATEGORIES[@]}" "$NSHKR_UNCATEGORIZED_SLUG"; do
     repos_in_cat=$(jq -r --arg cat "$cat" '.[] | select(.category == $cat)' "$TMP_FILE")
 
     if [ -n "$repos_in_cat" ]; then
@@ -425,6 +378,11 @@ for cat in "${CATEGORY_ORDER[@]}" "uncategorized"; do
     fi
 done
 
+if [[ -f "$DATA_FILE" ]] && diff -q <(sed '/^# Last updated:/d' "$DATA_FILE") <(sed '/^# Last updated:/d' "$DATA_TMP_FILE") >/dev/null; then
+    echo "No changes detected. Skipping update."
+    exit 0
+fi
+
 mv "$DATA_TMP_FILE" "$DATA_FILE"
 
 # Summary
@@ -436,15 +394,15 @@ total=$(jq 'length' "$TMP_FILE")
 echo "  Total repos: $total"
 echo ""
 echo "By category:"
-for cat in "${CATEGORY_ORDER[@]}"; do
+for cat in "${ORDERED_CATEGORIES[@]}"; do
     count=$(jq --arg cat "$cat" '[.[] | select(.category == $cat)] | length' "$TMP_FILE")
     if [ "$count" -gt 0 ]; then
-        echo "  ${CATEGORY_NAMES[$cat]}: $count"
+        echo "  $(nshkr_display_name_for_topic "$cat"): $count"
     fi
 done
-uncat=$(jq '[.[] | select(.category == "uncategorized")] | length' "$TMP_FILE")
+uncat=$(jq --arg uncategorized "$NSHKR_UNCATEGORIZED_SLUG" '[.[] | select(.category == $uncategorized)] | length' "$TMP_FILE")
 if [ "$uncat" -gt 0 ]; then
-    echo "  Other Projects: $uncat"
+    echo "  ${NSHKR_UNCATEGORIZED_NAME}: $uncat"
 fi
 
 echo ""

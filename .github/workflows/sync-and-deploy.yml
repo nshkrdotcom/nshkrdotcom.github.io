@@ -25,6 +25,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate category config and scripts
+        run: |
+          jq -e '.categories | type == "array" and length > 0' config/nshkr_categories.json > /dev/null
+          bash -n scripts/lib/nshkr_categories.sh
+          bash -n scripts/sync_repos_to_hugo.sh
+          bash -n scripts/MANAGE_REPO_TOPICS.sh
+
       - name: Sync repos from GitHub
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         env:
@@ -62,6 +69,12 @@ jobs:
         with:
           ref: ${{ github.ref }}
           fetch-depth: 0
+
+      - name: Validate category config and scripts
+        run: |
+          jq -e '.categories | type == "array" and length > 0' config/nshkr_categories.json > /dev/null
+          bash -n scripts/lib/nshkr_categories.sh
+          bash -n scripts/sync_repos_to_hugo.sh
 
       - name: Pull latest changes
         run: git pull origin main || true

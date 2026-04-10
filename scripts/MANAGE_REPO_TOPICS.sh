@@ -1,27 +1,17 @@
 #!/bin/bash
 
 # INTERACTIVE REPOSITORY TOPIC MANAGEMENT
-# Manages nshkr-* category topics for site organization
-#
-# Categories:
-#   nshkr-crucible      - Crucible Framework
-#   nshkr-ai-agents     - AI Agent Orchestration
-#   nshkr-ai-sdk        - AI SDKs & API Clients
-#   nshkr-ai-infra      - AI Infrastructure
-#   nshkr-schema        - Schema & Validation
-#   nshkr-devtools      - Developer Tools
-#   nshkr-otp           - OTP & Distributed
-#   nshkr-testing       - Testing & QA
-#   nshkr-observability - Observability
-#   nshkr-cloud         - Cloud & Edge
-#   nshkr-browser       - Browser Integration
-#   nshkr-data          - Data & Databases
-#   nshkr-security      - Security
-#   nshkr-research      - Research
-#   nshkr-utility       - Utilities
-#   nshkr-archive       - Excluded from site
+# Manages nshkr-* category topics for site organization using the shared
+# category config in config/nshkr_categories.json.
 
-set -e
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+CATEGORY_CONFIG="$PROJECT_DIR/config/nshkr_categories.json"
+
+source "$PROJECT_DIR/scripts/lib/nshkr_categories.sh"
+nshkr_load_category_config "$CATEGORY_CONFIG"
 
 # Colors
 RED='\033[0;31m'
@@ -33,212 +23,262 @@ MAGENTA='\033[0;35m'
 BOLD='\033[1m'
 NC='\033[0m'
 
-# All valid categories
-CATEGORIES=(
-    "nshkr-crucible"
-    "nshkr-ai-agents"
-    "nshkr-ai-sdk"
-    "nshkr-ai-infra"
-    "nshkr-schema"
-    "nshkr-devtools"
-    "nshkr-otp"
-    "nshkr-testing"
-    "nshkr-observability"
-    "nshkr-cloud"
-    "nshkr-browser"
-    "nshkr-data"
-    "nshkr-security"
-    "nshkr-research"
-    "nshkr-utility"
-)
+MENU_CATEGORIES=()
 
-CATEGORY_NAMES=(
-    "Crucible Framework"
-    "AI Agent Orchestration"
-    "AI SDKs & API Clients"
-    "AI Infrastructure"
-    "Schema & Validation"
-    "Developer Tools"
-    "OTP & Distributed"
-    "Testing & QA"
-    "Observability"
-    "Cloud & Edge"
-    "Browser Integration"
-    "Data & Databases"
-    "Security"
-    "Research"
-    "Utilities"
-)
+list_account_repos() {
+    local owner=$1
+    local endpoint
 
-# Get current nshkr topic for a repo
+    if [[ "$owner" == "nshkrdotcom" ]]; then
+        endpoint="users/${owner}/repos?per_page=100&type=public"
+    else
+        endpoint="orgs/${owner}/repos?per_page=100&type=public"
+    fi
+
+    gh api --paginate "$endpoint" --jq '.[].name' 2>/dev/null | sort
+}
+
+fetch_all_category_topics() {
+    {
+        gh api --paginate "users/nshkrdotcom/repos?per_page=100&type=public"
+        gh api --paginate "orgs/North-Shore-AI/repos?per_page=100&type=public"
+    } | jq -r --arg archive "$NSHKR_ARCHIVE_SLUG" '
+        .[] |
+        (.topics // [])[] |
+        select(startswith("nshkr-") and . != $archive)
+    ' 2>/dev/null | sort -u
+}
+
+build_category_menu() {
+    local include_archive="${1:-false}"
+    local -a discovered_categories=()
+
+    mapfile -t discovered_categories < <(fetch_all_category_topics)
+    mapfile -t MENU_CATEGORIES < <(printf '%s\n' "${discovered_categories[@]}" | nshkr_build_ordered_topics)
+
+    if [[ "$include_archive" == "true" ]]; then
+        MENU_CATEGORIES+=("$NSHKR_ARCHIVE_SLUG")
+    fi
+}
+
+print_category_options() {
+    local include_archive="${1:-false}"
+    local index
+    local category
+
+    build_category_menu "$include_archive"
+
+    for index in "${!MENU_CATEGORIES[@]}"; do
+        category="${MENU_CATEGORIES[$index]}"
+        printf "  %2d. %-24s (%s)\n" $((index + 1)) "$category" "$(nshkr_display_name_for_topic "$category")"
+    done
+}
+
 get_repo_category() {
     local owner=$1
     local repo=$2
-    gh api "repos/${owner}/${repo}/topics" --jq '.names[]' 2>/dev/null | grep -E '^nshkr-' | head -1
+    local topics
+
+    topics=$(gh api "repos/${owner}/${repo}/topics" --jq '.names[]' 2>/dev/null | grep -E '^nshkr-' || true)
+
+    if printf '%s\n' "$topics" | grep -qx "$NSHKR_ARCHIVE_SLUG"; then
+        echo "$NSHKR_ARCHIVE_SLUG"
+        return
+    fi
+
+    printf '%s\n' "$topics" | grep -v "^${NSHKR_ARCHIVE_SLUG}\$" | sort | head -1 || true
 }
 
-# Get all topics for a repo
 get_repo_topics() {
     local owner=$1
     local repo=$2
+
     gh api "repos/${owner}/${repo}/topics" --jq '.names | join(", ")' 2>/dev/null
 }
 
-# Remove all nshkr-* topics from repo
 remove_nshkr_topics() {
     local owner=$1
     local repo=$2
+    local topics
 
-    local topics=$(gh api "repos/${owner}/${repo}/topics" --jq '.names[]' 2>/dev/null | grep -E '^nshkr-' || true)
+    topics=$(gh api "repos/${owner}/${repo}/topics" --jq '.names[]' 2>/dev/null | grep -E '^nshkr-' || true)
     for topic in $topics; do
         gh repo edit "${owner}/${repo}" --remove-topic "${topic}" 2>/dev/null || true
     done
 }
 
-# Add a single nshkr topic (removes others first for exclusivity)
 set_repo_category() {
     local owner=$1
     local repo=$2
     local category=$3
 
-    # Remove existing nshkr topics
     remove_nshkr_topics "$owner" "$repo"
-
-    # Add new topic
     gh repo edit "${owner}/${repo}" --add-topic "${category}" 2>/dev/null
 }
 
-# List all repos with their categories
+prompt_custom_category() {
+    local raw
+    local category
+
+    read -p "Enter custom category (with or without nshkr- prefix): " raw
+    category=$(nshkr_normalize_topic_slug "$raw")
+
+    if [[ -z "$category" ]] || ! nshkr_valid_category_slug "$category"; then
+        echo -e "${RED}Invalid category. Use letters, numbers, and hyphens only.${NC}"
+        return 1
+    fi
+
+    if [[ "$category" == "$NSHKR_ARCHIVE_SLUG" ]]; then
+        echo -e "${RED}Use exclude mode for ${NSHKR_ARCHIVE_SLUG}.${NC}"
+        return 1
+    fi
+
+    printf '%s\n' "$category"
+}
+
 list_all_repos() {
+    local repo
+    local cat
+
     echo -e "\n${BLUE}${BOLD}=== ALL REPOSITORIES ===${NC}\n"
 
     echo -e "${CYAN}nshkrdotcom repos:${NC}"
-    for repo in $(gh api "users/nshkrdotcom/repos?per_page=100&type=public" --jq '.[].name' 2>/dev/null | sort); do
-        local cat=$(get_repo_category "nshkrdotcom" "$repo")
+    while IFS= read -r repo; do
+        cat=$(get_repo_category "nshkrdotcom" "$repo")
         if [[ -z "$cat" ]]; then
-            echo -e "  ${YELLOW}[uncategorized]${NC} $repo"
-        elif [[ "$cat" == "nshkr-archive" ]]; then
+            echo -e "  ${YELLOW}[${NSHKR_UNCATEGORIZED_SLUG}]${NC} $repo"
+        elif [[ "$cat" == "$NSHKR_ARCHIVE_SLUG" ]]; then
             echo -e "  ${RED}[excluded]${NC} $repo"
         else
             echo -e "  ${GREEN}[$cat]${NC} $repo"
         fi
-    done
+    done < <(list_account_repos "nshkrdotcom")
 
     echo -e "\n${CYAN}North-Shore-AI repos:${NC}"
-    for repo in $(gh api "orgs/North-Shore-AI/repos?per_page=100&type=public" --jq '.[].name' 2>/dev/null | sort); do
-        local cat=$(get_repo_category "North-Shore-AI" "$repo")
+    while IFS= read -r repo; do
+        cat=$(get_repo_category "North-Shore-AI" "$repo")
         if [[ -z "$cat" ]]; then
-            echo -e "  ${YELLOW}[uncategorized]${NC} $repo"
-        elif [[ "$cat" == "nshkr-archive" ]]; then
+            echo -e "  ${YELLOW}[${NSHKR_UNCATEGORIZED_SLUG}]${NC} $repo"
+        elif [[ "$cat" == "$NSHKR_ARCHIVE_SLUG" ]]; then
             echo -e "  ${RED}[excluded]${NC} $repo"
         else
             echo -e "  ${GREEN}[$cat]${NC} $repo"
         fi
-    done
+    done < <(list_account_repos "North-Shore-AI")
 }
 
-# List repos by category
 list_by_category() {
     local category=$1
-    echo -e "\n${BLUE}${BOLD}=== $category ===${NC}\n"
+    local repo
+    local cat
+
+    echo -e "\n${BLUE}${BOLD}=== $category ===${NC}"
+    echo -e "${CYAN}($(nshkr_display_name_for_topic "$category"))${NC}\n"
 
     echo -e "${CYAN}nshkrdotcom:${NC}"
-    gh api "users/nshkrdotcom/repos?per_page=100&type=public" --jq '.[].name' 2>/dev/null | while read repo; do
-        local cat=$(get_repo_category "nshkrdotcom" "$repo")
+    while IFS= read -r repo; do
+        cat=$(get_repo_category "nshkrdotcom" "$repo")
         if [[ "$cat" == "$category" ]]; then
             echo "  $repo"
         fi
-    done
+    done < <(list_account_repos "nshkrdotcom")
 
     echo -e "\n${CYAN}North-Shore-AI:${NC}"
-    gh api "orgs/North-Shore-AI/repos?per_page=100&type=public" --jq '.[].name' 2>/dev/null | while read repo; do
-        local cat=$(get_repo_category "North-Shore-AI" "$repo")
+    while IFS= read -r repo; do
+        cat=$(get_repo_category "North-Shore-AI" "$repo")
         if [[ "$cat" == "$category" ]]; then
             echo "  $repo"
         fi
-    done
+    done < <(list_account_repos "North-Shore-AI")
 }
 
-# List excluded repos
 list_excluded() {
-    list_by_category "nshkr-archive"
+    list_by_category "$NSHKR_ARCHIVE_SLUG"
 }
 
-# List uncategorized repos
 list_uncategorized() {
-    echo -e "\n${YELLOW}${BOLD}=== UNCATEGORIZED REPOS ===${NC}\n"
-    echo -e "${CYAN}(These will appear in 'Other Projects' on the site)${NC}\n"
-
+    local repo
+    local cat
     local count=0
 
+    echo -e "\n${YELLOW}${BOLD}=== UNCATEGORIZED REPOS ===${NC}\n"
+    echo -e "${CYAN}(These will appear in '${NSHKR_UNCATEGORIZED_NAME}' on the site)${NC}\n"
+
     echo -e "${CYAN}nshkrdotcom:${NC}"
-    for repo in $(gh api "users/nshkrdotcom/repos?per_page=100&type=public" --jq '.[].name' 2>/dev/null | sort); do
-        local cat=$(get_repo_category "nshkrdotcom" "$repo")
+    while IFS= read -r repo; do
+        cat=$(get_repo_category "nshkrdotcom" "$repo")
         if [[ -z "$cat" ]]; then
             echo "  $repo"
             ((count++))
         fi
-    done
+    done < <(list_account_repos "nshkrdotcom")
 
     echo -e "\n${CYAN}North-Shore-AI:${NC}"
-    for repo in $(gh api "orgs/North-Shore-AI/repos?per_page=100&type=public" --jq '.[].name' 2>/dev/null | sort); do
-        local cat=$(get_repo_category "North-Shore-AI" "$repo")
+    while IFS= read -r repo; do
+        cat=$(get_repo_category "North-Shore-AI" "$repo")
         if [[ -z "$cat" ]]; then
             echo "  $repo"
             ((count++))
         fi
-    done
+    done < <(list_account_repos "North-Shore-AI")
 
     echo -e "\n${YELLOW}Total uncategorized: $count${NC}"
 }
 
-# Toggle exclude status
 toggle_exclude() {
+    local owner
+    local repo
+    local current
+
     echo -e "\n${BLUE}${BOLD}=== TOGGLE EXCLUDE STATUS ===${NC}\n"
 
     read -p "Enter owner (nshkrdotcom or North-Shore-AI): " owner
     read -p "Enter repo name: " repo
 
-    local current=$(get_repo_category "$owner" "$repo")
+    current=$(get_repo_category "$owner" "$repo")
 
-    if [[ "$current" == "nshkr-archive" ]]; then
-        echo -e "\n${YELLOW}Repo is currently EXCLUDED. Remove exclude tag?${NC}"
+    if [[ "$current" == "$NSHKR_ARCHIVE_SLUG" ]]; then
+        echo -e "\n${YELLOW}Repo is currently EXCLUDED. Remove archive tag?${NC}"
         read -p "(y/N) " -n 1 -r
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            gh repo edit "${owner}/${repo}" --remove-topic "nshkr-archive" 2>/dev/null
-            echo -e "${GREEN}Removed exclude tag. Repo will now appear as uncategorized.${NC}"
+            gh repo edit "${owner}/${repo}" --remove-topic "$NSHKR_ARCHIVE_SLUG" 2>/dev/null
+            echo -e "${GREEN}Removed archive tag. Repo will now appear as ${NSHKR_UNCATEGORIZED_NAME}.${NC}"
         fi
     else
-        echo -e "\n${YELLOW}Current category: ${current:-uncategorized}${NC}"
-        echo -e "${YELLOW}Add to exclude list? (will remove from site)${NC}"
+        echo -e "\n${YELLOW}Current category: ${current:-$NSHKR_UNCATEGORIZED_SLUG}${NC}"
+        echo -e "${YELLOW}Add to archive list? (will remove from site)${NC}"
         read -p "(y/N) " -n 1 -r
         echo
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            set_repo_category "$owner" "$repo" "nshkr-archive"
-            echo -e "${GREEN}Added to exclude list.${NC}"
+            set_repo_category "$owner" "$repo" "$NSHKR_ARCHIVE_SLUG"
+            echo -e "${GREEN}Added to archive list.${NC}"
         fi
     fi
 }
 
-# Set category for repo
 set_category() {
+    local owner
+    local repo
+    local current
+    local choice
+    local cat
+
     echo -e "\n${BLUE}${BOLD}=== SET REPO CATEGORY ===${NC}\n"
 
     read -p "Enter owner (nshkrdotcom or North-Shore-AI): " owner
     read -p "Enter repo name: " repo
 
-    local current=$(get_repo_category "$owner" "$repo")
-    echo -e "\n${CYAN}Current category: ${current:-uncategorized}${NC}\n"
+    current=$(get_repo_category "$owner" "$repo")
+    echo -e "\n${CYAN}Current category: ${current:-$NSHKR_UNCATEGORIZED_SLUG}${NC}\n"
 
     echo "Available categories:"
-    for i in "${!CATEGORIES[@]}"; do
-        printf "  %2d. %-20s %s\n" $((i+1)) "${CATEGORIES[$i]}" "(${CATEGORY_NAMES[$i]})"
-    done
-    echo "   0. Remove category (uncategorized)"
+    print_category_options false
+    echo "   c. Enter custom category"
+    echo "   0. Remove category (${NSHKR_UNCATEGORIZED_SLUG})"
     echo "  99. Cancel"
-
     echo ""
+
     read -p "Select category number: " choice
 
     if [[ "$choice" == "99" ]]; then
@@ -246,9 +286,13 @@ set_category() {
         return
     elif [[ "$choice" == "0" ]]; then
         remove_nshkr_topics "$owner" "$repo"
-        echo -e "${GREEN}Category removed. Repo is now uncategorized.${NC}"
-    elif [[ "$choice" -ge 1 && "$choice" -le ${#CATEGORIES[@]} ]]; then
-        local cat="${CATEGORIES[$((choice-1))]}"
+        echo -e "${GREEN}Category removed. Repo is now ${NSHKR_UNCATEGORIZED_SLUG}.${NC}"
+    elif [[ "$choice" == "c" || "$choice" == "C" ]]; then
+        cat=$(prompt_custom_category) || return
+        set_repo_category "$owner" "$repo" "$cat"
+        echo -e "${GREEN}Category set to: $cat${NC}"
+    elif [[ "$choice" =~ ^[0-9]+$ && "$choice" -ge 1 && "$choice" -le ${#MENU_CATEGORIES[@]} ]]; then
+        cat="${MENU_CATEGORIES[$((choice-1))]}"
         set_repo_category "$owner" "$repo" "$cat"
         echo -e "${GREEN}Category set to: $cat${NC}"
     else
@@ -256,42 +300,57 @@ set_category() {
     fi
 }
 
-# View repo details
 view_repo() {
+    local owner
+    local repo
+    local cat
+    local topics
+
     echo -e "\n${BLUE}${BOLD}=== VIEW REPO DETAILS ===${NC}\n"
 
     read -p "Enter owner (nshkrdotcom or North-Shore-AI): " owner
     read -p "Enter repo name: " repo
 
     echo ""
-    local cat=$(get_repo_category "$owner" "$repo")
-    local topics=$(get_repo_topics "$owner" "$repo")
+    cat=$(get_repo_category "$owner" "$repo")
+    topics=$(get_repo_topics "$owner" "$repo")
 
     echo -e "${CYAN}Repository:${NC} ${owner}/${repo}"
-    echo -e "${CYAN}Site Category:${NC} ${cat:-uncategorized}"
+    if [[ -n "$cat" ]]; then
+        echo -e "${CYAN}Site Category:${NC} ${cat} ($(nshkr_display_name_for_topic "$cat"))"
+    else
+        echo -e "${CYAN}Site Category:${NC} ${NSHKR_UNCATEGORIZED_SLUG}"
+    fi
     echo -e "${CYAN}All Topics:${NC} ${topics:-none}"
 
-    # Get more details
     gh api "repos/${owner}/${repo}" --jq '"Description: " + (.description // "none") + "\nStars: " + (.stargazers_count | tostring) + "\nLanguage: " + (.language // "none")' 2>/dev/null
 }
 
-# Batch set category
 batch_set_category() {
+    local choice
+    local cat
+    local entry
+    local owner
+    local repo
+
     echo -e "\n${BLUE}${BOLD}=== BATCH SET CATEGORY ===${NC}\n"
 
     echo "Available categories:"
-    for i in "${!CATEGORIES[@]}"; do
-        printf "  %2d. %-20s %s\n" $((i+1)) "${CATEGORIES[$i]}" "(${CATEGORY_NAMES[$i]})"
-    done
+    print_category_options false
+    echo "   c. Enter custom category"
     echo ""
+
     read -p "Select category number: " choice
 
-    if [[ "$choice" -lt 1 || "$choice" -gt ${#CATEGORIES[@]} ]]; then
+    if [[ "$choice" == "c" || "$choice" == "C" ]]; then
+        cat=$(prompt_custom_category) || return
+    elif [[ "$choice" =~ ^[0-9]+$ && "$choice" -ge 1 && "$choice" -le ${#MENU_CATEGORIES[@]} ]]; then
+        cat="${MENU_CATEGORIES[$((choice-1))]}"
+    else
         echo -e "${RED}Invalid selection.${NC}"
         return
     fi
 
-    local cat="${CATEGORIES[$((choice-1))]}"
     echo -e "\n${CYAN}Setting category: $cat${NC}"
     echo "Enter repos (owner/repo format, one per line, empty line to finish):"
 
@@ -299,8 +358,8 @@ batch_set_category() {
         read -p "> " entry
         [[ -z "$entry" ]] && break
 
-        local owner=$(echo "$entry" | cut -d'/' -f1)
-        local repo=$(echo "$entry" | cut -d'/' -f2)
+        owner=$(echo "$entry" | cut -d'/' -f1)
+        repo=$(echo "$entry" | cut -d'/' -f2)
 
         if [[ -n "$owner" && -n "$repo" ]]; then
             set_repo_category "$owner" "$repo" "$cat"
@@ -311,8 +370,10 @@ batch_set_category() {
     done
 }
 
-# Main menu
 main_menu() {
+    local choice
+    local cat_choice
+
     while true; do
         echo -e "\n${MAGENTA}${BOLD}╔═══════════════════════════════════════════╗${NC}"
         echo -e "${MAGENTA}${BOLD}║     REPOSITORY TOPIC MANAGEMENT           ║${NC}"
@@ -334,6 +395,7 @@ main_menu() {
         echo ""
         echo "  0. Exit"
         echo ""
+
         read -p "Select option: " choice
 
         case $choice in
@@ -346,12 +408,10 @@ main_menu() {
             7)
                 echo ""
                 echo "Select category to list:"
-                for i in "${!CATEGORIES[@]}"; do
-                    printf "  %2d. %s\n" $((i+1)) "${CATEGORIES[$i]}"
-                done
+                print_category_options true
                 read -p "Category number: " cat_choice
-                if [[ "$cat_choice" -ge 1 && "$cat_choice" -le ${#CATEGORIES[@]} ]]; then
-                    list_by_category "${CATEGORIES[$((cat_choice-1))]}"
+                if [[ "$cat_choice" =~ ^[0-9]+$ && "$cat_choice" -ge 1 && "$cat_choice" -le ${#MENU_CATEGORIES[@]} ]]; then
+                    list_by_category "${MENU_CATEGORIES[$((cat_choice-1))]}"
                 fi
                 ;;
             8) list_uncategorized ;;
@@ -369,5 +429,4 @@ main_menu() {
     done
 }
 
-# Run
 main_menu

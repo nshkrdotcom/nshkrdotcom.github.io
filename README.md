@@ -38,6 +38,11 @@ Repos are categorized using GitHub topics with the `nshkr-` prefix:
 - `nshkr-ml` → Machine Learning
 - etc.
 
+Known categories live in `config/nshkr_categories.json` and keep their pinned
+display order. Any other `nshkr-*` topic is still treated as a real category:
+the slug is split on `-`, titleized with acronym-aware casing, and appended
+after the known categories automatically.
+
 Repos with `nshkr-archive` topic are hidden from the site.
 
 Use `scripts/MANAGE_REPO_TOPICS.sh` to manage topics on your repos.
