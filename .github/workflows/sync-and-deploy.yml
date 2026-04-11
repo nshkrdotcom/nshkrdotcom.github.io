@@ -36,9 +36,11 @@ jobs:
           bash -n scripts/lib/nshkr_categories.sh
           bash -n scripts/detect_source_asset_changes.sh
           bash -n scripts/sync_repos_to_hugo.sh
+          bash -n scripts/validate_logo_references.sh
           bash -n scripts/MANAGE_REPO_TOPICS.sh
           bash -n tests/test_sync_repos_to_hugo.sh
           ./tests/test_sync_repos_to_hugo.sh
+          ./scripts/validate_logo_references.sh
 
       - name: Log dispatch payload
         if: github.event_name == 'repository_dispatch'
@@ -107,8 +109,10 @@ jobs:
           bash -n scripts/lib/nshkr_categories.sh
           bash -n scripts/detect_source_asset_changes.sh
           bash -n scripts/sync_repos_to_hugo.sh
+          bash -n scripts/validate_logo_references.sh
           bash -n tests/test_sync_repos_to_hugo.sh
           ./tests/test_sync_repos_to_hugo.sh
+          ./scripts/validate_logo_references.sh
 
       - name: Pull latest changes
         run: git pull origin main || true

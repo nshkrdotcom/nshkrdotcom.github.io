@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-11T00:09:33Z
+# Last updated: 2026-04-11T01:55:55Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -1036,6 +1036,16 @@ repos:
     description: "Generic Elixir tooling for triggering, monitoring, and verifying Coolify deployments from a workstation or remote server, with support for top-level Mix apps and monorepos."
     url: "https://github.com/nshkrdotcom/coolify_ex"
     logo: "/logos/coolify_ex-675aca6e0a41.svg"
+    language: "Elixir"
+
+  dexterity:
+    name: "dexterity"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-devtools"
+    description: "Authoritative, ranked, token-budgeted codebase context for Elixir agents. Solves context window limitations by providing a deterministic Elixir semantic graph and agent-ready Repo Map for LLMs."
+    url: "https://github.com/nshkrdotcom/dexterity"
+    logo: "/logos/dexterity-99b93d0346ae.svg"
     language: "Elixir"
 
   portfolio_coder:

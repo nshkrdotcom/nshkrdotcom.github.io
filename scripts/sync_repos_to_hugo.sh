@@ -148,6 +148,14 @@ prune_stale_cached_logos() {
     )
 }
 
+manifest_logo_basenames() {
+    local manifest_file=$1
+
+    grep -oE 'logo: "/logos/[^"]+"' "$manifest_file" 2>/dev/null \
+        | sed -E 's/.*\/logos\/([^"]+)".*/\1/' \
+        | sed '/^$/d'
+}
+
 prune_unreferenced_cached_logos() {
     local manifest_file=$1
     local logo_file=""
@@ -157,10 +165,7 @@ prune_unreferenced_cached_logos() {
     while IFS= read -r basename; do
         [[ -n "$basename" ]] || continue
         referenced_logos["$basename"]=1
-    done < <(
-        rg -o 'logo: "/logos/[^"]+"' "$manifest_file" \
-            | sed -E 's/.*\/logos\/([^"]+)".*/\1/'
-    )
+    done < <(manifest_logo_basenames "$manifest_file")
 
     while IFS= read -r -d '' logo_file; do
         basename=$(basename "$logo_file")
@@ -169,6 +174,25 @@ prune_unreferenced_cached_logos() {
             LOGO_CACHE_CHANGED=1
         fi
     done < <(find "$LOGOS_DIR" -maxdepth 1 -type f -print0)
+}
+
+validate_referenced_logo_assets() {
+    local manifest_file=$1
+    local basename=""
+    local -a missing=()
+
+    while IFS= read -r basename; do
+        [[ -n "$basename" ]] || continue
+        if [[ ! -f "$LOGOS_DIR/$basename" ]]; then
+            missing+=("$basename")
+        fi
+    done < <(manifest_logo_basenames "$manifest_file")
+
+    if ((${#missing[@]} > 0)); then
+        echo "Referenced logos are missing from $LOGOS_DIR:" >&2
+        printf '  %s\n' "${missing[@]}" >&2
+        return 1
+    fi
 }
 
 cache_logo_artifact() {
@@ -543,6 +567,7 @@ HEADER
     done
 
     prune_unreferenced_cached_logos "$DATA_TMP_FILE"
+    validate_referenced_logo_assets "$DATA_TMP_FILE"
 
     if [[ -f "$DATA_FILE" ]] && [[ "$LOGO_CACHE_CHANGED" -eq 0 ]] && diff -q <(sed '/^# Last updated:/d' "$DATA_FILE") <(sed '/^# Last updated:/d' "$DATA_TMP_FILE") >/dev/null; then
         echo "No changes detected. Skipping update."

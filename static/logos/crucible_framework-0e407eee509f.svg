@@ -1,0 +1,283 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- ==================== GRADIENTS ==================== -->
+
+    <!-- Main hexagon gradient - deep purple to magenta -->
+    <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9D4EDD"/>
+      <stop offset="50%" stop-color="#7209B7"/>
+      <stop offset="100%" stop-color="#5A189A"/>
+    </linearGradient>
+
+    <!-- Premium metallic edge -->
+    <linearGradient id="edgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0AAFF"/>
+      <stop offset="50%" stop-color="#C77DFF"/>
+      <stop offset="100%" stop-color="#9D4EDD"/>
+    </linearGradient>
+
+    <!-- Radial glow from center -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E0AAFF" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#B5179E" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#5A189A" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Stage node gradient - silver/white highlight -->
+    <radialGradient id="stageNodeGradient" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#F3E5FF"/>
+      <stop offset="100%" stop-color="#C77DFF"/>
+    </radialGradient>
+
+    <!-- Orchestrator core gradient -->
+    <radialGradient id="orchestratorGradient" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="35%" stop-color="#E0AAFF"/>
+      <stop offset="100%" stop-color="#9D4EDD"/>
+    </radialGradient>
+
+    <!-- Pipeline flow gradient -->
+    <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C77DFF" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#E0AAFF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#C77DFF" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Arrow marker gradient -->
+    <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0AAFF"/>
+      <stop offset="100%" stop-color="#B5179E"/>
+    </linearGradient>
+
+    <!-- ==================== FILTERS ==================== -->
+
+    <!-- Outer shadow for depth -->
+    <filter id="dropShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1A0033" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Glow effect for nodes -->
+    <filter id="nodeGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Strong core glow -->
+    <filter id="coreGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#C77DFF" flood-opacity="0.5"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Arrow marker definition -->
+    <marker id="arrowMarker" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 3 L 0 6 Z" fill="#E0AAFF"/>
+    </marker>
+
+    <!-- Clip path for inner content -->
+    <clipPath id="hexClip">
+      <path d="M 100,10 L 173,46 L 173,154 L 100,190 L 27,154 L 27,46 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- ==================== BACKGROUND & FRAME ==================== -->
+
+  <!-- Outer hexagon with shadow -->
+  <g filter="url(#dropShadow)">
+    <path d="M 100,10 L 173,46 L 173,154 L 100,190 L 27,154 L 27,46 Z"
+          fill="url(#hexGradient)"/>
+  </g>
+
+  <!-- Hexagon border - metallic edge -->
+  <path d="M 100,10 L 173,46 L 173,154 L 100,190 L 27,154 L 27,46 Z"
+        fill="none"
+        stroke="url(#edgeGradient)"
+        stroke-width="2"/>
+
+  <!-- Inner hexagon frame - subtle depth -->
+  <path d="M 100,18 L 166,50 L 166,150 L 100,182 L 34,150 L 34,50 Z"
+        fill="none"
+        stroke="#E0AAFF"
+        stroke-width="0.75"
+        opacity="0.4"/>
+
+  <!-- Central glow overlay -->
+  <ellipse cx="100" cy="100" rx="65" ry="70" fill="url(#centerGlow)"/>
+
+  <!-- ==================== ORCHESTRATION PIPELINE ==================== -->
+
+  <g clip-path="url(#hexClip)">
+
+    <!-- Background flow lines -->
+    <g stroke="#C77DFF" stroke-width="0.5" opacity="0.15" stroke-linecap="round">
+      <line x1="100" y1="100" x2="65" y2="65"/>
+      <line x1="100" y1="100" x2="135" y2="65"/>
+      <line x1="100" y1="100" x2="65" y2="135"/>
+      <line x1="100" y1="100" x2="135" y2="135"/>
+      <line x1="65" y1="65" x2="135" y2="65"/>
+      <line x1="65" y1="135" x2="135" y2="135"/>
+    </g>
+
+    <!-- ===== PIPELINE STAGE FLOW ===== -->
+
+    <!-- Horizontal pipeline with flow -->
+    <!-- Top pipeline: Input → Validation → Processing -->
+
+    <!-- Input Stage (Left) -->
+    <g filter="url(#nodeGlow)">
+      <circle cx="45" cy="85" r="10" fill="url(#stageNodeGradient)" stroke="#B5179E" stroke-width="1.5"/>
+      <circle cx="45" cy="85" r="5" fill="#FFFFFF" opacity="0.7"/>
+    </g>
+
+    <!-- Flow arrow 1 -->
+    <path d="M 56 85 L 74 85"
+          stroke="url(#flowGradient)"
+          stroke-width="2.5"
+          fill="none"
+          stroke-linecap="round"
+          marker-end="url(#arrowMarker)"/>
+
+    <!-- Validation Stage (Center-Left) -->
+    <g filter="url(#nodeGlow)">
+      <circle cx="85" cy="85" r="10" fill="url(#stageNodeGradient)" stroke="#B5179E" stroke-width="1.5"/>
+      <circle cx="85" cy="85" r="5" fill="#FFFFFF" opacity="0.7"/>
+    </g>
+
+    <!-- Flow arrow 2 -->
+    <path d="M 96 85 L 114 85"
+          stroke="url(#flowGradient)"
+          stroke-width="2.5"
+          fill="none"
+          stroke-linecap="round"
+          marker-end="url(#arrowMarker)"/>
+
+    <!-- Processing Stage (Center-Right) -->
+    <g filter="url(#nodeGlow)">
+      <circle cx="125" cy="85" r="10" fill="url(#stageNodeGradient)" stroke="#B5179E" stroke-width="1.5"/>
+      <circle cx="125" cy="85" r="5" fill="#FFFFFF" opacity="0.7"/>
+    </g>
+
+    <!-- Flow arrow 3 -->
+    <path d="M 136 85 L 154 85"
+          stroke="url(#flowGradient)"
+          stroke-width="2.5"
+          fill="none"
+          stroke-linecap="round"
+          marker-end="url(#arrowMarker)"/>
+
+    <!-- Output Stage (Right) -->
+    <g filter="url(#nodeGlow)">
+      <circle cx="155" cy="85" r="10" fill="url(#stageNodeGradient)" stroke="#B5179E" stroke-width="1.5"/>
+      <circle cx="155" cy="85" r="5" fill="#FFFFFF" opacity="0.7"/>
+    </g>
+
+    <!-- ===== ORCHESTRATOR CENTER ===== -->
+
+    <!-- Orchestrator core node - large focal point -->
+    <g filter="url(#coreGlow)">
+      <!-- Outer ring -->
+      <circle cx="100" cy="115" r="22" fill="none" stroke="#E0AAFF" stroke-width="1" opacity="0.6"/>
+
+      <!-- Main core -->
+      <circle cx="100" cy="115" r="18" fill="url(#orchestratorGradient)" stroke="#9D4EDD" stroke-width="2"/>
+
+      <!-- Inner detail - small hexagon -->
+      <path d="M 100,100 L 109,105 L 109,115 L 100,120 L 91,115 L 91,105 Z"
+            fill="none"
+            stroke="#7209B7"
+            stroke-width="1.5"
+            opacity="0.8"/>
+
+      <!-- Center beacon -->
+      <circle cx="100" cy="115" r="8" fill="#E0AAFF" opacity="0.4"/>
+      <circle cx="100" cy="115" r="5" fill="#FFFFFF" opacity="0.8"/>
+      <circle cx="100" cy="115" r="2" fill="#C77DFF" opacity="0.9"/>
+    </g>
+
+    <!-- ===== FEEDBACK CONNECTIONS ===== -->
+
+    <!-- Feedback flow from stages down to orchestrator -->
+    <g stroke="#C77DFF" stroke-width="1.5" opacity="0.6" stroke-linecap="round">
+      <!-- Input feedback -->
+      <path d="M 45 95 Q 45 105 92 113" fill="none"/>
+      <!-- Validation feedback -->
+      <path d="M 85 95 Q 85 105 95 113" fill="none"/>
+      <!-- Processing feedback -->
+      <path d="M 125 95 Q 125 105 105 113" fill="none"/>
+      <!-- Output feedback -->
+      <path d="M 155 95 Q 155 105 108 113" fill="none"/>
+    </g>
+
+    <!-- ===== AUXILIARY STAGE (Lower) ===== -->
+
+    <!-- Analytics/Monitoring Stage (bottom center) -->
+    <g filter="url(#nodeGlow)">
+      <circle cx="100" cy="155" r="9" fill="url(#stageNodeGradient)" stroke="#B5179E" stroke-width="1.5"/>
+      <circle cx="100" cy="155" r="4" fill="#FFFFFF" opacity="0.7"/>
+    </g>
+
+    <!-- Connection from orchestrator to analytics -->
+    <path d="M 100 133 L 100 146"
+          stroke="url(#flowGradient)"
+          stroke-width="2"
+          fill="none"
+          stroke-linecap="round"
+          marker-end="url(#arrowMarker)"/>
+
+    <!-- ===== DECORATIVE ACCENT LINES ===== -->
+
+    <!-- Subtle framework grid -->
+    <g stroke="#E0AAFF" stroke-width="0.4" opacity="0.25">
+      <line x1="30" y1="50" x2="170" y2="50"/>
+      <line x1="30" y1="150" x2="170" y2="150"/>
+    </g>
+
+    <!-- Corner accent marks -->
+    <g stroke="#C77DFF" stroke-width="0.75" opacity="0.35">
+      <!-- Top-left corner -->
+      <path d="M 35 45 L 40 45 M 35 45 L 35 52" fill="none" stroke-linecap="round"/>
+      <!-- Top-right corner -->
+      <path d="M 165 45 L 160 45 M 165 45 L 165 52" fill="none" stroke-linecap="round"/>
+      <!-- Bottom-left corner -->
+      <path d="M 35 155 L 40 155 M 35 155 L 35 148" fill="none" stroke-linecap="round"/>
+      <!-- Bottom-right corner -->
+      <path d="M 165 155 L 160 155 M 165 155 L 165 148" fill="none" stroke-linecap="round"/>
+    </g>
+
+    <!-- Subtle particle effects -->
+    <g fill="#E0AAFF" opacity="0.45">
+      <circle cx="60" cy="60" r="1"/>
+      <circle cx="140" cy="60" r="1"/>
+      <circle cx="60" cy="140" r="1"/>
+      <circle cx="140" cy="140" r="1"/>
+      <circle cx="75" cy="50" r="0.75"/>
+      <circle cx="125" cy="50" r="0.75"/>
+      <circle cx="75" cy="160" r="0.75"/>
+      <circle cx="125" cy="160" r="0.75"/>
+    </g>
+  </g>
+
+  <!-- ==================== OUTER ACCENTS ==================== -->
+
+  <!-- Top highlight edge -->
+  <path d="M 100,10 L 173,46"
+        fill="none"
+        stroke="#FFFFFF"
+        stroke-width="1.2"
+        opacity="0.35"/>
+
+  <!-- Subtle left edge highlight -->
+  <path d="M 100,10 L 27,46"
+        fill="none"
+        stroke="#FFFFFF"
+        stroke-width="0.75"
+        opacity="0.18"/>
+</svg>

@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="chz_ex logo">
+  <defs>
+    <!-- Main Shape: The Hexagon -->
+    <path id="hexPath" d="M256 36 L446.5 146 L446.5 366 L256 476 L65.5 366 L65.5 146 Z"/>
+    
+    <!-- Clipping Path -->
+    <clipPath id="hexClip">
+      <use href="#hexPath"/>
+    </clipPath>
+
+    <!-- Gradients -->
+    <!-- Cinematic Background -->
+    <radialGradient id="bgGradient" cx="50%" cy="30%" r="90%" fx="50%" fy="30%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+
+    <!-- Hexagon Border -->
+    <linearGradient id="hexBorder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+
+    <!-- Cheese Colors -->
+    <linearGradient id="cheeseBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <radialGradient id="cheeseHole" cx="50%" cy="50%" r="50%">
+      <stop offset="80%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </radialGradient>
+
+    <!-- Stick (Wood) -->
+    <linearGradient id="woodStick" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a16207"/>
+      <stop offset="40%" stop-color="#d97706"/>
+      <stop offset="60%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+
+    <!-- Box (Cardboard) -->
+    <!-- Front Face -->
+    <linearGradient id="cardboardFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4a373"/>
+      <stop offset="100%" stop-color="#a98467"/>
+    </linearGradient>
+    <!-- Side Face (Darker) -->
+    <linearGradient id="cardboardSide" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b08968"/>
+      <stop offset="100%" stop-color="#8d6e63"/>
+    </linearGradient>
+    <!-- Top/Inside (Darkest/Shadowed) -->
+    <linearGradient id="cardboardInner" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5d4037"/>
+      <stop offset="100%" stop-color="#3e2723"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <!-- Soft Drop Shadow -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="8" result="offsetblur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.5"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Glow/Bloom -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+        <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <use href="#hexPath" fill="url(#bgGradient)"/>
+
+  <!-- Scene Container (Clipped to Hexagon) -->
+  <g clip-path="url(#hexClip)">
+    <!-- Floor Shadow (Perspective Blob) -->
+    <ellipse cx="256" cy="380" rx="140" ry="25" fill="#000" opacity="0.4" filter="url(#softShadow)"/>
+
+    <!-- The Stick (Propping up the box) -->
+    <!-- Drawn first so it can be behind/inside the box context if needed, but physically it's below the box edge -->
+    <!-- A simple rounded cylinder standing at an angle -->
+    <g transform="translate(320, 320) rotate(-15)">
+       <rect x="-6" y="-70" width="12" height="140" rx="4" fill="url(#woodStick)" filter="url(#softShadow)"/>
+    </g>
+
+    <!-- The Cheese ( Bait ) -->
+    <g transform="translate(256, 360)">
+        <!-- Wedge Shape -->
+        <path d="M-40 10 L40 10 L0 -30 Z" fill="url(#cheeseBody)" filter="url(#softShadow)"/> <!-- Top face kinda -->
+        <path d="M-40 10 L40 10 L40 30 C20 40 -20 40 -40 30 Z" fill="url(#cheeseBody)"/> <!-- Front rounding -->
+        <!-- Holes -->
+        <circle cx="-10" cy="15" r="5" fill="#b45309" opacity="0.8"/>
+        <circle cx="15" cy="20" r="3" fill="#b45309" opacity="0.8"/>
+        <circle cx="20" cy="5" r="4" fill="#b45309" opacity="0.8"/>
+        <circle cx="-15" cy="-5" r="3" fill="#b45309" opacity="0.8"/>
+    </g>
+
+    <!-- The Box (Trap) -->
+    <!-- Tilted up. We see the front face, the side face, and the dark inside/bottom. -->
+    <!-- Coordinate system centered roughly where the box is -->
+    <g transform="translate(256, 250) rotate(-20)">
+        <!-- Inner Shadow / Inside of the box (seen from below/front-ish) -->
+        <rect x="-70" y="-70" width="140" height="140" fill="url(#cardboardInner)"/>
+        
+        <!-- Front Flap / Face -->
+        <!-- This represents the side of the box facing the viewer -->
+        <!-- We construct a 3D-looking cube using paths -->
+        
+        <!-- Left/Front Face -->
+        <path d="M-70 -70 L-70 70 L70 70 L70 -70 Z" fill="none"/> <!-- Reference -->
+        
+        <!-- Let's actually draw a 3D box shape -->
+        <!-- Top Face (technically the bottom of the box since it's inverted/propped) -->
+        <path d="M-75 -75 L75 -75 L75 75 L-75 75 Z" fill="url(#cardboardFront)" filter="url(#softShadow)" />
+        
+        <!-- Side Flaps (to give depth) -->
+        <!-- Left Side Thickness -->
+        <path d="M-75 -75 L-85 -65 L-85 85 L-75 75 Z" fill="#8d6e63"/>
+        <!-- Bottom Thickness -->
+        <path d="M-75 75 L-85 85 L85 85 L75 75 Z" fill="#795548"/>
+        
+        <!-- Branding / Tape on the box -->
+        <rect x="-75" y="-10" width="150" height="20" fill="#a16207" opacity="0.3" transform="rotate(0)"/>
+    </g>
+
+    <!-- Top Gloss/Gradient Overlay for Cinematic effect -->
+    <circle cx="0" cy="0" r="400" fill="url(#bgGradient)" opacity="0.1" style="mix-blend-mode: overlay;"/>
+
+  </g>
+
+  <!-- Hexagon Stroke Outline -->
+  <use href="#hexPath" fill="none" stroke="url(#hexBorder)" stroke-width="8" filter="url(#glow)"/>
+
+</svg>

@@ -57,6 +57,15 @@ assert_not_exists() {
     [[ ! -e "$path" ]] || fail "$message: unexpected $path"
 }
 
+assert_fails() {
+    local message=$1
+    shift
+
+    if "$@"; then
+        fail "$message: command unexpectedly succeeded"
+    fi
+}
+
 assert_file_count() {
     local expected=$1
     local actual=""
@@ -92,6 +101,27 @@ assert_file_count 1
 
 prune_stale_cached_logos "$repo_name"
 assert_file_count 0
+
+keep_path=$(sync_fixture_logo "$repo_name" "$logo_v1")
+drop_path=$(sync_fixture_logo "other-repo" "$logo_v2")
+manifest_file="$TMP_ROOT/manifest.yml"
+cat > "$manifest_file" <<EOF
+repos:
+  fixture:
+    logo: "$keep_path"
+EOF
+prune_unreferenced_cached_logos "$manifest_file"
+assert_exists "$LOGOS_DIR/$(basename "$keep_path")" "referenced logo should survive prune_unreferenced_cached_logos"
+assert_not_exists "$LOGOS_DIR/$(basename "$drop_path")" "unreferenced logo should be pruned"
+validate_referenced_logo_assets "$manifest_file"
+
+cat > "$manifest_file" <<'EOF'
+repos:
+  missing:
+    logo: "/logos/missing-logo.svg"
+EOF
+assert_fails "validate_referenced_logo_assets should fail when a referenced logo is missing" \
+    validate_referenced_logo_assets "$manifest_file"
 
 markdown_logo_path=$(extract_logo_path_from_readme_content "$(cat "$FIXTURES_DIR/README.md.fixture")")
 assert_eq "docs/_static/brand-mark.svg" "$markdown_logo_path" "markdown README should resolve docs-hosted logo paths"
