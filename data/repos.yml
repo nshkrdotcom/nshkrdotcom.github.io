@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-12T02:05:49Z
+# Last updated: 2026-04-12T22:04:42Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -726,7 +726,7 @@ repos:
   snakebridge:
     name: "snakebridge"
     org: "nshkrdotcom"
-    stars: 6
+    stars: 7
     category: "nshkr-ai-infra"
     description: "Compile-time Elixir code generator for Python library bindings. Declare dependencies in mix.exs, generate type-safe modules with introspected typespecs and docs. Deterministic git-friendly output, strict CI mode, streaming, and custom helpers. Runtime via Snakepit."
     url: "https://github.com/nshkrdotcom/snakebridge"
@@ -863,6 +863,26 @@ repos:
     logo: "/logos/tiktoken_ex-43536c51d7f4.svg"
     language: "Elixir"
 
+  app_kit:
+    name: "app_kit"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Shared app-facing surface monorepo for the nshkr platform core: composition, wiring, host-facing surfaces, default bridges across outer_brain, Citadel, jido_integration, and read-model publication, with a stable entrypoint for product applications that should not stitch the lower stack manually."
+    url: "https://github.com/nshkrdotcom/app_kit"
+    logo: "/logos/app_kit-c0da936d01d0.svg"
+    language: "Elixir"
+
+  ground_plane:
+    name: "ground_plane"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Shared lower infrastructure monorepo for the nshkr platform core: contracts, Postgres durability helpers, projection publication glue, lease and fence primitives, replay-safe ids, and common runtime infrastructure used by outer_brain, Citadel, jido_integration, and app-facing surfaces."
+    url: "https://github.com/nshkrdotcom/ground_plane"
+    logo: "/logos/ground_plane-fd0e4134a733.svg"
+    language: "Elixir"
+
   hf_hub_ex:
     name: "hf_hub_ex"
     org: "North-Shore-AI"
@@ -888,7 +908,7 @@ repos:
     org: "nshkrdotcom"
     stars: 0
     category: "nshkr-ai-infra"
-    description: "Semantic runtime above Citadel for raw language intake, context assembly, model orchestration, semantic journaling, reply publication, and restart-safe intent synthesis into structured policy decisions across the nshkr AgentOS stack."
+    description: "Semantic runtime above Citadel for raw language intake, context assembly, model orchestration, semantic journaling, reply publication, and restart-safe intent synthesis into structured policy decisions across the stack."
     url: "https://github.com/nshkrdotcom/outer_brain"
     logo: "/logos/outer_brain-c4fd13797cb7.svg"
     language: "Elixir"
@@ -918,7 +938,7 @@ repos:
     org: "nshkrdotcom"
     stars: 0
     category: "nshkr-ai-infra"
-    description: "Local distributed-development harness and proving ground for the nshkr AgentOS stack: repeatable single-node and multi-node boot, Postgres-backed durability drills, fault injection, trace plumbing, end-to-end examples, and operator-facing smoke paths for outer_brain, Citadel, jido_integration, and execution_plane development."
+    description: "Local distributed-development harness and proving ground for the full stack: repeatable single-node and multi-node boot, Postgres-backed durability drills, fault injection, trace plumbing, end-to-end examples, and operator-facing smoke paths for outer_brain, Citadel, jido_integration, and execution_plane development."
     url: "https://github.com/nshkrdotcom/stack_lab"
     logo: "/logos/stack_lab-13f46db529e2.svg"
     language: "Elixir"
@@ -1001,7 +1021,7 @@ repos:
   dexterity:
     name: "dexterity"
     org: "nshkrdotcom"
-    stars: 2
+    stars: 3
     category: "nshkr-devtools"
     description: "Code Intelligence: Token-budgeted codebase context for Elixir agents. Solves context window limitations by providing a deterministic Elixir semantic graph and agent-ready Repo Map for LLMs."
     url: "https://github.com/nshkrdotcom/dexterity"
