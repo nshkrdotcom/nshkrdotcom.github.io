@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-11T01:55:55Z
+# Last updated: 2026-04-12T02:05:49Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -883,6 +883,16 @@ repos:
     logo: "/logos/hf_peft_ex-ff42582b12a9.svg"
     language: "Jupyter Notebook"
 
+  outer_brain:
+    name: "outer_brain"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Semantic runtime above Citadel for raw language intake, context assembly, model orchestration, semantic journaling, reply publication, and restart-safe intent synthesis into structured policy decisions across the nshkr AgentOS stack."
+    url: "https://github.com/nshkrdotcom/outer_brain"
+    logo: "/logos/outer_brain-c4fd13797cb7.svg"
+    language: "Elixir"
+
   portfolio_index:
     name: "portfolio_index"
     org: "nshkrdotcom"
@@ -901,6 +911,16 @@ repos:
     description: "AI-native personal project intelligence system - manage, track, and search across all your repositories with semantic understanding"
     url: "https://github.com/nshkrdotcom/portfolio_manager"
     logo: "/logos/portfolio_manager-7df7d9b75cfc.svg"
+    language: "Elixir"
+
+  stack_lab:
+    name: "stack_lab"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Local distributed-development harness and proving ground for the nshkr AgentOS stack: repeatable single-node and multi-node boot, Postgres-backed durability drills, fault injection, trace plumbing, end-to-end examples, and operator-facing smoke paths for outer_brain, Citadel, jido_integration, and execution_plane development."
+    url: "https://github.com/nshkrdotcom/stack_lab"
+    logo: "/logos/stack_lab-13f46db529e2.svg"
     language: "Elixir"
 
   tinkerer:
@@ -978,6 +998,16 @@ repos:
     url: "https://github.com/nshkrdotcom/elixir_scope"
     language: "Elixir"
 
+  dexterity:
+    name: "dexterity"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-devtools"
+    description: "Code Intelligence: Token-budgeted codebase context for Elixir agents. Solves context window limitations by providing a deterministic Elixir semantic graph and agent-ready Repo Map for LLMs."
+    url: "https://github.com/nshkrdotcom/dexterity"
+    logo: "/logos/dexterity-99b93d0346ae.svg"
+    language: "Elixir"
+
   elixir_dashboard:
     name: "elixir_dashboard"
     org: "nshkrdotcom"
@@ -1028,6 +1058,16 @@ repos:
     logo: "/logos/prompt_runner_sdk-d08b24c34ff5.svg"
     language: "Elixir"
 
+  atlas_once:
+    name: "atlas_once"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-devtools"
+    description: "Atlas Once is a filesystem-first personal memory system and Unix-native context engineering toolkit for capture, retrieval, durable notes, session tracking, repo bundling, and LLM-ready exports built from plain files, Python CLIs, and composable shell workflows."
+    url: "https://github.com/nshkrdotcom/atlas_once"
+    logo: "/logos/atlas_once-159196502915.svg"
+    language: "Python"
+
   coolify_ex:
     name: "coolify_ex"
     org: "nshkrdotcom"
@@ -1036,16 +1076,6 @@ repos:
     description: "Generic Elixir tooling for triggering, monitoring, and verifying Coolify deployments from a workstation or remote server, with support for top-level Mix apps and monorepos."
     url: "https://github.com/nshkrdotcom/coolify_ex"
     logo: "/logos/coolify_ex-675aca6e0a41.svg"
-    language: "Elixir"
-
-  dexterity:
-    name: "dexterity"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-devtools"
-    description: "Authoritative, ranked, token-budgeted codebase context for Elixir agents. Solves context window limitations by providing a deterministic Elixir semantic graph and agent-ready Repo Map for LLMs."
-    url: "https://github.com/nshkrdotcom/dexterity"
-    logo: "/logos/dexterity-99b93d0346ae.svg"
     language: "Elixir"
 
   portfolio_coder:
