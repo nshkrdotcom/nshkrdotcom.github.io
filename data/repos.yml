@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-12T22:04:42Z
+# Last updated: 2026-04-13T20:36:52Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -510,7 +510,7 @@ repos:
   claude_agent_sdk:
     name: "claude_agent_sdk"
     org: "nshkrdotcom"
-    stars: 29
+    stars: 30
     category: "nshkr-ai-sdk"
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
     url: "https://github.com/nshkrdotcom/claude_agent_sdk"
