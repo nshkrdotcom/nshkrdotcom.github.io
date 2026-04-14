@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-14T19:37:44Z
+# Last updated: 2026-04-14T20:03:05Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -1076,6 +1076,16 @@ repos:
     logo: "/logos/elixir_tracer-cfe67f062ad8.png"
     language: "Elixir"
 
+  pristine:
+    name: "pristine"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-devtools"
+    description: "Shared runtime substrate and build-time bridge for first-party OpenAPI-based Elixir SDKs, including request execution, Foundation runtime wiring, and OAuth2 helpers."
+    url: "https://github.com/nshkrdotcom/pristine"
+    logo: "/logos/pristine-52c5a5aae0ac.png"
+    language: "Elixir"
+
   prompt_runner_sdk:
     name: "prompt_runner_sdk"
     org: "nshkrdotcom"
@@ -1440,16 +1450,6 @@ repos:
     url: "https://github.com/North-Shore-AI/chz_ex"
     logo: "/logos/chz_ex-dfd96fa87a0c.png"
     language: "Elixir"
-
-  jido_session:
-    name: "jido_session"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "uncategorized"
-    description: ""
-    url: "https://github.com/nshkrdotcom/jido_session"
-    language: "Elixir"
-    archived: true
 
   nshkrdotcom:
     name: "nshkrdotcom"

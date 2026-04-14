@@ -65,53 +65,28 @@ rasterize_svg_logo() {
     local input_path=$1
     local output_path=$2
     local converted=""
-    local rasterize_scale_expr
-    local rasterize_pad_expr
 
     if [[ -z "$LOGO_RASTER_SIZE" || ! "$LOGO_RASTER_SIZE" =~ ^[0-9]+$ ]]; then
         echo "Invalid LOGO_RASTER_SIZE: ${LOGO_RASTER_SIZE:-<unset>}" >&2
         return 1
     fi
 
-    rasterize_scale_expr="${LOGO_RASTER_SIZE}x${LOGO_RASTER_SIZE}:force_original_aspect_ratio=decrease"
-    rasterize_pad_expr="${LOGO_RASTER_SIZE}:${LOGO_RASTER_SIZE}:(ow-iw)/2:(oh-ih)/2:color=0x00000000"
-
     if command -v rsvg-convert >/dev/null 2>&1; then
         converted="$(mktemp "${output_path}.rsvg.XXXXXX.png")"
-        if rsvg-convert "$input_path" -w "$LOGO_RASTER_SIZE" -h "$LOGO_RASTER_SIZE" -o "$converted" >/dev/null 2>&1; then
+        if rsvg-convert \
+            --keep-aspect-ratio \
+            --background-color none \
+            --width "$LOGO_RASTER_SIZE" \
+            --height "$LOGO_RASTER_SIZE" \
+            --output "$converted" \
+            "$input_path" >/dev/null 2>&1; then
             mv "$converted" "$output_path"
             return 0
         fi
         rm -f "$converted"
     fi
 
-    if command -v ffmpeg >/dev/null 2>&1; then
-        converted="$(mktemp "${output_path}.ffmpeg.XXXXXX.png")"
-        if ffmpeg -hide_banner -loglevel error -y -i "$input_path" \
-            -vf "scale=${rasterize_scale_expr},pad=${rasterize_pad_expr}" \
-            "$converted" >/dev/null 2>&1; then
-            mv "$converted" "$output_path"
-            return 0
-        fi
-        rm -f "$converted"
-    fi
-
-    if command -v convert >/dev/null 2>&1; then
-        converted="$(mktemp "${output_path}.imagemagick.XXXXXX.png")"
-        if convert "$input_path" \
-            -background none \
-            -alpha set \
-            -resize "${LOGO_RASTER_SIZE}x${LOGO_RASTER_SIZE}" \
-            -gravity center \
-            -extent "${LOGO_RASTER_SIZE}x${LOGO_RASTER_SIZE}" \
-            "PNG32:$converted" >/dev/null 2>&1; then
-            mv "$converted" "$output_path"
-            return 0
-        fi
-        rm -f "$converted"
-    fi
-
-    echo "No compatible SVG rasterizer available. Install ffmpeg, librsvg, or ImageMagick." >&2
+    echo "No compatible SVG rasterizer available. Install librsvg2-bin." >&2
     return 1
 }
 

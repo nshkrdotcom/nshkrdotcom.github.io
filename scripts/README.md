@@ -23,7 +23,7 @@ This directory contains scripts that automatically:
 **What it does:**
 - Fetches live repo metadata from GitHub with topics and default branches
 - Resolves logos from remote `README.md` and `README.rst` references plus repo-tree fallbacks
-- Rasterizes SVG logo inputs to square transparent PNGs (`${LOGO_RASTER_SIZE}` default 64px) when a compatible rasterizer is available, otherwise keeps the original SVG asset
+- Rasterizes SVG logo inputs to transparent PNGs with `rsvg-convert` (`librsvg2-bin`, `${LOGO_RASTER_SIZE}` default 64px) and keeps the original SVG only if rasterization is unavailable or fails
 - Prunes stale cached logos when source assets change or disappear
 - Detects recent source-repo README/logo pushes on a short schedule so the heavy sync only runs when needed
 - Shows a summary by category and top repos by stars
