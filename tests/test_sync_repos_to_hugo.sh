@@ -131,7 +131,32 @@ assert_exists "$fallback_output" "rasterization fallback should create an output
 rm -f "$fallback_output"
 rm -rf "$ffmpeg_stub_dir"
 
+failure_stub_dir="$(mktemp -d)"
+cat > "$failure_stub_dir/convert" <<'SH'
+#!/bin/sh
+exit 1
+SH
+cat > "$failure_stub_dir/ffmpeg" <<'SH'
+#!/bin/sh
+exit 1
+SH
+cat > "$failure_stub_dir/rsvg-convert" <<'SH'
+#!/bin/sh
+exit 1
+SH
+chmod +x "$failure_stub_dir/convert" "$failure_stub_dir/ffmpeg" "$failure_stub_dir/rsvg-convert"
+
+PATH="$failure_stub_dir:$old_path"
+failed_temp="$(mktemp)"
+cp "$logo_v1" "$failed_temp"
+failed_raster_path="$(cache_logo_artifact "svg-fallback" "$logo_v1" "$failed_temp")"
+PATH="$old_path"
+[[ "$failed_raster_path" == *.svg ]] || fail "failed rasterization should keep the original SVG"
+assert_exists "$LOGOS_DIR/$(basename "$failed_raster_path")" "failed rasterization should keep the SVG asset"
+rm -rf "$failure_stub_dir"
+
 prune_stale_cached_logos "$repo_name"
+prune_stale_cached_logos "svg-fallback"
 assert_file_count 0
 
 keep_path=$(sync_fixture_logo "$repo_name" "$logo_v1")
@@ -160,5 +185,26 @@ assert_eq "docs/_static/brand-mark.svg" "$markdown_logo_path" "markdown README s
 
 rst_logo_path=$(extract_logo_path_from_readme_content "$(cat "$FIXTURES_DIR/README.rst.fixture")")
 assert_eq "docs/_static/brand-mark.svg" "$rst_logo_path" "reStructuredText README should resolve docs-hosted logo paths"
+
+elixirscope_false_positive=$(
+    printf '%s\n' "test_apps/phoenix_scope_player/priv/static/images/logo.svg" \
+        | select_logo_path_from_repo_tree_paths "ElixirScope" ""
+)
+assert_eq "" "$elixirscope_false_positive" "tree fallback should ignore demo and test app logos"
+
+explicit_demo_logo=$(
+    printf '%s\n' "test_apps/phoenix_scope_player/priv/static/images/logo.svg" \
+        | select_logo_path_from_repo_tree_paths "ElixirScope" "test_apps/phoenix_scope_player/priv/static/images/logo.svg"
+)
+assert_eq "test_apps/phoenix_scope_player/priv/static/images/logo.svg" "$explicit_demo_logo" "README-selected logo paths should win even in ignored directories"
+
+strong_repo_logo=$(
+    printf '%s\n' \
+        "images/logo.svg" \
+        "assets/elixirscope-logo.svg" \
+        "priv/static/images/elixirscope.svg" \
+        | select_logo_path_from_repo_tree_paths "ElixirScope" ""
+)
+assert_eq "assets/elixirscope-logo.svg" "$strong_repo_logo" "repo-specific root logo should outrank generic logo files"
 
 echo "sync_repos_to_hugo.sh tests passed"

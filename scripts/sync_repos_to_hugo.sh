@@ -85,16 +85,6 @@ rasterize_svg_logo() {
         rm -f "$converted"
     fi
 
-    if command -v convert >/dev/null 2>&1; then
-        converted="$(mktemp "${output_path}.imagemagick.XXXXXX.png")"
-        convert "$input_path" -background transparent -resize "${LOGO_RASTER_SIZE}x${LOGO_RASTER_SIZE}" "PNG32:$converted" >/dev/null 2>&1
-        if [[ -s "$converted" ]]; then
-            mv "$converted" "$output_path"
-            return 0
-        fi
-        rm -f "$converted"
-    fi
-
     if command -v ffmpeg >/dev/null 2>&1; then
         converted="$(mktemp "${output_path}.ffmpeg.XXXXXX.png")"
         if ffmpeg -hide_banner -loglevel error -y -i "$input_path" \
@@ -106,7 +96,22 @@ rasterize_svg_logo() {
         rm -f "$converted"
     fi
 
-    echo "No SVG rasterization command available. Install ImageMagick, librsvg, or ffmpeg." >&2
+    if command -v convert >/dev/null 2>&1; then
+        converted="$(mktemp "${output_path}.imagemagick.XXXXXX.png")"
+        if convert "$input_path" \
+            -background none \
+            -alpha set \
+            -resize "${LOGO_RASTER_SIZE}x${LOGO_RASTER_SIZE}" \
+            -gravity center \
+            -extent "${LOGO_RASTER_SIZE}x${LOGO_RASTER_SIZE}" \
+            "PNG32:$converted" >/dev/null 2>&1; then
+            mv "$converted" "$output_path"
+            return 0
+        fi
+        rm -f "$converted"
+    fi
+
+    echo "No compatible SVG rasterizer available. Install ffmpeg, librsvg, or ImageMagick." >&2
     return 1
 }
 
@@ -178,6 +183,153 @@ logo_candidate_score() {
     esac
 
     printf '%s\n' "$score"
+}
+
+logo_basename_matches_repo_name() {
+    local repo_name=${1,,}
+    local path=${2,,}
+    local basename=""
+    local -a repo_stems=()
+    local stem=""
+
+    basename=$(basename "$path")
+    repo_stems=("$repo_name")
+    if [[ "$repo_name" == *"_"* ]]; then
+        repo_stems+=("${repo_name//_/-}")
+    fi
+    if [[ "$repo_name" == *"-"* ]]; then
+        repo_stems+=("${repo_name//-/_}")
+    fi
+
+    for stem in "${repo_stems[@]}"; do
+        case "$basename" in
+            "${stem}.svg"|"${stem}.png"|"${stem}.jpg"|"${stem}.jpeg"|"${stem}.webp"|"${stem}.gif"|\
+            "${stem}_logo.svg"|"${stem}_logo.png"|"${stem}_logo.jpg"|"${stem}_logo.jpeg"|"${stem}_logo.webp"|"${stem}_logo.gif"|\
+            "${stem}-logo.svg"|"${stem}-logo.png"|"${stem}-logo.jpg"|"${stem}-logo.jpeg"|"${stem}-logo.webp"|"${stem}-logo.gif")
+                return 0
+                ;;
+        esac
+    done
+
+    return 1
+}
+
+logo_path_in_ignored_context() {
+    local lower_path=${1,,}
+
+    case "$lower_path" in
+        test/*|tests/*|test_apps/*|example/*|examples/*|demo/*|demos/*|fixture/*|fixtures/*|vendor/*|deps/*|node_modules/*|.github/*|\
+        */test/*|*/tests/*|*/test_apps/*|*/example/*|*/examples/*|*/demo/*|*/demos/*|*/fixture/*|*/fixtures/*|*/vendor/*|*/deps/*|*/node_modules/*|*/.github/*)
+            return 0
+            ;;
+    esac
+
+    return 1
+}
+
+logo_path_is_preferred_dir() {
+    local lower_path=${1,,}
+
+    case "$lower_path" in
+        assets/*|logo/*|logos/*|static/logo/*|static/logos/*|docs/_static/*|docs/static/*|doc/_static/*|doc/static/*|img/*|images/*)
+            return 0
+            ;;
+    esac
+
+    return 1
+}
+
+logo_path_has_logo_hint() {
+    local basename=${1,,}
+
+    basename=$(basename "$basename")
+    [[ "$basename" == *logo* ]]
+}
+
+logo_tree_candidate_score() {
+    local repo_name=$1
+    local candidate_path=$2
+    local preferred_path=${3:-}
+    local lower_path=${candidate_path,,}
+    local score=20
+
+    if [[ -n "$preferred_path" ]] && [[ "$lower_path" == "${preferred_path,,}" ]]; then
+        printf '%s\n' "-100"
+        return 0
+    fi
+
+    if logo_path_in_ignored_context "$lower_path"; then
+        return 1
+    fi
+
+    if logo_basename_matches_repo_name "$repo_name" "$lower_path"; then
+        if logo_path_is_preferred_dir "$lower_path"; then
+            score=0
+        else
+            score=4
+        fi
+    elif logo_path_is_preferred_dir "$lower_path" && logo_path_has_logo_hint "$lower_path"; then
+        score=10
+    else
+        return 1
+    fi
+
+    case "$lower_path" in
+        assets/*|logo/*|logos/*|static/logo/*|static/logos/*)
+            score=$((score - 2))
+            ;;
+        docs/_static/*|docs/static/*|doc/_static/*|doc/static/*)
+            score=$((score + 1))
+            ;;
+        img/*|images/*)
+            score=$((score + 2))
+            ;;
+    esac
+
+    case "$(basename "$lower_path")" in
+        logo.svg|logo.png|logo.jpg|logo.jpeg|logo.webp|logo.gif)
+            score=$((score + 2))
+            ;;
+    esac
+
+    case "$lower_path" in
+        *.svg)
+            score=$((score - 1))
+            ;;
+        *.jpg|*.jpeg)
+            score=$((score + 1))
+            ;;
+        *.gif)
+            score=$((score + 2))
+            ;;
+    esac
+
+    printf '%s\n' "$score"
+}
+
+select_logo_path_from_repo_tree_paths() {
+    local repo_name=$1
+    local preferred_path=${2:-}
+    local best_path=""
+    local best_score=999
+    local candidate=""
+    local sanitized=""
+    local score=""
+
+    while IFS= read -r candidate; do
+        [[ -n "$candidate" ]] || continue
+        sanitized=$(sanitize_repo_relative_path "$candidate" 2>/dev/null || true)
+        [[ -n "$sanitized" ]] || continue
+        normalize_logo_extension "$sanitized" >/dev/null 2>&1 || continue
+        score=$(logo_tree_candidate_score "$repo_name" "$sanitized" "$preferred_path" 2>/dev/null || true)
+        [[ -n "$score" ]] || continue
+        if [[ -z "$best_path" ]] || [[ "$score" -lt "$best_score" ]]; then
+            best_path="$sanitized"
+            best_score="$score"
+        fi
+    done
+
+    printf '%s\n' "$best_path"
 }
 
 prune_stale_cached_logos() {
@@ -269,15 +421,17 @@ cache_logo_artifact() {
 
     if [[ "$ext" == "svg" ]]; then
         raster_output="${repo_name}-${content_hash}.png"
-        final_path="$LOGOS_DIR/$raster_output"
+        versioned_name="$raster_output"
+        final_path="$LOGOS_DIR/$versioned_name"
 
         if [[ ! -f "$final_path" ]]; then
             if rasterize_svg_logo "$temp_path" "$final_path"; then
+                rm -f "$temp_path"
                 LOGO_CACHE_CHANGED=1
             else
                 echo "Failed to rasterize SVG logo: $source_path (keeping original SVG)" >&2
-                final_path="${LOGOS_DIR}/${versioned_name}"
                 versioned_name="${repo_name}-${content_hash}.svg"
+                final_path="$LOGOS_DIR/$versioned_name"
                 if [[ ! -f "$final_path" ]]; then
                     mv "$temp_path" "$final_path"
                     LOGO_CACHE_CHANGED=1
@@ -288,8 +442,6 @@ cache_logo_artifact() {
         else
             rm -f "$temp_path"
         fi
-
-        versioned_name="$raster_output"
     else
         if [[ ! -f "$final_path" ]]; then
             mv "$temp_path" "$final_path"
@@ -402,53 +554,9 @@ find_logo_path_in_repo_tree() {
         return
     fi
 
-    printf '%s' "$tree_payload" | jq -r --arg repo "$repo_name" --arg preferred "$preferred_path" '
-        def canonical_basename:
-            split("/") | last | ascii_downcase;
-
-        def repo_names($repo):
-            ($repo | ascii_downcase) as $r |
-            [
-                $r + ".svg", $r + ".png", $r + ".jpg", $r + ".jpeg", $r + ".webp", $r + ".gif",
-                $r + "_logo.svg", $r + "_logo.png", $r + "_logo.jpg", $r + "_logo.jpeg", $r + "_logo.webp", $r + "_logo.gif",
-                $r + "-logo.svg", $r + "-logo.png", $r + "-logo.jpg", $r + "-logo.jpeg", $r + "-logo.webp", $r + "-logo.gif",
-                "logo.svg", "logo.png", "logo.jpg", "logo.jpeg", "logo.webp", "logo.gif"
-            ];
-
-        def in_common_dir:
-            ascii_downcase | test("(^|/)(assets|logo|logos|static/logo|static/logos|static|docs/_static|docs/static|doc/_static|doc/static|images|img)/");
-
-        def has_logo_hint:
-            ascii_downcase | test("logo");
-
-        def matches_repo_name($repo):
-            canonical_basename as $base |
-            repo_names($repo) | index($base) != null;
-
-        def relevant($repo; $preferred):
-            ($preferred != "" and ascii_downcase == ($preferred | ascii_downcase)) or
-            in_common_dir or
-            has_logo_hint or
-            matches_repo_name($repo);
-
-        def score($repo; $preferred):
-            (ascii_downcase) as $p |
-            (if ($preferred != "" and $p == ($preferred | ascii_downcase)) then -100
-             elif ($p | test("(^|/)(assets|logo|logos|static/logo|static/logos)/")) then 0
-             elif ($p | test("(^|/)(docs/_static|docs/static|doc/_static|doc/static|images|img)/")) then 6
-             elif ($p | test("(^|/)static/")) then 4
-             else 20 end)
-            + (if $p | test("logo") then -3 else 0 end)
-            + (if $p | test("\\.svg$") then -2 elif $p | test("\\.png$") then -1 else 0 end);
-
-        (.tree // [])
-        | map(select(.type == "blob"))
-        | map(.path | gsub("^\\./"; ""))
-        | map(select(test("\\.(svg|png|jpe?g|webp|gif)$"; "i")))
-        | map(select(relevant($repo; $preferred)))
-        | sort_by(score($repo; $preferred), .)
-        | .[0] // empty
-    '
+    printf '%s' "$tree_payload" \
+        | jq -r '.tree[]? | select(.type == "blob") | .path | gsub("^\\./"; "")' \
+        | select_logo_path_from_repo_tree_paths "$repo_name" "$preferred_path"
 }
 
 # Fetch and cache the authoritative logo from the repo default branch.

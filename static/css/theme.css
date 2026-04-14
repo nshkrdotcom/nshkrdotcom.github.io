@@ -338,6 +338,11 @@ img {
   width: 20px;
   height: 20px;
   border-radius: var(--radius-sm);
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  flex-shrink: 0;
 }
 
 .project-card-stars {
@@ -1211,6 +1216,10 @@ h6:hover .header-anchor {
   width: 14px;
   height: 14px;
   border-radius: 3px;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
   flex-shrink: 0;
 }
 
