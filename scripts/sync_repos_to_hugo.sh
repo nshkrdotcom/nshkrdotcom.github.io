@@ -61,6 +61,55 @@ hash_file() {
     return 1
 }
 
+rasterize_svg_logo() {
+    local input_path=$1
+    local output_path=$2
+    local converted=""
+    local rasterize_scale_expr
+    local rasterize_pad_expr
+
+    if [[ -z "$LOGO_RASTER_SIZE" || ! "$LOGO_RASTER_SIZE" =~ ^[0-9]+$ ]]; then
+        echo "Invalid LOGO_RASTER_SIZE: ${LOGO_RASTER_SIZE:-<unset>}" >&2
+        return 1
+    fi
+
+    rasterize_scale_expr="${LOGO_RASTER_SIZE}x${LOGO_RASTER_SIZE}:force_original_aspect_ratio=decrease"
+    rasterize_pad_expr="${LOGO_RASTER_SIZE}:${LOGO_RASTER_SIZE}:(ow-iw)/2:(oh-ih)/2:color=0x00000000"
+
+    if command -v rsvg-convert >/dev/null 2>&1; then
+        converted="$(mktemp "${output_path}.rsvg.XXXXXX.png")"
+        if rsvg-convert "$input_path" -w "$LOGO_RASTER_SIZE" -h "$LOGO_RASTER_SIZE" -o "$converted" >/dev/null 2>&1; then
+            mv "$converted" "$output_path"
+            return 0
+        fi
+        rm -f "$converted"
+    fi
+
+    if command -v convert >/dev/null 2>&1; then
+        converted="$(mktemp "${output_path}.imagemagick.XXXXXX.png")"
+        convert "$input_path" -background transparent -resize "${LOGO_RASTER_SIZE}x${LOGO_RASTER_SIZE}" "PNG32:$converted" >/dev/null 2>&1
+        if [[ -s "$converted" ]]; then
+            mv "$converted" "$output_path"
+            return 0
+        fi
+        rm -f "$converted"
+    fi
+
+    if command -v ffmpeg >/dev/null 2>&1; then
+        converted="$(mktemp "${output_path}.ffmpeg.XXXXXX.png")"
+        if ffmpeg -hide_banner -loglevel error -y -i "$input_path" \
+            -vf "scale=${rasterize_scale_expr},pad=${rasterize_pad_expr}" \
+            "$converted" >/dev/null 2>&1; then
+            mv "$converted" "$output_path"
+            return 0
+        fi
+        rm -f "$converted"
+    fi
+
+    echo "No SVG rasterization command available. Install ImageMagick, librsvg, or ffmpeg." >&2
+    return 1
+}
+
 normalize_logo_extension() {
     local source_path=${1,,}
 
@@ -205,10 +254,6 @@ cache_logo_artifact() {
     local versioned_name=""
     local final_path=""
     local raster_output=""
-    local rasterize_cmd=""
-
-    rasterize_cmd="convert"
-
     ext=$(normalize_logo_extension "$source_path") || {
         rm -f "$temp_path"
         return 1
@@ -227,19 +272,19 @@ cache_logo_artifact() {
         final_path="$LOGOS_DIR/$raster_output"
 
         if [[ ! -f "$final_path" ]]; then
-            if ! command -v "$rasterize_cmd" >/dev/null 2>&1; then
-                echo "Missing svg conversion command: $rasterize_cmd. Install ImageMagick." >&2
-                rm -f "$temp_path"
-                return 1
+            if rasterize_svg_logo "$temp_path" "$final_path"; then
+                LOGO_CACHE_CHANGED=1
+            else
+                echo "Failed to rasterize SVG logo: $source_path (keeping original SVG)" >&2
+                final_path="${LOGOS_DIR}/${versioned_name}"
+                versioned_name="${repo_name}-${content_hash}.svg"
+                if [[ ! -f "$final_path" ]]; then
+                    mv "$temp_path" "$final_path"
+                    LOGO_CACHE_CHANGED=1
+                else
+                    rm -f "$temp_path"
+                fi
             fi
-
-            "$rasterize_cmd" "$temp_path" -background transparent -resize "${LOGO_RASTER_SIZE}x${LOGO_RASTER_SIZE}" "PNG32:$final_path" \
-                >/dev/null 2>&1 || {
-                echo "Failed to rasterize SVG logo: $source_path" >&2
-                rm -f "$temp_path"
-                return 1
-            }
-            LOGO_CACHE_CHANGED=1
         else
             rm -f "$temp_path"
         fi

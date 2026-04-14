@@ -101,6 +101,36 @@ assert_exists "$LOGOS_DIR/$(basename "$changed_path")" "new hashed logo should e
 assert_not_exists "$LOGOS_DIR/$(basename "$same_path_first")" "stale hashed logo should be pruned after content changes"
 assert_file_count 1
 
+ffmpeg_stub_dir="$(mktemp -d)"
+cat > "$ffmpeg_stub_dir/convert" <<'SH'
+#!/bin/sh
+exit 1
+SH
+cat > "$ffmpeg_stub_dir/ffmpeg" <<'SH'
+#!/bin/sh
+output_path=""
+while [ "$#" -gt 0 ]; do
+    output_path="$1"
+    shift
+done
+printf '%s' 'fake-png' > "$output_path"
+exit 0
+SH
+chmod +x "$ffmpeg_stub_dir/convert" "$ffmpeg_stub_dir/ffmpeg"
+
+old_path="$PATH"
+PATH="$ffmpeg_stub_dir:$old_path"
+LOGO_RASTER_SIZE=64
+fallback_output="$(mktemp)"
+if ! rasterize_svg_logo "$logo_v1" "$fallback_output"; then
+    PATH="$old_path"
+    fail "rasterize_svg_logo should fall back to ffmpeg when convert fails"
+fi
+PATH="$old_path"
+assert_exists "$fallback_output" "rasterization fallback should create an output file"
+rm -f "$fallback_output"
+rm -rf "$ffmpeg_stub_dir"
+
 prune_stale_cached_logos "$repo_name"
 assert_file_count 0
 
