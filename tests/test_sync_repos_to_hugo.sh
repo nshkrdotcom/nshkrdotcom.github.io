@@ -90,6 +90,8 @@ logo_v2="$FIXTURES_DIR/logo-v2.svg"
 
 same_path_first=$(sync_fixture_logo "$repo_name" "$logo_v1")
 same_path_second=$(sync_fixture_logo "$repo_name" "$logo_v1")
+[[ "$same_path_first" == *.png ]] || fail "SVG source logos should be rasterized to PNG"
+[[ "$same_path_second" == *.png ]] || fail "SVG source logos should be rasterized to PNG"
 assert_eq "$same_path_first" "$same_path_second" "same source logo should reuse the hashed cache path"
 assert_file_count 1
 

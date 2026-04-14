@@ -23,7 +23,7 @@ This directory contains scripts that automatically:
 **What it does:**
 - Fetches live repo metadata from GitHub with topics and default branches
 - Resolves logos from remote `README.md` and `README.rst` references plus repo-tree fallbacks
-- Writes `data/repos.yml` and content-addressed assets in `static/logos/`
+- Rasterizes SVG logo inputs to PNG (`${LOGO_RASTER_SIZE}` default 64px) and writes them as content-addressed assets in `static/logos/`
 - Prunes stale cached logos when source assets change or disappear
 - Detects recent source-repo README/logo pushes on a short schedule so the heavy sync only runs when needed
 - Shows a summary by category and top repos by stars

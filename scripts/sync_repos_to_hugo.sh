@@ -17,6 +17,7 @@ USER_REPOS_FILE=""
 ORG_REPOS_FILE=""
 DATA_TMP_FILE=""
 LOGO_CACHE_CHANGED=0
+LOGO_RASTER_SIZE="${LOGO_RASTER_SIZE:-64}"
 
 source "$PROJECT_DIR/scripts/lib/nshkr_categories.sh"
 nshkr_load_category_config "$CATEGORY_CONFIG"
@@ -203,6 +204,10 @@ cache_logo_artifact() {
     local content_hash=""
     local versioned_name=""
     local final_path=""
+    local raster_output=""
+    local rasterize_cmd=""
+
+    rasterize_cmd="convert"
 
     ext=$(normalize_logo_extension "$source_path") || {
         rm -f "$temp_path"
@@ -217,11 +222,36 @@ cache_logo_artifact() {
     versioned_name="${repo_name}-${content_hash}.${ext}"
     final_path="$LOGOS_DIR/$versioned_name"
 
-    if [[ ! -f "$final_path" ]]; then
-        mv "$temp_path" "$final_path"
-        LOGO_CACHE_CHANGED=1
+    if [[ "$ext" == "svg" ]]; then
+        raster_output="${repo_name}-${content_hash}.png"
+        final_path="$LOGOS_DIR/$raster_output"
+
+        if [[ ! -f "$final_path" ]]; then
+            if ! command -v "$rasterize_cmd" >/dev/null 2>&1; then
+                echo "Missing svg conversion command: $rasterize_cmd. Install ImageMagick." >&2
+                rm -f "$temp_path"
+                return 1
+            fi
+
+            "$rasterize_cmd" "$temp_path" -background transparent -resize "${LOGO_RASTER_SIZE}x${LOGO_RASTER_SIZE}" "PNG32:$final_path" \
+                >/dev/null 2>&1 || {
+                echo "Failed to rasterize SVG logo: $source_path" >&2
+                rm -f "$temp_path"
+                return 1
+            }
+            LOGO_CACHE_CHANGED=1
+        else
+            rm -f "$temp_path"
+        fi
+
+        versioned_name="$raster_output"
     else
-        rm -f "$temp_path"
+        if [[ ! -f "$final_path" ]]; then
+            mv "$temp_path" "$final_path"
+            LOGO_CACHE_CHANGED=1
+        else
+            rm -f "$temp_path"
+        fi
     fi
 
     prune_stale_cached_logos "$repo_name" "$versioned_name"
