@@ -1,6 +1,6 @@
 baseURL = "https://NSHkr.com/"
 languageCode = "en-us"
-title = "NSHkr.com - North Shore Hackerspace"
+title = "NSHkr.com"
 publishDir = "public"
 theme = "mainroad"
 
@@ -30,7 +30,7 @@ summaryLength = 70
 
 [params]
   mermaid = true
-  description = "Hawaii's premier technology innovation hub developing ASKA security architecture and ChronoLedger blockchain"
+  description = "A governed execution platform for AI workloads on the BEAM — 87 open-source repositories spanning semantic reasoning, typed commands, and sandboxed execution under one governance contract."
   author = "North Shore Hackerspace"
   
 [taxonomies]

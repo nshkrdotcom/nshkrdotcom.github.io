@@ -1,30 +1,142 @@
 {{ define "main" }}
 
+{{ $totalRepos := 0 }}
+{{ $totalStars := 0 }}
+{{ range $name, $repo := $.Site.Data.repos.repos }}
+  {{ $totalRepos = add $totalRepos 1 }}
+  {{ $totalStars = add $totalStars (default 0 $repo.stars) }}
+{{ end }}
+
 <div class="container">
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1 class="hero-title">North Shore Hackerspace</h1>
-    <p class="hero-subtitle">Cultivating tomorrow's intelligent systems with island wisdom and BEAM excellence. Open-source AI/ML tools, security architecture, and blockchain innovation.</p>
+  <!-- =========================================================
+       HERO
+  ========================================================= -->
+  <section class="hero-v2">
+    <div class="hero-eyebrow">
+      <span class="badge">Elixir&nbsp;/&nbsp;OTP&nbsp;/&nbsp;BEAM &nbsp;·&nbsp; Open Source &nbsp;·&nbsp; {{ $totalRepos }} Repositories</span>
+    </div>
+    <h1 class="hero-title-v2">
+      Governed AI execution,<br class="hero-br">
+      <span class="hero-accent">layer by layer.</span>
+    </h1>
+    <p class="hero-subtitle-v2">
+      Every semantic turn, typed command, and external execution call passes through
+      a single Brain-to-Spine governance contract — built on Elixir/OTP for
+      production AI workloads that need fault tolerance, auditability, and scale.
+    </p>
     <div class="hero-actions">
-      <a href="https://github.com/nshkrdotcom" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a>
-      <a href="/blog/" class="btn">Blog</a>
+      <a href="https://github.com/nshkrdotcom" class="btn btn-primary" target="_blank" rel="noopener">GitHub &rarr;</a>
       <a href="/ecosystem/" class="btn">Ecosystem</a>
+      <a href="/blog/" class="btn">Blog</a>
     </div>
   </section>
 
-  <!-- Stats -->
-  {{ $totalRepos := 0 }}
-  {{ $totalStars := 0 }}
-  {{ $usedCats := dict }}
-  {{ range $name, $repo := $.Site.Data.repos.repos }}
-    {{ $totalRepos = add $totalRepos 1 }}
-    {{ $totalStars = add $totalStars (default 0 $repo.stars) }}
-    {{ if $repo.category }}
-      {{ $usedCats = merge $usedCats (dict $repo.category true) }}
-    {{ end }}
-  {{ end }}
-  {{ $totalCats := len $usedCats }}
+  <!-- =========================================================
+       ARCHITECTURE STACK
+  ========================================================= -->
+  <section class="arch-section">
+    <div class="arch-section-header">
+      <h2 class="arch-section-title">The Stack</h2>
+      <p class="arch-section-desc">Six layers. One contract. From product surface to raw execution substrate.</p>
+    </div>
+
+    <div class="arch-stack">
+
+      <div class="arch-layer" data-layer="product">
+        <div class="arch-layer-meta">
+          <span class="arch-layer-name">Products &amp; Shells</span>
+          <span class="arch-layer-role">northbound consumers</span>
+        </div>
+        <div class="arch-nodes">
+          <a href="https://github.com/nshkrdotcom/extravaganza" class="arch-node arch-node-highlight" target="_blank" rel="noopener" title="First proving product on the full stack">extravaganza</a>
+          <a href="https://github.com/nshkrdotcom/jido_hive" class="arch-node" target="_blank" rel="noopener">jido_hive</a>
+          <a href="https://github.com/nshkrdotcom/jido_code" class="arch-node" target="_blank" rel="noopener">jido_code</a>
+        </div>
+      </div>
+
+      <div class="arch-connector"></div>
+
+      <div class="arch-layer" data-layer="surface">
+        <div class="arch-layer-meta">
+          <span class="arch-layer-name">Northbound Surface</span>
+          <span class="arch-layer-role">product-facing entry</span>
+        </div>
+        <div class="arch-nodes">
+          <a href="https://github.com/nshkrdotcom/app_kit" class="arch-node" target="_blank" rel="noopener" title="Shared app-facing surface monorepo">app_kit</a>
+          <a href="https://github.com/nshkrdotcom/mezzanine" class="arch-node arch-node-highlight" target="_blank" rel="noopener" title="Universal business machine — operational-semantic engine">mezzanine</a>
+        </div>
+      </div>
+
+      <div class="arch-connector"></div>
+
+      <div class="arch-layer" data-layer="brain">
+        <div class="arch-layer-meta">
+          <span class="arch-layer-name">Brain Chain</span>
+          <span class="arch-layer-role">semantic → typed → governed</span>
+        </div>
+        <div class="arch-nodes">
+          <a href="https://github.com/nshkrdotcom/outer_brain" class="arch-node" target="_blank" rel="noopener" title="Semantic runtime: prompt shaping, context assembly, model routing">outer_brain</a>
+          <span class="arch-flow">&rarr;</span>
+          <a href="https://github.com/nshkrdotcom/Citadel" class="arch-node" target="_blank" rel="noopener" title="Brain kernel: policy compilation, authority shaping, execution governance">citadel</a>
+        </div>
+      </div>
+
+      <div class="arch-connector"></div>
+
+      <div class="arch-layer" data-layer="spine">
+        <div class="arch-layer-meta">
+          <span class="arch-layer-name">Spine</span>
+          <span class="arch-layer-role">durable intake · auth · control plane</span>
+        </div>
+        <div class="arch-nodes">
+          <a href="https://github.com/nshkrdotcom/jido_integration" class="arch-node" target="_blank" rel="noopener" title="Durable Brain-to-Spine intake, audit, and lower execution truth">jido_integration</a>
+        </div>
+      </div>
+
+      <div class="arch-connector"></div>
+
+      <div class="arch-layer" data-layer="exec">
+        <div class="arch-layer-meta">
+          <span class="arch-layer-name">Execution Substrate</span>
+          <span class="arch-layer-role">transport · placement · sandbox</span>
+        </div>
+        <div class="arch-nodes">
+          <a href="https://github.com/nshkrdotcom/execution_plane" class="arch-node" target="_blank" rel="noopener">execution_plane</a>
+          <span class="arch-sep"></span>
+          <a href="https://github.com/nshkrdotcom/pristine" class="arch-node" target="_blank" rel="noopener">pristine</a>
+          <a href="https://github.com/nshkrdotcom/snakepit" class="arch-node" target="_blank" rel="noopener">snakepit</a>
+          <a href="https://github.com/nshkrdotcom/DSPex" class="arch-node" target="_blank" rel="noopener">DSPex</a>
+          <a href="https://github.com/nshkrdotcom/cli_subprocess_core" class="arch-node" target="_blank" rel="noopener">cli_subprocess_core</a>
+        </div>
+      </div>
+
+      <div class="arch-connector"></div>
+
+      <div class="arch-layer" data-layer="foundation">
+        <div class="arch-layer-meta">
+          <span class="arch-layer-name">Foundation</span>
+          <span class="arch-layer-role">ids · fences · leases · checkpoints</span>
+        </div>
+        <div class="arch-nodes">
+          <a href="https://github.com/nshkrdotcom/ground_plane" class="arch-node" target="_blank" rel="noopener" title="Foundational substrate: shared primitives for the entire universal core">ground_plane</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="arch-ops-row">
+      <span class="arch-ops-label">Operator &amp; Proof</span>
+      <a href="https://github.com/nshkrdotcom/switchyard" class="arch-node" target="_blank" rel="noopener">switchyard</a>
+      <a href="https://github.com/nshkrdotcom/stack_lab" class="arch-node" target="_blank" rel="noopener">stack_lab</a>
+      <a href="https://github.com/nshkrdotcom/AITrace" class="arch-node" target="_blank" rel="noopener">AITrace</a>
+      <a href="https://github.com/nshkrdotcom/ElixirScope" class="arch-node" target="_blank" rel="noopener">ElixirScope</a>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       STATS
+  ========================================================= -->
   <div class="stats-bar">
     <div class="stat">
       <div class="stat-value">{{ $totalRepos }}</div>
@@ -32,57 +144,85 @@
     </div>
     <div class="stat">
       <div class="stat-value">{{ $totalStars }}</div>
-      <div class="stat-label">Stars</div>
+      <div class="stat-label">GitHub Stars</div>
     </div>
     <div class="stat">
-      <div class="stat-value">{{ $totalCats }}</div>
-      <div class="stat-label">Categories</div>
+      <div class="stat-value">6</div>
+      <div class="stat-label">Architecture Layers</div>
     </div>
     <div class="stat">
       <div class="stat-value">&lt;100ms</div>
-      <div class="stat-label">p99 Latency</div>
+      <div class="stat-label">p99 Latency Target</div>
     </div>
   </div>
 
-  <!-- Project Grid by Category -->
-  {{ $catList := slice }}
-  {{ range $slug, $info := $.Site.Data.repos.categories }}
-    {{ $catList = $catList | append (dict "slug" $slug "name" $info.name "weight" (default 999 $info.weight)) }}
-  {{ end }}
-  {{ range $catInfo := sort $catList "weight" }}
-    {{ $catSlug := $catInfo.slug }}
-    {{ $catRepos := slice }}
-    {{ range $name, $repo := $.Site.Data.repos.repos }}
-      {{ if eq $repo.category $catSlug }}
-        {{ $catRepos = $catRepos | append $repo }}
+  <!-- =========================================================
+       PRINCIPLES
+  ========================================================= -->
+  <section class="principles-section">
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="principle-marker" style="background:#3b82f6"></div>
+        <h3 class="principle-title">Governance before execution</h3>
+        <p class="principle-desc">Every semantic turn and typed command passes through a shared Brain-to-Spine governance chain before reaching the execution substrate. Nothing bypasses the contract.</p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-marker" style="background:#10b981"></div>
+        <h3 class="principle-title">BEAM-native reliability</h3>
+        <p class="principle-desc">Processes exist where recovery genuinely requires them. Pure compilers, reducers, and validators are proved before OTP claims ownership. Fault tolerance is structural.</p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-marker" style="background:#6366f1"></div>
+        <h3 class="principle-title">Explicit ownership boundaries</h3>
+        <p class="principle-desc">Each layer owns specific truth and explicitly does not own what belongs above or below it. Telemetry, audit trails, and debugging tools are first-class platform concerns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       COMPACT REPO GRID BY CATEGORY
+  ========================================================= -->
+  <section class="repos-section">
+    <div class="repos-section-header">
+      <h2 class="repos-section-title">All Repositories</h2>
+      <a href="https://github.com/nshkrdotcom" class="repos-section-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+    </div>
+
+    {{ $catList := slice }}
+    {{ range $slug, $info := $.Site.Data.repos.categories }}
+      {{ $catList = $catList | append (dict "slug" $slug "name" $info.name "weight" (default 999 $info.weight)) }}
+    {{ end }}
+
+    {{ range $catInfo := sort $catList "weight" }}
+      {{ $catSlug := $catInfo.slug }}
+      {{ $catRepos := slice }}
+      {{ range $name, $repo := $.Site.Data.repos.repos }}
+        {{ if eq $repo.category $catSlug }}
+          {{ $catRepos = $catRepos | append $repo }}
+        {{ end }}
+      {{ end }}
+
+      {{ if gt (len $catRepos) 0 }}
+        {{ $catRepos = sort $catRepos "stars" "desc" }}
+        <div class="repo-cat">
+          <div class="repo-cat-header">
+            <span class="repo-cat-name">{{ $catInfo.name }}</span>
+            <span class="repo-cat-count">{{ len $catRepos }}</span>
+          </div>
+          <div class="repo-compact-grid">
+            {{ range $catRepos }}
+            <a href="{{ .url }}" class="repo-chip" target="_blank" rel="noopener">
+              {{ if .logo }}<img src="{{ .logo }}" alt="" class="repo-chip-logo">{{ end }}
+              <span class="repo-chip-name">{{ .name }}</span>
+              <span class="repo-chip-desc">{{ .description | truncate 55 }}</span>
+              {{ if gt .stars 0 }}<span class="repo-chip-stars">★&nbsp;{{ .stars }}</span>{{ end }}
+            </a>
+            {{ end }}
+          </div>
+        </div>
       {{ end }}
     {{ end }}
-
-    {{ if gt (len $catRepos) 0 }}
-      {{ $catRepos = sort $catRepos "stars" "desc" }}
-
-      <section class="section">
-        <h2 class="section-title">{{ $catInfo.name }}</h2>
-
-        {{ if eq $catSlug "nshkr-crucible" }}
-        <p class="section-subtitle">A platform for conducting reproducible experiments on large language model reliability, built on Elixir/OTP.</p>
-        <div class="tech-stack">
-          <span class="tech-tag">Elixir</span>
-          <span class="tech-tag">OTP</span>
-          <span class="tech-tag">BEAM VM</span>
-          <span class="tech-tag">Statistical Testing</span>
-          <span class="tech-tag">Ensemble Methods</span>
-        </div>
-        {{ end }}
-
-        <div class="projects-grid">
-          {{ range $repo := $catRepos }}
-            {{ partial "project-card.html" $repo }}
-          {{ end }}
-        </div>
-      </section>
-    {{ end }}
-  {{ end }}
+  </section>
 
 </div>
 {{ end }}

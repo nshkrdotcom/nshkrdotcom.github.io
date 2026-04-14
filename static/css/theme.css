@@ -883,6 +883,402 @@ h6:hover .header-anchor {
 .mb-md { margin-bottom: var(--space-md); }
 .mb-lg { margin-bottom: var(--space-lg); }
 
+/* =============================================================
+   HOMEPAGE v2 — Architecture Stack + Compact Repos
+   ============================================================= */
+
+/* Hero v2 */
+.hero-v2 {
+  padding: var(--space-3xl) 0 var(--space-2xl);
+  text-align: center;
+}
+
+.hero-eyebrow {
+  margin-bottom: var(--space-lg);
+}
+
+.hero-title-v2 {
+  font-size: clamp(2.4rem, 6vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+}
+
+.hero-accent {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle-v2 {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+  line-height: 1.65;
+}
+
+/* Architecture Section */
+.arch-section {
+  margin: var(--space-xl) auto var(--space-3xl);
+  max-width: 860px;
+}
+
+.arch-section-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.arch-section-title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-sm);
+}
+
+.arch-section-desc {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* Stack */
+.arch-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.arch-layer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: 12px var(--space-lg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.arch-layer:hover {
+  background: var(--bg-tertiary);
+}
+
+/* Layer accent borders */
+.arch-layer[data-layer="product"]    { border-left: 3px solid #f59e0b; }
+.arch-layer[data-layer="surface"]    { border-left: 3px solid #6366f1; }
+.arch-layer[data-layer="brain"]      { border-left: 3px solid #3b82f6; }
+.arch-layer[data-layer="spine"]      { border-left: 3px solid #10b981; }
+.arch-layer[data-layer="exec"]       { border-left: 3px solid #f43f5e; }
+.arch-layer[data-layer="foundation"] { border-left: 3px solid #6b7280; }
+
+.arch-layer-meta {
+  min-width: 190px;
+  flex-shrink: 0;
+}
+
+.arch-layer-name {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.arch-layer-role {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-top: 2px;
+  letter-spacing: 0.01em;
+}
+
+.arch-nodes {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Nodes (shared with arch-ops-row) */
+.arch-node {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.2em 0.55em;
+  text-decoration: none;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.arch-node:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+.arch-node-highlight {
+  border-color: rgba(99, 102, 241, 0.45);
+  color: #a5b4fc;
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.arch-node-highlight:hover {
+  border-color: #6366f1;
+  color: #c7d2fe;
+  background: rgba(99, 102, 241, 0.15);
+}
+
+.arch-flow {
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  padding: 0 2px;
+}
+
+.arch-sep {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 2px;
+}
+
+/* Connector line between layers */
+.arch-connector {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+/* Operator surfaces row below stack */
+.arch-ops-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+  padding: 10px var(--space-lg);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+}
+
+.arch-ops-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-right: var(--space-xs);
+  flex-shrink: 0;
+}
+
+/* Principles */
+.principles-section {
+  margin: var(--space-3xl) 0;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.principle-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.principle-marker {
+  width: 36px;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: var(--space-lg);
+}
+
+.principle-title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.01em;
+}
+
+.principle-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Repos Section */
+.repos-section {
+  margin-top: var(--space-3xl);
+}
+
+.repos-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.repos-section-title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.repos-section-link {
+  font-size: var(--text-sm);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.repos-section-link:hover {
+  color: var(--accent-hover);
+}
+
+/* Per-category block */
+.repo-cat {
+  margin-bottom: var(--space-2xl);
+}
+
+.repo-cat-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.repo-cat-name {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.repo-cat-count {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  padding: 0.1em 0.55em;
+}
+
+/* Compact grid */
+.repo-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 4px;
+}
+
+.repo-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 7px var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.repo-chip:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-tertiary);
+}
+
+.repo-chip-logo {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.repo-chip-name {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.repo-chip-desc {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.repo-chip-stars {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-left: auto;
+  padding-left: var(--space-sm);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .arch-layer-meta {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 700px) {
+  .arch-layer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .arch-layer-meta {
+    min-width: unset;
+  }
+
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .repo-compact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .repo-compact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .repos-section-header {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}
+
 /* --- Print --- */
 @media print {
   .site-header,
