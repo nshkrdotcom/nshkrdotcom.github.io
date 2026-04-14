@@ -319,7 +319,7 @@ END OF AI INSTRUCTIONS
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
 
 <!-- Styles -->
-<link rel="stylesheet" href="/css/theme.css">
+<link rel="stylesheet" href="{{ "/css/theme.css" | relURL }}?v={{ now.Unix }}">
 
 <!-- Mermaid -->
 {{ if .Site.Params.mermaid }}
