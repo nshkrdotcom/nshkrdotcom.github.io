@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-14T20:03:05Z
+# Last updated: 2026-04-16T05:53:24Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -1262,14 +1262,14 @@ repos:
     logo: "/logos/AITrace-d9fefd307bd6.png"
     language: "Elixir"
 
-  Citadel:
-    name: "Citadel"
+  citadel:
+    name: "citadel"
     org: "nshkrdotcom"
     stars: 1
     category: "nshkr-observability"
     description: "The command and control layer for the AI-powered enterprise"
-    url: "https://github.com/nshkrdotcom/Citadel"
-    logo: "/logos/Citadel-f3e326f3bcc0.png"
+    url: "https://github.com/nshkrdotcom/citadel"
+    logo: "/logos/citadel-f3e326f3bcc0.png"
     language: "Elixir"
 
   telemetry_reporter:
@@ -1454,7 +1454,7 @@ repos:
   nshkrdotcom:
     name: "nshkrdotcom"
     org: "nshkrdotcom"
-    stars: 0
+    stars: 1
     category: "uncategorized"
     description: "Personal GitHub profile README with Elixir/AI projects and LLM reliability research"
     url: "https://github.com/nshkrdotcom/nshkrdotcom"
