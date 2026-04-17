@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-16T05:53:24Z
+# Last updated: 2026-04-17T19:15:00Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -447,6 +447,15 @@ repos:
     logo: "/logos/ALTAR-87496d8f2dba.png"
     language: "Elixir"
 
+  mabeam:
+    name: "mabeam"
+    org: "nshkrdotcom"
+    stars: 8
+    category: "nshkr-ai-agents"
+    description: "Multi-agent systems framework for the BEAM platform - build distributed autonomous agents with OTP supervision and fault tolerance"
+    url: "https://github.com/nshkrdotcom/mabeam"
+    language: "Elixir"
+
   pipeline_ex:
     name: "pipeline_ex"
     org: "nshkrdotcom"
@@ -455,15 +464,6 @@ repos:
     description: "Claude Code + Gemini AI collaboration orchestration tools"
     url: "https://github.com/nshkrdotcom/pipeline_ex"
     logo: "/logos/pipeline_ex-e00e38ab78a2.png"
-    language: "Elixir"
-
-  mabeam:
-    name: "mabeam"
-    org: "nshkrdotcom"
-    stars: 7
-    category: "nshkr-ai-agents"
-    description: "Multi-agent systems framework for the BEAM platform - build distributed autonomous agents with OTP supervision and fault tolerance"
-    url: "https://github.com/nshkrdotcom/mabeam"
     language: "Elixir"
 
   jido_hive:
@@ -513,7 +513,7 @@ repos:
     category: "nshkr-ai-agents"
     description: "Neutral high-level reusable monorepo for the nshkr stack: Ash-driven business semantics, configurable workflow machinery, operational state models, and reusable application logic above AppKit and below proving-ground products, built to run global AI operations across distributed clusters through pure effects projected to execution_plane."
     url: "https://github.com/nshkrdotcom/mezzanine"
-    logo: "/logos/mezzanine-d275db8996a1.png"
+    logo: "/logos/mezzanine-d7b1a690674b.png"
     language: "Elixir"
 
   gemini_ex:
@@ -715,7 +715,7 @@ repos:
   json_remedy:
     name: "json_remedy"
     org: "nshkrdotcom"
-    stars: 30
+    stars: 31
     category: "nshkr-ai-infra"
     description: "A practical, multi-layered JSON repair library for Elixir that intelligently fixes malformed JSON strings commonly produced by LLMs, legacy systems, and data pipelines."
     url: "https://github.com/nshkrdotcom/json_remedy"
@@ -889,7 +889,7 @@ repos:
     category: "nshkr-ai-infra"
     description: "Shared app-facing surface monorepo for the nshkr platform core: composition, wiring, host-facing surfaces, default bridges across outer_brain, Citadel, jido_integration, and read-model publication, with a stable entrypoint for product applications that should not stitch the lower stack manually."
     url: "https://github.com/nshkrdotcom/app_kit"
-    logo: "/logos/app_kit-c0da936d01d0.png"
+    logo: "/logos/app_kit-f06049bd7f28.png"
     language: "Elixir"
 
   ground_plane:
@@ -929,7 +929,7 @@ repos:
     category: "nshkr-ai-infra"
     description: "Semantic runtime above Citadel for raw language intake, context assembly, model orchestration, semantic journaling, reply publication, and restart-safe intent synthesis into structured policy decisions across the stack."
     url: "https://github.com/nshkrdotcom/outer_brain"
-    logo: "/logos/outer_brain-c4fd13797cb7.png"
+    logo: "/logos/outer_brain-2b20d430b9d7.png"
     language: "Elixir"
 
   portfolio_index:
@@ -1039,7 +1039,7 @@ repos:
   dexterity:
     name: "dexterity"
     org: "nshkrdotcom"
-    stars: 3
+    stars: 4
     category: "nshkr-devtools"
     description: "Code Intelligence: Token-budgeted codebase context for Elixir agents. Solves context window limitations by providing a deterministic Elixir semantic graph and agent-ready Repo Map for LLMs."
     url: "https://github.com/nshkrdotcom/dexterity"
@@ -1269,7 +1269,7 @@ repos:
     category: "nshkr-observability"
     description: "The command and control layer for the AI-powered enterprise"
     url: "https://github.com/nshkrdotcom/citadel"
-    logo: "/logos/citadel-f3e326f3bcc0.png"
+    logo: "/logos/citadel-66073b945998.png"
     language: "Elixir"
 
   telemetry_reporter:
