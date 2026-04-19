@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-19T07:48:28Z
+# Last updated: 2026-04-19T23:22:26Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -630,6 +630,16 @@ repos:
     logo: "/logos/mcp_client-ecfb1d5e78aa.png"
     language: "Elixir"
 
+  vllm:
+    name: "vllm"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-sdk"
+    description: "vLLM - High-throughput, memory-efficient LLM inference engine with PagedAttention, continuous batching, CUDA/HIP optimization, quantization (GPTQ/AWQ/INT4/INT8/FP8), tensor/pipeline parallelism, OpenAI-compatible API, multi-GPU/TPU/Neuron support, prefix caching, and multi-LoRA capabilities"
+    url: "https://github.com/nshkrdotcom/vllm"
+    logo: "/logos/vllm-ef207e49acb9.png"
+    language: "Elixir"
+
   cli_subprocess_core:
     name: "cli_subprocess_core"
     org: "nshkrdotcom"
@@ -704,16 +714,6 @@ repos:
     description: "Core Elixir primitives for building reliable self-hosted inference clients, provider adapters, transport boundaries, and operational controls for private AI runtimes across local, edge, and dedicated infrastructure."
     url: "https://github.com/nshkrdotcom/self_hosted_inference_core"
     logo: "/logos/self_hosted_inference_core-7d2620d76b75.png"
-    language: "Elixir"
-
-  vllm:
-    name: "vllm"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-sdk"
-    description: "vLLM - High-throughput, memory-efficient LLM inference engine with PagedAttention, continuous batching, CUDA/HIP optimization, quantization (GPTQ/AWQ/INT4/INT8/FP8), tensor/pipeline parallelism, OpenAI-compatible API, multi-GPU/TPU/Neuron support, prefix caching, and multi-LoRA capabilities"
-    url: "https://github.com/nshkrdotcom/vllm"
-    logo: "/logos/vllm-ef207e49acb9.png"
     language: "Elixir"
 
   json_remedy:
