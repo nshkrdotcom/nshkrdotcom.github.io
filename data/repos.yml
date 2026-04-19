@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-17T19:15:00Z
+# Last updated: 2026-04-19T07:48:28Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -86,6 +86,10 @@ categories:
     name: "Utilities"
     slug: "nshkr-utility"
     weight: 19
+  nshkr-devools:
+    name: "Devools"
+    slug: "nshkr-devools"
+    weight: 20
   uncategorized:
     name: "Other Projects"
     slug: "uncategorized"
@@ -735,7 +739,7 @@ repos:
   rag_ex:
     name: "rag_ex"
     org: "nshkrdotcom"
-    stars: 7
+    stars: 8
     category: "nshkr-ai-infra"
     description: "Elixir RAG library with multi-LLM routing (Gemini, Claude, OpenAI, Ollama), GraphRAG, knowledge graphs, modular retrievers/rerankers, composable pipelines, pgvector integration, advanced chunking, and tool-using agents. Fork of bitcrowd/rag."
     url: "https://github.com/nshkrdotcom/rag_ex"
@@ -1449,6 +1453,16 @@ repos:
     description: "Elixir port of OpenAI's chz library - a powerful configuration management system for building composable, type-safe command-line interfaces with hierarchical configuration, environment variable support, and flexible argument parsing"
     url: "https://github.com/North-Shore-AI/chz_ex"
     logo: "/logos/chz_ex-dfd96fa87a0c.png"
+    language: "Elixir"
+
+  alkahest:
+    name: "alkahest"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-devools"
+    description: "Reusable Temporal facade, typed workflow-control contracts, Elixir client, and official-SDK gateway/worker substrate for durable distributed agentic systems."
+    url: "https://github.com/nshkrdotcom/alkahest"
+    logo: "/logos/alkahest-779faaa7deda.png"
     language: "Elixir"
 
   nshkrdotcom:
