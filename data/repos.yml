@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-21T04:22:52Z
+# Last updated: 2026-04-23T20:58:47Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -425,7 +425,7 @@ repos:
   DSPex:
     name: "DSPex"
     org: "nshkrdotcom"
-    stars: 17
+    stars: 18
     category: "nshkr-ai-agents"
     description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
     url: "https://github.com/nshkrdotcom/DSPex"
@@ -1153,7 +1153,7 @@ repos:
   switchyard:
     name: "switchyard"
     org: "nshkrdotcom"
-    stars: 0
+    stars: 1
     category: "nshkr-ui"
     description: "Terminal-native operator workbench monorepo for multi-site terminal applications, local control-plane orchestration, daemon-backed process and log management, and pluggable domain sites such as Jido Hive, built as a non-umbrella Elixir workspace with Blitz and Weld."
     url: "https://github.com/nshkrdotcom/switchyard"
