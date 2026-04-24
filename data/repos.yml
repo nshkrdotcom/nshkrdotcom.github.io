@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-23T21:54:18Z
+# Last updated: 2026-04-24T03:51:35Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -1283,6 +1283,7 @@ repos:
     category: "nshkr-observability"
     description: "Pachka-powered telemetry reporter for Elixir that batches client-side events, supports pluggable transports and :telemetry forwarding, and drains reliably on shutdown."
     url: "https://github.com/nshkrdotcom/telemetry_reporter"
+    logo: "/logos/telemetry_reporter-7e4cbed5043d.png"
     language: "Elixir"
 
   lineage_ir:
