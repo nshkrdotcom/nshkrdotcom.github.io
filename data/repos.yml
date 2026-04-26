@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-25T05:29:47Z
+# Last updated: 2026-04-26T07:52:50Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -1349,7 +1349,7 @@ repos:
   GUARDRAIL:
     name: "GUARDRAIL"
     org: "nshkrdotcom"
-    stars: 18
+    stars: 17
     category: "nshkr-security"
     description: "GUARDRAIL - MCP Security - Gateway for Unified Access, Resource Delegation, and Risk-Attenuating Information Limits"
     url: "https://github.com/nshkrdotcom/GUARDRAIL"
@@ -1395,6 +1395,16 @@ repos:
     description: "Chiral Narrative Synthesis - Dialectical reasoning framework for automated knowledge discovery"
     url: "https://github.com/North-Shore-AI/cns"
     logo: "/logos/cns-bcea811574ff.png"
+    language: "Elixir"
+
+  trinity_coordinator:
+    name: "trinity_coordinator"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-research"
+    description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
+    url: "https://github.com/nshkrdotcom/trinity_coordinator"
+    logo: "/logos/trinity_coordinator-dddf04d0d5d8.png"
     language: "Elixir"
 
   EADS:
