@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-26T19:13:03Z
+# Last updated: 2026-04-28T20:23:15Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -520,6 +520,16 @@ repos:
     logo: "/logos/mezzanine-d7b1a690674b.png"
     language: "Elixir"
 
+  stack_coder:
+    name: "stack_coder"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-agents"
+    description: "An advanced Elixir-based AI coding agent focused on full-stack code generation, orchestration, and intelligent source code management."
+    url: "https://github.com/nshkrdotcom/stack_coder"
+    logo: "/logos/stack_coder-006ce79aea5d.png"
+    language: "Elixir"
+
   gemini_ex:
     name: "gemini_ex"
     org: "nshkrdotcom"
@@ -739,7 +749,7 @@ repos:
   rag_ex:
     name: "rag_ex"
     org: "nshkrdotcom"
-    stars: 8
+    stars: 9
     category: "nshkr-ai-infra"
     description: "Elixir RAG library with multi-LLM routing (Gemini, Claude, OpenAI, Ollama), GraphRAG, knowledge graphs, modular retrievers/rerankers, composable pipelines, pgvector integration, advanced chunking, and tool-using agents. Fork of bitcrowd/rag."
     url: "https://github.com/nshkrdotcom/rag_ex"
@@ -1053,7 +1063,7 @@ repos:
   elixir_dashboard:
     name: "elixir_dashboard"
     org: "nshkrdotcom"
-    stars: 2
+    stars: 3
     category: "nshkr-devtools"
     description: "A Phoenix LiveView performance monitoring dashboard for tracking slow endpoints and database queries"
     url: "https://github.com/nshkrdotcom/elixir_dashboard"
