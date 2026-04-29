@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-29T04:25:45Z
+# Last updated: 2026-04-29T21:00:29Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -125,6 +125,16 @@ repos:
     url: "https://github.com/North-Shore-AI/crucible_examples"
     language: "Elixir"
 
+  crucible_harness:
+    name: "crucible_harness"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-crucible"
+    description: "Experimental research framework for running AI benchmarks at scale"
+    url: "https://github.com/North-Shore-AI/crucible_harness"
+    logo: "/logos/crucible_harness-cd3e5b6957cf.png"
+    language: "Elixir"
+
   ExDataCheck:
     name: "ExDataCheck"
     org: "North-Shore-AI"
@@ -212,16 +222,6 @@ repos:
     description: "CrucibleFramework: A scientific platform for LLM reliability research on the BEAM"
     url: "https://github.com/North-Shore-AI/crucible_framework"
     logo: "/logos/crucible_framework-0e407eee509f.png"
-    language: "Elixir"
-
-  crucible_harness:
-    name: "crucible_harness"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Experimental research framework for running AI benchmarks at scale"
-    url: "https://github.com/North-Shore-AI/crucible_harness"
-    logo: "/logos/crucible_harness-cd3e5b6957cf.png"
     language: "Elixir"
 
   crucible_hedging:
