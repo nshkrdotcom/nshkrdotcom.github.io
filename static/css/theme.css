@@ -547,7 +547,7 @@ samp {
 .hero-v2::before {
   content: "";
   position: absolute;
-  inset: -120px -40px auto;
+  inset: -120px 0 auto;
   height: min(680px, 70vh);
   z-index: -1;
   background:
