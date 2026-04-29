@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-28T20:23:15Z
+# Last updated: 2026-04-29T04:25:45Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -766,6 +766,16 @@ repos:
     logo: "/logos/snakebridge-08fcb18b3b24.png"
     language: "Elixir"
 
+  gepa_ex:
+    name: "gepa_ex"
+    org: "nshkrdotcom"
+    stars: 3
+    category: "nshkr-ai-infra"
+    description: "Elixir implementation of GEPA: LLM-driven evolutionary optimization using Pareto-efficient search for text-based systems. Features OpenAI/Gemini integration, BEAM concurrency, OTP supervision, 218 tests with 75% coverage."
+    url: "https://github.com/nshkrdotcom/gepa_ex"
+    logo: "/logos/gepa_ex-45d10cfb1445.png"
+    language: "Elixir"
+
   tinkex_cookbook:
     name: "tinkex_cookbook"
     org: "North-Shore-AI"
@@ -774,16 +784,6 @@ repos:
     description: "Elixir port of tinker-cookbook: training and evaluation recipes for the Tinker ML platform."
     url: "https://github.com/North-Shore-AI/tinkex_cookbook"
     logo: "/logos/tinkex_cookbook-58e5645d1d9e.png"
-    language: "Elixir"
-
-  gepa_ex:
-    name: "gepa_ex"
-    org: "nshkrdotcom"
-    stars: 2
-    category: "nshkr-ai-infra"
-    description: "Elixir implementation of GEPA: LLM-driven evolutionary optimization using Pareto-efficient search for text-based systems. Features OpenAI/Gemini integration, BEAM concurrency, OTP supervision, 218 tests with 75% coverage."
-    url: "https://github.com/nshkrdotcom/gepa_ex"
-    logo: "/logos/gepa_ex-45d10cfb1445.png"
     language: "Elixir"
 
   portfolio_core:
@@ -935,6 +935,16 @@ repos:
     url: "https://github.com/North-Shore-AI/hf_peft_ex"
     logo: "/logos/hf_peft_ex-ff42582b12a9.png"
     language: "Jupyter Notebook"
+
+  inference:
+    name: "inference"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Reusable Elixir semantic inference contracts, adapters, trace metadata, and conformance tests for local CLI agents, hosted model SDKs, and governed nshkr runtime integration."
+    url: "https://github.com/nshkrdotcom/inference"
+    logo: "/logos/inference-03f811fa5bca.png"
+    language: "Elixir"
 
   outer_brain:
     name: "outer_brain"
