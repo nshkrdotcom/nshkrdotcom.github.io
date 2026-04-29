@@ -3,7 +3,7 @@ title: "New Site Theme: Darker, Sharper, More Honest"
 date: 2026-04-28
 draft: false
 tags: ["website", "design", "governed-execution", "platform"]
-summary: "A redesign of NSHkr.com around the real shape of the stack: typed boundaries, durable execution truth, operator proof, and a few things the gremlins say not to name yet."
+summary: "A redesign of NSHkr.com around the real shape of the stack: typed boundaries, durable execution truth, operator proof, and a few things the goblins say not to name yet."
 ---
 
 ## New paint, less pretending
@@ -66,7 +66,7 @@ architecture packet had a quiet meeting and agreed not to embarrass each other.
 
 There are a few names we are not supposed to say too loudly yet.
 
-The gremlins in the build room have made their position clear: do not stand on
+The goblins in the build room have made their position clear: do not stand on
 the table, do not announce the whole machine before the bolts are tightened, and
 do not use the phrase that makes people imagine a slide deck with too many
 logos.
@@ -149,4 +149,4 @@ intent becomes effect. The names will get louder later. For now, the site has
 the right posture: dark, precise, a little severe, and full of small hints that
 something larger is being assembled behind the panels.
 
-If the gremlins ask, this was only a CSS update.
+If the goblins ask, this was only a CSS update.
