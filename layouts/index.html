@@ -14,57 +14,94 @@
   ========================================================= -->
   <section class="hero-v2">
     <div class="hero-eyebrow">
-      <span class="badge">Elixir&nbsp;/&nbsp;OTP&nbsp;/&nbsp;BEAM &nbsp;·&nbsp; Open Source &nbsp;·&nbsp; {{ $totalRepos }} Repositories</span>
+      <span class="badge">Elixir&nbsp;/&nbsp;OTP&nbsp;/&nbsp;BEAM &nbsp;·&nbsp; Open Source &nbsp;·&nbsp; governed execution stack</span>
     </div>
     <h1 class="hero-title-v2">
-      Governed AI execution,<br class="hero-br">
-      <span class="hero-accent">layer by layer.</span>
+      Governed AI execution<br class="hero-br">
+      <span class="hero-accent">as a typed platform stack.</span>
     </h1>
     <p class="hero-subtitle-v2">
-      Every semantic turn, typed command, and external execution call passes through
-      a single Brain-to-Spine governance contract — built on Elixir/OTP for
-      production AI workloads that need fault tolerance, auditability, and scale.
+      The system is split by ownership. <code>app_kit</code> is the product
+      boundary and northbound API. <code>mezzanine</code> owns reusable
+      operational truth: packs, lifecycle, execution, decisions, evidence,
+      projections, reviews, archival posture, and Temporal handoff.
+      <code>outer_brain</code> owns semantic context and memory recall.
+      <code>citadel</code> owns authority, policy, and governance compilation.
+      <code>jido_integration</code> is the durable Spine for Brain ingress,
+      lower facts, leases, review truth, and connector admission.
+      <code>execution_plane</code> is the hazmat layer for raw runtime mechanics.
     </p>
     <div class="hero-actions">
       <a href="https://github.com/nshkrdotcom" class="btn btn-primary" target="_blank" rel="noopener">GitHub &rarr;</a>
       <a href="/ecosystem/" class="btn">Ecosystem</a>
-      <a href="/blog/" class="btn">Blog</a>
+      <a href="/blog/" class="btn">Docs</a>
     </div>
   </section>
 
   <!-- =========================================================
-       ARCHITECTURE STACK
+       TECHNICAL DEEP DIVE
   ========================================================= -->
   <section class="arch-section">
     <div class="arch-section-header">
-      <h2 class="arch-section-title">The Stack</h2>
-      <p class="arch-section-desc">Six layers. One contract. From product surface to raw execution substrate.</p>
+      <h2 class="arch-section-title">Technical deep dive</h2>
+      <p class="arch-section-desc">
+        The stack is not a loose brand diagram. It is a set of typed handoffs,
+        durability boundaries, and proof surfaces. Product code does not stitch
+        lower services together directly. It enters through AppKit, which
+        exposes stable DTOs and governed surfaces. Mezzanine turns product
+        intent into substrate records. Brain-side packages shape semantic
+        meaning and authority. The Spine accepts or rejects lower work, records
+        facts, and mediates reads. Execution Plane performs raw effects behind
+        explicit receipts. Stack Lab, AITrace, release manifests, schema
+        registries, and no-bypass scans provide the proof surface.
+      </p>
     </div>
 
     <div class="arch-stack">
 
-      <div class="arch-layer" data-layer="product">
+      <div class="arch-layer" data-layer="appkit">
         <div class="arch-layer-meta">
-          <span class="arch-layer-name">Products &amp; Shells</span>
-          <span class="arch-layer-role">northbound consumers</span>
+          <span class="arch-layer-name">AppKit boundary</span>
+          <span class="arch-layer-role">product-facing entry, stable DTOs, no-bypass enforcement</span>
         </div>
+        <p class="arch-layer-desc">
+          <code>app_kit</code> is the workspace product code is allowed to touch
+          for governed platform behavior. It carries chat, typed domain,
+          operator, work-control, runtime gateway, review, installation,
+          semantic assist, trace lookup, and leased lower-read surfaces. It is
+          also the enforcement point: product and hazmat scanner profiles reject
+          direct imports into Mezzanine runtime services, Citadel internals, Jido
+          Integration, and Execution Plane unless the product is authoring a pure
+          <code>Mezzanine.Pack</code> model contract.
+        </p>
         <div class="arch-nodes">
-          <a href="https://github.com/nshkrdotcom/extravaganza" class="arch-node arch-node-highlight" target="_blank" rel="noopener" title="First proving product on the full stack">extravaganza</a>
-          <a href="https://github.com/nshkrdotcom/jido_hive" class="arch-node" target="_blank" rel="noopener">jido_hive</a>
-          <a href="https://github.com/nshkrdotcom/jido_code" class="arch-node" target="_blank" rel="noopener">jido_code</a>
+          <a href="https://github.com/nshkrdotcom/app_kit" class="arch-node arch-node-highlight" target="_blank" rel="noopener">app_kit</a>
+          <a href="https://github.com/nshkrdotcom/extravaganza" class="arch-node" target="_blank" rel="noopener">extravaganza</a>
+          <a href="https://github.com/nshkrdotcom/stack_lab" class="arch-node" target="_blank" rel="noopener">stack_lab</a>
         </div>
       </div>
 
       <div class="arch-connector"></div>
 
-      <div class="arch-layer" data-layer="surface">
+      <div class="arch-layer" data-layer="mezzanine">
         <div class="arch-layer-meta">
-          <span class="arch-layer-name">Northbound Surface</span>
-          <span class="arch-layer-role">product-facing entry</span>
+          <span class="arch-layer-name">Mezzanine substrate</span>
+          <span class="arch-layer-role">neutral operational truth above the lower stack</span>
         </div>
+        <p class="arch-layer-desc">
+          <code>mezzanine</code> is the neutral high-level monorepo behind
+          AppKit. It owns pack registration, compiled installation config,
+          source admission, subject and object lifecycle, execution ledgers,
+          decision and review state, evidence, projections, audit, archival
+          restore posture, operator actions, runtime scheduling, and Temporal
+          workflow handoff. Oban remains a local delivery and garbage-collection
+          tool where explicitly retained; Temporal owns active workflow
+          lifecycle, while Postgres stores substrate truth and projection facts.
+        </p>
         <div class="arch-nodes">
-          <a href="https://github.com/nshkrdotcom/app_kit" class="arch-node" target="_blank" rel="noopener" title="Shared app-facing surface monorepo">app_kit</a>
-          <a href="https://github.com/nshkrdotcom/mezzanine" class="arch-node arch-node-highlight" target="_blank" rel="noopener" title="Universal business machine — operational-semantic engine">mezzanine</a>
+          <a href="https://github.com/nshkrdotcom/mezzanine" class="arch-node arch-node-highlight" target="_blank" rel="noopener">mezzanine</a>
+          <a href="https://github.com/nshkrdotcom/mezzanine/tree/main/core/execution_engine" class="arch-node" target="_blank" rel="noopener">execution_engine</a>
+          <a href="https://github.com/nshkrdotcom/mezzanine/tree/main/core/decision_engine" class="arch-node" target="_blank" rel="noopener">decision_engine</a>
         </div>
       </div>
 
@@ -72,13 +109,23 @@
 
       <div class="arch-layer" data-layer="brain">
         <div class="arch-layer-meta">
-          <span class="arch-layer-name">Brain Chain</span>
-          <span class="arch-layer-role">semantic → typed → governed</span>
+          <span class="arch-layer-name">Brain chain</span>
+          <span class="arch-layer-role">semantic runtime, policy compilation, authority</span>
         </div>
+        <p class="arch-layer-desc">
+          <code>outer_brain</code> owns semantic session work: context assembly,
+          clarification, memory-shaped recall, normalized semantic outcomes,
+          semantic failure journaling, and AITrace-linked provenance.
+          <code>citadel</code> owns authority and policy compilation before
+          mutation: action requests, capability posture, governance packets,
+          topology, and the authorization shape that lower layers must receive.
+          The split is deliberate: cognition can be rich, but durable mutation
+          still needs deterministic authority.
+        </p>
         <div class="arch-nodes">
-          <a href="https://github.com/nshkrdotcom/outer_brain" class="arch-node" target="_blank" rel="noopener" title="Semantic runtime: prompt shaping, context assembly, model routing">outer_brain</a>
+          <a href="https://github.com/nshkrdotcom/outer_brain" class="arch-node" target="_blank" rel="noopener">outer_brain</a>
           <span class="arch-flow">&rarr;</span>
-          <a href="https://github.com/nshkrdotcom/Citadel" class="arch-node" target="_blank" rel="noopener" title="Brain kernel: policy compilation, authority shaping, execution governance">citadel</a>
+          <a href="https://github.com/nshkrdotcom/Citadel" class="arch-node" target="_blank" rel="noopener">citadel</a>
         </div>
       </div>
 
@@ -87,10 +134,20 @@
       <div class="arch-layer" data-layer="spine">
         <div class="arch-layer-meta">
           <span class="arch-layer-name">Spine</span>
-          <span class="arch-layer-role">durable intake · auth · control plane</span>
+          <span class="arch-layer-role">durable intake, auth lifecycle, review, lower facts</span>
         </div>
+        <p class="arch-layer-desc">
+          <code>jido_integration</code> is the Spine. It accepts Brain-origin
+          work, validates ingress shape, owns auth and lease lifecycle, records
+          review and control-plane truth, admits connectors, publishes connector
+          effects, and exposes lower facts through tenant-scoped substrate reads.
+          It is not just a connector workspace; it is the durable middle layer
+          between Brain governance and raw execution mechanics.
+        </p>
         <div class="arch-nodes">
-          <a href="https://github.com/nshkrdotcom/jido_integration" class="arch-node" target="_blank" rel="noopener" title="Durable Brain-to-Spine intake, audit, and lower execution truth">jido_integration</a>
+          <a href="https://github.com/agentjido/jido_integration" class="arch-node" target="_blank" rel="noopener" title="Durable Brain-to-Spine intake, audit, and lower execution truth">jido_integration</a>
+          <a href="https://github.com/agentjido/jido_integration/tree/main/core/contracts" class="arch-node" target="_blank" rel="noopener">core/contracts</a>
+          <a href="https://github.com/agentjido/jido_integration/tree/main/core/control_plane" class="arch-node" target="_blank" rel="noopener">control_plane</a>
         </div>
       </div>
 
@@ -98,35 +155,56 @@
 
       <div class="arch-layer" data-layer="exec">
         <div class="arch-layer-meta">
-          <span class="arch-layer-name">Execution Substrate</span>
-          <span class="arch-layer-role">transport · placement · sandbox</span>
+          <span class="arch-layer-name">Execution substrate</span>
+          <span class="arch-layer-role">transport, placement, process lanes, raw fact emission</span>
         </div>
+        <p class="arch-layer-desc">
+          <code>execution_plane</code> owns low-level effect mechanics: HTTP,
+          process, JSON-RPC, placement, sandbox and operator-terminal lanes, plus
+          future cell-style execution. Provider and runtime-family kits such as
+          Pristine, Prismatic, CLI Subprocess Core, and Agent Session Manager
+          normalize transport and session behavior. They emit receipts and raw
+          facts; they do not own product truth, semantic meaning, or review
+          state.
+        </p>
         <div class="arch-nodes">
           <a href="https://github.com/nshkrdotcom/execution_plane" class="arch-node" target="_blank" rel="noopener">execution_plane</a>
           <span class="arch-sep"></span>
           <a href="https://github.com/nshkrdotcom/pristine" class="arch-node" target="_blank" rel="noopener">pristine</a>
-          <a href="https://github.com/nshkrdotcom/snakepit" class="arch-node" target="_blank" rel="noopener">snakepit</a>
-          <a href="https://github.com/nshkrdotcom/DSPex" class="arch-node" target="_blank" rel="noopener">DSPex</a>
+          <a href="https://github.com/nshkrdotcom/prismatic" class="arch-node" target="_blank" rel="noopener">prismatic</a>
           <a href="https://github.com/nshkrdotcom/cli_subprocess_core" class="arch-node" target="_blank" rel="noopener">cli_subprocess_core</a>
         </div>
       </div>
 
       <div class="arch-connector"></div>
 
-      <div class="arch-layer" data-layer="foundation">
+      <div class="arch-layer" data-layer="memory">
         <div class="arch-layer-meta">
-          <span class="arch-layer-name">Foundation</span>
-          <span class="arch-layer-role">ids · fences · leases · checkpoints</span>
+          <span class="arch-layer-name">Governed memory</span>
+          <span class="arch-layer-role">access graph, immutable provenance, tiered recall</span>
         </div>
+        <p class="arch-layer-desc">
+          The memory architecture extends the same contract discipline into
+          recall. <code>Platform.AccessGraph.v1</code> makes user, agent,
+          resource, scope, policy, and review-authority relations epoch-stamped.
+          Private, shared, and governed memory live in separate stores with
+          different writers and constraints. Share-up and promotion create new
+          fragments, preserve parent links, apply transform policy, and emit
+          proof tokens so a future audit can answer which memories influenced a
+          decision, under which policy, and whether those fragments would still
+          be admissible now.
+        </p>
         <div class="arch-nodes">
           <a href="https://github.com/nshkrdotcom/ground_plane" class="arch-node" target="_blank" rel="noopener" title="Foundational substrate: shared primitives for the entire universal core">ground_plane</a>
+          <a href="https://github.com/nshkrdotcom/outer_brain/tree/main/core/outer_brain_contracts" class="arch-node" target="_blank" rel="noopener">outer_brain_contracts</a>
+          <a href="https://github.com/nshkrdotcom/mezzanine/tree/main/core/mezzanine_core" class="arch-node" target="_blank" rel="noopener">mezzanine_core</a>
         </div>
       </div>
 
     </div>
 
     <div class="arch-ops-row">
-      <span class="arch-ops-label">Operator &amp; Proof</span>
+      <span class="arch-ops-label">Operator, trace, proof</span>
       <a href="https://github.com/nshkrdotcom/switchyard" class="arch-node" target="_blank" rel="noopener">switchyard</a>
       <a href="https://github.com/nshkrdotcom/stack_lab" class="arch-node" target="_blank" rel="noopener">stack_lab</a>
       <a href="https://github.com/nshkrdotcom/AITrace" class="arch-node" target="_blank" rel="noopener">AITrace</a>
@@ -140,41 +218,41 @@
   <div class="stats-bar">
     <div class="stat">
       <div class="stat-value">{{ $totalRepos }}</div>
-      <div class="stat-label">Repositories</div>
+      <div class="stat-label">Repository nodes</div>
     </div>
     <div class="stat">
       <div class="stat-value">{{ $totalStars }}</div>
-      <div class="stat-label">GitHub Stars</div>
+      <div class="stat-label">GitHub stars</div>
     </div>
     <div class="stat">
       <div class="stat-value">6</div>
-      <div class="stat-label">Architecture Layers</div>
+      <div class="stat-label">Explicit stack layers</div>
     </div>
     <div class="stat">
-      <div class="stat-value">&lt;100ms</div>
-      <div class="stat-label">p99 Latency Target</div>
+      <div class="stat-value">3</div>
+      <div class="stat-label">Truth planes: semantic, durable, raw</div>
     </div>
   </div>
 
   <!-- =========================================================
-       PRINCIPLES
+       BOUNDARY RULES
   ========================================================= -->
   <section class="principles-section">
     <div class="principles-grid">
       <div class="principle-card">
         <div class="principle-marker" style="background:#3b82f6"></div>
-        <h3 class="principle-title">Governance before execution</h3>
-        <p class="principle-desc">Every semantic turn and typed command passes through a shared Brain-to-Spine governance chain before reaching the execution substrate. Nothing bypasses the contract.</p>
+        <h3 class="principle-title">Typed ingress before side effects</h3>
+        <p class="principle-desc">Product calls enter through <code>app_kit</code> with request context, tenant and installation refs, idempotency, trace, and typed DTOs. Mezzanine turns that into substrate records. Citadel compiles authority. Jido Integration accepts or rejects lower ingress. Execution Plane only sees shaped runtime intent, never product shortcuts.</p>
       </div>
       <div class="principle-card">
         <div class="principle-marker" style="background:#10b981"></div>
-        <h3 class="principle-title">BEAM-native reliability</h3>
-        <p class="principle-desc">Processes exist where recovery genuinely requires them. Pure compilers, reducers, and validators are proved before OTP claims ownership. Fault tolerance is structural.</p>
+        <h3 class="principle-title">Durability belongs to the owner</h3>
+        <p class="principle-desc"><code>mezzanine</code> records operational ledgers, workflow handoff, reviews, projections, audit, and archival evidence. <code>jido_integration</code> records lower facts, leases, connector admission, and review-adjacent Spine truth. <code>execution_plane</code> records raw runtime receipts. Recovery logic is attached to the layer that can actually replay or repair the fact.</p>
       </div>
       <div class="principle-card">
         <div class="principle-marker" style="background:#6366f1"></div>
-        <h3 class="principle-title">Explicit ownership boundaries</h3>
-        <p class="principle-desc">Each layer owns specific truth and explicitly does not own what belongs above or below it. Telemetry, audit trails, and debugging tools are first-class platform concerns.</p>
+        <h3 class="principle-title">Proof is part of the contract</h3>
+        <p class="principle-desc"><code>stack_lab</code> scenarios, <code>AITrace</code> spans, schema registries, release manifests, no-bypass scans, projection hashes, proof tokens, and retrospective audits are not documentation after the fact. They are how the platform proves recall, promotion, dispatch, operator review, tenant scoping, version skew, and boundary discipline under failure.</p>
       </div>
     </div>
   </section>
