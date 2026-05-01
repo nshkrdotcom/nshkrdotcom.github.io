@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-04-29T21:00:29Z
+# Last updated: 2026-05-01T21:31:28Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -530,6 +530,16 @@ repos:
     logo: "/logos/stack_coder-006ce79aea5d.png"
     language: "Elixir"
 
+  claude_agent_sdk:
+    name: "claude_agent_sdk"
+    org: "nshkrdotcom"
+    stars: 31
+    category: "nshkr-ai-sdk"
+    description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
+    url: "https://github.com/nshkrdotcom/claude_agent_sdk"
+    logo: "/logos/claude_agent_sdk-295c52d17e5b.png"
+    language: "Elixir"
+
   gemini_ex:
     name: "gemini_ex"
     org: "nshkrdotcom"
@@ -538,16 +548,6 @@ repos:
     description: "Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI"
     url: "https://github.com/nshkrdotcom/gemini_ex"
     logo: "/logos/gemini_ex-d01a3345cdf3.png"
-    language: "Elixir"
-
-  claude_agent_sdk:
-    name: "claude_agent_sdk"
-    org: "nshkrdotcom"
-    stars: 30
-    category: "nshkr-ai-sdk"
-    description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
-    url: "https://github.com/nshkrdotcom/claude_agent_sdk"
-    logo: "/logos/claude_agent_sdk-295c52d17e5b.png"
     language: "Elixir"
 
   codex_sdk:
@@ -729,7 +729,7 @@ repos:
   json_remedy:
     name: "json_remedy"
     org: "nshkrdotcom"
-    stars: 31
+    stars: 32
     category: "nshkr-ai-infra"
     description: "A practical, multi-layered JSON repair library for Elixir that intelligently fixes malformed JSON strings commonly produced by LLMs, legacy systems, and data pipelines."
     url: "https://github.com/nshkrdotcom/json_remedy"
@@ -769,7 +769,7 @@ repos:
   gepa_ex:
     name: "gepa_ex"
     org: "nshkrdotcom"
-    stars: 3
+    stars: 4
     category: "nshkr-ai-infra"
     description: "Elixir implementation of GEPA: LLM-driven evolutionary optimization using Pareto-efficient search for text-based systems. Features OpenAI/Gemini integration, BEAM concurrency, OTP supervision, 218 tests with 75% coverage."
     url: "https://github.com/nshkrdotcom/gepa_ex"
@@ -784,6 +784,16 @@ repos:
     description: "Elixir port of tinker-cookbook: training and evaluation recipes for the Tinker ML platform."
     url: "https://github.com/North-Shore-AI/tinkex_cookbook"
     logo: "/logos/tinkex_cookbook-58e5645d1d9e.png"
+    language: "Elixir"
+
+  nsai_gateway:
+    name: "nsai_gateway"
+    org: "North-Shore-AI"
+    stars: 2
+    category: "nshkr-ai-infra"
+    description: "Unified API gateway for the NSAI ecosystem—authentication (JWT, API keys, OAuth2/OIDC), distributed rate limiting with burst allowance, circuit breakers, request tracing, Prometheus metrics, and service proxying. Production-ready with comprehensive observability and multi-tenant support."
+    url: "https://github.com/North-Shore-AI/nsai_gateway"
+    logo: "/logos/nsai_gateway-b39f036af7ad.png"
     language: "Elixir"
 
   portfolio_core:
@@ -834,16 +844,6 @@ repos:
     description: "Execution Plane is an Elixir/OTP runtime substrate for boundary-aware AI infrastructure, unifying process execution, protocol framing, transport lifecycle, realtime streams, JSON-RPC control lanes, and future sandbox-backed placement under one composable kernel for agentic systems."
     url: "https://github.com/nshkrdotcom/execution_plane"
     logo: "/logos/execution_plane-147ea6cedc20.png"
-    language: "Elixir"
-
-  nsai_gateway:
-    name: "nsai_gateway"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-ai-infra"
-    description: "Unified API gateway for the NSAI ecosystem—authentication (JWT, API keys, OAuth2/OIDC), distributed rate limiting with burst allowance, circuit breakers, request tracing, Prometheus metrics, and service proxying. Production-ready with comprehensive observability and multi-tenant support."
-    url: "https://github.com/North-Shore-AI/nsai_gateway"
-    logo: "/logos/nsai_gateway-b39f036af7ad.png"
     language: "Elixir"
 
   nsai_registry:
@@ -1067,7 +1067,7 @@ repos:
     category: "nshkr-devtools"
     description: "Code Intelligence: Token-budgeted codebase context for Elixir agents. Solves context window limitations by providing a deterministic Elixir semantic graph and agent-ready Repo Map for LLMs."
     url: "https://github.com/nshkrdotcom/dexterity"
-    logo: "/logos/dexterity-99b93d0346ae.png"
+    logo: "/logos/dexterity-134ed6d1edcb.png"
     language: "Elixir"
 
   elixir_dashboard:
@@ -1399,6 +1399,16 @@ repos:
     description: "SHIELD: Secure Hierarchical Inter-agent Layer for Distributed Environments"
     url: "https://github.com/nshkrdotcom/Shield"
 
+  trinity_coordinator:
+    name: "trinity_coordinator"
+    org: "nshkrdotcom"
+    stars: 3
+    category: "nshkr-research"
+    description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
+    url: "https://github.com/nshkrdotcom/trinity_coordinator"
+    logo: "/logos/trinity_coordinator-dddf04d0d5d8.png"
+    language: "Elixir"
+
   ChronoLedger:
     name: "ChronoLedger"
     org: "nshkrdotcom"
@@ -1406,16 +1416,6 @@ repos:
     category: "nshkr-research"
     description: "Hardware-Secured Temporal Blockchain"
     url: "https://github.com/nshkrdotcom/ChronoLedger"
-
-  trinity_coordinator:
-    name: "trinity_coordinator"
-    org: "nshkrdotcom"
-    stars: 2
-    category: "nshkr-research"
-    description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
-    url: "https://github.com/nshkrdotcom/trinity_coordinator"
-    logo: "/logos/trinity_coordinator-dddf04d0d5d8.png"
-    language: "Elixir"
 
   cns:
     name: "cns"
