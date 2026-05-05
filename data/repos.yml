@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-05-05T13:00:07Z
+# Last updated: 2026-05-05T20:58:59Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -1521,5 +1521,5 @@ repos:
     category: "uncategorized"
     description: "Docs"
     url: "https://github.com/nshkrdotcom/docs"
-    language: "Mermaid"
+    language: "Elixir"
 
