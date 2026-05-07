@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-05-05T20:58:59Z
+# Last updated: 2026-05-07T18:08:40Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -497,7 +497,6 @@ repos:
     category: "nshkr-ai-agents"
     description: "Synapse integration for altar_ai - SDK-backed LLM providers for multi-agent workflows with automatic fallback, signal handlers, and workflow actions"
     url: "https://github.com/nshkrdotcom/synapse_ai"
-    logo: "/logos/synapse_ai-c32ef2cb1074.png"
     language: "Elixir"
 
   extravaganza:
@@ -1173,7 +1172,7 @@ repos:
   switchyard:
     name: "switchyard"
     org: "nshkrdotcom"
-    stars: 1
+    stars: 2
     category: "nshkr-ui"
     description: "Terminal-native operator workbench monorepo for multi-site terminal applications, local control-plane orchestration, daemon-backed process and log management, and pluggable domain sites such as Jido Hive, built as a non-umbrella Elixir workspace with Blitz and Weld."
     url: "https://github.com/nshkrdotcom/switchyard"
