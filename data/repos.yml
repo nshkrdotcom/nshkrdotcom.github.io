@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-05-07T18:08:40Z
+# Last updated: 2026-05-10T09:15:03Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -497,6 +497,7 @@ repos:
     category: "nshkr-ai-agents"
     description: "Synapse integration for altar_ai - SDK-backed LLM providers for multi-agent workflows with automatic fallback, signal handlers, and workflow actions"
     url: "https://github.com/nshkrdotcom/synapse_ai"
+    logo: "/logos/synapse_ai-c32ef2cb1074.png"
     language: "Elixir"
 
   extravaganza:
@@ -905,6 +906,26 @@ repos:
     logo: "/logos/app_kit-f06049bd7f28.png"
     language: "Elixir"
 
+  gepa_buildout:
+    name: "gepa_buildout"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Deterministic GEPA buildout examples and domain task fixtures for framework validation, redacted projections, evaluation traces, and local-first AI infrastructure."
+    url: "https://github.com/nshkrdotcom/gepa_buildout"
+    logo: "/logos/gepa_buildout-21b6e082f65f.png"
+    language: "Elixir"
+
+  gepa_framework:
+    name: "gepa_framework"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Reusable GEPA optimizer framework for typed candidate generation, evaluation, persistence posture, tracing contracts, and deterministic prompt optimization infrastructure."
+    url: "https://github.com/nshkrdotcom/gepa_framework"
+    logo: "/logos/gepa_framework-d482123d1b4b.png"
+    language: "Elixir"
+
   ground_plane:
     name: "ground_plane"
     org: "nshkrdotcom"
@@ -994,6 +1015,16 @@ repos:
     url: "https://github.com/North-Shore-AI/tinkerer"
     logo: "/logos/tinkerer-6b70879f38af.png"
     language: "Python"
+
+  trinity_framework:
+    name: "trinity_framework"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Reusable TRINITY router and coordination framework for deterministic agent routing, provider pool contracts, typed coordination patterns, and local-first AI infrastructure."
+    url: "https://github.com/nshkrdotcom/trinity_framework"
+    logo: "/logos/trinity_framework-0cdc054cb171.png"
+    language: "Elixir"
 
   exdantic:
     name: "exdantic"
@@ -1507,7 +1538,7 @@ repos:
   nshkrdotcom:
     name: "nshkrdotcom"
     org: "nshkrdotcom"
-    stars: 1
+    stars: 2
     category: "uncategorized"
     description: "Personal GitHub profile README with Elixir/AI projects and LLM reliability research"
     url: "https://github.com/nshkrdotcom/nshkrdotcom"
@@ -1520,5 +1551,5 @@ repos:
     category: "uncategorized"
     description: "Docs"
     url: "https://github.com/nshkrdotcom/docs"
-    language: "Elixir"
+    language: "Python"
 
