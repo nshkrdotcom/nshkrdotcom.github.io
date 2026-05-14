@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-05-10T09:15:03Z
+# Last updated: 2026-05-14T12:14:22Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -133,6 +133,16 @@ repos:
     description: "Experimental research framework for running AI benchmarks at scale"
     url: "https://github.com/North-Shore-AI/crucible_harness"
     logo: "/logos/crucible_harness-cd3e5b6957cf.png"
+    language: "Elixir"
+
+  crucible_xai:
+    name: "crucible_xai"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-crucible"
+    description: "Explainable AI (XAI) tools for the Crucible framework"
+    url: "https://github.com/North-Shore-AI/crucible_xai"
+    logo: "/logos/crucible_xai-7b2b624252ab.png"
     language: "Elixir"
 
   ExDataCheck:
@@ -302,16 +312,6 @@ repos:
     description: "Phoenix LiveView dashboard for the Crucible ML reliability stack"
     url: "https://github.com/North-Shore-AI/crucible_ui"
     logo: "/logos/crucible_ui-85e696069e7f.png"
-    language: "Elixir"
-
-  crucible_xai:
-    name: "crucible_xai"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Explainable AI (XAI) tools for the Crucible framework"
-    url: "https://github.com/North-Shore-AI/crucible_xai"
-    logo: "/logos/crucible_xai-7b2b624252ab.png"
     language: "Elixir"
 
   datasets_ex:
@@ -507,7 +507,7 @@ repos:
     category: "nshkr-ai-agents"
     description: "First proving-ground product app for the nshkr stack: a thin, sophisticated operations surface above AppKit that configures a generalized AI-work business engine, coordinates multi-agent execution across local and remote infrastructure, and turns distributed agent operations into a secure operator product."
     url: "https://github.com/nshkrdotcom/extravaganza"
-    logo: "/logos/extravaganza-265a5f9b27a1.png"
+    logo: "/logos/extravaganza-05d3e0e305dd.png"
     language: "Elixir"
 
   mezzanine:
@@ -517,7 +517,7 @@ repos:
     category: "nshkr-ai-agents"
     description: "Neutral high-level reusable monorepo for the nshkr stack: Ash-driven business semantics, configurable workflow machinery, operational state models, and reusable application logic above AppKit and below proving-ground products, built to run global AI operations across distributed clusters through pure effects projected to execution_plane."
     url: "https://github.com/nshkrdotcom/mezzanine"
-    logo: "/logos/mezzanine-d7b1a690674b.png"
+    logo: "/logos/mezzanine-d0a2ac033826.png"
     language: "Elixir"
 
   stack_coder:
@@ -843,7 +843,7 @@ repos:
     category: "nshkr-ai-infra"
     description: "Execution Plane is an Elixir/OTP runtime substrate for boundary-aware AI infrastructure, unifying process execution, protocol framing, transport lifecycle, realtime streams, JSON-RPC control lanes, and future sandbox-backed placement under one composable kernel for agentic systems."
     url: "https://github.com/nshkrdotcom/execution_plane"
-    logo: "/logos/execution_plane-147ea6cedc20.png"
+    logo: "/logos/execution_plane-ce0c075cacb9.png"
     language: "Elixir"
 
   nsai_registry:
@@ -903,7 +903,7 @@ repos:
     category: "nshkr-ai-infra"
     description: "Shared app-facing surface monorepo for the nshkr platform core: composition, wiring, host-facing surfaces, default bridges across outer_brain, Citadel, jido_integration, and read-model publication, with a stable entrypoint for product applications that should not stitch the lower stack manually."
     url: "https://github.com/nshkrdotcom/app_kit"
-    logo: "/logos/app_kit-f06049bd7f28.png"
+    logo: "/logos/app_kit-ef03eb940a72.png"
     language: "Elixir"
 
   gepa_buildout:
@@ -933,7 +933,7 @@ repos:
     category: "nshkr-ai-infra"
     description: "Shared lower infrastructure monorepo for the nshkr platform core: contracts, Postgres durability helpers, projection publication glue, lease and fence primitives, replay-safe ids, and common runtime infrastructure used by outer_brain, Citadel, jido_integration, and app-facing surfaces."
     url: "https://github.com/nshkrdotcom/ground_plane"
-    logo: "/logos/ground_plane-fd0e4134a733.png"
+    logo: "/logos/ground_plane-8150e503f1fe.png"
     language: "Elixir"
 
   hf_hub_ex:
@@ -973,7 +973,7 @@ repos:
     category: "nshkr-ai-infra"
     description: "Semantic runtime above Citadel for raw language intake, context assembly, model orchestration, semantic journaling, reply publication, and restart-safe intent synthesis into structured policy decisions across the stack."
     url: "https://github.com/nshkrdotcom/outer_brain"
-    logo: "/logos/outer_brain-2b20d430b9d7.png"
+    logo: "/logos/outer_brain-edf629e676e5.png"
     language: "Elixir"
 
   portfolio_index:
@@ -1003,7 +1003,7 @@ repos:
     category: "nshkr-ai-infra"
     description: "Local distributed-development harness and proving ground for the full stack: repeatable single-node and multi-node boot, Postgres-backed durability drills, fault injection, trace plumbing, end-to-end examples, and operator-facing smoke paths for outer_brain, Citadel, jido_integration, and execution_plane development."
     url: "https://github.com/nshkrdotcom/stack_lab"
-    logo: "/logos/stack_lab-13f46db529e2.png"
+    logo: "/logos/stack_lab-300427655257.png"
     language: "Elixir"
 
   tinkerer:
@@ -1313,7 +1313,7 @@ repos:
     category: "nshkr-observability"
     description: "The unified observability layer for the AI Control Plane"
     url: "https://github.com/nshkrdotcom/AITrace"
-    logo: "/logos/AITrace-d9fefd307bd6.png"
+    logo: "/logos/AITrace-dd614d7779d3.png"
     language: "Elixir"
 
   citadel:
@@ -1323,7 +1323,7 @@ repos:
     category: "nshkr-observability"
     description: "The command and control layer for the AI-powered enterprise"
     url: "https://github.com/nshkrdotcom/citadel"
-    logo: "/logos/citadel-66073b945998.png"
+    logo: "/logos/citadel-b6e190b2ba73.png"
     language: "Elixir"
 
   telemetry_reporter:
