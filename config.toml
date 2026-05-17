@@ -30,7 +30,7 @@ summaryLength = 70
 
 [params]
   mermaid = true
-  description = "A governed execution platform for AI workloads on the BEAM — 87 open-source repositories spanning semantic reasoning, typed commands, and sandboxed execution under one governance contract."
+  description = "NSHKR is a governed write-path substrate for enterprise AI execution on the BEAM: typed intent, authority, workflow, effects, receipts, evidence, review, and replay."
   author = "North Shore Hackerspace"
   
 [taxonomies]

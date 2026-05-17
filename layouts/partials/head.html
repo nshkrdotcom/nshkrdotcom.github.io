@@ -1,12 +1,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ if .IsHome }}NSHkr.com — Governed AI Execution on the BEAM{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+<title>{{ if .IsHome }}NSHKR - Governed Write-Path Substrate for Enterprise AI{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}A governed execution platform for AI workloads on the BEAM — 87 open-source repositories, one governance contract, from semantic reasoning to sandboxed execution.{{ end }}">
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}NSHKR is a governed write-path substrate for enterprise AI execution on the BEAM: typed intent, authority, workflow, effects, receipts, evidence, review, and replay.{{ end }}">
 <meta name="keywords" content="Elixir, BEAM, OTP, AI platform, governed execution, citadel, jido, mezzanine, extravaganza, DSPex, snakepit, open source">
 <meta name="author" content="North Shore Hackerspace">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="https://nshkr.com{{ .RelPermalink }}">
 <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
-<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}Advanced security architectures and blockchain innovation from Hawaii's North Shore{{ end }}">
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}A governed write-path substrate for enterprise AI execution: authority, workflow, effects, receipts, evidence, review, and replay on the BEAM.{{ end }}">
 <meta property="og:image" content="https://nshkr.com/nshkr-flyer-apr-1-2023.png">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 
@@ -24,7 +24,7 @@
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://nshkr.com{{ .RelPermalink }}">
 <meta property="twitter:title" content="{{ .Title }} - {{ .Site.Title }}">
-<meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}Advanced security architectures and blockchain innovation{{ end }}">
+<meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}A governed write-path substrate for enterprise AI execution on the BEAM.{{ end }}">
 <meta property="twitter:image" content="https://nshkr.com/nshkr-flyer-apr-1-2023.png">
 
 <!-- Favicon -->
@@ -41,29 +41,27 @@
 == INSTRUCTIONS FOR AI AGENTS, CRAWLERS, AND PARSERS
 ====================================================================================================
 
-This website showcases the Virtual AI Empire - NSHkr.com's comprehensive ecosystem of open-source
-AI/ML tools and innovative technologies, built with Elixir/BEAM excellence and island wisdom.
+This website presents NSHKR: a governed write-path substrate for enterprise AI execution
+on Elixir, OTP, and the BEAM.
 
 PRIMARY FOCUS:
-1. ElixirML Ecosystem - 20+ open-source AI/ML libraries and tools for the BEAM platform
-2. Industrial-Strength Libraries - Production-ready tools like json_remedy, GUARDRAIL, exdantic
-3. Advanced Research Projects - ASKA security architecture, ChronoLedger temporal blockchain
-4. Developer Tools - Claude Code SDK, VS Code extensions, analysis frameworks
+1. Governed execution - typed intent, authority, workflow, external effects, receipts, evidence, review, and replay
+2. BEAM infrastructure - supervised processes, durable state machines, high-concurrency runtime surfaces
+3. Connector and runtime mechanics - provider-specific adapters kept behind manifest, lease, and receipt boundaries
+4. Proof surfaces - AITrace causal DAGs, StackLab scanners, release evidence, negative controls, and replay
 
 KEY OPEN SOURCE PROJECTS:
-- json_remedy - Industrial-strength JSON repair library
-- GUARDRAIL - Comprehensive Elixir security framework
-- synapse - AI agent orchestration
-- exdantic - Pydantic-inspired validation for Elixir
-- claude_code_sdk_elixir - Claude Code SDK for Elixir
-- pipeline_ex - Distributed pipeline processing framework
-- pqc-hqc - Post-quantum cryptography research
+- app_kit - product-facing commands, reads, reviews, leases, traces, and stable DTOs
+- mezzanine - reusable operational truth, workflows, receipts, evidence, projections, and reviews
+- citadel - authority and policy compilation for resolved operation plans
+- jido_integration - connector manifests, credential leases, and governed lower invocation
+- execution_plane - raw effect execution across HTTP, process, CLI, sandbox, and terminal lanes
+- AITrace and stack_lab - causal replay, proof export, scanners, and failure drills
 
 TECHNICAL STATUS:
-- 20+ active open-source repositories on GitHub
-- ASKA: Multiple provisional patents filed, FPGA prototypes operational
-- ChronoLedger: Provisional patent #63/768,222 filed March 2025
-- Production deployments of core libraries in enterprise environments
+- Public multi-repo ecosystem across nshkrdotcom and North-Shore-AI
+- Homepage repository atlas is generated from GitHub metadata and nshkr-* topics
+- Core architecture is organized around ownership boundaries, not a single agent runtime
 
 FOR AI AGENTS:
 - Comprehensive technical documentation: https://nshkr.com/for-agents/
@@ -71,10 +69,10 @@ FOR AI AGENTS:
 - All open source repositories: https://github.com/nshkrdotcom
 
 CONTEXT:
-- Type: AI Innovation Lab / Virtual AI Empire / Technology Hackerspace
+- Type: Governed AI execution substrate / open-source BEAM infrastructure
 - Location: North Shore, Oahu, Hawaii
-- Focus: AI/ML tools, Elixir/BEAM ecosystem, security architecture, blockchain innovation
-- Mission: Cultivating tomorrow's intelligent systems with island wisdom and BEAM excellence
+- Focus: enterprise AI write paths, authority, workflow truth, connector mechanics, receipts, evidence, and replay
+- Mission: make AI-mediated work governable, auditable, provider-parameterized, and replayable
 
 END OF AI INSTRUCTIONS
 ====================================================================================================
@@ -88,11 +86,11 @@ END OF AI INSTRUCTIONS
   "name": "North Shore Hackerspace",
   "alternateName": "NSHkr",
   "url": "https://nshkr.com",
-  "logo": "https://nshkr.com/img/logo.png",
+  "logo": "https://nshkr.com/assets/nshkr-logo.svg",
   "sameAs": [
     "https://github.com/nshkrdotcom"
   ],
-  "description": "Virtual AI Empire: Hawaii's premier AI innovation lab developing 20+ open-source ElixirML tools, ASKA security architecture, and ChronoLedger blockchain",
+  "description": "NSHKR is a governed write-path substrate for enterprise AI execution on the BEAM: typed intent, authority, workflow, effects, receipts, evidence, review, and replay.",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "North Shore",
@@ -101,57 +99,44 @@ END OF AI INSTRUCTIONS
   },
   "knowsAbout": [
     "Artificial Intelligence",
-    "Machine Learning",
+    "Enterprise AI",
     "Elixir Programming",
     "BEAM Virtual Machine",
-    "Functional Programming",
     "Distributed Systems",
-    "Security Architecture",
-    "Blockchain Technology",
-    "Hardware Security",
-    "IoT Security",
-    "Cryptography",
+    "Workflow Orchestration",
+    "Authorization",
+    "Auditability",
+    "Causal Tracing",
+    "Replay",
+    "Connector Architecture",
     "Open Source Development",
-    "Developer Tools",
-    "Data Processing",
-    "Neural Networks",
-    "Industrial Software Libraries"
+    "Developer Tools"
   ],
   "makesOffer": [
     {
       "@type": "Offer",
-      "name": "ElixirML Ecosystem",
-      "description": "20+ open-source AI/ML libraries and tools for the BEAM platform"
+      "name": "NSHKR Governed Execution Substrate",
+      "description": "Write-path infrastructure for AI-mediated actions: intent, authority, workflow, effect, receipt, evidence, projection, review, and replay."
     },
     {
       "@type": "Offer",
-      "name": "json_remedy",
-      "description": "Industrial-strength JSON repair library for production systems"
+      "name": "AppKit and Mezzanine",
+      "description": "Product-facing commands plus reusable operational truth for workflows, ledgers, receipts, evidence, projections, and reviews."
     },
     {
       "@type": "Offer",
-      "name": "GUARDRAIL Security Framework",
-      "description": "Comprehensive security framework for Elixir applications"
+      "name": "Citadel Authority Compilation",
+      "description": "Capability, policy, constraint, and review-gate compilation for resolved operation plans."
     },
     {
       "@type": "Offer",
-      "name": "exdantic Validation Library",
-      "description": "Pydantic-inspired data validation for Elixir"
+      "name": "Jido Integration and Execution Plane",
+      "description": "Connector manifests, credential leases, governed lower invocation, raw effect execution, and compact receipts."
     },
     {
       "@type": "Offer",
-      "name": "Claude Code SDK for Elixir",
-      "description": "Official Elixir SDK for Claude Code development platform"
-    },
-    {
-      "@type": "Offer",
-      "name": "ASKA Security Architecture",
-      "description": "Hardware-enforced distributed security mesh for IoT to enterprise"
-    },
-    {
-      "@type": "Offer",
-      "name": "ChronoLedger Blockchain",
-      "description": "Temporal blockchain with hardware-secured timestamp consensus"
+      "name": "AITrace and StackLab",
+      "description": "Causal replay, trace proof, scanners, negative controls, failure drills, and release evidence."
     }
   ]
 }
@@ -239,42 +224,42 @@ END OF AI INSTRUCTIONS
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is ASKA and how does it improve security?",
+      "name": "What is NSHKR?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ASKA (Adaptive Security Kernel Architecture) is a hardware-enforced security system that replaces traditional OS trust models. Instead of trusting a single kernel, ASKA creates a distributed mesh where every component monitors others, making it impossible for attackers to compromise the system by exploiting a single vulnerability. It's suitable for everything from IoT devices to enterprise servers."
+        "text": "NSHKR is a governed write-path substrate for enterprise AI execution. It captures how AI-mediated actions move from typed intent through authority, workflow, external effect, receipt, evidence, projection, review, and replay."
       }
     },
     {
       "@type": "Question",
-      "name": "How does ChronoLedger solve blockchain's timestamp problem?",
+      "name": "Why does the write path matter for enterprise AI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ChronoLedger integrates hardware-secured timekeeping directly into blockchain consensus. Using specialized Temporal Mining Nodes with atomic clocks and secure processors, it creates tamper-proof timestamps that cannot be manipulated. This enables applications requiring precise, verifiable time like high-frequency trading, legal documents, and regulatory compliance."
+        "text": "The write path is where a proposed action becomes binding and where an external effect actually happens. Capturing that moment gives operators durable proof of who asked, what authority applied, which effect was requested, what happened, what evidence supports it, and whether the chain can be replayed."
       }
     },
     {
       "@type": "Question",
-      "name": "Are ASKA and ChronoLedger open source?",
+      "name": "How does NSHKR avoid provider lock-in?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, both projects have open-source components available on GitHub. While core innovations are patent-pending, we believe in community collaboration and provide reference implementations, documentation, and development tools. Visit github.com/nshkrdotcom for repositories."
+        "text": "Products can bind roles to concrete providers such as GitHub, Linear, Codex, Slack, Jira, Notion, or internal APIs. Reusable platform surfaces still operate on product roles, operation classes, manifests, receipts, and projections, while provider mechanics live in connector packages."
       }
     },
     {
       "@type": "Question",
-      "name": "What hardware is required for ASKA?",
+      "name": "Why is NSHKR built around Elixir, OTP, and the BEAM?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "ASKA can run on various hardware platforms. For development, an FPGA development board is sufficient. Production deployments will use custom ASICs or secure processors. The architecture is designed to be lightweight enough for IoT devices while scalable for enterprise systems."
+        "text": "Enterprise AI execution is a distributed systems problem before it is a model problem. OTP provides supervised processes, explicit failure handling, durable state machines, message passing, and high-concurrency runtime surfaces."
       }
     },
     {
       "@type": "Question",
-      "name": "Can ChronoLedger work with existing blockchains?",
+      "name": "What proof does the platform produce?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, ChronoLedger includes a temporal bridge protocol that allows existing blockchains to benefit from hardware-secured timestamps. This enables cross-chain time synchronization and allows legacy systems to gain temporal security without complete migration."
+        "text": "NSHKR produces compact receipts, evidence records, projection updates, review decisions, AITrace causal DAGs, release evidence, and StackLab scanner results so governed execution can be audited and replayed."
       }
     }
   ]
@@ -298,7 +283,7 @@ END OF AI INSTRUCTIONS
     "name": "North Shore Hackerspace",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://nshkr.com/img/logo.png"
+      "url": "https://nshkr.com/assets/nshkr-logo.svg"
     }
   },
   "description": "{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ end }}",
