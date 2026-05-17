@@ -667,7 +667,7 @@ samp {
 
 .stat-label {
   margin-top: 4px;
-  color: var(--text3);
+  color: var(--text2);
   font-family: var(--font-mono);
   font-size: 0.62rem;
   letter-spacing: 0.1em;
@@ -720,7 +720,7 @@ samp {
 .contract-question span {
   display: block;
   margin-bottom: var(--space-sm);
-  color: var(--text3);
+  color: var(--text2);
   font-family: var(--font-mono);
   font-size: 0.64rem;
   font-weight: 700;
@@ -736,7 +736,7 @@ samp {
 
 .contract-question p {
   margin-top: var(--space-sm);
-  color: var(--text3);
+  color: var(--text2);
   font-size: 0.78rem;
   font-weight: 300;
   line-height: 1.5;
@@ -832,7 +832,7 @@ samp {
 .arch-layer-role {
   display: block;
   margin-top: 4px;
-  color: var(--text3);
+  color: var(--text2);
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.05em;
@@ -909,7 +909,7 @@ samp {
 
 .arch-ops-label {
   margin-right: var(--space-xs);
-  color: var(--text3);
+  color: var(--text2);
   font-family: var(--font-mono);
   font-size: 0.65rem;
   font-weight: 700;
@@ -1006,7 +1006,7 @@ samp {
 .repos-section-desc {
   max-width: 560px;
   margin-top: var(--space-xs);
-  color: var(--text3);
+  color: var(--text2);
   font-size: 0.9rem;
   font-weight: 300;
 }
@@ -1035,7 +1035,7 @@ samp {
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--bg3);
-  color: var(--text3);
+  color: var(--text2);
   font-family: var(--font-mono);
   font-size: 0.68rem;
   padding: 0.08em 0.58em;
@@ -1087,7 +1087,7 @@ samp {
   flex: 1;
   min-width: 0;
   overflow: hidden;
-  color: var(--text3);
+  color: var(--text2);
   font-size: 0.72rem;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1097,7 +1097,7 @@ samp {
   flex-shrink: 0;
   margin-left: auto;
   padding-left: var(--space-sm);
-  color: var(--text3);
+  color: var(--text2);
   font-family: var(--font-mono);
   font-size: 0.65rem;
 }
