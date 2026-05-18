@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-05-18T21:23:19Z
+# Last updated: 2026-05-18T23:40:29Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -1544,7 +1544,7 @@ repos:
     org: "nshkrdotcom"
     stars: 0
     category: "nshkr-misc"
-    description: "Windows-native C++20 sample app and reproducible setup for SDL3, bgfx, Dear ImGui, CMake, Ninja, and MSVC."
+    description: "Windows-native C++20 app and reproducible setup for SDL3, bgfx, Dear ImGui, CMake, Ninja, and MSVC."
     url: "https://github.com/nshkrdotcom/prappy"
     logo: "/logos/prappy-ba09afe6356c.png"
     language: "C++"
