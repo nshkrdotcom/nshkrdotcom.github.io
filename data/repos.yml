@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-05-23T21:29:05Z
+# Last updated: 2026-05-23T23:31:11Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -218,6 +218,16 @@ repos:
     logo: "/logos/crucible_ensemble-ab3a8084b2b4.png"
     language: "Elixir"
 
+  crucible_factorization:
+    name: "crucible_factorization"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Nx SVD/SVF factorization primitives for neural network model surgery and TRINITY artifact export."
+    url: "https://github.com/North-Shore-AI/crucible_factorization"
+    logo: "/logos/crucible_factorization-05692e29d6a6.png"
+    language: "Elixir"
+
   crucible_feedback:
     name: "crucible_feedback"
     org: "North-Shore-AI"
@@ -278,6 +288,16 @@ repos:
     logo: "/logos/crucible_model_registry-9da8110a7b82.png"
     language: "Elixir"
 
+  crucible_safetensors:
+    name: "crucible_safetensors"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "SafeTensors parsing, validation, bounded slicing, checksums, deterministic writing, and row-chunk helpers for Elixir and Nx."
+    url: "https://github.com/North-Shore-AI/crucible_safetensors"
+    logo: "/logos/crucible_safetensors-061423d44e1e.png"
+    language: "Elixir"
+
   crucible_telemetry:
     name: "crucible_telemetry"
     org: "North-Shore-AI"
@@ -286,6 +306,16 @@ repos:
     description: "Advanced telemetry collection and analysis for AI research"
     url: "https://github.com/North-Shore-AI/crucible_telemetry"
     logo: "/logos/crucible_telemetry-69a606537448.png"
+    language: "Elixir"
+
+  crucible_tensor_patch:
+    name: "crucible_tensor_patch"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Deterministic tensor patch plans, patch application, and tensor path traversal for neural network model surgery."
+    url: "https://github.com/North-Shore-AI/crucible_tensor_patch"
+    logo: "/logos/crucible_tensor_patch-7fd49f24ed24.png"
     language: "Elixir"
 
   crucible_trace:
@@ -1566,33 +1596,6 @@ repos:
     description: "Docs"
     url: "https://github.com/nshkrdotcom/docs"
     language: "Python"
-
-  crucible_factorization:
-    name: "crucible_factorization"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "uncategorized"
-    description: ""
-    url: "https://github.com/North-Shore-AI/crucible_factorization"
-    language: "Elixir"
-
-  crucible_safetensors:
-    name: "crucible_safetensors"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "uncategorized"
-    description: ""
-    url: "https://github.com/North-Shore-AI/crucible_safetensors"
-    language: "Elixir"
-
-  crucible_tensor_patch:
-    name: "crucible_tensor_patch"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "uncategorized"
-    description: ""
-    url: "https://github.com/North-Shore-AI/crucible_tensor_patch"
-    language: "Elixir"
 
   self_hosted_inference_bumblebee:
     name: "self_hosted_inference_bumblebee"
