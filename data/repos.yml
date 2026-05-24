@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-05-23T23:31:11Z
+# Last updated: 2026-05-24T20:58:38Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -1466,7 +1466,7 @@ repos:
   trinity_coordinator:
     name: "trinity_coordinator"
     org: "nshkrdotcom"
-    stars: 3
+    stars: 4
     category: "nshkr-research"
     description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
     url: "https://github.com/nshkrdotcom/trinity_coordinator"
