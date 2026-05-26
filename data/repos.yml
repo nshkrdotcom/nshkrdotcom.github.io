@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-05-24T20:58:38Z
+# Last updated: 2026-05-26T01:46:28Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -1466,7 +1466,7 @@ repos:
   trinity_coordinator:
     name: "trinity_coordinator"
     org: "nshkrdotcom"
-    stars: 4
+    stars: 5
     category: "nshkr-research"
     description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
     url: "https://github.com/nshkrdotcom/trinity_coordinator"
@@ -1518,6 +1518,16 @@ repos:
     description: "Phoenix LiveView interface for CNS dialectical reasoning experiments"
     url: "https://github.com/North-Shore-AI/cns_ui"
     logo: "/logos/cns_ui-8eaa48504e7f.png"
+    language: "Elixir"
+
+  ml_musings:
+    name: "ml_musings"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-research"
+    description: "Foundations: A premium, hands-on educational curriculum exploring high-dimensional geometry, measure concentration, linear probing, self-attention routing, PEFT (LoRA and SVD surgery), evolution strategies, and sparse Mixture of Experts (MoE) gating. Written from scratch in Numerical Elixir (Nx) and compiled via EXLA."
+    url: "https://github.com/nshkrdotcom/ml_musings"
+    logo: "/logos/ml_musings-b68b62196570.png"
     language: "Elixir"
 
   youtube_audio_dl:
