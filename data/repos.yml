@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-05-26T01:46:28Z
+# Last updated: 2026-05-27T16:57:55Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -188,6 +188,16 @@ repos:
     logo: "/logos/crucible_bench-f7a2c28f9379.png"
     language: "Elixir"
 
+  crucible_bumblebee:
+    name: "crucible_bumblebee"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Bumblebee, Axon, and Nx adapter layer for compiling Crucible tap plans into model runs, hooks, traces, and decode steering."
+    url: "https://github.com/North-Shore-AI/crucible_bumblebee"
+    logo: "/logos/crucible_bumblebee-6e455c8bc7ba.png"
+    language: "Elixir"
+
   crucible_datasets:
     name: "crucible_datasets"
     org: "North-Shore-AI"
@@ -288,6 +298,16 @@ repos:
     logo: "/logos/crucible_model_registry-9da8110a7b82.png"
     language: "Elixir"
 
+  crucible_policy:
+    name: "crucible_policy"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Routing, gating, fusion, uncertainty, verifier, shared memory, and steering decision contracts over Crucible signal traces."
+    url: "https://github.com/North-Shore-AI/crucible_policy"
+    logo: "/logos/crucible_policy-bbb02e7381c9.png"
+    language: "Elixir"
+
   crucible_safetensors:
     name: "crucible_safetensors"
     org: "North-Shore-AI"
@@ -296,6 +316,36 @@ repos:
     description: "SafeTensors parsing, validation, bounded slicing, checksums, deterministic writing, and row-chunk helpers for Elixir and Nx."
     url: "https://github.com/North-Shore-AI/crucible_safetensors"
     logo: "/logos/crucible_safetensors-061423d44e1e.png"
+    language: "Elixir"
+
+  crucible_signal:
+    name: "crucible_signal"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Canonical Elixir signal ontology for transformer forward-pass artifacts, tensor summaries, capabilities, and internal-control surfaces."
+    url: "https://github.com/North-Shore-AI/crucible_signal"
+    logo: "/logos/crucible_signal-a413b591b497.png"
+    language: "Elixir"
+
+  crucible_signal_trace:
+    name: "crucible_signal_trace"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Bounded forward-pass trace schema and persistence helpers for Crucible signal captures, layer trajectories, and decode telemetry."
+    url: "https://github.com/North-Shore-AI/crucible_signal_trace"
+    logo: "/logos/crucible_signal_trace-86b4461e6d30.png"
+    language: "Elixir"
+
+  crucible_tap:
+    name: "crucible_tap"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Tap-plan and probe-contract library for selecting, bounding, and negotiating model-internal forward-pass observations."
+    url: "https://github.com/North-Shore-AI/crucible_tap"
+    logo: "/logos/crucible_tap-aefae42dd926.png"
     language: "Elixir"
 
   crucible_telemetry:
@@ -803,7 +853,7 @@ repos:
   gepa_ex:
     name: "gepa_ex"
     org: "nshkrdotcom"
-    stars: 4
+    stars: 5
     category: "nshkr-ai-infra"
     description: "Elixir implementation of GEPA: LLM-driven evolutionary optimization using Pareto-efficient search for text-based systems. Features OpenAI/Gemini integration, BEAM concurrency, OTP supervision, 218 tests with 75% coverage."
     url: "https://github.com/nshkrdotcom/gepa_ex"
