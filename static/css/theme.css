@@ -21,6 +21,7 @@
   --amber: oklch(0.78 0.18 60);
   --red: oklch(0.66 0.20 25);
   --green: oklch(0.72 0.18 145);
+  --orange: oklch(0.72 0.18 42);
 
   --font-sans: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
@@ -820,6 +821,10 @@ samp {
 .arch-layer[data-layer="memory"],
 .arch-layer[data-layer="foundation"] {
   border-left: 3px solid var(--text3);
+}
+
+.arch-layer[data-layer="chassis"] {
+  border-left: 3px solid var(--orange);
 }
 
 .arch-layer-name {

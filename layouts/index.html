@@ -67,6 +67,7 @@
       <div class="contract-question"><span>06</span><strong>What evidence?</strong><p>Evidence refs, attached artifacts, proof tokens.</p></div>
       <div class="contract-question"><span>07</span><strong>Who reviewed?</strong><p>Review case, decision, override, escalation.</p></div>
       <div class="contract-question"><span>08</span><strong>Can it replay?</strong><p>AITrace DAG, predecessor refs, merge semantics.</p></div>
+      <div class="contract-question"><span>09</span><strong>Where did it execute?</strong><p>Spatial topology, target host ID, BEAM node ref.</p></div>
     </div>
 
     <div class="handoff-chain" aria-label="Durable object handoff chain">
@@ -75,6 +76,7 @@
       <span>ResolvedOperationPlan</span>
       <span>AuthorityPacket</span>
       <span>GovernedInvocationEnvelope</span>
+      <span>TopologyProfile</span>
       <span>ExecutionInstruction</span>
       <span>EffectReceipt</span>
       <span>EvidenceRecord</span>
@@ -190,6 +192,23 @@
 
       <div class="arch-connector"></div>
 
+      <div class="arch-layer" data-layer="chassis">
+        <div class="arch-layer-meta">
+          <span class="arch-layer-name">Spatial substrate</span>
+          <span class="arch-layer-role">host provisioning, Systemd environment leases, mesh topology, secrets injection</span>
+        </div>
+        <p class="arch-layer-desc">
+          <code>chassis</code> is the self-replicating spatial substrate that maps virtual stack components to physical BEAM nodes. It coordinates host inventory, provisions remote nodes via native Elixir SSH bootstrap or pluggable adapters, and injects memory-decrypted age/SOPS credentials directly into Systemd service environments.
+        </p>
+        <div class="arch-nodes">
+          <a href="https://github.com/nshkrdotcom/chassis" class="arch-node arch-node-highlight" target="_blank" rel="noopener">chassis</a>
+          <a href="https://github.com/nshkrdotcom/chassis/tree/main/apps/chassis_core" class="arch-node" target="_blank" rel="noopener">chassis_core</a>
+          <a href="https://github.com/nshkrdotcom/chassis/tree/main/apps/chassis_ssh" class="arch-node" target="_blank" rel="noopener">chassis_ssh</a>
+        </div>
+      </div>
+
+      <div class="arch-connector"></div>
+
       <div class="arch-layer" data-layer="memory">
         <div class="arch-layer-meta">
           <span class="arch-layer-name">Trace and proof</span>
@@ -231,11 +250,11 @@
       <div class="stat-label">GitHub stars</div>
     </div>
     <div class="stat">
-      <div class="stat-value">9</div>
+      <div class="stat-value">10</div>
       <div class="stat-label">Write-path stages</div>
     </div>
     <div class="stat">
-      <div class="stat-value">8</div>
+      <div class="stat-value">9</div>
       <div class="stat-label">Audit questions</div>
     </div>
   </div>
