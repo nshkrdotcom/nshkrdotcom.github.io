@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-05-27T16:57:55Z
+# Last updated: 2026-05-28T18:13:26Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -910,6 +910,16 @@ repos:
     logo: "/logos/tinkex-21640fe69a05.png"
     language: "Elixir"
 
+  citadel:
+    name: "citadel"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "The command and control layer for the AI-powered enterprise"
+    url: "https://github.com/nshkrdotcom/citadel"
+    logo: "/logos/citadel-b6e190b2ba73.png"
+    language: "Elixir"
+
   command:
     name: "command"
     org: "nshkrdotcom"
@@ -988,6 +998,16 @@ repos:
     description: "Shared app-facing surface monorepo for the nshkr platform core: composition, wiring, host-facing surfaces, default bridges across outer_brain, Citadel, jido_integration, and read-model publication, with a stable entrypoint for product applications that should not stitch the lower stack manually."
     url: "https://github.com/nshkrdotcom/app_kit"
     logo: "/logos/app_kit-ef03eb940a72.png"
+    language: "Elixir"
+
+  chassis:
+    name: "chassis"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Spatial & deployment plane for NSHKR: standalone manager beside the stack that installs, provisions, health-checks, rolls back, and upgrades NSHKR installations."
+    url: "https://github.com/nshkrdotcom/chassis"
+    logo: "/logos/chassis-841a88ba018e.png"
     language: "Elixir"
 
   gepa_buildout:
@@ -1398,16 +1418,6 @@ repos:
     description: "The unified observability layer for the AI Control Plane"
     url: "https://github.com/nshkrdotcom/AITrace"
     logo: "/logos/AITrace-dd614d7779d3.png"
-    language: "Elixir"
-
-  citadel:
-    name: "citadel"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-observability"
-    description: "The command and control layer for the AI-powered enterprise"
-    url: "https://github.com/nshkrdotcom/citadel"
-    logo: "/logos/citadel-b6e190b2ba73.png"
     language: "Elixir"
 
   telemetry_reporter:
