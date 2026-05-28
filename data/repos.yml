@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-05-28T18:13:26Z
+# Last updated: 2026-05-28T22:20:38Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -734,6 +734,16 @@ repos:
     logo: "/logos/vllm-ef207e49acb9.png"
     language: "Elixir"
 
+  antigravity_cli_sdk:
+    name: "antigravity_cli_sdk"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-sdk"
+    description: "Elixir SDK for the Google Antigravity CLI (agy) — stream-json headless sessions, governed launch, and stack integration via cli_subprocess_core and agent_session_manager. Standalone execute/run APIs, materialized governed credentials, multi-instance isolation, and Hex-ready docs for nshkrdotcom AI SDK consumers."
+    url: "https://github.com/nshkrdotcom/antigravity_cli_sdk"
+    logo: "/logos/antigravity_cli_sdk-6edbf100992e.png"
+    language: "Elixir"
+
   cli_subprocess_core:
     name: "cli_subprocess_core"
     org: "nshkrdotcom"
@@ -751,6 +761,16 @@ repos:
     category: "nshkr-ai-sdk"
     description: "Prompt and parsing utilities for Crucible and NSAI. Provides templating, schema validation, structured output parsing, and tool-call helpers for consistent LLM IO."
     url: "https://github.com/North-Shore-AI/crucible_prompts"
+
+  cursor_cli_sdk:
+    name: "cursor_cli_sdk"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-sdk"
+    description: "Elixir SDK for the Cursor Agent CLI (agent) — stream-json headless sessions, governed launch, and stack integration via cli_subprocess_core and agent_session_manager. Standalone execute/run APIs, external auth via CURSOR_API_KEY, multi-instance subprocess isolation, and Hex-ready docs for nshkrdotcom AI SDK consumers."
+    url: "https://github.com/nshkrdotcom/cursor_cli_sdk"
+    logo: "/logos/cursor_cli_sdk-5d976db40c3d.png"
+    language: "Elixir"
 
   external_runtime_transport:
     name: "external_runtime_transport"
