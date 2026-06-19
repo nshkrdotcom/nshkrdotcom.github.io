@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-05-28T22:20:38Z
+# Last updated: 2026-06-19T19:04:14Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -103,7 +103,7 @@ repos:
   LlmGuard:
     name: "LlmGuard"
     org: "North-Shore-AI"
-    stars: 9
+    stars: 10
     category: "nshkr-crucible"
     description: "AI Firewall and guardrails for LLM-based Elixir applications"
     url: "https://github.com/North-Shore-AI/LlmGuard"
@@ -308,6 +308,16 @@ repos:
     logo: "/logos/crucible_policy-bbb02e7381c9.png"
     language: "Elixir"
 
+  crucible_provider_contracts:
+    name: "crucible_provider_contracts"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Formal Provider behaviour, ABI specifications, shared structs, and contract test suites for Crucible model and robotics providers."
+    url: "https://github.com/North-Shore-AI/crucible_provider_contracts"
+    logo: "/logos/crucible_provider_contracts-091810a8c64d.png"
+    language: "Elixir"
+
   crucible_safetensors:
     name: "crucible_safetensors"
     org: "North-Shore-AI"
@@ -499,7 +509,7 @@ repos:
   flowstone:
     name: "flowstone"
     org: "nshkrdotcom"
-    stars: 27
+    stars: 28
     category: "nshkr-ai-agents"
     description: "Asset-first data orchestration for Elixir/BEAM. Dagster-inspired with OTP fault tolerance, LiveView dashboard, lineage tracking, checkpoint gates, and distributed execution via Oban."
     url: "https://github.com/nshkrdotcom/flowstone"
@@ -528,11 +538,21 @@ repos:
   ALTAR:
     name: "ALTAR"
     org: "nshkrdotcom"
-    stars: 8
+    stars: 9
     category: "nshkr-ai-agents"
     description: "The Agent & Tool Arbitration Protocol"
     url: "https://github.com/nshkrdotcom/ALTAR"
     logo: "/logos/ALTAR-87496d8f2dba.png"
+    language: "Elixir"
+
+  pipeline_ex:
+    name: "pipeline_ex"
+    org: "nshkrdotcom"
+    stars: 9
+    category: "nshkr-ai-agents"
+    description: "Claude Code + Gemini AI collaboration orchestration tools"
+    url: "https://github.com/nshkrdotcom/pipeline_ex"
+    logo: "/logos/pipeline_ex-e00e38ab78a2.png"
     language: "Elixir"
 
   mabeam:
@@ -542,16 +562,6 @@ repos:
     category: "nshkr-ai-agents"
     description: "Multi-agent systems framework for the BEAM platform - build distributed autonomous agents with OTP supervision and fault tolerance"
     url: "https://github.com/nshkrdotcom/mabeam"
-    language: "Elixir"
-
-  pipeline_ex:
-    name: "pipeline_ex"
-    org: "nshkrdotcom"
-    stars: 8
-    category: "nshkr-ai-agents"
-    description: "Claude Code + Gemini AI collaboration orchestration tools"
-    url: "https://github.com/nshkrdotcom/pipeline_ex"
-    logo: "/logos/pipeline_ex-e00e38ab78a2.png"
     language: "Elixir"
 
   jido_hive:
@@ -617,7 +627,7 @@ repos:
   gemini_ex:
     name: "gemini_ex"
     org: "nshkrdotcom"
-    stars: 31
+    stars: 32
     category: "nshkr-ai-sdk"
     description: "Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI"
     url: "https://github.com/nshkrdotcom/gemini_ex"
@@ -637,7 +647,7 @@ repos:
   codex_sdk:
     name: "codex_sdk"
     org: "nshkrdotcom"
-    stars: 22
+    stars: 24
     category: "nshkr-ai-sdk"
     description: "OpenAI Codex SDK written in Elixir"
     url: "https://github.com/nshkrdotcom/codex_sdk"
@@ -853,7 +863,7 @@ repos:
   rag_ex:
     name: "rag_ex"
     org: "nshkrdotcom"
-    stars: 9
+    stars: 10
     category: "nshkr-ai-infra"
     description: "Elixir RAG library with multi-LLM routing (Gemini, Claude, OpenAI, Ollama), GraphRAG, knowledge graphs, modular retrievers/rerankers, composable pipelines, pgvector integration, advanced chunking, and tool-using agents. Fork of bitcrowd/rag."
     url: "https://github.com/nshkrdotcom/rag_ex"
@@ -1153,7 +1163,7 @@ repos:
   exdantic:
     name: "exdantic"
     org: "nshkrdotcom"
-    stars: 12
+    stars: 13
     category: "nshkr-schema"
     description: "A powerful, flexible schema definition and validation library for Elixir, inspired by Python's Pydantic."
     url: "https://github.com/nshkrdotcom/exdantic"
@@ -1423,7 +1433,7 @@ repos:
   foundation:
     name: "foundation"
     org: "nshkrdotcom"
-    stars: 12
+    stars: 13
     category: "nshkr-observability"
     description: "Elixir infrastructure and Observability Library"
     url: "https://github.com/nshkrdotcom/foundation"
@@ -1522,7 +1532,7 @@ repos:
   ASKA:
     name: "ASKA"
     org: "nshkrdotcom"
-    stars: 10
+    stars: 11
     category: "nshkr-security"
     description: "Secure Computing in the AI age"
     url: "https://github.com/nshkrdotcom/ASKA"
@@ -1546,7 +1556,7 @@ repos:
   trinity_coordinator:
     name: "trinity_coordinator"
     org: "nshkrdotcom"
-    stars: 5
+    stars: 7
     category: "nshkr-research"
     description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
     url: "https://github.com/nshkrdotcom/trinity_coordinator"
@@ -1686,6 +1696,14 @@ repos:
     description: "Docs"
     url: "https://github.com/nshkrdotcom/docs"
     language: "Python"
+
+  req_llm_zai:
+    name: "req_llm_zai"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "uncategorized"
+    description: "Z.AI provider for ReqLLM - OpenAI-compatible GLM models"
+    url: "https://github.com/nshkrdotcom/req_llm_zai"
 
   self_hosted_inference_bumblebee:
     name: "self_hosted_inference_bumblebee"
