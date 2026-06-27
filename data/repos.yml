@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-06-19T19:04:14Z
+# Last updated: 2026-06-27T17:19:46Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -103,7 +103,7 @@ repos:
   LlmGuard:
     name: "LlmGuard"
     org: "North-Shore-AI"
-    stars: 10
+    stars: 13
     category: "nshkr-crucible"
     description: "AI Firewall and guardrails for LLM-based Elixir applications"
     url: "https://github.com/North-Shore-AI/LlmGuard"
@@ -499,7 +499,7 @@ repos:
   synapse:
     name: "synapse"
     org: "nshkrdotcom"
-    stars: 45
+    stars: 46
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
@@ -509,7 +509,7 @@ repos:
   flowstone:
     name: "flowstone"
     org: "nshkrdotcom"
-    stars: 28
+    stars: 29
     category: "nshkr-ai-agents"
     description: "Asset-first data orchestration for Elixir/BEAM. Dagster-inspired with OTP fault tolerance, LiveView dashboard, lineage tracking, checkpoint gates, and distributed execution via Oban."
     url: "https://github.com/nshkrdotcom/flowstone"
@@ -519,7 +519,7 @@ repos:
   DSPex:
     name: "DSPex"
     org: "nshkrdotcom"
-    stars: 19
+    stars: 18
     category: "nshkr-ai-agents"
     description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
     url: "https://github.com/nshkrdotcom/DSPex"
@@ -624,6 +624,16 @@ repos:
     logo: "/logos/stack_coder-006ce79aea5d.png"
     language: "Elixir"
 
+  claude_agent_sdk:
+    name: "claude_agent_sdk"
+    org: "nshkrdotcom"
+    stars: 33
+    category: "nshkr-ai-sdk"
+    description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
+    url: "https://github.com/nshkrdotcom/claude_agent_sdk"
+    logo: "/logos/claude_agent_sdk-295c52d17e5b.png"
+    language: "Elixir"
+
   gemini_ex:
     name: "gemini_ex"
     org: "nshkrdotcom"
@@ -632,16 +642,6 @@ repos:
     description: "Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI"
     url: "https://github.com/nshkrdotcom/gemini_ex"
     logo: "/logos/gemini_ex-d01a3345cdf3.png"
-    language: "Elixir"
-
-  claude_agent_sdk:
-    name: "claude_agent_sdk"
-    org: "nshkrdotcom"
-    stars: 30
-    category: "nshkr-ai-sdk"
-    description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
-    url: "https://github.com/nshkrdotcom/claude_agent_sdk"
-    logo: "/logos/claude_agent_sdk-295c52d17e5b.png"
     language: "Elixir"
 
   codex_sdk:
@@ -843,7 +843,7 @@ repos:
   json_remedy:
     name: "json_remedy"
     org: "nshkrdotcom"
-    stars: 32
+    stars: 33
     category: "nshkr-ai-infra"
     description: "A practical, multi-layered JSON repair library for Elixir that intelligently fixes malformed JSON strings commonly produced by LLMs, legacy systems, and data pipelines."
     url: "https://github.com/nshkrdotcom/json_remedy"
@@ -1556,7 +1556,7 @@ repos:
   trinity_coordinator:
     name: "trinity_coordinator"
     org: "nshkrdotcom"
-    stars: 7
+    stars: 68
     category: "nshkr-research"
     description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
     url: "https://github.com/nshkrdotcom/trinity_coordinator"
@@ -1679,6 +1679,15 @@ repos:
     logo: "/logos/prappy-ba09afe6356c.png"
     language: "C++"
 
+  docs:
+    name: "docs"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "uncategorized"
+    description: "Docs"
+    url: "https://github.com/nshkrdotcom/docs"
+    language: "Python"
+
   nshkrdotcom:
     name: "nshkrdotcom"
     org: "nshkrdotcom"
@@ -1688,13 +1697,13 @@ repos:
     url: "https://github.com/nshkrdotcom/nshkrdotcom"
     language: "Shell"
 
-  docs:
-    name: "docs"
+  learning:
+    name: "learning"
     org: "nshkrdotcom"
-    stars: 1
+    stars: 0
     category: "uncategorized"
-    description: "Docs"
-    url: "https://github.com/nshkrdotcom/docs"
+    description: ""
+    url: "https://github.com/nshkrdotcom/learning"
     language: "Python"
 
   req_llm_zai:
