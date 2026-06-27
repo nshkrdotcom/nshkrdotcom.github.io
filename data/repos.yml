@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-06-27T17:19:46Z
+# Last updated: 2026-06-27T19:56:54Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -1099,6 +1099,15 @@ repos:
     url: "https://github.com/nshkrdotcom/inference"
     logo: "/logos/inference-03f811fa5bca.png"
     language: "Elixir"
+
+  mwb:
+    name: "mwb"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Mechanistic Workbench - Local-first, IPython-native Mechanistic Interpretability Workbench"
+    url: "https://github.com/nshkrdotcom/mwb"
+    language: "Python"
 
   outer_brain:
     name: "outer_brain"
