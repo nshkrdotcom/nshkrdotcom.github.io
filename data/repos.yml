@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-06-27T19:56:54Z
+# Last updated: 2026-06-28T01:31:15Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -235,7 +235,6 @@ repos:
     category: "nshkr-crucible"
     description: "Nx SVD/SVF factorization primitives for neural network model surgery and TRINITY artifact export."
     url: "https://github.com/North-Shore-AI/crucible_factorization"
-    logo: "/logos/crucible_factorization-05692e29d6a6.png"
     language: "Elixir"
 
   crucible_feedback:
@@ -1020,6 +1019,16 @@ repos:
     logo: "/logos/tiktoken_ex-43536c51d7f4.png"
     language: "Elixir"
 
+  trinity_framework:
+    name: "trinity_framework"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "Reusable TRINITY router and coordination framework for deterministic agent routing, provider pool contracts, typed coordination patterns, and local-first AI infrastructure."
+    url: "https://github.com/nshkrdotcom/trinity_framework"
+    logo: "/logos/trinity_framework-0cdc054cb171.png"
+    language: "Elixir"
+
   app_kit:
     name: "app_kit"
     org: "nshkrdotcom"
@@ -1100,13 +1109,23 @@ repos:
     logo: "/logos/inference-03f811fa5bca.png"
     language: "Elixir"
 
+  mil:
+    name: "mil"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "mil - Mech Interp Lab - capture IPython sessions and MechInterp tools"
+    url: "https://github.com/nshkrdotcom/mil"
+    language: "Python"
+
   mwb:
     name: "mwb"
     org: "nshkrdotcom"
     stars: 0
     category: "nshkr-ai-infra"
-    description: "Mechanistic Workbench - Local-first, IPython-native Mechanistic Interpretability Workbench"
+    description: "Mechanistic Workbench (mwb): Local-first mechanistic interpretability workbench for IPython research, agent-readable state, artifact validation, evidence graphs, claim-safe MechanismCards, provenance, run ledgers, SAE/TransformerLens workflows, and reproducible MI experiments"
     url: "https://github.com/nshkrdotcom/mwb"
+    logo: "/logos/mwb-522d34562304.webp"
     language: "Python"
 
   outer_brain:
@@ -1158,16 +1177,6 @@ repos:
     url: "https://github.com/North-Shore-AI/tinkerer"
     logo: "/logos/tinkerer-6b70879f38af.png"
     language: "Python"
-
-  trinity_framework:
-    name: "trinity_framework"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Reusable TRINITY router and coordination framework for deterministic agent routing, provider pool contracts, typed coordination patterns, and local-first AI infrastructure."
-    url: "https://github.com/nshkrdotcom/trinity_framework"
-    logo: "/logos/trinity_framework-0cdc054cb171.png"
-    language: "Elixir"
 
   exdantic:
     name: "exdantic"
