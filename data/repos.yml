@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-06-28T01:31:15Z
+# Last updated: 2026-07-01T01:37:49Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -235,6 +235,7 @@ repos:
     category: "nshkr-crucible"
     description: "Nx SVD/SVF factorization primitives for neural network model surgery and TRINITY artifact export."
     url: "https://github.com/North-Shore-AI/crucible_factorization"
+    logo: "/logos/crucible_factorization-05692e29d6a6.png"
     language: "Elixir"
 
   crucible_feedback:
@@ -498,7 +499,7 @@ repos:
   synapse:
     name: "synapse"
     org: "nshkrdotcom"
-    stars: 46
+    stars: 47
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
@@ -508,7 +509,7 @@ repos:
   flowstone:
     name: "flowstone"
     org: "nshkrdotcom"
-    stars: 29
+    stars: 30
     category: "nshkr-ai-agents"
     description: "Asset-first data orchestration for Elixir/BEAM. Dagster-inspired with OTP fault tolerance, LiveView dashboard, lineage tracking, checkpoint gates, and distributed execution via Oban."
     url: "https://github.com/nshkrdotcom/flowstone"
@@ -1109,6 +1110,16 @@ repos:
     logo: "/logos/inference-03f811fa5bca.png"
     language: "Elixir"
 
+  micrograd_ex:
+    name: "micrograd_ex"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Micrograd, implemented in Elixir"
+    url: "https://github.com/nshkrdotcom/micrograd_ex"
+    logo: "/logos/micrograd_ex-9fb94f37352e.png"
+    language: "Elixir"
+
   mil:
     name: "mil"
     org: "nshkrdotcom"
@@ -1574,7 +1585,7 @@ repos:
   trinity_coordinator:
     name: "trinity_coordinator"
     org: "nshkrdotcom"
-    stars: 68
+    stars: 70
     category: "nshkr-research"
     description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
     url: "https://github.com/nshkrdotcom/trinity_coordinator"
@@ -1714,6 +1725,15 @@ repos:
     description: "Personal GitHub profile README with Elixir/AI projects and LLM reliability research"
     url: "https://github.com/nshkrdotcom/nshkrdotcom"
     language: "Shell"
+
+  attention_lab:
+    name: "attention_lab"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "uncategorized"
+    description: "Attention Lab for running and tracking language model experiments via Karpathy's nanoGPT"
+    url: "https://github.com/nshkrdotcom/attention_lab"
+    language: "Python"
 
   learning:
     name: "learning"
