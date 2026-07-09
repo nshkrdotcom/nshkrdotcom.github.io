@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-07-01T01:37:49Z
+# Last updated: 2026-07-09T23:04:18Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -850,6 +850,16 @@ repos:
     logo: "/logos/json_remedy-095a4f7b142d.png"
     language: "Elixir"
 
+  rag_ex:
+    name: "rag_ex"
+    org: "nshkrdotcom"
+    stars: 11
+    category: "nshkr-ai-infra"
+    description: "Elixir RAG library with multi-LLM routing (Gemini, Claude, OpenAI, Ollama), GraphRAG, knowledge graphs, modular retrievers/rerankers, composable pipelines, pgvector integration, advanced chunking, and tool-using agents. Fork of bitcrowd/rag."
+    url: "https://github.com/nshkrdotcom/rag_ex"
+    logo: "/logos/rag_ex-23ac52270f69.png"
+    language: "Elixir"
+
   snakepit:
     name: "snakepit"
     org: "nshkrdotcom"
@@ -858,16 +868,6 @@ repos:
     description: "High-performance, generalized process pooler and session manager for external language integrations. Orchestrates and supervises languages like Python and Javascript from Elixir."
     url: "https://github.com/nshkrdotcom/snakepit"
     logo: "/logos/snakepit-247a3a12a971.png"
-    language: "Elixir"
-
-  rag_ex:
-    name: "rag_ex"
-    org: "nshkrdotcom"
-    stars: 10
-    category: "nshkr-ai-infra"
-    description: "Elixir RAG library with multi-LLM routing (Gemini, Claude, OpenAI, Ollama), GraphRAG, knowledge graphs, modular retrievers/rerankers, composable pipelines, pgvector integration, advanced chunking, and tool-using agents. Fork of bitcrowd/rag."
-    url: "https://github.com/nshkrdotcom/rag_ex"
-    logo: "/logos/rag_ex-23ac52270f69.png"
     language: "Elixir"
 
   snakebridge:
@@ -1169,6 +1169,15 @@ repos:
     logo: "/logos/portfolio_manager-7df7d9b75cfc.png"
     language: "Elixir"
 
+  self_hosted_inference_bumblebee:
+    name: "self_hosted_inference_bumblebee"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "Bumblebee/Nx runtime backend for self_hosted_inference_core"
+    url: "https://github.com/nshkrdotcom/self_hosted_inference_bumblebee"
+    language: "Elixir"
+
   stack_lab:
     name: "stack_lab"
     org: "nshkrdotcom"
@@ -1366,7 +1375,7 @@ repos:
   switchyard:
     name: "switchyard"
     org: "nshkrdotcom"
-    stars: 2
+    stars: 3
     category: "nshkr-ui"
     description: "Terminal-native operator workbench monorepo for multi-site terminal applications, local control-plane orchestration, daemon-backed process and log management, and pluggable domain sites such as Jido Hive, built as a non-umbrella Elixir workspace with Blitz and Weld."
     url: "https://github.com/nshkrdotcom/switchyard"
@@ -1585,7 +1594,7 @@ repos:
   trinity_coordinator:
     name: "trinity_coordinator"
     org: "nshkrdotcom"
-    stars: 70
+    stars: 74
     category: "nshkr-research"
     description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
     url: "https://github.com/nshkrdotcom/trinity_coordinator"
@@ -1629,6 +1638,15 @@ repos:
     logo: "/logos/anti_agents-49bef43edef0.png"
     language: "Elixir"
 
+  attention_lab:
+    name: "attention_lab"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-research"
+    description: "Attention Lab for running and tracking language model experiments via Karpathy's nanoGPT"
+    url: "https://github.com/nshkrdotcom/attention_lab"
+    language: "Python"
+
   cns_ui:
     name: "cns_ui"
     org: "North-Shore-AI"
@@ -1639,6 +1657,15 @@ repos:
     logo: "/logos/cns_ui-8eaa48504e7f.png"
     language: "Elixir"
 
+  learning:
+    name: "learning"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-research"
+    description: ""
+    url: "https://github.com/nshkrdotcom/learning"
+    language: "Python"
+
   ml_musings:
     name: "ml_musings"
     org: "nshkrdotcom"
@@ -1648,6 +1675,15 @@ repos:
     url: "https://github.com/nshkrdotcom/ml_musings"
     logo: "/logos/ml_musings-b68b62196570.png"
     language: "Elixir"
+
+  superposition_zoo:
+    name: "superposition_zoo"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-research"
+    description: "A research harness for studying how sequence-mixing architectures (softmax attention, linear attention, state-space models, delta-rule associative memory, and more) causally shape superposition and feature isolation in learned representations, using ground-truth synthetic benchmarks instead of natural-language probing."
+    url: "https://github.com/nshkrdotcom/superposition_zoo"
+    language: "Python"
 
   youtube_audio_dl:
     name: "youtube_audio_dl"
@@ -1726,24 +1762,6 @@ repos:
     url: "https://github.com/nshkrdotcom/nshkrdotcom"
     language: "Shell"
 
-  attention_lab:
-    name: "attention_lab"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "uncategorized"
-    description: "Attention Lab for running and tracking language model experiments via Karpathy's nanoGPT"
-    url: "https://github.com/nshkrdotcom/attention_lab"
-    language: "Python"
-
-  learning:
-    name: "learning"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "uncategorized"
-    description: ""
-    url: "https://github.com/nshkrdotcom/learning"
-    language: "Python"
-
   req_llm_zai:
     name: "req_llm_zai"
     org: "nshkrdotcom"
@@ -1751,13 +1769,4 @@ repos:
     category: "uncategorized"
     description: "Z.AI provider for ReqLLM - OpenAI-compatible GLM models"
     url: "https://github.com/nshkrdotcom/req_llm_zai"
-
-  self_hosted_inference_bumblebee:
-    name: "self_hosted_inference_bumblebee"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "uncategorized"
-    description: ""
-    url: "https://github.com/nshkrdotcom/self_hosted_inference_bumblebee"
-    language: "Elixir"
 
