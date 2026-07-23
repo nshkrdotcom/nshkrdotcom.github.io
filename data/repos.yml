@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-07-15T17:47:57Z
+# Last updated: 2026-07-23T18:08:04Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -499,7 +499,7 @@ repos:
   synapse:
     name: "synapse"
     org: "nshkrdotcom"
-    stars: 47
+    stars: 48
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
@@ -529,7 +529,7 @@ repos:
   ds_ex:
     name: "ds_ex"
     org: "nshkrdotcom"
-    stars: 17
+    stars: 18
     category: "nshkr-ai-agents"
     description: "DSPEx - Declarative Self-improving Elixir | A BEAM-Native AI Program Optimization Framework"
     url: "https://github.com/nshkrdotcom/ds_ex"
@@ -637,7 +637,7 @@ repos:
   gemini_ex:
     name: "gemini_ex"
     org: "nshkrdotcom"
-    stars: 32
+    stars: 34
     category: "nshkr-ai-sdk"
     description: "Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI"
     url: "https://github.com/nshkrdotcom/gemini_ex"
@@ -647,7 +647,7 @@ repos:
   codex_sdk:
     name: "codex_sdk"
     org: "nshkrdotcom"
-    stars: 24
+    stars: 25
     category: "nshkr-ai-sdk"
     description: "OpenAI Codex SDK written in Elixir"
     url: "https://github.com/nshkrdotcom/codex_sdk"
@@ -657,7 +657,7 @@ repos:
   agent_session_manager:
     name: "agent_session_manager"
     org: "nshkrdotcom"
-    stars: 8
+    stars: 9
     category: "nshkr-ai-sdk"
     description: "Agent Session Manager - A comprehensive Elixir library for managing AI agent sessions, state persistence, conversation context, and multi-agent orchestration workflows"
     url: "https://github.com/nshkrdotcom/agent_session_manager"
@@ -714,6 +714,26 @@ repos:
     logo: "/logos/amp_sdk-6fe2e2bacf84.png"
     language: "Elixir"
 
+  antigravity_cli_sdk:
+    name: "antigravity_cli_sdk"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-sdk"
+    description: "Elixir SDK for the Google Antigravity CLI (agy) — stream-json headless sessions, governed launch, and stack integration via cli_subprocess_core and agent_session_manager. Standalone execute/run APIs, materialized governed credentials, multi-instance isolation, and Hex-ready docs for nshkrdotcom AI SDK consumers."
+    url: "https://github.com/nshkrdotcom/antigravity_cli_sdk"
+    logo: "/logos/antigravity_cli_sdk-6edbf100992e.png"
+    language: "Elixir"
+
+  cli_subprocess_core:
+    name: "cli_subprocess_core"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-sdk"
+    description: "Foundational Elixir runtime library for deterministic CLI subprocess orchestration, normalized event and payload semantics, provider profile contracts, registry plumbing, and shared support modules for the nshkr AI SDK runtime stack rearchitecture."
+    url: "https://github.com/nshkrdotcom/cli_subprocess_core"
+    logo: "/logos/cli_subprocess_core-83c908bccb62.png"
+    language: "Elixir"
+
   github_ex:
     name: "github_ex"
     org: "nshkrdotcom"
@@ -744,26 +764,6 @@ repos:
     logo: "/logos/vllm-ef207e49acb9.png"
     language: "Elixir"
 
-  antigravity_cli_sdk:
-    name: "antigravity_cli_sdk"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-sdk"
-    description: "Elixir SDK for the Google Antigravity CLI (agy) — stream-json headless sessions, governed launch, and stack integration via cli_subprocess_core and agent_session_manager. Standalone execute/run APIs, materialized governed credentials, multi-instance isolation, and Hex-ready docs for nshkrdotcom AI SDK consumers."
-    url: "https://github.com/nshkrdotcom/antigravity_cli_sdk"
-    logo: "/logos/antigravity_cli_sdk-6edbf100992e.png"
-    language: "Elixir"
-
-  cli_subprocess_core:
-    name: "cli_subprocess_core"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-sdk"
-    description: "Foundational Elixir runtime library for deterministic CLI subprocess orchestration, normalized event and payload semantics, provider profile contracts, registry plumbing, and shared support modules for the nshkr AI SDK runtime stack rearchitecture."
-    url: "https://github.com/nshkrdotcom/cli_subprocess_core"
-    logo: "/logos/cli_subprocess_core-83c908bccb62.png"
-    language: "Elixir"
-
   crucible_prompts:
     name: "crucible_prompts"
     org: "North-Shore-AI"
@@ -771,6 +771,8 @@ repos:
     category: "nshkr-ai-sdk"
     description: "Prompt and parsing utilities for Crucible and NSAI. Provides templating, schema validation, structured output parsing, and tool-call helpers for consistent LLM IO."
     url: "https://github.com/North-Shore-AI/crucible_prompts"
+    logo: "/logos/crucible_prompts-edbb0e74c423.png"
+    language: "Elixir"
 
   cursor_cli_sdk:
     name: "cursor_cli_sdk"
@@ -854,7 +856,7 @@ repos:
   rag_ex:
     name: "rag_ex"
     org: "nshkrdotcom"
-    stars: 11
+    stars: 12
     category: "nshkr-ai-infra"
     description: "Elixir RAG library with multi-LLM routing (Gemini, Claude, OpenAI, Ollama), GraphRAG, knowledge graphs, modular retrievers/rerankers, composable pipelines, pgvector integration, advanced chunking, and tool-using agents. Fork of bitcrowd/rag."
     url: "https://github.com/nshkrdotcom/rag_ex"
@@ -899,6 +901,26 @@ repos:
     description: "Elixir port of tinker-cookbook: training and evaluation recipes for the Tinker ML platform."
     url: "https://github.com/North-Shore-AI/tinkex_cookbook"
     logo: "/logos/tinkex_cookbook-58e5645d1d9e.png"
+    language: "Elixir"
+
+  command:
+    name: "command"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-ai-infra"
+    description: "Core Elixir library for AI agent orchestration - unified workbench for running, tracking, and orchestrating multi-provider LLM agents with sessions, workflows, RAG indexes, tool approvals, and cost tracking"
+    url: "https://github.com/nshkrdotcom/command"
+    logo: "/logos/command-ec327cd1d407.png"
+    language: "Elixir"
+
+  execution_plane:
+    name: "execution_plane"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-ai-infra"
+    description: "Execution Plane is an Elixir/OTP runtime substrate for boundary-aware AI infrastructure, unifying process execution, protocol framing, transport lifecycle, realtime streams, JSON-RPC control lanes, and future sandbox-backed placement under one composable kernel for agentic systems."
+    url: "https://github.com/nshkrdotcom/execution_plane"
+    logo: "/logos/execution_plane-ce0c075cacb9.png"
     language: "Elixir"
 
   nsai_gateway:
@@ -951,24 +973,44 @@ repos:
     logo: "/logos/citadel-b6e190b2ba73.png"
     language: "Elixir"
 
-  command:
-    name: "command"
+  gepa_framework:
+    name: "gepa_framework"
     org: "nshkrdotcom"
     stars: 1
     category: "nshkr-ai-infra"
-    description: "Core Elixir library for AI agent orchestration - unified workbench for running, tracking, and orchestrating multi-provider LLM agents with sessions, workflows, RAG indexes, tool approvals, and cost tracking"
-    url: "https://github.com/nshkrdotcom/command"
-    logo: "/logos/command-ec327cd1d407.png"
+    description: "Reusable GEPA optimizer framework for typed candidate generation, evaluation, persistence posture, tracing contracts, and deterministic prompt optimization infrastructure."
+    url: "https://github.com/nshkrdotcom/gepa_framework"
+    logo: "/logos/gepa_framework-d482123d1b4b.png"
     language: "Elixir"
 
-  execution_plane:
-    name: "execution_plane"
+  ground_plane:
+    name: "ground_plane"
     org: "nshkrdotcom"
     stars: 1
     category: "nshkr-ai-infra"
-    description: "Execution Plane is an Elixir/OTP runtime substrate for boundary-aware AI infrastructure, unifying process execution, protocol framing, transport lifecycle, realtime streams, JSON-RPC control lanes, and future sandbox-backed placement under one composable kernel for agentic systems."
-    url: "https://github.com/nshkrdotcom/execution_plane"
-    logo: "/logos/execution_plane-ce0c075cacb9.png"
+    description: "Shared lower infrastructure monorepo for the nshkr platform core: contracts, Postgres durability helpers, projection publication glue, lease and fence primitives, replay-safe ids, and common runtime infrastructure used by outer_brain, Citadel, jido_integration, and app-facing surfaces."
+    url: "https://github.com/nshkrdotcom/ground_plane"
+    logo: "/logos/ground_plane-8150e503f1fe.png"
+    language: "Elixir"
+
+  inference:
+    name: "inference"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "Reusable Elixir semantic inference contracts, adapters, trace metadata, and conformance tests for local CLI agents, hosted model SDKs, and governed nshkr runtime integration."
+    url: "https://github.com/nshkrdotcom/inference"
+    logo: "/logos/inference-03f811fa5bca.png"
+    language: "Elixir"
+
+  micrograd_ex:
+    name: "micrograd_ex"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "Micrograd, implemented in Elixir"
+    url: "https://github.com/nshkrdotcom/micrograd_ex"
+    logo: "/logos/micrograd_ex-9fb94f37352e.png"
     language: "Elixir"
 
   nsai_registry:
@@ -1061,26 +1103,6 @@ repos:
     logo: "/logos/gepa_buildout-21b6e082f65f.png"
     language: "Elixir"
 
-  gepa_framework:
-    name: "gepa_framework"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Reusable GEPA optimizer framework for typed candidate generation, evaluation, persistence posture, tracing contracts, and deterministic prompt optimization infrastructure."
-    url: "https://github.com/nshkrdotcom/gepa_framework"
-    logo: "/logos/gepa_framework-d482123d1b4b.png"
-    language: "Elixir"
-
-  ground_plane:
-    name: "ground_plane"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Shared lower infrastructure monorepo for the nshkr platform core: contracts, Postgres durability helpers, projection publication glue, lease and fence primitives, replay-safe ids, and common runtime infrastructure used by outer_brain, Citadel, jido_integration, and app-facing surfaces."
-    url: "https://github.com/nshkrdotcom/ground_plane"
-    logo: "/logos/ground_plane-8150e503f1fe.png"
-    language: "Elixir"
-
   hf_hub_ex:
     name: "hf_hub_ex"
     org: "North-Shore-AI"
@@ -1101,26 +1123,6 @@ repos:
     logo: "/logos/hf_peft_ex-ff42582b12a9.png"
     language: "Jupyter Notebook"
 
-  inference:
-    name: "inference"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Reusable Elixir semantic inference contracts, adapters, trace metadata, and conformance tests for local CLI agents, hosted model SDKs, and governed nshkr runtime integration."
-    url: "https://github.com/nshkrdotcom/inference"
-    logo: "/logos/inference-03f811fa5bca.png"
-    language: "Elixir"
-
-  micrograd_ex:
-    name: "micrograd_ex"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Micrograd, implemented in Elixir"
-    url: "https://github.com/nshkrdotcom/micrograd_ex"
-    logo: "/logos/micrograd_ex-9fb94f37352e.png"
-    language: "Elixir"
-
   mil:
     name: "mil"
     org: "nshkrdotcom"
@@ -1139,6 +1141,16 @@ repos:
     url: "https://github.com/nshkrdotcom/mwb"
     logo: "/logos/mwb-522d34562304.webp"
     language: "Python"
+
+  nshkr:
+    name: "nshkr"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "NSHKR is the production Elixir/OTP composition and release workspace for a governed AI operations platform, wiring durable workflows, cognitive context, provider accounts, policy decisions, execution runtimes, cluster reconciliation, Synapse, and Extravaganza into reproducible monolith and distributed deployments."
+    url: "https://github.com/nshkrdotcom/nshkr"
+    logo: "/logos/nshkr-f040e809a539.png"
+    language: "Elixir"
 
   outer_brain:
     name: "outer_brain"
@@ -1283,6 +1295,26 @@ repos:
     logo: "/logos/elixir_dashboard-faa5610e3c18.png"
     language: "Elixir"
 
+  prompt_runner_sdk:
+    name: "prompt_runner_sdk"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-devtools"
+    description: "Prompt Runner SDK - Elixir toolkit for orchestrating multi-step prompt executions with Claude Code SDK and Codex SDK. Streaming output, progress tracking, multi-repo commits, configurable LLM backends with per-prompt overrides, and automatic git integration."
+    url: "https://github.com/nshkrdotcom/prompt_runner_sdk"
+    logo: "/logos/prompt_runner_sdk-d08b24c34ff5.png"
+    language: "Elixir"
+
+  atlas_once:
+    name: "atlas_once"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-devtools"
+    description: "Atlas Once is a filesystem-first personal memory system and Unix-native context engineering toolkit for capture, retrieval, durable notes, session tracking, repo bundling, and LLM-ready exports built from plain files, Python CLIs, and composable shell workflows."
+    url: "https://github.com/nshkrdotcom/atlas_once"
+    logo: "/logos/atlas_once-159196502915.png"
+    language: "Python"
+
   blitz:
     name: "blitz"
     org: "nshkrdotcom"
@@ -1313,16 +1345,6 @@ repos:
     logo: "/logos/pristine-52c5a5aae0ac.png"
     language: "Elixir"
 
-  prompt_runner_sdk:
-    name: "prompt_runner_sdk"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-devtools"
-    description: "Prompt Runner SDK - Elixir toolkit for orchestrating multi-step prompt executions with Claude Code SDK and Codex SDK. Streaming output, progress tracking, multi-repo commits, configurable LLM backends with per-prompt overrides, and automatic git integration."
-    url: "https://github.com/nshkrdotcom/prompt_runner_sdk"
-    logo: "/logos/prompt_runner_sdk-d08b24c34ff5.png"
-    language: "Elixir"
-
   weld:
     name: "weld"
     org: "nshkrdotcom"
@@ -1333,16 +1355,6 @@ repos:
     logo: "/logos/weld-4e61eea6e4c9.png"
     language: "Elixir"
 
-  atlas_once:
-    name: "atlas_once"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-devtools"
-    description: "Atlas Once is a filesystem-first personal memory system and Unix-native context engineering toolkit for capture, retrieval, durable notes, session tracking, repo bundling, and LLM-ready exports built from plain files, Python CLIs, and composable shell workflows."
-    url: "https://github.com/nshkrdotcom/atlas_once"
-    logo: "/logos/atlas_once-159196502915.png"
-    language: "Python"
-
   coolify_ex:
     name: "coolify_ex"
     org: "nshkrdotcom"
@@ -1352,6 +1364,16 @@ repos:
     url: "https://github.com/nshkrdotcom/coolify_ex"
     logo: "/logos/coolify_ex-675aca6e0a41.png"
     language: "Elixir"
+
+  elixir_agent_debug:
+    name: "elixir_agent_debug"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-devtools"
+    description: "Evidence-first Elixir & OTP debugging layer for Claude Code CLI and Codex CLI."
+    url: "https://github.com/nshkrdotcom/elixir_agent_debug"
+    logo: "/logos/elixir_agent_debug-f06407900944.png"
+    language: "Shell"
 
   portfolio_coder:
     name: "portfolio_coder"
@@ -1595,7 +1617,7 @@ repos:
   trinity_coordinator:
     name: "trinity_coordinator"
     org: "nshkrdotcom"
-    stars: 74
+    stars: 75
     category: "nshkr-research"
     description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
     url: "https://github.com/nshkrdotcom/trinity_coordinator"
