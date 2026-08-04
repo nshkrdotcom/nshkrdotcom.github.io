@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-07-27T22:18:09Z
+# Last updated: 2026-08-04T04:27:27Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -137,6 +137,16 @@ repos:
     description: "Experimental research framework for running AI benchmarks at scale"
     url: "https://github.com/North-Shore-AI/crucible_harness"
     logo: "/logos/crucible_harness-cd3e5b6957cf.png"
+    language: "Elixir"
+
+  crucible_tensor_patch:
+    name: "crucible_tensor_patch"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-crucible"
+    description: "Deterministic tensor patch plans, patch application, and tensor path traversal for neural network model surgery."
+    url: "https://github.com/North-Shore-AI/crucible_tensor_patch"
+    logo: "/logos/crucible_tensor_patch-7fd49f24ed24.png"
     language: "Elixir"
 
   crucible_xai:
@@ -368,16 +378,6 @@ repos:
     logo: "/logos/crucible_telemetry-69a606537448.png"
     language: "Elixir"
 
-  crucible_tensor_patch:
-    name: "crucible_tensor_patch"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Deterministic tensor patch plans, patch application, and tensor path traversal for neural network model surgery."
-    url: "https://github.com/North-Shore-AI/crucible_tensor_patch"
-    logo: "/logos/crucible_tensor_patch-7fd49f24ed24.png"
-    language: "Elixir"
-
   crucible_trace:
     name: "crucible_trace"
     org: "North-Shore-AI"
@@ -499,7 +499,7 @@ repos:
   synapse:
     name: "synapse"
     org: "nshkrdotcom"
-    stars: 48
+    stars: 49
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
@@ -545,6 +545,15 @@ repos:
     logo: "/logos/ALTAR-87496d8f2dba.png"
     language: "Elixir"
 
+  mabeam:
+    name: "mabeam"
+    org: "nshkrdotcom"
+    stars: 9
+    category: "nshkr-ai-agents"
+    description: "Multi-agent systems framework for the BEAM platform - build distributed autonomous agents with OTP supervision and fault tolerance"
+    url: "https://github.com/nshkrdotcom/mabeam"
+    language: "Elixir"
+
   pipeline_ex:
     name: "pipeline_ex"
     org: "nshkrdotcom"
@@ -553,15 +562,6 @@ repos:
     description: "Claude Code + Gemini AI collaboration orchestration tools"
     url: "https://github.com/nshkrdotcom/pipeline_ex"
     logo: "/logos/pipeline_ex-e00e38ab78a2.png"
-    language: "Elixir"
-
-  mabeam:
-    name: "mabeam"
-    org: "nshkrdotcom"
-    stars: 8
-    category: "nshkr-ai-agents"
-    description: "Multi-agent systems framework for the BEAM platform - build distributed autonomous agents with OTP supervision and fault tolerance"
-    url: "https://github.com/nshkrdotcom/mabeam"
     language: "Elixir"
 
   jido_hive:
@@ -647,7 +647,7 @@ repos:
   codex_sdk:
     name: "codex_sdk"
     org: "nshkrdotcom"
-    stars: 25
+    stars: 26
     category: "nshkr-ai-sdk"
     description: "OpenAI Codex SDK written in Elixir"
     url: "https://github.com/nshkrdotcom/codex_sdk"
@@ -657,7 +657,7 @@ repos:
   agent_session_manager:
     name: "agent_session_manager"
     org: "nshkrdotcom"
-    stars: 9
+    stars: 10
     category: "nshkr-ai-sdk"
     description: "Agent Session Manager - A comprehensive Elixir library for managing AI agent sessions, state persistence, conversation context, and multi-agent orchestration workflows"
     url: "https://github.com/nshkrdotcom/agent_session_manager"
@@ -682,6 +682,16 @@ repos:
     description: "Protocol-based AI adapter foundation for Elixir - unified abstractions for gemini_ex, claude_agent_sdk, codex_sdk with automatic fallback, capability detection, and telemetry"
     url: "https://github.com/nshkrdotcom/altar_ai"
     logo: "/logos/altar_ai-d4c7cdfb1570.png"
+    language: "Elixir"
+
+  antigravity_cli_sdk:
+    name: "antigravity_cli_sdk"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-ai-sdk"
+    description: "Elixir SDK for the Google Antigravity CLI (agy) — stream-json headless sessions, governed launch, and stack integration via cli_subprocess_core and agent_session_manager. Standalone execute/run APIs, materialized governed credentials, multi-instance isolation, and Hex-ready docs for nshkrdotcom AI SDK consumers."
+    url: "https://github.com/nshkrdotcom/antigravity_cli_sdk"
+    logo: "/logos/antigravity_cli_sdk-6edbf100992e.png"
     language: "Elixir"
 
   jules_ex:
@@ -712,16 +722,6 @@ repos:
     description: "Elixir SDK for the Amp CLI — provides a comprehensive client library for interacting with Amp's AI-powered coding agent, including thread management, tool orchestration, streaming responses, and programmatic access to Amp's full feature set from Elixir/OTP applications"
     url: "https://github.com/nshkrdotcom/amp_sdk"
     logo: "/logos/amp_sdk-6fe2e2bacf84.png"
-    language: "Elixir"
-
-  antigravity_cli_sdk:
-    name: "antigravity_cli_sdk"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-ai-sdk"
-    description: "Elixir SDK for the Google Antigravity CLI (agy) — stream-json headless sessions, governed launch, and stack integration via cli_subprocess_core and agent_session_manager. Standalone execute/run APIs, materialized governed credentials, multi-instance isolation, and Hex-ready docs for nshkrdotcom AI SDK consumers."
-    url: "https://github.com/nshkrdotcom/antigravity_cli_sdk"
-    logo: "/logos/antigravity_cli_sdk-6edbf100992e.png"
     language: "Elixir"
 
   cli_subprocess_core:
@@ -856,7 +856,7 @@ repos:
   rag_ex:
     name: "rag_ex"
     org: "nshkrdotcom"
-    stars: 12
+    stars: 13
     category: "nshkr-ai-infra"
     description: "Elixir RAG library with multi-LLM routing (Gemini, Claude, OpenAI, Ollama), GraphRAG, knowledge graphs, modular retrievers/rerankers, composable pipelines, pgvector integration, advanced chunking, and tool-using agents. Fork of bitcrowd/rag."
     url: "https://github.com/nshkrdotcom/rag_ex"
@@ -1033,6 +1033,16 @@ repos:
     logo: "/logos/nsai_work-eb0ad413ebb8.png"
     language: "Elixir"
 
+  nshkr:
+    name: "nshkr"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "NSHKR is the production Elixir/OTP composition and release workspace for a governed AI operations platform, wiring durable workflows, cognitive context, provider accounts, policy decisions, execution runtimes, cluster reconciliation, Synapse, and Extravaganza into reproducible monolith and distributed deployments."
+    url: "https://github.com/nshkrdotcom/nshkr"
+    logo: "/logos/nshkr-f040e809a539.png"
+    language: "Elixir"
+
   pilot:
     name: "pilot"
     org: "North-Shore-AI"
@@ -1142,16 +1152,6 @@ repos:
     logo: "/logos/mwb-522d34562304.webp"
     language: "Python"
 
-  nshkr:
-    name: "nshkr"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "NSHKR is the production Elixir/OTP composition and release workspace for a governed AI operations platform, wiring durable workflows, cognitive context, provider accounts, policy decisions, execution runtimes, cluster reconciliation, Synapse, and Extravaganza into reproducible monolith and distributed deployments."
-    url: "https://github.com/nshkrdotcom/nshkr"
-    logo: "/logos/nshkr-f040e809a539.png"
-    language: "Elixir"
-
   outer_brain:
     name: "outer_brain"
     org: "nshkrdotcom"
@@ -1257,6 +1257,16 @@ repos:
     url: "https://github.com/nshkrdotcom/ex_dbg"
     language: "Elixir"
 
+  dexterity:
+    name: "dexterity"
+    org: "nshkrdotcom"
+    stars: 6
+    category: "nshkr-devtools"
+    description: "Code Intelligence: Token-budgeted codebase context for Elixir agents. Solves context window limitations by providing a deterministic Elixir semantic graph and agent-ready Repo Map for LLMs."
+    url: "https://github.com/nshkrdotcom/dexterity"
+    logo: "/logos/dexterity-134ed6d1edcb.png"
+    language: "Elixir"
+
   ElixirScope:
     name: "ElixirScope"
     org: "nshkrdotcom"
@@ -1273,16 +1283,6 @@ repos:
     category: "nshkr-devtools"
     description: "Revolutionary AST-based debugging and code intelligence platform for Elixir applications"
     url: "https://github.com/nshkrdotcom/elixir_scope"
-    language: "Elixir"
-
-  dexterity:
-    name: "dexterity"
-    org: "nshkrdotcom"
-    stars: 4
-    category: "nshkr-devtools"
-    description: "Code Intelligence: Token-budgeted codebase context for Elixir agents. Solves context window limitations by providing a deterministic Elixir semantic graph and agent-ready Repo Map for LLMs."
-    url: "https://github.com/nshkrdotcom/dexterity"
-    logo: "/logos/dexterity-134ed6d1edcb.png"
     language: "Elixir"
 
   elixir_dashboard:
@@ -1325,6 +1325,16 @@ repos:
     logo: "/logos/blitz-8c28ee672368.png"
     language: "Elixir"
 
+  elixir_agent_debug:
+    name: "elixir_agent_debug"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-devtools"
+    description: "Evidence-first Elixir & OTP debugging layer for Claude Code CLI and Codex CLI."
+    url: "https://github.com/nshkrdotcom/elixir_agent_debug"
+    logo: "/logos/elixir_agent_debug-f06407900944.png"
+    language: "Shell"
+
   elixir_tracer:
     name: "elixir_tracer"
     org: "nshkrdotcom"
@@ -1364,16 +1374,6 @@ repos:
     url: "https://github.com/nshkrdotcom/coolify_ex"
     logo: "/logos/coolify_ex-675aca6e0a41.png"
     language: "Elixir"
-
-  elixir_agent_debug:
-    name: "elixir_agent_debug"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-devtools"
-    description: "Evidence-first Elixir & OTP debugging layer for Claude Code CLI and Codex CLI."
-    url: "https://github.com/nshkrdotcom/elixir_agent_debug"
-    logo: "/logos/elixir_agent_debug-f06407900944.png"
-    language: "Shell"
 
   portfolio_coder:
     name: "portfolio_coder"
@@ -1584,7 +1584,7 @@ repos:
   GUARDRAIL:
     name: "GUARDRAIL"
     org: "nshkrdotcom"
-    stars: 17
+    stars: 18
     category: "nshkr-security"
     description: "GUARDRAIL - MCP Security - Gateway for Unified Access, Resource Delegation, and Risk-Attenuating Information Limits"
     url: "https://github.com/nshkrdotcom/GUARDRAIL"
