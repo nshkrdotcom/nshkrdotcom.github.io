@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-08-04T04:27:27Z
+# Last updated: 2026-08-11T07:36:17Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -1593,7 +1593,7 @@ repos:
   ASKA:
     name: "ASKA"
     org: "nshkrdotcom"
-    stars: 11
+    stars: 12
     category: "nshkr-security"
     description: "Secure Computing in the AI age"
     url: "https://github.com/nshkrdotcom/ASKA"
