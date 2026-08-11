@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-08-11T18:30:31Z
+# Last updated: 2026-08-11T23:45:50Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -90,6 +90,10 @@ categories:
     name: "Misc"
     slug: "nshkr-misc"
     weight: 20
+  nshkr-tools:
+    name: "Tools"
+    slug: "nshkr-tools"
+    weight: 21
   uncategorized:
     name: "Other Projects"
     slug: "uncategorized"
@@ -1762,6 +1766,16 @@ repos:
     url: "https://github.com/nshkrdotcom/prappy"
     logo: "/logos/prappy-ba09afe6356c.png"
     language: "C++"
+
+  mix_workspace_ops:
+    name: "mix_workspace_ops"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-tools"
+    description: "Operator-first Elixir workspace tooling for safe local sibling dependency overlays, dependency-DAG planning, isolated Mix execution, reproducible Hex verification, and fail-closed releases across standalone projects and ponchos."
+    url: "https://github.com/nshkrdotcom/mix_workspace_ops"
+    logo: "/logos/mix_workspace_ops-c8edf02c5673.png"
+    language: "Elixir"
 
   docs:
     name: "docs"
