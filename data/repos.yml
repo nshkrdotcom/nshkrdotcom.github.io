@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-08-11T07:36:17Z
+# Last updated: 2026-08-11T18:30:31Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -86,14 +86,10 @@ categories:
     name: "Utilities"
     slug: "nshkr-utility"
     weight: 19
-  nshkr-devools:
-    name: "Devools"
-    slug: "nshkr-devools"
-    weight: 20
   nshkr-misc:
     name: "Misc"
     slug: "nshkr-misc"
-    weight: 21
+    weight: 20
   uncategorized:
     name: "Other Projects"
     slug: "uncategorized"
@@ -1365,6 +1361,16 @@ repos:
     logo: "/logos/weld-4e61eea6e4c9.png"
     language: "Elixir"
 
+  alkahest:
+    name: "alkahest"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-devtools"
+    description: "Reusable Temporal facade, typed workflow-control contracts, Elixir client, and official-SDK gateway/worker substrate for durable distributed agentic systems."
+    url: "https://github.com/nshkrdotcom/alkahest"
+    logo: "/logos/alkahest-779faaa7deda.png"
+    language: "Elixir"
+
   coolify_ex:
     name: "coolify_ex"
     org: "nshkrdotcom"
@@ -1745,16 +1751,6 @@ repos:
     description: "Elixir port of OpenAI's chz library - a powerful configuration management system for building composable, type-safe command-line interfaces with hierarchical configuration, environment variable support, and flexible argument parsing"
     url: "https://github.com/North-Shore-AI/chz_ex"
     logo: "/logos/chz_ex-dfd96fa87a0c.png"
-    language: "Elixir"
-
-  alkahest:
-    name: "alkahest"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-devools"
-    description: "Reusable Temporal facade, typed workflow-control contracts, Elixir client, and official-SDK gateway/worker substrate for durable distributed agentic systems."
-    url: "https://github.com/nshkrdotcom/alkahest"
-    logo: "/logos/alkahest-779faaa7deda.png"
     language: "Elixir"
 
   prappy:
