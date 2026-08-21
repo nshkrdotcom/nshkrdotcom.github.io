@@ -1,105 +1,197 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-08-11T23:45:50Z
+# Last updated: 2026-08-21T16:46:59Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
 
 categories:
+  nshkr-ml-research:
+    name: "ML Research"
+    slug: "nshkr-ml-research"
+    weight: 0
+  nshkr-ml:
+    name: "ML & Learning"
+    slug: "nshkr-ml"
+    weight: 1
   nshkr-crucible:
     name: "Crucible Stack"
     slug: "nshkr-crucible"
-    weight: 0
+    weight: 2
   nshkr-ingot:
     name: "Ingot Stack"
     slug: "nshkr-ingot"
-    weight: 1
+    weight: 3
   nshkr-ai-agents:
     name: "AI Agents"
     slug: "nshkr-ai-agents"
-    weight: 2
+    weight: 4
   nshkr-ai-sdk:
     name: "AI SDKs"
     slug: "nshkr-ai-sdk"
-    weight: 3
+    weight: 5
   nshkr-ai-infra:
     name: "AI Infrastructure"
     slug: "nshkr-ai-infra"
-    weight: 4
+    weight: 6
   nshkr-cloud:
     name: "Cloud & Edge"
     slug: "nshkr-cloud"
-    weight: 5
+    weight: 7
   nshkr-schema:
     name: "Schema"
     slug: "nshkr-schema"
-    weight: 6
+    weight: 8
   nshkr-devtools:
     name: "Developer Tools"
     slug: "nshkr-devtools"
-    weight: 7
+    weight: 9
   nshkr-browser:
     name: "Browser Integration"
     slug: "nshkr-browser"
-    weight: 8
+    weight: 10
   nshkr-ui:
     name: "User Interface"
     slug: "nshkr-ui"
-    weight: 9
+    weight: 11
   nshkr-otp:
     name: "OTP"
     slug: "nshkr-otp"
-    weight: 10
+    weight: 12
   nshkr-distributed:
     name: "Distributed Systems"
     slug: "nshkr-distributed"
-    weight: 11
+    weight: 13
   nshkr-testing:
     name: "Testing"
     slug: "nshkr-testing"
-    weight: 12
+    weight: 14
   nshkr-observability:
     name: "Observability"
     slug: "nshkr-observability"
-    weight: 13
+    weight: 15
   nshkr-data:
     name: "Data"
     slug: "nshkr-data"
-    weight: 14
-  nshkr-ml:
-    name: "Machine Learning"
-    slug: "nshkr-ml"
-    weight: 15
+    weight: 16
   nshkr-security:
     name: "Security"
     slug: "nshkr-security"
-    weight: 16
+    weight: 17
   nshkr-blockchain:
     name: "Blockchain & Ledger"
     slug: "nshkr-blockchain"
-    weight: 17
+    weight: 18
   nshkr-research:
     name: "Research"
     slug: "nshkr-research"
-    weight: 18
+    weight: 19
   nshkr-utility:
     name: "Utilities"
     slug: "nshkr-utility"
-    weight: 19
+    weight: 20
+  nshkr-ecosystem:
+    name: "Ecosystem"
+    slug: "nshkr-ecosystem"
+    weight: 21
   nshkr-misc:
     name: "Misc"
     slug: "nshkr-misc"
-    weight: 20
+    weight: 22
   nshkr-tools:
     name: "Tools"
     slug: "nshkr-tools"
-    weight: 21
+    weight: 23
   uncategorized:
     name: "Other Projects"
     slug: "uncategorized"
     weight: 999
 
 repos:
+  architecture_mechanics:
+    name: "architecture_mechanics"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "Synthetic ground-truth lab for testing how sequence-mixing architectures shape transport, feature geometry, overwrite behavior, and causal legibility."
+    url: "https://github.com/nshkrdotcom/architecture_mechanics"
+    language: "Python"
+
+  attention_lab:
+    name: "attention_lab"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "Controlled GPT pretraining and mechanistic-interpretability harness for testing alternative attention architectures against matched baselines."
+    url: "https://github.com/nshkrdotcom/attention_lab"
+    language: "Python"
+
+  gct:
+    name: "gct"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "Leakage-resistant experiments testing contextual transport and latent-coordinate structure across Qwen3-4B and Phi-4-mini, with frozen controls and reproducible reports."
+    url: "https://github.com/nshkrdotcom/gct"
+    language: "Python"
+
+  learning:
+    name: "learning"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "Mechanistic-interpretability experiments, research records, and ML visualization tools, including SELF-GROUND and construct-mismatch studies."
+    url: "https://github.com/nshkrdotcom/learning"
+    language: "Python"
+
+  mil:
+    name: "mil"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "Local mechanistic-interpretability workbench with IPython capture, activation patching, SAE analysis, controls, and reproducible visual artifacts."
+    url: "https://github.com/nshkrdotcom/mil"
+    language: "Python"
+
+  mwb:
+    name: "mwb"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "Mechanistic Workbench (mwb): Local-first mechanistic interpretability workbench for IPython research, agent-readable state, artifact validation, evidence graphs, claim-safe MechanismCards, provenance, run ledgers, SAE/TransformerLens workflows, and reproducible MI experiments"
+    url: "https://github.com/nshkrdotcom/mwb"
+    logo: "/logos/mwb-522d34562304.webp"
+    language: "Python"
+
+  superposition_zoo:
+    name: "superposition_zoo"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "A research harness for studying how sequence-mixing architectures (softmax attention, linear attention, state-space models, delta-rule associative memory, and more) causally shape superposition and feature isolation in learned representations, using ground-truth synthetic benchmarks instead of natural-language probing."
+    url: "https://github.com/nshkrdotcom/superposition_zoo"
+    language: "Python"
+
+  micrograd_ex:
+    name: "micrograd_ex"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ml"
+    description: "Micrograd, implemented in Elixir"
+    url: "https://github.com/nshkrdotcom/micrograd_ex"
+    logo: "/logos/micrograd_ex-9fb94f37352e.png"
+    language: "Elixir"
+
+  ml_musings:
+    name: "ml_musings"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml"
+    description: "Foundations: A premium, hands-on educational curriculum exploring high-dimensional geometry, measure concentration, linear probing, self-attention routing, PEFT (LoRA and SVD surgery), evolution strategies, and sparse Mixture of Experts (MoE) gating. Written from scratch in Numerical Elixir (Nx) and compiled via EXLA."
+    url: "https://github.com/nshkrdotcom/ml_musings"
+    logo: "/logos/ml_musings-b68b62196570.png"
+    language: "Elixir"
+
   LlmGuard:
     name: "LlmGuard"
     org: "North-Shore-AI"
@@ -627,7 +719,7 @@ repos:
   claude_agent_sdk:
     name: "claude_agent_sdk"
     org: "nshkrdotcom"
-    stars: 35
+    stars: 36
     category: "nshkr-ai-sdk"
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
     url: "https://github.com/nshkrdotcom/claude_agent_sdk"
@@ -637,7 +729,7 @@ repos:
   gemini_ex:
     name: "gemini_ex"
     org: "nshkrdotcom"
-    stars: 34
+    stars: 35
     category: "nshkr-ai-sdk"
     description: "Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI"
     url: "https://github.com/nshkrdotcom/gemini_ex"
@@ -1003,16 +1095,6 @@ repos:
     logo: "/logos/inference-03f811fa5bca.png"
     language: "Elixir"
 
-  micrograd_ex:
-    name: "micrograd_ex"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-ai-infra"
-    description: "Micrograd, implemented in Elixir"
-    url: "https://github.com/nshkrdotcom/micrograd_ex"
-    logo: "/logos/micrograd_ex-9fb94f37352e.png"
-    language: "Elixir"
-
   nsai_registry:
     name: "nsai_registry"
     org: "North-Shore-AI"
@@ -1132,25 +1214,6 @@ repos:
     url: "https://github.com/North-Shore-AI/hf_peft_ex"
     logo: "/logos/hf_peft_ex-ff42582b12a9.png"
     language: "Jupyter Notebook"
-
-  mil:
-    name: "mil"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "mil - Mech Interp Lab - capture IPython sessions and MechInterp tools"
-    url: "https://github.com/nshkrdotcom/mil"
-    language: "Python"
-
-  mwb:
-    name: "mwb"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Mechanistic Workbench (mwb): Local-first mechanistic interpretability workbench for IPython research, agent-readable state, artifact validation, evidence graphs, claim-safe MechanismCards, provenance, run ledgers, SAE/TransformerLens workflows, and reproducible MI experiments"
-    url: "https://github.com/nshkrdotcom/mwb"
-    logo: "/logos/mwb-522d34562304.webp"
-    language: "Python"
 
   outer_brain:
     name: "outer_brain"
@@ -1603,7 +1666,7 @@ repos:
   ASKA:
     name: "ASKA"
     org: "nshkrdotcom"
-    stars: 12
+    stars: 13
     category: "nshkr-security"
     description: "Secure Computing in the AI age"
     url: "https://github.com/nshkrdotcom/ASKA"
@@ -1627,7 +1690,7 @@ repos:
   trinity_coordinator:
     name: "trinity_coordinator"
     org: "nshkrdotcom"
-    stars: 76
+    stars: 77
     category: "nshkr-research"
     description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
     url: "https://github.com/nshkrdotcom/trinity_coordinator"
@@ -1671,15 +1734,6 @@ repos:
     logo: "/logos/anti_agents-49bef43edef0.png"
     language: "Elixir"
 
-  attention_lab:
-    name: "attention_lab"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-research"
-    description: "Attention Lab for running and tracking language model experiments via Karpathy's nanoGPT"
-    url: "https://github.com/nshkrdotcom/attention_lab"
-    language: "Python"
-
   cns_ui:
     name: "cns_ui"
     org: "North-Shore-AI"
@@ -1689,34 +1743,6 @@ repos:
     url: "https://github.com/North-Shore-AI/cns_ui"
     logo: "/logos/cns_ui-8eaa48504e7f.png"
     language: "Elixir"
-
-  learning:
-    name: "learning"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-research"
-    description: ""
-    url: "https://github.com/nshkrdotcom/learning"
-    language: "Python"
-
-  ml_musings:
-    name: "ml_musings"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-research"
-    description: "Foundations: A premium, hands-on educational curriculum exploring high-dimensional geometry, measure concentration, linear probing, self-attention routing, PEFT (LoRA and SVD surgery), evolution strategies, and sparse Mixture of Experts (MoE) gating. Written from scratch in Numerical Elixir (Nx) and compiled via EXLA."
-    url: "https://github.com/nshkrdotcom/ml_musings"
-    logo: "/logos/ml_musings-b68b62196570.png"
-    language: "Elixir"
-
-  superposition_zoo:
-    name: "superposition_zoo"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-research"
-    description: "A research harness for studying how sequence-mixing architectures (softmax attention, linear attention, state-space models, delta-rule associative memory, and more) causally shape superposition and feature isolation in learned representations, using ground-truth synthetic benchmarks instead of natural-language probing."
-    url: "https://github.com/nshkrdotcom/superposition_zoo"
-    language: "Python"
 
   youtube_audio_dl:
     name: "youtube_audio_dl"
@@ -1756,6 +1782,15 @@ repos:
     url: "https://github.com/North-Shore-AI/chz_ex"
     logo: "/logos/chz_ex-dfd96fa87a0c.png"
     language: "Elixir"
+
+  elixir_ecosystem_registry:
+    name: "elixir_ecosystem_registry"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ecosystem"
+    description: "Canonical machine-readable registry for nshkrdotcom's complete Elixir ecosystem, with stable repository and Mix-project identities, composable platform views, operational profiles, drift evidence, and clean integration with generic workspace and release tooling."
+    url: "https://github.com/nshkrdotcom/elixir_ecosystem_registry"
+    logo: "/logos/elixir_ecosystem_registry-4782f5d46ffd.png"
 
   prappy:
     name: "prappy"

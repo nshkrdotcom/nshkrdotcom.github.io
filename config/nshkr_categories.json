@@ -1,5 +1,7 @@
 {
   "categories": [
+    { "slug": "nshkr-ml-research", "name": "ML Research" },
+    { "slug": "nshkr-ml", "name": "ML & Learning" },
     { "slug": "nshkr-crucible", "name": "Crucible Stack" },
     { "slug": "nshkr-ingot", "name": "Ingot Stack" },
     { "slug": "nshkr-ai-agents", "name": "AI Agents" },
@@ -15,7 +17,6 @@
     { "slug": "nshkr-testing", "name": "Testing" },
     { "slug": "nshkr-observability", "name": "Observability" },
     { "slug": "nshkr-data", "name": "Data" },
-    { "slug": "nshkr-ml", "name": "Machine Learning" },
     { "slug": "nshkr-security", "name": "Security" },
     { "slug": "nshkr-blockchain", "name": "Blockchain & Ledger" },
     { "slug": "nshkr-research", "name": "Research" },

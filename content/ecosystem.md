@@ -1,12 +1,18 @@
 ---
-title: "North Shore AI Ecosystem"
-description: "The 7-tiered industrial ML ecosystem built on Elixir and the BEAM. Portfolio RAG, orchestration frameworks, CNS dialectical reasoning, and the Kitchen/Metalworking metaphors."
+title: "Elixir AI and ML Ecosystem"
+description: "The Elixir/BEAM systems and ML-learning side of the NSHKR portfolio, following its Python mechanistic-interpretability research."
 layout: "ecosystem"
 ---
 
-# The North Shore AI Ecosystem
+# The Elixir AI and ML Ecosystem
 
-A comprehensive industrial ML infrastructure built on Elixir and the BEAM platform. This ecosystem comprises 50+ libraries organized into a 7-tiered architectural model, connected by organizing metaphors that encode architectural decisions into memorable concepts.
+This is the systems and ML-learning side of the NSHKR portfolio. The current
+[mechanistic-interpretability research programs](/#research) are presented
+first on the home page; the material below documents the broader Elixir/BEAM
+ecosystem, including experimentation, reliability, data, orchestration, and
+developer tooling. Some sections describe the historical seven-tier portfolio
+model and are retained as architectural context rather than a claim that every
+component has the same maturity.
 
 ---
 
