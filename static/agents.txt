@@ -36,8 +36,10 @@ sources.
 
 The Elixir/OTP ecosystem is a separate systems-engineering program centered on
 typed authority, durable workflow state, lower-effect receipts, evidence,
-review, and replay. Do not present research findings as validation of the
-systems stack or vice versa.
+review, and replay. Its canonical production composition/release repository is
+https://github.com/nshkrdotcom/nshkr; `Nshkr.Runtime` is the single production
+composition root. Do not present research findings as validation of the systems
+stack or vice versa.
 
 Repository atlas data is generated from live public GitHub metadata. Exactly one
 `nshkr-*` topic selects each repository's category.

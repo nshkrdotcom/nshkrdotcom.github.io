@@ -40,7 +40,10 @@ intent -> authority -> workflow -> effect -> receipt -> evidence -> projection -
 ```
 
 The system separates product meaning, durable workflow truth, authority,
-connector mechanics, raw execution, evidence, and causal traces. See the
+connector mechanics, raw execution, evidence, and causal traces.
+[nshkr](https://github.com/nshkrdotcom/nshkr) is the canonical production
+composition and release workspace; `Nshkr.Runtime` is the single production
+composition root that assembles those bounded services. See the
 [systems overview](/#systems) and [ecosystem](/ecosystem/).
 
 ## Machine-readable sources

@@ -100,7 +100,10 @@
         enterprise needs after an AI system proposes an action. The important
         artifact is not a prompt transcript; it is a durable chain from request
         to authority, workflow, external effect, receipt, evidence, review, and
-        replayable proof.
+        replayable proof. <a href="https://github.com/nshkrdotcom/nshkr" target="_blank" rel="noopener">nshkr</a>
+        is the production composition and release backbone; its
+        <code>Nshkr.Runtime</code> application boots the bounded owner services
+        as one fail-closed platform.
       </p>
     </div>
 
@@ -132,6 +135,27 @@
     </div>
 
     <div class="arch-stack">
+
+      <div class="arch-layer" data-layer="composition">
+        <div class="arch-layer-meta">
+          <span class="arch-layer-name">NSHKR composition root</span>
+          <span class="arch-layer-role">production assembly, runtime profiles, dependency order, releases</span>
+        </div>
+        <p class="arch-layer-desc">
+          <code>nshkr</code> is the production backbone rather than another
+          capability package. <code>Nshkr.Runtime</code> composes persistence,
+          workflows, context, authority, provider accounts, execution, cluster
+          reconciliation, Synapse, and Extravaganza into reproducible monolith
+          and distributed deployments. Production profiles reject memory,
+          fixture, no-op, and static-success substitutes.
+        </p>
+        <div class="arch-nodes">
+          <a href="https://github.com/nshkrdotcom/nshkr" class="arch-node arch-node-highlight" target="_blank" rel="noopener">nshkr</a>
+          <a href="https://github.com/nshkrdotcom/nshkr/tree/main/apps/nshkr_runtime" class="arch-node" target="_blank" rel="noopener">Nshkr.Runtime</a>
+        </div>
+      </div>
+
+      <div class="arch-connector"></div>
 
       <div class="arch-layer" data-layer="appkit">
         <div class="arch-layer-meta">

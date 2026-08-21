@@ -33,6 +33,10 @@ The systems portfolio implements an evidence-bearing write path:
 intent -> authority -> workflow -> effect -> receipt -> evidence -> projection
 -> review -> replay.
 
+Systems backbone: https://github.com/nshkrdotcom/nshkr
+`Nshkr.Runtime` is the single production composition root and release
+application for the bounded platform services.
+
 Canonical pages:
 - Research: https://nshkr.com/#research
 - Systems: https://nshkr.com/#systems

@@ -40,9 +40,15 @@ The Elixir/OTP portfolio treats AI execution as an evidence-bearing write path:
 
 intent -> authority -> workflow -> effect -> receipt -> evidence -> projection -> review -> replay
 
+The production backbone is https://github.com/nshkrdotcom/nshkr.
+`Nshkr.Runtime` is the single production composition root: it assembles the
+bounded owner services, enforces fail-closed runtime profiles, and produces
+reproducible monolith and distributed releases.
+
 The stack separates product meaning, workflow truth, authority, connector
 mechanics, raw effects, and causal trace evidence. Start at:
 
+- https://github.com/nshkrdotcom/nshkr
 - https://nshkr.com/#systems
 - https://nshkr.com/ecosystem/
 - https://github.com/nshkrdotcom
