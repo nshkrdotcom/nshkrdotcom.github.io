@@ -9,14 +9,15 @@ NSHKR publishes two related but distinct bodies of work:
 
 - Geometry of Conditional Truth: https://github.com/nshkrdotcom/gct
   - Cross-model Qwen3-4B/Phi-4-mini experiment with frozen controls.
-  - The broad simple-state transport null replicated.
-  - Phi showed a narrower control-safe residual-decoding difference.
+  - Across eight preregistered endpoints, Phi supported one and Qwen supported none.
+  - The identical-prompt negative control passed in both; both remained Level 1 of 6.
+  - Cross-model report: https://github.com/nshkrdotcom/gct/blob/main/REPORT_CROSS_MODEL.md
 - Architecture Mechanics: https://github.com/nshkrdotcom/architecture_mechanics
   - Synthetic ground-truth experiments on transport, feature geometry,
     overwrite behavior, and causal legibility.
 - Attention Lab: https://github.com/nshkrdotcom/attention_lab
   - Matched GPT pretraining harness for alternative attention architectures.
-  - Current E003/E004 confirmatory mechanism status: insufficient evidence.
+  - Two confirmatory runs reached full-depth analysis; the mechanism verdict remains insufficient evidence.
 - Superposition Zoo: https://github.com/nshkrdotcom/superposition_zoo
   - Synthetic comparisons of attention, routing, linear attention, delta-rule
     memory, and state-space mixing.

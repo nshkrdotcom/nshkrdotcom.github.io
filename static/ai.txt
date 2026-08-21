@@ -11,11 +11,11 @@ Primary focus: reproducible mechanistic-interpretability research in Python.
 Secondary focus: governed AI execution systems in Elixir and OTP.
 
 Research programs:
-- gct: cross-model contextual-transport experiments; broad transport null
-  replicated, with a narrower Phi residual-decoding result.
+- gct: across eight preregistered endpoints, Phi supported one and Qwen
+  supported none; the negative control passed in both, and both remained Level 1 of 6.
 - architecture_mechanics: ground-truth synthetic architecture mechanics.
-- attention_lab: matched GPT pretraining and mechanism probes; current
-  confirmatory E003/E004 status is insufficient evidence.
+- attention_lab: matched GPT pretraining and mechanism probes; two confirmatory
+  runs reached full-depth analysis, and the mechanism verdict remains insufficient evidence.
 - superposition_zoo: synthetic sequence-mixing comparisons; retrieval findings
   established, central feature-isolation question still open.
 
