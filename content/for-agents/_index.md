@@ -16,7 +16,7 @@ the other.
 
 | Program | Scope | Current boundary |
 |---------|-------|------------------|
-| [Geometry of Conditional Truth](https://github.com/nshkrdotcom/gct) | Context transport and hidden-coordinate structure across Qwen3-4B and Phi-4-mini | Across eight preregistered endpoints, Phi supported one and Qwen supported none; the negative control passed in both, and both remained Level 1 of 6. [Cross-model report](https://github.com/nshkrdotcom/gct/blob/main/REPORT_CROSS_MODEL.md) |
+| [Geometry of Conditional Truth](https://github.com/nshkrdotcom/gct) | Context transport and hidden-coordinate structure across Qwen3-4B and Phi-4-mini | Across eight preregistered endpoints, Phi supported one and Qwen supported none; both remained Level 1 of 6. [Cross-model report](https://github.com/nshkrdotcom/gct/blob/main/REPORT_CROSS_MODEL.md) |
 | [Architecture Mechanics](https://github.com/nshkrdotcom/architecture_mechanics) | Tiny trained architectures with known synthetic features | Measures transport, packing, overwrite, and causal legibility against ground truth |
 | [Attention Lab](https://github.com/nshkrdotcom/attention_lab) | Matched GPT pretraining and alternative-attention probes | Two confirmatory pretraining runs reached full-depth analysis; the mechanism verdict remains `insufficient_evidence` |
 | [Superposition Zoo](https://github.com/nshkrdotcom/superposition_zoo) | Synthetic sequence-mixing comparisons | Retrieval findings are established; the central feature-isolation question remains open |

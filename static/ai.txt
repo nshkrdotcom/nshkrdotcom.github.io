@@ -12,7 +12,7 @@ Secondary focus: governed AI execution systems in Elixir and OTP.
 
 Research programs:
 - gct: across eight preregistered endpoints, Phi supported one and Qwen
-  supported none; the negative control passed in both, and both remained Level 1 of 6.
+  supported none; both remained Level 1 of 6.
 - architecture_mechanics: ground-truth synthetic architecture mechanics.
 - attention_lab: matched GPT pretraining and mechanism probes; two confirmatory
   runs reached full-depth analysis, and the mechanism verdict remains insufficient evidence.
