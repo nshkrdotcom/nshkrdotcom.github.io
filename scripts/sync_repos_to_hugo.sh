@@ -634,7 +634,9 @@ main() {
     local repos_in_cat=""
     local total=""
     local uncat=""
-    local weight=0
+    # Weights are 1-based: Hugo's `default` treats 0 as empty, so a weight-0 category
+    # would fall through to the 999 fallback and sort last instead of first.
+    local weight=1
     local -a DISCOVERED_CATEGORIES=()
     local -a ORDERED_CATEGORIES=()
 

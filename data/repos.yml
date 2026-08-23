@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-08-23T20:35:19Z
+# Last updated: 2026-08-23T20:51:46Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -9,82 +9,78 @@ categories:
   nshkr-ai-agents:
     name: "AI Agents"
     slug: "nshkr-ai-agents"
-    weight: 0
+    weight: 1
   nshkr-ai-sdk:
     name: "AI SDKs"
     slug: "nshkr-ai-sdk"
-    weight: 1
+    weight: 2
   nshkr-ai-infra:
     name: "AI Infrastructure"
     slug: "nshkr-ai-infra"
-    weight: 2
-  nshkr-ml-research:
-    name: "ML Research"
-    slug: "nshkr-ml-research"
     weight: 3
-  nshkr-ml:
-    name: "ML & Learning"
-    slug: "nshkr-ml"
-    weight: 4
-  nshkr-security:
-    name: "Security"
-    slug: "nshkr-security"
-    weight: 5
-  nshkr-schema:
-    name: "Schema"
-    slug: "nshkr-schema"
-    weight: 6
-  nshkr-testing:
-    name: "Testing"
-    slug: "nshkr-testing"
-    weight: 7
-  nshkr-observability:
-    name: "Observability"
-    slug: "nshkr-observability"
-    weight: 8
-  nshkr-devtools:
-    name: "Developer Tools"
-    slug: "nshkr-devtools"
-    weight: 9
-  nshkr-otp:
-    name: "OTP"
-    slug: "nshkr-otp"
-    weight: 10
-  nshkr-distributed:
-    name: "Distributed Systems"
-    slug: "nshkr-distributed"
-    weight: 11
-  nshkr-data:
-    name: "Data"
-    slug: "nshkr-data"
-    weight: 12
-  nshkr-crucible:
-    name: "Crucible Stack"
-    slug: "nshkr-crucible"
-    weight: 13
-  nshkr-ingot:
-    name: "Ingot Stack"
-    slug: "nshkr-ingot"
-    weight: 14
-  nshkr-cloud:
-    name: "Cloud & Edge"
-    slug: "nshkr-cloud"
-    weight: 15
-  nshkr-browser:
-    name: "Browser Integration"
-    slug: "nshkr-browser"
-    weight: 16
-  nshkr-ui:
-    name: "User Interface"
-    slug: "nshkr-ui"
-    weight: 17
-  nshkr-blockchain:
-    name: "Blockchain & Ledger"
-    slug: "nshkr-blockchain"
-    weight: 18
   nshkr-research:
     name: "Research"
     slug: "nshkr-research"
+    weight: 4
+  nshkr-ml:
+    name: "ML & Learning"
+    slug: "nshkr-ml"
+    weight: 5
+  nshkr-security:
+    name: "Security"
+    slug: "nshkr-security"
+    weight: 6
+  nshkr-schema:
+    name: "Schema"
+    slug: "nshkr-schema"
+    weight: 7
+  nshkr-testing:
+    name: "Testing"
+    slug: "nshkr-testing"
+    weight: 8
+  nshkr-observability:
+    name: "Observability"
+    slug: "nshkr-observability"
+    weight: 9
+  nshkr-devtools:
+    name: "Developer Tools"
+    slug: "nshkr-devtools"
+    weight: 10
+  nshkr-otp:
+    name: "OTP"
+    slug: "nshkr-otp"
+    weight: 11
+  nshkr-distributed:
+    name: "Distributed Systems"
+    slug: "nshkr-distributed"
+    weight: 12
+  nshkr-data:
+    name: "Data"
+    slug: "nshkr-data"
+    weight: 13
+  nshkr-crucible:
+    name: "Crucible Stack"
+    slug: "nshkr-crucible"
+    weight: 14
+  nshkr-ingot:
+    name: "Ingot Stack"
+    slug: "nshkr-ingot"
+    weight: 15
+  nshkr-cloud:
+    name: "Cloud & Edge"
+    slug: "nshkr-cloud"
+    weight: 16
+  nshkr-browser:
+    name: "Browser Integration"
+    slug: "nshkr-browser"
+    weight: 17
+  nshkr-ui:
+    name: "User Interface"
+    slug: "nshkr-ui"
+    weight: 18
+  nshkr-blockchain:
+    name: "Blockchain & Ledger"
+    slug: "nshkr-blockchain"
     weight: 19
   nshkr-utility:
     name: "Utilities"
@@ -804,11 +800,48 @@ repos:
     logo: "/logos/tinkerer-6b70879f38af.png"
     language: "Python"
 
+  ChronoLedger:
+    name: "ChronoLedger"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-research"
+    description: "Hardware-Secured Temporal Blockchain"
+    url: "https://github.com/nshkrdotcom/ChronoLedger"
+
+  cns:
+    name: "cns"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-research"
+    description: "Chiral Narrative Synthesis - Dialectical reasoning framework for automated knowledge discovery"
+    url: "https://github.com/North-Shore-AI/cns"
+    logo: "/logos/cns-bcea811574ff.png"
+    language: "Elixir"
+
+  EADS:
+    name: "EADS"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-research"
+    description: "Evolutionary Autonomous Development System"
+    url: "https://github.com/nshkrdotcom/EADS"
+    language: "Python"
+
+  anti_agents:
+    name: "anti_agents"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-research"
+    description: "Anti Agents - Inspired by Sakana AI's String Seed of Thought paper"
+    url: "https://github.com/nshkrdotcom/anti_agents"
+    logo: "/logos/anti_agents-49bef43edef0.png"
+    language: "Elixir"
+
   architecture_mechanics:
     name: "architecture_mechanics"
     org: "nshkrdotcom"
     stars: 0
-    category: "nshkr-ml-research"
+    category: "nshkr-research"
     description: "Synthetic ground-truth lab for testing how sequence-mixing architectures shape transport, feature geometry, overwrite behavior, and causal legibility."
     url: "https://github.com/nshkrdotcom/architecture_mechanics"
     language: "Python"
@@ -817,16 +850,26 @@ repos:
     name: "attention_lab"
     org: "nshkrdotcom"
     stars: 0
-    category: "nshkr-ml-research"
+    category: "nshkr-research"
     description: "Controlled GPT pretraining and mechanistic-interpretability harness for testing alternative attention architectures against matched baselines."
     url: "https://github.com/nshkrdotcom/attention_lab"
     language: "Python"
+
+  cns_ui:
+    name: "cns_ui"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-research"
+    description: "Phoenix LiveView interface for CNS dialectical reasoning experiments"
+    url: "https://github.com/North-Shore-AI/cns_ui"
+    logo: "/logos/cns_ui-8eaa48504e7f.png"
+    language: "Elixir"
 
   gct:
     name: "gct"
     org: "nshkrdotcom"
     stars: 0
-    category: "nshkr-ml-research"
+    category: "nshkr-research"
     description: "Leakage-resistant experiments testing contextual transport and latent-coordinate structure across Qwen3-4B and Phi-4-mini, with frozen controls and reproducible reports."
     url: "https://github.com/nshkrdotcom/gct"
     language: "Python"
@@ -835,7 +878,7 @@ repos:
     name: "learning"
     org: "nshkrdotcom"
     stars: 0
-    category: "nshkr-ml-research"
+    category: "nshkr-research"
     description: "Mechanistic-interpretability experiments, research records, and ML visualization tools, including SELF-GROUND and construct-mismatch studies."
     url: "https://github.com/nshkrdotcom/learning"
     language: "Python"
@@ -844,7 +887,7 @@ repos:
     name: "mil"
     org: "nshkrdotcom"
     stars: 0
-    category: "nshkr-ml-research"
+    category: "nshkr-research"
     description: "Local mechanistic-interpretability workbench with IPython capture, activation patching, SAE analysis, controls, and reproducible visual artifacts."
     url: "https://github.com/nshkrdotcom/mil"
     language: "Python"
@@ -853,7 +896,7 @@ repos:
     name: "mwb"
     org: "nshkrdotcom"
     stars: 0
-    category: "nshkr-ml-research"
+    category: "nshkr-research"
     description: "Mechanistic Workbench (mwb): Local-first mechanistic interpretability workbench for IPython research, agent-readable state, artifact validation, evidence graphs, claim-safe MechanismCards, provenance, run ledgers, SAE/TransformerLens workflows, and reproducible MI experiments"
     url: "https://github.com/nshkrdotcom/mwb"
     logo: "/logos/mwb-522d34562304.webp"
@@ -863,7 +906,7 @@ repos:
     name: "superposition_zoo"
     org: "nshkrdotcom"
     stars: 0
-    category: "nshkr-ml-research"
+    category: "nshkr-research"
     description: "A research harness for studying how sequence-mixing architectures (softmax attention, linear attention, state-space models, delta-rule associative memory, and more) causally shape superposition and feature isolation in learned representations, using ground-truth synthetic benchmarks instead of natural-language probing."
     url: "https://github.com/nshkrdotcom/superposition_zoo"
     language: "Python"
@@ -1695,53 +1738,6 @@ repos:
     description: "Terminal-native operator workbench monorepo for multi-site terminal applications, local control-plane orchestration, daemon-backed process and log management, and pluggable domain sites such as Jido Hive, built as a non-umbrella Elixir workspace with Blitz and Weld."
     url: "https://github.com/nshkrdotcom/switchyard"
     logo: "/logos/switchyard-6485348567da.png"
-    language: "Elixir"
-
-  ChronoLedger:
-    name: "ChronoLedger"
-    org: "nshkrdotcom"
-    stars: 2
-    category: "nshkr-research"
-    description: "Hardware-Secured Temporal Blockchain"
-    url: "https://github.com/nshkrdotcom/ChronoLedger"
-
-  cns:
-    name: "cns"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-research"
-    description: "Chiral Narrative Synthesis - Dialectical reasoning framework for automated knowledge discovery"
-    url: "https://github.com/North-Shore-AI/cns"
-    logo: "/logos/cns-bcea811574ff.png"
-    language: "Elixir"
-
-  EADS:
-    name: "EADS"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-research"
-    description: "Evolutionary Autonomous Development System"
-    url: "https://github.com/nshkrdotcom/EADS"
-    language: "Python"
-
-  anti_agents:
-    name: "anti_agents"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-research"
-    description: "Anti Agents - Inspired by Sakana AI's String Seed of Thought paper"
-    url: "https://github.com/nshkrdotcom/anti_agents"
-    logo: "/logos/anti_agents-49bef43edef0.png"
-    language: "Elixir"
-
-  cns_ui:
-    name: "cns_ui"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-research"
-    description: "Phoenix LiveView interface for CNS dialectical reasoning experiments"
-    url: "https://github.com/North-Shore-AI/cns_ui"
-    logo: "/logos/cns_ui-8eaa48504e7f.png"
     language: "Elixir"
 
   youtube_audio_dl:

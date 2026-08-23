@@ -3,7 +3,7 @@
     { "slug": "nshkr-ai-agents", "name": "AI Agents" },
     { "slug": "nshkr-ai-sdk", "name": "AI SDKs" },
     { "slug": "nshkr-ai-infra", "name": "AI Infrastructure" },
-    { "slug": "nshkr-ml-research", "name": "ML Research" },
+    { "slug": "nshkr-research", "name": "Research" },
     { "slug": "nshkr-ml", "name": "ML & Learning" },
     { "slug": "nshkr-security", "name": "Security" },
     { "slug": "nshkr-schema", "name": "Schema" },
@@ -19,7 +19,6 @@
     { "slug": "nshkr-browser", "name": "Browser Integration" },
     { "slug": "nshkr-ui", "name": "User Interface" },
     { "slug": "nshkr-blockchain", "name": "Blockchain & Ledger" },
-    { "slug": "nshkr-research", "name": "Research" },
     { "slug": "nshkr-utility", "name": "Utilities" }
   ],
   "word_overrides": {
