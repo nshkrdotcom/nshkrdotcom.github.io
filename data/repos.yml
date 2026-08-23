@@ -1783,14 +1783,14 @@ repos:
     logo: "/logos/chz_ex-dfd96fa87a0c.png"
     language: "Elixir"
 
-  elixir_ecosystem_registry:
-    name: "elixir_ecosystem_registry"
+  portfolio_registry:
+    name: "portfolio_registry"
     org: "nshkrdotcom"
     stars: 0
     category: "nshkr-ecosystem"
     description: "Canonical machine-readable registry for nshkrdotcom's complete Elixir ecosystem, with stable repository and Mix-project identities, composable platform views, operational profiles, drift evidence, and clean integration with generic workspace and release tooling."
-    url: "https://github.com/nshkrdotcom/elixir_ecosystem_registry"
-    logo: "/logos/elixir_ecosystem_registry-4782f5d46ffd.png"
+    url: "https://github.com/nshkrdotcom/portfolio_registry"
+    logo: "/logos/portfolio_registry-4782f5d46ffd.png"
 
   prappy:
     name: "prappy"
