@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-08-23T20:25:30Z
+# Last updated: 2026-08-23T20:33:03Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -586,6 +586,16 @@ repos:
     description: "Shared IR structs for the North Shore labeling stack (Forge/Anvil/Ingot) — typed datasets, samples, assignments, labels, artifacts, and evaluation runs for labeling workflows"
     url: "https://github.com/North-Shore-AI/labeling_ir"
     logo: "/logos/labeling_ir-e27b84dea162.png"
+    language: "Elixir"
+
+  trinity_coordinator:
+    name: "trinity_coordinator"
+    org: "nshkrdotcom"
+    stars: 77
+    category: "nshkr-ai-agents"
+    description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
+    url: "https://github.com/nshkrdotcom/trinity_coordinator"
+    logo: "/logos/trinity_coordinator-dddf04d0d5d8.png"
     language: "Elixir"
 
   synapse:
@@ -1686,16 +1696,6 @@ repos:
     category: "nshkr-security"
     description: "SHIELD: Secure Hierarchical Inter-agent Layer for Distributed Environments"
     url: "https://github.com/nshkrdotcom/Shield"
-
-  trinity_coordinator:
-    name: "trinity_coordinator"
-    org: "nshkrdotcom"
-    stars: 77
-    category: "nshkr-research"
-    description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
-    url: "https://github.com/nshkrdotcom/trinity_coordinator"
-    logo: "/logos/trinity_coordinator-dddf04d0d5d8.png"
-    language: "Elixir"
 
   ChronoLedger:
     name: "ChronoLedger"
