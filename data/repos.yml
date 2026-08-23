@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-08-23T19:48:53Z
+# Last updated: 2026-08-23T20:25:30Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -1788,7 +1788,7 @@ repos:
     org: "nshkrdotcom"
     stars: 0
     category: "nshkr-ecosystem"
-    description: "Canonical machine-readable registry for nshkrdotcom's complete Elixir ecosystem, with stable repository and Mix-project identities, composable platform views, operational profiles, drift evidence, and clean integration with generic workspace and release tooling."
+    description: "Canonical machine-readable registry for the complete nshkrdotcom portfolio, with stable repository and Mix-project identities, composable platform views, operational profiles, drift evidence, and clean integration with generic workspace and release tooling."
     url: "https://github.com/nshkrdotcom/portfolio_registry"
     logo: "/logos/portfolio_registry-04853dd11ed7.png"
 
