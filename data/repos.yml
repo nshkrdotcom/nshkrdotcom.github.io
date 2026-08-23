@@ -1,82 +1,82 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-08-23T20:33:03Z
+# Last updated: 2026-08-23T20:35:19Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
 # Use scripts/MANAGE_REPO_TOPICS.sh to manage categories
 
 categories:
-  nshkr-ml-research:
-    name: "ML Research"
-    slug: "nshkr-ml-research"
-    weight: 0
-  nshkr-ml:
-    name: "ML & Learning"
-    slug: "nshkr-ml"
-    weight: 1
-  nshkr-crucible:
-    name: "Crucible Stack"
-    slug: "nshkr-crucible"
-    weight: 2
-  nshkr-ingot:
-    name: "Ingot Stack"
-    slug: "nshkr-ingot"
-    weight: 3
   nshkr-ai-agents:
     name: "AI Agents"
     slug: "nshkr-ai-agents"
-    weight: 4
+    weight: 0
   nshkr-ai-sdk:
     name: "AI SDKs"
     slug: "nshkr-ai-sdk"
-    weight: 5
+    weight: 1
   nshkr-ai-infra:
     name: "AI Infrastructure"
     slug: "nshkr-ai-infra"
-    weight: 6
-  nshkr-cloud:
-    name: "Cloud & Edge"
-    slug: "nshkr-cloud"
-    weight: 7
+    weight: 2
+  nshkr-ml-research:
+    name: "ML Research"
+    slug: "nshkr-ml-research"
+    weight: 3
+  nshkr-ml:
+    name: "ML & Learning"
+    slug: "nshkr-ml"
+    weight: 4
+  nshkr-security:
+    name: "Security"
+    slug: "nshkr-security"
+    weight: 5
   nshkr-schema:
     name: "Schema"
     slug: "nshkr-schema"
+    weight: 6
+  nshkr-testing:
+    name: "Testing"
+    slug: "nshkr-testing"
+    weight: 7
+  nshkr-observability:
+    name: "Observability"
+    slug: "nshkr-observability"
     weight: 8
   nshkr-devtools:
     name: "Developer Tools"
     slug: "nshkr-devtools"
     weight: 9
-  nshkr-browser:
-    name: "Browser Integration"
-    slug: "nshkr-browser"
-    weight: 10
-  nshkr-ui:
-    name: "User Interface"
-    slug: "nshkr-ui"
-    weight: 11
   nshkr-otp:
     name: "OTP"
     slug: "nshkr-otp"
-    weight: 12
+    weight: 10
   nshkr-distributed:
     name: "Distributed Systems"
     slug: "nshkr-distributed"
-    weight: 13
-  nshkr-testing:
-    name: "Testing"
-    slug: "nshkr-testing"
-    weight: 14
-  nshkr-observability:
-    name: "Observability"
-    slug: "nshkr-observability"
-    weight: 15
+    weight: 11
   nshkr-data:
     name: "Data"
     slug: "nshkr-data"
+    weight: 12
+  nshkr-crucible:
+    name: "Crucible Stack"
+    slug: "nshkr-crucible"
+    weight: 13
+  nshkr-ingot:
+    name: "Ingot Stack"
+    slug: "nshkr-ingot"
+    weight: 14
+  nshkr-cloud:
+    name: "Cloud & Edge"
+    slug: "nshkr-cloud"
+    weight: 15
+  nshkr-browser:
+    name: "Browser Integration"
+    slug: "nshkr-browser"
     weight: 16
-  nshkr-security:
-    name: "Security"
-    slug: "nshkr-security"
+  nshkr-ui:
+    name: "User Interface"
+    slug: "nshkr-ui"
     weight: 17
   nshkr-blockchain:
     name: "Blockchain & Ledger"
@@ -108,486 +108,6 @@ categories:
     weight: 999
 
 repos:
-  architecture_mechanics:
-    name: "architecture_mechanics"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ml-research"
-    description: "Synthetic ground-truth lab for testing how sequence-mixing architectures shape transport, feature geometry, overwrite behavior, and causal legibility."
-    url: "https://github.com/nshkrdotcom/architecture_mechanics"
-    language: "Python"
-
-  attention_lab:
-    name: "attention_lab"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ml-research"
-    description: "Controlled GPT pretraining and mechanistic-interpretability harness for testing alternative attention architectures against matched baselines."
-    url: "https://github.com/nshkrdotcom/attention_lab"
-    language: "Python"
-
-  gct:
-    name: "gct"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ml-research"
-    description: "Leakage-resistant experiments testing contextual transport and latent-coordinate structure across Qwen3-4B and Phi-4-mini, with frozen controls and reproducible reports."
-    url: "https://github.com/nshkrdotcom/gct"
-    language: "Python"
-
-  learning:
-    name: "learning"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ml-research"
-    description: "Mechanistic-interpretability experiments, research records, and ML visualization tools, including SELF-GROUND and construct-mismatch studies."
-    url: "https://github.com/nshkrdotcom/learning"
-    language: "Python"
-
-  mil:
-    name: "mil"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ml-research"
-    description: "Local mechanistic-interpretability workbench with IPython capture, activation patching, SAE analysis, controls, and reproducible visual artifacts."
-    url: "https://github.com/nshkrdotcom/mil"
-    language: "Python"
-
-  mwb:
-    name: "mwb"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ml-research"
-    description: "Mechanistic Workbench (mwb): Local-first mechanistic interpretability workbench for IPython research, agent-readable state, artifact validation, evidence graphs, claim-safe MechanismCards, provenance, run ledgers, SAE/TransformerLens workflows, and reproducible MI experiments"
-    url: "https://github.com/nshkrdotcom/mwb"
-    logo: "/logos/mwb-522d34562304.webp"
-    language: "Python"
-
-  superposition_zoo:
-    name: "superposition_zoo"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ml-research"
-    description: "A research harness for studying how sequence-mixing architectures (softmax attention, linear attention, state-space models, delta-rule associative memory, and more) causally shape superposition and feature isolation in learned representations, using ground-truth synthetic benchmarks instead of natural-language probing."
-    url: "https://github.com/nshkrdotcom/superposition_zoo"
-    language: "Python"
-
-  micrograd_ex:
-    name: "micrograd_ex"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-ml"
-    description: "Micrograd, implemented in Elixir"
-    url: "https://github.com/nshkrdotcom/micrograd_ex"
-    logo: "/logos/micrograd_ex-9fb94f37352e.png"
-    language: "Elixir"
-
-  ml_musings:
-    name: "ml_musings"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ml"
-    description: "Foundations: A premium, hands-on educational curriculum exploring high-dimensional geometry, measure concentration, linear probing, self-attention routing, PEFT (LoRA and SVD surgery), evolution strategies, and sparse Mixture of Experts (MoE) gating. Written from scratch in Numerical Elixir (Nx) and compiled via EXLA."
-    url: "https://github.com/nshkrdotcom/ml_musings"
-    logo: "/logos/ml_musings-b68b62196570.png"
-    language: "Elixir"
-
-  LlmGuard:
-    name: "LlmGuard"
-    org: "North-Shore-AI"
-    stars: 13
-    category: "nshkr-crucible"
-    description: "AI Firewall and guardrails for LLM-based Elixir applications"
-    url: "https://github.com/North-Shore-AI/LlmGuard"
-    logo: "/logos/LlmGuard-4a1fecbb7ec1.png"
-    language: "Elixir"
-
-  ExFairness:
-    name: "ExFairness"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-crucible"
-    description: "Fairness and bias detection library for Elixir AI/ML systems"
-    url: "https://github.com/North-Shore-AI/ExFairness"
-    logo: "/logos/ExFairness-c49fe15fd8a4.png"
-    language: "Elixir"
-
-  crucible_examples:
-    name: "crucible_examples"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-crucible"
-    description: "Interactive Phoenix LiveView demonstrations of the Crucible Framework - showcasing ensemble voting, request hedging, statistical analysis, and more with mock LLMs"
-    url: "https://github.com/North-Shore-AI/crucible_examples"
-    language: "Elixir"
-
-  crucible_harness:
-    name: "crucible_harness"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-crucible"
-    description: "Experimental research framework for running AI benchmarks at scale"
-    url: "https://github.com/North-Shore-AI/crucible_harness"
-    logo: "/logos/crucible_harness-cd3e5b6957cf.png"
-    language: "Elixir"
-
-  crucible_tensor_patch:
-    name: "crucible_tensor_patch"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-crucible"
-    description: "Deterministic tensor patch plans, patch application, and tensor path traversal for neural network model surgery."
-    url: "https://github.com/North-Shore-AI/crucible_tensor_patch"
-    logo: "/logos/crucible_tensor_patch-7fd49f24ed24.png"
-    language: "Elixir"
-
-  crucible_xai:
-    name: "crucible_xai"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-crucible"
-    description: "Explainable AI (XAI) tools for the Crucible framework"
-    url: "https://github.com/North-Shore-AI/crucible_xai"
-    logo: "/logos/crucible_xai-7b2b624252ab.png"
-    language: "Elixir"
-
-  ExDataCheck:
-    name: "ExDataCheck"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Data validation and quality library for ML pipelines in Elixir"
-    url: "https://github.com/North-Shore-AI/ExDataCheck"
-    logo: "/logos/ExDataCheck-5ef73575c9b9.png"
-    language: "Elixir"
-
-  cns_crucible:
-    name: "cns_crucible"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: ""
-    url: "https://github.com/North-Shore-AI/cns_crucible"
-    language: "Elixir"
-
-  crucible_adversary:
-    name: "crucible_adversary"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Adversarial testing and robustness evaluation for the Crucible framework"
-    url: "https://github.com/North-Shore-AI/crucible_adversary"
-    logo: "/logos/crucible_adversary-a3ed2ea13d02.png"
-    language: "Elixir"
-
-  crucible_bench:
-    name: "crucible_bench"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Statistical testing and analysis framework for AI research"
-    url: "https://github.com/North-Shore-AI/crucible_bench"
-    logo: "/logos/crucible_bench-f7a2c28f9379.png"
-    language: "Elixir"
-
-  crucible_bumblebee:
-    name: "crucible_bumblebee"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Bumblebee, Axon, and Nx adapter layer for compiling Crucible tap plans into model runs, hooks, traces, and decode steering."
-    url: "https://github.com/North-Shore-AI/crucible_bumblebee"
-    logo: "/logos/crucible_bumblebee-6e455c8bc7ba.png"
-    language: "Elixir"
-
-  crucible_datasets:
-    name: "crucible_datasets"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Dataset management and caching for AI research benchmarks"
-    url: "https://github.com/North-Shore-AI/crucible_datasets"
-    logo: "/logos/crucible_datasets-b84a9678a150.png"
-    language: "Elixir"
-
-  crucible_deployment:
-    name: "crucible_deployment"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "ML model deployment for the Crucible ecosystem. vLLM and Ollama integration, canary deployments, A/B testing, traffic routing, health checks, rollback strategies, and inference serving for Elixir-based ML workflows."
-    url: "https://github.com/North-Shore-AI/crucible_deployment"
-    logo: "/logos/crucible_deployment-76e5cd68735e.png"
-    language: "Elixir"
-
-  crucible_ensemble:
-    name: "crucible_ensemble"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Multi-model ensemble voting strategies for LLM reliability"
-    url: "https://github.com/North-Shore-AI/crucible_ensemble"
-    logo: "/logos/crucible_ensemble-ab3a8084b2b4.png"
-    language: "Elixir"
-
-  crucible_factorization:
-    name: "crucible_factorization"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Nx SVD/SVF factorization primitives for neural network model surgery and TRINITY artifact export."
-    url: "https://github.com/North-Shore-AI/crucible_factorization"
-    logo: "/logos/crucible_factorization-05692e29d6a6.png"
-    language: "Elixir"
-
-  crucible_feedback:
-    name: "crucible_feedback"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "ML feedback loop management for the Crucible ecosystem. Quality monitoring, data drift detection, model performance tracking, data curation, active learning, human-in-the-loop workflows, and continuous improvement for Elixir-based ML."
-    url: "https://github.com/North-Shore-AI/crucible_feedback"
-    logo: "/logos/crucible_feedback-52a97b240fcb.png"
-    language: "Elixir"
-
-  crucible_framework:
-    name: "crucible_framework"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "CrucibleFramework: A scientific platform for LLM reliability research on the BEAM"
-    url: "https://github.com/North-Shore-AI/crucible_framework"
-    logo: "/logos/crucible_framework-0e407eee509f.png"
-    language: "Elixir"
-
-  crucible_hedging:
-    name: "crucible_hedging"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Request hedging for tail latency reduction in distributed systems"
-    url: "https://github.com/North-Shore-AI/crucible_hedging"
-    logo: "/logos/crucible_hedging-b283e740d854.png"
-    language: "Elixir"
-
-  crucible_ir:
-    name: "crucible_ir"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Intermediate Representation for the Crucible ML reliability ecosystem"
-    url: "https://github.com/North-Shore-AI/crucible_ir"
-    logo: "/logos/crucible_ir-486eeca70b88.png"
-    language: "Elixir"
-
-  crucible_kitchen:
-    name: "crucible_kitchen"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Industrial ML training orchestration - backend-agnostic workflow engine for supervised, reinforcement, and preference learning. Provides composable workflows, declarative stage DSL, comprehensive telemetry, and port/adapter patterns for any ML backend. The missing orchestration layer that makes ML cookbooks trivially thin."
-    url: "https://github.com/North-Shore-AI/crucible_kitchen"
-    logo: "/logos/crucible_kitchen-3fa91cb84ffb.png"
-    language: "Elixir"
-
-  crucible_model_registry:
-    name: "crucible_model_registry"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "ML model registry for the Crucible ecosystem. Artifact storage, model versioning, lineage tracking, metadata management, model comparison, reproducibility, and integration with training pipelines for Elixir-based ML workflows."
-    url: "https://github.com/North-Shore-AI/crucible_model_registry"
-    logo: "/logos/crucible_model_registry-9da8110a7b82.png"
-    language: "Elixir"
-
-  crucible_policy:
-    name: "crucible_policy"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Routing, gating, fusion, uncertainty, verifier, shared memory, and steering decision contracts over Crucible signal traces."
-    url: "https://github.com/North-Shore-AI/crucible_policy"
-    logo: "/logos/crucible_policy-bbb02e7381c9.png"
-    language: "Elixir"
-
-  crucible_provider_contracts:
-    name: "crucible_provider_contracts"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Formal Provider behaviour, ABI specifications, shared structs, and contract test suites for Crucible model and robotics providers."
-    url: "https://github.com/North-Shore-AI/crucible_provider_contracts"
-    logo: "/logos/crucible_provider_contracts-091810a8c64d.png"
-    language: "Elixir"
-
-  crucible_safetensors:
-    name: "crucible_safetensors"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "SafeTensors parsing, validation, bounded slicing, checksums, deterministic writing, and row-chunk helpers for Elixir and Nx."
-    url: "https://github.com/North-Shore-AI/crucible_safetensors"
-    logo: "/logos/crucible_safetensors-061423d44e1e.png"
-    language: "Elixir"
-
-  crucible_signal:
-    name: "crucible_signal"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Canonical Elixir signal ontology for transformer forward-pass artifacts, tensor summaries, capabilities, and internal-control surfaces."
-    url: "https://github.com/North-Shore-AI/crucible_signal"
-    logo: "/logos/crucible_signal-a413b591b497.png"
-    language: "Elixir"
-
-  crucible_signal_trace:
-    name: "crucible_signal_trace"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Bounded forward-pass trace schema and persistence helpers for Crucible signal captures, layer trajectories, and decode telemetry."
-    url: "https://github.com/North-Shore-AI/crucible_signal_trace"
-    logo: "/logos/crucible_signal_trace-86b4461e6d30.png"
-    language: "Elixir"
-
-  crucible_tap:
-    name: "crucible_tap"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Tap-plan and probe-contract library for selecting, bounding, and negotiating model-internal forward-pass observations."
-    url: "https://github.com/North-Shore-AI/crucible_tap"
-    logo: "/logos/crucible_tap-aefae42dd926.png"
-    language: "Elixir"
-
-  crucible_telemetry:
-    name: "crucible_telemetry"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Advanced telemetry collection and analysis for AI research"
-    url: "https://github.com/North-Shore-AI/crucible_telemetry"
-    logo: "/logos/crucible_telemetry-69a606537448.png"
-    language: "Elixir"
-
-  crucible_trace:
-    name: "crucible_trace"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Structured causal reasoning chain logging for LLM transparency"
-    url: "https://github.com/North-Shore-AI/crucible_trace"
-    logo: "/logos/crucible_trace-031672fb2039.png"
-    language: "Elixir"
-
-  crucible_train:
-    name: "crucible_train"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "ML training orchestration for the Crucible ecosystem. Distributed training, hyperparameter optimization, checkpointing, model versioning, metrics collection, early stopping, LR scheduling, gradient accumulation, and mixed precision training with Nx/Scholar integration."
-    url: "https://github.com/North-Shore-AI/crucible_train"
-    logo: "/logos/crucible_train-c00c93594261.png"
-    language: "Elixir"
-
-  crucible_ui:
-    name: "crucible_ui"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Phoenix LiveView dashboard for the Crucible ML reliability stack"
-    url: "https://github.com/North-Shore-AI/crucible_ui"
-    logo: "/logos/crucible_ui-85e696069e7f.png"
-    language: "Elixir"
-
-  datasets_ex:
-    name: "datasets_ex"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Dataset management library for ML experiments—loaders for SciFact, FEVER, GSM8K, HumanEval, MMLU, TruthfulQA, HellaSwag; git-like versioning with lineage tracking; transformation pipelines; quality validation with schema checks and duplicate detection; GenStage streaming for large datasets. Built for reproducible AI research."
-    url: "https://github.com/North-Shore-AI/datasets_ex"
-    logo: "/logos/datasets_ex-94236bf88719.png"
-    language: "Elixir"
-
-  eval_ex:
-    name: "eval_ex"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Model evaluation harness for standardized benchmarking—comprehensive metrics (F1, BLEU, ROUGE, METEOR, BERTScore, pass@k), statistical analysis (confidence intervals, effect size, bootstrap CI, ANOVA), multi-model comparison, and report generation. Research-grade evaluation for LLM and ML experiments."
-    url: "https://github.com/North-Shore-AI/eval_ex"
-    logo: "/logos/eval_ex-7b3dbfe501a0.png"
-    language: "Elixir"
-
-  hf_datasets_ex:
-    name: "hf_datasets_ex"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "HuggingFace Datasets for Elixir - A native Elixir port of the popular HuggingFace datasets library. Stream, load, and process ML datasets from the HuggingFace Hub with full BEAM/OTP integration. Supports Parquet streaming, dataset splitting, shuffling, and seamless integration with Nx tensors for machine learning workflows."
-    url: "https://github.com/North-Shore-AI/hf_datasets_ex"
-    logo: "/logos/hf_datasets_ex-f69529c29be9.png"
-    language: "Elixir"
-
-  metrics_ex:
-    name: "metrics_ex"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Metrics aggregation and alerting for ML experiments—multi-backend export (Prometheus, InfluxDB, Datadog, OpenTelemetry), advanced aggregations (percentiles, histograms, moving averages), threshold-based alerting with anomaly detection (z-score, IQR), and time-series storage. Research-grade observability for the NSAI ecosystem."
-    url: "https://github.com/North-Shore-AI/metrics_ex"
-    logo: "/logos/metrics_ex-3e922a785eaf.png"
-    language: "Elixir"
-
-  training_ir:
-    name: "training_ir"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Training IR for reproducible ML jobs across Crucible and Kitchen. Defines model specs, adapters, learning config, checkpointing, validation, and resource envelopes to standardize training pipelines."
-    url: "https://github.com/North-Shore-AI/training_ir"
-
-  forge:
-    name: "forge"
-    org: "North-Shore-AI"
-    stars: 2
-    category: "nshkr-ingot"
-    description: "Sample factory library for generating, transforming, and computing measurements on samples"
-    url: "https://github.com/North-Shore-AI/forge"
-    logo: "/logos/forge-cac696b113c3.png"
-    language: "Elixir"
-
-  anvil:
-    name: "anvil"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-ingot"
-    description: "Labeling queue library for managing human labeling workflows"
-    url: "https://github.com/North-Shore-AI/anvil"
-    logo: "/logos/anvil-2231a8f7a7a2.png"
-    language: "Elixir"
-
-  ingot:
-    name: "ingot"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-ingot"
-    description: "Phoenix LiveView interface for sample generation and human labeling workflows"
-    url: "https://github.com/North-Shore-AI/ingot"
-    logo: "/logos/ingot-2eba282c8890.png"
-    language: "Elixir"
-
-  labeling_ir:
-    name: "labeling_ir"
-    org: "North-Shore-AI"
-    stars: 1
-    category: "nshkr-ingot"
-    description: "Shared IR structs for the North Shore labeling stack (Forge/Anvil/Ingot) — typed datasets, samples, assignments, labels, artifacts, and evaluation runs for labeling workflows"
-    url: "https://github.com/North-Shore-AI/labeling_ir"
-    logo: "/logos/labeling_ir-e27b84dea162.png"
-    language: "Elixir"
-
   trinity_coordinator:
     name: "trinity_coordinator"
     org: "nshkrdotcom"
@@ -1284,6 +804,123 @@ repos:
     logo: "/logos/tinkerer-6b70879f38af.png"
     language: "Python"
 
+  architecture_mechanics:
+    name: "architecture_mechanics"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "Synthetic ground-truth lab for testing how sequence-mixing architectures shape transport, feature geometry, overwrite behavior, and causal legibility."
+    url: "https://github.com/nshkrdotcom/architecture_mechanics"
+    language: "Python"
+
+  attention_lab:
+    name: "attention_lab"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "Controlled GPT pretraining and mechanistic-interpretability harness for testing alternative attention architectures against matched baselines."
+    url: "https://github.com/nshkrdotcom/attention_lab"
+    language: "Python"
+
+  gct:
+    name: "gct"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "Leakage-resistant experiments testing contextual transport and latent-coordinate structure across Qwen3-4B and Phi-4-mini, with frozen controls and reproducible reports."
+    url: "https://github.com/nshkrdotcom/gct"
+    language: "Python"
+
+  learning:
+    name: "learning"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "Mechanistic-interpretability experiments, research records, and ML visualization tools, including SELF-GROUND and construct-mismatch studies."
+    url: "https://github.com/nshkrdotcom/learning"
+    language: "Python"
+
+  mil:
+    name: "mil"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "Local mechanistic-interpretability workbench with IPython capture, activation patching, SAE analysis, controls, and reproducible visual artifacts."
+    url: "https://github.com/nshkrdotcom/mil"
+    language: "Python"
+
+  mwb:
+    name: "mwb"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "Mechanistic Workbench (mwb): Local-first mechanistic interpretability workbench for IPython research, agent-readable state, artifact validation, evidence graphs, claim-safe MechanismCards, provenance, run ledgers, SAE/TransformerLens workflows, and reproducible MI experiments"
+    url: "https://github.com/nshkrdotcom/mwb"
+    logo: "/logos/mwb-522d34562304.webp"
+    language: "Python"
+
+  superposition_zoo:
+    name: "superposition_zoo"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "A research harness for studying how sequence-mixing architectures (softmax attention, linear attention, state-space models, delta-rule associative memory, and more) causally shape superposition and feature isolation in learned representations, using ground-truth synthetic benchmarks instead of natural-language probing."
+    url: "https://github.com/nshkrdotcom/superposition_zoo"
+    language: "Python"
+
+  micrograd_ex:
+    name: "micrograd_ex"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ml"
+    description: "Micrograd, implemented in Elixir"
+    url: "https://github.com/nshkrdotcom/micrograd_ex"
+    logo: "/logos/micrograd_ex-9fb94f37352e.png"
+    language: "Elixir"
+
+  ml_musings:
+    name: "ml_musings"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml"
+    description: "Foundations: A premium, hands-on educational curriculum exploring high-dimensional geometry, measure concentration, linear probing, self-attention routing, PEFT (LoRA and SVD surgery), evolution strategies, and sparse Mixture of Experts (MoE) gating. Written from scratch in Numerical Elixir (Nx) and compiled via EXLA."
+    url: "https://github.com/nshkrdotcom/ml_musings"
+    logo: "/logos/ml_musings-b68b62196570.png"
+    language: "Elixir"
+
+  GUARDRAIL:
+    name: "GUARDRAIL"
+    org: "nshkrdotcom"
+    stars: 18
+    category: "nshkr-security"
+    description: "GUARDRAIL - MCP Security - Gateway for Unified Access, Resource Delegation, and Risk-Attenuating Information Limits"
+    url: "https://github.com/nshkrdotcom/GUARDRAIL"
+    logo: "/logos/GUARDRAIL-08778cdeeffb.png"
+
+  ASKA:
+    name: "ASKA"
+    org: "nshkrdotcom"
+    stars: 13
+    category: "nshkr-security"
+    description: "Secure Computing in the AI age"
+    url: "https://github.com/nshkrdotcom/ASKA"
+
+  pqc-hqc:
+    name: "pqc-hqc"
+    org: "nshkrdotcom"
+    stars: 6
+    category: "nshkr-security"
+    description: "Post-quantum cryptographic implementation of HQC (Hamming Quasi-Cyclic) - a NIST PQC candidate for quantum-resistant key encapsulation using code-based cryptography"
+    url: "https://github.com/nshkrdotcom/pqc-hqc"
+
+  Shield:
+    name: "Shield"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-security"
+    description: "SHIELD: Secure Hierarchical Inter-agent Layer for Distributed Environments"
+    url: "https://github.com/nshkrdotcom/Shield"
+
   exdantic:
     name: "exdantic"
     org: "nshkrdotcom"
@@ -1320,6 +957,85 @@ repos:
     category: "nshkr-schema"
     description: "Batch IR for standardized data interchange across training and inference backends. Covers text/token/chat/instruct batch types with encoding, validation, and portable schemas."
     url: "https://github.com/North-Shore-AI/batch_ir"
+
+  supertester:
+    name: "supertester"
+    org: "nshkrdotcom"
+    stars: 14
+    category: "nshkr-testing"
+    description: "A battle-hardened testing toolkit for building robust and resilient Elixir & OTP applications."
+    url: "https://github.com/nshkrdotcom/supertester"
+    logo: "/logos/supertester-40dd944f2a9d.png"
+    language: "Elixir"
+
+  playwriter:
+    name: "playwriter"
+    org: "nshkrdotcom"
+    stars: 6
+    category: "nshkr-testing"
+    description: "Elixir WSL-to-Windows browser integration"
+    url: "https://github.com/nshkrdotcom/playwriter"
+    logo: "/logos/playwriter-27c9e2de31ba.png"
+    language: "Elixir"
+
+  cluster_test:
+    name: "cluster_test"
+    org: "nshkrdotcom"
+    stars: 5
+    category: "nshkr-testing"
+    description: "Distributed Erlang/Elixir test cluster management via Mix tasks"
+    url: "https://github.com/nshkrdotcom/cluster_test"
+    language: "Elixir"
+
+  sandbox:
+    name: "sandbox"
+    org: "nshkrdotcom"
+    stars: 4
+    category: "nshkr-testing"
+    description: "Isolated OTP application management system for Elixir/Erlang"
+    url: "https://github.com/nshkrdotcom/sandbox"
+    logo: "/logos/sandbox-698925939153.png"
+    language: "Elixir"
+
+  foundation:
+    name: "foundation"
+    org: "nshkrdotcom"
+    stars: 13
+    category: "nshkr-observability"
+    description: "Elixir infrastructure and Observability Library"
+    url: "https://github.com/nshkrdotcom/foundation"
+    logo: "/logos/foundation-6c14daeda97c.png"
+    language: "Elixir"
+
+  AITrace:
+    name: "AITrace"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-observability"
+    description: "The unified observability layer for the AI Control Plane"
+    url: "https://github.com/nshkrdotcom/AITrace"
+    logo: "/logos/AITrace-dd614d7779d3.png"
+    language: "Elixir"
+
+  telemetry_reporter:
+    name: "telemetry_reporter"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-observability"
+    description: "Pachka-powered telemetry reporter for Elixir that batches client-side events, supports pluggable transports and :telemetry forwarding, and drains reliably on shutdown."
+    url: "https://github.com/nshkrdotcom/telemetry_reporter"
+    logo: "/logos/telemetry_reporter-7e4cbed5043d.png"
+    language: "Elixir"
+
+  lineage_ir:
+    name: "lineage_ir"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-observability"
+    description: "Lineage IR for cross-system traces, spans, artifacts, and provenance edges. Provides a shared event envelope and sink interface for consolidation across runtimes."
+    url: "https://github.com/North-Shore-AI/lineage_ir"
+    logo: "/logos/lineage_ir-e040a08ab4ca.png"
+    language: "Elixir"
 
   ex_dbg:
     name: "ex_dbg"
@@ -1478,16 +1194,6 @@ repos:
     logo: "/logos/prismatic-4390dc1c7476.png"
     language: "Elixir"
 
-  switchyard:
-    name: "switchyard"
-    org: "nshkrdotcom"
-    stars: 4
-    category: "nshkr-ui"
-    description: "Terminal-native operator workbench monorepo for multi-site terminal applications, local control-plane orchestration, daemon-backed process and log management, and pluggable domain sites such as Jido Hive, built as a non-umbrella Elixir workspace with Blitz and Weld."
-    url: "https://github.com/nshkrdotcom/switchyard"
-    logo: "/logos/switchyard-6485348567da.png"
-    language: "Elixir"
-
   superlearner:
     name: "superlearner"
     org: "nshkrdotcom"
@@ -1533,85 +1239,6 @@ repos:
     category: "nshkr-otp"
     description: "Phoenix/Plug adapter for Apex Arsenal framework"
     url: "https://github.com/nshkrdotcom/arsenal_plug"
-    language: "Elixir"
-
-  supertester:
-    name: "supertester"
-    org: "nshkrdotcom"
-    stars: 14
-    category: "nshkr-testing"
-    description: "A battle-hardened testing toolkit for building robust and resilient Elixir & OTP applications."
-    url: "https://github.com/nshkrdotcom/supertester"
-    logo: "/logos/supertester-40dd944f2a9d.png"
-    language: "Elixir"
-
-  playwriter:
-    name: "playwriter"
-    org: "nshkrdotcom"
-    stars: 6
-    category: "nshkr-testing"
-    description: "Elixir WSL-to-Windows browser integration"
-    url: "https://github.com/nshkrdotcom/playwriter"
-    logo: "/logos/playwriter-27c9e2de31ba.png"
-    language: "Elixir"
-
-  cluster_test:
-    name: "cluster_test"
-    org: "nshkrdotcom"
-    stars: 5
-    category: "nshkr-testing"
-    description: "Distributed Erlang/Elixir test cluster management via Mix tasks"
-    url: "https://github.com/nshkrdotcom/cluster_test"
-    language: "Elixir"
-
-  sandbox:
-    name: "sandbox"
-    org: "nshkrdotcom"
-    stars: 4
-    category: "nshkr-testing"
-    description: "Isolated OTP application management system for Elixir/Erlang"
-    url: "https://github.com/nshkrdotcom/sandbox"
-    logo: "/logos/sandbox-698925939153.png"
-    language: "Elixir"
-
-  foundation:
-    name: "foundation"
-    org: "nshkrdotcom"
-    stars: 13
-    category: "nshkr-observability"
-    description: "Elixir infrastructure and Observability Library"
-    url: "https://github.com/nshkrdotcom/foundation"
-    logo: "/logos/foundation-6c14daeda97c.png"
-    language: "Elixir"
-
-  AITrace:
-    name: "AITrace"
-    org: "nshkrdotcom"
-    stars: 2
-    category: "nshkr-observability"
-    description: "The unified observability layer for the AI Control Plane"
-    url: "https://github.com/nshkrdotcom/AITrace"
-    logo: "/logos/AITrace-dd614d7779d3.png"
-    language: "Elixir"
-
-  telemetry_reporter:
-    name: "telemetry_reporter"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-observability"
-    description: "Pachka-powered telemetry reporter for Elixir that batches client-side events, supports pluggable transports and :telemetry forwarding, and drains reliably on shutdown."
-    url: "https://github.com/nshkrdotcom/telemetry_reporter"
-    logo: "/logos/telemetry_reporter-7e4cbed5043d.png"
-    language: "Elixir"
-
-  lineage_ir:
-    name: "lineage_ir"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-observability"
-    description: "Lineage IR for cross-system traces, spans, artifacts, and provenance edges. Provides a shared event envelope and sink interface for consolidation across runtimes."
-    url: "https://github.com/North-Shore-AI/lineage_ir"
-    logo: "/logos/lineage_ir-e040a08ab4ca.png"
     language: "Elixir"
 
   duckdb_ex:
@@ -1664,38 +1291,411 @@ repos:
     logo: "/logos/nx_penalties-8b847666a961.png"
     language: "Elixir"
 
-  GUARDRAIL:
-    name: "GUARDRAIL"
-    org: "nshkrdotcom"
-    stars: 18
-    category: "nshkr-security"
-    description: "GUARDRAIL - MCP Security - Gateway for Unified Access, Resource Delegation, and Risk-Attenuating Information Limits"
-    url: "https://github.com/nshkrdotcom/GUARDRAIL"
-    logo: "/logos/GUARDRAIL-08778cdeeffb.png"
-
-  ASKA:
-    name: "ASKA"
-    org: "nshkrdotcom"
+  LlmGuard:
+    name: "LlmGuard"
+    org: "North-Shore-AI"
     stars: 13
-    category: "nshkr-security"
-    description: "Secure Computing in the AI age"
-    url: "https://github.com/nshkrdotcom/ASKA"
+    category: "nshkr-crucible"
+    description: "AI Firewall and guardrails for LLM-based Elixir applications"
+    url: "https://github.com/North-Shore-AI/LlmGuard"
+    logo: "/logos/LlmGuard-4a1fecbb7ec1.png"
+    language: "Elixir"
 
-  pqc-hqc:
-    name: "pqc-hqc"
-    org: "nshkrdotcom"
-    stars: 6
-    category: "nshkr-security"
-    description: "Post-quantum cryptographic implementation of HQC (Hamming Quasi-Cyclic) - a NIST PQC candidate for quantum-resistant key encapsulation using code-based cryptography"
-    url: "https://github.com/nshkrdotcom/pqc-hqc"
+  ExFairness:
+    name: "ExFairness"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-crucible"
+    description: "Fairness and bias detection library for Elixir AI/ML systems"
+    url: "https://github.com/North-Shore-AI/ExFairness"
+    logo: "/logos/ExFairness-c49fe15fd8a4.png"
+    language: "Elixir"
 
-  Shield:
-    name: "Shield"
-    org: "nshkrdotcom"
+  crucible_examples:
+    name: "crucible_examples"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-crucible"
+    description: "Interactive Phoenix LiveView demonstrations of the Crucible Framework - showcasing ensemble voting, request hedging, statistical analysis, and more with mock LLMs"
+    url: "https://github.com/North-Shore-AI/crucible_examples"
+    language: "Elixir"
+
+  crucible_harness:
+    name: "crucible_harness"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-crucible"
+    description: "Experimental research framework for running AI benchmarks at scale"
+    url: "https://github.com/North-Shore-AI/crucible_harness"
+    logo: "/logos/crucible_harness-cd3e5b6957cf.png"
+    language: "Elixir"
+
+  crucible_tensor_patch:
+    name: "crucible_tensor_patch"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-crucible"
+    description: "Deterministic tensor patch plans, patch application, and tensor path traversal for neural network model surgery."
+    url: "https://github.com/North-Shore-AI/crucible_tensor_patch"
+    logo: "/logos/crucible_tensor_patch-7fd49f24ed24.png"
+    language: "Elixir"
+
+  crucible_xai:
+    name: "crucible_xai"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-crucible"
+    description: "Explainable AI (XAI) tools for the Crucible framework"
+    url: "https://github.com/North-Shore-AI/crucible_xai"
+    logo: "/logos/crucible_xai-7b2b624252ab.png"
+    language: "Elixir"
+
+  ExDataCheck:
+    name: "ExDataCheck"
+    org: "North-Shore-AI"
     stars: 0
-    category: "nshkr-security"
-    description: "SHIELD: Secure Hierarchical Inter-agent Layer for Distributed Environments"
-    url: "https://github.com/nshkrdotcom/Shield"
+    category: "nshkr-crucible"
+    description: "Data validation and quality library for ML pipelines in Elixir"
+    url: "https://github.com/North-Shore-AI/ExDataCheck"
+    logo: "/logos/ExDataCheck-5ef73575c9b9.png"
+    language: "Elixir"
+
+  cns_crucible:
+    name: "cns_crucible"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: ""
+    url: "https://github.com/North-Shore-AI/cns_crucible"
+    language: "Elixir"
+
+  crucible_adversary:
+    name: "crucible_adversary"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Adversarial testing and robustness evaluation for the Crucible framework"
+    url: "https://github.com/North-Shore-AI/crucible_adversary"
+    logo: "/logos/crucible_adversary-a3ed2ea13d02.png"
+    language: "Elixir"
+
+  crucible_bench:
+    name: "crucible_bench"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Statistical testing and analysis framework for AI research"
+    url: "https://github.com/North-Shore-AI/crucible_bench"
+    logo: "/logos/crucible_bench-f7a2c28f9379.png"
+    language: "Elixir"
+
+  crucible_bumblebee:
+    name: "crucible_bumblebee"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Bumblebee, Axon, and Nx adapter layer for compiling Crucible tap plans into model runs, hooks, traces, and decode steering."
+    url: "https://github.com/North-Shore-AI/crucible_bumblebee"
+    logo: "/logos/crucible_bumblebee-6e455c8bc7ba.png"
+    language: "Elixir"
+
+  crucible_datasets:
+    name: "crucible_datasets"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Dataset management and caching for AI research benchmarks"
+    url: "https://github.com/North-Shore-AI/crucible_datasets"
+    logo: "/logos/crucible_datasets-b84a9678a150.png"
+    language: "Elixir"
+
+  crucible_deployment:
+    name: "crucible_deployment"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "ML model deployment for the Crucible ecosystem. vLLM and Ollama integration, canary deployments, A/B testing, traffic routing, health checks, rollback strategies, and inference serving for Elixir-based ML workflows."
+    url: "https://github.com/North-Shore-AI/crucible_deployment"
+    logo: "/logos/crucible_deployment-76e5cd68735e.png"
+    language: "Elixir"
+
+  crucible_ensemble:
+    name: "crucible_ensemble"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Multi-model ensemble voting strategies for LLM reliability"
+    url: "https://github.com/North-Shore-AI/crucible_ensemble"
+    logo: "/logos/crucible_ensemble-ab3a8084b2b4.png"
+    language: "Elixir"
+
+  crucible_factorization:
+    name: "crucible_factorization"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Nx SVD/SVF factorization primitives for neural network model surgery and TRINITY artifact export."
+    url: "https://github.com/North-Shore-AI/crucible_factorization"
+    logo: "/logos/crucible_factorization-05692e29d6a6.png"
+    language: "Elixir"
+
+  crucible_feedback:
+    name: "crucible_feedback"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "ML feedback loop management for the Crucible ecosystem. Quality monitoring, data drift detection, model performance tracking, data curation, active learning, human-in-the-loop workflows, and continuous improvement for Elixir-based ML."
+    url: "https://github.com/North-Shore-AI/crucible_feedback"
+    logo: "/logos/crucible_feedback-52a97b240fcb.png"
+    language: "Elixir"
+
+  crucible_framework:
+    name: "crucible_framework"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "CrucibleFramework: A scientific platform for LLM reliability research on the BEAM"
+    url: "https://github.com/North-Shore-AI/crucible_framework"
+    logo: "/logos/crucible_framework-0e407eee509f.png"
+    language: "Elixir"
+
+  crucible_hedging:
+    name: "crucible_hedging"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Request hedging for tail latency reduction in distributed systems"
+    url: "https://github.com/North-Shore-AI/crucible_hedging"
+    logo: "/logos/crucible_hedging-b283e740d854.png"
+    language: "Elixir"
+
+  crucible_ir:
+    name: "crucible_ir"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Intermediate Representation for the Crucible ML reliability ecosystem"
+    url: "https://github.com/North-Shore-AI/crucible_ir"
+    logo: "/logos/crucible_ir-486eeca70b88.png"
+    language: "Elixir"
+
+  crucible_kitchen:
+    name: "crucible_kitchen"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Industrial ML training orchestration - backend-agnostic workflow engine for supervised, reinforcement, and preference learning. Provides composable workflows, declarative stage DSL, comprehensive telemetry, and port/adapter patterns for any ML backend. The missing orchestration layer that makes ML cookbooks trivially thin."
+    url: "https://github.com/North-Shore-AI/crucible_kitchen"
+    logo: "/logos/crucible_kitchen-3fa91cb84ffb.png"
+    language: "Elixir"
+
+  crucible_model_registry:
+    name: "crucible_model_registry"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "ML model registry for the Crucible ecosystem. Artifact storage, model versioning, lineage tracking, metadata management, model comparison, reproducibility, and integration with training pipelines for Elixir-based ML workflows."
+    url: "https://github.com/North-Shore-AI/crucible_model_registry"
+    logo: "/logos/crucible_model_registry-9da8110a7b82.png"
+    language: "Elixir"
+
+  crucible_policy:
+    name: "crucible_policy"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Routing, gating, fusion, uncertainty, verifier, shared memory, and steering decision contracts over Crucible signal traces."
+    url: "https://github.com/North-Shore-AI/crucible_policy"
+    logo: "/logos/crucible_policy-bbb02e7381c9.png"
+    language: "Elixir"
+
+  crucible_provider_contracts:
+    name: "crucible_provider_contracts"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Formal Provider behaviour, ABI specifications, shared structs, and contract test suites for Crucible model and robotics providers."
+    url: "https://github.com/North-Shore-AI/crucible_provider_contracts"
+    logo: "/logos/crucible_provider_contracts-091810a8c64d.png"
+    language: "Elixir"
+
+  crucible_safetensors:
+    name: "crucible_safetensors"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "SafeTensors parsing, validation, bounded slicing, checksums, deterministic writing, and row-chunk helpers for Elixir and Nx."
+    url: "https://github.com/North-Shore-AI/crucible_safetensors"
+    logo: "/logos/crucible_safetensors-061423d44e1e.png"
+    language: "Elixir"
+
+  crucible_signal:
+    name: "crucible_signal"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Canonical Elixir signal ontology for transformer forward-pass artifacts, tensor summaries, capabilities, and internal-control surfaces."
+    url: "https://github.com/North-Shore-AI/crucible_signal"
+    logo: "/logos/crucible_signal-a413b591b497.png"
+    language: "Elixir"
+
+  crucible_signal_trace:
+    name: "crucible_signal_trace"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Bounded forward-pass trace schema and persistence helpers for Crucible signal captures, layer trajectories, and decode telemetry."
+    url: "https://github.com/North-Shore-AI/crucible_signal_trace"
+    logo: "/logos/crucible_signal_trace-86b4461e6d30.png"
+    language: "Elixir"
+
+  crucible_tap:
+    name: "crucible_tap"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Tap-plan and probe-contract library for selecting, bounding, and negotiating model-internal forward-pass observations."
+    url: "https://github.com/North-Shore-AI/crucible_tap"
+    logo: "/logos/crucible_tap-aefae42dd926.png"
+    language: "Elixir"
+
+  crucible_telemetry:
+    name: "crucible_telemetry"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Advanced telemetry collection and analysis for AI research"
+    url: "https://github.com/North-Shore-AI/crucible_telemetry"
+    logo: "/logos/crucible_telemetry-69a606537448.png"
+    language: "Elixir"
+
+  crucible_trace:
+    name: "crucible_trace"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Structured causal reasoning chain logging for LLM transparency"
+    url: "https://github.com/North-Shore-AI/crucible_trace"
+    logo: "/logos/crucible_trace-031672fb2039.png"
+    language: "Elixir"
+
+  crucible_train:
+    name: "crucible_train"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "ML training orchestration for the Crucible ecosystem. Distributed training, hyperparameter optimization, checkpointing, model versioning, metrics collection, early stopping, LR scheduling, gradient accumulation, and mixed precision training with Nx/Scholar integration."
+    url: "https://github.com/North-Shore-AI/crucible_train"
+    logo: "/logos/crucible_train-c00c93594261.png"
+    language: "Elixir"
+
+  crucible_ui:
+    name: "crucible_ui"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Phoenix LiveView dashboard for the Crucible ML reliability stack"
+    url: "https://github.com/North-Shore-AI/crucible_ui"
+    logo: "/logos/crucible_ui-85e696069e7f.png"
+    language: "Elixir"
+
+  datasets_ex:
+    name: "datasets_ex"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Dataset management library for ML experiments—loaders for SciFact, FEVER, GSM8K, HumanEval, MMLU, TruthfulQA, HellaSwag; git-like versioning with lineage tracking; transformation pipelines; quality validation with schema checks and duplicate detection; GenStage streaming for large datasets. Built for reproducible AI research."
+    url: "https://github.com/North-Shore-AI/datasets_ex"
+    logo: "/logos/datasets_ex-94236bf88719.png"
+    language: "Elixir"
+
+  eval_ex:
+    name: "eval_ex"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Model evaluation harness for standardized benchmarking—comprehensive metrics (F1, BLEU, ROUGE, METEOR, BERTScore, pass@k), statistical analysis (confidence intervals, effect size, bootstrap CI, ANOVA), multi-model comparison, and report generation. Research-grade evaluation for LLM and ML experiments."
+    url: "https://github.com/North-Shore-AI/eval_ex"
+    logo: "/logos/eval_ex-7b3dbfe501a0.png"
+    language: "Elixir"
+
+  hf_datasets_ex:
+    name: "hf_datasets_ex"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "HuggingFace Datasets for Elixir - A native Elixir port of the popular HuggingFace datasets library. Stream, load, and process ML datasets from the HuggingFace Hub with full BEAM/OTP integration. Supports Parquet streaming, dataset splitting, shuffling, and seamless integration with Nx tensors for machine learning workflows."
+    url: "https://github.com/North-Shore-AI/hf_datasets_ex"
+    logo: "/logos/hf_datasets_ex-f69529c29be9.png"
+    language: "Elixir"
+
+  metrics_ex:
+    name: "metrics_ex"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Metrics aggregation and alerting for ML experiments—multi-backend export (Prometheus, InfluxDB, Datadog, OpenTelemetry), advanced aggregations (percentiles, histograms, moving averages), threshold-based alerting with anomaly detection (z-score, IQR), and time-series storage. Research-grade observability for the NSAI ecosystem."
+    url: "https://github.com/North-Shore-AI/metrics_ex"
+    logo: "/logos/metrics_ex-3e922a785eaf.png"
+    language: "Elixir"
+
+  training_ir:
+    name: "training_ir"
+    org: "North-Shore-AI"
+    stars: 0
+    category: "nshkr-crucible"
+    description: "Training IR for reproducible ML jobs across Crucible and Kitchen. Defines model specs, adapters, learning config, checkpointing, validation, and resource envelopes to standardize training pipelines."
+    url: "https://github.com/North-Shore-AI/training_ir"
+
+  forge:
+    name: "forge"
+    org: "North-Shore-AI"
+    stars: 2
+    category: "nshkr-ingot"
+    description: "Sample factory library for generating, transforming, and computing measurements on samples"
+    url: "https://github.com/North-Shore-AI/forge"
+    logo: "/logos/forge-cac696b113c3.png"
+    language: "Elixir"
+
+  anvil:
+    name: "anvil"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-ingot"
+    description: "Labeling queue library for managing human labeling workflows"
+    url: "https://github.com/North-Shore-AI/anvil"
+    logo: "/logos/anvil-2231a8f7a7a2.png"
+    language: "Elixir"
+
+  ingot:
+    name: "ingot"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-ingot"
+    description: "Phoenix LiveView interface for sample generation and human labeling workflows"
+    url: "https://github.com/North-Shore-AI/ingot"
+    logo: "/logos/ingot-2eba282c8890.png"
+    language: "Elixir"
+
+  labeling_ir:
+    name: "labeling_ir"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-ingot"
+    description: "Shared IR structs for the North Shore labeling stack (Forge/Anvil/Ingot) — typed datasets, samples, assignments, labels, artifacts, and evaluation runs for labeling workflows"
+    url: "https://github.com/North-Shore-AI/labeling_ir"
+    logo: "/logos/labeling_ir-e27b84dea162.png"
+    language: "Elixir"
+
+  switchyard:
+    name: "switchyard"
+    org: "nshkrdotcom"
+    stars: 4
+    category: "nshkr-ui"
+    description: "Terminal-native operator workbench monorepo for multi-site terminal applications, local control-plane orchestration, daemon-backed process and log management, and pluggable domain sites such as Jido Hive, built as a non-umbrella Elixir workspace with Blitz and Weld."
+    url: "https://github.com/nshkrdotcom/switchyard"
+    logo: "/logos/switchyard-6485348567da.png"
+    language: "Elixir"
 
   ChronoLedger:
     name: "ChronoLedger"
