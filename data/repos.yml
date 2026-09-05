@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-08-23T20:51:46Z
+# Last updated: 2026-09-05T21:39:07Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -94,10 +94,14 @@ categories:
     name: "Misc"
     slug: "nshkr-misc"
     weight: 22
+  nshkr-omarchy:
+    name: "Omarchy"
+    slug: "nshkr-omarchy"
+    weight: 23
   nshkr-tools:
     name: "Tools"
     slug: "nshkr-tools"
-    weight: 23
+    weight: 24
   uncategorized:
     name: "Other Projects"
     slug: "uncategorized"
@@ -117,7 +121,7 @@ repos:
   synapse:
     name: "synapse"
     org: "nshkrdotcom"
-    stars: 49
+    stars: 50
     category: "nshkr-ai-agents"
     description: "Headless, declarative multi-agent orchestration framework with a domain-agnostic signal bus, workflow engine with Postgres persistence, and configurable agent runtime (ships code review domain)."
     url: "https://github.com/nshkrdotcom/synapse"
@@ -265,7 +269,7 @@ repos:
   codex_sdk:
     name: "codex_sdk"
     org: "nshkrdotcom"
-    stars: 26
+    stars: 27
     category: "nshkr-ai-sdk"
     description: "OpenAI Codex SDK written in Elixir"
     url: "https://github.com/nshkrdotcom/codex_sdk"
@@ -275,7 +279,7 @@ repos:
   agent_session_manager:
     name: "agent_session_manager"
     org: "nshkrdotcom"
-    stars: 10
+    stars: 11
     category: "nshkr-ai-sdk"
     description: "Agent Session Manager - A comprehensive Elixir library for managing AI agent sessions, state persistence, conversation context, and multi-agent orchestration workflows"
     url: "https://github.com/nshkrdotcom/agent_session_manager"
@@ -450,6 +454,8 @@ repos:
     category: "nshkr-ai-sdk"
     description: "Shared LLM Actions for NSAI runtimes. Wraps PortfolioCore adapters with Jido.Action semantics and CrucibleIR.Backend input/output to centralize provider access."
     url: "https://github.com/North-Shore-AI/nsai_llm"
+    logo: "/logos/nsai_llm-a3e925bb9a06.png"
+    language: "Elixir"
 
   self_hosted_inference_core:
     name: "self_hosted_inference_core"
@@ -1000,6 +1006,8 @@ repos:
     category: "nshkr-schema"
     description: "Batch IR for standardized data interchange across training and inference backends. Covers text/token/chat/instruct batch types with encoding, validation, and portable schemas."
     url: "https://github.com/North-Shore-AI/batch_ir"
+    logo: "/logos/batch_ir-1389d31de929.png"
+    language: "Elixir"
 
   supertester:
     name: "supertester"
@@ -1373,6 +1381,16 @@ repos:
     logo: "/logos/crucible_harness-cd3e5b6957cf.png"
     language: "Elixir"
 
+  crucible_hedging:
+    name: "crucible_hedging"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-crucible"
+    description: "Request hedging for tail latency reduction in distributed systems"
+    url: "https://github.com/North-Shore-AI/crucible_hedging"
+    logo: "/logos/crucible_hedging-b283e740d854.png"
+    language: "Elixir"
+
   crucible_tensor_patch:
     name: "crucible_tensor_patch"
     org: "North-Shore-AI"
@@ -1500,16 +1518,6 @@ repos:
     description: "CrucibleFramework: A scientific platform for LLM reliability research on the BEAM"
     url: "https://github.com/North-Shore-AI/crucible_framework"
     logo: "/logos/crucible_framework-0e407eee509f.png"
-    language: "Elixir"
-
-  crucible_hedging:
-    name: "crucible_hedging"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Request hedging for tail latency reduction in distributed systems"
-    url: "https://github.com/North-Shore-AI/crucible_hedging"
-    logo: "/logos/crucible_hedging-b283e740d854.png"
     language: "Elixir"
 
   crucible_ir:
@@ -1689,6 +1697,8 @@ repos:
     category: "nshkr-crucible"
     description: "Training IR for reproducible ML jobs across Crucible and Kitchen. Defines model specs, adapters, learning config, checkpointing, validation, and resource envelopes to standardize training pipelines."
     url: "https://github.com/North-Shore-AI/training_ir"
+    logo: "/logos/training_ir-c4b612ea5e00.png"
+    language: "Elixir"
 
   forge:
     name: "forge"
@@ -1798,6 +1808,24 @@ repos:
     logo: "/logos/prappy-ba09afe6356c.png"
     language: "C++"
 
+  omarchy-beam-deck:
+    name: "omarchy-beam-deck"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-omarchy"
+    description: "Host-aware BEAM and OTP control plane for Omarchy Quattro. Observes every local and distributed BEAM VM, manages host scheduler budgets and density, detects process pathologies and mailbox backpressure, visualizes supervision and cluster topology, and provides reversible runtime controls with zero application instrumentation required."
+    url: "https://github.com/nshkrdotcom/omarchy-beam-deck"
+    language: "Elixir"
+
+  omarchy-tactical-display:
+    name: "omarchy-tactical-display"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-omarchy"
+    description: "Ephemeral fullscreen network connection field instrument for Omarchy Quattro. Visualizes local process-to-remote socket topology, directional traffic, bound listeners, and kernel queue pressure in real time—summoned instantly as an overlay instrument with zero daemons, no packet capture, and no root privileges required."
+    url: "https://github.com/nshkrdotcom/omarchy-tactical-display"
+    language: "Python"
+
   mix_workspace_ops:
     name: "mix_workspace_ops"
     org: "nshkrdotcom"
@@ -1807,6 +1835,14 @@ repos:
     url: "https://github.com/nshkrdotcom/mix_workspace_ops"
     logo: "/logos/mix_workspace_ops-c8edf02c5673.png"
     language: "Elixir"
+
+  HackTUI-Hermes-Jido:
+    name: "HackTUI-Hermes-Jido"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "uncategorized"
+    description: "HackTUI is a terminal-first purple-team AI powered security operations platform built in Elixir on the BEAM."
+    url: "https://github.com/nshkrdotcom/HackTUI-Hermes-Jido"
 
   docs:
     name: "docs"
