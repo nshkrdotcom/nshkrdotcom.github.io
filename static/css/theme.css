@@ -950,6 +950,11 @@ samp {
   transition: border-color var(--transition), background var(--transition);
 }
 
+.research-program-lead {
+  grid-column: 1 / -1;
+  min-height: 0;
+}
+
 .principle-card:hover {
   border-color: var(--border2);
   background: var(--bg2);

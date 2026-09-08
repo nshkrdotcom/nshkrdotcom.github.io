@@ -50,7 +50,7 @@ summaryLength = 70
   [minify.tdewolff]
     [minify.tdewolff.html]
       keepComments = true
-      keepConditionalComments = true
+      keepSpecialComments = true
       keepDocumentTags = true
       keepEndTags = true
       keepDefaultAttrVals = true
