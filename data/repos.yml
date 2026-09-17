@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-09-05T21:39:07Z
+# Last updated: 2026-09-17T23:04:15Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -86,22 +86,30 @@ categories:
     name: "Utilities"
     slug: "nshkr-utility"
     weight: 20
+  nshkr-ai-research:
+    name: "AI Research"
+    slug: "nshkr-ai-research"
+    weight: 21
   nshkr-ecosystem:
     name: "Ecosystem"
     slug: "nshkr-ecosystem"
-    weight: 21
+    weight: 22
   nshkr-misc:
     name: "Misc"
     slug: "nshkr-misc"
-    weight: 22
+    weight: 23
+  nshkr-ml-research:
+    name: "ML Research"
+    slug: "nshkr-ml-research"
+    weight: 24
   nshkr-omarchy:
     name: "Omarchy"
     slug: "nshkr-omarchy"
-    weight: 23
+    weight: 25
   nshkr-tools:
     name: "Tools"
     slug: "nshkr-tools"
-    weight: 24
+    weight: 26
   uncategorized:
     name: "Other Projects"
     slug: "uncategorized"
@@ -141,7 +149,7 @@ repos:
   DSPex:
     name: "DSPex"
     org: "nshkrdotcom"
-    stars: 18
+    stars: 19
     category: "nshkr-ai-agents"
     description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
     url: "https://github.com/nshkrdotcom/DSPex"
@@ -259,7 +267,7 @@ repos:
   gemini_ex:
     name: "gemini_ex"
     org: "nshkrdotcom"
-    stars: 35
+    stars: 36
     category: "nshkr-ai-sdk"
     description: "Elixir Interface / Adapter for Google Gemini LLM, for both AI Studio and Vertex AI"
     url: "https://github.com/nshkrdotcom/gemini_ex"
@@ -374,6 +382,16 @@ repos:
     description: "Full-featured Elixir client for the Model Context Protocol (MCP) with multi-transport support, resources, prompts, tools, and telemetry."
     url: "https://github.com/nshkrdotcom/mcp_client"
     logo: "/logos/mcp_client-ecfb1d5e78aa.png"
+    language: "Elixir"
+
+  typesafe_sdk:
+    name: "typesafe_sdk"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-sdk"
+    description: "An idiomatic, type-safe Elixir port of the official TypeScript AI SDK (ai / ai-sdk) providing unified LLM integrations, streaming text and structured outputs, tool calling, and agentic workflows. Jev is their current flagship model and is the first System One model."
+    url: "https://github.com/nshkrdotcom/typesafe_sdk"
+    logo: "/logos/typesafe_sdk-0b85c222e4a6.png"
     language: "Elixir"
 
   vllm:
@@ -1789,6 +1807,15 @@ repos:
     logo: "/logos/chz_ex-dfd96fa87a0c.png"
     language: "Elixir"
 
+  esc:
+    name: "esc"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-research"
+    description: "Epistemic State Compilation (ESC): Separating persistent epistemic state from LLM cognition"
+    url: "https://github.com/nshkrdotcom/esc"
+    language: "Python"
+
   portfolio_registry:
     name: "portfolio_registry"
     org: "nshkrdotcom"
@@ -1808,14 +1835,34 @@ repos:
     logo: "/logos/prappy-ba09afe6356c.png"
     language: "C++"
 
+  cgl:
+    name: "cgl"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ml-research"
+    description: "Causal Generalization Laboratory — Predicting and Controlling Global Behavioral Change During Fine-Tuning, Continued Adaptation, and Skill Composition in Open-Weight Language Models"
+    url: "https://github.com/nshkrdotcom/cgl"
+    language: "Python"
+
   omarchy-beam-deck:
     name: "omarchy-beam-deck"
     org: "nshkrdotcom"
-    stars: 0
+    stars: 5
     category: "nshkr-omarchy"
     description: "Host-aware BEAM and OTP control plane for Omarchy Quattro. Observes every local and distributed BEAM VM, manages host scheduler budgets and density, detects process pathologies and mailbox backpressure, visualizes supervision and cluster topology, and provides reversible runtime controls with zero application instrumentation required."
     url: "https://github.com/nshkrdotcom/omarchy-beam-deck"
+    logo: "/logos/omarchy-beam-deck-3956e9e3b071.png"
     language: "Elixir"
+
+  omarchy-chronicle:
+    name: "omarchy-chronicle"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-omarchy"
+    description: "Local-first desktop incident flight recorder for Omarchy: provenance-rich timelines, surrounding-event context, repeat counts, equal-window comparisons, pressure history, bookmarks, saved investigations and private JSON or Markdown handoffs. Native QML interface; local recording with explicit limits; no automatic repairs."
+    url: "https://github.com/nshkrdotcom/omarchy-chronicle"
+    logo: "/logos/omarchy-chronicle-e240a80a13d9.png"
+    language: "QML"
 
   omarchy-tactical-display:
     name: "omarchy-tactical-display"
@@ -1824,6 +1871,7 @@ repos:
     category: "nshkr-omarchy"
     description: "Ephemeral fullscreen network connection field instrument for Omarchy Quattro. Visualizes local process-to-remote socket topology, directional traffic, bound listeners, and kernel queue pressure in real time—summoned instantly as an overlay instrument with zero daemons, no packet capture, and no root privileges required."
     url: "https://github.com/nshkrdotcom/omarchy-tactical-display"
+    logo: "/logos/omarchy-tactical-display-d6ebad906091.png"
     language: "Python"
 
   mix_workspace_ops:
