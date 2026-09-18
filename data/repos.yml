@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-09-17T23:04:15Z
+# Last updated: 2026-09-18T18:06:06Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -344,6 +344,16 @@ repos:
     logo: "/logos/notion_sdk-72dba7b3c5a2.png"
     language: "Elixir"
 
+  typesafe_sdk:
+    name: "typesafe_sdk"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-ai-sdk"
+    description: "An idiomatic, type-safe Elixir port of the official TypeScript AI SDK (ai / ai-sdk) providing unified LLM integrations, streaming text and structured outputs, tool calling, and agentic workflows. Jev is their current flagship model and is the first System One model."
+    url: "https://github.com/nshkrdotcom/typesafe_sdk"
+    logo: "/logos/typesafe_sdk-0b85c222e4a6.png"
+    language: "Elixir"
+
   amp_sdk:
     name: "amp_sdk"
     org: "nshkrdotcom"
@@ -382,16 +392,6 @@ repos:
     description: "Full-featured Elixir client for the Model Context Protocol (MCP) with multi-transport support, resources, prompts, tools, and telemetry."
     url: "https://github.com/nshkrdotcom/mcp_client"
     logo: "/logos/mcp_client-ecfb1d5e78aa.png"
-    language: "Elixir"
-
-  typesafe_sdk:
-    name: "typesafe_sdk"
-    org: "nshkrdotcom"
-    stars: 1
-    category: "nshkr-ai-sdk"
-    description: "An idiomatic, type-safe Elixir port of the official TypeScript AI SDK (ai / ai-sdk) providing unified LLM integrations, streaming text and structured outputs, tool calling, and agentic workflows. Jev is their current flagship model and is the first System One model."
-    url: "https://github.com/nshkrdotcom/typesafe_sdk"
-    logo: "/logos/typesafe_sdk-0b85c222e4a6.png"
     language: "Elixir"
 
   vllm:
@@ -518,7 +518,7 @@ repos:
   snakebridge:
     name: "snakebridge"
     org: "nshkrdotcom"
-    stars: 8
+    stars: 9
     category: "nshkr-ai-infra"
     description: "Compile-time Elixir code generator for Python library bindings. Declare dependencies in mix.exs, generate type-safe modules with introspected typespecs and docs. Deterministic git-friendly output, strict CI mode, streaming, and custom helpers. Runtime via Snakepit."
     url: "https://github.com/nshkrdotcom/snakebridge"
@@ -725,6 +725,16 @@ repos:
     logo: "/logos/app_kit-ef03eb940a72.png"
     language: "Elixir"
 
+  autonomic:
+    name: "autonomic"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "A production-oriented BEAM/OTP autonomy kernel for running an untrusted coding worker inside a disposable Linux execution domain while keeping durable authority, policy, effects, verification, recovery, and audit state in a trusted control plane."
+    url: "https://github.com/nshkrdotcom/autonomic"
+    logo: "/logos/autonomic-638ef0e0a015.png"
+    language: "Elixir"
+
   chassis:
     name: "chassis"
     org: "nshkrdotcom"
@@ -773,6 +783,16 @@ repos:
     description: "Semantic runtime above Citadel for raw language intake, context assembly, model orchestration, semantic journaling, reply publication, and restart-safe intent synthesis into structured policy decisions across the stack."
     url: "https://github.com/nshkrdotcom/outer_brain"
     logo: "/logos/outer_brain-edf629e676e5.png"
+    language: "Elixir"
+
+  plexus:
+    name: "plexus"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-ai-infra"
+    description: "High-concurrency Elixir actor runtime for large-scale semantic graphs, search swarms, and batched model evaluation."
+    url: "https://github.com/nshkrdotcom/plexus"
+    logo: "/logos/plexus-2e16d841db54.png"
     language: "Elixir"
 
   portfolio_index:
@@ -924,15 +944,6 @@ repos:
     description: "Mechanistic Workbench (mwb): Local-first mechanistic interpretability workbench for IPython research, agent-readable state, artifact validation, evidence graphs, claim-safe MechanismCards, provenance, run ledgers, SAE/TransformerLens workflows, and reproducible MI experiments"
     url: "https://github.com/nshkrdotcom/mwb"
     logo: "/logos/mwb-522d34562304.webp"
-    language: "Python"
-
-  pc-alm:
-    name: "pc-alm"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-research"
-    description: "Predictive Coding Augmented Lagrangian Multipliers (PC-ALM): coordinate relaxation, reverse Gauss-Seidel acceleration, parallel Jacobi Pareto frontiers, and delayed dual stability in deep networks."
-    url: "https://github.com/nshkrdotcom/pc-alm"
     language: "Python"
 
   superposition_zoo:
