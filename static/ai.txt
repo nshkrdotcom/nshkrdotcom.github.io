@@ -18,6 +18,7 @@ Research programs:
   runs reached full-depth analysis, and the mechanism verdict remains insufficient evidence.
 - superposition_zoo: synthetic sequence-mixing comparisons; retrieval findings
   established, central feature-isolation question still open.
+- pc-alm: coordinate-relaxation inference schedules and delayed dual stability in deep predictive coding; directionality established at matched work (reverse GS > forward GS by 9.07 pp, Z=24.9σ); Jacobi reaches 84.80% with 15.5x lower critical-path latency; random asynchrony yields no benefit.
 
 Research workbenches and records:
 - mwb

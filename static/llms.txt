@@ -23,6 +23,12 @@ NSHKR publishes two related but distinct bodies of work:
     memory, and state-space mixing.
   - Retrieval evidence is established for attention and hard routing; the
     central feature-isolation question remains open.
+- PC-ALM: https://github.com/nshkrdotcom/pc-alm
+  - Coordinate-relaxation inference schedules and delayed dual stability in deep predictive coding.
+  - At matched work (B=64), reverse Gauss-Seidel outperforms forward order by 9.07 pp (Z=24.9σ) and Jacobi by 9.13 pp (Z=23.3σ).
+  - Jacobi reaches 84.80% at B=128 with 15.5x lower critical-path latency; random coordinate asynchrony yields no benefit.
+  - Benchmark report: https://github.com/nshkrdotcom/pc-alm/blob/main/results/f0_canonical/CANONICAL_BENCHMARK_REPORT.md
+
 
 Research tooling:
 

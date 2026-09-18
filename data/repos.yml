@@ -926,6 +926,15 @@ repos:
     logo: "/logos/mwb-522d34562304.webp"
     language: "Python"
 
+  pc-alm:
+    name: "pc-alm"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-research"
+    description: "Predictive Coding Augmented Lagrangian Multipliers (PC-ALM): coordinate relaxation, reverse Gauss-Seidel acceleration, parallel Jacobi Pareto frontiers, and delayed dual stability in deep networks."
+    url: "https://github.com/nshkrdotcom/pc-alm"
+    language: "Python"
+
   superposition_zoo:
     name: "superposition_zoo"
     org: "nshkrdotcom"

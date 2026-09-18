@@ -30,6 +30,7 @@ sources.
 - https://github.com/nshkrdotcom/architecture_mechanics
 - https://github.com/nshkrdotcom/attention_lab
 - https://github.com/nshkrdotcom/superposition_zoo
+- https://github.com/nshkrdotcom/pc-alm
 - https://github.com/nshkrdotcom/mwb
 - https://github.com/nshkrdotcom/mil
 - https://github.com/nshkrdotcom/learning

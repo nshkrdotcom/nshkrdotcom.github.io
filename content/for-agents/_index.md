@@ -20,6 +20,7 @@ the other.
 | [Architecture Mechanics](https://github.com/nshkrdotcom/architecture_mechanics) | Tiny trained architectures with known synthetic features | Measures transport, packing, overwrite, and causal legibility against ground truth |
 | [Attention Lab](https://github.com/nshkrdotcom/attention_lab) | Matched GPT pretraining and alternative-attention probes | Two confirmatory pretraining runs reached full-depth analysis; the mechanism verdict remains `insufficient_evidence` |
 | [Superposition Zoo](https://github.com/nshkrdotcom/superposition_zoo) | Synthetic sequence-mixing comparisons | Retrieval findings are established; the central feature-isolation question remains open |
+| [PC-ALM](https://github.com/nshkrdotcom/pc-alm) | Coordinate-relaxation inference schedules and delayed dual stability in deep predictive coding | Directionality established at matched work (reverse GS > forward GS by 9.07 pp, Z=24.9σ); Jacobi reaches 84.80% with 15.5x lower critical-path latency on parallel hardware; random asynchrony yields no benefit. [Benchmark report](https://github.com/nshkrdotcom/pc-alm/blob/main/results/f0_canonical/CANONICAL_BENCHMARK_REPORT.md) |
 
 Supporting workbenches and records are [mwb](https://github.com/nshkrdotcom/mwb),
 [mil](https://github.com/nshkrdotcom/mil),
