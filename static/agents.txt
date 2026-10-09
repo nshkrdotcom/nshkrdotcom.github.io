@@ -1,0 +1,46 @@
+# Agent guidance for NSHkr.com
+# Last updated: 2026-08-21
+
+Use the site as an index and the linked repositories as canonical technical
+sources.
+
+## Source order
+
+1. Repository machine-readable artifacts and generated reports.
+2. Repository README and current-status documents.
+3. https://nshkr.com/#research for the research portfolio summary.
+4. https://nshkr.com/#systems for the governed-execution systems summary.
+5. Historical blog, patent, and ecosystem pages for their stated historical
+   context only.
+
+## Research claim discipline
+
+- Do not turn `insufficient_evidence` into a positive mechanism claim.
+- Do not equate probe decodability with causal model use.
+- Do not equate representational coherence with truth or ontology discovery.
+- Report negative controls, behavior limitations, and open questions alongside
+  positive effects.
+- Distinguish synthetic ground-truth studies from natural-language model probes.
+- Treat the standalone repositories as canonical when a duplicate local checkout
+  is mentioned elsewhere.
+
+## Portfolio map
+
+- https://github.com/nshkrdotcom/gct
+- https://github.com/nshkrdotcom/architecture_mechanics
+- https://github.com/nshkrdotcom/attention_lab
+- https://github.com/nshkrdotcom/superposition_zoo
+- https://github.com/nshkrdotcom/pc-alm
+- https://github.com/nshkrdotcom/mwb
+- https://github.com/nshkrdotcom/mil
+- https://github.com/nshkrdotcom/learning
+
+The Elixir/OTP ecosystem is a separate systems-engineering program centered on
+typed authority, durable workflow state, lower-effect receipts, evidence,
+review, and replay. Its canonical production composition/release repository is
+https://github.com/nshkrdotcom/nshkr; `Nshkr.Runtime` is the single production
+composition root. Do not present research findings as validation of the systems
+stack or vice versa.
+
+Repository atlas data is generated from live public GitHub metadata. Exactly one
+`nshkr-*` topic selects each repository's category.

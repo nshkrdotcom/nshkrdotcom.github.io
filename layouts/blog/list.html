@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="container">
+  <section class="hero" style="padding-bottom: var(--space-xl);">
+    <h1 class="hero-title">Blog</h1>
+    <p class="hero-subtitle">Technical deep-dives, project updates, and research notes from NSHkr.com.</p>
+  </section>
+
+  <div class="projects-grid">
+    {{ range .Pages.ByDate.Reverse }}
+    <a href="{{ .RelPermalink }}" class="post-card">
+      {{ if not .Date.IsZero }}
+      <div class="post-card-date">{{ .Date.Format "Jan 2, 2006" }}</div>
+      {{ end }}
+      <div class="post-card-title">{{ .Title }}</div>
+      <p class="post-card-summary">{{ .Summary | truncate 200 }}</p>
+      <span class="post-card-read">Read more &rarr;</span>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

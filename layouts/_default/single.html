@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    {{ with .CurrentSection }}
+      {{ if ne .RelPermalink "/" }}
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span class="breadcrumb-sep">/</span>
+      {{ end }}
+    {{ end }}
+    <span>{{ .Title }}</span>
+  </nav>
+
+  <article class="prose">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
+</div>
+{{ end }}

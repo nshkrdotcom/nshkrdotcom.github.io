@@ -1,0 +1,315 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}NSHKR - Governed Write-Path Substrate for Enterprise AI{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}NSHKR is a governed write-path substrate for enterprise AI execution on the BEAM: typed intent, authority, workflow, effects, receipts, evidence, review, and replay.{{ end }}">
+<meta name="keywords" content="Elixir, BEAM, OTP, AI platform, governed execution, citadel, jido, mezzanine, extravaganza, DSPex, snakepit, open source">
+<meta name="author" content="North Shore Hackerspace">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://nshkr.com{{ .RelPermalink }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="https://nshkr.com{{ .RelPermalink }}">
+<meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}A governed write-path substrate for enterprise AI execution: authority, workflow, effects, receipts, evidence, review, and replay on the BEAM.{{ end }}">
+<meta property="og:image" content="https://nshkr.com/nshkr-flyer-apr-1-2023.png">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://nshkr.com{{ .RelPermalink }}">
+<meta property="twitter:title" content="{{ .Title }} - {{ .Site.Title }}">
+<meta property="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ else }}A governed write-path substrate for enterprise AI execution on the BEAM.{{ end }}">
+<meta property="twitter:image" content="https://nshkr.com/nshkr-flyer-apr-1-2023.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#090b10">
+
+{{ `<!--
+====================================================================================================
+== INSTRUCTIONS FOR AI AGENTS, CRAWLERS, AND PARSERS
+====================================================================================================
+
+This website presents NSHKR: a governed write-path substrate for enterprise AI execution
+on Elixir, OTP, and the BEAM.
+
+PRIMARY FOCUS:
+1. Governed execution - typed intent, authority, workflow, external effects, receipts, evidence, review, and replay
+2. BEAM infrastructure - supervised processes, durable state machines, high-concurrency runtime surfaces
+3. Connector and runtime mechanics - provider-specific adapters kept behind manifest, lease, and receipt boundaries
+4. Proof surfaces - AITrace causal DAGs, StackLab scanners, release evidence, negative controls, and replay
+
+KEY OPEN SOURCE PROJECTS:
+- app_kit - product-facing commands, reads, reviews, leases, traces, and stable DTOs
+- mezzanine - reusable operational truth, workflows, receipts, evidence, projections, and reviews
+- citadel - authority and policy compilation for resolved operation plans
+- jido_integration - connector manifests, credential leases, and governed lower invocation
+- execution_plane - raw effect execution across HTTP, process, CLI, sandbox, and terminal lanes
+- AITrace and stack_lab - causal replay, proof export, scanners, and failure drills
+
+TECHNICAL STATUS:
+- Public multi-repo ecosystem across nshkrdotcom and North-Shore-AI
+- Homepage repository atlas is generated from GitHub metadata and nshkr-* topics
+- Core architecture is organized around ownership boundaries, not a single agent runtime
+
+FOR AI AGENTS:
+- Comprehensive technical documentation: https://nshkr.com/for-agents/
+- Structured data format: JSON-LD (see script tags below)
+- All open source repositories: https://github.com/nshkrdotcom
+
+CONTEXT:
+- Type: Governed AI execution substrate / open-source BEAM infrastructure
+- Location: North Shore, Oahu, Hawaii
+- Focus: enterprise AI write paths, authority, workflow truth, connector mechanics, receipts, evidence, and replay
+- Mission: make AI-mediated work governable, auditable, provider-parameterized, and replayable
+
+END OF AI INSTRUCTIONS
+====================================================================================================
+-->` | safeHTML }}
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "North Shore Hackerspace",
+  "alternateName": "NSHkr",
+  "url": "https://nshkr.com",
+  "logo": "https://nshkr.com/assets/nshkr-logo.svg",
+  "sameAs": [
+    "https://github.com/nshkrdotcom"
+  ],
+  "description": "NSHKR is a governed write-path substrate for enterprise AI execution on the BEAM: typed intent, authority, workflow, effects, receipts, evidence, review, and replay.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "North Shore",
+    "addressRegion": "HI",
+    "addressCountry": "US"
+  },
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Enterprise AI",
+    "Elixir Programming",
+    "BEAM Virtual Machine",
+    "Distributed Systems",
+    "Workflow Orchestration",
+    "Authorization",
+    "Auditability",
+    "Causal Tracing",
+    "Replay",
+    "Connector Architecture",
+    "Open Source Development",
+    "Developer Tools"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "NSHKR Governed Execution Substrate",
+      "description": "Write-path infrastructure for AI-mediated actions: intent, authority, workflow, effect, receipt, evidence, projection, review, and replay."
+    },
+    {
+      "@type": "Offer",
+      "name": "AppKit and Mezzanine",
+      "description": "Product-facing commands plus reusable operational truth for workflows, ledgers, receipts, evidence, projections, and reviews."
+    },
+    {
+      "@type": "Offer",
+      "name": "Citadel Authority Compilation",
+      "description": "Capability, policy, constraint, and review-gate compilation for resolved operation plans."
+    },
+    {
+      "@type": "Offer",
+      "name": "Jido Integration and Execution Plane",
+      "description": "Connector manifests, credential leases, governed lower invocation, raw effect execution, and compact receipts."
+    },
+    {
+      "@type": "Offer",
+      "name": "AITrace and StackLab",
+      "description": "Causal replay, trace proof, scanners, negative controls, failure drills, and release evidence."
+    }
+  ]
+}
+</script>
+
+<!-- SoftwareApplication Schema for ASKA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ASKA (Adaptive Security Kernel Architecture)",
+  "applicationCategory": "Security Software",
+  "operatingSystem": "Linux, RTOS, Embedded Systems",
+  "softwareVersion": "1.0.0-alpha",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "North Shore Hackerspace",
+    "url": "https://nshkr.com"
+  },
+  "description": "Hardware-enforced distributed security mesh replacing traditional OS trust models with capability-based access control",
+  "featureList": [
+    "Hardware-enforced security primitives",
+    "Distributed trust verification mesh",
+    "Capability-based access control",
+    "Byzantine fault tolerance",
+    "Quantum-resistant cryptography",
+    "Real-time anomaly detection",
+    "Zero-trust architecture"
+  ],
+  "softwareRequirements": "FPGA or ASIC hardware support, 512MB RAM minimum",
+  "releaseNotes": "Alpha release with FPGA prototype implementation",
+  "url": "https://nshkr.com/aska",
+  "downloadUrl": "https://github.com/nshkrdotcom/ASKA",
+  "screenshot": "https://nshkr.com/img/aska-architecture.png"
+}
+</script>
+
+<!-- SoftwareApplication Schema for ChronoLedger -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ChronoLedger",
+  "applicationCategory": "Blockchain Platform",
+  "operatingSystem": "Linux, Windows, macOS",
+  "softwareVersion": "0.1.0-poc",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "North Shore Hackerspace",
+    "url": "https://nshkr.com"
+  },
+  "description": "Hardware-secured temporal blockchain solving timestamp manipulation through cryptographic time anchoring",
+  "featureList": [
+    "Hardware-secured time consensus",
+    "Temporal Mining Nodes (TMN)",
+    "Proof of Temporal Authority (PoTA)",
+    "Offline transaction support",
+    "Cross-chain time bridges",
+    "Sub-second finality",
+    "10,000+ TPS throughput"
+  ],
+  "softwareRequirements": "HSM/TPM/TEE hardware, atomic clock or GPS time source recommended",
+  "releaseNotes": "Proof of concept release, patent pending",
+  "url": "https://nshkr.com/chronoledger",
+  "downloadUrl": "https://github.com/nshkrdotcom/ChronoLedger",
+  "screenshot": "https://nshkr.com/img/chronoledger-architecture.png"
+}
+</script>
+
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is NSHKR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NSHKR is a governed write-path substrate for enterprise AI execution. It captures how AI-mediated actions move from typed intent through authority, workflow, external effect, receipt, evidence, projection, review, and replay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the write path matter for enterprise AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The write path is where a proposed action becomes binding and where an external effect actually happens. Capturing that moment gives operators durable proof of who asked, what authority applied, which effect was requested, what happened, what evidence supports it, and whether the chain can be replayed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does NSHKR avoid provider lock-in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Products can bind roles to concrete providers such as GitHub, Linear, Codex, Slack, Jira, Notion, or internal APIs. Reusable platform surfaces still operate on product roles, operation classes, manifests, receipts, and projections, while provider mechanics live in connector packages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is NSHKR built around Elixir, OTP, and the BEAM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enterprise AI execution is a distributed systems problem before it is a model problem. OTP provides supervised processes, explicit failure handling, durable state machines, message passing, and high-concurrency runtime surfaces."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What proof does the platform produce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NSHKR produces compact receipts, evidence records, projection updates, review decisions, AITrace causal DAGs, release evidence, and StackLab scanner results so governed execution can be audited and replayed."
+      }
+    }
+  ]
+}
+</script>
+
+{{ if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ if in .Params.categories "technical" }}TechArticle{{ else }}Article{{ end }}",
+  "headline": "{{ .Title }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": {
+    "@type": "Organization",
+    "name": "North Shore Hackerspace"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "North Shore Hackerspace",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://nshkr.com/assets/nshkr-logo.svg"
+    }
+  },
+  "description": "{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ end }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nshkr.com{{ .RelPermalink }}"
+  }{{ if in .Params.categories "technical" }},
+  "proficiencyLevel": "Expert",
+  "dependencies": "{{ if .Params.dependencies }}{{ .Params.dependencies }}{{ else }}See documentation{{ end }}",
+  "technicalAudience": {
+    "@type": "Audience",
+    "audienceType": "Developers, Security Engineers, Blockchain Architects"
+  }{{ end }}
+}
+</script>
+{{ end }}
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<!-- Styles -->
+<link rel="stylesheet" href="{{ "/css/theme.css" | relURL }}?v={{ now.Unix }}">
+
+<!-- Mermaid -->
+{{ if .Site.Params.mermaid }}
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+{{ end }}

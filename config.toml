@@ -1,0 +1,99 @@
+baseURL = "https://NSHkr.com/"
+languageCode = "en-us"
+title = "NSHkr.com"
+publishDir = "public"
+theme = "mainroad"
+
+# SEO and site metadata
+enableRobotsTXT = true
+enableGitInfo = true
+summaryLength = 70
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.parser]
+    attribute = true
+    autoHeadingID = true
+  [markup.goldmark.parser.rendering]
+    hardWraps = false
+    unsafe = true
+    xhtml = false
+
+[params]
+  mermaid = true
+  description = "NSHKR publishes reproducible mechanistic-interpretability research in Python and governed AI execution systems built with Elixir and OTP."
+  author = "North Shore Hackerspace"
+  
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+  mediatype = "application/rss+xml"
+  baseName = "feed"
+
+# Minify configuration - preserve HTML comments for AI agents
+[minify]
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      keepComments = true
+      keepSpecialComments = true
+      keepDocumentTags = true
+      keepEndTags = true
+      keepDefaultAttrVals = true
+      keepWhitespace = false
+      keepQuotes = true
+
+[menu]
+  [[menu.main]]
+    name = "Research"
+    url = "/#research"
+    weight = 1
+  [[menu.main]]
+    name = "Systems"
+    url = "/#systems"
+    weight = 2
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 3
+  [[menu.main]]
+    name = "Ecosystem"
+    url = "/ecosystem/"
+    weight = 4
+  [[menu.main]]
+    name = "ASKA"
+    url = "/aska/"
+    weight = 5
+  [[menu.main]]
+    name = "ChronoLedger"
+    url = "/chronoledger/"
+    weight = 6
+  [[menu.main]]
+    name = "Hackerspace"
+    url = "/hackerspace/"
+    weight = 7
+  [[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/nshkrdotcom"
+    weight = 8
+
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    respectDoNotTrack = true
+  [privacy.youtube]
+    privacyEnhanced = true

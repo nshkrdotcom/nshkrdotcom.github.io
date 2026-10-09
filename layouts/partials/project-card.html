@@ -1,0 +1,14 @@
+{{/* Expects: . = repo dict with name, description, url, stars, logo */}}
+<div class="project-card">
+  <div class="project-card-header">
+    <div class="project-card-name">
+      {{ if .logo }}<img src="{{ .logo }}" alt="" class="project-card-logo">{{ end }}
+      {{ .name }}
+    </div>
+    {{ if gt .stars 0 }}
+    <span class="project-card-stars">{{ .stars }}</span>
+    {{ end }}
+  </div>
+  <p class="project-card-desc">{{ .description }}</p>
+  <a href="{{ .url }}" class="project-card-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+</div>

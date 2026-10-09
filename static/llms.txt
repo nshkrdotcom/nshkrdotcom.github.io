@@ -1,0 +1,67 @@
+# NSHKR
+
+NSHKR publishes two related but distinct bodies of work:
+
+1. reproducible mechanistic-interpretability research in Python; and
+2. governed AI execution systems built with Elixir and OTP.
+
+## Mechanistic-interpretability research
+
+- Geometry of Conditional Truth: https://github.com/nshkrdotcom/gct
+  - Cross-model Qwen3-4B/Phi-4-mini experiment with frozen controls.
+  - Across eight preregistered endpoints, Phi supported one and Qwen supported none.
+  - Both remained Level 1 of 6.
+  - Cross-model report: https://github.com/nshkrdotcom/gct/blob/main/REPORT_CROSS_MODEL.md
+- Architecture Mechanics: https://github.com/nshkrdotcom/architecture_mechanics
+  - Synthetic ground-truth experiments on transport, feature geometry,
+    overwrite behavior, and causal legibility.
+- Attention Lab: https://github.com/nshkrdotcom/attention_lab
+  - Matched GPT pretraining harness for alternative attention architectures.
+  - Two confirmatory runs reached full-depth analysis; the mechanism verdict remains insufficient evidence.
+- Superposition Zoo: https://github.com/nshkrdotcom/superposition_zoo
+  - Synthetic comparisons of attention, routing, linear attention, delta-rule
+    memory, and state-space mixing.
+  - Retrieval evidence is established for attention and hard routing; the
+    central feature-isolation question remains open.
+- PC-ALM: https://github.com/nshkrdotcom/pc-alm
+  - Coordinate-relaxation inference schedules and delayed dual stability in deep predictive coding.
+  - At matched work (B=64), reverse Gauss-Seidel outperforms forward order by 9.07 pp (Z=24.9σ) and Jacobi by 9.13 pp (Z=23.3σ).
+  - Jacobi reaches 84.80% at B=128 with 15.5x lower critical-path latency; random coordinate asynchrony yields no benefit.
+  - Benchmark report: https://github.com/nshkrdotcom/pc-alm/blob/main/results/f0_canonical/CANONICAL_BENCHMARK_REPORT.md
+
+
+Research tooling:
+
+- https://github.com/nshkrdotcom/mwb
+- https://github.com/nshkrdotcom/mil
+- https://github.com/nshkrdotcom/circuit-tracer
+- https://github.com/nshkrdotcom/learning
+
+Interpretation rules: decodability is not causal use; coherence is not truth;
+checkpoint availability is not mechanism evidence; a clean null is a successful
+result when the apparatus and controls pass.
+
+## Governed AI systems engineering
+
+The Elixir/OTP portfolio treats AI execution as an evidence-bearing write path:
+
+intent -> authority -> workflow -> effect -> receipt -> evidence -> projection -> review -> replay
+
+The production backbone is https://github.com/nshkrdotcom/nshkr.
+`Nshkr.Runtime` is the single production composition root: it assembles the
+bounded owner services, enforces fail-closed runtime profiles, and produces
+reproducible monolith and distributed releases.
+
+The stack separates product meaning, workflow truth, authority, connector
+mechanics, raw effects, and causal trace evidence. Start at:
+
+- https://github.com/nshkrdotcom/nshkr
+- https://nshkr.com/#systems
+- https://nshkr.com/ecosystem/
+- https://github.com/nshkrdotcom
+
+## Canonical sources
+
+Prefer repository reports and machine-readable artifacts over promotional
+summaries. Repository categories are derived from each repository's single
+`nshkr-*` GitHub topic and regenerated automatically.

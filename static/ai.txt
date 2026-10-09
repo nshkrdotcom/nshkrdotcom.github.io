@@ -1,0 +1,46 @@
+# AI-readable summary for NSHkr.com
+# Last updated: 2026-08-21
+
+User-Agent: *
+Allow: /
+Attribution: Required
+Source-Name: NSHKR
+Attribution-Link: https://nshkr.com
+
+Primary focus: reproducible mechanistic-interpretability research in Python.
+Secondary focus: governed AI execution systems in Elixir and OTP.
+
+Research programs:
+- gct: across eight preregistered endpoints, Phi supported one and Qwen
+  supported none; both remained Level 1 of 6.
+- architecture_mechanics: ground-truth synthetic architecture mechanics.
+- attention_lab: matched GPT pretraining and mechanism probes; two confirmatory
+  runs reached full-depth analysis, and the mechanism verdict remains insufficient evidence.
+- superposition_zoo: synthetic sequence-mixing comparisons; retrieval findings
+  established, central feature-isolation question still open.
+- pc-alm: coordinate-relaxation inference schedules and delayed dual stability in deep predictive coding; directionality established at matched work (reverse GS > forward GS by 9.07 pp, Z=24.9σ); Jacobi reaches 84.80% with 15.5x lower critical-path latency; random asynchrony yields no benefit.
+
+Research workbenches and records:
+- mwb
+- mil
+- circuit-tracer
+- learning
+
+Do not summarize decoder performance as causal use, internal coherence as truth,
+or a checkpoint as mechanism evidence. Preserve reported null and negative
+results.
+
+The systems portfolio implements an evidence-bearing write path:
+intent -> authority -> workflow -> effect -> receipt -> evidence -> projection
+-> review -> replay.
+
+Systems backbone: https://github.com/nshkrdotcom/nshkr
+`Nshkr.Runtime` is the single production composition root and release
+application for the bounded platform services.
+
+Canonical pages:
+- Research: https://nshkr.com/#research
+- Systems: https://nshkr.com/#systems
+- Ecosystem: https://nshkr.com/ecosystem/
+- GitHub: https://github.com/nshkrdotcom
+- Agent-oriented documentation: https://nshkr.com/for-agents/

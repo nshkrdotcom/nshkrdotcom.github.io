@@ -1,0 +1,72 @@
+{{ define "main" }}
+<div class="container">
+  <section class="hero" style="padding-bottom: var(--space-xl);">
+    <span class="badge mb-md">Community</span>
+    <h1 class="hero-title">North Shore Hackerspace</h1>
+    <p class="hero-subtitle">A working hackerspace in Waialua, Oahu &mdash; one room, a real bench, and the door open since March 2023. Open daily, 9:00&nbsp;AM to 6:00&nbsp;PM.</p>
+    <div class="hero-actions">
+      <a href="https://nshkr.space" class="btn btn-primary" target="_blank" rel="noopener">Visit nshkr.space &rarr;</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">What We Do</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#x1f9e0;</div>
+        <h3 class="feature-title">AI/ML Research</h3>
+        <p class="feature-desc">Developing 20+ open-source ElixirML tools for the BEAM platform, pushing the boundaries of AI on functional programming.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1f512;</div>
+        <h3 class="feature-title">Security Architecture</h3>
+        <p class="feature-desc">Building ASKA - hardware-enforced distributed security mesh with capability-based access control and zero-trust architecture.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x26d3;&#xfe0f;</div>
+        <h3 class="feature-title">Blockchain Innovation</h3>
+        <p class="feature-desc">ChronoLedger: temporal blockchain with hardware-secured timestamp consensus, sub-second finality, and 10K+ TPS.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1f527;</div>
+        <h3 class="feature-title">Developer Tools</h3>
+        <p class="feature-desc">Claude Code SDK, VS Code extensions, validation libraries, and analysis frameworks for modern development workflows.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1f30a;</div>
+        <h3 class="feature-title">Hardware Prototyping</h3>
+        <p class="feature-desc">FPGA development, IoT security modules, and custom hardware for cryptographic time anchoring and secure enclaves.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1f91d;</div>
+        <h3 class="feature-title">Open Source Community</h3>
+        <p class="feature-desc">All projects are open source. We believe in community collaboration, shared knowledge, and building tools that benefit everyone.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Visit</h2>
+    <div class="card">
+      <p style="color: var(--text-secondary);">A dedicated room in Waialua, just down the road from Haleiwa Town, open daily from 9:00&nbsp;AM to 6:00&nbsp;PM. Day, weekly, and monthly passes are available.</p>
+      <p style="color: var(--text-secondary);">Hours, passes, and directions live at <a href="https://nshkr.space" target="_blank" rel="noopener">nshkr.space</a>.</p>
+    </div>
+  </section>
+
+  <section class="section text-center">
+    <h2 class="section-title">Get Involved</h2>
+    <p class="section-subtitle" style="margin: 0 auto var(--space-lg);">Come use the space, or contribute to the open-source projects that come out of it.</p>
+    <div class="hero-actions">
+      <a href="https://nshkr.space" class="btn btn-primary" target="_blank" rel="noopener">The space &rarr;</a>
+      <a href="https://github.com/nshkrdotcom" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+      <a href="https://github.com/North-Shore-AI" class="btn" target="_blank" rel="noopener">North Shore AI</a>
+    </div>
+  </section>
+
+  {{ with .Content }}
+  <article class="prose mt-xl">
+    {{ . }}
+  </article>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="/">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    <a href="/blog/">Blog</a>
+    <span class="breadcrumb-sep">/</span>
+    <span>{{ .Title }}</span>
+  </nav>
+
+  <article class="prose">
+    <h1>{{ .Title }}</h1>
+
+    <div class="article-meta">
+      {{ if not .Date.IsZero }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ end }}
+      {{ with .Params.tags }}
+      <div class="article-tags">
+        {{ range . }}
+        <span class="badge">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+
+    {{ .Content }}
+  </article>
+</div>
+{{ end }}

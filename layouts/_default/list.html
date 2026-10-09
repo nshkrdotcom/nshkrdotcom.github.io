@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="container">
+  <article class="prose">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
+
+  {{ if .Pages }}
+  <div class="container mt-xl">
+    <div class="projects-grid">
+      {{ range .Pages }}
+      <a href="{{ .RelPermalink }}" class="post-card">
+        <div class="post-card-title">{{ .Title }}</div>
+        <p class="post-card-summary">{{ .Summary | truncate 200 }}</p>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

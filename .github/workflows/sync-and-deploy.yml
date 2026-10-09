@@ -1,0 +1,156 @@
+name: Sync Repos & Deploy
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  push:
+    branches: ["main"]
+  repository_dispatch:
+    types: ["source-assets-updated"]
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.verify.outputs.changed }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Install SVG rasterization tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-bin
+
+      - name: Validate category config and scripts
+        run: |
+          jq -e '.categories | type == "array" and length > 0' config/nshkr_categories.json > /dev/null
+          bash -n scripts/lib/nshkr_categories.sh
+          bash -n scripts/detect_source_asset_changes.sh
+          bash -n scripts/sync_repos_to_hugo.sh
+          bash -n scripts/validate_logo_references.sh
+          bash -n scripts/MANAGE_REPO_TOPICS.sh
+          bash -n tests/test_sync_repos_to_hugo.sh
+          ./tests/test_sync_repos_to_hugo.sh
+          ./scripts/validate_logo_references.sh
+
+      - name: Log dispatch payload
+        if: github.event_name == 'repository_dispatch'
+        run: |
+          echo "Triggered by: ${{ github.event.client_payload.source_owner }}/${{ github.event.client_payload.source_repo }}"
+          echo "Source ref: ${{ github.event.client_payload.source_ref }}"
+          echo "Source sha: ${{ github.event.client_payload.source_sha }}"
+          echo "Changed paths: ${{ toJson(github.event.client_payload.changed_paths) }}"
+
+      - name: Detect relevant source changes
+        id: detect
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          chmod +x ./scripts/detect_source_asset_changes.sh
+          result=$(./scripts/detect_source_asset_changes.sh)
+          echo "$result" | jq .
+          echo "should_sync=$(echo "$result" | jq -r '.should_sync')" >> "$GITHUB_OUTPUT"
+
+      - name: Sync repos from GitHub
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch' || (github.event_name == 'schedule' && steps.detect.outputs.should_sync == 'true')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          chmod +x ./scripts/sync_repos_to_hugo.sh
+          ./scripts/sync_repos_to_hugo.sh
+
+      - name: Skip schedule sync
+        if: github.event_name == 'schedule' && steps.detect.outputs.should_sync != 'true'
+        run: echo "No relevant source changes detected. Skipping scheduled sync."
+
+      - name: Check for changes
+        id: verify
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push
+        if: steps.verify.outputs.changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A data/repos.yml static/logos/
+          git commit -m "Sync repository data"
+          git push
+
+  build:
+    needs: sync
+    if: github.event_name != 'schedule' || needs.sync.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Install SVG rasterization tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-bin
+
+      - name: Validate category config and scripts
+        run: |
+          jq -e '.categories | type == "array" and length > 0' config/nshkr_categories.json > /dev/null
+          bash -n scripts/lib/nshkr_categories.sh
+          bash -n scripts/detect_source_asset_changes.sh
+          bash -n scripts/sync_repos_to_hugo.sh
+          bash -n scripts/validate_logo_references.sh
+          bash -n tests/test_sync_repos_to_hugo.sh
+          ./tests/test_sync_repos_to_hugo.sh
+          ./scripts/validate_logo_references.sh
+
+      - name: Pull latest changes
+        run: git pull origin main || true
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Install Hugo
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.152.2/hugo_extended_0.152.2_linux-amd64.deb
+          sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Build
+        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

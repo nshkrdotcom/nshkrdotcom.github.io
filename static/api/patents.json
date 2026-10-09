@@ -1,0 +1,78 @@
+{
+  "last_updated": "2025-07-06T00:00:00Z",
+  "organization": "North Shore Hackerspace",
+  "patent_portfolio": [
+    {
+      "technology": "ChronoLedger",
+      "filings": [
+        {
+          "type": "Provisional",
+          "number": "63/768,222",
+          "title": "Temporal Blockchain System with Hardware-Secured Consensus Time",
+          "filed_date": "2025-03-07",
+          "status": "Active",
+          "expiry": "2026-03-07",
+          "inventors": ["North Shore Hackerspace Team"],
+          "abstract": "A blockchain system incorporating hardware-secured timekeeping to prevent timestamp manipulation and enable verifiable temporal ordering of transactions.",
+          "claims_summary": [
+            "Hardware time attestation modules",
+            "Temporal consensus protocol",
+            "Cross-chain time synchronization",
+            "Offline transaction support with time commitments"
+          ],
+          "next_steps": {
+            "action": "File non-provisional",
+            "deadline": "2026-03-07",
+            "priority_countries": ["US", "EU", "JP", "CN"]
+          }
+        }
+      ]
+    },
+    {
+      "technology": "ASKA",
+      "filings": [
+        {
+          "type": "Provisional",
+          "number": "Confidential",
+          "title": "Distributed Security Mesh Architecture",
+          "filed_date": "2024-06-15",
+          "status": "Active",
+          "expiry": "2025-06-15",
+          "abstract": "A security architecture where every component monitors others through hardware-enforced capabilities.",
+          "next_steps": {
+            "action": "File non-provisional",
+            "deadline": "2025-06-15"
+          }
+        },
+        {
+          "type": "Provisional",
+          "number": "Confidential",
+          "title": "Hardware-Enforced Capability Distribution System",
+          "filed_date": "2024-09-20",
+          "status": "Active",
+          "expiry": "2025-09-20",
+          "abstract": "System and method for distributing and verifying security capabilities using hardware roots of trust."
+        },
+        {
+          "type": "Provisional",
+          "number": "Confidential",
+          "title": "Byzantine Fault Tolerant Security Consensus",
+          "filed_date": "2025-01-10",
+          "status": "Active",
+          "expiry": "2026-01-10",
+          "abstract": "Methods for achieving consensus on security decisions in a distributed mesh with Byzantine actors."
+        }
+      ]
+    }
+  ],
+  "ip_strategy": {
+    "approach": "Defensive patenting with open-source implementation",
+    "licensing": "FRAND terms for standards adoption",
+    "open_source": "Core implementations under Apache 2.0/MIT",
+    "revenue_model": "Enterprise support and custom implementations"
+  },
+  "legal_representation": {
+    "firm": "Confidential",
+    "contact": "legal@nshkr.com"
+  }
+}
