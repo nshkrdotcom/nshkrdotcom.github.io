@@ -10,7 +10,7 @@ cascade:
 <style>
 
     a {
-    color: #3489F0;        
+    color: var(--accent);
     }
 /* ================================== */
 /* Hero Section Styles for ChronoLedger */
@@ -66,18 +66,18 @@ cascade:
 }
 
 .hero .btn-primary {
-  background-color: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: white; /* Ensure high contrast */
+  background-color: var(--steel-light);
+  border-color: var(--steel-light);
+  color: var(--bg); /* Ensure high contrast */
 }
 
 .hero .btn-primary:hover,
 .hero .btn-primary:focus {
-  background-color: var(--accent-secondary);
-  border-color: var(--accent-secondary);
-  color: white;
+  background-color: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
   transform: translateY(-2px); /* Subtle lift effect */
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); /* Glow effect */
+  box-shadow: 0 4px 15px rgb(0 0 0 / 0.2); /* Glow effect */
 }
 
 .hero .btn-outline-secondary {
@@ -88,11 +88,11 @@ cascade:
 
 .hero .btn-outline-secondary:hover,
 .hero .btn-outline-secondary:focus {
-  background-color: rgba(96, 165, 250, 0.1); /* Subtle background on hover */
+  background-color: var(--accent-subtle); /* Subtle background on hover */
   border-color: var(--accent-tertiary);
   color: var(--accent-tertiary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.2);
+  box-shadow: 0 4px 15px rgb(0 0 0 / 0.2);
 }
 
 /* Spacing for buttons if they wrap on smaller screens */
@@ -136,7 +136,7 @@ cascade:
 /* ================================== */
   
     a {
-    color: #3489F0;        
+    color: var(--accent);
     }
   /* Optional: Add specific styles for this page if needed */
   .feature-icon {
@@ -144,11 +144,11 @@ cascade:
     margin-bottom: 10px;
   }
   .use-case-box {
-    border: 1px solid #eee; /* Consider using var(--border-color) */
+    border: 1px solid var(--border-color); /* Consider using var(--border-color) */
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
-    background-color: rgba(15, 21, 32, 0.5); /* Slightly lighter background for boxes */
+    background-color: var(--bg-secondary); /* Slightly lighter background for boxes */
   }
   /* Ensure mermaid diagrams render correctly */
    .mermaid {

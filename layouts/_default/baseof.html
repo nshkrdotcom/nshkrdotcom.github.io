@@ -12,23 +12,11 @@
 
   {{ partial "footer.html" . }}
 
-  <script>
-    // Mermaid init: divs are rendered by Hugo render hook
-    if (typeof mermaid !== 'undefined') {
-      mermaid.initialize({
-        startOnLoad: true,
-        theme: 'dark',
-        securityLevel: 'loose',
-        themeVariables: {
-          darkMode: true,
-          background: '#18181b',
-          primaryColor: '#3b82f6',
-          primaryTextColor: '#fafafa',
-          lineColor: '#3f3f46'
-        }
-      });
-    }
+  {{ if .Site.Params.mermaid }}
+  <script src="{{ "/js/mermaid-init.js" | relURL }}"></script>
+  {{ end }}
 
+  <script>
     // Heading anchor links
     document.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]').forEach(function(heading) {
       var anchor = document.createElement('a');

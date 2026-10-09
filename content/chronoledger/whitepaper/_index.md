@@ -8,7 +8,7 @@ description: "Whitepaper detailing the Temporal Blockchain System, integrating h
 
 <style>
     a {
-    color: #3489F0;        
+    color: var(--accent);
     }
   /* Optional: Add specific styles for this page if needed */
   .feature-icon {
@@ -16,11 +16,11 @@ description: "Whitepaper detailing the Temporal Blockchain System, integrating h
     margin-bottom: 10px;
   }
   .use-case-box {
-    border: 1px solid #eee; /* Consider using var(--border-color) */
+    border: 1px solid var(--border-color); /* Consider using var(--border-color) */
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
-    background-color: rgba(15, 21, 32, 0.5); /* Slightly lighter background for boxes */
+    background-color: var(--bg-secondary); /* Slightly lighter background for boxes */
   }
   /* Ensure mermaid diagrams render correctly */
    .mermaid {
