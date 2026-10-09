@@ -1,4 +1,4 @@
-// Use CSS tokens so diagrams follow the site's forest, moss, sage, and brass theme.
+// Use CSS tokens so diagrams follow the site's warm paper, evergreen, and terracotta theme.
 if (typeof mermaid !== 'undefined') {
     const palette = getComputedStyle(document.documentElement);
     const color = (name) => palette.getPropertyValue(name).trim();
@@ -18,7 +18,7 @@ if (typeof mermaid !== 'undefined') {
         theme: 'base',
         securityLevel: 'loose',
         themeVariables: {
-            darkMode: true,
+            darkMode: false,
             background: color('--bg'),
             primaryColor: color('--bg2'),
             primaryTextColor: color('--text'),

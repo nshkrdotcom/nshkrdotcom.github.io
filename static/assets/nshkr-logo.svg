@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="180" height="60" viewBox="0 0 180 60" fill="none">
   <title>NSHkr.com</title>
-  <g transform="translate(5 14)"><path d="M6 26V6h5l10 13V6h5v20h-5L11 13v13Z" fill="#f2efe4"/><path d="M21 6h5v5h-5Z" fill="#c6ad78"/></g>
-  <text x="48" y="38" font-family="monospace" font-size="20" font-weight="700" fill="#f2efe4">NSHkr</text>
-  <text x="110" y="38" font-family="monospace" font-size="20" fill="#c6ad78">.com</text>
+  <g transform="translate(5 14)"><path d="M6 26V6h5l10 13V6h5v20h-5L11 13v13Z" fill="#294b39"/><path d="M21 6h5v5h-5Z" fill="#97533c"/></g>
+  <text x="48" y="38" font-family="monospace" font-size="20" font-weight="700" fill="#294b39">NSHkr</text>
+  <text x="110" y="38" font-family="monospace" font-size="20" fill="#97533c">.com</text>
 </svg>
