@@ -1,28 +1,28 @@
 /* ============================================
    NSHkr.com theme
-   Graphite, steel, and stone. Palette derived from Tailwind Neutral,
-   Slate, and Stone: https://v3.tailwindcss.com/docs/customizing-colors
+   Forest, moss, sage, and aged brass. Custom muted green palette derived
+   from Radix Sage/Olive composition: https://www.radix-ui.com/colors/docs/palette-composition/composing-a-palette
    ============================================ */
 
 :root {
   color-scheme: dark;
-  --bg: #171717;
-  --bg2: #262626;
-  --bg3: #404040;
-  --panel: rgb(38 38 38 / 0.94);
-  --panel-solid: #262626;
-  --border: #404040;
-  --border2: #737373;
-  --text: #f5f5f5;
-  --text2: #d4d4d4;
-  --text3: #a3a3a3;
-  --steel: #94a3b8;
-  --steel-light: #e7e5e4;
-  --stone: #a8a29e;
-  --stone-light: #d6d3d1;
-  --tone-ash: #a3a3a3;
-  --tone-silver: #d4d4d4;
-  --tone-clay: #d6d3d1;
+  --bg: #18251d;
+  --bg2: #24352a;
+  --bg3: #344b38;
+  --panel: rgb(36 53 42 / 0.96);
+  --panel-solid: #24352a;
+  --border: #405444;
+  --border2: #71836b;
+  --text: #f2efe4;
+  --text2: #d2d9c9;
+  --text3: #a9b8a0;
+  --sage: #aac39b;
+  --sage-light: #d0dfbd;
+  --brass: #c6ad78;
+  --brass-light: #e1c99b;
+  --tone-clay-dark: #c7a18e;
+  --tone-olive: #b4c5a0;
+  --tone-clay: #c6ad78;
 
   --font-sans: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
@@ -46,14 +46,14 @@
   --text-primary: var(--text);
   --text-secondary: var(--text2);
   --text-muted: var(--text3);
-  --accent: var(--steel);
-  --accent-hover: var(--steel-light);
-  --accent-subtle: rgb(148 163 184 / 0.11);
+  --accent: var(--sage);
+  --accent-hover: var(--sage-light);
+  --accent-subtle: rgb(170 195 155 / 0.11);
   --border-hover: var(--border2);
   --border-color: var(--border);
-  --accent-primary: var(--steel);
-  --accent-secondary: var(--stone);
-  --accent-tertiary: var(--stone-light);
+  --accent-primary: var(--sage);
+  --accent-secondary: var(--brass);
+  --accent-tertiary: var(--brass-light);
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
@@ -102,7 +102,7 @@ body::before {
 }
 
 ::selection {
-  background: rgb(148 163 184 / 0.3);
+  background: rgb(170 195 155 / 0.3);
 }
 
 ::-webkit-scrollbar {
@@ -130,26 +130,26 @@ body::before {
   }
 }
 
-@keyframes pulse-steel {
+@keyframes pulse-sage {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgb(148 163 184 / 0.38);
+    box-shadow: 0 0 0 0 rgb(170 195 155 / 0.38);
   }
 
   50% {
-    box-shadow: 0 0 0 8px rgb(148 163 184 / 0);
+    box-shadow: 0 0 0 8px rgb(170 195 155 / 0);
   }
 }
 
 
 
 a {
-  color: var(--steel);
+  color: var(--sage);
   text-decoration: none;
   transition: color var(--transition), border-color var(--transition), background var(--transition);
 }
 
 a:hover {
-  color: var(--steel-light);
+  color: var(--sage-light);
 }
 
 img {
@@ -183,7 +183,7 @@ samp {
   z-index: 100;
   height: var(--header-height);
   border-bottom: 1px solid var(--border);
-  background: rgb(23 23 23 / 0.96);
+  background: rgb(24 37 29 / 0.96);
   backdrop-filter: blur(16px);
 }
 
@@ -216,7 +216,7 @@ samp {
 }
 
 .site-logo span {
-  color: var(--steel);
+  color: var(--sage);
 }
 
 .site-nav {
@@ -256,7 +256,7 @@ samp {
 
 .site-footer {
   border-top: 1px solid var(--border);
-  background: rgb(38 38 38 / 0.98);
+  background: rgb(36 53 42 / 0.98);
   padding: 48px 0 28px;
 }
 
@@ -336,15 +336,15 @@ samp {
 }
 
 .btn-primary {
-  border-color: var(--steel-light);
-  background: var(--steel-light);
+  border-color: var(--sage-light);
+  background: var(--sage-light);
   color: var(--bg);
   font-weight: 700;
 }
 
 .btn-primary:hover {
-  border-color: var(--steel-light);
-  background: var(--steel-light);
+  border-color: var(--sage-light);
+  background: var(--sage-light);
   color: var(--bg);
 }
 
@@ -369,8 +369,8 @@ samp {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--steel);
-  animation: pulse-steel 2s ease infinite;
+  background: var(--sage);
+  animation: pulse-sage 2s ease infinite;
 }
 
 .badge-outline {
@@ -466,7 +466,7 @@ samp {
 .project-card-link,
 .post-card-read,
 .repos-section-link {
-  color: var(--steel);
+  color: var(--sage);
   font-family: var(--font-mono);
   font-size: 0.78rem;
   font-weight: 600;
@@ -551,7 +551,7 @@ samp {
 }
 
 .hero-accent {
-  color: var(--steel);
+  color: var(--sage);
 }
 
 .hero-subtitle,
@@ -571,7 +571,7 @@ samp {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--bg2);
-  color: var(--steel-light);
+  color: var(--sage-light);
   font-size: 0.86em;
   padding: 0.08em 0.32em;
 }
@@ -631,7 +631,7 @@ samp {
 }
 
 .stat-value {
-  color: var(--steel);
+  color: var(--sage);
   font-family: var(--font-mono);
   font-size: 1.25rem;
   font-weight: 700;
@@ -723,7 +723,7 @@ samp {
   padding: 14px;
   border: 1px dashed var(--border2);
   border-radius: var(--radius-lg);
-  background: rgb(38 38 38 / 0.75);
+  background: rgb(36 53 42 / 0.75);
 }
 
 .handoff-chain span {
@@ -770,24 +770,24 @@ samp {
 
 .arch-layer[data-layer="appkit"],
 .arch-layer[data-layer="surface"] {
-  border-left: 3px solid var(--steel);
+  border-left: 3px solid var(--sage);
 }
 
 .arch-layer[data-layer="mezzanine"],
 .arch-layer[data-layer="product"] {
-  border-left: 3px solid var(--stone-light);
+  border-left: 3px solid var(--brass-light);
 }
 
 .arch-layer[data-layer="brain"] {
-  border-left: 3px solid var(--stone);
+  border-left: 3px solid var(--brass);
 }
 
 .arch-layer[data-layer="spine"] {
-  border-left: 3px solid var(--tone-silver);
+  border-left: 3px solid var(--tone-olive);
 }
 
 .arch-layer[data-layer="exec"] {
-  border-left: 3px solid var(--tone-ash);
+  border-left: 3px solid var(--tone-clay-dark);
 }
 
 .arch-layer[data-layer="memory"],
@@ -845,15 +845,15 @@ samp {
 }
 
 .arch-node:hover {
-  border-color: var(--steel);
+  border-color: var(--sage);
   background: var(--accent-subtle);
-  color: var(--steel-light);
+  color: var(--sage-light);
 }
 
 .arch-node-highlight {
-  border-color: rgb(148 163 184 / 0.5);
-  background: rgb(148 163 184 / 0.08);
-  color: var(--steel-light);
+  border-color: rgb(170 195 155 / 0.5);
+  background: rgb(170 195 155 / 0.08);
+  color: var(--sage-light);
 }
 
 .arch-flow {
@@ -881,7 +881,7 @@ samp {
   padding: 12px 18px;
   border: 1px dashed var(--border2);
   border-radius: var(--radius-lg);
-  background: rgb(38 38 38 / 0.75);
+  background: rgb(36 53 42 / 0.75);
 }
 
 .arch-ops-label {
@@ -1132,9 +1132,9 @@ samp {
 }
 
 .prose a {
-  color: var(--steel);
+  color: var(--sage);
   text-decoration: underline;
-  text-decoration-color: rgb(148 163 184 / 0.4);
+  text-decoration-color: rgb(170 195 155 / 0.4);
   text-underline-offset: 3px;
 }
 
@@ -1148,12 +1148,12 @@ samp {
 }
 
 .prose li::marker {
-  color: var(--steel);
+  color: var(--sage);
 }
 
 .prose blockquote {
   padding-left: var(--space-lg);
-  border-left: 3px solid var(--steel);
+  border-left: 3px solid var(--sage);
   color: var(--text2);
   font-style: italic;
 }
@@ -1197,7 +1197,7 @@ samp {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--bg2);
-  color: var(--steel-light);
+  color: var(--sage-light);
   font-size: 0.86em;
   padding: 0.12em 0.36em;
 }
@@ -1322,7 +1322,7 @@ h6:hover .header-anchor {
 
 .feature-icon {
   margin-bottom: var(--space-md);
-  color: var(--steel);
+  color: var(--sage);
   font-size: 2rem;
 }
 
@@ -1506,17 +1506,17 @@ h6:hover .header-anchor {
 
 /* A visible focus indicator is independent of hover color. */
 :where(a, button, input, select, textarea, summary):focus-visible {
-  outline: 2px solid var(--steel-light);
+  outline: 2px solid var(--sage-light);
   outline-offset: 4px;
 }
 
 /* Hugo emits syntax classes; keep code in the same restrained palette. */
 .chroma { color: var(--text2); background: var(--bg2); }
 .chroma :is(.c, .c1, .cm, .cs, .cp) { color: var(--text3); }
-.chroma :is(.k, .kc, .kd, .kn, .kp, .kr, .kt, .nt) { color: var(--steel); }
-.chroma :is(.s, .s1, .s2, .sa, .sb, .sc, .sd, .se, .sh, .si, .sr, .ss) { color: var(--stone-light); }
-.chroma :is(.m, .mb, .mf, .mh, .mi, .mo, .il, .na, .nf) { color: var(--stone); }
-.chroma .err { color: var(--tone-ash); }
+.chroma :is(.k, .kc, .kd, .kn, .kp, .kr, .kt, .nt) { color: var(--sage); }
+.chroma :is(.s, .s1, .s2, .sa, .sb, .sc, .sd, .se, .sh, .si, .sr, .ss) { color: var(--brass-light); }
+.chroma :is(.m, .mb, .mf, .mh, .mi, .mo, .il, .na, .nf) { color: var(--brass); }
+.chroma .err { color: var(--tone-clay-dark); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

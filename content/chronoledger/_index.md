@@ -66,8 +66,8 @@ cascade:
 }
 
 .hero .btn-primary {
-  background-color: var(--steel-light);
-  border-color: var(--steel-light);
+  background-color: var(--sage-light);
+  border-color: var(--sage-light);
   color: var(--bg); /* Ensure high contrast */
 }
 
