@@ -31,7 +31,7 @@ def main():
         icon = render(size)
         if size >= 180:
             # App launchers supply their own corner masking; give them an opaque square.
-            background = Image.new("RGBA", icon.size, "#355b45")
+            background = Image.new("RGBA", icon.size, "#f7f5ef")
             background.alpha_composite(icon)
             icon = background.convert("RGB")
         icon.save(STATIC / name)
