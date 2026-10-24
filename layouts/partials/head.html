@@ -142,42 +142,23 @@ END OF AI INSTRUCTIONS
 }
 </script>
 
-<!-- SoftwareApplication Schema for ASKA -->
+{{ if eq .Section "aska" }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "ASKA (Adaptive Security Kernel Architecture)",
-  "applicationCategory": "Security Software",
-  "operatingSystem": "Linux, RTOS, Embedded Systems",
-  "softwareVersion": "1.0.0-alpha",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "creator": {
-    "@type": "Organization",
-    "name": "North Shore Hackerspace",
-    "url": "https://nshkr.com"
-  },
-  "description": "Hardware-enforced distributed security mesh replacing traditional OS trust models with capability-based access control",
-  "featureList": [
-    "Hardware-enforced security primitives",
-    "Distributed trust verification mesh",
-    "Capability-based access control",
-    "Byzantine fault tolerance",
-    "Quantum-resistant cryptography",
-    "Real-time anomaly detection",
-    "Zero-trust architecture"
-  ],
-  "softwareRequirements": "FPGA or ASIC hardware support, 512MB RAM minimum",
-  "releaseNotes": "Alpha release with FPGA prototype implementation",
-  "url": "https://nshkr.com/aska",
-  "downloadUrl": "https://github.com/nshkrdotcom/ASKA",
-  "screenshot": "https://nshkr.com/img/aska-architecture.png"
+  "@type": "TechArticle",
+  "headline": "ASKA v5",
+  "description": "A proposed computer and network architecture built around explicit authority, isolated execution, protected consent, and accountable effects.",
+  "url": "{{ .Permalink }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+  "about": {
+    "@type": "CreativeWork",
+    "name": "ASKA v5 architecture specification",
+    "url": "https://github.com/nshkrdotcom/ASKA"
+  }
 }
 </script>
+{{ end }}
 
 <!-- SoftwareApplication Schema for ChronoLedger -->
 <script type="application/ld+json">
