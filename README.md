@@ -4,6 +4,13 @@ Hugo-based portfolio site showcasing 89+ open-source repositories from [nshkrdot
 
 **Live site:** https://nshkr.com
 
+Equations use `$...$` or `\(...\)` inline and `$$...$$` or `\[...\]`
+for display math. Hugo preserves TeX with Goldmark passthrough and renders it
+to HTML and MathML at build time using KaTeX. No front matter flag is needed,
+including on section pages. Use `&#36;` for literal dollar signs when a
+paragraph contains multiple prices, so they are not interpreted as math.
+Run `python3 tests/test_math_rendering.py` to verify rendering.
+
 ## How It Works
 
 ```

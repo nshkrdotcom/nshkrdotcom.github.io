@@ -124,7 +124,7 @@ Given the high cost of TMNs, the initial GTM must focus on niches where the cost
 
 **8. Financials & Funding Ask**
 
-*   **Ask:** Seed round of [$3M - $5M] (adjust based on detailed budget).
+*   **Ask:** Seed round of [&#36;3M - &#36;5M] (adjust based on detailed budget).
 *   **Use of Funds (18-24 months):**
     *   **Team:** Hire core engineering team (Hardware Security Lead, Cryptographer, Distributed Systems Lead, Embedded Engineer).
     *   **Hardware:** Develop production-ready TMN prototype(s); small batch manufacturing for testing.

@@ -828,7 +828,7 @@ Where:
 - $P(a, t)$ is the power level of actor $a$ at time $t$
 - $P_{baseline}(t)$ is the baseline power level at time $t$
 - $\alpha > 1$ is the resistance exponent
-- $TF(a, t)$ is a temporal factor based on $as historical temporal accuracy
+- $TF(a, t)$ is a temporal factor based on $a$'s historical temporal accuracy
 
 ### 9.3 Time-Manipulation Resistance
 

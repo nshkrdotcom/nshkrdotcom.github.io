@@ -16,6 +16,12 @@ summaryLength = 70
 
 [markup]
   [markup.goldmark]
+    # Preserve TeX before Markdown interprets underscores, backslashes, or <.
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [['\[', '\]'], ['$$', '$$']]
+        inline = [['\(', '\)'], ['$', '$']]
     [markup.goldmark.renderer]
       unsafe = true
   [markup.highlight]
