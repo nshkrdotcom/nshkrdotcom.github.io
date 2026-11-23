@@ -1,5 +1,5 @@
 # Auto-generated repository data with category-based organization
-# Last updated: 2026-09-25T22:09:05Z
+# Last updated: 2026-11-23T03:22:28Z
 # Do not edit manually - managed by scripts/sync_repos_to_hugo.sh
 # Categories are controlled via GitHub topics (nshkr-*)
 # Pinned category metadata lives in config/nshkr_categories.json
@@ -22,98 +22,106 @@ categories:
     name: "Research"
     slug: "nshkr-research"
     weight: 4
+  nshkr-medical:
+    name: "Medical & Clinical Systems"
+    slug: "nshkr-medical"
+    weight: 5
   nshkr-ml:
     name: "ML & Learning"
     slug: "nshkr-ml"
-    weight: 5
+    weight: 6
   nshkr-security:
     name: "Security"
     slug: "nshkr-security"
-    weight: 6
+    weight: 7
+  nshkr-verification:
+    name: "Verification"
+    slug: "nshkr-verification"
+    weight: 8
   nshkr-schema:
     name: "Schema"
     slug: "nshkr-schema"
-    weight: 7
+    weight: 9
   nshkr-testing:
     name: "Testing"
     slug: "nshkr-testing"
-    weight: 8
+    weight: 10
   nshkr-observability:
     name: "Observability"
     slug: "nshkr-observability"
-    weight: 9
+    weight: 11
   nshkr-devtools:
     name: "Developer Tools"
     slug: "nshkr-devtools"
-    weight: 10
+    weight: 12
   nshkr-otp:
     name: "OTP"
     slug: "nshkr-otp"
-    weight: 11
+    weight: 13
   nshkr-distributed:
     name: "Distributed Systems"
     slug: "nshkr-distributed"
-    weight: 12
+    weight: 14
   nshkr-data:
     name: "Data"
     slug: "nshkr-data"
-    weight: 13
+    weight: 15
   nshkr-crucible:
     name: "Crucible Stack"
     slug: "nshkr-crucible"
-    weight: 14
+    weight: 16
   nshkr-ingot:
     name: "Ingot Stack"
     slug: "nshkr-ingot"
-    weight: 15
+    weight: 17
   nshkr-cloud:
     name: "Cloud & Edge"
     slug: "nshkr-cloud"
-    weight: 16
+    weight: 18
   nshkr-browser:
     name: "Browser Integration"
     slug: "nshkr-browser"
-    weight: 17
+    weight: 19
   nshkr-ui:
     name: "User Interface"
     slug: "nshkr-ui"
-    weight: 18
+    weight: 20
   nshkr-blockchain:
     name: "Blockchain & Ledger"
     slug: "nshkr-blockchain"
-    weight: 19
-  nshkr-utility:
-    name: "Utilities"
-    slug: "nshkr-utility"
-    weight: 20
-  nshkr-ai-research:
-    name: "AI Research"
-    slug: "nshkr-ai-research"
     weight: 21
-  nshkr-ai-tools:
-    name: "AI Tools"
-    slug: "nshkr-ai-tools"
-    weight: 22
-  nshkr-ecosystem:
-    name: "Ecosystem"
-    slug: "nshkr-ecosystem"
-    weight: 23
-  nshkr-misc:
-    name: "Misc"
-    slug: "nshkr-misc"
-    weight: 24
-  nshkr-ml-research:
-    name: "ML Research"
-    slug: "nshkr-ml-research"
-    weight: 25
   nshkr-omarchy:
     name: "Omarchy"
     slug: "nshkr-omarchy"
+    weight: 22
+  nshkr-utility:
+    name: "Utilities"
+    slug: "nshkr-utility"
+    weight: 23
+  nshkr-ai-research:
+    name: "AI Research"
+    slug: "nshkr-ai-research"
+    weight: 24
+  nshkr-ai-tools:
+    name: "AI Tools"
+    slug: "nshkr-ai-tools"
+    weight: 25
+  nshkr-ecosystem:
+    name: "Ecosystem"
+    slug: "nshkr-ecosystem"
     weight: 26
+  nshkr-misc:
+    name: "Misc"
+    slug: "nshkr-misc"
+    weight: 27
+  nshkr-ml-research:
+    name: "ML Research"
+    slug: "nshkr-ml-research"
+    weight: 28
   nshkr-tools:
     name: "Tools"
     slug: "nshkr-tools"
-    weight: 27
+    weight: 29
   uncategorized:
     name: "Other Projects"
     slug: "uncategorized"
@@ -123,7 +131,7 @@ repos:
   trinity_coordinator:
     name: "trinity_coordinator"
     org: "nshkrdotcom"
-    stars: 77
+    stars: 78
     category: "nshkr-ai-agents"
     description: "TRINITY in Elixir (An Evolved LLM Coordinator): route LLM calls via a small-model hidden-state router + Axon coordination head, with Thinker/Worker/Verifier orchestration and policy loop for acceptance-driven completion."
     url: "https://github.com/nshkrdotcom/trinity_coordinator"
@@ -143,7 +151,7 @@ repos:
   flowstone:
     name: "flowstone"
     org: "nshkrdotcom"
-    stars: 31
+    stars: 32
     category: "nshkr-ai-agents"
     description: "Asset-first data orchestration for Elixir/BEAM. Dagster-inspired with OTP fault tolerance, LiveView dashboard, lineage tracking, checkpoint gates, and distributed execution via Oban."
     url: "https://github.com/nshkrdotcom/flowstone"
@@ -153,7 +161,7 @@ repos:
   DSPex:
     name: "DSPex"
     org: "nshkrdotcom"
-    stars: 19
+    stars: 21
     category: "nshkr-ai-agents"
     description: "Declarative Self Improving Elixir - DSPy Orchestration in Elixir"
     url: "https://github.com/nshkrdotcom/DSPex"
@@ -163,7 +171,7 @@ repos:
   ds_ex:
     name: "ds_ex"
     org: "nshkrdotcom"
-    stars: 18
+    stars: 19
     category: "nshkr-ai-agents"
     description: "DSPEx - Declarative Self-improving Elixir | A BEAM-Native AI Program Optimization Framework"
     url: "https://github.com/nshkrdotcom/ds_ex"
@@ -218,6 +226,16 @@ repos:
     logo: "/logos/flowstone_ai-b2dff8730320.png"
     language: "Elixir"
 
+  stack_coder:
+    name: "stack_coder"
+    org: "nshkrdotcom"
+    stars: 1
+    category: "nshkr-ai-agents"
+    description: "An advanced Elixir-based AI coding agent focused on full-stack code generation, orchestration, and intelligent source code management."
+    url: "https://github.com/nshkrdotcom/stack_coder"
+    logo: "/logos/stack_coder-006ce79aea5d.png"
+    language: "Elixir"
+
   synapse_ai:
     name: "synapse_ai"
     org: "nshkrdotcom"
@@ -248,20 +266,10 @@ repos:
     logo: "/logos/mezzanine-d0a2ac033826.png"
     language: "Elixir"
 
-  stack_coder:
-    name: "stack_coder"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-ai-agents"
-    description: "An advanced Elixir-based AI coding agent focused on full-stack code generation, orchestration, and intelligent source code management."
-    url: "https://github.com/nshkrdotcom/stack_coder"
-    logo: "/logos/stack_coder-006ce79aea5d.png"
-    language: "Elixir"
-
   claude_agent_sdk:
     name: "claude_agent_sdk"
     org: "nshkrdotcom"
-    stars: 36
+    stars: 37
     category: "nshkr-ai-sdk"
     description: "An Elixir SDK for Claude Code - provides programmatic access to Claude Code CLI with streaming message processing"
     url: "https://github.com/nshkrdotcom/claude_agent_sdk"
@@ -298,16 +306,6 @@ repos:
     logo: "/logos/agent_session_manager-dad46b9343e3.png"
     language: "Elixir"
 
-  typesafe_sdk:
-    name: "typesafe_sdk"
-    org: "nshkrdotcom"
-    stars: 6
-    category: "nshkr-ai-sdk"
-    description: "An idiomatic, type-safe Elixir port of the official TypeScript AI SDK (ai / ai-sdk) providing unified LLM integrations, streaming text and structured outputs, tool calling, and agentic workflows. Jev is their current flagship model and is the first System One model."
-    url: "https://github.com/nshkrdotcom/typesafe_sdk"
-    logo: "/logos/typesafe_sdk-0b85c222e4a6.png"
-    language: "Elixir"
-
   ollixir:
     name: "ollixir"
     org: "nshkrdotcom"
@@ -316,6 +314,16 @@ repos:
     description: "Ollixir provides a first-class Elixir client with feature parity to the official ollama-python library. Ollixir runs large language models locally or on your infrastructure via Ollama."
     url: "https://github.com/nshkrdotcom/ollixir"
     logo: "/logos/ollixir-64d25753e294.png"
+    language: "Elixir"
+
+  typesafe_sdk:
+    name: "typesafe_sdk"
+    org: "nshkrdotcom"
+    stars: 5
+    category: "nshkr-ai-sdk"
+    description: "An idiomatic, type-safe Elixir port of the official TypeScript AI SDK (ai / ai-sdk) providing unified LLM integrations, streaming text and structured outputs, tool calling, and agentic workflows. Jev is their current flagship model and is the first System One model."
+    url: "https://github.com/nshkrdotcom/typesafe_sdk"
+    logo: "/logos/typesafe_sdk-0b85c222e4a6.png"
     language: "Elixir"
 
   altar_ai:
@@ -328,6 +336,16 @@ repos:
     logo: "/logos/altar_ai-d4c7cdfb1570.png"
     language: "Elixir"
 
+  jules_ex:
+    name: "jules_ex"
+    org: "nshkrdotcom"
+    stars: 3
+    category: "nshkr-ai-sdk"
+    description: "Elixir client SDK for the Jules API - orchestrate AI coding sessions"
+    url: "https://github.com/nshkrdotcom/jules_ex"
+    logo: "/logos/jules_ex-798ccfb35e76.png"
+    language: "Elixir"
+
   antigravity_cli_sdk:
     name: "antigravity_cli_sdk"
     org: "nshkrdotcom"
@@ -336,16 +354,6 @@ repos:
     description: "Elixir SDK for the Google Antigravity CLI (agy) — stream-json headless sessions, governed launch, and stack integration via cli_subprocess_core and agent_session_manager. Standalone execute/run APIs, materialized governed credentials, multi-instance isolation, and Hex-ready docs for nshkrdotcom AI SDK consumers."
     url: "https://github.com/nshkrdotcom/antigravity_cli_sdk"
     logo: "/logos/antigravity_cli_sdk-6edbf100992e.png"
-    language: "Elixir"
-
-  jules_ex:
-    name: "jules_ex"
-    org: "nshkrdotcom"
-    stars: 2
-    category: "nshkr-ai-sdk"
-    description: "Elixir client SDK for the Jules API - orchestrate AI coding sessions"
-    url: "https://github.com/nshkrdotcom/jules_ex"
-    logo: "/logos/jules_ex-798ccfb35e76.png"
     language: "Elixir"
 
   notion_sdk:
@@ -542,11 +550,31 @@ repos:
   gepa_ex:
     name: "gepa_ex"
     org: "nshkrdotcom"
-    stars: 5
+    stars: 6
     category: "nshkr-ai-infra"
     description: "Elixir implementation of GEPA: LLM-driven evolutionary optimization using Pareto-efficient search for text-based systems. Features OpenAI/Gemini integration, BEAM concurrency, OTP supervision, 218 tests with 75% coverage."
     url: "https://github.com/nshkrdotcom/gepa_ex"
     logo: "/logos/gepa_ex-45d10cfb1445.png"
+    language: "Elixir"
+
+  command:
+    name: "command"
+    org: "nshkrdotcom"
+    stars: 3
+    category: "nshkr-ai-infra"
+    description: "Core Elixir library for AI agent orchestration - unified workbench for running, tracking, and orchestrating multi-provider LLM agents with sessions, workflows, RAG indexes, tool approvals, and cost tracking"
+    url: "https://github.com/nshkrdotcom/command"
+    logo: "/logos/command-ec327cd1d407.png"
+    language: "Elixir"
+
+  system_one_sdk:
+    name: "system_one_sdk"
+    org: "nshkrdotcom"
+    stars: 3
+    category: "nshkr-ai-infra"
+    description: "Provider-neutral Elixir/BEAM SDK for System One semantics: typed Noul, Choice and Score decisions, prepared evaluations, provider abstraction, batching, streaming, telemetry, OTP integration, runtime controls, model catalogs and evaluation tooling. TypeSafe is the first built-in provider via typesafe_api_sdk."
+    url: "https://github.com/nshkrdotcom/system_one_sdk"
+    logo: "/logos/system_one_sdk-39e5de7c689a.png"
     language: "Elixir"
 
   tinkex_cookbook:
@@ -557,16 +585,6 @@ repos:
     description: "Elixir port of tinker-cookbook: training and evaluation recipes for the Tinker ML platform."
     url: "https://github.com/North-Shore-AI/tinkex_cookbook"
     logo: "/logos/tinkex_cookbook-58e5645d1d9e.png"
-    language: "Elixir"
-
-  command:
-    name: "command"
-    org: "nshkrdotcom"
-    stars: 2
-    category: "nshkr-ai-infra"
-    description: "Core Elixir library for AI agent orchestration - unified workbench for running, tracking, and orchestrating multi-provider LLM agents with sessions, workflows, RAG indexes, tool approvals, and cost tracking"
-    url: "https://github.com/nshkrdotcom/command"
-    logo: "/logos/command-ec327cd1d407.png"
     language: "Elixir"
 
   execution_plane:
@@ -607,16 +625,6 @@ repos:
     description: "Lightweight Elixir runtime for composing and executing Python-backed data pipelines with automatic dependency resolution, lazy evaluation, fault-tolerant stage supervision, and seamless Snakebridge/Snakepit integration for production-grade cross-language AI and scientific computing workflows on the BEAM."
     url: "https://github.com/nshkrdotcom/slither"
     logo: "/logos/slither-f4d0cdd457fd.png"
-    language: "Elixir"
-
-  system_one_sdk:
-    name: "system_one_sdk"
-    org: "nshkrdotcom"
-    stars: 2
-    category: "nshkr-ai-infra"
-    description: "Provider-neutral Elixir/BEAM SDK for System One semantics: typed Noul, Choice and Score decisions, prepared evaluations, provider abstraction, batching, streaming, telemetry, OTP integration, runtime controls, model catalogs and evaluation tooling. TypeSafe is the first built-in provider via typesafe_api_sdk."
-    url: "https://github.com/nshkrdotcom/system_one_sdk"
-    logo: "/logos/system_one_sdk-39e5de7c689a.png"
     language: "Elixir"
 
   tinkex:
@@ -728,6 +736,16 @@ repos:
     url: "https://github.com/North-Shore-AI/tiktoken_ex"
     logo: "/logos/tiktoken_ex-43536c51d7f4.png"
     language: "Elixir"
+
+  tinkerer:
+    name: "tinkerer"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-ai-infra"
+    description: "Chiral Narrative Synthesis workspace for Thinker/Tinker LoRA pipelines, semantic fact-checking, telemetry, and reviewer-ready CNS docs."
+    url: "https://github.com/North-Shore-AI/tinkerer"
+    logo: "/logos/tinkerer-6b70879f38af.png"
+    language: "Python"
 
   trinity_framework:
     name: "trinity_framework"
@@ -858,16 +876,6 @@ repos:
     logo: "/logos/stack_lab-300427655257.png"
     language: "Elixir"
 
-  tinkerer:
-    name: "tinkerer"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-ai-infra"
-    description: "Chiral Narrative Synthesis workspace for Thinker/Tinker LoRA pipelines, semantic fact-checking, telemetry, and reviewer-ready CNS docs."
-    url: "https://github.com/North-Shore-AI/tinkerer"
-    logo: "/logos/tinkerer-6b70879f38af.png"
-    language: "Python"
-
   ChronoLedger:
     name: "ChronoLedger"
     org: "nshkrdotcom"
@@ -942,6 +950,16 @@ repos:
     url: "https://github.com/nshkrdotcom/gct"
     language: "Python"
 
+  latent_investigator:
+    name: "latent_investigator"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-research"
+    description: "Deterministic epistemic investigation core, causal hypothesis exploration engine, and strategic-network benchmark evaluating structured causal reasoning against monolithic LLM baselines."
+    url: "https://github.com/nshkrdotcom/latent_investigator"
+    logo: "/logos/latent_investigator-cfdbe5f1ae34.png"
+    language: "Elixir"
+
   learning:
     name: "learning"
     org: "nshkrdotcom"
@@ -979,6 +997,46 @@ repos:
     url: "https://github.com/nshkrdotcom/superposition_zoo"
     language: "Python"
 
+  med_ex:
+    name: "med_ex"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-medical"
+    description: "MedEx: The Elixir foundation for real-time medical systems. Combining a pure functional clinical core, fault-tolerant OTP, WebRTC/Opus, synchronized biosignals, auditable device control, and Phoenix LiveView to power the next generation of connected healthcare."
+    url: "https://github.com/nshkrdotcom/med_ex"
+    logo: "/logos/med_ex-9c217d45e4dd.png"
+    language: "Elixir"
+
+  med_fabric:
+    name: "med_fabric"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-medical"
+    description: "MedFabric: The open-source, Elixir-native framework for the next generation of connected medical devices and real-time healthcare. Unifying WebRTC/Opus, Phoenix LiveView, clinical signals, device telemetry, AI, and FHIR through a pure functional core and fault-tolerant OTP runtime."
+    url: "https://github.com/nshkrdotcom/med_fabric"
+    logo: "/logos/med_fabric-08c2554380c6.png"
+    language: "Elixir"
+
+  medlum:
+    name: "medlum"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-medical"
+    description: "Traceable medical AI reporting & clinical document analytics platform built with Elixir, Phoenix LiveView 1.1, Ecto/PostgreSQL, and Oban. Features multi-backend Docling PDF ingestion (local CPU/GPU & cloud), Gemini structured clinical summaries with citation provenance & confidence scoring, RBAC, and passwordless magic-link auth."
+    url: "https://github.com/nshkrdotcom/medlum"
+    logo: "/logos/medlum-572b1dacea55.png"
+    language: "Elixir"
+
+  medlum_lab:
+    name: "medlum_lab"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-medical"
+    description: "Edge-deployed medical AI & clinical verification lab: Elixir libraries for local medical LLMs (MedlumLlm, BioClinicalBERT, NER, SNOMED/ICD-10/RxNorm/LOINC ontologies via Ollama), 5-agent hallucination verification, synthetic EHR data (Synthea, SDV, DoppelGANger), and FHIR/OMOP/MONAI pipelines."
+    url: "https://github.com/nshkrdotcom/medlum_lab"
+    logo: "/logos/medlum_lab-341fb4804b6c.png"
+    language: "Elixir"
+
   micrograd_ex:
     name: "micrograd_ex"
     org: "nshkrdotcom"
@@ -1015,11 +1073,12 @@ repos:
     category: "nshkr-security"
     description: "Secure Computing in the AI age"
     url: "https://github.com/nshkrdotcom/ASKA"
+    language: "Shell"
 
   pqc-hqc:
     name: "pqc-hqc"
     org: "nshkrdotcom"
-    stars: 7
+    stars: 8
     category: "nshkr-security"
     description: "Post-quantum cryptographic implementation of HQC (Hamming Quasi-Cyclic) - a NIST PQC candidate for quantum-resistant key encapsulation using code-based cryptography"
     url: "https://github.com/nshkrdotcom/pqc-hqc"
@@ -1031,6 +1090,16 @@ repos:
     category: "nshkr-security"
     description: "SHIELD: Secure Hierarchical Inter-agent Layer for Distributed Environments"
     url: "https://github.com/nshkrdotcom/Shield"
+
+  hold_ledger:
+    name: "hold_ledger"
+    org: "nshkrdotcom"
+    stars: 2
+    category: "nshkr-verification"
+    description: "Learn formal verification in Elixir with Lynx and Lean through a working payment authorization ledger. Runnable examples show how to use coding agents to write and challenge specifications, prove behavior, and review what the proofs establish. Includes an independent specification, property tests, and journaled OTP recovery."
+    url: "https://github.com/nshkrdotcom/hold_ledger"
+    logo: "/logos/hold_ledger-119980eb47a5.png"
+    language: "Elixir"
 
   exdantic:
     name: "exdantic"
@@ -1153,10 +1222,19 @@ repos:
   ex_dbg:
     name: "ex_dbg"
     org: "nshkrdotcom"
-    stars: 10
+    stars: 11
     category: "nshkr-devtools"
     description: "State-of-the-Art Introspection and Debugging System for Elixir/Phoenix Applications"
     url: "https://github.com/nshkrdotcom/ex_dbg"
+    language: "Elixir"
+
+  beam_probe:
+    name: "beam_probe"
+    org: "nshkrdotcom"
+    stars: 6
+    category: "nshkr-devtools"
+    description: "AI-Powered Execution Cinema Debugger for Elixir/BEAM"
+    url: "https://github.com/nshkrdotcom/beam_probe"
     language: "Elixir"
 
   dexterity:
@@ -1169,22 +1247,14 @@ repos:
     logo: "/logos/dexterity-134ed6d1edcb.png"
     language: "Elixir"
 
-  ElixirScope:
-    name: "ElixirScope"
-    org: "nshkrdotcom"
-    stars: 5
-    category: "nshkr-devtools"
-    description: "AI-Powered Execution Cinema Debugger for Elixir/BEAM"
-    url: "https://github.com/nshkrdotcom/ElixirScope"
-    language: "Elixir"
-
   elixir_scope:
     name: "elixir_scope"
     org: "nshkrdotcom"
     stars: 5
     category: "nshkr-devtools"
-    description: "Revolutionary AST-based debugging and code intelligence platform for Elixir applications"
+    description: "Static semantic analysis for Elixir and the BEAM, combining source code, compiler evidence, and program dependence graphs to model calls, data flow, OTP actors, messaging, state transitions, supervision, and effects."
     url: "https://github.com/nshkrdotcom/elixir_scope"
+    logo: "/logos/elixir_scope-5ad748fdace0.png"
     language: "Elixir"
 
   elixir_dashboard:
@@ -1264,7 +1334,7 @@ repos:
     category: "nshkr-devtools"
     description: "Deterministic Hex package projection for Elixir monorepos: audit app identities, assemble selected Mix projects into one publishable package, and verify the generated artifact end to end."
     url: "https://github.com/nshkrdotcom/weld"
-    logo: "/logos/weld-4e61eea6e4c9.png"
+    logo: "/logos/weld-2fe8185a9c0b.png"
     language: "Elixir"
 
   alkahest:
@@ -1277,6 +1347,16 @@ repos:
     logo: "/logos/alkahest-779faaa7deda.png"
     language: "Elixir"
 
+  beamcompass:
+    name: "beamcompass"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-devtools"
+    description: "Elixir/OTP behavioral architecture navigator with source-grounded analysis, architecture projections, and self-contained HTML reports."
+    url: "https://github.com/nshkrdotcom/beamcompass"
+    logo: "/logos/beamcompass-e6c36253af57.png"
+    language: "JavaScript"
+
   coolify_ex:
     name: "coolify_ex"
     org: "nshkrdotcom"
@@ -1285,6 +1365,16 @@ repos:
     description: "Generic Elixir tooling for triggering, monitoring, and verifying Coolify deployments from a workstation or remote server, with support for top-level Mix apps and monorepos."
     url: "https://github.com/nshkrdotcom/coolify_ex"
     logo: "/logos/coolify_ex-675aca6e0a41.png"
+    language: "Elixir"
+
+  grand:
+    name: "grand"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-devtools"
+    description: "Source-grounded requirements and assurance tooling in Elixir, with versioned behavioral evidence, auditable decisions, and explicit verification limits."
+    url: "https://github.com/nshkrdotcom/grand"
+    logo: "/logos/grand-e4e1f3db2f44.png"
     language: "Elixir"
 
   portfolio_coder:
@@ -1407,7 +1497,7 @@ repos:
   LlmGuard:
     name: "LlmGuard"
     org: "North-Shore-AI"
-    stars: 13
+    stars: 15
     category: "nshkr-crucible"
     description: "AI Firewall and guardrails for LLM-based Elixir applications"
     url: "https://github.com/North-Shore-AI/LlmGuard"
@@ -1461,6 +1551,16 @@ repos:
     description: "Deterministic tensor patch plans, patch application, and tensor path traversal for neural network model surgery."
     url: "https://github.com/North-Shore-AI/crucible_tensor_patch"
     logo: "/logos/crucible_tensor_patch-7fd49f24ed24.png"
+    language: "Elixir"
+
+  crucible_ui:
+    name: "crucible_ui"
+    org: "North-Shore-AI"
+    stars: 1
+    category: "nshkr-crucible"
+    description: "Phoenix LiveView dashboard for the Crucible ML reliability stack"
+    url: "https://github.com/North-Shore-AI/crucible_ui"
+    logo: "/logos/crucible_ui-85e696069e7f.png"
     language: "Elixir"
 
   crucible_xai:
@@ -1702,16 +1802,6 @@ repos:
     logo: "/logos/crucible_train-c00c93594261.png"
     language: "Elixir"
 
-  crucible_ui:
-    name: "crucible_ui"
-    org: "North-Shore-AI"
-    stars: 0
-    category: "nshkr-crucible"
-    description: "Phoenix LiveView dashboard for the Crucible ML reliability stack"
-    url: "https://github.com/North-Shore-AI/crucible_ui"
-    logo: "/logos/crucible_ui-85e696069e7f.png"
-    language: "Elixir"
-
   datasets_ex:
     name: "datasets_ex"
     org: "North-Shore-AI"
@@ -1812,6 +1902,36 @@ repos:
     logo: "/logos/switchyard-6485348567da.png"
     language: "Elixir"
 
+  omarchy-beam-deck:
+    name: "omarchy-beam-deck"
+    org: "nshkrdotcom"
+    stars: 4
+    category: "nshkr-omarchy"
+    description: "Host-aware BEAM and OTP control plane for Omarchy Quattro. Observes every local and distributed BEAM VM, manages host scheduler budgets and density, detects process pathologies and mailbox backpressure, visualizes supervision and cluster topology, and provides reversible runtime controls with zero application instrumentation required."
+    url: "https://github.com/nshkrdotcom/omarchy-beam-deck"
+    logo: "/logos/omarchy-beam-deck-3956e9e3b071.png"
+    language: "Elixir"
+
+  omarchy-chronicle:
+    name: "omarchy-chronicle"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-omarchy"
+    description: "Local-first desktop incident flight recorder for Omarchy: provenance-rich timelines, surrounding-event context, repeat counts, equal-window comparisons, pressure history, bookmarks, saved investigations and private JSON or Markdown handoffs. Native QML interface; local recording with explicit limits; no automatic repairs."
+    url: "https://github.com/nshkrdotcom/omarchy-chronicle"
+    logo: "/logos/omarchy-chronicle-e240a80a13d9.png"
+    language: "QML"
+
+  omarchy-tactical-display:
+    name: "omarchy-tactical-display"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "nshkr-omarchy"
+    description: "Ephemeral fullscreen network connection field instrument for Omarchy Quattro. Visualizes local process-to-remote socket topology, directional traffic, bound listeners, and kernel queue pressure in real time—summoned instantly as an overlay instrument with zero daemons, no packet capture, and no root privileges required."
+    url: "https://github.com/nshkrdotcom/omarchy-tactical-display"
+    logo: "/logos/omarchy-tactical-display-d6ebad906091.png"
+    language: "Python"
+
   youtube_audio_dl:
     name: "youtube_audio_dl"
     org: "nshkrdotcom"
@@ -1863,7 +1983,7 @@ repos:
   fount:
     name: "fount"
     org: "nshkrdotcom"
-    stars: 0
+    stars: 2
     category: "nshkr-ai-tools"
     description: "Screenplay writing, analysis, and revision engine with a structured script model, lossless Fountain round-tripping, stable scene and element identities, revision history, deterministic editing, semantic investigation, and controlled AI-assisted creative workflows."
     url: "https://github.com/nshkrdotcom/fount"
@@ -1884,9 +2004,9 @@ repos:
     org: "nshkrdotcom"
     stars: 0
     category: "nshkr-misc"
-    description: "Windows-native C++20 app and reproducible setup for SDL3, bgfx, Dear ImGui, CMake, Ninja, and MSVC."
+    description: "Prappy is a collection of native Windows apps built in C++20. It currently includes a workbench for maps, particles, and real-time graphics, plus a compact music player for local files. The apps share a repo, but each has its own code, dependencies, and build instructions so you can build and use them separately."
     url: "https://github.com/nshkrdotcom/prappy"
-    logo: "/logos/prappy-ba09afe6356c.png"
+    logo: "/logos/prappy-c44ee4082e8a.png"
     language: "C++"
 
   cgl:
@@ -1896,36 +2016,6 @@ repos:
     category: "nshkr-ml-research"
     description: "Causal Generalization Laboratory — Predicting and Controlling Global Behavioral Change During Fine-Tuning, Continued Adaptation, and Skill Composition in Open-Weight Language Models"
     url: "https://github.com/nshkrdotcom/cgl"
-    language: "Python"
-
-  omarchy-beam-deck:
-    name: "omarchy-beam-deck"
-    org: "nshkrdotcom"
-    stars: 5
-    category: "nshkr-omarchy"
-    description: "Host-aware BEAM and OTP control plane for Omarchy Quattro. Observes every local and distributed BEAM VM, manages host scheduler budgets and density, detects process pathologies and mailbox backpressure, visualizes supervision and cluster topology, and provides reversible runtime controls with zero application instrumentation required."
-    url: "https://github.com/nshkrdotcom/omarchy-beam-deck"
-    logo: "/logos/omarchy-beam-deck-3956e9e3b071.png"
-    language: "Elixir"
-
-  omarchy-chronicle:
-    name: "omarchy-chronicle"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-omarchy"
-    description: "Local-first desktop incident flight recorder for Omarchy: provenance-rich timelines, surrounding-event context, repeat counts, equal-window comparisons, pressure history, bookmarks, saved investigations and private JSON or Markdown handoffs. Native QML interface; local recording with explicit limits; no automatic repairs."
-    url: "https://github.com/nshkrdotcom/omarchy-chronicle"
-    logo: "/logos/omarchy-chronicle-e240a80a13d9.png"
-    language: "QML"
-
-  omarchy-tactical-display:
-    name: "omarchy-tactical-display"
-    org: "nshkrdotcom"
-    stars: 0
-    category: "nshkr-omarchy"
-    description: "Ephemeral fullscreen network connection field instrument for Omarchy Quattro. Visualizes local process-to-remote socket topology, directional traffic, bound listeners, and kernel queue pressure in real time—summoned instantly as an overlay instrument with zero daemons, no packet capture, and no root privileges required."
-    url: "https://github.com/nshkrdotcom/omarchy-tactical-display"
-    logo: "/logos/omarchy-tactical-display-d6ebad906091.png"
     language: "Python"
 
   mix_workspace_ops:
@@ -1953,7 +2043,7 @@ repos:
     category: "uncategorized"
     description: "Docs"
     url: "https://github.com/nshkrdotcom/docs"
-    language: "Python"
+    language: "JavaScript"
 
   nshkrdotcom:
     name: "nshkrdotcom"
@@ -1963,6 +2053,15 @@ repos:
     description: "Personal GitHub profile README with Elixir/AI projects and LLM reliability research"
     url: "https://github.com/nshkrdotcom/nshkrdotcom"
     language: "Shell"
+
+  reach_demo:
+    name: "reach_demo"
+    org: "nshkrdotcom"
+    stars: 0
+    category: "uncategorized"
+    description: "Minimal, reproducible Elixir projects investigating Reach 2.8.4 limitations in GenServer state flow, message passing, supervision analysis, graph identities, and macro-to-BEAM source mapping."
+    url: "https://github.com/nshkrdotcom/reach_demo"
+    language: "Elixir"
 
   req_llm_zai:
     name: "req_llm_zai"

@@ -14,7 +14,7 @@
   ========================================================= -->
   <section class="hero-v2">
     <div class="hero-eyebrow">
-      <span class="badge">Elixir &nbsp;·&nbsp; OTP &nbsp;·&nbsp; Python &nbsp;·&nbsp; AI infrastructure &nbsp;·&nbsp; open research</span>
+      <span class="badge">Elixir &nbsp;·&nbsp; OTP &nbsp;·&nbsp; WebRTC &nbsp;·&nbsp; Medical AI &nbsp;·&nbsp; Python &nbsp;·&nbsp; open research</span>
     </div>
     <h1 class="hero-title-v2">
       BEAM-native AI infrastructure<br class="hero-br">
@@ -40,6 +40,7 @@
     <div class="hero-actions">
       <a href="/ecosystem/" class="btn btn-primary">Libraries &rarr;</a>
       <a href="#systems" class="btn">Systems engineering</a>
+      <a href="#medical" class="btn">Medical &amp; WebRTC</a>
       <a href="#research" class="btn">Research programs</a>
     </div>
   </section>
@@ -259,6 +260,80 @@
       <span class="arch-ops-label arch-invariant-label">Products own meaning. Platform owns invariants. Connectors own vendor mechanics. Execution owns raw effects. Trace owns proof.</span>
       <a href="https://github.com/nshkrdotcom/switchyard" class="arch-node" target="_blank" rel="noopener">switchyard</a>
       <a href="https://github.com/nshkrdotcom/ElixirScope" class="arch-node" target="_blank" rel="noopener">ElixirScope</a>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CLINICAL & MEDICAL SYSTEMS
+  ========================================================= -->
+  <section class="arch-section" id="medical">
+    <div class="arch-section-header">
+      <h2 class="arch-section-title">Clinical &amp; Medical Systems: Real-Time WebRTC &amp; Edge Medical AI</h2>
+      <p class="arch-section-desc">
+        In clinical software, neither a lossy real-time media stream nor an unverified
+        LLM summary can silently become the medical record. This two-plane healthcare
+        stack separates <strong>real-time clinical WebRTC media &amp; device encounters</strong>
+        (<code>med_ex</code>, <code>med_fabric</code>) from
+        <strong>traceable clinical document ingestion &amp; edge medical AI verification</strong>
+        (<code>medlum</code>, <code>medlum_lab</code>).
+      </p>
+    </div>
+
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="principle-marker" style="background:var(--sage)"></div>
+        <h3 class="principle-title"><a href="https://github.com/nshkrdotcom/med_ex" target="_blank" rel="noopener">med_ex — Clinical Audio &amp; WebRTC Opus SDK</a></h3>
+        <p class="principle-desc">
+          Reusable Elixir SDK separating lossless 48 kHz mono PCM16LE diagnostic capture
+          (DSP-off WebAudio <code>AudioWorklet</code>, 8-frame credit backpressure, atomic
+          fsynced <code>&lt;file_sha256&gt;.wav</code>) from fault-isolated
+          <code>Membrane.Opus.Encoder</code> and replaceable <code>ExWebRTC</code> send-only
+          Opus RTP preview with separate packet-sequence and 48 kHz sample clocks.
+        </p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-marker" style="background:var(--brass)"></div>
+        <h3 class="principle-title"><a href="https://github.com/nshkrdotcom/med_fabric" target="_blank" rel="noopener">med_fabric — Remote Clinical Examination &amp; FHIR R4</a></h3>
+        <p class="principle-desc">
+          Connected examination poncho composing 1:1 browser P2P WebRTC talkback,
+          replaceable live <code>med_ex</code> diagnostic preview, lossless WAV artifacts,
+          and fileless vitals (<code>pulse_rate</code>). Commits explicit clinician
+          acceptance and export intent in one locked PostgreSQL 18 transaction and delivers
+          via HL7 FHIR R4 conditional create (<code>If-None-Exist</code>) with strict
+          semantic read-back.
+        </p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-marker" style="background:var(--tone-olive)"></div>
+        <h3 class="principle-title"><a href="https://github.com/nshkrdotcom/medlum" target="_blank" rel="noopener">medlum — Traceable Clinical Document Ingestion &amp; Reporting</a></h3>
+        <p class="principle-desc">
+          Phoenix LiveView clinical reporting platform with a 5-backend Docling PDF engine
+          (Local CPU/GPU, Docker CPU/GPU, and auto-provisioned/auto-shutdown Vast.ai cloud
+          GPU with Cloudflare DNS/HTTPS &amp; live SSE page progress), Gemini structured
+          clinical summaries with <code>CitationSanitizer</code> provenance spans,
+          shallow-preload LLM telemetry, and 4-tier RBAC.
+        </p>
+      </div>
+      <div class="principle-card">
+        <div class="principle-marker" style="background:var(--sage-light)"></div>
+        <h3 class="principle-title"><a href="https://github.com/nshkrdotcom/medlum_lab" target="_blank" rel="noopener">medlum_lab — Edge Medical LLMs, Ontologies &amp; 5-Agent CVL</a></h3>
+        <p class="principle-desc">
+          Four OTP-native Elixir clinical NLP libraries: <code>medlum_llm</code> (local
+          Ollama medical LLMs + 5-agent Clinical Verification Layer consensus),
+          <code>clinical_ner_ex</code> (hybrid rule + Bumblebee NER),
+          <code>med_ontology_ex</code> (offline ETS/DETS SNOMED-CT, ICD-10-CM, RxNorm,
+          LOINC), and <code>elixir_bio_clinicalbert</code>, alongside 10 synthetic EHR
+          (Synthea, SDV, DoppelGANger) and FHIR/OMOP/MONAI pipelines.
+        </p>
+      </div>
+    </div>
+
+    <div class="arch-ops-row">
+      <span class="arch-ops-label arch-invariant-label">Neither lossy media nor unverified AI output becomes a clinical record.</span>
+      <a href="https://github.com/nshkrdotcom/med_ex" class="arch-node" target="_blank" rel="noopener">med_ex</a>
+      <a href="https://github.com/nshkrdotcom/med_fabric" class="arch-node" target="_blank" rel="noopener">med_fabric</a>
+      <a href="https://github.com/nshkrdotcom/medlum" class="arch-node" target="_blank" rel="noopener">medlum</a>
+      <a href="https://github.com/nshkrdotcom/medlum_lab" class="arch-node" target="_blank" rel="noopener">medlum_lab</a>
     </div>
   </section>
   <!-- =========================================================

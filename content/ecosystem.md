@@ -16,6 +16,53 @@ component has the same maturity.
 
 ---
 
+## Clinical WebRTC & Medical AI Stack
+
+Two complementary healthcare planes built on Elixir/OTP, WebRTC, and edge-verifiable AI. Both enforce the same invariant: neither lossy real-time media nor unverified LLM output silently becomes the clinical record.
+
+### Plane A: Real-Time Clinical Media, WebRTC & HL7 FHIR R4 (`med_ex` + `med_fabric`)
+
+```text
+Browser (Patient / Clinician)
+  ├── 1:1 P2P WebRTC Talkback (voice DSP ON, generation-guarded rejoin)
+  └── 48 kHz mono PCM16LE AudioWorklet (DSP OFF, 8-frame credit window, gap check)
+        │
+        ▼  Binary WebSocket (/ws/pcm)
+  MedEx.Capture (lossless path — single writer)
+        ├── Atomic fsynced <file_sha256>.wav on disk
+        └── Fault-isolated subscriber tap (never blocks recording)
+              │
+              ▼
+        MedEx.PreviewEncoder (demand-driven Membrane.Opus.Encoder, libopus :audio)
+              │
+              ▼
+        MedEx.Preview (replaceable ExWebRTC send-only RTP peer)
+              │
+              ▼  Explicit clinician acceptance + fileless vitals (pulse_rate)
+        PostgreSQL 18 (single locked transaction: observation + outbox intent)
+              │
+              ▼  Idempotent conditional create (If-None-Exist) + strict read-back
+        HL7 FHIR R4 Server (HAPI)
+```
+
+### Plane B: Traceable Clinical Document Ingestion & Edge Verification (`medlum` + `medlum_lab`)
+
+```text
+Clinical PDFs
+  │
+  ▼  5-Backend Docling Engine (Local CPU/GPU, Docker CPU/GPU, Vast.ai ephemeral GPU + SSE)
+Structured Clinical Markdown
+  │
+  ├──▶ medlum (Phoenix LiveView + Gemini + CitationSanitizer provenance spans + 4-tier RBAC)
+  └──▶ medlum_lab (Edge OTP Libraries + Synthetic EHR / FHIR / OMOP / MONAI Harnesses)
+         ├── medlum_llm      (Ollama BioMistral/OpenBioLLM/Meditron + 5-Agent CVL consensus)
+         ├── clinical_ner_ex (Hybrid rule + Bumblebee clinical NER with ontology linking)
+         ├── med_ontology_ex (Offline ETS/DETS lookup: SNOMED-CT, ICD-10-CM, RxNorm, LOINC)
+         └── elixir_bio_clinicalbert (Clinical text embeddings & cosine similarity)
+```
+
+---
+
 ## The 7-Tiered Architectural Model
 
 ```
